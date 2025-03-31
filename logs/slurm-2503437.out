@@ -1,0 +1,3 @@
+Error: unknown flag: --n-gpu-layers
+/var/spool/slurmd/job2503437/slurm_script: line 17: --parallel: command not found
+slurmstepd: error: *** JOB 2503437 ON m13h-2-1 CANCELLED AT 2025-03-10T17:58:27 DUE TO TIME LIMIT ***
