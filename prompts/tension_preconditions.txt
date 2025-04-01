@@ -1,0 +1,14 @@
+For each action, identify or infer the preconditions related to tensions. A precondition is a requirement that needs to be satisfied in order for a character to perform a specific action. These requirements take the form of either an emotional link or a tension. A tension that is a precondition is a tension that should exist in order for taking the action to make sense.
+
+Identify or infer the preconditions that relate to tensions by following the instructions below.
+
+Instructions for each action:
+1. In the `preconditions` object create a key called `tensions`
+2. Assign an array to the `tensions` key containing the identified or inferred tensions.
+	A. If there are no required `tensions`, leave the array empty
+4. Each `tension` is an object with keys `type`, `from`, and `to`
+	A. `type` contains the type of the `tension` as defined previously.
+	B. `from` contains either values ‘a’, ‘b’, ‘-’, ‘’ to indicate the character that is the source of the tension. ‘a’ refers to the `subject` performing the action, ‘b’ refers to the `object` receiving the action, ‘-’ refers to no character, and ‘*’ refers to any character
+	C. `to` contains either values ‘a’ or ‘b’ to indicate the character that is the recipient of the tension. ‘a’ refers to the `subject` performing the action, ‘b’ refers to the `object` receiving the action, ‘-’ refers to no character, and ‘*’ refers to any character
+	
+Return this new JSON object.

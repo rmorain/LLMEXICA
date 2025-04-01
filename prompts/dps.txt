@@ -1,0 +1,32 @@
+Convert the JSON object to a structure called Definition of Previous Stories (DPS). 
+
+Here is a formal description:
+
+```
+Story = ‘STO’, <Sequence of Actions>.
+Sequence of Actions = <Action>, {<Sequence of Actions>}.
+Action = <String Subject Character (optional)> <String Action> <String Object Character (optional)>.
+String Character = <String>.
+String Action = <String>.
+String = Any character represented in ASCIII.
+; = Begin inline comment.
+```
+Here is an example:
+```
+Sto ;1
+Eagle_Knight Actor
+Jaguar_Knight Actor
+Eagle_Knight Was_In_Love_With Princess
+Jaguar_Knight Was_In_Love_With Princess
+Princess Was_In_Love_With Warrior
+Eagle_Knight Got_Jealous_Of Warrior
+Eagle_Knight Killed Warrior
+Princess Attacked Eagle_Knight
+Eagle_Knight Wounded Princess
+Jaguar_Knight Attacked Eagle_Knight
+Jaguar_Knight Fought Eagle_Knight
+Jaguar_Knight Killed Eagle_Knight
+Jaguar_Knight Exiled Jaguar_Knight
+```
+
+Ensure that the action and character name strings used in the DPS syntax match the strings used in the JSON object. An action is not required to have a `subject` or an `object` character. If a `subject` or an `object` are missing from the JSON object simply do not add it to the action line.

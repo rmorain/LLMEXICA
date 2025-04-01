@@ -1,9 +1,10 @@
 #!/bin/sh
 #SBATCH --nodes=1
 #SBATCH --gpus=1  
-#SBATCH --mem-per-cpu=64G
+#SBATCH --mem-per-cpu=32G
 #SBATCH --time=00:20:00
 #SBATCH --ntasks-per-node=4 
+#SBATCH --qos=test
 
 #SBATCH -J "Test parsing story"   # job name
 #SBATCH --output=/home/rmorain2/git/LLMEXICA/logs/slurm-%j.out

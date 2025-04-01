@@ -1,0 +1,11 @@
+For each action, identify or infer the postconditions. A postcondition is a change to an emotional link or tension caused by the action. While preconditions are optional, at least one postcondition is required for each action. If preconditions exist, the postconditions must not be the same as the preconditions.
+
+There is a special type of postcondition called normal tensions which resolve certain tensions in the preconditions. These normal tensions include: `life_normal`, `health_normal` and `prisoner_freed`. `life_normal` resolves the tension `life_at_risk`, `health_normal` resolves the tension `health_at_risk`, and `prisoner_freed` resolves the tension `prisoner`.
+
+Instructions for each action:
+1. Create a new key called `postconditions`
+2. Assign an object to the `postconditions` key containing the keys `emotional_links` and `tensions`
+3. Assign an array of emotional links to the `emotional_links` key. Add emotional links that can be identified or inferred as a result of the action. In general, if a `subject` character performs an action on an `object` character that has a positive effect, let the `object` character develop a positive emotional link toward the `subject` character. However, if a `subject` character performs an action on an `object` character that has a negative effect, let the `object` character develop a negative emotional link toward the `subject` character.
+4. Assign an array of tensions to the `tensions` key. Add tensions that can be identified or inferred as a result of the action.
+
+Return the new JSON object.

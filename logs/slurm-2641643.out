@@ -1,0 +1,349 @@
+2025/03/31 18:07:41 routes.go:1215: INFO server config env="map[CUDA_VISIBLE_DEVICES:0 GPU_DEVICE_ORDINAL:0 HIP_VISIBLE_DEVICES: HSA_OVERRIDE_GFX_VERSION: HTTPS_PROXY: HTTP_PROXY: NO_PROXY: OLLAMA_CONTEXT_LENGTH:2048 OLLAMA_DEBUG:true OLLAMA_FLASH_ATTENTION:false OLLAMA_GPU_OVERHEAD:0 OLLAMA_HOST:http://127.0.0.1:11434 OLLAMA_INTEL_GPU:false OLLAMA_KEEP_ALIVE:5m0s OLLAMA_KV_CACHE_TYPE: OLLAMA_LLM_LIBRARY:cuda OLLAMA_LOAD_TIMEOUT:5m0s OLLAMA_MAX_LOADED_MODELS:0 OLLAMA_MAX_QUEUE:512 OLLAMA_MODELS:/home/rmorain2/.ollama_models OLLAMA_MULTIUSER_CACHE:false OLLAMA_NEW_ENGINE:false OLLAMA_NOHISTORY:false OLLAMA_NOPRUNE:false OLLAMA_NUM_PARALLEL:0 OLLAMA_ORIGINS:[http://localhost https://localhost http://localhost:* https://localhost:* http://127.0.0.1 https://127.0.0.1 http://127.0.0.1:* https://127.0.0.1:* http://0.0.0.0 https://0.0.0.0 http://0.0.0.0:* https://0.0.0.0:* app://* file://* tauri://* vscode-webview://* vscode-file://*] OLLAMA_SCHED_SPREAD:false ROCR_VISIBLE_DEVICES:0 http_proxy: https_proxy: no_proxy:]"
+time=2025-03-31T18:07:41.863-06:00 level=INFO source=images.go:432 msg="total blobs: 11"
+time=2025-03-31T18:07:41.875-06:00 level=INFO source=images.go:439 msg="total unused blobs removed: 0"
+time=2025-03-31T18:07:41.884-06:00 level=INFO source=routes.go:1277 msg="Listening on 127.0.0.1:11434 (version 0.5.13)"
+time=2025-03-31T18:07:41.885-06:00 level=DEBUG source=sched.go:106 msg="starting llm scheduler"
+time=2025-03-31T18:07:41.927-06:00 level=INFO source=gpu.go:217 msg="looking for compatible GPUs"
+time=2025-03-31T18:07:41.941-06:00 level=DEBUG source=gpu.go:98 msg="searching for GPU discovery libraries for NVIDIA"
+time=2025-03-31T18:07:41.941-06:00 level=DEBUG source=gpu.go:501 msg="Searching for GPU library" name=libcuda.so*
+time=2025-03-31T18:07:41.941-06:00 level=DEBUG source=gpu.go:525 msg="gpu library search" globs="[/home/rmorain2/.local/ollama/lib/ollama/libcuda.so* /home/rmorain2/git/LLMEXICA/libcuda.so* /usr/local/cuda*/targets/*/lib/libcuda.so* /usr/lib/*-linux-gnu/nvidia/current/libcuda.so* /usr/lib/*-linux-gnu/libcuda.so* /usr/lib/wsl/lib/libcuda.so* /usr/lib/wsl/drivers/*/libcuda.so* /opt/cuda/lib*/libcuda.so* /usr/local/cuda/lib*/libcuda.so* /usr/lib*/libcuda.so* /usr/local/lib*/libcuda.so*]"
+time=2025-03-31T18:07:41.964-06:00 level=DEBUG source=gpu.go:558 msg="discovered GPU libraries" paths=[/usr/lib64/libcuda.so.570.86.15]
+initializing /usr/lib64/libcuda.so.570.86.15
+dlsym: cuInit - 0x7f3df3e76e00
+dlsym: cuDriverGetVersion - 0x7f3df3e76e20
+dlsym: cuDeviceGetCount - 0x7f3df3e76e60
+dlsym: cuDeviceGet - 0x7f3df3e76e40
+dlsym: cuDeviceGetAttribute - 0x7f3df3e76f40
+dlsym: cuDeviceGetUuid - 0x7f3df3e76ea0
+dlsym: cuDeviceGetName - 0x7f3df3e76e80
+dlsym: cuCtxCreate_v3 - 0x7f3df3e77120
+dlsym: cuMemGetInfo_v2 - 0x7f3df3e778a0
+dlsym: cuCtxDestroy - 0x7f3df3ed59f0
+calling cuInit
+calling cuDriverGetVersion
+raw version 0x2f30
+CUDA driver version: 12.8
+calling cuDeviceGetCount
+device count 1
+time=2025-03-31T18:07:41.988-06:00 level=DEBUG source=gpu.go:125 msg="detected GPUs" count=1 library=/usr/lib64/libcuda.so.570.86.15
+[GPU-0fb27682-19e8-d9fe-a7a8-30c3c2c412ca] CUDA totalMem 16269 mb
+[GPU-0fb27682-19e8-d9fe-a7a8-30c3c2c412ca] CUDA freeMem 16013 mb
+[GPU-0fb27682-19e8-d9fe-a7a8-30c3c2c412ca] Compute Capability 6.0
+time=2025-03-31T18:07:42.187-06:00 level=DEBUG source=amd_linux.go:419 msg="amdgpu driver not detected /sys/module/amdgpu"
+releasing cuda driver library
+time=2025-03-31T18:07:42.188-06:00 level=INFO source=types.go:130 msg="inference compute" id=GPU-0fb27682-19e8-d9fe-a7a8-30c3c2c412ca library=cuda variant=v12 compute=6.0 driver=12.8 name="Tesla P100-PCIE-16GB" total="15.9 GiB" available="15.6 GiB"
+[GIN] 2025/03/31 - 18:07:51 | 200 |      85.857µs |       127.0.0.1 | HEAD     "/"
+[GIN] 2025/03/31 - 18:07:51 | 200 |   132.11143ms |       127.0.0.1 | POST     "/api/show"
+time=2025-03-31T18:07:51.274-06:00 level=DEBUG source=gpu.go:391 msg="updating system memory data" before.total="125.7 GiB" before.free="122.2 GiB" before.free_swap="8.0 GiB" now.total="125.7 GiB" now.free="122.2 GiB" now.free_swap="8.0 GiB"
+initializing /usr/lib64/libcuda.so.570.86.15
+dlsym: cuInit - 0x7f3df3e76e00
+dlsym: cuDriverGetVersion - 0x7f3df3e76e20
+dlsym: cuDeviceGetCount - 0x7f3df3e76e60
+dlsym: cuDeviceGet - 0x7f3df3e76e40
+dlsym: cuDeviceGetAttribute - 0x7f3df3e76f40
+dlsym: cuDeviceGetUuid - 0x7f3df3e76ea0
+dlsym: cuDeviceGetName - 0x7f3df3e76e80
+dlsym: cuCtxCreate_v3 - 0x7f3df3e77120
+dlsym: cuMemGetInfo_v2 - 0x7f3df3e778a0
+dlsym: cuCtxDestroy - 0x7f3df3ed59f0
+calling cuInit
+calling cuDriverGetVersion
+raw version 0x2f30
+CUDA driver version: 12.8
+calling cuDeviceGetCount
+device count 1
+[?2026h[?25l[1G⠙ [K[?25h[?2026l[?2026h[?25l[1G⠙ [K[?25h[?2026ltime=2025-03-31T18:07:51.468-06:00 level=DEBUG source=gpu.go:441 msg="updating cuda memory data" gpu=GPU-0fb27682-19e8-d9fe-a7a8-30c3c2c412ca name="Tesla P100-PCIE-16GB" overhead="0 B" before.total="15.9 GiB" before.free="15.6 GiB" now.total="15.9 GiB" now.free="15.6 GiB" now.used="256.1 MiB"
+releasing cuda driver library
+time=2025-03-31T18:07:51.468-06:00 level=DEBUG source=sched.go:182 msg="updating default concurrency" OLLAMA_MAX_LOADED_MODELS=3 gpu_count=1
+[?2026h[?25l[1G⠸ [K[?25h[?2026ltime=2025-03-31T18:07:51.517-06:00 level=DEBUG source=sched.go:225 msg="loading first model" model=/home/rmorain2/.ollama_models/blobs/sha256-aabd4debf0c8f08881923f2c25fc0fdeed24435271c2b3e92c4af36704040dbc
+time=2025-03-31T18:07:51.517-06:00 level=DEBUG source=memory.go:108 msg=evaluating library=cuda gpu_count=1 available="[15.6 GiB]"
+time=2025-03-31T18:07:51.517-06:00 level=WARN source=ggml.go:136 msg="key not found" key=qwen2.attention.key_length default=128
+time=2025-03-31T18:07:51.518-06:00 level=WARN source=ggml.go:136 msg="key not found" key=qwen2.attention.value_length default=128
+time=2025-03-31T18:07:51.518-06:00 level=INFO source=sched.go:715 msg="new model will fit in available VRAM in single GPU, loading" model=/home/rmorain2/.ollama_models/blobs/sha256-aabd4debf0c8f08881923f2c25fc0fdeed24435271c2b3e92c4af36704040dbc gpu=GPU-0fb27682-19e8-d9fe-a7a8-30c3c2c412ca parallel=4 available=16790978560 required="1.9 GiB"
+time=2025-03-31T18:07:51.518-06:00 level=DEBUG source=gpu.go:391 msg="updating system memory data" before.total="125.7 GiB" before.free="122.2 GiB" before.free_swap="8.0 GiB" now.total="125.7 GiB" now.free="122.2 GiB" now.free_swap="8.0 GiB"
+initializing /usr/lib64/libcuda.so.570.86.15
+dlsym: cuInit - 0x7f3df3e76e00
+dlsym: cuDriverGetVersion - 0x7f3df3e76e20
+dlsym: cuDeviceGetCount - 0x7f3df3e76e60
+dlsym: cuDeviceGet - 0x7f3df3e76e40
+dlsym: cuDeviceGetAttribute - 0x7f3df3e76f40
+dlsym: cuDeviceGetUuid - 0x7f3df3e76ea0
+dlsym: cuDeviceGetName - 0x7f3df3e76e80
+dlsym: cuCtxCreate_v3 - 0x7f3df3e77120
+dlsym: cuMemGetInfo_v2 - 0x7f3df3e778a0
+dlsym: cuCtxDestroy - 0x7f3df3ed59f0
+calling cuInit
+calling cuDriverGetVersion
+raw version 0x2f30
+CUDA driver version: 12.8
+calling cuDeviceGetCount
+device count 1
+[?2026h[?25l[1G⠸ [K[?25h[?2026ltime=2025-03-31T18:07:51.709-06:00 level=DEBUG source=gpu.go:441 msg="updating cuda memory data" gpu=GPU-0fb27682-19e8-d9fe-a7a8-30c3c2c412ca name="Tesla P100-PCIE-16GB" overhead="0 B" before.total="15.9 GiB" before.free="15.6 GiB" now.total="15.9 GiB" now.free="15.6 GiB" now.used="256.1 MiB"
+releasing cuda driver library
+time=2025-03-31T18:07:51.709-06:00 level=INFO source=server.go:97 msg="system memory" total="125.7 GiB" free="122.2 GiB" free_swap="8.0 GiB"
+time=2025-03-31T18:07:51.709-06:00 level=DEBUG source=memory.go:108 msg=evaluating library=cuda gpu_count=1 available="[15.6 GiB]"
+time=2025-03-31T18:07:51.709-06:00 level=WARN source=ggml.go:136 msg="key not found" key=qwen2.attention.key_length default=128
+time=2025-03-31T18:07:51.709-06:00 level=WARN source=ggml.go:136 msg="key not found" key=qwen2.attention.value_length default=128
+time=2025-03-31T18:07:51.710-06:00 level=INFO source=server.go:130 msg=offload library=cuda layers.requested=-1 layers.model=29 layers.offload=29 layers.split="" memory.available="[15.6 GiB]" memory.gpu_overhead="0 B" memory.required.full="1.9 GiB" memory.required.partial="1.9 GiB" memory.required.kv="224.0 MiB" memory.required.allocations="[1.9 GiB]" memory.weights.total="976.1 MiB" memory.weights.repeating="793.5 MiB" memory.weights.nonrepeating="182.6 MiB" memory.graph.full="299.8 MiB" memory.graph.partial="482.3 MiB"
+time=2025-03-31T18:07:51.710-06:00 level=DEBUG source=server.go:259 msg="compatible gpu libraries" compatible="[cuda_v12 cuda_v11]"
+time=2025-03-31T18:07:51.711-06:00 level=DEBUG source=server.go:302 msg="adding gpu library" path=/home/rmorain2/.local/ollama/lib/ollama/cuda_v12
+time=2025-03-31T18:07:51.711-06:00 level=DEBUG source=server.go:310 msg="adding gpu dependency paths" paths=[/home/rmorain2/.local/ollama/lib/ollama/cuda_v12]
+time=2025-03-31T18:07:51.711-06:00 level=INFO source=server.go:380 msg="starting llama server" cmd="/home/rmorain2/.local/ollama/bin/ollama runner --model /home/rmorain2/.ollama_models/blobs/sha256-aabd4debf0c8f08881923f2c25fc0fdeed24435271c2b3e92c4af36704040dbc --ctx-size 8192 --batch-size 512 --n-gpu-layers 29 --verbose --threads 28 --parallel 4 --port 36525"
+time=2025-03-31T18:07:51.711-06:00 level=DEBUG source=server.go:398 msg=subprocess environment="[ROCR_VISIBLE_DEVICES=0 CUDA_VISIBLE_DEVICES=GPU-0fb27682-19e8-d9fe-a7a8-30c3c2c412ca GPU_DEVICE_ORDINAL=0 PATH=/home/rmorain2/.local/ollama/bin:/home/rmorain2/.conda/envs/llmexica/bin:/apps/miniconda3/latest/condabin:/home/rmorain2/local/bin:/apps/slurm/latest/bin:/home/rmorain2/.vscode-server/cli/servers/Stable-ddc367ed5c8936efe395cffeec279b04ffd7db78/server/bin/remote-cli:/apps/slurm/latest/bin:/apps/lmod/lmod/libexec:/usr/share/Modules/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/rmorain2/bin:/opt/dell/srvadmin/bin:/home/rmorain2/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand:/home/rmorain2/.vscode-server/extensions/ms-python.debugpy-2025.4.1-linux-x64/bundled/scripts/noConfigScripts LD_LIBRARY_PATH=/home/rmorain2/.local/ollama/lib/ollama/cuda_v12:/home/rmorain2/.local/ollama/lib/ollama/cuda_v12:/home/rmorain2/.local/ollama/lib/ollama]"
+[?2026h[?25l[1G⠴ [K[?25h[?2026ltime=2025-03-31T18:07:51.716-06:00 level=INFO source=sched.go:450 msg="loaded runners" count=1
+time=2025-03-31T18:07:51.716-06:00 level=INFO source=server.go:557 msg="waiting for llama runner to start responding"
+time=2025-03-31T18:07:51.717-06:00 level=INFO source=server.go:591 msg="waiting for server to become available" status="llm server error"
+time=2025-03-31T18:07:51.770-06:00 level=INFO source=runner.go:931 msg="starting go runner"
+time=2025-03-31T18:07:51.770-06:00 level=DEBUG source=ggml.go:84 msg="ggml backend load all from path" path=/home/rmorain2/.local/ollama/lib/ollama/cuda_v12
+[?2026h[?25l[1G⠴ [K[?25h[?2026l[?2026h[?25l[1G⠦ [K[?25h[?2026l[?2026h[?25l[1G⠧ [K[?25h[?2026l[?2026h[?25l[1G⠇ [K[?25h[?2026l[?2026h[?25l[1G⠋ [K[?25h[?2026l[?2026h[?25l[1G⠋ [K[?25h[?2026l[?2026h[?25l[1G⠹ [K[?25h[?2026l[?2026h[?25l[1G⠹ [K[?25h[?2026l[?2026h[?25l[1G⠸ [K[?25h[?2026l[?2026h[?25l[1G⠼ [K[?25h[?2026l[?2026h[?25l[1G⠴ [K[?25h[?2026l[?2026h[?25l[1G⠦ [K[?25h[?2026l[?2026h[?25l[1G⠧ [K[?25h[?2026l[?2026h[?25l[1G⠏ [K[?25h[?2026l[?2026h[?25l[1G⠏ [K[?25h[?2026l[?2026h[?25l[1G⠙ [K[?25h[?2026l[?2026h[?25l[1G⠙ [K[?25h[?2026l[?2026h[?25l[1G⠸ [K[?25h[?2026l[?2026h[?25l[1G⠼ [K[?25h[?2026l[?2026h[?25l[1G⠴ [K[?25h[?2026l[?2026h[?25l[1G⠦ [K[?25h[?2026l[?2026h[?25l[1G⠧ [K[?25h[?2026l[?2026h[?25l[1G⠧ [K[?25h[?2026l[?2026h[?25l[1G⠇ [K[?25h[?2026lggml_cuda_init: GGML_CUDA_FORCE_MMQ:    no
+ggml_cuda_init: GGML_CUDA_FORCE_CUBLAS: no
+ggml_cuda_init: found 1 CUDA devices:
+  Device 0: Tesla P100-PCIE-16GB, compute capability 6.0, VMM: yes
+load_backend: loaded CUDA backend from /home/rmorain2/.local/ollama/lib/ollama/cuda_v12/libggml-cuda.so
+time=2025-03-31T18:07:54.141-06:00 level=DEBUG source=ggml.go:84 msg="ggml backend load all from path" path=/home/rmorain2/.local/ollama/lib/ollama
+ggml_backend_load_best: /home/rmorain2/.local/ollama/lib/ollama/libggml-cpu-alderlake.so score: 0
+ggml_backend_load_best: /home/rmorain2/.local/ollama/lib/ollama/libggml-cpu-haswell.so score: 55
+ggml_backend_load_best: /home/rmorain2/.local/ollama/lib/ollama/libggml-cpu-icelake.so score: 0
+ggml_backend_load_best: /home/rmorain2/.local/ollama/lib/ollama/libggml-cpu-sandybridge.so score: 20
+ggml_backend_load_best: /home/rmorain2/.local/ollama/lib/ollama/libggml-cpu-skylakex.so score: 0
+[?2026h[?25l[1G⠏ [K[?25h[?2026lload_backend: loaded CPU backend from /home/rmorain2/.local/ollama/lib/ollama/libggml-cpu-haswell.so
+time=2025-03-31T18:07:54.232-06:00 level=INFO source=runner.go:934 msg=system info="CPU : LLAMAFILE = 1 | CUDA : ARCHS = 500,600,610,700,750,800,860,870,890,900,1200 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | LLAMAFILE = 1 | cgo(gcc)" threads=28
+time=2025-03-31T18:07:54.232-06:00 level=INFO source=runner.go:992 msg="Server listening on 127.0.0.1:36525"
+[?2026h[?25l[1G⠙ [K[?25h[?2026l[?2026h[?25l[1G⠙ [K[?25h[?2026ltime=2025-03-31T18:07:54.475-06:00 level=INFO source=server.go:591 msg="waiting for server to become available" status="llm server loading model"
+llama_model_load_from_file_impl: using device CUDA0 (Tesla P100-PCIE-16GB) - 16013 MiB free
+[?2026h[?25l[1G⠹ [K[?25h[?2026lllama_model_loader: loaded meta data with 26 key-value pairs and 339 tensors from /home/rmorain2/.ollama_models/blobs/sha256-aabd4debf0c8f08881923f2c25fc0fdeed24435271c2b3e92c4af36704040dbc (version GGUF V3 (latest))
+llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+llama_model_loader: - kv   0:                       general.architecture str              = qwen2
+llama_model_loader: - kv   1:                               general.type str              = model
+llama_model_loader: - kv   2:                               general.name str              = DeepSeek R1 Distill Qwen 1.5B
+llama_model_loader: - kv   3:                           general.basename str              = DeepSeek-R1-Distill-Qwen
+llama_model_loader: - kv   4:                         general.size_label str              = 1.5B
+llama_model_loader: - kv   5:                          qwen2.block_count u32              = 28
+llama_model_loader: - kv   6:                       qwen2.context_length u32              = 131072
+llama_model_loader: - kv   7:                     qwen2.embedding_length u32              = 1536
+llama_model_loader: - kv   8:                  qwen2.feed_forward_length u32              = 8960
+llama_model_loader: - kv   9:                 qwen2.attention.head_count u32              = 12
+llama_model_loader: - kv  10:              qwen2.attention.head_count_kv u32              = 2
+llama_model_loader: - kv  11:                       qwen2.rope.freq_base f32              = 10000.000000
+llama_model_loader: - kv  12:     qwen2.attention.layer_norm_rms_epsilon f32              = 0.000001
+llama_model_loader: - kv  13:                          general.file_type u32              = 15
+llama_model_loader: - kv  14:                       tokenizer.ggml.model str              = gpt2
+llama_model_loader: - kv  15:                         tokenizer.ggml.pre str              = qwen2
+llama_model_loader: - kv  16:                      tokenizer.ggml.tokens arr[str,151936]  = ["!", "\"", "#", "$", "%", "&", "'", ...
+llama_model_loader: - kv  17:                  tokenizer.ggml.token_type arr[i32,151936]  = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+llama_model_loader: - kv  18:                      tokenizer.ggml.merges arr[str,151387]  = ["Ġ Ġ", "ĠĠ ĠĠ", "i n", "Ġ t",...
+llama_model_loader: - kv  19:                tokenizer.ggml.bos_token_id u32              = 151646
+llama_model_loader: - kv  20:                tokenizer.ggml.eos_token_id u32              = 151643
+llama_model_loader: - kv  21:            tokenizer.ggml.padding_token_id u32              = 151643
+llama_model_loader: - kv  22:               tokenizer.ggml.add_bos_token bool             = true
+llama_model_loader: - kv  23:               tokenizer.ggml.add_eos_token bool             = false
+llama_model_loader: - kv  24:                    tokenizer.chat_template str              = {% if not add_generation_prompt is de...
+llama_model_loader: - kv  25:               general.quantization_version u32              = 2
+llama_model_loader: - type  f32:  141 tensors
+llama_model_loader: - type q4_K:  169 tensors
+llama_model_loader: - type q6_K:   29 tensors
+print_info: file format = GGUF V3 (latest)
+print_info: file type   = Q4_K - Medium
+print_info: file size   = 1.04 GiB (5.00 BPW) 
+[?2026h[?25l[1G⠼ [K[?25h[?2026linit_tokenizer: initializing tokenizer for type 2
+load: control token: 151660 '<|fim_middle|>' is not marked as EOG
+load: control token: 151659 '<|fim_prefix|>' is not marked as EOG
+load: control token: 151653 '<|vision_end|>' is not marked as EOG
+load: control token: 151645 '<｜Assistant｜>' is not marked as EOG
+load: control token: 151644 '<｜User｜>' is not marked as EOG
+load: control token: 151655 '<|image_pad|>' is not marked as EOG
+load: control token: 151651 '<|quad_end|>' is not marked as EOG
+load: control token: 151646 '<｜begin▁of▁sentence｜>' is not marked as EOG
+load: control token: 151643 '<｜end▁of▁sentence｜>' is not marked as EOG
+load: control token: 151652 '<|vision_start|>' is not marked as EOG
+load: control token: 151647 '<|EOT|>' is not marked as EOG
+[?2026h[?25l[1G⠴ [K[?25h[?2026lload: control token: 151654 '<|vision_pad|>' is not marked as EOG
+load: control token: 151656 '<|video_pad|>' is not marked as EOG
+load: control token: 151661 '<|fim_suffix|>' is not marked as EOG
+load: control token: 151650 '<|quad_start|>' is not marked as EOG
+load: special_eos_id is not in special_eog_ids - the tokenizer config may be incorrect
+load: special tokens cache size = 22
+load: token to piece cache size = 0.9310 MB
+print_info: arch             = qwen2
+print_info: vocab_only       = 0
+print_info: n_ctx_train      = 131072
+print_info: n_embd           = 1536
+print_info: n_layer          = 28
+print_info: n_head           = 12
+print_info: n_head_kv        = 2
+print_info: n_rot            = 128
+print_info: n_swa            = 0
+print_info: n_embd_head_k    = 128
+print_info: n_embd_head_v    = 128
+print_info: n_gqa            = 6
+print_info: n_embd_k_gqa     = 256
+print_info: n_embd_v_gqa     = 256
+print_info: f_norm_eps       = 0.0e+00
+print_info: f_norm_rms_eps   = 1.0e-06
+print_info: f_clamp_kqv      = 0.0e+00
+print_info: f_max_alibi_bias = 0.0e+00
+print_info: f_logit_scale    = 0.0e+00
+print_info: n_ff             = 8960
+print_info: n_expert         = 0
+print_info: n_expert_used    = 0
+print_info: causal attn      = 1
+print_info: pooling type     = 0
+print_info: rope type        = 2
+print_info: rope scaling     = linear
+print_info: freq_base_train  = 10000.0
+print_info: freq_scale_train = 1
+print_info: n_ctx_orig_yarn  = 131072
+print_info: rope_finetuned   = unknown
+print_info: ssm_d_conv       = 0
+print_info: ssm_d_inner      = 0
+print_info: ssm_d_state      = 0
+print_info: ssm_dt_rank      = 0
+print_info: ssm_dt_b_c_rms   = 0
+print_info: model type       = 1.5B
+print_info: model params     = 1.78 B
+print_info: general.name     = DeepSeek R1 Distill Qwen 1.5B
+print_info: vocab type       = BPE
+print_info: n_vocab          = 151936
+print_info: n_merges         = 151387
+print_info: BOS token        = 151646 '<｜begin▁of▁sentence｜>'
+print_info: EOS token        = 151643 '<｜end▁of▁sentence｜>'
+print_info: EOT token        = 151643 '<｜end▁of▁sentence｜>'
+print_info: PAD token        = 151643 '<｜end▁of▁sentence｜>'
+print_info: LF token         = 198 'Ċ'
+print_info: FIM PRE token    = 151659 '<|fim_prefix|>'
+print_info: FIM SUF token    = 151661 '<|fim_suffix|>'
+print_info: FIM MID token    = 151660 '<|fim_middle|>'
+print_info: FIM PAD token    = 151662 '<|fim_pad|>'
+print_info: FIM REP token    = 151663 '<|repo_name|>'
+print_info: FIM SEP token    = 151664 '<|file_sep|>'
+print_info: EOG token        = 151643 '<｜end▁of▁sentence｜>'
+print_info: EOG token        = 151662 '<|fim_pad|>'
+print_info: EOG token        = 151663 '<|repo_name|>'
+print_info: EOG token        = 151664 '<|file_sep|>'
+print_info: max token length = 256
+load_tensors: loading model tensors, this can take a while... (mmap = true)
+load_tensors: layer   0 assigned to device CUDA0
+load_tensors: layer   1 assigned to device CUDA0
+load_tensors: layer   2 assigned to device CUDA0
+load_tensors: layer   3 assigned to device CUDA0
+load_tensors: layer   4 assigned to device CUDA0
+load_tensors: layer   5 assigned to device CUDA0
+load_tensors: layer   6 assigned to device CUDA0
+load_tensors: layer   7 assigned to device CUDA0
+load_tensors: layer   8 assigned to device CUDA0
+load_tensors: layer   9 assigned to device CUDA0
+load_tensors: layer  10 assigned to device CUDA0
+load_tensors: layer  11 assigned to device CUDA0
+load_tensors: layer  12 assigned to device CUDA0
+load_tensors: layer  13 assigned to device CUDA0
+load_tensors: layer  14 assigned to device CUDA0
+load_tensors: layer  15 assigned to device CUDA0
+load_tensors: layer  16 assigned to device CUDA0
+load_tensors: layer  17 assigned to device CUDA0
+load_tensors: layer  18 assigned to device CUDA0
+load_tensors: layer  19 assigned to device CUDA0
+load_tensors: layer  20 assigned to device CUDA0
+load_tensors: layer  21 assigned to device CUDA0
+load_tensors: layer  22 assigned to device CUDA0
+load_tensors: layer  23 assigned to device CUDA0
+load_tensors: layer  24 assigned to device CUDA0
+load_tensors: layer  25 assigned to device CUDA0
+load_tensors: layer  26 assigned to device CUDA0
+load_tensors: layer  27 assigned to device CUDA0
+load_tensors: layer  28 assigned to device CUDA0
+load_tensors: tensor 'token_embd.weight' (q4_K) (and 0 others) cannot be used with preferred buffer type CUDA_Host, using CPU instead
+[?2026h[?25l[1G⠴ [K[?25h[?2026l[?2026h[?25l[1G⠧ [K[?25h[?2026l[?2026h[?25l[1G⠧ [K[?25h[?2026l[?2026h[?25l[1G⠇ [K[?25h[?2026l[?2026h[?25l[1G⠋ [K[?25h[?2026l[?2026h[?25l[1G⠋ [K[?25h[?2026l[?2026h[?25l[1G⠹ [K[?25h[?2026l[?2026h[?25l[1G⠹ [K[?25h[?2026l[?2026h[?25l[1G⠸ [K[?25h[?2026l[?2026h[?25l[1G⠼ [K[?25h[?2026l[?2026h[?25l[1G⠴ [K[?25h[?2026l[?2026h[?25l[1G⠦ [K[?25h[?2026l[?2026h[?25l[1G⠧ [K[?25h[?2026l[?2026h[?25l[1G⠇ [K[?25h[?2026l[?2026h[?25l[1G⠏ [K[?25h[?2026l[?2026h[?25l[1G⠋ [K[?25h[?2026l[?2026h[?25l[1G⠙ [K[?25h[?2026l[?2026h[?25l[1G⠹ [K[?25h[?2026l[?2026h[?25l[1G⠸ [K[?25h[?2026l[?2026h[?25l[1G⠼ [K[?25h[?2026l[?2026h[?25l[1G⠴ [K[?25h[?2026l[?2026h[?25l[1G⠦ [K[?25h[?2026l[?2026h[?25l[1G⠧ [K[?25h[?2026l[?2026h[?25l[1G⠇ [K[?25h[?2026l[?2026h[?25l[1G⠏ [K[?25h[?2026l[?2026h[?25l[1G⠋ [K[?25h[?2026lload_tensors: offloading 28 repeating layers to GPU
+load_tensors: offloading output layer to GPU
+load_tensors: offloaded 29/29 layers to GPU
+load_tensors:        CUDA0 model buffer size =   934.70 MiB
+load_tensors:   CPU_Mapped model buffer size =   125.19 MiB
+[?2026h[?25l[1G⠹ [K[?25h[?2026ltime=2025-03-31T18:07:57.486-06:00 level=DEBUG source=server.go:602 msg="model load progress 0.83"
+[?2026h[?25l[1G⠹ [K[?25h[?2026lllama_init_from_model: n_seq_max     = 4
+llama_init_from_model: n_ctx         = 8192
+llama_init_from_model: n_ctx_per_seq = 2048
+llama_init_from_model: n_batch       = 2048
+llama_init_from_model: n_ubatch      = 512
+llama_init_from_model: flash_attn    = 0
+llama_init_from_model: freq_base     = 10000.0
+llama_init_from_model: freq_scale    = 1
+llama_init_from_model: n_ctx_per_seq (2048) < n_ctx_train (131072) -- the full capacity of the model will not be utilized
+llama_kv_cache_init: kv_size = 8192, offload = 1, type_k = 'f16', type_v = 'f16', n_layer = 28, can_shift = 1
+llama_kv_cache_init: layer 0: n_embd_k_gqa = 256, n_embd_v_gqa = 256
+llama_kv_cache_init: layer 1: n_embd_k_gqa = 256, n_embd_v_gqa = 256
+llama_kv_cache_init: layer 2: n_embd_k_gqa = 256, n_embd_v_gqa = 256
+llama_kv_cache_init: layer 3: n_embd_k_gqa = 256, n_embd_v_gqa = 256
+llama_kv_cache_init: layer 4: n_embd_k_gqa = 256, n_embd_v_gqa = 256
+llama_kv_cache_init: layer 5: n_embd_k_gqa = 256, n_embd_v_gqa = 256
+llama_kv_cache_init: layer 6: n_embd_k_gqa = 256, n_embd_v_gqa = 256
+llama_kv_cache_init: layer 7: n_embd_k_gqa = 256, n_embd_v_gqa = 256
+llama_kv_cache_init: layer 8: n_embd_k_gqa = 256, n_embd_v_gqa = 256
+llama_kv_cache_init: layer 9: n_embd_k_gqa = 256, n_embd_v_gqa = 256
+llama_kv_cache_init: layer 10: n_embd_k_gqa = 256, n_embd_v_gqa = 256
+llama_kv_cache_init: layer 11: n_embd_k_gqa = 256, n_embd_v_gqa = 256
+llama_kv_cache_init: layer 12: n_embd_k_gqa = 256, n_embd_v_gqa = 256
+llama_kv_cache_init: layer 13: n_embd_k_gqa = 256, n_embd_v_gqa = 256
+llama_kv_cache_init: layer 14: n_embd_k_gqa = 256, n_embd_v_gqa = 256
+llama_kv_cache_init: layer 15: n_embd_k_gqa = 256, n_embd_v_gqa = 256
+llama_kv_cache_init: layer 16: n_embd_k_gqa = 256, n_embd_v_gqa = 256
+llama_kv_cache_init: layer 17: n_embd_k_gqa = 256, n_embd_v_gqa = 256
+llama_kv_cache_init: layer 18: n_embd_k_gqa = 256, n_embd_v_gqa = 256
+llama_kv_cache_init: layer 19: n_embd_k_gqa = 256, n_embd_v_gqa = 256
+llama_kv_cache_init: layer 20: n_embd_k_gqa = 256, n_embd_v_gqa = 256
+llama_kv_cache_init: layer 21: n_embd_k_gqa = 256, n_embd_v_gqa = 256
+llama_kv_cache_init: layer 22: n_embd_k_gqa = 256, n_embd_v_gqa = 256
+llama_kv_cache_init: layer 23: n_embd_k_gqa = 256, n_embd_v_gqa = 256
+llama_kv_cache_init: layer 24: n_embd_k_gqa = 256, n_embd_v_gqa = 256
+llama_kv_cache_init: layer 25: n_embd_k_gqa = 256, n_embd_v_gqa = 256
+llama_kv_cache_init: layer 26: n_embd_k_gqa = 256, n_embd_v_gqa = 256
+llama_kv_cache_init: layer 27: n_embd_k_gqa = 256, n_embd_v_gqa = 256
+llama_kv_cache_init:      CUDA0 KV buffer size =   224.00 MiB
+llama_init_from_model: KV self size  =  224.00 MiB, K (f16):  112.00 MiB, V (f16):  112.00 MiB
+llama_init_from_model:  CUDA_Host  output buffer size =     2.34 MiB
+llama_init_from_model:      CUDA0 compute buffer size =   299.75 MiB
+llama_init_from_model:  CUDA_Host compute buffer size =    19.01 MiB
+llama_init_from_model: graph nodes  = 986
+llama_init_from_model: graph splits = 2
+[?2026h[?25l[1G⠸ [K[?25h[?2026l[?2026h[?25l[1G⠼ [K[?25h[?2026ltime=2025-03-31T18:07:57.737-06:00 level=INFO source=server.go:596 msg="llama runner started in 6.02 seconds"
+time=2025-03-31T18:07:57.737-06:00 level=DEBUG source=sched.go:463 msg="finished setting up runner" model=/home/rmorain2/.ollama_models/blobs/sha256-aabd4debf0c8f08881923f2c25fc0fdeed24435271c2b3e92c4af36704040dbc
+[GIN] 2025/03/31 - 18:07:57 | 200 |  6.524484731s |       127.0.0.1 | POST     "/api/generate"
+time=2025-03-31T18:07:57.738-06:00 level=DEBUG source=sched.go:467 msg="context for request finished"
+time=2025-03-31T18:07:57.738-06:00 level=DEBUG source=sched.go:340 msg="runner with non-zero duration has gone idle, adding timer" modelPath=/home/rmorain2/.ollama_models/blobs/sha256-aabd4debf0c8f08881923f2c25fc0fdeed24435271c2b3e92c4af36704040dbc duration=5m0s
+time=2025-03-31T18:07:57.738-06:00 level=DEBUG source=sched.go:358 msg="after processing request finished event" modelPath=/home/rmorain2/.ollama_models/blobs/sha256-aabd4debf0c8f08881923f2c25fc0fdeed24435271c2b3e92c4af36704040dbc refCount=0
+[?25l[?2026h[?25l[1G[K[?25h[?2026l[2K[1G[?25h[?25l[?25htime=2025-03-31T18:08:01.618-06:00 level=DEBUG source=sched.go:576 msg="evaluating already loaded" model=/home/rmorain2/.ollama_models/blobs/sha256-aabd4debf0c8f08881923f2c25fc0fdeed24435271c2b3e92c4af36704040dbc
+time=2025-03-31T18:08:01.618-06:00 level=DEBUG source=routes.go:1501 msg="chat request" images=0 prompt="<｜User｜>Does the sun rise in the west? Just answer yes or no.<｜Assistant｜>"
+time=2025-03-31T18:08:01.622-06:00 level=DEBUG source=cache.go:104 msg="loading cache slot" id=0 cache=0 prompt=17 used=0 remaining=17
+[GIN] 2025/03/31 - 18:08:09 | 200 |  7.736620063s |       127.0.0.1 | POST     "/api/chat"
+time=2025-03-31T18:08:09.267-06:00 level=DEBUG source=sched.go:408 msg="context for request finished"
+time=2025-03-31T18:08:09.267-06:00 level=DEBUG source=sched.go:340 msg="runner with non-zero duration has gone idle, adding timer" modelPath=/home/rmorain2/.ollama_models/blobs/sha256-aabd4debf0c8f08881923f2c25fc0fdeed24435271c2b3e92c4af36704040dbc duration=5m0s
+time=2025-03-31T18:08:09.267-06:00 level=DEBUG source=sched.go:358 msg="after processing request finished event" modelPath=/home/rmorain2/.ollama_models/blobs/sha256-aabd4debf0c8f08881923f2c25fc0fdeed24435271c2b3e92c4af36704040dbc refCount=0
+OLLAMA MODEL:  deepseek-r1:1.5b
+<think>
+Alright, so I'm trying to figure out whether the sun rises in the west. Hmm, okay. Let me start by recalling what I know about sunrise and the sun's position.
+
+I remember that when the sun is rising over the eastern horizon, it seems like it's coming from the west. That must be because of the way the sky curves. So, if you're on a mountain in the east, the sun will come up towards the west. That makes sense visually.
+
+But wait, I should think about different factors that might affect this. Like, do clouds play a role? Well, clouds often appear to move with the wind, so maybe they change where the sun comes from. But I'm not sure if that's the main reason for the sunrise direction depending on location.
+
+Another thought: myopic vision or some kind of visual distortion could make the sun seem to rise in the opposite direction. Oh, but that seems more about how you're seeing it rather than the actual physical movement of the sun. So maybe that's less likely.
+
+I also recall something about the horizon moving. When you're on a slope, parts of the sky like the west disappear before others come into view. But does that affect how the sunrise direction is perceived? I'm not entirely sure, but it's probably more related to the angle of the slope and the observer's height.
+
+There's also something about the sun being a sphere. Since it has curvature, parts of its surface might appear to shift as seen from different points. But again, does that change where we observe the sunrise? I think it might influence how we see the rising sun, but not necessarily make it seem like it's coming from the opposite direction.
+
+I should consider how light travels. According to Einstein's theory of relativity, photons travel at a constant speed in all directions and aren't affected by gravity or air resistance. So regardless of where you are on Earth, the sun should still rise towards the west if you're on the east side of a mountain.
+
+Wait, but I also remember something about the horizon moving depending on your height. If you're really high up, the sunset might be a different direction than when you're low down. But that's about sunset and sunrise being perceived from the opposite end. Maybe that's why sometimes we see it change as the sun moves.
+
+But going back to the original question, I think the general consensus is that if you are in a position facing a particular direction, the sun will rise towards the west relative to your facing. So yes, I believe the sun does rise in the west.
+</think>
+
+Yes, the sun rises in the west when observed from a location facing east.
+Reading story from file:  stories/jaguar_knight.txt
+Story:  JAGUAR_KNIGHT WAS AN INHABITANT OF THE GREAT TENOCHTITLAN. PRINCESS WAS AN INHABITANT OF THE GREAT TENOCHTITLAN. TLALOC —THE GOD OF THE RAIN— WAS ANGRY AND SENT A STORM. THE HEAVY RAIN DAMAGED THE OLD WOODEN BRIDGE. WHEN JAGUAR_KNIGHT TRIED TO CROSS THE RIVER THE BRIDGE COLLAPSED INJURING BADLY JAGUAR_KNIGHT'S HEAD. PRINCESS KNEW THAT JAGUAR_KNIGHT COULD DIE AND THAT PRINCESS HAD TO DO SOMETHING ABOUT IT. PRINCESS HAD HEARD THAT THE TEPESCOHUITLE WAS AN EFFECTIVE CURATIVE PLANT. SO, PRINCESS PREPARED A PLASMA AND APPLIED IT TO JAGUAR_KNIGHT'S WOUNDS. IT WORKED AND JAGUAR_KNIGHT STARTED TO RECUPERATE! JAGUAR_KNIGHT REALISED THAT PRINCESS'S DETERMINATION HAD SAVED JAGUAR_KNIGHT'S LIFE. DURING THE LAST WAR PRINCESS'S FATHER HUMILIATED ENEMY'S FAMILY. NOW, IT WAS TIME OF REVENGE AND ENEMY KIDNAPPED PRINCESS. THEY WENT TO THE FOREST WHERE ENEMY TIED PRINCESS TO A HUGE ROCK. EXACTLY AT MIDNIGHT ENEMY WOULD CUT PRINCESS UP. ALTHOUGH IT WAS VERY DANGEROUS JAGUAR_KNIGHT DECIDED TO DO SOMETHING IN ORDER TO LIBERATE PRINCESS. FOR SOME MINUTES JAGUAR_KNIGHT PRAYED TO QUETZALCOATL —THE FEATHERED SNAKE, THE GOD BETWEEN THE GODS— AND ASKED FOR WISDOM AND BRAVENESS. NOW JAGUAR_KNIGHT WAS READY TO FIND OUT ITS FATE. PRINCESS WAS REALLY ANGRY FOR WHAT HAD HAPPENED AND AFFRONTED ENEMY. ENEMY'S FRAME OF MIND WAS VERY VOLATILE AND WITHOUT THINKING ABOUT IT ENEMY CHARGED AGAINST PRINCESS. MEANWHILE JAGUAR_KNIGHT DECIDED TO START A SEARCH FOR ENEMY. AFTER HARD WORK AND DIFFICULT MOMENTS JAGUAR_KNIGHT COULD FINALLY FIND ENEMY. JAGUAR_KNIGHT, FULL OF ANGER, TOOK A DAGGER AND ATTACKED ENEMY. JAGUAR_KNIGHT THREW SOME DUST IN ENEMY'S FACE. THEN, USING A DAGGER JAGUAR_KNIGHT PERFORATED ENEMY'S CHEST. IMITATING THE SACRED CEREMONY OF THE SACRIFICE, JAGUAR_KNIGHT TOOK ENEMY'S HEART WITH ONE HAND AND RAISED IT TOWARDS THE SUN AS A SIGN OF RESPECT TO THE GODS. JAGUAR_KNIGHT WALKED TOWARDS PRINCESS. FULL OF ADMIRATION FOR ALL THE BRAVENESS THAT PRINCESS HAD SHOWN IN THOSE HARD MOMENTS JAGUAR_KNIGHT LIBERATED PRINCESS! ALTHOUGH AT THE BEGINNING PRINCESS DID NOT WANT TO ADMIT IT, PRINCESS FELL IN LOVE WITH JAGUAR_KNIGHT. PRINCESS WAS KISSING JAGUAR_KNIGHT WHEN SUDDENLY PRINCESS RECOGNISED JAGUAR_KNIGHT'S TATTOO. IT WAS THE SAME AS THE ONE USED BY THE FRATERNITY WHICH HAD MURDERED PRINCESS'S FATHER SOME MONTHS AGO. AT ONCE ALL THOSE TERRIBLE MEMORIES WERE PRESENT AGAIN. PRINCESS HAD AMBIVALENT THOUGHTS TOWARDS JAGUAR_KNIGHT. ON THE ONE HAND PRINCESS HAD STRONG FEELINGS FOR JAGUAR_KNIGHT BUT ON THE OTHER HAND PRINCESS ABOMINATED WHAT JAGUAR_KNIGHT DID. PRINCESS FELT A DEEPLY ODIUM FOR JAGUAR_KNIGHT. INVOKING HUITZILOPOCHTLI, GOD OF THE DEAD, PRINCESS CUT JAGUAR_KNIGHT'S JUGULAR. THE BLOOD COVERED THE FLOOR. PRINCESS TOOK A DAGGER AND CUT PRINCESS’S THROAT. PRINCESS BLED TO DEATH WHILE TONATIU (THE GOD REPRESENTING THE SUN) DISAPPEARED IN THE HORIZON.
+Traceback (most recent call last):
+  File "/home/rmorain2/git/LLMEXICA/parse_story.py", line 256, in <module>
+    main()
+  File "/home/rmorain2/git/LLMEXICA/parse_story.py", line 81, in main
+    with open("prompts/story_action.txt", "r") as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'prompts/story_action.txt'

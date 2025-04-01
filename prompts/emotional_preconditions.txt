@@ -1,0 +1,23 @@
+For each action, identify or infer the preconditions related to emotional links. A precondition is a requirement that needs to be satisfied in order for a character to perform a specific action. These requirements take the form of either an emotional link or a tension. An emotional link that is a precondition is an emotional link that should exist in order for taking the action to make sense.
+
+
+Each emotional link has a magnitude of an integer value in the range [-3, 3]. In order to take a particular action and satisfy the precondition, a character might need to have a specific type and magnitude of emotional link towards another character before performing an action.
+
+For example, if character `a` attacks character `b`, and the precondition requires an emotional link type of `friendship` and a magnitude of -3 (indicating hatred) from character `a` to character `b`, then character `a` must have an emotional link of type `friendship` of magnitude -3 toward character `b` in order to `attack`. 
+
+Preconditions are optional.
+
+Identify or infer the preconditions that relate to emotional links by following the instructions below. 
+
+Instructions for each action:
+1. Create a new key called `preconditions`.
+2. In the `preconditions` key create an object with a key called `emotional_links`
+3. Assign an array to the `emotional_links` key containing the identified or inferred emotional links.
+	A. If there are no required `emotional_links`, leave the array empty
+4. Each `emotional_link` is an object with keys `type`, `magnitude`, `from`, and `to`
+	A. `type` contains the type of the emotional link as defined previously.
+	B. `magnitude` contains the intensity of the emotional link in the range [-3, 3]
+	C. `from` contains either values ‘a’ or ‘b’ to indicate the character that is the source of the emotional link. ‘a’ refers to the `subject` performing the action and ‘b’ refers to the `object` receiving the action
+	D. `to` contains either values ‘a’ or ‘b’ to indicate the character that is the target of the emotional link. ‘a’ refers to the `subject` performing the action and ‘b’ refers to the `object` receiving the action
+
+Return this new JSON object.
