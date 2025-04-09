@@ -18,9 +18,9 @@ List of Post-Emotional Link = <Post-Emotional Link>, {<List of Post-Emotional Li
 Post-Emotional Link = ‘E’ (<from Character>) <to Character> (<Magnitude of Emotional Link>)<Type of Emotional Link>.
 List of Pos Tension = <Pos Tension>, {<List of Pos Tension>}.
 Pos Tension = ‘T’ <Tension> <to Character> {<from Character> }.
-Type of Tension = {“Ad” : “character_dead”, “Lr” : “life_at_risk”, “Hr” : “health_at_risk”, “Pr” : “prisoner”, “Ce” : “clashing_emotions”, “Lc” : “love_competition”}.
+Type of Tension = {"Ad" : "character_dead", "Lr" : "life_at_risk", "Hr" : "health_at_risk", "Pr" : "prisoner", "Ce" : "clashing_emotions", "Lc" : "love_competition"}.
 Intensity of Emotional Link = ‘-3’/.../’+3’.
-Type of Emotional Link = {1 : “friendship”, 2 : “love”}.
+Type of Emotional Link = {"friendship": 1, "love" : 2}.
 Inline comments = ;some comment.
 ```
 
@@ -44,5 +44,5 @@ E b a +3 1
 T Hn b a
 ```
 
-If there are no preconditions, omit the line containing “PRE”. Ensure that the same information contained in the JSON object is contained in the PAD structure. Ensure that negative numbers have a minus sign (-) before the integer and positive numbers have a plus sign (+) before the integer. Check for proper spacing. For emotional links and tensions, use the string literals “*” and “-” like before in the JSON object to indicate any character or no character.
+If there are no preconditions, omit the line containing "PRE". Ensure that the same information contained in the JSON object is contained in the PAD structure. Ensure that negative numbers have a minus sign (-) before the integer and positive numbers have a plus sign (+) before the integer. Check for proper spacing. For emotional links and tensions, use the string literals "*" and "-" like before in the JSON object to indicate any character or no character.
 Return your result between <PAD></PAD> tags.

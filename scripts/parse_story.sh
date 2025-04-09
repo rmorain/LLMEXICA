@@ -5,7 +5,7 @@
 #SBATCH --time=01:00:00
 #SBATCH --ntasks-per-node=4 
 
-#SBATCH -J "Test parsing story"   # job name
+#SBATCH -J "Parse story"   # job name
 #SBATCH --output=/home/rmorain2/git/LLMEXICA/logs/slurm-%j.out
 export OLLAMA_MODEL=deepseek-r1:671b
 export OLLAMA_DEBUG=1
