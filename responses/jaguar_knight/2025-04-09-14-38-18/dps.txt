@@ -1,0 +1,38 @@
+<think>
+Alright, so I need to convert this JSON structure into something called the Definition of Previous Stories (DPS) format. Let me first understand what DPS is based on the example provided.
+
+From the example, it looks like a story starts with "Sto" followed by a sequence of actions. Each action line has a subject, an action, and sometimes an object. If there's no subject or object, they are just omitted from the line.
+
+Looking at the JSON data provided earlier, I see that each action is in snake_case, like "bridge_collapses", and includes the number of characters involved as well as who is the subject and object (if any). My goal is to map these JSON actions into the DPS format by creating lines where each line represents an action with its subject and object.
+
+First, I need to ensure that the character names match exactly between the JSON and what will be in the DPS. In the JSON, characters like "JAGUAR_KNIGHT", "PRINCESS", and "ENEMY" are mentioned. These should be used as-is in the DPS.
+
+Next, for each action in the JSON array, I need to create a corresponding line in the DPS format. For example, if an action is "bridge_collapses" with no subject or object, it would simply be "bridge_collapses". If there's a subject and an object, like "PRINCESS healed JAGUAR_KNIGHT", then that would translate to "PRINCESS healed JAGUAR_KNIGHT".
+
+I also need to maintain the chronological order of actions as they appear in the JSON. This ensures that the story unfolds correctly in the DPS format.
+
+One thing I need to watch out for is ensuring that actions without subjects or objects are represented correctly by omitting them, not leaving any empty spaces that could be misinterpreted.
+
+After mapping all actions, I'll wrap the entire sequence within <DPS> tags as requested.
+</think>
+
+<DPS>
+Sto
+bridge_collapses -
+character_injured -
+PRINCESS healed JAGUAR_KNIGHT
+ENEMY kidnapped PRINCESS
+ENEMY tied_up PRINCESS
+JAGUAR_KNIGHT prayed -
+JAGUAR_KNIGHT searched_for ENEMY
+JAGUAR_KNIGHT attacked ENEMY
+JAGUAR_KNIGHT threw_dust_in_face ENEMY
+JAGUAR_KNIGHT stabbed ENEMY
+JAGUAR_KNIGHT took_heart_from ENEMY
+JAGUAR_KNIGHT freed PRINCESS
+PRINCESS kissed JAGUAR_KNIGHT
+PRINCESS recognized_tattoo -
+PRINCESS felt_ambivalence -
+PRINCESS cut_jugular JAGUAR_KNIGHT
+PRINCESS cut_throat -
+</DPS>

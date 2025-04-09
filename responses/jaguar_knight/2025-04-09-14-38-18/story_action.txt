@@ -1,0 +1,124 @@
+<think>
+Alright, let's see what the user is asking for here. They want me to act as a narrative analysis expert focusing on emotional links and tensions in a story. The goal is to extract actions from the main characters related to these elements and organize them into a JSON structure.
+
+First, I need to understand the specific types of emotional links: friendship and love. Then, the tensions include things like character death, life at risk, health issues, imprisonment, clashing emotions, and love competition. 
+
+Looking at the story provided, it's about Jaguar_Knight and Princess dealing with various conflicts and emotional shifts. I'll need to go through each event in order.
+
+I'll start by identifying key actions that affect their emotional relationships or build tension. For example, when the bridge collapses, injuring Jaguar_Knight, that's a health risk. Princess's action of healing him builds a positive emotional link, probably friendship turning into love later.
+
+Then, there's the revenge plot where Enemy kidnaps Princess, which introduces life-at-risk and prisoner tensions. Jaguar_Knight decides to rescue her, showing bravery and strengthening their bond.
+
+The twist comes when Princess recognizes Jaguar_Knight's tattoo linked to her father's murder. This creates clashing emotions because she loves him but hates his actions. The subsequent violence leads to both their deaths, which are character_dead postconditions.
+
+I need to structure these actions in chronological order, ensuring each JSON entry includes the number of characters involved and who is subject or object. I'll avoid using character names, so the actions can be reused. Each action should be brief and in snake_case.
+
+Finally, after extracting all relevant actions, I'll map them into the specified JSON format with appropriate keys. Making sure that the n_characters aligns with whether there's a subject and object.
+</think>
+
+```json
+[
+    {
+        "action": "bridge_collapses",
+        "n_characters": 1,
+        "subject": "-",
+        "object": "JAGUAR_KNIGHT"
+    },
+    {
+        "action": "character_injured",
+        "n_characters": 1,
+        "subject": "-",
+        "object": "JAGUAR_KNIGHT"
+    },
+    {
+        "action": "character_healed",
+        "n_characters": 2,
+        "subject": "PRINCESS",
+        "object": "JAGUAR_KNIGHT"
+    },
+    {
+        "action": "character_kidnapped",
+        "n_characters": 2,
+        "subject": "ENEMY",
+        "object": "PRINCESS"
+    },
+    {
+        "action": "character_tied_up",
+        "n_characters": 2,
+        "subject": "ENEMY",
+        "object": "PRINCESS"
+    },
+    {
+        "action": "character_prays",
+        "n_characters": 1,
+        "subject": "JAGUAR_KNIGHT",
+        "object": "-"
+    },
+    {
+        "action": "character_searched_for",
+        "n_characters": 2,
+        "subject": "JAGUAR_KNIGHT",
+        "object": "ENEMY"
+    },
+    {
+        "action": "character_attacked",
+        "n_characters": 2,
+        "subject": "JAGUAR_KNIGHT",
+        "object": "ENEMY"
+    },
+    {
+        "action": "dust_thrown_in_face",
+        "n_characters": 2,
+        "subject": "JAGUAR_KNIGHT",
+        "object": "ENEMY"
+    },
+    {
+        "action": "character_stabbed",
+        "n_characters": 2,
+        "subject": "JAGUAR_KNIGHT",
+        "object": "ENEMY"
+    },
+    {
+        "action": "heart_taken_as_offer",
+        "n_characters": 2,
+        "subject": "JAGUAR_KNIGHT",
+        "object": "ENEMY"
+    },
+    {
+        "action": "character_freed",
+        "n_characters": 2,
+        "subject": "JAGUAR_KNIGHT",
+        "object": "PRINCESS"
+    },
+    {
+        "action": "characters_kiss",
+        "n_characters": 2,
+        "subject": "PRINCESS",
+        "object": "JAGUAR_KNIGHT"
+    },
+    {
+        "action": "tattoo_recognized",
+        "n_characters": 1,
+        "subject": "PRINCESS",
+        "object": "-"
+    },
+    {
+        "action": "character_feels_ambivalence",
+        "n_characters": 1,
+        "subject": "PRINCESS",
+        "object": "-"
+    },
+    {
+        "action": "character_jugular_cut",
+        "n_characters": 2,
+        "subject": "PRINCESS",
+        "object": "JAGUAR_KNIGHT"
+    },
+    {
+        "action": "character_throat_cut",
+        "n_characters": 1,
+        "subject": "PRINCESS",
+        "object": "-"
+    }
+]
+```

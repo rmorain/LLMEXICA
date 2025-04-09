@@ -1,0 +1,376 @@
+[
+    {
+        "action": "tlaloc_sends_storm",
+        "n_characters": 0,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "jaguar_knight_tries_to_cross_bridge",
+        "n_characters": 1,
+        "subject": "jaguar_knight",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "bridge_collapses_injuring_jaguar_knight",
+        "n_characters": 1,
+        "subject": "-",
+        "object": "jaguar_knight",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "princess_knows_jaguar_knight_could_die",
+        "n_characters": 1,
+        "subject": "princess",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": 2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "princess_prepares_curative_plant",
+        "n_characters": 1,
+        "subject": "princess",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": 2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "princess_applies_curative_plant_to_jaguar_knight_wounds",
+        "n_characters": 2,
+        "subject": "princess",
+        "object": "jaguar_knight",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": 2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "jaguar_knight_recuperates",
+        "n_characters": 1,
+        "subject": "jaguar_knight",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "enemy_kidnaps_princess",
+        "n_characters": 2,
+        "subject": "enemy",
+        "object": "princess",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "enemy_ties_princess_to_rock",
+        "n_characters": 2,
+        "subject": "enemy",
+        "object": "princess",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "enemy_plans_to_kill_princess_at_midnight",
+        "n_characters": 1,
+        "subject": "enemy",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "jaguar_knight_decides_to_rescue_princess",
+        "n_characters": 1,
+        "subject": "jaguar_knight",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "love",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "jaguar_knight_prays_to_quetzalcoatl",
+        "n_characters": 1,
+        "subject": "jaguar_knight",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "princess_confronts_enemy",
+        "n_characters": 2,
+        "subject": "princess",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "enemy_attacks_princess",
+        "n_characters": 2,
+        "subject": "enemy",
+        "object": "princess",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "jaguar_knight_searches_for_enemy",
+        "n_characters": 1,
+        "subject": "jaguar_knight",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "love",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "jaguar_knight_finds_enemy",
+        "n_characters": 1,
+        "subject": "jaguar_knight",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "love",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "jaguar_knight_throws_dust_in_enemys_face",
+        "n_characters": 2,
+        "subject": "jaguar_knight",
+        "object": "enemy",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "jaguar_knight_stabs_enemy_with_dagger",
+        "n_characters": 2,
+        "subject": "jaguar_knight",
+        "object": "enemy",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "jaguar_knight_takes_enemys_heart",
+        "n_characters": 1,
+        "subject": "jaguar_knight",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "jaguar_knight_liberates_princess",
+        "n_characters": 2,
+        "subject": "jaguar_knight",
+        "object": "princess",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "love",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "princess_kisses_jaguar_knight",
+        "n_characters": 2,
+        "subject": "princess",
+        "object": "jaguar_knight",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "love",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "princess_recognizes_jaguar_knights_tattoo",
+        "n_characters": 1,
+        "subject": "princess",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "love",
+                    "magnitude": -2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "princess_feels_ambivalent_towards_jaguar_knight",
+        "n_characters": 1,
+        "subject": "princess",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "love",
+                    "magnitude": -2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "princess_kills_jaguar_knight",
+        "n_characters": 2,
+        "subject": "princess",
+        "object": "jaguar_knight",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "love",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "princess_commits_suicide",
+        "n_characters": 1,
+        "subject": "princess",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "love",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "tonatiuh_disappears_in_horizon",
+        "n_characters": 0,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    }
+]

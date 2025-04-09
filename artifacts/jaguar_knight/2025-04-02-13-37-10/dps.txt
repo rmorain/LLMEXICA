@@ -1,0 +1,36 @@
+
+Sto ;1
+Tlaloc Actor
+Jaguar_Knight Actor
+Princess Actor
+Enemy Actor
+Quetzalcoatl Actor
+Huitzilopochtli Actor
+Tonatiuh Actor
+
+Tlaloc Sends_Storm
+Jaguar_Knight Tries_To_Cross_Bridge
+Bridge Collapses_Injuring Jaguar_Knight
+Princess Knows_Jaguar_Knight_Could_Die
+Princess Prepares_Curative_Plant
+Princess Applies_Curative_Plant_To Jaguar_Knight's_Wounds
+Jaguar_Knight Recuperates
+Enemy Kidnaps_Princess
+Enemy Ties_Princess_To_Rock
+Enemy Plans_To_Kill_Princess_At_Midnight
+Jaguar_Knight Decides_To_Rescue_Princess
+Jaguar_Knight Prays_To_Quetzalcoatl
+Princess Confronts_Enemy
+Enemy Attacks_Princess
+Jaguar_Knight Searches_For_Enemy
+Jaguar_Knight Finds_Enemy
+Jaguar_Knight Throws_Dust_In_Enemy's_Face
+Jaguar_Knight Stabs_Enemy_With_Dagger
+Jaguar_Knight Takes_Enemy's_Heart
+Jaguar_Knight Liberates_Princess
+Princess Kisses_Jaguar_Knight
+Princess Recognizes_Jaguar_Knight's_Tattoo
+Princess Feels_Ambivalent_Towards_Jaguar_Knight
+Princess Kills_Jaguar_Knight
+Princess Commits_Suicide
+Tonatiuh Disappears_In_Horizon

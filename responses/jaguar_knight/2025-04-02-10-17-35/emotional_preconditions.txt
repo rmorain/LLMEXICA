@@ -1,0 +1,103 @@
+<think>
+Alright, so I need to figure out how to identify preconditions related to emotional links for each action provided by the user. The user has given an example where character 'a' attacks 'b', requiring a friendship emotional link with a magnitude of -3 from 'a' to 'b'. 
+
+First, I should understand what an emotional link is. It's a relationship between two characters that can be positive or negative, measured on a scale from -3 (extremely negative) to 3 (extremely positive). The type could be things like friendship, love, trust, hatred, etc.
+
+When processing each action, I need to create a new JSON object with a 'preconditions' key. Inside that, there's an 'emotional_links' array. Each element in this array is an object specifying the type of emotional link, its magnitude, and who it's from and to.
+
+I should think about what each action implies emotionally. For example, attacking someone usually comes from negative emotions like anger or hatred. So for an attack, maybe the attacker (a) has a strong negative link towards the target (b). 
+
+Similarly, if one character hugs another, that probably indicates a positive emotional link, maybe love or affection. The magnitude might be high, say 3.
+
+But sometimes actions don't necessarily have preconditions. For example, waving at someone could be neutral, so there might not be any required emotional links unless specified otherwise.
+
+I also need to ensure the 'from' and 'to' fields correctly point to 'a' (the subject) and 'b' (the object). So in each case, I have to determine if the action implies an emotional state from a to b or vice versa.
+
+Wait, for example, if 'a' is giving something to 'b', it might imply trust or friendship. But maybe in some cases, it could be out of obligation with a neutral magnitude, but that's less likely. So perhaps I should assume the most common emotional link associated with each action.
+
+I need to go through each action one by one and analyze what emotional links they require. Let me think about how to approach this systematically:
+
+1. Identify the action.
+2. Determine if there is an inherent emotional implication (e.g., attack implies negative emotions).
+3. Decide the type of emotional link based on the action.
+4. Assign a magnitude that makes sense for the action's intensity.
+5. Set 'from' as 'a' since the subject is performing the action, and 'to' as 'b', the object.
+
+Wait, but sometimes the target might have an emotion towards the subject. For example, if 'b' fears 'a', that could be a precondition for certain actions. But I think in this case, we're focusing on the emotional links from the subject ('a') to the object ('b'), as per the user's instruction.
+
+So each action will likely have its own set of preconditions based on the emotions the subject holds towards the object. If an action doesn't imply any specific emotion, then the 'emotional_links' array remains empty.
+
+Let me test this with a few examples:
+
+- **Attack**: Typically implies anger or hatred from 'a' to 'b'. So type could be 'hatred' with magnitude -3.
+- **Hug**: Implies affection or love. Type is 'affection', magnitude 2.
+- **Give**: Might imply trust or friendship, so type 'trust', magnitude 1.
+- **Steal from**: Implies distrust or greed towards the target. Maybe type 'distrust', magnitude -2.
+
+I should make sure that each emotional link makes sense in the context of the action and isn't forced. Also, consider if multiple emotional links could be applicable, but I think usually it's one primary emotion per action.
+
+Wait, what about actions like "question"? Questioning someone might not inherently have an emotional link unless the context implies suspicion or curiosity. So maybe 'curiosity' with a low positive magnitude?
+
+But since preconditions are optional, if the action doesn't clearly imply an emotion, I can leave it empty.
+
+I also need to make sure that each emotional_link object includes all four keys: type, magnitude, from, and to. Since in most cases, 'from' is 'a' and 'to' is 'b', but maybe sometimes 'to' could be 'a'? Hmm, not likely because the action is directed towards 'b'.
+
+Wait no, the emotional link is always from the subject ('a') to the object ('b'), so 'from' should be 'a' and 'to' should be 'b'. Unless the action is something where 'b's emotion towards 'a' affects the action, but I think per instructions, we're focusing on what the subject feels towards the object.
+
+I think that's all. Now, when applying this to each action provided by the user, I can systematically determine if an emotional link exists and its details.
+</think>
+
+To identify preconditions related to emotional links for each action, follow these steps:
+
+1. **Analyze the Action**: Understand the nature of the action (e.g., attack, hug, give).
+2. **Determine Emotional Implication**: Identify if the action inherently implies a specific emotion or relationship.
+3. **Specify Emotional Link Type**: Choose an emotional link type based on the action's context (e.g., hatred for attack, affection for hug).
+4. **Assign Magnitude**: Set the intensity of the emotional link within the range [-3, 3].
+5. **Define Direction**: Typically, 'from' is the subject ('a') and 'to' is the object ('b').
+
+Here’s how each action could be processed:
+
+- **Attack**:
+  - Type: "hatred"
+  - Magnitude: -3
+  - From: "a"
+  - To: "b"
+
+- **Hug**:
+  - Type: "affection"
+  - Magnitude: 2
+  - From: "a"
+  - To: "b"
+
+- **Give**:
+  - Type: "trust"
+  - Magnitude: 1
+  - From: "a"
+  - To: "b"
+
+- **Steal from**:
+  - Type: "distrust"
+  - Magnitude: -2
+  - From: "a"
+  - To: "b"
+
+If an action doesn't imply a specific emotion, the 'emotional_links' array remains empty.
+
+**Example JSON Object for Action "Attack":**
+
+```json
+{
+  "preconditions": {
+    "emotional_links": [
+      {
+        "type": "hatred",
+        "magnitude": -3,
+        "from": "a",
+        "to": "b"
+      }
+    ]
+  }
+}
+```
+
+This approach ensures each action's emotional preconditions are systematically evaluated and represented.

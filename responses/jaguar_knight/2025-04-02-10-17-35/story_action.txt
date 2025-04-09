@@ -1,0 +1,249 @@
+<think>
+Alright, I'm trying to figure out how to approach this narrative analysis task. The user has provided a detailed story and wants me to extract actions related to emotional links and tensions, organizing them in JSON format. 
+
+First, I need to understand the key components: emotional links (friendship and love) and tensions (like character_dead or love_competition). The JSON should have each action with subject, object, n_characters.
+
+I'll start by reading through the story carefully. It's about Jaguar_Knight and Princess in Tenochtitlan. There's a storm caused by Tlaloc, which damages a bridge. Jaguar gets injured, Princess helps him, they develop feelings, but then Princess finds out he's part of a group that killed her father, leading to tragic events.
+
+I'll break down the story into key actions, focusing on interactions between characters and emotional or tense moments. For each action, I need to determine if it relates to friendship, love, or one of the tensions like life_at_risk or health_at_risk.
+
+First event: Tlaloc sends a storm causing the bridge collapse. That's an environmental action but doesn't directly relate to emotional links or tensions between characters. So maybe not included unless it sets up tension.
+
+Jaguar tries to cross and gets injured. This is health_at_risk, so that should be noted as a tension. The action here is "injure_head" with Jaguar as object.
+
+Princess knows he could die (life_at_risk) and decides to help by using a curative plant. Her actions are preparing plasma and applying it. These are separate actions, both showing her care, which builds a friendship or love link.
+
+Jaguar realizes Princess saved him, indicating gratitude, so an action like "express_gratitude" from Jaguar to Princess.
+
+Next, the enemy kidnaps Princess for revenge. That's a prisoner tension. Action is "kidnap" with object as Princess.
+
+Princess is tied up and scheduled to be killed at midnight—another life_at_risk situation. She confronts Enemy, who charges her, adding clashing_emotions since she's angry but also scared? Or perhaps the volatile state of Enemy creates tension.
+
+Jaguar prays for wisdom and bravery, showing his determination to save Princess. This is a solo action, so n_characters=1.
+
+He starts searching, finds Enemy, attacks with dust and dagger—actions like "attack_with_dagger". Then he performs a ritual with the heart, which is another action but more about the plot than emotions.
+
+Jaguar frees Princess, showing liberation. She admires his bravery, leading to her falling in love. Kissing is an expression of love.
+
+But then she sees the tattoo, linking Jaguar to her father's murderers. This creates ambivalent thoughts—love vs. hatred. So actions like "recognize_tattoo", which leads to conflicted emotions (clashing_emotions).
+
+She invokes a god and cuts his jugular, leading to his death (character_dead). Then she kills herself, another character_dead.
+
+I need to map each of these events into the JSON structure, ensuring each action is correctly categorized under emotional links or tensions. I'll go step by step through the story, extract each relevant interaction, determine if it's a tension or emotional link, and structure accordingly.
+</think>
+
+Here is the structured breakdown of the narrative analysis based on the provided story:
+
+### Emotional Links and Tensions Analysis
+
+1. **Health-at-Risk Tension**
+   - **Action**: Jaguar_Knight injures his head after bridge collapse.
+     - **Subject**: Bridge (environmental factor)
+     - **Object**: Jaguar_Knight
+     - **n_characters**: 1
+
+2. **Life-at-Risk Tension**
+   - **Action**: Princess realizes Jaguar could die from injuries.
+     - **Subject**: Princess
+     - **Object**: Jaguar_Knight
+     - **n_characters**: 1
+
+3. **Love/Friendship Emotional Link**
+   - **Action**: Princess prepares curative plasma to help Jaguar.
+     - **Subject**: Princess
+     - **Object**: Curative Plasma (tool)
+     - **n_characters**: 1
+   - **Action**: Princess applies plasma, saving Jaguar.
+     - **Subject**: Princess
+     - **Object**: Jaguar_Knight
+     - **n_characters**: 2
+
+4. **Gratitude Emotional Link**
+   - **Action**: Jaguar expresses gratitude to Princess for saving him.
+     - **Subject**: Jaguar_Knight
+     - **Object**: Princess
+     - **n_characters**: 2
+
+5. **Prisoner Tension**
+   - **Action**: Enemy kidnaps Princess for revenge.
+     - **Subject**: Enemy
+     - **Object**: Princess
+     - **n_characters**: 2
+
+6. **Life-at-Risk Tension**
+   - **Action**: Enemy ties Princess up, planning to kill her at midnight.
+     - **Subject**: Enemy
+     - **Object**: Princess
+     - **n_characters**: 2
+
+7. **Clashing-Emotions Tension**
+   - **Action**: Princess confronts Enemy, who charges angrily.
+     - **Subject**: Princess and Enemy
+     - **n_characters**: 2
+
+8. **Determination Emotional Link**
+   - **Action**: Jaguar prays for bravery to rescue Princess.
+     - **Subject**: Jaguar_Knight
+     - **Object**: Gods (invocation)
+     - **n_characters**: 1
+
+9. **Confrontation Tension**
+   - **Action**: Jaguar finds Enemy and attacks with dust and dagger.
+     - **Subject**: Jaguar_Knight
+     - **Object**: Enemy
+     - **n_characters**: 2
+
+10. **Ritualistic Action (Plot Progression)**
+    - **Action**: Jaguar performs ritual with Enemy's heart.
+      - **Subject**: Jaguar_Knight
+      - **Object**: Enemy's Heart (symbolic)
+      - **n_characters**: 1
+
+11. **Liberation Emotional Link**
+    - **Action**: Jaguar frees Princess, showing bravery.
+      - **Subject**: Jaguar_Knight
+      - **Object**: Princess
+      - **n_characters**: 2
+
+12. **Love Emotional Link**
+    - **Action**: Princess kisses Jaguar, expressing love.
+      - **Subject**: Princess
+      - **Object**: Jaguar_Knight
+      - **n_characters**: 2
+
+13. **Clashing-Emotions Tension**
+    - **Action**: Princess recognizes Jaguar's tattoo linked to her father's death.
+      - **Subject**: Princess
+      - **Object**: Tattoo (symbol)
+      - **n_characters**: 1
+
+14. **Character Deaths (Tension)**
+    - **Action**: Princess kills Jaguar in anger.
+      - **Subject**: Princess
+      - **Object**: Jaguar_Knight
+      - **n_characters**: 2
+    - **Action**: Princess commits suicide in grief.
+      - **Subject**: Princess
+      - **Object**: Herself
+      - **n_characters**: 1
+
+### JSON Structure Representation
+
+```json
+[
+  {
+    "action": "injure_head",
+    "subject": "Jaguar_Knight",
+    "object": null,
+    "n_characters": 1,
+    "category": "health-at-risk"
+  },
+  {
+    "action": "realize_potential_death",
+    "subject": "Princess",
+    "object": "Jaguar_Knight",
+    "n_characters": 1,
+    "category": "life-at-risk"
+  },
+  {
+    "action": "prepare_curative_plasma",
+    "subject": "Princess",
+    "object": "curative plasma",
+    "n_characters": 1,
+    "category": "love/friendship"
+  },
+  {
+    "action": "apply_curative_plasma",
+    "subject": "Princess",
+    "object": "Jaguar_Knight",
+    "n_characters": 2,
+    "category": "love/friendship"
+  },
+  {
+    "action": "express_gratitude",
+    "subject": "Jaguar_Knight",
+    "object": "Princess",
+    "n_characters": 2,
+    "category": "gratitude"
+  },
+  {
+    "action": "kidnap",
+    "subject": "Enemy",
+    "object": "Princess",
+    "n_characters": 2,
+    "category": "prisoner"
+  },
+  {
+    "action": "tie_up_and_plan_execution",
+    "subject": "Enemy",
+    "object": "Princess",
+    "n_characters": 2,
+    "category": "life-at-risk"
+  },
+  {
+    "action": "confront_angrily",
+    "subject": "Enemy",
+    "object": "Princess",
+    "n_characters": 2,
+    "category": "clashing-emotions"
+  },
+  {
+    "action": "pray_for_bravery",
+    "subject": "Jaguar_Knight",
+    "object": "gods",
+    "n_characters": 1,
+    "category": "determination"
+  },
+  {
+    "action": "attack_with_dust_and_dagger",
+    "subject": "Jaguar_Knight",
+    "object": "Enemy",
+    "n_characters": 2,
+    "category": "confrontation"
+  },
+  {
+    "action": "perform_ritual_with_heart",
+    "subject": "Jaguar_Knight",
+    "object": "Enemy's heart",
+    "n_characters": 1,
+    "category": "ritualistic action"
+  },
+  {
+    "action": "liberate_princess",
+    "subject": "Jaguar_Knight",
+    "object": "Princess",
+    "n_characters": 2,
+    "category": "liberation"
+  },
+  {
+    "action": "kiss",
+    "subject": "Princess",
+    "object": "Jaguar_Knight",
+    "n_characters": 2,
+    "category": "love"
+  },
+  {
+    "action": "recognize_tattoo",
+    "subject": "Princess",
+    "object": "tattoo",
+    "n_characters": 1,
+    "category": "clashing-emotions"
+  },
+  {
+    "action": "kill_jaguar_in_anger",
+    "subject": "Princess",
+    "object": "Jaguar_Knight",
+    "n_characters": 2,
+    "category": "character-death"
+  },
+  {
+    "action": "commit_suicide_in_grief",
+    "subject": "Princess",
+    "object": "herself",
+    "n_characters": 1,
+    "category": "character-death"
+  }
+]
+```
+
+This JSON structure captures the key events, categorizing each under emotional links or tensions, and details the subjects, objects, and number of characters involved.

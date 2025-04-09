@@ -1,0 +1,118 @@
+<think>
+Alright, so I'm trying to figure out how to approach this narrative analysis task. The user wants me to break down a story into key actions related to emotional links and tensions between characters. They specified that the two types of emotional links are friendship and love, and there are six types of tensions to consider.
+
+First, I need to read through the provided story carefully. It involves Jaguar_Knight, Princess, Tlaloc (the rain god), Quetzalcoatl (feathered snake god), Huitzilopochtli (god of the dead), Tonatiuh (sun god), and an Enemy character.
+
+The story starts with a storm causing a bridge collapse, injuring Jaguar_Knight. Princess helps him recover using a curative plant. Then, the Enemy kidnaps Princess for revenge, ties her up, and plans to kill her at midnight. Jaguar_Knight rescues her but then she discovers his tattoo linked to her father's murderers. This causes her to have conflicting emotions, leading to both of them dying.
+
+Now, I need to extract actions that relate to emotional links (friendship or love) and tensions (like life at risk, health issues, etc.). Each action should be in a JSON format with specific keys: action, n_characters, subject, object. The action name needs to be simple and general, avoiding character names.
+
+I'll go step by step through the story:
+
+1. Storm damages bridge – this is an event but not an emotional link or tension yet.
+2. Jaguar_Knight tries to cross, gets injured – health at risk (tension). Action: Bridge collapses injuring head.
+3. Princess knows he might die and helps him with plasma – shows her concern, a positive action towards him, so maybe friendship or love link.
+4. He recuperates because of her determination – another positive emotional link.
+5. Enemy kidnaps Princess for revenge – creates prisoner tension and life at risk.
+6. Jaguar_Knight prays for wisdom and bravery before rescuing her – emotional resolve but not an action towards others yet.
+7. Princess is angry, confronts Enemy – perhaps clashing emotions as she has both anger and the developing feelings for Jaguar.
+8. Enemy charges at her, Jaguar attacks him – life at risk, physical conflict.
+9. He defeats Enemy using dagger, imitates ceremony – action against Enemy, but also shows his dedication to saving Princess, which is an emotional link.
+10. He liberates Princess, she admires his bravery – strengthens the positive emotional link towards love.
+11. She falls in love and kisses him – clear romantic (love) link.
+12. Recognizes tattoo, leading to ambivalent feelings – clashing emotions tension because her love turns into hate or conflict.
+13. She kills Jaguar_Knight and herself – both life at risk, resulting in character deaths.
+
+Now, I need to list these actions in order, ensuring each is general enough without specific names. Assigning subject and object where applicable.
+
+For example:
+
+- Bridge collapse: no subject, so object would be the bridge but since it's about Jaguar_Knight's injury, perhaps the action is "bridge_collapses_injuring_head".
+
+Wait, maybe that's too specific. The user said to keep actions simple and general. So perhaps "bridge_collapses" with subject as storm or Tlaloc?
+
+But in the JSON example provided, the action was "bridge_collapse" and subject as Tlaloc since he sent the storm.
+
+Hmm, but I think the bridge collapse is an event without a direct subject unless we attribute it to Tlaloc's action. So maybe that makes sense.
+
+Similarly, when Princess applies plasma, that's her action towards Jaguar_Knight, so subject is Princess, object is Jaguar.
+
+Each of these steps needs to be mapped carefully, ensuring the right n_characters (number of characters involved: 1 if only subject or object, 2 if both).
+
+I think I have a good grasp now. Time to structure each action step by step as per the story's flow.
+</think>
+
+Here is the structured narrative analysis based on the provided story, focusing on emotional links and tensions:
+
+```json
+[
+    {
+        "action": "storm_damage_bridge",
+        "n_characters": 1,
+        "subject": "Tlaloc",
+        "object": "-"
+    },
+    {
+        "action": "bridge_collapse_injuring_head",
+        "n_characters": 2,
+        "subject": "-",
+        "object": "Jaguar_Knight"
+    },
+    {
+        "action": "princess_applies_plasma_to_wounds",
+        "n_characters": 2,
+        "subject": "Princess",
+        "object": "Jaguar_Knight"
+    },
+    {
+        "action": "jaguar_recuperates",
+        "n_characters": 1,
+        "subject": "Jaguar_Knight",
+        "object": "-"
+    },
+    {
+        "action": "enemy_kidnap_princess",
+        "n_characters": 2,
+        "subject": "Enemy",
+        "object": "Princess"
+    },
+    {
+        "action": "jaguar_search_for_enemy",
+        "n_characters": 1,
+        "subject": "Jaguar_Knight",
+        "object": "-"
+    },
+    {
+        "action": "enemy_charge_at_princess",
+        "n_characters": 2,
+        "subject": "Enemy",
+        "object": "Princess"
+    },
+    {
+        "action": "jaguar_attack_enemy_with_dagger",
+        "n_characters": 2,
+        "subject": "Jaguar_Knight",
+        "object": "Enemy"
+    },
+    {
+        "action": "princess_kiss_jaguar",
+        "n_characters": 2,
+        "subject": "Princess",
+        "object": "Jaguar_Knight"
+    },
+    {
+        "action": "princess_recognize_tattoo",
+        "n_characters": 1,
+        "subject": "Princess",
+        "object": "-"
+    },
+    {
+        "action": "princess_kill_jaguar_and_self",
+        "n_characters": 2,
+        "subject": "Princess",
+        "object": "Jaguar_Knight"
+    }
+]
+```
+
+This JSON structure captures the essential actions, focusing on emotional links (like Princess helping Jaguar) and tensions (e.g., bridge collapse, kidnapping). Each action is general and avoids specific character names where possible.

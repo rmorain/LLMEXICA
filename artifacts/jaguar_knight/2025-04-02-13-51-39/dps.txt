@@ -1,0 +1,14 @@
+
+Sto ;1  
+storm-causes-damage  
+character_gets_injured Jaguar_Knight  
+Princess provides_medical_aid Jaguar_Knight  
+Jaguar_Knight recognizes_emotional_link  
+Enemy kidnaps_princess Princess  
+Jaguar_Knight prepares_for_rescue  
+Princess confronts_enemy Enemy  
+Jaguar_Knight fights_enemy Enemy  
+Princess discovers_tattoo  
+Princess experiences_conflicting_emotions  
+Princess kills_jaguar_knight Jaguar_Knight  
+Princess commits_suicide  

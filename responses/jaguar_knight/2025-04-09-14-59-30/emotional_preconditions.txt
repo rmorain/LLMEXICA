@@ -1,0 +1,332 @@
+<think>
+Alright, so I need to figure out how to add preconditions related to emotional links for each action in the given story analysis. The user wants me to identify or infer these preconditions based on the actions described.
+
+First, let's recall what an emotional link is. Emotional links can be either `friendship` (platonic) or `love` (romantic), and they have a magnitude between -3 and 3. Negative magnitudes indicate negative emotions like hatred or anger, while positive ones indicate affection or love.
+
+Preconditions are the requirements that must be met for an action to make sense. For example, if character A attacks character B, there might be a precondition that character A feels hatred towards character B (negative friendship link).
+
+Now, I'll go through each action one by one and try to infer the necessary emotional links.
+
+1. **storm_damage_bridge**: This is an event caused by Tlaloc, so no characters are involved. No preconditions needed.
+   
+2. **character_injured_head**: Jaguar Knight gets injured. No specific emotional link is required here; it's just an event happening to him.
+
+3. **prepare_curative_plasma**: Princess prepares the plasma to help Jaguar Knight. This suggests a positive friendship or love link from Princess towards Jaguar Knight, perhaps magnitude 2 (affection).
+
+4. **apply_plasma_to_wounds**: Similar to preparing the plasma, this action would require the same positive emotional link from Princess towards Jaguar Knight.
+
+5. **character_recuperate**: Jaguar Knight gets better. No specific precondition here; it's a result of the princess's actions.
+
+6. **enemy_kidnap_princess**: The enemy kidnaps Princess. This implies a negative emotional link from Enemy towards Princess, maybe hatred with magnitude -3.
+
+7. **tie_character_to_rock**: Enemy ties Princess up. Again, this action follows from the kidnapping and requires the same negative emotional link (hatred).
+
+8. **character_pray_for_wisdom**: Jaguar Knight prays for wisdom to rescue Princess. This suggests a positive emotional link towards Princess, indicating love or strong friendship.
+
+9. **search_for_enemy**: Jaguar Knight searches for Enemy to save Princess. This again stems from his positive feelings towards Princess and a desire to protect her.
+
+10. **attack_with_dagger**, **throw_dust_in_face**, **perforate_chest_with_dagger**: These actions are driven by Jaguar Knight's anger or determination to rescue Princess, so they might require a negative emotional link towards Enemy (hatred) and a positive one towards Princess (love).
+
+11. **imitate_sacred_ceremony**: This is more of a ritualistic action following the battle, so no specific emotional precondition beyond what led to the victory.
+
+12. **liberate_princess**: Jaguar Knight rescues Princess, which requires his positive emotional link towards her.
+
+13. **kiss_character**: Princess kisses Jaguar Knight, indicating mutual romantic feelings (love), so both should have a positive love link towards each other with high magnitude, maybe 3.
+
+14. **recognize_tattoo**: Princess recognizes the tattoo linked to her father's murder. This creates clashing emotions: she loves Jaguar Knight but hates his actions, leading to a negative emotional link (hatred) towards him.
+
+15. **invoke_god_of_the_dead**: Princess invokes Huitzilopochtli before killing Jaguar Knight and herself. This might stem from her conflicting emotions—love turned to hatred.
+
+16. **cut_jugular_with_dagger**, **character_bleed_to_death**: These actions are driven by Princess's hatred towards Jaguar Knight after recognizing the tattoo, indicating a negative emotional link (magnitude -3).
+
+17. **cut_own_throat_with_dagger**: Princess kills herself, which could be driven by grief or guilt related to her actions, possibly linked to her love for Jaguar Knight turned to tragedy.
+
+In each case, I need to specify whether the precondition is about friendship or love and assign a magnitude based on the context of the story. For example, rescuing actions are driven by positive emotions (love), while attacking actions are driven by negative ones (hatred).
+
+I'll structure this by adding a `preconditions` key to each action in the JSON, with an array of emotional links. Each link will specify the type (`friendship` or `love`), magnitude (-3 to 3), and which characters are involved (`from` and `to` as 'a' for subject and 'b' for object).
+
+This way, each action's preconditions are clearly defined based on the inferred emotional links.
+</think>
+
+```json
+[
+  {
+    "action": "storm_damage_bridge",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": []
+    }
+  },
+  {
+    "action": "character_injured_head",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "jaguar_knight",
+    "preconditions": {
+      "emotional_links": []
+    }
+  },
+  {
+    "action": "prepare_curative_plasma",
+    "n_characters": 2,
+    "subject": "princess",
+    "object": "jaguar_knight",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 2,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "apply_plasma_to_wounds",
+    "n_characters": 2,
+    "subject": "princess",
+    "object": "jaguar_knight",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 2,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "character_recuperate",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "jaguar_knight",
+    "preconditions": {
+      "emotional_links": []
+    }
+  },
+  {
+    "action": "enemy_kidnap_princess",
+    "n_characters": 2,
+    "subject": "enemy",
+    "object": "princess",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "tie_character_to_rock",
+    "n_characters": 2,
+    "subject": "enemy",
+    "object": "princess",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "character_pray_for_wisdom",
+    "n_characters": 1,
+    "subject": "jaguar_knight",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "love",
+          "magnitude": 2,
+          "from": "a",
+          "to": "-"
+        }
+      ]
+    }
+  },
+  {
+    "action": "search_for_enemy",
+    "n_characters": 2,
+    "subject": "jaguar_knight",
+    "object": "enemy",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "love",
+          "magnitude": 3,
+          "from": "a",
+          "to": "-"
+        }
+      ]
+    }
+  },
+  {
+    "action": "attack_with_dagger",
+    "n_characters": 2,
+    "subject": "jaguar_knight",
+    "object": "enemy",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "throw_dust_in_face",
+    "n_characters": 2,
+    "subject": "jaguar_knight",
+    "object": "enemy",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "perforate_chest_with_dagger",
+    "n_characters": 2,
+    "subject": "jaguar_knight",
+    "object": "enemy",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "imitate_sacred_ceremony",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": []
+    }
+  },
+  {
+    "action": "liberate_princess",
+    "n_characters": 2,
+    "subject": "jaguar_knight",
+    "object": "princess",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "love",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "kiss_character",
+    "n_characters": 2,
+    "subject": "princess",
+    "object": "jaguar_knight",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "love",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "recognize_tattoo",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "princess",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -3,
+          "from": "b",
+          "to": "-"
+        }
+      ]
+    }
+  },
+  {
+    "action": "invoke_god_of_the_dead",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": []
+    }
+  },
+  {
+    "action": "cut_jugular_with_dagger",
+    "n_characters": 2,
+    "subject": "princess",
+    "object": "jaguar_knight",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "character_bleed_to_death",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "jaguar_knight",
+    "preconditions": {
+      "emotional_links": []
+    }
+  },
+  {
+    "action": "cut_own_throat_with_dagger",
+    "n_characters": 2,
+    "subject": "princess",
+    "object": "princess",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "love",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  }
+]
+```

@@ -1,14 +1,13 @@
 #!/bin/sh
 #SBATCH --nodes=1
-#SBATCH --gpus=1  
+#SBATCH --gpus=h200:4  # Minimum required for 671b model
 #SBATCH --mem-per-cpu=256G
-#SBATCH --time=00:30:00
+#SBATCH --time=01:00:00
 #SBATCH --ntasks-per-node=4 
-#SBATCH --qos=cs
 
 #SBATCH -J "Test parsing story"   # job name
 #SBATCH --output=/home/rmorain2/git/LLMEXICA/logs/slurm-%j.out
-export OLLAMA_MODEL=deepseek-r1:70b
+export OLLAMA_MODEL=deepseek-r1:671b
 export OLLAMA_DEBUG=1
 export OLLAMA_CONTEXT_LENGTH=131072  # Set context length for the model
 # Start server with explicit config

@@ -1,0 +1,218 @@
+<think>
+Alright, I need to identify preconditions related to emotional links for each action in the given story. Each precondition is about the emotional state that must exist for an action to make sense.
+
+Starting with "storm-causes-damage": This is an environmental event without characters involved, so no emotional links are relevant here.
+
+Next, "character_gets_injured Jaguar_Knight": Jaguar_Knight gets injured. Since he's a character, I need to consider if there's any existing emotional link that led to this situation. Maybe the storm caused it, but there's no direct emotional link between characters here, so no preconditions.
+
+"Princess provides_medical_aid Jaguar_Knight": Princess helps Jaguar_Knight. This implies some level of care or friendship. So, a positive friendship link from Princess to Jaguar_Knight makes sense as a precondition.
+
+"Jaguar_Knight recognizes_emotional_link": He realizes the emotional connection, likely because Princess saved him. This suggests that he feels grateful, indicating a positive friendship link towards her.
+
+"Enemy kidnaps_princess Princess": The enemy's action is driven by negative emotions like hatred or revenge. So, an intense negative friendship link from Enemy to Princess is a precondition.
+
+"Jaguar_Knight prepares_for_rescue": Jaguar_Knight wants to save Princess, showing strong positive feelings, possibly romantic love, towards her.
+
+"Princess confronts_enemy Enemy": Princess's anger indicates a negative emotional link towards the enemy.
+
+"Jaguar_Knight fights_enemy Enemy": He fights to save Princess, suggesting both bravery and care, indicating a positive friendship or love link towards her.
+
+"Princess discovers_tattoo": Discovering the tattoo creates conflict because it relates to past trauma, introducing clashing emotions in Princess towards Jaguar_Knight.
+
+"Princess experiences_conflicting_emotions": The conflict arises from mixed feelings—love for Jaguar_Knight and hatred due to his past actions. This requires both positive love and negative friendship links.
+
+"Princess kills_jaguar_knight Jaguar_Knight": Her action is driven by hatred, indicating a strong negative emotional link towards him.
+
+"Princess commits_suicide": Overwhelmed by grief and guilt, she ends her life, showing a negative self-emotional link.
+
+I need to map these inferences into the JSON structure with preconditions for each action.
+</think>
+
+```json
+[
+  {
+    "action": "storm-causes-damage",
+    "n_characters": 0,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": []
+    }
+  },
+  {
+    "action": "character_gets_injured",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "Jaguar_Knight",
+    "preconditions": {
+      "emotional_links": []
+    }
+  },
+  {
+    "action": "character_provides_medical_aid",
+    "n_characters": 2,
+    "subject": "Princess",
+    "object": "Jaguar_Knight",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 2,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "character_recognizes_emotional_link",
+    "n_characters": 1,
+    "subject": "Jaguar_Knight",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 2,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "enemy_kidnaps_princess",
+    "n_characters": 2,
+    "subject": "Enemy",
+    "object": "Princess",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "character_prepares_for_rescue",
+    "n_characters": 1,
+    "subject": "Jaguar_Knight",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "love",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "princess_confronts_enemy",
+    "n_characters": 2,
+    "subject": "Princess",
+    "object": "Enemy",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "jaguar_knight_fights_enemy",
+    "n_characters": 2,
+    "subject": "Jaguar_Knight",
+    "object": "Enemy",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "princess_discovers_tattoo",
+    "n_characters": 1,
+    "subject": "Princess",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -2,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "character_experiences_conflicting_emotions",
+    "n_characters": 1,
+    "subject": "Princess",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "love",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        },
+        {
+          "type": "friendship",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "princess_kills_jaguar_knight",
+    "n_characters": 2,
+    "subject": "Princess",
+    "object": "Jaguar_Knight",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "character_commits_suicide",
+    "n_characters": 1,
+    "subject": "Princess",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -3,
+          "from": "a",
+          "to": "a"
+        }
+      ]
+    }
+  }
+]
+```

@@ -1,0 +1,637 @@
+<think>
+Okay, so now I need to add preconditions related to tensions for each action in the provided JSON. The user has instructed that preconditions can include both emotional links and tensions. For tensions, they want me to identify what kind of tension must exist for an action to make sense.
+
+First, let's recall the types of tensions defined:
+
+1. **character_dead**
+2. **life_at_risk**
+3. **health_at_risk**
+4. **prisoner**
+5. **clashing_emotions**
+6. **love_competition**
+
+I'll go through each action and determine if there are any implied tensions that must exist for the action to occur.
+
+1. **Tlaloc Sends Storm**  
+   - No characters directly involved, so no tension preconditions.
+
+2. **Jaguar_Knight Tries_To_Cross_Bridge**  
+   - His attempt leads to an accident, implying his life or health is at risk.
+
+3. **Bridge Collapses Injuring Jaguar_Knight**  
+   - Directly causes a health risk for Jaguar_Knight.
+
+4. **Princess Knows_Jaguar_Knight Could Die**  
+   - Implies that Jaguar_Knight's life is at risk, so Princess acts to save him.
+
+5. **Princess Prepares Curative Plant**  
+   - Her action is a response to Jaguar_Knight's health being at risk.
+
+6. **Princess Applies Curative Plant To Jaguar_Knight's Wounds**  
+   - Addresses the health risk and life at risk tensions.
+
+7. **Jaguar_Knight Recuperates**  
+   - Result of Princess's actions, so no ongoing tension here.
+
+8. **Enemy Kidnaps Princess**  
+   - Creates a prisoner tension for Princess.
+
+9. **Enemy Ties Princess To Rock**  
+   - Reinforces the prisoner and life at risk tensions.
+
+10. **Enemy Plans To Kill Princess At Midnight**  
+    - Escalates the life at risk tension.
+
+11. **Jaguar_Knight Decides To Rescue Princess**  
+    - Driven by the prisoner and life at risk tensions involving Princess.
+
+12. **Jaguar_Knight Prays To Quetzalcoatl**  
+    - No direct tension, more of a personal action.
+
+13. **Princess Confronts Enemy**  
+    - Her confrontation arises from being a prisoner and her life being at risk.
+
+14. **Enemy Attacks Princess**  
+    - Directly increases the life at risk tension for Princess.
+
+15. **Jaguar_Knight Searches For Enemy**  
+    - Motivated by rescuing Princess, so prisoner and life at risk tensions.
+
+16. **Jaguar_Knight Finds Enemy**  
+    - Part of the rescue mission to relieve prisoner and life at risk tensions.
+
+17. **Jaguar_Knight Throws Dust In Enemy's Face**  
+    - Action taken to neutralize the threat, implying ongoing tensions.
+
+18. **Jaguar_Knight Stabs Enemy With Dagger**  
+    - Leads to Enemy's death, creating a character_dead tension.
+
+19. **Jaguar_Knight Takes Enemy's Heart**  
+    - Ritualistic action following Enemy's death, so character_dead applies.
+
+20. **Jaguar_Knight Liberates Princess**  
+    - Resolves the prisoner tension for Princess.
+
+21. **Princess Kisses Jaguar_Knight**  
+    - No direct tension; it's an emotional link action.
+
+22. **Princess Recognizes Jaguar_Knight's Tattoo**  
+    - This realization introduces clashing emotions in Princess.
+
+23. **Princess Feels Ambivalent Towards Jaguar_Knight**  
+    - Directly a clashing_emotions tension for Princess.
+
+24. **Princess Kills Jaguar_Knight**  
+    - Results in Jaguar_Knight's death, so character_dead tension.
+
+25. **Princess Commits Suicide**  
+    - Her death adds to the character_dead tension.
+
+26. **Tonatiuh Disappears In Horizon**  
+    - No direct tension; it's an environmental action.
+
+Now, I'll update each action in the JSON with these inferred tensions under preconditions.
+</think>
+
+```json
+[
+  {
+    "action": "tlaloc_sends_storm",
+    "n_characters": 0,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": []
+    }
+  },
+  {
+    "action": "jaguar_knight_tries_to_cross_bridge",
+    "n_characters": 1,
+    "subject": "jaguar_knight",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "a",
+          "to": "-"
+        }
+      ]
+    }
+  },
+  {
+    "action": "bridge_collapses_injuring_jaguar_knight",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "jaguar_knight",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": [
+        {
+          "type": "health_at_risk",
+          "from": "-",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "princess_knows_jaguar_knight_could_die",
+    "n_characters": 1,
+    "subject": "princess",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 2,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "-",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "princess_prepares_curative_plant",
+    "n_characters": 1,
+    "subject": "princess",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 2,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "health_at_risk",
+          "from": "-",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "princess_applies_curative_plant_to_jaguar_knight_wounds",
+    "n_characters": 2,
+    "subject": "princess",
+    "object": "jaguar_knight",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 2,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "health_at_risk",
+          "from": "-",
+          "to": "b"
+        },
+        {
+          "type": "life_at_risk",
+          "from": "-",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "jaguar_knight_recuperates",
+    "n_characters": 1,
+    "subject": "jaguar_knight",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": []
+    }
+  },
+  {
+    "action": "enemy_kidnaps_princess",
+    "n_characters": 2,
+    "subject": "enemy",
+    "object": "princess",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "prisoner",
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "enemy_ties_princess_to_rock",
+    "n_characters": 2,
+    "subject": "enemy",
+    "object": "princess",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "prisoner",
+          "from": "a",
+          "to": "b"
+        },
+        {
+          "type": "life_at_risk",
+          "from": "-",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "enemy_plans_to_kill_princess_at_midnight",
+    "n_characters": 1,
+    "subject": "enemy",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "-",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "jaguar_knight_decides_to_rescue_princess",
+    "n_characters": 1,
+    "subject": "jaguar_knight",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "love",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "prisoner",
+          "from": "-",
+          "to": "b"
+        },
+        {
+          "type": "life_at_risk",
+          "from": "-",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "jaguar_knight_prays_to_quetzalcoatl",
+    "n_characters": 1,
+    "subject": "jaguar_knight",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": []
+    }
+  },
+  {
+    "action": "princess_confronts_enemy",
+    "n_characters": 2,
+    "subject": "princess",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -2,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "-",
+          "to": "a"
+        }
+      ]
+    }
+  },
+  {
+    "action": "enemy_attacks_princess",
+    "n_characters": 2,
+    "subject": "enemy",
+    "object": "princess",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "-",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "jaguar_knight_searches_for_enemy",
+    "n_characters": 1,
+    "subject": "jaguar_knight",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "love",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "prisoner",
+          "from": "-",
+          "to": "b"
+        },
+        {
+          "type": "life_at_risk",
+          "from": "-",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "jaguar_knight_finds_enemy",
+    "n_characters": 1,
+    "subject": "jaguar_knight",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "love",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "prisoner",
+          "from": "-",
+          "to": "b"
+        },
+        {
+          "type": "life_at_risk",
+          "from": "-",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "jaguar_knight_throws_dust_in_enemys_face",
+    "n_characters": 2,
+    "subject": "jaguar_knight",
+    "object": "enemy",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "jaguar_knight_stabs_enemy_with_dagger",
+    "n_characters": 2,
+    "subject": "jaguar_knight",
+    "object": "enemy",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "jaguar_knight_takes_enemys_heart",
+    "n_characters": 1,
+    "subject": "jaguar_knight",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "character_dead",
+          "from": "-",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "jaguar_knight_liberates_princess",
+    "n_characters": 2,
+    "subject": "jaguar_knight",
+    "object": "princess",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "love",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "prisoner",
+          "from": "-",
+          "to": "b"
+        },
+        {
+          "type": "life_at_risk",
+          "from": "-",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "princess_kisses_jaguar_knight",
+    "n_characters": 2,
+    "subject": "princess",
+    "object": "jaguar_knight",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "love",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "princess_recognizes_jaguar_knights_tattoo",
+    "n_characters": 1,
+    "subject": "princess",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "love",
+          "magnitude": -2,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "princess_feels_ambivalent_towards_jaguar_knight",
+    "n_characters": 1,
+    "subject": "princess",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "love",
+          "magnitude": -2,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "clashing_emotions",
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "princess_kills_jaguar_knight",
+    "n_characters": 2,
+    "subject": "princess",
+    "object": "jaguar_knight",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "love",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "character_dead",
+          "from": "-",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "princess_commits_suicide",
+    "n_characters": 1,
+    "subject": "princess",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "love",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "character_dead",
+          "from": "-",
+          "to": "a"
+        }
+      ]
+    }
+  },
+  {
+    "action": "tonatiuh_disappears_in_horizon",
+    "n_characters": 0,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": []
+    }
+  }
+]
+```

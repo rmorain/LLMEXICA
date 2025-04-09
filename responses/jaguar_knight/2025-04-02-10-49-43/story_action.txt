@@ -1,0 +1,140 @@
+<think>
+Okay, so the user provided a story and asked for a narrative analysis focusing on emotional links and tensions. They want the output in JSON with specific keys.
+
+First, I need to parse through each part of the story step by step. The main characters are Jaguar_Knight, Princess, Tlaloc, Quetzalcoatl, Enemy, Huitzilopochtli, Tonatiuh. But since the analysis focuses on emotional links and tensions, I'll concentrate on interactions between them.
+
+Starting with the storm caused by Tlaloc damaging the bridge. Then Jaguar_Knight gets injured trying to cross. The Princess knows he could die and uses a plant to heal him. This shows a positive action from Princess towards Jaguar_Knight, so that's an emotional link of friendship or maybe love later on.
+
+Next, Enemy kidnaps Princess as revenge for her father's actions. So Princess is in danger, which introduces the 'prisoner' tension. Jaguar_Knight decides to rescue her, showing determination, another positive emotional link.
+
+Princess is angry at Enemy and confronts him. Meanwhile, Jaguar_Knight prays for wisdom, indicating his focus on rescuing her. He finds Enemy, attacks, kills him, and frees Princess. This action shows bravery and strengthens their bond.
+
+After being rescued, Princess admires Jaguar_Knight's bravery, leading to romantic feelings. They kiss, which is a clear emotional link of love. But then she sees his tattoo, linking him to her father's murderers. This creates clashing emotions because she loves him but hates his actions. So that's the 'clashing_emotions' tension.
+
+She feels ambivalent, which is internal conflict. Then she kills Jaguar_Knight and herself. Both characters die, introducing the 'character_dead' tension. 
+
+So the JSON needs to capture each action with subject, object, n_characters. I'll list them in order. Make sure each action is general, avoiding character names, using Snake_case.
+
+I need to ensure that for actions without a clear subject or object, they're marked as '-'. Also, 'n_characters' should match the presence of subject and object. Each action should relate to emotional links (friendship, love) or tensions as defined.
+
+Double-checking each event in the story: bridge collapse injures Jaguar_Knight, Princess heals him, Enemy kidnaps her, rescue efforts, killing Enemy, liberation, romantic kiss, discovering tattoo leading to conflict, their deaths. All these are key points to extract.
+</think>
+
+```json
+[
+  {
+    "action": "storm_damage_bridge",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "-"
+  },
+  {
+    "action": "character_injured",
+    "n_characters": 2,
+    "subject": "-",
+    "object": "jaguar_knight"
+  },
+  {
+    "action": "character_healed",
+    "n_characters": 2,
+    "subject": "princess",
+    "object": "jaguar_knight"
+  },
+  {
+    "action": "character_realize_gratitude",
+    "n_characters": 1,
+    "subject": "jaguar_knight",
+    "object": "-"
+  },
+  {
+    "action": "enemy_kidnap_princess",
+    "n_characters": 2,
+    "subject": "enemy",
+    "object": "princess"
+  },
+  {
+    "action": "character_tied_to_rock",
+    "n_characters": 2,
+    "subject": "enemy",
+    "object": "princess"
+  },
+  {
+    "action": "character_pray_for_wisdom",
+    "n_characters": 1,
+    "subject": "jaguar_knight",
+    "object": "-"
+  },
+  {
+    "action": "character_search_for_enemy",
+    "n_characters": 2,
+    "subject": "jaguar_knight",
+    "object": "enemy"
+  },
+  {
+    "action": "character_attack_with_dagger",
+    "n_characters": 2,
+    "subject": "jaguar_knight",
+    "object": "enemy"
+  },
+  {
+    "action": "character_throw_dust_in_face",
+    "n_characters": 2,
+    "subject": "jaguar_knight",
+    "object": "enemy"
+  },
+  {
+    "action": "character_perforate_chest_with_dagger",
+    "n_characters": 2,
+    "subject": "jaguar_knight",
+    "object": "enemy"
+  },
+  {
+    "action": "character_take_heart_as_offering",
+    "n_characters": 1,
+    "subject": "jaguar_knight",
+    "object": "-"
+  },
+  {
+    "action": "character_liberate_princess",
+    "n_characters": 2,
+    "subject": "jaguar_knight",
+    "object": "princess"
+  },
+  {
+    "action": "character_fall_in_love",
+    "n_characters": 2,
+    "subject": "princess",
+    "object": "jaguar_knight"
+  },
+  {
+    "action": "characters_share_romantic_kiss",
+    "n_characters": 2,
+    "subject": "princess",
+    "object": "jaguar_knight"
+  },
+  {
+    "action": "character_recognize_tattoo",
+    "n_characters": 1,
+    "subject": "princess",
+    "object": "-"
+  },
+  {
+    "action": "character_feel_ambivalent_emotions",
+    "n_characters": 2,
+    "subject": "princess",
+    "object": "jaguar_knight"
+  },
+  {
+    "action": "character_cut_jugular",
+    "n_characters": 2,
+    "subject": "princess",
+    "object": "jaguar_knight"
+  },
+  {
+    "action": "character_cut_own_throat",
+    "n_characters": 1,
+    "subject": "princess",
+    "object": "-"
+  }
+]
+```

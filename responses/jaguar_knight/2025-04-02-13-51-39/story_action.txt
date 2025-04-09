@@ -1,0 +1,108 @@
+<think>
+Okay, I'm trying to figure out how to analyze this story using the guidelines provided. The user wants me to extract actions related to emotional links and tensions, focusing on friendship, love, and specific tension types like character_dead or life_at_risk.
+
+First, I'll read through the story carefully. It involves Jaguar_Knight and Princess, with some divine elements. Let's break it down step by step.
+
+1. **Storm Damages Bridge**: The storm is caused by Tlaloc, leading to bridge damage. This sets up a tension of life_at_risk because crossing the river becomes dangerous.
+
+2. **Bridge Collapses Injuring Jaguar_Knight**: Here, Jaguar_Knight's health is at risk, so that's a health_at_risk tension. Also, since Princess knows he could die, it shows concern, indicating a friendship link.
+
+3. **Princess Uses Curative Plant**: She saves his life, which strengthens their emotional link of friendship and maybe hints at love later on.
+
+4. **Enemy Kidnaps Princess**: This introduces the prisoner tension as she's tied up. It also raises stakes for both characters.
+
+5. **Jaguar_Knight Prepares to Rescue**: His determination adds to the friendship or possibly love link, as he risks his life for her.
+
+6. **Princess Confronts Enemy**: Her anger shows clashing emotions since she's both a captive and defiant, perhaps mixing fear with anger.
+
+7. **Jaguar_Knight Fights Enemy**: This is action-oriented but also shows bravery, reinforcing their emotional bond.
+
+8. **Princess Kills Jaguar_Knight and Herself**: The discovery of the tattoo creates a love_competition tension since she has conflicting feelings. Her actions result in both characters' deaths, which are character_dead tensions.
+
+I need to make sure each action is in chronological order and fits the JSON structure with subject, object, n_characters. I'll avoid using names and keep it general. For example, "storm-causes-damage" would be an action without a subject or object since it's caused by Tlaloc but described generally.
+
+I should also note where emotional links like friendship or love are established or changed. The turning point is when Princess sees the tattoo, creating clashing emotions and leading to tragic consequences.
+
+Let me structure each event with the appropriate keys, ensuring that actions without specific subjects or objects use "-" as needed.
+</think>
+
+Here is the structured JSON analysis of the story focusing on emotional links and tensions:
+
+```json
+[
+  {
+    "action": "storm-causes-damage",
+    "n_characters": 0,
+    "subject": "-",
+    "object": "-"
+  },
+  {
+    "action": "character_gets_injured",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "Jaguar_Knight"
+  },
+  {
+    "action": "character_provides_medical_aid",
+    "n_characters": 2,
+    "subject": "Princess",
+    "object": "Jaguar_Knight"
+  },
+  {
+    "action": "character_recognizes_emotional_link",
+    "n_characters": 1,
+    "subject": "Jaguar_Knight",
+    "object": "-"
+  },
+  {
+    "action": "enemy_kidnaps_princess",
+    "n_characters": 2,
+    "subject": "Enemy",
+    "object": "Princess"
+  },
+  {
+    "action": "character_prepares_for_rescue",
+    "n_characters": 1,
+    "subject": "Jaguar_Knight",
+    "object": "-"
+  },
+  {
+    "action": "princess_confronts_enemy",
+    "n_characters": 2,
+    "subject": "Princess",
+    "object": "Enemy"
+  },
+  {
+    "action": "jaguar_knight_fights_enemy",
+    "n_characters": 2,
+    "subject": "Jaguar_Knight",
+    "object": "Enemy"
+  },
+  {
+    "action": "princess_discovers_tattoo",
+    "n_characters": 1,
+    "subject": "Princess",
+    "object": "-"
+  },
+  {
+    "action": "character_experiences_conflicting_emotions",
+    "n_characters": 1,
+    "subject": "Princess",
+    "object": "-"
+  },
+  {
+    "action": "princess_kills_jaguar_knight",
+    "n_characters": 2,
+    "subject": "Princess",
+    "object": "Jaguar_Knight"
+  },
+  {
+    "action": "character_commits_suicide",
+    "n_characters": 1,
+    "subject": "Princess",
+    "object": "-"
+  }
+]
+```
+
+This JSON captures the key actions, focusing on emotional links and tensions while maintaining a general structure suitable for reuse in other narratives.

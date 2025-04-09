@@ -1,0 +1,208 @@
+<think>
+Alright, so I need to identify or infer preconditions related to tensions for each action in the given story. Each precondition is a tension that must exist for an action to make sense.
+
+Starting with "storm-causes-damage": This action leads to the bridge collapsing, which puts Jaguar_Knight's life at risk. So, a `life_at_risk` tension arises from the storm (no specific character) affecting Jaguar_Knight.
+
+Next, "character_gets_injured Jaguar_Knight": Jaguar_Knight is injured, so his health is at risk. This sets up a `health_at_risk` tension for him.
+
+"Princess provides_medical_aid Jaguar_Knight": Princess helps because Jaguar_Knight's life was at risk. The precondition here is the existing `life_at_risk` tension.
+
+"Jaguar_Knight recognizes_emotional_link": He realizes Princess saved his life, which connects to her action, but no direct tension here.
+
+"Enemy kidnaps_princess Princess": This introduces a `prisoner` tension as she's captured. The enemy's motivation might be revenge, so perhaps a `clashing_emotions` since Princess is angry and scared.
+
+"Jaguar_Knight prepares_for_rescue": He acts because Princess is in danger (`prisoner`), so the existing tension is her captivity.
+
+"Princess confronts_enemy Enemy": She confronts her captor due to being a prisoner, so `prisoner` tension is key here.
+
+"Jaguar_Knight fights_enemy Enemy": He fights to rescue Princess, driven by her `prisoner` status and his emotional links.
+
+"Princess discovers_tattoo": This revelation introduces `clashing_emotions` in her towards Jaguar_Knight due to conflicting feelings.
+
+"Princess experiences_conflicting_emotions": Her internal conflict is a result of the tattoo discovery, leading to `clashing_emotions`.
+
+"Princess kills_jaguar_knight Jaguar_Knight": Her action results in his death, introducing a `character_dead` tension for him.
+
+"Princess commits_suicide": Her suicide adds another `character_dead` tension for herself.
+
+Now, I need to map these tensions into the JSON structure, considering each action's context and the type of tension involved.
+</think>
+
+```json
+[
+  {
+    "action": "storm-causes-damage",
+    "n_characters": 0,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "*",
+          "to": "Jaguar_Knight"
+        }
+      ]
+    }
+  },
+  {
+    "action": "character_gets_injured",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "Jaguar_Knight",
+    "preconditions": {
+      "tensions": [
+        {
+          "type": "health_at_risk",
+          "from": "*",
+          "to": "Jaguar_Knight"
+        }
+      ]
+    }
+  },
+  {
+    "action": "character_provides_medical_aid",
+    "n_characters": 2,
+    "subject": "Princess",
+    "object": "Jaguar_Knight",
+    "preconditions": {
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "*",
+          "to": "Jaguar_Knight"
+        }
+      ]
+    }
+  },
+  {
+    "action": "character_recognizes_emotional_link",
+    "n_characters": 1,
+    "subject": "Jaguar_Knight",
+    "object": "-",
+    "preconditions": {
+      "tensions": []
+    }
+  },
+  {
+    "action": "enemy_kidnaps_princess",
+    "n_characters": 2,
+    "subject": "Enemy",
+    "object": "Princess",
+    "preconditions": {
+      "tensions": [
+        {
+          "type": "prisoner",
+          "from": "*",
+          "to": "Princess"
+        }
+      ]
+    }
+  },
+  {
+    "action": "character_prepares_for_rescue",
+    "n_characters": 1,
+    "subject": "Jaguar_Knight",
+    "object": "-",
+    "preconditions": {
+      "tensions": [
+        {
+          "type": "prisoner",
+          "from": "*",
+          "to": "Princess"
+        }
+      ]
+    }
+  },
+  {
+    "action": "princess_confronts_enemy",
+    "n_characters": 2,
+    "subject": "Princess",
+    "object": "Enemy",
+    "preconditions": {
+      "tensions": [
+        {
+          "type": "prisoner",
+          "from": "*",
+          "to": "Princess"
+        }
+      ]
+    }
+  },
+  {
+    "action": "jaguar_knight_fights_enemy",
+    "n_characters": 2,
+    "subject": "Jaguar_Knight",
+    "object": "Enemy",
+    "preconditions": {
+      "tensions": [
+        {
+          "type": "prisoner",
+          "from": "*",
+          "to": "Princess"
+        }
+      ]
+    }
+  },
+  {
+    "action": "princess_discovers_tattoo",
+    "n_characters": 1,
+    "subject": "Princess",
+    "object": "-",
+    "preconditions": {
+      "tensions": [
+        {
+          "type": "clashing_emotions",
+          "from": "*",
+          "to": "Jaguar_Knight"
+        }
+      ]
+    }
+  },
+  {
+    "action": "character_experiences_conflicting_emotions",
+    "n_characters": 1,
+    "subject": "Princess",
+    "object": "-",
+    "preconditions": {
+      "tensions": [
+        {
+          "type": "clashing_emotions",
+          "from": "*",
+          "to": "Jaguar_Knight"
+        }
+      ]
+    }
+  },
+  {
+    "action": "princess_kills_jaguar_knight",
+    "n_characters": 2,
+    "subject": "Princess",
+    "object": "Jaguar_Knight",
+    "preconditions": {
+      "tensions": [
+        {
+          "type": "character_dead",
+          "from": "*",
+          "to": "Jaguar_Knight"
+        }
+      ]
+    }
+  },
+  {
+    "action": "character_commits_suicide",
+    "n_characters": 1,
+    "subject": "Princess",
+    "object": "-",
+    "preconditions": {
+      "tensions": [
+        {
+          "type": "character_dead",
+          "from": "*",
+          "to": "Princess"
+        }
+      ]
+    }
+  }
+]
+```

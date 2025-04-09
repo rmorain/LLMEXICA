@@ -1,0 +1,19 @@
+
+Sto
+bridge_collapses -
+character_injured -
+PRINCESS healed JAGUAR_KNIGHT
+ENEMY kidnapped PRINCESS
+ENEMY tied_up PRINCESS
+JAGUAR_KNIGHT prayed -
+JAGUAR_KNIGHT searched_for ENEMY
+JAGUAR_KNIGHT attacked ENEMY
+JAGUAR_KNIGHT threw_dust_in_face ENEMY
+JAGUAR_KNIGHT stabbed ENEMY
+JAGUAR_KNIGHT took_heart_from ENEMY
+JAGUAR_KNIGHT freed PRINCESS
+PRINCESS kissed JAGUAR_KNIGHT
+PRINCESS recognized_tattoo -
+PRINCESS felt_ambivalence -
+PRINCESS cut_jugular JAGUAR_KNIGHT
+PRINCESS cut_throat -

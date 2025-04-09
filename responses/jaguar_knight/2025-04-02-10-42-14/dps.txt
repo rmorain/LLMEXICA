@@ -1,0 +1,77 @@
+<think>
+Alright, I need to convert the given JSON structure into the Definition of Previous Stories (DPS) format as per the user's instructions. Let me start by understanding what exactly is required.
+
+First, I recall that the DPS format includes a story name followed by a sequence of actions. Each action can have an optional subject and object character. The example provided shows that each line represents an action, with the subject performing the action on the object if applicable.
+
+Looking at the JSON data, it's a list of actions with details about the subject, object, and the number of characters involved. My task is to translate these into DPS format lines where each action is a string that may include the subject and object.
+
+I'll go through each action in the JSON:
+
+1. "bridge_collapse" with no subject and Jaguar_Knight as object.
+2. "apply_curative_plasma" by Princess on Jaguar_Knight.
+3. "realize_life_saved" by Jaguar_Knight with no object.
+4. "kidnap_prisoner" by Enemy on Princess.
+5. "decide_rescue" by Jaguar_Knight with no object.
+6. "pray_for_wisdom" by Jaguar_Knight with no object.
+7. "attack_enemy" by Jaguar_Knight on Enemy.
+8. "liberate_prisoner" by Jaguar_Knight on Princess.
+9. "recognize_tattoo" by Princess with no object.
+10. "feel_ambivalent_emotions" by Princess with no object.
+11. "cut_jugular" by Princess on Jaguar_Knight.
+12. "bleed_to_death" by Jaguar_Knight with no object.
+13. "kill_self" by Princess with no object.
+
+For each of these, I need to create a DPS line. If an action has both subject and object, the format would be "Subject Action Object". If there's only a subject or only an object, it'll adjust accordingly.
+
+I also notice that some actions like "bridge_collapse" don't have a subject in the JSON, so in DPS, they will just be the action without a subject. Similarly for actions where the object is missing.
+
+Now, considering character names from the JSON: Jaguar_Knight, Princess, Enemy. I'll ensure these are correctly placed as subjects or objects in each line.
+
+I should also make sure that the story name is 'STO' as per the example and the instructions. Then list all characters involved before detailing the actions they perform.
+
+Wait, looking back at the example provided by the user, it starts with "Sto" followed by listing actors and then their interactions. So I need to include the characters as actors first before the actions.
+
+So, I'll structure it as:
+
+```
+Sto
+; Actors:
+Jaguar_Knight Actor
+Princess Actor
+Enemy Actor
+
+; Actions:
+bridge_collapse Jaguar_Knight
+Princess apply_curative_plasma Jaguar_Knight
+...
+```
+
+This ensures that all involved characters are listed before the actions they perform.
+
+I also need to ensure that each action line in DPS matches the JSON's subject and object, omitting any that aren't present. For example, "bridge_collapse" has no subject, so it will be just the action followed by the object.
+
+Let me now assemble all these into the correct DPS format.
+</think>
+
+<DPS>
+Sto
+; Actors:
+Jaguar_Knight Actor
+Princess Actor
+Enemy Actor
+
+; Actions:
+bridge_collapse Jaguar_Knight
+Princess apply_curative_plasma Jaguar_Knight
+Jaguar_Knight realize_life_saved -
+Enemy kidnap_prisoner Princess
+Jaguar_Knight decide_rescue -
+Jaguar_Knight pray_for_wisdom -
+Jaguar_Knight attack_enemy Enemy
+Jaguar_Knight liberate_prisoner Princess
+Princess recognize_tattoo -
+Princess feel_ambivalent_emotions -
+Princess cut_jugular Jaguar_Knight
+Jaguar_Knight bleed_to_death -
+Princess kill_self -
+</DPS>

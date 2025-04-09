@@ -1,0 +1,31 @@
+
+Sto ;1
+storm Actor
+bridge Actor
+jaguar_knight Actor
+princess Actor
+tlaloc Actor
+quetzalcoatl Actor
+enemy Actor
+huitzilopochtli Actor
+tonatiuh Actor
+
+storm_damage_bridge
+character_injured jaguar_knight
+character_healed princess jaguar_knight
+character_realize_gratitude jaguar_knight
+enemy_kidnap_princess enemy princess
+character_tied_to_rock enemy princess
+character_pray_for_wisdom jaguar_knight
+character_search_for_enemy jaguar_knight enemy
+character_attack_with_dagger jaguar_knight enemy
+character_throw_dust_in_face jaguar_knight enemy
+character_perforate_chest_with_dagger jaguar_knight enemy
+character_take_heart_as_offering jaguar_knight
+character_liberate_princess jaguar_knight princess
+character_fall_in_love princess jaguar_knight
+characters_share_romantic_kiss princess jaguar_knight
+character_recognize_tattoo princess
+character_feel_ambivalent_emotions princess jaguar_knight
+character_cut_jugular princess jaguar_knight
+character_cut_own_throat princess

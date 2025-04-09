@@ -1,0 +1,227 @@
+<think>
+Okay, I need to analyze this story and extract the essential actions related to emotional links and tensions. The user wants a JSON structure with specific keys for each action.
+
+First, I'll read through the story carefully to identify key events involving the main characters: Jaguar_Knight, Princess, Tlaloc, Enemy, Quetzalcoatl, Huitzilopochtli, Tonatiuh, and Tepescohuitle. 
+
+I notice that the story has several emotional moments between Jaguar_Knight and Princess, so I'll focus on their interactions for emotional links of friendship and love.
+
+Starting with the storm causing the bridge collapse. Tlaloc is angry, so maybe that's an action involving a character (Tlaloc) affecting others indirectly. But since the user didn't specify including gods as characters, perhaps I should omit them unless they directly interact. Wait, but in the JSON example provided by the user, they included Quetzalcoatl and Huitzilopochtli as objects when Jaguar_Knight prays to them. So I need to include gods if they are part of actions.
+
+Next, Princess helps Jaguar_Knight after his accident, which shows friendship or love. Then Jaguar_Knight realizes her determination, which can be an emotional link. 
+
+Enemy kidnaps Princess, creating a prisoner tension. Jaguar_Knight decides to liberate her, showing bravery and emotional links. The fight scene where Jaguar_Knight attacks Enemy leads to Enemy's death, another tension.
+
+Princess is angry at Enemy, leading to clashing emotions because she also has feelings for Jaguar_Knight but later hates him upon discovering his tattoo. Her ambivalence creates a tension of clashing_emotions.
+
+Finally, Princess kills Jaguar_Knight and herself, resulting in both characters_dead, which is a significant tension.
+
+I need to map each event in order. Each action should have subject, object, n_characters, and be as general as possible without naming characters.
+
+Wait, the user example has actions like 'pray_to_god', so I can use similar verbs. Also, for actions where the subject is the same as the object, like praying to oneself? No, when Jaguar_Knight prays, the object is a god, not himself.
+
+I'll list each action in order, ensuring that emotional links (friendship/love) and tensions are captured.
+
+Let me outline the steps:
+
+1. Tlaloc sends storm: subject Tlaloc, no object.
+2. Bridge collapses: caused by storm, but the action is the collapse itself, so subject is bridge, object Jaguar_Knight injured.
+3. Princess helps Jaguar_Knight: subject Princess, object Jaguar_Knight.
+4. Jaguar_Knight realizes gratitude: subject and object are both him.
+5. Enemy kidnaps Princess: subject Enemy, object Princess.
+6. Tying her up: same as above.
+7. Jaguar_Knight prays to Quetzalcoatl: subject J_K, object god.
+8. He starts a search: action on himself.
+9. Finds Enemy: action on Enemy.
+10. Attacks Enemy: action on Enemy.
+11. Throws dust and stabs: multiple actions but in sequence, maybe split into two separate actions.
+12. Performs sacred ceremony: on Enemy's heart.
+13. Walks to Princess: action on himself.
+14. Liberates her: subject J_K, object P.
+15. Admiration from J_K towards P: emotional link.
+16. P falls in love with J_K: emotional link of love.
+17. They kiss: mutual action.
+18. P recognizes tattoo: leads to tension.
+19. Princess has ambivalent thoughts: internal conflict, so subject and object are herself.
+20. Invokes god and kills J_K: two actions? Or one action involving both?
+21. She then kills herself.
+
+I think each physical action is a separate entry. So for the final part, she cuts his jugular and then her own throat.
+
+Now, mapping these into JSON structure with the specified keys, ensuring n_characters matches the presence of subject and object.
+
+I need to make sure that each action is as general as possible without character names, using snake_case. Also, include only the necessary keys: action, n_characters, subject, object.
+
+For example, 'storm_sent' could be the action when Tlaloc causes the storm.
+
+Wait, in the user's example, they had actions like 'pray_to_god', so I should follow that format.
+
+Let me go step by step:
+
+1. Tlaloc sends a storm: action 'send_storm', subject 'Tlaloc', object '-', n_characters=1.
+2. Bridge collapses due to rain: action 'collapse', subject 'bridge', object 'Jaguar_Knight' (but wait, in the example they didn't include character names; perhaps use '-' for objects not applicable? Or maybe it's better to represent as 'injure_character'. Hmm.
+
+Wait, no. The JSON should avoid character names and be general, so actions like 'collapse_bridge' would be too specific. Instead, use a verb that can apply generally. Maybe 'bridge_collapse' but in snake case: 'bridge_collapse'.
+
+But the user's example used 'pray_to_god', which is an action involving two characters (the subject and the god). So for Tlaloc sending storm, perhaps 'send_storm' as action, with subject Tlaloc.
+
+Wait, no. The action should be as general as possible without including specific nouns. For example, instead of 'bridge_collapse', it's better to have 'collapse_bridge' but that might not capture the agent. Alternatively, use passive voice: 'be_destroyed_by_storm'.
+
+But maybe I'm overcomplicating. Let me see the user's previous JSON example for reference.
+
+In their example, actions included 'pray_to_god', 'attack_enemy_with_dagger', etc., which are specific but without character names.
+
+So perhaps for Tlaloc sending storm: action 'send_storm' with subject Tlaloc and object '-' as it affects the environment, not a specific character directly. But in reality, the storm causes the bridge collapse which injures Jaguar_Knight. So maybe two separate actions: Tlaloc sends storm (affecting the bridge), then bridge collapses injuring J_K.
+
+But to keep each action focused on emotional links or tensions, perhaps I can combine them if they're part of the same event chain but still capture the key points.
+
+Alternatively, for each event in the story that relates to the emotional links and tensions, create a separate JSON object.
+
+I think it's better to list each distinct action as per the story's progression.
+</think>
+
+Here is the structured analysis of the story focusing on emotional links and tensions:
+
+```json
+[
+  {
+    "action": "send_storm",
+    "n_characters": 1,
+    "subject": "Tlaloc",
+    "object": "-"
+  },
+  {
+    "action": "injure_character",
+    "n_characters": 2,
+    "subject": "-",
+    "object": "Jaguar_Knight"
+  },
+  {
+    "action": "prepare_cure",
+    "n_characters": 2,
+    "subject": "Princess",
+    "object": "Jaguar_Knight"
+  },
+  {
+    "action": "realize_gratitude",
+    "n_characters": 1,
+    "subject": "Jaguar_Knight",
+    "object": "Jaguar_Knight"
+  },
+  {
+    "action": "kidnap_character",
+    "n_characters": 2,
+    "subject": "Enemy",
+    "object": "Princess"
+  },
+  {
+    "action": "tie_up_prisoner",
+    "n_characters": 2,
+    "subject": "Enemy",
+    "object": "Princess"
+  },
+  {
+    "action": "pray_to_god",
+    "n_characters": 2,
+    "subject": "Jaguar_Knight",
+    "object": "Quetzalcoatl"
+  },
+  {
+    "action": "start_search",
+    "n_characters": 1,
+    "subject": "Jaguar_Knight",
+    "object": "-"
+  },
+  {
+    "action": "find_enemy",
+    "n_characters": 2,
+    "subject": "Jaguar_Knight",
+    "object": "Enemy"
+  },
+  {
+    "action": "attack_with_dagger",
+    "n_characters": 2,
+    "subject": "Jaguar_Knight",
+    "object": "Enemy"
+  },
+  {
+    "action": "throw_dust",
+    "n_characters": 2,
+    "subject": "Jaguar_Knight",
+    "object": "Enemy"
+  },
+  {
+    "action": "stab_chest",
+    "n_characters": 2,
+    "subject": "Jaguar_Knight",
+    "object": "Enemy"
+  },
+  {
+    "action": "perform_ceremony",
+    "n_characters": 2,
+    "subject": "Jaguar_Knight",
+    "object": "Enemy"
+  },
+  {
+    "action": "walk_towards_princess",
+    "n_characters": 1,
+    "subject": "Jaguar_Knight",
+    "object": "-"
+  },
+  {
+    "action": "liberate_prisoner",
+    "n_characters": 2,
+    "subject": "Jaguar_Knight",
+    "object": "Princess"
+  },
+  {
+    "action": "admire_bravery",
+    "n_characters": 2,
+    "subject": "Jaguar_Knight",
+    "object": "Princess"
+  },
+  {
+    "action": "fall_in_love",
+    "n_characters": 2,
+    "subject": "Princess",
+    "object": "Jaguar_Knight"
+  },
+  {
+    "action": "kiss_each_other",
+    "n_characters": 2,
+    "subject": "Princess",
+    "object": "Jaguar_Knight"
+  },
+  {
+    "action": "recognize_tattoo",
+    "n_characters": 1,
+    "subject": "Princess",
+    "object": "-"
+  },
+  {
+    "action": "feel_ambivalence",
+    "n_characters": 1,
+    "subject": "Princess",
+    "object": "Princess"
+  },
+  {
+    "action": "invoke_god",
+    "n_characters": 2,
+    "subject": "Princess",
+    "object": "Huitzilopochtli"
+  },
+  {
+    "action": "kill_character",
+    "n_characters": 2,
+    "subject": "Princess",
+    "object": "Jaguar_Knight"
+  },
+  {
+    "action": "commit_suicide",
+    "n_characters": 1,
+    "subject": "Princess",
+    "object": "-"
+  }
+]
+```
+
+This JSON captures the essential actions related to emotional links (friendship and love) and tensions, organized chronologically. Each action is described generally without specific character names, focusing on verbs in snake_case.

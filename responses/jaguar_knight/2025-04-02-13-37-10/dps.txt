@@ -1,0 +1,70 @@
+<think>
+Okay, so I need to convert the given JSON object into a Definition of Previous Stories (DPS) structure. First, let me understand what DPS is. From the example provided, it looks like DPS is a way to represent stories using actions and characters in a specific syntax.
+
+The user wants me to map each action from the JSON to this new format, ensuring that the character names and actions match exactly. They also mentioned that if an action doesn't have a subject or object, I should omit those parts in the DPS.
+
+Alright, looking at the example, it starts with "Sto ;1" which might be a header indicating the start of the story. Then, it lists all the actors involved, like "Eagle_Knight Actor", "Jaguar_Knight Actor", etc. After that, it describes the actions in sequence using the format "<Subject> <Action> <Object>".
+
+So, my approach should be:
+
+1. **Extract Characters**: List all unique characters from the JSON.
+2. **List Actions Sequentially**: For each action in the JSON, create a line in DPS syntax, including subject and object if they exist.
+
+I need to make sure that the actions and character names are consistent with those in the JSON. Also, I should avoid adding extra information not present in the JSON.
+
+Let me start by identifying all characters from the JSON:
+
+- Tlaloc
+- Jaguar_Knight
+- Princess
+- Enemy
+- Quetzalcoatl
+- Huitzilopochtli
+- Tonatiuh
+
+Next, I'll go through each action and convert it accordingly. For example, the first action is "Tlaloc Sends Storm". In DPS, this would be "Tlaloc Sends_Storm".
+
+I need to ensure that actions without subjects or objects are represented correctly. If an action has both subject and object, like "Princess Applies Curative Plant To Jaguar_Knight's Wounds", it should follow the "<Subject> <Action> <Object>" format.
+
+Also, I have to make sure that all characters are listed as actors at the beginning of the DPS.
+
+Alright, putting this together, I'll start with the header, list all characters, and then sequentially add each action based on the JSON.
+</think>
+
+<DPS>
+Sto ;1
+Tlaloc Actor
+Jaguar_Knight Actor
+Princess Actor
+Enemy Actor
+Quetzalcoatl Actor
+Huitzilopochtli Actor
+Tonatiuh Actor
+
+Tlaloc Sends_Storm
+Jaguar_Knight Tries_To_Cross_Bridge
+Bridge Collapses_Injuring Jaguar_Knight
+Princess Knows_Jaguar_Knight_Could_Die
+Princess Prepares_Curative_Plant
+Princess Applies_Curative_Plant_To Jaguar_Knight's_Wounds
+Jaguar_Knight Recuperates
+Enemy Kidnaps_Princess
+Enemy Ties_Princess_To_Rock
+Enemy Plans_To_Kill_Princess_At_Midnight
+Jaguar_Knight Decides_To_Rescue_Princess
+Jaguar_Knight Prays_To_Quetzalcoatl
+Princess Confronts_Enemy
+Enemy Attacks_Princess
+Jaguar_Knight Searches_For_Enemy
+Jaguar_Knight Finds_Enemy
+Jaguar_Knight Throws_Dust_In_Enemy's_Face
+Jaguar_Knight Stabs_Enemy_With_Dagger
+Jaguar_Knight Takes_Enemy's_Heart
+Jaguar_Knight Liberates_Princess
+Princess Kisses_Jaguar_Knight
+Princess Recognizes_Jaguar_Knight's_Tattoo
+Princess Feels_Ambivalent_Towards_Jaguar_Knight
+Princess Kills_Jaguar_Knight
+Princess Commits_Suicide
+Tonatiuh Disappears_In_Horizon
+</DPS>

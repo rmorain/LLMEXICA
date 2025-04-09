@@ -1,0 +1,39 @@
+ tags.
+</think>
+
+Here is the converted JSON object to the Definition of Previous Stories (DPS) format:
+
+```plaintext
+<DPS>
+Sto ;1
+Princess Actor
+Jaguar_Knight Actor
+Enemy Actor
+Tlaloc Actor
+Quetzalcoatl Actor
+Huitzilopochtli Actor
+Tonatiu Actor
+
+storm_caused_by_god Tlaloc storm_caused_by_god -
+bridge_collapse_injure_head - bridge_collapse_injure_head jaguar_knight
+prepare_curative_plasma princess prepare_curative_plasma jaguar_knight
+apply_plasma_to_wounds princess apply_plasma_to_wounds jaguar_knight
+realize_determination_save_life - realize_determination_save_life -
+kidnap_princess enemy kidnep_princess princess
+tie_to_rock enemy tie_to_rock princess
+pray_for_wisdom_braveness jaguar_knight pray_for_wisdom_braveness quetzalcoatl
+confront_enemy_angrily princess confront_enemy_angrily enemy
+charge_against_princess enemy charge_against_princess princess
+search_for_enemy jaguar_knight search_for_enemy -
+attack_with_dagger jaguar_knight attack_with_dagger enemy
+throw_dust_in_face jaguar_knight throw_dust_in_face enemy
+perforate_chest_with_dagger jaguar_knight perforate_chest_with_dagger enemy
+imitate_sacred_ceremony jaguar_knight imitate_sacred_ceremony -
+liberate_princess jaguar_knight liberate_princess princess
+fall_in_love princess fall_in_love -
+kiss princess kiss jaguar_knight
+recognize_tattoo princess recognize_tattoo -
+feel_ambivalent_thoughts princess feel_ambivalent_thoughts -
+invoke_god_of_dead princess invoke_god_of_dead huitzilopochtli
+cut_jugular princess cut_jugular jaguar_knight
+cut_own_throat princess cut_own_throat -

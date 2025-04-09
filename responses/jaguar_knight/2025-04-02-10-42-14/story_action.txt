@@ -1,0 +1,110 @@
+<think>
+Okay, I need to analyze the story and extract actions related to emotional links and tensions. Let me read through the story again.
+
+First, Jaguar_Knight and Princess are inhabitants of Tenochtitlan. Tlaloc sends a storm that damages the bridge. Jaguar_Knight tries to cross and gets injured. So, that's an action where the bridge collapses, injuring him. The subject here is the storm (indirect), so maybe the object is Jaguar_Knight.
+
+Princess knows he could die and acts to save him by using a curative plant. She prepares plasma and applies it, which works. That shows friendship or love from Princess towards Jaguar_Knight.
+
+Jaguar_Knight realizes Princess saved his life, indicating gratitude or friendship. Then, Enemy kidnaps Princess for revenge because her father humiliated them. Enemy ties her up in the forest to kill her at midnight. So, Enemy is a prisoner here, and there's a life_at_risk tension.
+
+Jaguar decides to rescue her, prays for wisdom, finds Enemy after searching, attacks him with a dagger, throws dust, perforates his chest, takes his heart. That's several actions related to rescuing Princess, so liberation. Then Jaguar frees Princess, showing bravery and leading to admiration, which is a friendship or love action.
+
+Princess had fallen in love but then sees Jaguar's tattoo, similar to her father's murderers. This creates clashing emotions because she loves him but hates his past actions. She feels ambivalent, leading to odium. Then she kills Jaguar and herself, resulting in both characters dead.
+
+So, the tensions here include life_at_risk (Jaguar injured), prisoner (Princess kidnapped), love_competition? Wait, no. It's more clashing_emotions because Princess has conflicting feelings towards Jaguar. Also, health_at_risk when Jaguar is injured.
+
+Actions to extract: bridge collapse, apply curative plasma, decide rescue, liberate, recognize tattoo, feel ambivalent, cut jugular, bleed to death, kill self.
+
+Each action needs subject and object, n_characters. For example, bridge_collapse has no subject, just object as Jaguar. Apply_curative_plasma is Princess (subject) helping Jaguar (object). Recognize_tattoo is Princess realizing about Jaguar.
+
+Tensions identified: life_at_risk (Jaguar's injury), prisoner (Princess captured), clashing_emotions (Princess's conflicting feelings), and character_dead when both die at the end. Also, health_at_risk for Jaguar initially.
+
+Emotional links are friendship from Princess saving Jaguar, love as Princess falls in love, then turns to odio due to tattoo, creating clashing emotions.
+</think>
+
+Here is the structured JSON output based on the analysis:
+
+```json
+[
+  {
+    "action": "bridge_collapse",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "Jaguar_Knight"
+  },
+  {
+    "action": "apply_curative_plasma",
+    "n_characters": 2,
+    "subject": "Princess",
+    "object": "Jaguar_Knight"
+  },
+  {
+    "action": "realize_life_saved",
+    "n_characters": 1,
+    "subject": "Jaguar_Knight",
+    "object": "-"
+  },
+  {
+    "action": "kidnap_prisoner",
+    "n_characters": 2,
+    "subject": "Enemy",
+    "object": "Princess"
+  },
+  {
+    "action": "decide_rescue",
+    "n_characters": 1,
+    "subject": "Jaguar_Knight",
+    "object": "-"
+  },
+  {
+    "action": "pray_for_wisdom",
+    "n_characters": 1,
+    "subject": "Jaguar_Knight",
+    "object": "-"
+  },
+  {
+    "action": "attack_enemy",
+    "n_characters": 2,
+    "subject": "Jaguar_Knight",
+    "object": "Enemy"
+  },
+  {
+    "action": "liberate_prisoner",
+    "n_characters": 2,
+    "subject": "Jaguar_Knight",
+    "object": "Princess"
+  },
+  {
+    "action": "recognize_tattoo",
+    "n_characters": 1,
+    "subject": "Princess",
+    "object": "-"
+  },
+  {
+    "action": "feel_ambivalent_emotions",
+    "n_characters": 1,
+    "subject": "Princess",
+    "object": "-"
+  },
+  {
+    "action": "cut_jugular",
+    "n_characters": 2,
+    "subject": "Princess",
+    "object": "Jaguar_Knight"
+  },
+  {
+    "action": "bleed_to_death",
+    "n_characters": 1,
+    "subject": "Jaguar_Knight",
+    "object": "-"
+  },
+  {
+    "action": "kill_self",
+    "n_characters": 1,
+    "subject": "Princess",
+    "object": "-"
+  }
+]
+```
+
+This JSON captures the essential actions, focusing on emotional links and tensions. Each action is simplified for reusability and includes relevant subject and object details.

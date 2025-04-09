@@ -1,0 +1,1611 @@
+2025/04/02 10:16:15 routes.go:1215: INFO server config env="map[CUDA_VISIBLE_DEVICES:0 GPU_DEVICE_ORDINAL:0 HIP_VISIBLE_DEVICES: HSA_OVERRIDE_GFX_VERSION: HTTPS_PROXY: HTTP_PROXY: NO_PROXY: OLLAMA_CONTEXT_LENGTH:2048 OLLAMA_DEBUG:true OLLAMA_FLASH_ATTENTION:false OLLAMA_GPU_OVERHEAD:0 OLLAMA_HOST:http://127.0.0.1:11434 OLLAMA_INTEL_GPU:false OLLAMA_KEEP_ALIVE:5m0s OLLAMA_KV_CACHE_TYPE: OLLAMA_LLM_LIBRARY:cuda OLLAMA_LOAD_TIMEOUT:5m0s OLLAMA_MAX_LOADED_MODELS:0 OLLAMA_MAX_QUEUE:512 OLLAMA_MODELS:/home/rmorain2/.ollama_models OLLAMA_MULTIUSER_CACHE:false OLLAMA_NEW_ENGINE:false OLLAMA_NOHISTORY:false OLLAMA_NOPRUNE:false OLLAMA_NUM_PARALLEL:0 OLLAMA_ORIGINS:[http://localhost https://localhost http://localhost:* https://localhost:* http://127.0.0.1 https://127.0.0.1 http://127.0.0.1:* https://127.0.0.1:* http://0.0.0.0 https://0.0.0.0 http://0.0.0.0:* https://0.0.0.0:* app://* file://* tauri://* vscode-webview://* vscode-file://*] OLLAMA_SCHED_SPREAD:false ROCR_VISIBLE_DEVICES:0 http_proxy: https_proxy: no_proxy:]"
+time=2025-04-02T10:16:15.653-06:00 level=INFO source=images.go:432 msg="total blobs: 16"
+time=2025-04-02T10:16:15.666-06:00 level=INFO source=images.go:439 msg="total unused blobs removed: 0"
+time=2025-04-02T10:16:15.675-06:00 level=INFO source=routes.go:1277 msg="Listening on 127.0.0.1:11434 (version 0.5.13)"
+time=2025-04-02T10:16:15.676-06:00 level=DEBUG source=sched.go:106 msg="starting llm scheduler"
+time=2025-04-02T10:16:15.721-06:00 level=INFO source=gpu.go:217 msg="looking for compatible GPUs"
+time=2025-04-02T10:16:15.734-06:00 level=DEBUG source=gpu.go:98 msg="searching for GPU discovery libraries for NVIDIA"
+time=2025-04-02T10:16:15.734-06:00 level=DEBUG source=gpu.go:501 msg="Searching for GPU library" name=libcuda.so*
+time=2025-04-02T10:16:15.734-06:00 level=DEBUG source=gpu.go:525 msg="gpu library search" globs="[/home/rmorain2/.local/ollama/lib/ollama/libcuda.so* /home/rmorain2/git/LLMEXICA/libcuda.so* /usr/local/cuda*/targets/*/lib/libcuda.so* /usr/lib/*-linux-gnu/nvidia/current/libcuda.so* /usr/lib/*-linux-gnu/libcuda.so* /usr/lib/wsl/lib/libcuda.so* /usr/lib/wsl/drivers/*/libcuda.so* /opt/cuda/lib*/libcuda.so* /usr/local/cuda/lib*/libcuda.so* /usr/lib*/libcuda.so* /usr/local/lib*/libcuda.so*]"
+time=2025-04-02T10:16:15.766-06:00 level=DEBUG source=gpu.go:558 msg="discovered GPU libraries" paths=[/usr/lib64/libcuda.so.570.86.15]
+initializing /usr/lib64/libcuda.so.570.86.15
+dlsym: cuInit - 0x7f110fe76e00
+dlsym: cuDriverGetVersion - 0x7f110fe76e20
+dlsym: cuDeviceGetCount - 0x7f110fe76e60
+dlsym: cuDeviceGet - 0x7f110fe76e40
+dlsym: cuDeviceGetAttribute - 0x7f110fe76f40
+dlsym: cuDeviceGetUuid - 0x7f110fe76ea0
+dlsym: cuDeviceGetName - 0x7f110fe76e80
+dlsym: cuCtxCreate_v3 - 0x7f110fe77120
+dlsym: cuMemGetInfo_v2 - 0x7f110fe778a0
+dlsym: cuCtxDestroy - 0x7f110fed59f0
+calling cuInit
+calling cuDriverGetVersion
+raw version 0x2f30
+CUDA driver version: 12.8
+calling cuDeviceGetCount
+device count 1
+time=2025-04-02T10:16:15.833-06:00 level=DEBUG source=gpu.go:125 msg="detected GPUs" count=1 library=/usr/lib64/libcuda.so.570.86.15
+[GPU-5515b2cc-4bdd-1da1-09c3-12797bdee771] CUDA totalMem 45468 mb
+[GPU-5515b2cc-4bdd-1da1-09c3-12797bdee771] CUDA freeMem 45036 mb
+[GPU-5515b2cc-4bdd-1da1-09c3-12797bdee771] Compute Capability 8.9
+time=2025-04-02T10:16:15.967-06:00 level=DEBUG source=amd_linux.go:419 msg="amdgpu driver not detected /sys/module/amdgpu"
+releasing cuda driver library
+time=2025-04-02T10:16:15.967-06:00 level=INFO source=types.go:130 msg="inference compute" id=GPU-5515b2cc-4bdd-1da1-09c3-12797bdee771 library=cuda variant=v12 compute=8.9 driver=12.8 name="NVIDIA L40S" total="44.4 GiB" available="44.0 GiB"
+[GIN] 2025/04/02 - 10:16:24 | 200 |    2.157954ms |       127.0.0.1 | HEAD     "/"
+[GIN] 2025/04/02 - 10:16:24 | 200 |  245.195394ms |       127.0.0.1 | POST     "/api/show"
+time=2025-04-02T10:16:24.965-06:00 level=DEBUG source=gpu.go:391 msg="updating system memory data" before.total="503.3 GiB" before.free="496.7 GiB" before.free_swap="7.7 GiB" now.total="503.3 GiB" now.free="496.7 GiB" now.free_swap="7.7 GiB"
+initializing /usr/lib64/libcuda.so.570.86.15
+dlsym: cuInit - 0x7f110fe76e00
+dlsym: cuDriverGetVersion - 0x7f110fe76e20
+dlsym: cuDeviceGetCount - 0x7f110fe76e60
+dlsym: cuDeviceGet - 0x7f110fe76e40
+dlsym: cuDeviceGetAttribute - 0x7f110fe76f40
+dlsym: cuDeviceGetUuid - 0x7f110fe76ea0
+dlsym: cuDeviceGetName - 0x7f110fe76e80
+dlsym: cuCtxCreate_v3 - 0x7f110fe77120
+dlsym: cuMemGetInfo_v2 - 0x7f110fe778a0
+dlsym: cuCtxDestroy - 0x7f110fed59f0
+calling cuInit
+calling cuDriverGetVersion
+raw version 0x2f30
+CUDA driver version: 12.8
+calling cuDeviceGetCount
+device count 1
+[?2026h[?25l[1G⠙ [K[?25h[?2026ltime=2025-04-02T10:16:25.099-06:00 level=DEBUG source=gpu.go:441 msg="updating cuda memory data" gpu=GPU-5515b2cc-4bdd-1da1-09c3-12797bdee771 name="NVIDIA L40S" overhead="0 B" before.total="44.4 GiB" before.free="44.0 GiB" now.total="44.4 GiB" now.free="44.0 GiB" now.used="432.4 MiB"
+releasing cuda driver library
+time=2025-04-02T10:16:25.099-06:00 level=DEBUG source=sched.go:182 msg="updating default concurrency" OLLAMA_MAX_LOADED_MODELS=3 gpu_count=1
+[?2026h[?25l[1G⠹ [K[?25h[?2026ltime=2025-04-02T10:16:25.129-06:00 level=DEBUG source=sched.go:225 msg="loading first model" model=/home/rmorain2/.ollama_models/blobs/sha256-4cd576d9aa16961244012223abf01445567b061f1814b57dfef699e4cf8df339
+time=2025-04-02T10:16:25.129-06:00 level=DEBUG source=memory.go:108 msg=evaluating library=cuda gpu_count=1 available="[44.0 GiB]"
+time=2025-04-02T10:16:25.130-06:00 level=INFO source=sched.go:715 msg="new model will fit in available VRAM in single GPU, loading" model=/home/rmorain2/.ollama_models/blobs/sha256-4cd576d9aa16961244012223abf01445567b061f1814b57dfef699e4cf8df339 gpu=GPU-5515b2cc-4bdd-1da1-09c3-12797bdee771 parallel=4 available=47223799808 required="43.6 GiB"
+time=2025-04-02T10:16:25.130-06:00 level=DEBUG source=gpu.go:391 msg="updating system memory data" before.total="503.3 GiB" before.free="496.7 GiB" before.free_swap="7.7 GiB" now.total="503.3 GiB" now.free="496.7 GiB" now.free_swap="7.7 GiB"
+initializing /usr/lib64/libcuda.so.570.86.15
+dlsym: cuInit - 0x7f110fe76e00
+dlsym: cuDriverGetVersion - 0x7f110fe76e20
+dlsym: cuDeviceGetCount - 0x7f110fe76e60
+dlsym: cuDeviceGet - 0x7f110fe76e40
+dlsym: cuDeviceGetAttribute - 0x7f110fe76f40
+dlsym: cuDeviceGetUuid - 0x7f110fe76ea0
+dlsym: cuDeviceGetName - 0x7f110fe76e80
+dlsym: cuCtxCreate_v3 - 0x7f110fe77120
+dlsym: cuMemGetInfo_v2 - 0x7f110fe778a0
+dlsym: cuCtxDestroy - 0x7f110fed59f0
+calling cuInit
+calling cuDriverGetVersion
+raw version 0x2f30
+CUDA driver version: 12.8
+calling cuDeviceGetCount
+device count 1
+[?2026h[?25l[1G⠸ [K[?25h[?2026ltime=2025-04-02T10:16:25.257-06:00 level=DEBUG source=gpu.go:441 msg="updating cuda memory data" gpu=GPU-5515b2cc-4bdd-1da1-09c3-12797bdee771 name="NVIDIA L40S" overhead="0 B" before.total="44.4 GiB" before.free="44.0 GiB" now.total="44.4 GiB" now.free="44.0 GiB" now.used="432.4 MiB"
+releasing cuda driver library
+time=2025-04-02T10:16:25.257-06:00 level=INFO source=server.go:97 msg="system memory" total="503.3 GiB" free="496.7 GiB" free_swap="7.7 GiB"
+time=2025-04-02T10:16:25.257-06:00 level=DEBUG source=memory.go:108 msg=evaluating library=cuda gpu_count=1 available="[44.0 GiB]"
+time=2025-04-02T10:16:25.259-06:00 level=INFO source=server.go:130 msg=offload library=cuda layers.requested=-1 layers.model=81 layers.offload=81 layers.split="" memory.available="[44.0 GiB]" memory.gpu_overhead="0 B" memory.required.full="43.6 GiB" memory.required.partial="43.6 GiB" memory.required.kv="2.5 GiB" memory.required.allocations="[43.6 GiB]" memory.weights.total="40.7 GiB" memory.weights.repeating="39.9 GiB" memory.weights.nonrepeating="822.0 MiB" memory.graph.full="1.1 GiB" memory.graph.partial="1.1 GiB"
+time=2025-04-02T10:16:25.259-06:00 level=DEBUG source=server.go:259 msg="compatible gpu libraries" compatible="[cuda_v12 cuda_v11]"
+time=2025-04-02T10:16:25.259-06:00 level=DEBUG source=server.go:302 msg="adding gpu library" path=/home/rmorain2/.local/ollama/lib/ollama/cuda_v12
+time=2025-04-02T10:16:25.259-06:00 level=DEBUG source=server.go:310 msg="adding gpu dependency paths" paths=[/home/rmorain2/.local/ollama/lib/ollama/cuda_v12]
+time=2025-04-02T10:16:25.260-06:00 level=INFO source=server.go:380 msg="starting llama server" cmd="/home/rmorain2/.local/ollama/bin/ollama runner --model /home/rmorain2/.ollama_models/blobs/sha256-4cd576d9aa16961244012223abf01445567b061f1814b57dfef699e4cf8df339 --ctx-size 8192 --batch-size 512 --n-gpu-layers 81 --verbose --threads 64 --parallel 4 --port 39713"
+time=2025-04-02T10:16:25.260-06:00 level=DEBUG source=server.go:398 msg=subprocess environment="[ROCR_VISIBLE_DEVICES=0 CUDA_VISIBLE_DEVICES=GPU-5515b2cc-4bdd-1da1-09c3-12797bdee771 GPU_DEVICE_ORDINAL=0 PATH=/home/rmorain2/.local/ollama/bin:/home/rmorain2/.conda/envs/llmexica/bin:/apps/miniconda3/latest/condabin:/home/rmorain2/local/bin:/apps/slurm/latest/bin:/home/rmorain2/.vscode-server/cli/servers/Stable-ddc367ed5c8936efe395cffeec279b04ffd7db78/server/bin/remote-cli:/apps/slurm/latest/bin:/apps/lmod/lmod/libexec:/usr/share/Modules/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/rmorain2/bin:/opt/dell/srvadmin/bin:/home/rmorain2/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand:/home/rmorain2/.vscode-server/extensions/ms-python.debugpy-2025.4.1-linux-x64/bundled/scripts/noConfigScripts LD_LIBRARY_PATH=/home/rmorain2/.local/ollama/lib/ollama/cuda_v12:/home/rmorain2/.local/ollama/lib/ollama/cuda_v12:/home/rmorain2/.local/ollama/lib/ollama]"
+time=2025-04-02T10:16:25.263-06:00 level=INFO source=sched.go:450 msg="loaded runners" count=1
+time=2025-04-02T10:16:25.263-06:00 level=INFO source=server.go:557 msg="waiting for llama runner to start responding"
+time=2025-04-02T10:16:25.264-06:00 level=INFO source=server.go:591 msg="waiting for server to become available" status="llm server error"
+time=2025-04-02T10:16:25.307-06:00 level=INFO source=runner.go:931 msg="starting go runner"
+time=2025-04-02T10:16:25.307-06:00 level=DEBUG source=ggml.go:84 msg="ggml backend load all from path" path=/home/rmorain2/.local/ollama/lib/ollama/cuda_v12
+[?2026h[?25l[1G⠼ [K[?25h[?2026l[?2026h[?25l[1G⠴ [K[?25h[?2026l[?2026h[?25l[1G⠦ [K[?25h[?2026l[?2026h[?25l[1G⠧ [K[?25h[?2026l[?2026h[?25l[1G⠇ [K[?25h[?2026l[?2026h[?25l[1G⠏ [K[?25h[?2026l[?2026h[?25l[1G⠋ [K[?25h[?2026l[?2026h[?25l[1G⠙ [K[?25h[?2026l[?2026h[?25l[1G⠹ [K[?25h[?2026l[?2026h[?25l[1G⠸ [K[?25h[?2026l[?2026h[?25l[1G⠼ [K[?25h[?2026l[?2026h[?25l[1G⠴ [K[?25h[?2026l[?2026h[?25l[1G⠦ [K[?25h[?2026l[?2026h[?25l[1G⠧ [K[?25h[?2026l[?2026h[?25l[1G⠇ [K[?25h[?2026l[?2026h[?25l[1G⠏ [K[?25h[?2026l[?2026h[?25l[1G⠋ [K[?25h[?2026l[?2026h[?25l[1G⠙ [K[?25h[?2026l[?2026h[?25l[1G⠹ [K[?25h[?2026l[?2026h[?25l[1G⠸ [K[?25h[?2026l[?2026h[?25l[1G⠼ [K[?25h[?2026l[?2026h[?25l[1G⠴ [K[?25h[?2026l[?2026h[?25l[1G⠦ [K[?25h[?2026l[?2026h[?25l[1G⠧ [K[?25h[?2026l[?2026h[?25l[1G⠇ [K[?25h[?2026l[?2026h[?25l[1G⠏ [K[?25h[?2026l[?2026h[?25l[1G⠋ [K[?25h[?2026l[?2026h[?25l[1G⠙ [K[?25h[?2026l[?2026h[?25l[1G⠹ [K[?25h[?2026l[?2026h[?25l[1G⠸ [K[?25h[?2026l[?2026h[?25l[1G⠼ [K[?25h[?2026l[?2026h[?25l[1G⠴ [K[?25h[?2026lggml_cuda_init: GGML_CUDA_FORCE_MMQ:    no
+ggml_cuda_init: GGML_CUDA_FORCE_CUBLAS: no
+ggml_cuda_init: found 1 CUDA devices:
+  Device 0: NVIDIA L40S, compute capability 8.9, VMM: yes
+load_backend: loaded CUDA backend from /home/rmorain2/.local/ollama/lib/ollama/cuda_v12/libggml-cuda.so
+time=2025-04-02T10:16:28.497-06:00 level=DEBUG source=ggml.go:84 msg="ggml backend load all from path" path=/home/rmorain2/.local/ollama/lib/ollama
+[?2026h[?25l[1G⠦ [K[?25h[?2026lggml_backend_load_best: /home/rmorain2/.local/ollama/lib/ollama/libggml-cpu-alderlake.so score: 119
+ggml_backend_load_best: /home/rmorain2/.local/ollama/lib/ollama/libggml-cpu-haswell.so score: 55
+[?2026h[?25l[1G⠧ [K[?25h[?2026lggml_backend_load_best: /home/rmorain2/.local/ollama/lib/ollama/libggml-cpu-icelake.so score: 1463
+ggml_backend_load_best: /home/rmorain2/.local/ollama/lib/ollama/libggml-cpu-sandybridge.so score: 20
+[?2026h[?25l[1G⠇ [K[?25h[?2026lggml_backend_load_best: /home/rmorain2/.local/ollama/lib/ollama/libggml-cpu-skylakex.so score: 183
+load_backend: loaded CPU backend from /home/rmorain2/.local/ollama/lib/ollama/libggml-cpu-icelake.so
+time=2025-04-02T10:16:28.728-06:00 level=INFO source=runner.go:934 msg=system info="CPU : LLAMAFILE = 1 | CUDA : ARCHS = 500,600,610,700,750,800,860,870,890,900,1200 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | cgo(gcc)" threads=64
+time=2025-04-02T10:16:28.728-06:00 level=INFO source=runner.go:992 msg="Server listening on 127.0.0.1:39713"
+time=2025-04-02T10:16:28.771-06:00 level=INFO source=server.go:591 msg="waiting for server to become available" status="llm server loading model"
+[?2026h[?25l[1G⠏ [K[?25h[?2026lllama_model_load_from_file_impl: using device CUDA0 (NVIDIA L40S) - 45036 MiB free
+llama_model_loader: loaded meta data with 30 key-value pairs and 724 tensors from /home/rmorain2/.ollama_models/blobs/sha256-4cd576d9aa16961244012223abf01445567b061f1814b57dfef699e4cf8df339 (version GGUF V3 (latest))
+llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+llama_model_loader: - kv   0:                       general.architecture str              = llama
+llama_model_loader: - kv   1:                               general.type str              = model
+llama_model_loader: - kv   2:                               general.name str              = DeepSeek R1 Distill Llama 70B
+llama_model_loader: - kv   3:                           general.basename str              = DeepSeek-R1-Distill-Llama
+llama_model_loader: - kv   4:                         general.size_label str              = 70B
+llama_model_loader: - kv   5:                          llama.block_count u32              = 80
+llama_model_loader: - kv   6:                       llama.context_length u32              = 131072
+llama_model_loader: - kv   7:                     llama.embedding_length u32              = 8192
+llama_model_loader: - kv   8:                  llama.feed_forward_length u32              = 28672
+llama_model_loader: - kv   9:                 llama.attention.head_count u32              = 64
+llama_model_loader: - kv  10:              llama.attention.head_count_kv u32              = 8
+llama_model_loader: - kv  11:                       llama.rope.freq_base f32              = 500000.000000
+llama_model_loader: - kv  12:     llama.attention.layer_norm_rms_epsilon f32              = 0.000010
+llama_model_loader: - kv  13:                 llama.attention.key_length u32              = 128
+llama_model_loader: - kv  14:               llama.attention.value_length u32              = 128
+llama_model_loader: - kv  15:                          general.file_type u32              = 15
+llama_model_loader: - kv  16:                           llama.vocab_size u32              = 128256
+llama_model_loader: - kv  17:                 llama.rope.dimension_count u32              = 128
+llama_model_loader: - kv  18:                       tokenizer.ggml.model str              = gpt2
+llama_model_loader: - kv  19:                         tokenizer.ggml.pre str              = llama-bpe
+llama_model_loader: - kv  20:                      tokenizer.ggml.tokens arr[str,128256]  = ["!", "\"", "#", "$", "%", "&", "'", ...
+llama_model_loader: - kv  21:                  tokenizer.ggml.token_type arr[i32,128256]  = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+[?2026h[?25l[1G⠋ [K[?25h[?2026lllama_model_loader: - kv  22:                      tokenizer.ggml.merges arr[str,280147]  = ["Ġ Ġ", "Ġ ĠĠĠ", "ĠĠ ĠĠ", "...
+llama_model_loader: - kv  23:                tokenizer.ggml.bos_token_id u32              = 128000
+llama_model_loader: - kv  24:                tokenizer.ggml.eos_token_id u32              = 128001
+llama_model_loader: - kv  25:            tokenizer.ggml.padding_token_id u32              = 128001
+llama_model_loader: - kv  26:               tokenizer.ggml.add_bos_token bool             = true
+llama_model_loader: - kv  27:               tokenizer.ggml.add_eos_token bool             = false
+llama_model_loader: - kv  28:                    tokenizer.chat_template str              = {% if not add_generation_prompt is de...
+llama_model_loader: - kv  29:               general.quantization_version u32              = 2
+llama_model_loader: - type  f32:  162 tensors
+llama_model_loader: - type q4_K:  441 tensors
+llama_model_loader: - type q5_K:   40 tensors
+llama_model_loader: - type q6_K:   81 tensors
+print_info: file format = GGUF V3 (latest)
+print_info: file type   = Q4_K - Medium
+print_info: file size   = 39.59 GiB (4.82 BPW) 
+[?2026h[?25l[1G⠙ [K[?25h[?2026linit_tokenizer: initializing tokenizer for type 2
+load: control token: 128254 '<|reserved_special_token_246|>' is not marked as EOG
+load: control token: 128249 '<|reserved_special_token_241|>' is not marked as EOG
+load: control token: 128246 '<|reserved_special_token_238|>' is not marked as EOG
+load: control token: 128243 '<|reserved_special_token_235|>' is not marked as EOG
+load: control token: 128242 '<|reserved_special_token_234|>' is not marked as EOG
+load: control token: 128241 '<|reserved_special_token_233|>' is not marked as EOG
+load: control token: 128240 '<|reserved_special_token_232|>' is not marked as EOG
+load: control token: 128235 '<|reserved_special_token_227|>' is not marked as EOG
+load: control token: 128231 '<|reserved_special_token_223|>' is not marked as EOG
+load: control token: 128230 '<|reserved_special_token_222|>' is not marked as EOG
+load: control token: 128228 '<|reserved_special_token_220|>' is not marked as EOG
+load: control token: 128225 '<|reserved_special_token_217|>' is not marked as EOG
+load: control token: 128218 '<|reserved_special_token_210|>' is not marked as EOG
+load: control token: 128214 '<|reserved_special_token_206|>' is not marked as EOG
+load: control token: 128213 '<|reserved_special_token_205|>' is not marked as EOG
+load: control token: 128207 '<|reserved_special_token_199|>' is not marked as EOG
+load: control token: 128206 '<|reserved_special_token_198|>' is not marked as EOG
+load: control token: 128204 '<|reserved_special_token_196|>' is not marked as EOG
+load: control token: 128200 '<|reserved_special_token_192|>' is not marked as EOG
+load: control token: 128199 '<|reserved_special_token_191|>' is not marked as EOG
+load: control token: 128198 '<|reserved_special_token_190|>' is not marked as EOG
+load: control token: 128196 '<|reserved_special_token_188|>' is not marked as EOG
+load: control token: 128194 '<|reserved_special_token_186|>' is not marked as EOG
+load: control token: 128193 '<|reserved_special_token_185|>' is not marked as EOG
+load: control token: 128188 '<|reserved_special_token_180|>' is not marked as EOG
+load: control token: 128187 '<|reserved_special_token_179|>' is not marked as EOG
+load: control token: 128185 '<|reserved_special_token_177|>' is not marked as EOG
+load: control token: 128184 '<|reserved_special_token_176|>' is not marked as EOG
+load: control token: 128180 '<|reserved_special_token_172|>' is not marked as EOG
+load: control token: 128179 '<|reserved_special_token_171|>' is not marked as EOG
+load: control token: 128178 '<|reserved_special_token_170|>' is not marked as EOG
+load: control token: 128177 '<|reserved_special_token_169|>' is not marked as EOG
+load: control token: 128176 '<|reserved_special_token_168|>' is not marked as EOG
+load: control token: 128175 '<|reserved_special_token_167|>' is not marked as EOG
+load: control token: 128171 '<|reserved_special_token_163|>' is not marked as EOG
+load: control token: 128170 '<|reserved_special_token_162|>' is not marked as EOG
+load: control token: 128169 '<|reserved_special_token_161|>' is not marked as EOG
+load: control token: 128168 '<|reserved_special_token_160|>' is not marked as EOG
+load: control token: 128165 '<|reserved_special_token_157|>' is not marked as EOG
+load: control token: 128162 '<|reserved_special_token_154|>' is not marked as EOG
+load: control token: 128158 '<|reserved_special_token_150|>' is not marked as EOG
+load: control token: 128156 '<|reserved_special_token_148|>' is not marked as EOG
+load: control token: 128155 '<|reserved_special_token_147|>' is not marked as EOG
+load: control token: 128154 '<|reserved_special_token_146|>' is not marked as EOG
+load: control token: 128151 '<|reserved_special_token_143|>' is not marked as EOG
+load: control token: 128149 '<|reserved_special_token_141|>' is not marked as EOG
+load: control token: 128147 '<|reserved_special_token_139|>' is not marked as EOG
+load: control token: 128146 '<|reserved_special_token_138|>' is not marked as EOG
+load: control token: 128144 '<|reserved_special_token_136|>' is not marked as EOG
+load: control token: 128142 '<|reserved_special_token_134|>' is not marked as EOG
+load: control token: 128141 '<|reserved_special_token_133|>' is not marked as EOG
+load: control token: 128138 '<|reserved_special_token_130|>' is not marked as EOG
+load: control token: 128136 '<|reserved_special_token_128|>' is not marked as EOG
+load: control token: 128135 '<|reserved_special_token_127|>' is not marked as EOG
+load: control token: 128134 '<|reserved_special_token_126|>' is not marked as EOG
+load: control token: 128133 '<|reserved_special_token_125|>' is not marked as EOG
+load: control token: 128131 '<|reserved_special_token_123|>' is not marked as EOG
+load: control token: 128128 '<|reserved_special_token_120|>' is not marked as EOG
+load: control token: 128124 '<|reserved_special_token_116|>' is not marked as EOG
+load: control token: 128123 '<|reserved_special_token_115|>' is not marked as EOG
+load: control token: 128122 '<|reserved_special_token_114|>' is not marked as EOG
+load: control token: 128119 '<|reserved_special_token_111|>' is not marked as EOG
+load: control token: 128115 '<|reserved_special_token_107|>' is not marked as EOG
+load: control token: 128112 '<|reserved_special_token_104|>' is not marked as EOG
+load: control token: 128110 '<|reserved_special_token_102|>' is not marked as EOG
+load: control token: 128109 '<|reserved_special_token_101|>' is not marked as EOG
+load: control token: 128108 '<|reserved_special_token_100|>' is not marked as EOG
+load: control token: 128106 '<|reserved_special_token_98|>' is not marked as EOG
+load: control token: 128103 '<|reserved_special_token_95|>' is not marked as EOG
+load: control token: 128102 '<|reserved_special_token_94|>' is not marked as EOG
+load: control token: 128101 '<|reserved_special_token_93|>' is not marked as EOG
+load: control token: 128097 '<|reserved_special_token_89|>' is not marked as EOG
+load: control token: 128091 '<|reserved_special_token_83|>' is not marked as EOG
+load: control token: 128090 '<|reserved_special_token_82|>' is not marked as EOG
+load: control token: 128089 '<|reserved_special_token_81|>' is not marked as EOG
+load: control token: 128087 '<|reserved_special_token_79|>' is not marked as EOG
+load: control token: 128085 '<|reserved_special_token_77|>' is not marked as EOG
+load: control token: 128081 '<|reserved_special_token_73|>' is not marked as EOG
+load: control token: 128078 '<|reserved_special_token_70|>' is not marked as EOG
+load: control token: 128076 '<|reserved_special_token_68|>' is not marked as EOG
+load: control token: 128075 '<|reserved_special_token_67|>' is not marked as EOG
+load: control token: 128073 '<|reserved_special_token_65|>' is not marked as EOG
+load: control token: 128068 '<|reserved_special_token_60|>' is not marked as EOG
+load: control token: 128067 '<|reserved_special_token_59|>' is not marked as EOG
+load: control token: 128065 '<|reserved_special_token_57|>' is not marked as EOG
+load: control token: 128063 '<|reserved_special_token_55|>' is not marked as EOG
+load: control token: 128062 '<|reserved_special_token_54|>' is not marked as EOG
+load: control token: 128060 '<|reserved_special_token_52|>' is not marked as EOG
+load: control token: 128059 '<|reserved_special_token_51|>' is not marked as EOG
+load: control token: 128057 '<|reserved_special_token_49|>' is not marked as EOG
+load: control token: 128054 '<|reserved_special_token_46|>' is not marked as EOG
+load: control token: 128046 '<|reserved_special_token_38|>' is not marked as EOG
+load: control token: 128045 '<|reserved_special_token_37|>' is not marked as EOG
+load: control token: 128044 '<|reserved_special_token_36|>' is not marked as EOG
+load: control token: 128043 '<|reserved_special_token_35|>' is not marked as EOG
+load: control token: 128038 '<|reserved_special_token_30|>' is not marked as EOG
+load: control token: 128036 '<|reserved_special_token_28|>' is not marked as EOG
+load: control token: 128035 '<|reserved_special_token_27|>' is not marked as EOG
+load: control token: 128032 '<|reserved_special_token_24|>' is not marked as EOG
+load: control token: 128028 '<|reserved_special_token_20|>' is not marked as EOG
+load: control token: 128027 '<|reserved_special_token_19|>' is not marked as EOG
+load: control token: 128024 '<|reserved_special_token_16|>' is not marked as EOG
+load: control token: 128023 '<|reserved_special_token_15|>' is not marked as EOG
+load: control token: 128022 '<|reserved_special_token_14|>' is not marked as EOG
+load: control token: 128021 '<|reserved_special_token_13|>' is not marked as EOG
+load: control token: 128018 '<|reserved_special_token_10|>' is not marked as EOG
+load: control token: 128016 '<|reserved_special_token_8|>' is not marked as EOG
+load: control token: 128012 '<｜Assistant｜>' is not marked as EOG
+load: control token: 128011 '<｜User｜>' is not marked as EOG
+load: control token: 128005 '<|reserved_special_token_2|>' is not marked as EOG
+load: control token: 128004 '<|finetune_right_pad_id|>' is not marked as EOG
+load: control token: 128002 '<|reserved_special_token_0|>' is not marked as EOG
+load: control token: 128252 '<|reserved_special_token_244|>' is not marked as EOG
+load: control token: 128190 '<|reserved_special_token_182|>' is not marked as EOG
+load: control token: 128183 '<|reserved_special_token_175|>' is not marked as EOG
+load: control token: 128137 '<|reserved_special_token_129|>' is not marked as EOG
+load: control token: 128182 '<|reserved_special_token_174|>' is not marked as EOG
+load: control token: 128040 '<|reserved_special_token_32|>' is not marked as EOG
+load: control token: 128048 '<|reserved_special_token_40|>' is not marked as EOG
+load: control token: 128092 '<|reserved_special_token_84|>' is not marked as EOG
+load: control token: 128215 '<|reserved_special_token_207|>' is not marked as EOG
+load: control token: 128107 '<|reserved_special_token_99|>' is not marked as EOG
+load: control token: 128208 '<|reserved_special_token_200|>' is not marked as EOG
+load: control token: 128145 '<|reserved_special_token_137|>' is not marked as EOG
+load: control token: 128031 '<|reserved_special_token_23|>' is not marked as EOG
+load: control token: 128129 '<|reserved_special_token_121|>' is not marked as EOG
+load: control token: 128201 '<|reserved_special_token_193|>' is not marked as EOG
+load: control token: 128074 '<|reserved_special_token_66|>' is not marked as EOG
+load: control token: 128095 '<|reserved_special_token_87|>' is not marked as EOG
+load: control token: 128186 '<|reserved_special_token_178|>' is not marked as EOG
+load: control token: 128143 '<|reserved_special_token_135|>' is not marked as EOG
+load: control token: 128229 '<|reserved_special_token_221|>' is not marked as EOG
+load: control token: 128007 '<|end_header_id|>' is not marked as EOG
+load: control token: 128055 '<|reserved_special_token_47|>' is not marked as EOG
+load: control token: 128056 '<|reserved_special_token_48|>' is not marked as EOG
+load: control token: 128061 '<|reserved_special_token_53|>' is not marked as EOG
+load: control token: 128153 '<|reserved_special_token_145|>' is not marked as EOG
+load: control token: 128152 '<|reserved_special_token_144|>' is not marked as EOG
+load: control token: 128212 '<|reserved_special_token_204|>' is not marked as EOG
+load: control token: 128172 '<|reserved_special_token_164|>' is not marked as EOG
+load: control token: 128160 '<|reserved_special_token_152|>' is not marked as EOG
+load: control token: 128041 '<|reserved_special_token_33|>' is not marked as EOG
+load: control token: 128181 '<|reserved_special_token_173|>' is not marked as EOG
+load: control token: 128094 '<|reserved_special_token_86|>' is not marked as EOG
+load: control token: 128118 '<|reserved_special_token_110|>' is not marked as EOG
+load: control token: 128236 '<|reserved_special_token_228|>' is not marked as EOG
+load: control token: 128148 '<|reserved_special_token_140|>' is not marked as EOG
+load: control token: 128042 '<|reserved_special_token_34|>' is not marked as EOG
+load: control token: 128139 '<|reserved_special_token_131|>' is not marked as EOG
+load: control token: 128173 '<|reserved_special_token_165|>' is not marked as EOG
+load: control token: 128239 '<|reserved_special_token_231|>' is not marked as EOG
+load: control token: 128157 '<|reserved_special_token_149|>' is not marked as EOG
+load: control token: 128052 '<|reserved_special_token_44|>' is not marked as EOG
+load: control token: 128026 '<|reserved_special_token_18|>' is not marked as EOG
+load: control token: 128003 '<|reserved_special_token_1|>' is not marked as EOG
+load: control token: 128019 '<|reserved_special_token_11|>' is not marked as EOG
+load: control token: 128116 '<|reserved_special_token_108|>' is not marked as EOG
+load: control token: 128161 '<|reserved_special_token_153|>' is not marked as EOG
+load: control token: 128000 '<｜begin▁of▁sentence｜>' is not marked as EOG
+load: control token: 128226 '<|reserved_special_token_218|>' is not marked as EOG
+load: control token: 128159 '<|reserved_special_token_151|>' is not marked as EOG
+load: control token: 128088 '<|reserved_special_token_80|>' is not marked as EOG
+load: control token: 128163 '<|reserved_special_token_155|>' is not marked as EOG
+load: control token: 128113 '<|reserved_special_token_105|>' is not marked as EOG
+load: control token: 128250 '<|reserved_special_token_242|>' is not marked as EOG
+load: control token: 128125 '<|reserved_special_token_117|>' is not marked as EOG
+load: control token: 128053 '<|reserved_special_token_45|>' is not marked as EOG
+load: control token: 128224 '<|reserved_special_token_216|>' is not marked as EOG
+load: control token: 128247 '<|reserved_special_token_239|>' is not marked as EOG
+load: control token: 128251 '<|reserved_special_token_243|>' is not marked as EOG
+load: control token: 128216 '<|reserved_special_token_208|>' is not marked as EOG
+load: control token: 128006 '<|start_header_id|>' is not marked as EOG
+load: control token: 128211 '<|reserved_special_token_203|>' is not marked as EOG
+load: control token: 128077 '<|reserved_special_token_69|>' is not marked as EOG
+load: control token: 128237 '<|reserved_special_token_229|>' is not marked as EOG
+load: control token: 128086 '<|reserved_special_token_78|>' is not marked as EOG
+load: control token: 128001 '<｜end▁of▁sentence｜>' is not marked as EOG
+load: control token: 128227 '<|reserved_special_token_219|>' is not marked as EOG
+load: control token: 128058 '<|reserved_special_token_50|>' is not marked as EOG
+load: control token: 128100 '<|reserved_special_token_92|>' is not marked as EOG
+load: control token: 128209 '<|reserved_special_token_201|>' is not marked as EOG
+load: control token: 128084 '<|reserved_special_token_76|>' is not marked as EOG
+load: control token: 128071 '<|reserved_special_token_63|>' is not marked as EOG
+load: control token: 128070 '<|reserved_special_token_62|>' is not marked as EOG
+load: control token: 128049 '<|reserved_special_token_41|>' is not marked as EOG
+load: control token: 128197 '<|reserved_special_token_189|>' is not marked as EOG
+load: control token: 128072 '<|reserved_special_token_64|>' is not marked as EOG
+load: control token: 128223 '<|reserved_special_token_215|>' is not marked as EOG
+load: control token: 128217 '<|reserved_special_token_209|>' is not marked as EOG
+load: control token: 128111 '<|reserved_special_token_103|>' is not marked as EOG
+load: control token: 128203 '<|reserved_special_token_195|>' is not marked as EOG
+load: control token: 128051 '<|reserved_special_token_43|>' is not marked as EOG
+load: control token: 128030 '<|reserved_special_token_22|>' is not marked as EOG
+load: control token: 128117 '<|reserved_special_token_109|>' is not marked as EOG
+load: control token: 128010 '<|python_tag|>' is not marked as EOG
+load: control token: 128238 '<|reserved_special_token_230|>' is not marked as EOG
+load: control token: 128255 '<|reserved_special_token_247|>' is not marked as EOG
+load: control token: 128202 '<|reserved_special_token_194|>' is not marked as EOG
+load: control token: 128132 '<|reserved_special_token_124|>' is not marked as EOG
+load: control token: 128248 '<|reserved_special_token_240|>' is not marked as EOG
+load: control token: 128167 '<|reserved_special_token_159|>' is not marked as EOG
+load: control token: 128127 '<|reserved_special_token_119|>' is not marked as EOG
+load: control token: 128105 '<|reserved_special_token_97|>' is not marked as EOG
+load: control token: 128039 '<|reserved_special_token_31|>' is not marked as EOG
+load: control token: 128232 '<|reserved_special_token_224|>' is not marked as EOG
+load: control token: 128166 '<|reserved_special_token_158|>' is not marked as EOG
+load: control token: 128130 '<|reserved_special_token_122|>' is not marked as EOG
+load: control token: 128114 '<|reserved_special_token_106|>' is not marked as EOG
+load: control token: 128234 '<|reserved_special_token_226|>' is not marked as EOG
+load: control token: 128191 '<|reserved_special_token_183|>' is not marked as EOG
+load: control token: 128064 '<|reserved_special_token_56|>' is not marked as EOG
+load: control token: 128140 '<|reserved_special_token_132|>' is not marked as EOG
+load: control token: 128096 '<|reserved_special_token_88|>' is not marked as EOG
+load: control token: 128098 '<|reserved_special_token_90|>' is not marked as EOG
+load: control token: 128192 '<|reserved_special_token_184|>' is not marked as EOG
+load: control token: 128093 '<|reserved_special_token_85|>' is not marked as EOG
+load: control token: 128150 '<|reserved_special_token_142|>' is not marked as EOG
+load: control token: 128222 '<|reserved_special_token_214|>' is not marked as EOG
+load: control token: 128233 '<|reserved_special_token_225|>' is not marked as EOG
+load: control token: 128220 '<|reserved_special_token_212|>' is not marked as EOG
+load: control token: 128034 '<|reserved_special_token_26|>' is not marked as EOG
+load: control token: 128033 '<|reserved_special_token_25|>' is not marked as EOG
+load: control token: 128253 '<|reserved_special_token_245|>' is not marked as EOG
+load: control token: 128195 '<|reserved_special_token_187|>' is not marked as EOG
+load: control token: 128099 '<|reserved_special_token_91|>' is not marked as EOG
+load: control token: 128189 '<|reserved_special_token_181|>' is not marked as EOG
+load: control token: 128210 '<|reserved_special_token_202|>' is not marked as EOG
+load: control token: 128174 '<|reserved_special_token_166|>' is not marked as EOG
+load: control token: 128083 '<|reserved_special_token_75|>' is not marked as EOG
+load: control token: 128080 '<|reserved_special_token_72|>' is not marked as EOG
+load: control token: 128104 '<|reserved_special_token_96|>' is not marked as EOG
+load: control token: 128082 '<|reserved_special_token_74|>' is not marked as EOG
+load: control token: 128219 '<|reserved_special_token_211|>' is not marked as EOG
+load: control token: 128017 '<|reserved_special_token_9|>' is not marked as EOG
+load: control token: 128050 '<|reserved_special_token_42|>' is not marked as EOG
+load: control token: 128205 '<|reserved_special_token_197|>' is not marked as EOG
+load: control token: 128047 '<|reserved_special_token_39|>' is not marked as EOG
+load: control token: 128164 '<|reserved_special_token_156|>' is not marked as EOG
+load: control token: 128020 '<|reserved_special_token_12|>' is not marked as EOG
+load: control token: 128069 '<|reserved_special_token_61|>' is not marked as EOG
+load: control token: 128245 '<|reserved_special_token_237|>' is not marked as EOG
+load: control token: 128121 '<|reserved_special_token_113|>' is not marked as EOG
+load: control token: 128079 '<|reserved_special_token_71|>' is not marked as EOG
+load: control token: 128037 '<|reserved_special_token_29|>' is not marked as EOG
+load: control token: 128244 '<|reserved_special_token_236|>' is not marked as EOG
+load: control token: 128029 '<|reserved_special_token_21|>' is not marked as EOG
+load: control token: 128221 '<|reserved_special_token_213|>' is not marked as EOG
+load: control token: 128066 '<|reserved_special_token_58|>' is not marked as EOG
+load: control token: 128120 '<|reserved_special_token_112|>' is not marked as EOG
+load: control token: 128015 '<｜▁pad▁｜>' is not marked as EOG
+load: control token: 128025 '<|reserved_special_token_17|>' is not marked as EOG
+load: control token: 128126 '<|reserved_special_token_118|>' is not marked as EOG
+load: special_eos_id is not in special_eog_ids - the tokenizer config may be incorrect
+load: special tokens cache size = 256
+load: token to piece cache size = 0.7999 MB
+print_info: arch             = llama
+print_info: vocab_only       = 0
+print_info: n_ctx_train      = 131072
+print_info: n_embd           = 8192
+print_info: n_layer          = 80
+print_info: n_head           = 64
+print_info: n_head_kv        = 8
+print_info: n_rot            = 128
+print_info: n_swa            = 0
+print_info: n_embd_head_k    = 128
+print_info: n_embd_head_v    = 128
+print_info: n_gqa            = 8
+print_info: n_embd_k_gqa     = 1024
+print_info: n_embd_v_gqa     = 1024
+print_info: f_norm_eps       = 0.0e+00
+print_info: f_norm_rms_eps   = 1.0e-05
+print_info: f_clamp_kqv      = 0.0e+00
+print_info: f_max_alibi_bias = 0.0e+00
+print_info: f_logit_scale    = 0.0e+00
+print_info: n_ff             = 28672
+print_info: n_expert         = 0
+print_info: n_expert_used    = 0
+print_info: causal attn      = 1
+print_info: pooling type     = 0
+print_info: rope type        = 0
+print_info: rope scaling     = linear
+print_info: freq_base_train  = 500000.0
+print_info: freq_scale_train = 1
+print_info: n_ctx_orig_yarn  = 131072
+print_info: rope_finetuned   = unknown
+print_info: ssm_d_conv       = 0
+print_info: ssm_d_inner      = 0
+print_info: ssm_d_state      = 0
+print_info: ssm_dt_rank      = 0
+print_info: ssm_dt_b_c_rms   = 0
+print_info: model type       = 70B
+print_info: model params     = 70.55 B
+print_info: general.name     = DeepSeek R1 Distill Llama 70B
+print_info: vocab type       = BPE
+print_info: n_vocab          = 128256
+print_info: n_merges         = 280147
+print_info: BOS token        = 128000 '<｜begin▁of▁sentence｜>'
+print_info: EOS token        = 128001 '<｜end▁of▁sentence｜>'
+print_info: EOT token        = 128009 '<|eot_id|>'
+print_info: EOM token        = 128008 '<|eom_id|>'
+print_info: PAD token        = 128001 '<｜end▁of▁sentence｜>'
+print_info: LF token         = 198 'Ċ'
+print_info: EOG token        = 128001 '<｜end▁of▁sentence｜>'
+print_info: EOG token        = 128008 '<|eom_id|>'
+print_info: EOG token        = 128009 '<|eot_id|>'
+print_info: max token length = 256
+load_tensors: loading model tensors, this can take a while... (mmap = true)
+load_tensors: layer   0 assigned to device CUDA0
+load_tensors: layer   1 assigned to device CUDA0
+load_tensors: layer   2 assigned to device CUDA0
+load_tensors: layer   3 assigned to device CUDA0
+load_tensors: layer   4 assigned to device CUDA0
+load_tensors: layer   5 assigned to device CUDA0
+load_tensors: layer   6 assigned to device CUDA0
+load_tensors: layer   7 assigned to device CUDA0
+load_tensors: layer   8 assigned to device CUDA0
+load_tensors: layer   9 assigned to device CUDA0
+load_tensors: layer  10 assigned to device CUDA0
+load_tensors: layer  11 assigned to device CUDA0
+load_tensors: layer  12 assigned to device CUDA0
+load_tensors: layer  13 assigned to device CUDA0
+load_tensors: layer  14 assigned to device CUDA0
+load_tensors: layer  15 assigned to device CUDA0
+load_tensors: layer  16 assigned to device CUDA0
+load_tensors: layer  17 assigned to device CUDA0
+load_tensors: layer  18 assigned to device CUDA0
+load_tensors: layer  19 assigned to device CUDA0
+load_tensors: layer  20 assigned to device CUDA0
+load_tensors: layer  21 assigned to device CUDA0
+load_tensors: layer  22 assigned to device CUDA0
+load_tensors: layer  23 assigned to device CUDA0
+load_tensors: layer  24 assigned to device CUDA0
+load_tensors: layer  25 assigned to device CUDA0
+load_tensors: layer  26 assigned to device CUDA0
+load_tensors: layer  27 assigned to device CUDA0
+load_tensors: layer  28 assigned to device CUDA0
+load_tensors: layer  29 assigned to device CUDA0
+load_tensors: layer  30 assigned to device CUDA0
+load_tensors: layer  31 assigned to device CUDA0
+load_tensors: layer  32 assigned to device CUDA0
+load_tensors: layer  33 assigned to device CUDA0
+load_tensors: layer  34 assigned to device CUDA0
+load_tensors: layer  35 assigned to device CUDA0
+load_tensors: layer  36 assigned to device CUDA0
+load_tensors: layer  37 assigned to device CUDA0
+load_tensors: layer  38 assigned to device CUDA0
+load_tensors: layer  39 assigned to device CUDA0
+load_tensors: layer  40 assigned to device CUDA0
+load_tensors: layer  41 assigned to device CUDA0
+load_tensors: layer  42 assigned to device CUDA0
+load_tensors: layer  43 assigned to device CUDA0
+load_tensors: layer  44 assigned to device CUDA0
+load_tensors: layer  45 assigned to device CUDA0
+load_tensors: layer  46 assigned to device CUDA0
+load_tensors: layer  47 assigned to device CUDA0
+load_tensors: layer  48 assigned to device CUDA0
+load_tensors: layer  49 assigned to device CUDA0
+load_tensors: layer  50 assigned to device CUDA0
+load_tensors: layer  51 assigned to device CUDA0
+load_tensors: layer  52 assigned to device CUDA0
+load_tensors: layer  53 assigned to device CUDA0
+load_tensors: layer  54 assigned to device CUDA0
+load_tensors: layer  55 assigned to device CUDA0
+load_tensors: layer  56 assigned to device CUDA0
+load_tensors: layer  57 assigned to device CUDA0
+load_tensors: layer  58 assigned to device CUDA0
+load_tensors: layer  59 assigned to device CUDA0
+load_tensors: layer  60 assigned to device CUDA0
+load_tensors: layer  61 assigned to device CUDA0
+load_tensors: layer  62 assigned to device CUDA0
+load_tensors: layer  63 assigned to device CUDA0
+load_tensors: layer  64 assigned to device CUDA0
+load_tensors: layer  65 assigned to device CUDA0
+load_tensors: layer  66 assigned to device CUDA0
+load_tensors: layer  67 assigned to device CUDA0
+load_tensors: layer  68 assigned to device CUDA0
+load_tensors: layer  69 assigned to device CUDA0
+load_tensors: layer  70 assigned to device CUDA0
+load_tensors: layer  71 assigned to device CUDA0
+load_tensors: layer  72 assigned to device CUDA0
+load_tensors: layer  73 assigned to device CUDA0
+load_tensors: layer  74 assigned to device CUDA0
+load_tensors: layer  75 assigned to device CUDA0
+load_tensors: layer  76 assigned to device CUDA0
+load_tensors: layer  77 assigned to device CUDA0
+load_tensors: layer  78 assigned to device CUDA0
+load_tensors: layer  79 assigned to device CUDA0
+load_tensors: layer  80 assigned to device CUDA0
+load_tensors: tensor 'token_embd.weight' (q4_K) (and 0 others) cannot be used with preferred buffer type CUDA_Host, using CPU instead
+[?2026h[?25l[1G⠹ [K[?25h[?2026l[?2026h[?25l[1G⠸ [K[?25h[?2026l[?2026h[?25l[1G⠼ [K[?25h[?2026l[?2026h[?25l[1G⠴ [K[?25h[?2026l[?2026h[?25l[1G⠦ [K[?25h[?2026l[?2026h[?25l[1G⠧ [K[?25h[?2026l[?2026h[?25l[1G⠇ [K[?25h[?2026l[?2026h[?25l[1G⠏ [K[?25h[?2026l[?2026h[?25l[1G⠋ [K[?25h[?2026l[?2026h[?25l[1G⠙ [K[?25h[?2026l[?2026h[?25l[1G⠹ [K[?25h[?2026l[?2026h[?25l[1G⠸ [K[?25h[?2026l[?2026h[?25l[1G⠼ [K[?25h[?2026l[?2026h[?25l[1G⠴ [K[?25h[?2026l[?2026h[?25l[1G⠦ [K[?25h[?2026l[?2026h[?25l[1G⠧ [K[?25h[?2026l[?2026h[?25l[1G⠇ [K[?25h[?2026l[?2026h[?25l[1G⠏ [K[?25h[?2026l[?2026h[?25l[1G⠋ [K[?25h[?2026l[?2026h[?25l[1G⠙ [K[?25h[?2026l[?2026h[?25l[1G⠹ [K[?25h[?2026l[?2026h[?25l[1G⠸ [K[?25h[?2026l[?2026h[?25l[1G⠼ [K[?25h[?2026l[?2026h[?25l[1G⠴ [K[?25h[?2026l[?2026h[?25l[1G⠦ [K[?25h[?2026l[?2026h[?25l[1G⠧ [K[?25h[?2026l[?2026h[?25l[1G⠇ [K[?25h[?2026l[?2026h[?25l[1G⠏ [K[?25h[?2026l[?2026h[?25l[1G⠋ [K[?25h[?2026l[?2026h[?25l[1G⠙ [K[?25h[?2026l[?2026h[?25l[1G⠹ [K[?25h[?2026l[?2026h[?25l[1G⠸ [K[?25h[?2026l[?2026h[?25l[1G⠼ [K[?25h[?2026l[?2026h[?25l[1G⠴ [K[?25h[?2026l[?2026h[?25l[1G⠦ [K[?25h[?2026l[?2026h[?25l[1G⠦ [K[?25h[?2026l[?2026h[?25l[1G⠇ [K[?25h[?2026l[?2026h[?25l[1G⠏ [K[?25h[?2026l[?2026h[?25l[1G⠋ [K[?25h[?2026l[?2026h[?25l[1G⠙ [K[?25h[?2026l[?2026h[?25l[1G⠹ [K[?25h[?2026l[?2026h[?25l[1G⠸ [K[?25h[?2026l[?2026h[?25l[1G⠼ [K[?25h[?2026l[?2026h[?25l[1G⠴ [K[?25h[?2026l[?2026h[?25l[1G⠦ [K[?25h[?2026l[?2026h[?25l[1G⠧ [K[?25h[?2026l[?2026h[?25l[1G⠇ [K[?25h[?2026l[?2026h[?25l[1G⠏ [K[?25h[?2026l[?2026h[?25l[1G⠋ [K[?25h[?2026l[?2026h[?25l[1G⠙ [K[?25h[?2026l[?2026h[?25l[1G⠹ [K[?25h[?2026l[?2026h[?25l[1G⠸ [K[?25h[?2026l[?2026h[?25l[1G⠼ [K[?25h[?2026l[?2026h[?25l[1G⠴ [K[?25h[?2026l[?2026h[?25l[1G⠦ [K[?25h[?2026l[?2026h[?25l[1G⠧ [K[?25h[?2026l[?2026h[?25l[1G⠇ [K[?25h[?2026l[?2026h[?25l[1G⠏ [K[?25h[?2026l[?2026h[?25l[1G⠋ [K[?25h[?2026l[?2026h[?25l[1G⠙ [K[?25h[?2026l[?2026h[?25l[1G⠹ [K[?25h[?2026l[?2026h[?25l[1G⠸ [K[?25h[?2026l[?2026h[?25l[1G⠼ [K[?25h[?2026l[?2026h[?25l[1G⠴ [K[?25h[?2026l[?2026h[?25l[1G⠦ [K[?25h[?2026l[?2026h[?25l[1G⠧ [K[?25h[?2026l[?2026h[?25l[1G⠇ [K[?25h[?2026l[?2026h[?25l[1G⠏ [K[?25h[?2026l[?2026h[?25l[1G⠋ [K[?25h[?2026l[?2026h[?25l[1G⠙ [K[?25h[?2026l[?2026h[?25l[1G⠹ [K[?25h[?2026l[?2026h[?25l[1G⠸ [K[?25h[?2026l[?2026h[?25l[1G⠼ [K[?25h[?2026l[?2026h[?25l[1G⠴ [K[?25h[?2026l[?2026h[?25l[1G⠦ [K[?25h[?2026l[?2026h[?25l[1G⠧ [K[?25h[?2026l[?2026h[?25l[1G⠇ [K[?25h[?2026l[?2026h[?25l[1G⠏ [K[?25h[?2026l[?2026h[?25l[1G⠋ [K[?25h[?2026l[?2026h[?25l[1G⠙ [K[?25h[?2026l[?2026h[?25l[1G⠹ [K[?25h[?2026l[?2026h[?25l[1G⠸ [K[?25h[?2026l[?2026h[?25l[1G⠼ [K[?25h[?2026l[?2026h[?25l[1G⠴ [K[?25h[?2026l[?2026h[?25l[1G⠦ [K[?25h[?2026l[?2026h[?25l[1G⠧ [K[?25h[?2026l[?2026h[?25l[1G⠇ [K[?25h[?2026l[?2026h[?25l[1G⠏ [K[?25h[?2026l[?2026h[?25l[1G⠋ [K[?25h[?2026l[?2026h[?25l[1G⠙ [K[?25h[?2026l[?2026h[?25l[1G⠹ [K[?25h[?2026l[?2026h[?25l[1G⠸ [K[?25h[?2026l[?2026h[?25l[1G⠼ [K[?25h[?2026l[?2026h[?25l[1G⠴ [K[?25h[?2026l[?2026h[?25l[1G⠦ [K[?25h[?2026l[?2026h[?25l[1G⠧ [K[?25h[?2026l[?2026h[?25l[1G⠇ [K[?25h[?2026l[?2026h[?25l[1G⠏ [K[?25h[?2026l[?2026h[?25l[1G⠋ [K[?25h[?2026l[?2026h[?25l[1G⠙ [K[?25h[?2026l[?2026h[?25l[1G⠹ [K[?25h[?2026l[?2026h[?25l[1G⠸ [K[?25h[?2026l[?2026h[?25l[1G⠼ [K[?25h[?2026l[?2026h[?25l[1G⠴ [K[?25h[?2026l[?2026h[?25l[1G⠦ [K[?25h[?2026l[?2026h[?25l[1G⠧ [K[?25h[?2026l[?2026h[?25l[1G⠇ [K[?25h[?2026l[?2026h[?25l[1G⠏ [K[?25h[?2026l[?2026h[?25l[1G⠋ [K[?25h[?2026l[?2026h[?25l[1G⠙ [K[?25h[?2026l[?2026h[?25l[1G⠹ [K[?25h[?2026l[?2026h[?25l[1G⠸ [K[?25h[?2026l[?2026h[?25l[1G⠼ [K[?25h[?2026l[?2026h[?25l[1G⠴ [K[?25h[?2026l[?2026h[?25l[1G⠦ [K[?25h[?2026l[?2026h[?25l[1G⠧ [K[?25h[?2026l[?2026h[?25l[1G⠇ [K[?25h[?2026l[?2026h[?25l[1G⠏ [K[?25h[?2026l[?2026h[?25l[1G⠋ [K[?25h[?2026l[?2026h[?25l[1G⠙ [K[?25h[?2026l[?2026h[?25l[1G⠹ [K[?25h[?2026l[?2026h[?25l[1G⠸ [K[?25h[?2026l[?2026h[?25l[1G⠼ [K[?25h[?2026l[?2026h[?25l[1G⠴ [K[?25h[?2026l[?2026h[?25l[1G⠦ [K[?25h[?2026l[?2026h[?25l[1G⠧ [K[?25h[?2026l[?2026h[?25l[1G⠇ [K[?25h[?2026l[?2026h[?25l[1G⠏ [K[?25h[?2026l[?2026h[?25l[1G⠋ [K[?25h[?2026l[?2026h[?25l[1G⠙ [K[?25h[?2026l[?2026h[?25l[1G⠹ [K[?25h[?2026l[?2026h[?25l[1G⠸ [K[?25h[?2026l[?2026h[?25l[1G⠼ [K[?25h[?2026l[?2026h[?25l[1G⠴ [K[?25h[?2026l[?2026h[?25l[1G⠦ [K[?25h[?2026l[?2026h[?25l[1G⠧ [K[?25h[?2026l[?2026h[?25l[1G⠇ [K[?25h[?2026l[?2026h[?25l[1G⠏ [K[?25h[?2026l[?2026h[?25l[1G⠋ [K[?25h[?2026l[?2026h[?25l[1G⠙ [K[?25h[?2026l[?2026h[?25l[1G⠹ [K[?25h[?2026l[?2026h[?25l[1G⠸ [K[?25h[?2026l[?2026h[?25l[1G⠼ [K[?25h[?2026l[?2026h[?25l[1G⠴ [K[?25h[?2026l[?2026h[?25l[1G⠦ [K[?25h[?2026l[?2026h[?25l[1G⠧ [K[?25h[?2026l[?2026h[?25l[1G⠇ [K[?25h[?2026l[?2026h[?25l[1G⠏ [K[?25h[?2026l[?2026h[?25l[1G⠋ [K[?25h[?2026l[?2026h[?25l[1G⠙ [K[?25h[?2026l[?2026h[?25l[1G⠹ [K[?25h[?2026l[?2026h[?25l[1G⠸ [K[?25h[?2026l[?2026h[?25l[1G⠼ [K[?25h[?2026l[?2026h[?25l[1G⠴ [K[?25h[?2026l[?2026h[?25l[1G⠦ [K[?25h[?2026l[?2026h[?25l[1G⠧ [K[?25h[?2026l[?2026h[?25l[1G⠇ [K[?25h[?2026l[?2026h[?25l[1G⠏ [K[?25h[?2026l[?2026h[?25l[1G⠋ [K[?25h[?2026l[?2026h[?25l[1G⠙ [K[?25h[?2026l[?2026h[?25l[1G⠹ [K[?25h[?2026l[?2026h[?25l[1G⠸ [K[?25h[?2026l[?2026h[?25l[1G⠼ [K[?25h[?2026l[?2026h[?25l[1G⠴ [K[?25h[?2026l[?2026h[?25l[1G⠦ [K[?25h[?2026l[?2026h[?25l[1G⠧ [K[?25h[?2026l[?2026h[?25l[1G⠇ [K[?25h[?2026l[?2026h[?25l[1G⠏ [K[?25h[?2026l[?2026h[?25l[1G⠋ [K[?25h[?2026l[?2026h[?25l[1G⠙ [K[?25h[?2026l[?2026h[?25l[1G⠹ [K[?25h[?2026l[?2026h[?25l[1G⠸ [K[?25h[?2026l[?2026h[?25l[1G⠼ [K[?25h[?2026l[?2026h[?25l[1G⠴ [K[?25h[?2026l[?2026h[?25l[1G⠦ [K[?25h[?2026l[?2026h[?25l[1G⠧ [K[?25h[?2026l[?2026h[?25l[1G⠇ [K[?25h[?2026l[?2026h[?25l[1G⠏ [K[?25h[?2026l[?2026h[?25l[1G⠋ [K[?25h[?2026l[?2026h[?25l[1G⠙ [K[?25h[?2026l[?2026h[?25l[1G⠹ [K[?25h[?2026l[?2026h[?25l[1G⠸ [K[?25h[?2026l[?2026h[?25l[1G⠼ [K[?25h[?2026l[?2026h[?25l[1G⠴ [K[?25h[?2026l[?2026h[?25l[1G⠦ [K[?25h[?2026l[?2026h[?25l[1G⠧ [K[?25h[?2026l[?2026h[?25l[1G⠇ [K[?25h[?2026l[?2026h[?25l[1G⠏ [K[?25h[?2026l[?2026h[?25l[1G⠋ [K[?25h[?2026l[?2026h[?25l[1G⠙ [K[?25h[?2026l[?2026h[?25l[1G⠹ [K[?25h[?2026l[?2026h[?25l[1G⠸ [K[?25h[?2026l[?2026h[?25l[1G⠼ [K[?25h[?2026l[?2026h[?25l[1G⠴ [K[?25h[?2026l[?2026h[?25l[1G⠦ [K[?25h[?2026l[?2026h[?25l[1G⠧ [K[?25h[?2026l[?2026h[?25l[1G⠇ [K[?25h[?2026l[?2026h[?25l[1G⠏ [K[?25h[?2026l[?2026h[?25l[1G⠋ [K[?25h[?2026l[?2026h[?25l[1G⠙ [K[?25h[?2026l[?2026h[?25l[1G⠹ [K[?25h[?2026l[?2026h[?25l[1G⠸ [K[?25h[?2026l[?2026h[?25l[1G⠼ [K[?25h[?2026l[?2026h[?25l[1G⠴ [K[?25h[?2026l[?2026h[?25l[1G⠦ [K[?25h[?2026l[?2026h[?25l[1G⠧ [K[?25h[?2026l[?2026h[?25l[1G⠇ [K[?25h[?2026l[?2026h[?25l[1G⠏ [K[?25h[?2026l[?2026h[?25l[1G⠋ [K[?25h[?2026l[?2026h[?25l[1G⠙ [K[?25h[?2026l[?2026h[?25l[1G⠹ [K[?25h[?2026l[?2026h[?25l[1G⠸ [K[?25h[?2026l[?2026h[?25l[1G⠼ [K[?25h[?2026l[?2026h[?25l[1G⠴ [K[?25h[?2026l[?2026h[?25l[1G⠦ [K[?25h[?2026l[?2026h[?25l[1G⠧ [K[?25h[?2026l[?2026h[?25l[1G⠇ [K[?25h[?2026l[?2026h[?25l[1G⠏ [K[?25h[?2026l[?2026h[?25l[1G⠋ [K[?25h[?2026l[?2026h[?25l[1G⠙ [K[?25h[?2026l[?2026h[?25l[1G⠹ [K[?25h[?2026l[?2026h[?25l[1G⠸ [K[?25h[?2026l[?2026h[?25l[1G⠼ [K[?25h[?2026l[?2026h[?25l[1G⠴ [K[?25h[?2026l[?2026h[?25l[1G⠦ [K[?25h[?2026l[?2026h[?25l[1G⠧ [K[?25h[?2026l[?2026h[?25l[1G⠇ [K[?25h[?2026l[?2026h[?25l[1G⠏ [K[?25h[?2026l[?2026h[?25l[1G⠋ [K[?25h[?2026l[?2026h[?25l[1G⠙ [K[?25h[?2026l[?2026h[?25l[1G⠹ [K[?25h[?2026l[?2026h[?25l[1G⠸ [K[?25h[?2026l[?2026h[?25l[1G⠼ [K[?25h[?2026l[?2026h[?25l[1G⠴ [K[?25h[?2026l[?2026h[?25l[1G⠦ [K[?25h[?2026l[?2026h[?25l[1G⠧ [K[?25h[?2026l[?2026h[?25l[1G⠇ [K[?25h[?2026l[?2026h[?25l[1G⠏ [K[?25h[?2026l[?2026h[?25l[1G⠋ [K[?25h[?2026l[?2026h[?25l[1G⠙ [K[?25h[?2026l[?2026h[?25l[1G⠹ [K[?25h[?2026l[?2026h[?25l[1G⠸ [K[?25h[?2026l[?2026h[?25l[1G⠼ [K[?25h[?2026l[?2026h[?25l[1G⠴ [K[?25h[?2026l[?2026h[?25l[1G⠦ [K[?25h[?2026l[?2026h[?25l[1G⠧ [K[?25h[?2026l[?2026h[?25l[1G⠇ [K[?25h[?2026l[?2026h[?25l[1G⠏ [K[?25h[?2026l[?2026h[?25l[1G⠋ [K[?25h[?2026l[?2026h[?25l[1G⠙ [K[?25h[?2026l[?2026h[?25l[1G⠹ [K[?25h[?2026l[?2026h[?25l[1G⠸ [K[?25h[?2026l[?2026h[?25l[1G⠼ [K[?25h[?2026l[?2026h[?25l[1G⠴ [K[?25h[?2026l[?2026h[?25l[1G⠦ [K[?25h[?2026l[?2026h[?25l[1G⠧ [K[?25h[?2026l[?2026h[?25l[1G⠇ [K[?25h[?2026l[?2026h[?25l[1G⠏ [K[?25h[?2026l[?2026h[?25l[1G⠋ [K[?25h[?2026l[?2026h[?25l[1G⠙ [K[?25h[?2026l[?2026h[?25l[1G⠹ [K[?25h[?2026l[?2026h[?25l[1G⠸ [K[?25h[?2026l[?2026h[?25l[1G⠼ [K[?25h[?2026l[?2026h[?25l[1G⠴ [K[?25h[?2026l[?2026h[?25l[1G⠦ [K[?25h[?2026l[?2026h[?25l[1G⠧ [K[?25h[?2026l[?2026h[?25l[1G⠇ [K[?25h[?2026l[?2026h[?25l[1G⠏ [K[?25h[?2026l[?2026h[?25l[1G⠋ [K[?25h[?2026l[?2026h[?25l[1G⠙ [K[?25h[?2026l[?2026h[?25l[1G⠹ [K[?25h[?2026l[?2026h[?25l[1G⠸ [K[?25h[?2026l[?2026h[?25l[1G⠼ [K[?25h[?2026l[?2026h[?25l[1G⠴ [K[?25h[?2026l[?2026h[?25l[1G⠦ [K[?25h[?2026l[?2026h[?25l[1G⠧ [K[?25h[?2026l[?2026h[?25l[1G⠇ [K[?25h[?2026l[?2026h[?25l[1G⠏ [K[?25h[?2026l[?2026h[?25l[1G⠋ [K[?25h[?2026l[?2026h[?25l[1G⠙ [K[?25h[?2026l[?2026h[?25l[1G⠹ [K[?25h[?2026l[?2026h[?25l[1G⠸ [K[?25h[?2026l[?2026h[?25l[1G⠼ [K[?25h[?2026l[?2026h[?25l[1G⠴ [K[?25h[?2026l[?2026h[?25l[1G⠦ [K[?25h[?2026l[?2026h[?25l[1G⠧ [K[?25h[?2026l[?2026h[?25l[1G⠇ [K[?25h[?2026l[?2026h[?25l[1G⠏ [K[?25h[?2026l[?2026h[?25l[1G⠋ [K[?25h[?2026l[?2026h[?25l[1G⠙ [K[?25h[?2026l[?2026h[?25l[1G⠹ [K[?25h[?2026l[?2026h[?25l[1G⠸ [K[?25h[?2026l[?2026h[?25l[1G⠼ [K[?25h[?2026l[?2026h[?25l[1G⠴ [K[?25h[?2026l[?2026h[?25l[1G⠦ [K[?25h[?2026l[?2026h[?25l[1G⠧ [K[?25h[?2026l[?2026h[?25l[1G⠇ [K[?25h[?2026l[?2026h[?25l[1G⠏ [K[?25h[?2026l[?2026h[?25l[1G⠋ [K[?25h[?2026l[?2026h[?25l[1G⠙ [K[?25h[?2026l[?2026h[?25l[1G⠹ [K[?25h[?2026l[?2026h[?25l[1G⠸ [K[?25h[?2026l[?2026h[?25l[1G⠼ [K[?25h[?2026l[?2026h[?25l[1G⠴ [K[?25h[?2026l[?2026h[?25l[1G⠦ [K[?25h[?2026l[?2026h[?25l[1G⠧ [K[?25h[?2026l[?2026h[?25l[1G⠇ [K[?25h[?2026l[?2026h[?25l[1G⠏ [K[?25h[?2026l[?2026h[?25l[1G⠋ [K[?25h[?2026l[?2026h[?25l[1G⠙ [K[?25h[?2026l[?2026h[?25l[1G⠹ [K[?25h[?2026l[?2026h[?25l[1G⠸ [K[?25h[?2026l[?2026h[?25l[1G⠼ [K[?25h[?2026l[?2026h[?25l[1G⠴ [K[?25h[?2026l[?2026h[?25l[1G⠦ [K[?25h[?2026l[?2026h[?25l[1G⠧ [K[?25h[?2026l[?2026h[?25l[1G⠇ [K[?25h[?2026l[?2026h[?25l[1G⠏ [K[?25h[?2026l[?2026h[?25l[1G⠋ [K[?25h[?2026l[?2026h[?25l[1G⠙ [K[?25h[?2026l[?2026h[?25l[1G⠹ [K[?25h[?2026l[?2026h[?25l[1G⠸ [K[?25h[?2026l[?2026h[?25l[1G⠼ [K[?25h[?2026l[?2026h[?25l[1G⠴ [K[?25h[?2026l[?2026h[?25l[1G⠦ [K[?25h[?2026l[?2026h[?25l[1G⠧ [K[?25h[?2026l[?2026h[?25l[1G⠇ [K[?25h[?2026l[?2026h[?25l[1G⠏ [K[?25h[?2026l[?2026h[?25l[1G⠋ [K[?25h[?2026l[?2026h[?25l[1G⠙ [K[?25h[?2026l[?2026h[?25l[1G⠹ [K[?25h[?2026l[?2026h[?25l[1G⠸ [K[?25h[?2026l[?2026h[?25l[1G⠼ [K[?25h[?2026l[?2026h[?25l[1G⠴ [K[?25h[?2026l[?2026h[?25l[1G⠦ [K[?25h[?2026l[?2026h[?25l[1G⠧ [K[?25h[?2026l[?2026h[?25l[1G⠇ [K[?25h[?2026l[?2026h[?25l[1G⠏ [K[?25h[?2026l[?2026h[?25l[1G⠋ [K[?25h[?2026l[?2026h[?25l[1G⠙ [K[?25h[?2026l[?2026h[?25l[1G⠹ [K[?25h[?2026l[?2026h[?25l[1G⠸ [K[?25h[?2026l[?2026h[?25l[1G⠼ [K[?25h[?2026l[?2026h[?25l[1G⠴ [K[?25h[?2026l[?2026h[?25l[1G⠦ [K[?25h[?2026l[?2026h[?25l[1G⠧ [K[?25h[?2026l[?2026h[?25l[1G⠇ [K[?25h[?2026l[?2026h[?25l[1G⠏ [K[?25h[?2026l[?2026h[?25l[1G⠋ [K[?25h[?2026l[?2026h[?25l[1G⠙ [K[?25h[?2026l[?2026h[?25l[1G⠹ [K[?25h[?2026l[?2026h[?25l[1G⠸ [K[?25h[?2026l[?2026h[?25l[1G⠼ [K[?25h[?2026l[?2026h[?25l[1G⠴ [K[?25h[?2026l[?2026h[?25l[1G⠦ [K[?25h[?2026l[?2026h[?25l[1G⠧ [K[?25h[?2026l[?2026h[?25l[1G⠇ [K[?25h[?2026l[?2026h[?25l[1G⠏ [K[?25h[?2026l[?2026h[?25l[1G⠋ [K[?25h[?2026l[?2026h[?25l[1G⠙ [K[?25h[?2026l[?2026h[?25l[1G⠹ [K[?25h[?2026l[?2026h[?25l[1G⠸ [K[?25h[?2026l[?2026h[?25l[1G⠼ [K[?25h[?2026l[?2026h[?25l[1G⠴ [K[?25h[?2026l[?2026h[?25l[1G⠦ [K[?25h[?2026l[?2026h[?25l[1G⠧ [K[?25h[?2026l[?2026h[?25l[1G⠇ [K[?25h[?2026l[?2026h[?25l[1G⠏ [K[?25h[?2026l[?2026h[?25l[1G⠋ [K[?25h[?2026l[?2026h[?25l[1G⠙ [K[?25h[?2026l[?2026h[?25l[1G⠹ [K[?25h[?2026l[?2026h[?25l[1G⠸ [K[?25h[?2026l[?2026h[?25l[1G⠼ [K[?25h[?2026l[?2026h[?25l[1G⠴ [K[?25h[?2026l[?2026h[?25l[1G⠦ [K[?25h[?2026l[?2026h[?25l[1G⠧ [K[?25h[?2026l[?2026h[?25l[1G⠇ [K[?25h[?2026l[?2026h[?25l[1G⠏ [K[?25h[?2026l[?2026h[?25l[1G⠋ [K[?25h[?2026l[?2026h[?25l[1G⠙ [K[?25h[?2026l[?2026h[?25l[1G⠹ [K[?25h[?2026l[?2026h[?25l[1G⠸ [K[?25h[?2026l[?2026h[?25l[1G⠼ [K[?25h[?2026l[?2026h[?25l[1G⠴ [K[?25h[?2026l[?2026h[?25l[1G⠦ [K[?25h[?2026l[?2026h[?25l[1G⠧ [K[?25h[?2026l[?2026h[?25l[1G⠇ [K[?25h[?2026l[?2026h[?25l[1G⠏ [K[?25h[?2026l[?2026h[?25l[1G⠋ [K[?25h[?2026l[?2026h[?25l[1G⠙ [K[?25h[?2026l[?2026h[?25l[1G⠹ [K[?25h[?2026l[?2026h[?25l[1G⠸ [K[?25h[?2026l[?2026h[?25l[1G⠼ [K[?25h[?2026l[?2026h[?25l[1G⠴ [K[?25h[?2026l[?2026h[?25l[1G⠦ [K[?25h[?2026l[?2026h[?25l[1G⠧ [K[?25h[?2026l[?2026h[?25l[1G⠇ [K[?25h[?2026l[?2026h[?25l[1G⠏ [K[?25h[?2026l[?2026h[?25l[1G⠋ [K[?25h[?2026l[?2026h[?25l[1G⠙ [K[?25h[?2026l[?2026h[?25l[1G⠹ [K[?25h[?2026l[?2026h[?25l[1G⠸ [K[?25h[?2026l[?2026h[?25l[1G⠼ [K[?25h[?2026l[?2026h[?25l[1G⠴ [K[?25h[?2026l[?2026h[?25l[1G⠦ [K[?25h[?2026l[?2026h[?25l[1G⠧ [K[?25h[?2026l[?2026h[?25l[1G⠇ [K[?25h[?2026l[?2026h[?25l[1G⠏ [K[?25h[?2026l[?2026h[?25l[1G⠋ [K[?25h[?2026l[?2026h[?25l[1G⠙ [K[?25h[?2026l[?2026h[?25l[1G⠹ [K[?25h[?2026l[?2026h[?25l[1G⠸ [K[?25h[?2026l[?2026h[?25l[1G⠼ [K[?25h[?2026l[?2026h[?25l[1G⠴ [K[?25h[?2026l[?2026h[?25l[1G⠦ [K[?25h[?2026l[?2026h[?25l[1G⠧ [K[?25h[?2026l[?2026h[?25l[1G⠇ [K[?25h[?2026l[?2026h[?25l[1G⠏ [K[?25h[?2026l[?2026h[?25l[1G⠋ [K[?25h[?2026l[?2026h[?25l[1G⠙ [K[?25h[?2026l[?2026h[?25l[1G⠹ [K[?25h[?2026l[?2026h[?25l[1G⠸ [K[?25h[?2026l[?2026h[?25l[1G⠼ [K[?25h[?2026l[?2026h[?25l[1G⠴ [K[?25h[?2026l[?2026h[?25l[1G⠦ [K[?25h[?2026l[?2026h[?25l[1G⠧ [K[?25h[?2026l[?2026h[?25l[1G⠇ [K[?25h[?2026l[?2026h[?25l[1G⠏ [K[?25h[?2026l[?2026h[?25l[1G⠋ [K[?25h[?2026l[?2026h[?25l[1G⠙ [K[?25h[?2026l[?2026h[?25l[1G⠹ [K[?25h[?2026l[?2026h[?25l[1G⠸ [K[?25h[?2026l[?2026h[?25l[1G⠼ [K[?25h[?2026l[?2026h[?25l[1G⠴ [K[?25h[?2026l[?2026h[?25l[1G⠦ [K[?25h[?2026l[?2026h[?25l[1G⠧ [K[?25h[?2026l[?2026h[?25l[1G⠇ [K[?25h[?2026l[?2026h[?25l[1G⠏ [K[?25h[?2026l[?2026h[?25l[1G⠋ [K[?25h[?2026l[?2026h[?25l[1G⠙ [K[?25h[?2026l[?2026h[?25l[1G⠹ [K[?25h[?2026l[?2026h[?25l[1G⠸ [K[?25h[?2026l[?2026h[?25l[1G⠼ [K[?25h[?2026l[?2026h[?25l[1G⠴ [K[?25h[?2026l[?2026h[?25l[1G⠦ [K[?25h[?2026l[?2026h[?25l[1G⠧ [K[?25h[?2026l[?2026h[?25l[1G⠇ [K[?25h[?2026l[?2026h[?25l[1G⠏ [K[?25h[?2026l[?2026h[?25l[1G⠋ [K[?25h[?2026l[?2026h[?25l[1G⠙ [K[?25h[?2026l[?2026h[?25l[1G⠹ [K[?25h[?2026l[?2026h[?25l[1G⠸ [K[?25h[?2026l[?2026h[?25l[1G⠼ [K[?25h[?2026l[?2026h[?25l[1G⠴ [K[?25h[?2026l[?2026h[?25l[1G⠦ [K[?25h[?2026l[?2026h[?25l[1G⠧ [K[?25h[?2026l[?2026h[?25l[1G⠇ [K[?25h[?2026l[?2026h[?25l[1G⠏ [K[?25h[?2026l[?2026h[?25l[1G⠋ [K[?25h[?2026l[?2026h[?25l[1G⠙ [K[?25h[?2026l[?2026h[?25l[1G⠹ [K[?25h[?2026l[?2026h[?25l[1G⠸ [K[?25h[?2026l[?2026h[?25l[1G⠼ [K[?25h[?2026l[?2026h[?25l[1G⠴ [K[?25h[?2026l[?2026h[?25l[1G⠦ [K[?25h[?2026l[?2026h[?25l[1G⠧ [K[?25h[?2026l[?2026h[?25l[1G⠇ [K[?25h[?2026l[?2026h[?25l[1G⠏ [K[?25h[?2026l[?2026h[?25l[1G⠋ [K[?25h[?2026l[?2026h[?25l[1G⠙ [K[?25h[?2026l[?2026h[?25l[1G⠹ [K[?25h[?2026l[?2026h[?25l[1G⠸ [K[?25h[?2026l[?2026h[?25l[1G⠼ [K[?25h[?2026l[?2026h[?25l[1G⠴ [K[?25h[?2026l[?2026h[?25l[1G⠦ [K[?25h[?2026l[?2026h[?25l[1G⠧ [K[?25h[?2026l[?2026h[?25l[1G⠇ [K[?25h[?2026l[?2026h[?25l[1G⠏ [K[?25h[?2026l[?2026h[?25l[1G⠋ [K[?25h[?2026l[?2026h[?25l[1G⠙ [K[?25h[?2026l[?2026h[?25l[1G⠹ [K[?25h[?2026l[?2026h[?25l[1G⠸ [K[?25h[?2026l[?2026h[?25l[1G⠼ [K[?25h[?2026l[?2026h[?25l[1G⠴ [K[?25h[?2026l[?2026h[?25l[1G⠦ [K[?25h[?2026l[?2026h[?25l[1G⠧ [K[?25h[?2026l[?2026h[?25l[1G⠇ [K[?25h[?2026l[?2026h[?25l[1G⠏ [K[?25h[?2026l[?2026h[?25l[1G⠋ [K[?25h[?2026l[?2026h[?25l[1G⠙ [K[?25h[?2026l[?2026h[?25l[1G⠹ [K[?25h[?2026l[?2026h[?25l[1G⠸ [K[?25h[?2026l[?2026h[?25l[1G⠼ [K[?25h[?2026l[?2026h[?25l[1G⠴ [K[?25h[?2026l[?2026h[?25l[1G⠦ [K[?25h[?2026l[?2026h[?25l[1G⠧ [K[?25h[?2026l[?2026h[?25l[1G⠇ [K[?25h[?2026l[?2026h[?25l[1G⠏ [K[?25h[?2026l[?2026h[?25l[1G⠋ [K[?25h[?2026l[?2026h[?25l[1G⠙ [K[?25h[?2026l[?2026h[?25l[1G⠹ [K[?25h[?2026l[?2026h[?25l[1G⠸ [K[?25h[?2026l[?2026h[?25l[1G⠼ [K[?25h[?2026l[?2026h[?25l[1G⠴ [K[?25h[?2026l[?2026h[?25l[1G⠦ [K[?25h[?2026l[?2026h[?25l[1G⠧ [K[?25h[?2026l[?2026h[?25l[1G⠇ [K[?25h[?2026l[?2026h[?25l[1G⠏ [K[?25h[?2026l[?2026h[?25l[1G⠋ [K[?25h[?2026l[?2026h[?25l[1G⠙ [K[?25h[?2026l[?2026h[?25l[1G⠹ [K[?25h[?2026l[?2026h[?25l[1G⠸ [K[?25h[?2026l[?2026h[?25l[1G⠼ [K[?25h[?2026l[?2026h[?25l[1G⠴ [K[?25h[?2026l[?2026h[?25l[1G⠦ [K[?25h[?2026l[?2026h[?25l[1G⠧ [K[?25h[?2026l[?2026h[?25l[1G⠇ [K[?25h[?2026l[?2026h[?25l[1G⠏ [K[?25h[?2026l[?2026h[?25l[1G⠋ [K[?25h[?2026l[?2026h[?25l[1G⠙ [K[?25h[?2026l[?2026h[?25l[1G⠹ [K[?25h[?2026l[?2026h[?25l[1G⠸ [K[?25h[?2026l[?2026h[?25l[1G⠼ [K[?25h[?2026l[?2026h[?25l[1G⠴ [K[?25h[?2026l[?2026h[?25l[1G⠦ [K[?25h[?2026l[?2026h[?25l[1G⠧ [K[?25h[?2026l[?2026h[?25l[1G⠇ [K[?25h[?2026l[?2026h[?25l[1G⠏ [K[?25h[?2026l[?2026h[?25l[1G⠋ [K[?25h[?2026l[?2026h[?25l[1G⠙ [K[?25h[?2026l[?2026h[?25l[1G⠹ [K[?25h[?2026l[?2026h[?25l[1G⠸ [K[?25h[?2026l[?2026h[?25l[1G⠼ [K[?25h[?2026l[?2026h[?25l[1G⠴ [K[?25h[?2026l[?2026h[?25l[1G⠦ [K[?25h[?2026l[?2026h[?25l[1G⠧ [K[?25h[?2026l[?2026h[?25l[1G⠇ [K[?25h[?2026l[?2026h[?25l[1G⠏ [K[?25h[?2026l[?2026h[?25l[1G⠋ [K[?25h[?2026l[?2026h[?25l[1G⠙ [K[?25h[?2026l[?2026h[?25l[1G⠹ [K[?25h[?2026l[?2026h[?25l[1G⠸ [K[?25h[?2026l[?2026h[?25l[1G⠼ [K[?25h[?2026l[?2026h[?25l[1G⠴ [K[?25h[?2026l[?2026h[?25l[1G⠦ [K[?25h[?2026l[?2026h[?25l[1G⠧ [K[?25h[?2026l[?2026h[?25l[1G⠇ [K[?25h[?2026l[?2026h[?25l[1G⠏ [K[?25h[?2026l[?2026h[?25l[1G⠋ [K[?25h[?2026l[?2026h[?25l[1G⠙ [K[?25h[?2026l[?2026h[?25l[1G⠹ [K[?25h[?2026l[?2026h[?25l[1G⠸ [K[?25h[?2026l[?2026h[?25l[1G⠼ [K[?25h[?2026l[?2026h[?25l[1G⠴ [K[?25h[?2026l[?2026h[?25l[1G⠦ [K[?25h[?2026l[?2026h[?25l[1G⠧ [K[?25h[?2026l[?2026h[?25l[1G⠇ [K[?25h[?2026l[?2026h[?25l[1G⠏ [K[?25h[?2026l[?2026h[?25l[1G⠋ [K[?25h[?2026l[?2026h[?25l[1G⠙ [K[?25h[?2026l[?2026h[?25l[1G⠹ [K[?25h[?2026l[?2026h[?25l[1G⠸ [K[?25h[?2026l[?2026h[?25l[1G⠼ [K[?25h[?2026l[?2026h[?25l[1G⠴ [K[?25h[?2026l[?2026h[?25l[1G⠦ [K[?25h[?2026l[?2026h[?25l[1G⠧ [K[?25h[?2026l[?2026h[?25l[1G⠇ [K[?25h[?2026l[?2026h[?25l[1G⠏ [K[?25h[?2026l[?2026h[?25l[1G⠋ [K[?25h[?2026l[?2026h[?25l[1G⠙ [K[?25h[?2026l[?2026h[?25l[1G⠹ [K[?25h[?2026l[?2026h[?25l[1G⠸ [K[?25h[?2026l[?2026h[?25l[1G⠼ [K[?25h[?2026l[?2026h[?25l[1G⠴ [K[?25h[?2026l[?2026h[?25l[1G⠦ [K[?25h[?2026l[?2026h[?25l[1G⠧ [K[?25h[?2026l[?2026h[?25l[1G⠇ [K[?25h[?2026l[?2026h[?25l[1G⠏ [K[?25h[?2026l[?2026h[?25l[1G⠋ [K[?25h[?2026l[?2026h[?25l[1G⠙ [K[?25h[?2026l[?2026h[?25l[1G⠹ [K[?25h[?2026l[?2026h[?25l[1G⠸ [K[?25h[?2026l[?2026h[?25l[1G⠼ [K[?25h[?2026l[?2026h[?25l[1G⠴ [K[?25h[?2026l[?2026h[?25l[1G⠦ [K[?25h[?2026l[?2026h[?25l[1G⠧ [K[?25h[?2026l[?2026h[?25l[1G⠇ [K[?25h[?2026l[?2026h[?25l[1G⠏ [K[?25h[?2026l[?2026h[?25l[1G⠋ [K[?25h[?2026l[?2026h[?25l[1G⠙ [K[?25h[?2026l[?2026h[?25l[1G⠹ [K[?25h[?2026l[?2026h[?25l[1G⠸ [K[?25h[?2026l[?2026h[?25l[1G⠼ [K[?25h[?2026l[?2026h[?25l[1G⠴ [K[?25h[?2026l[?2026h[?25l[1G⠦ [K[?25h[?2026l[?2026h[?25l[1G⠧ [K[?25h[?2026l[?2026h[?25l[1G⠇ [K[?25h[?2026l[?2026h[?25l[1G⠏ [K[?25h[?2026lload_tensors: offloading 80 repeating layers to GPU
+load_tensors: offloading output layer to GPU
+load_tensors: offloaded 81/81 layers to GPU
+load_tensors:        CUDA0 model buffer size = 39979.48 MiB
+load_tensors:   CPU_Mapped model buffer size =   563.62 MiB
+time=2025-04-02T10:17:28.887-06:00 level=DEBUG source=server.go:602 msg="model load progress 0.00"
+[?2026h[?25l[1G⠋ [K[?25h[?2026l[?2026h[?25l[1G⠙ [K[?25h[?2026l[?2026h[?25l[1G⠹ [K[?25h[?2026ltime=2025-04-02T10:17:29.138-06:00 level=DEBUG source=server.go:602 msg="model load progress 0.07"
+[?2026h[?25l[1G⠸ [K[?25h[?2026l[?2026h[?25l[1G⠼ [K[?25h[?2026ltime=2025-04-02T10:17:29.388-06:00 level=DEBUG source=server.go:602 msg="model load progress 0.14"
+[?2026h[?25l[1G⠴ [K[?25h[?2026l[?2026h[?25l[1G⠦ [K[?25h[?2026l[?2026h[?25l[1G⠧ [K[?25h[?2026ltime=2025-04-02T10:17:29.639-06:00 level=DEBUG source=server.go:602 msg="model load progress 0.21"
+[?2026h[?25l[1G⠇ [K[?25h[?2026l[?2026h[?25l[1G⠏ [K[?25h[?2026ltime=2025-04-02T10:17:29.889-06:00 level=DEBUG source=server.go:602 msg="model load progress 0.28"
+[?2026h[?25l[1G⠋ [K[?25h[?2026l[?2026h[?25l[1G⠙ [K[?25h[?2026l[?2026h[?25l[1G⠹ [K[?25h[?2026ltime=2025-04-02T10:17:30.140-06:00 level=DEBUG source=server.go:602 msg="model load progress 0.35"
+[?2026h[?25l[1G⠸ [K[?25h[?2026l[?2026h[?25l[1G⠼ [K[?25h[?2026ltime=2025-04-02T10:17:30.390-06:00 level=DEBUG source=server.go:602 msg="model load progress 0.42"
+[?2026h[?25l[1G⠴ [K[?25h[?2026l[?2026h[?25l[1G⠦ [K[?25h[?2026l[?2026h[?25l[1G⠧ [K[?25h[?2026ltime=2025-04-02T10:17:30.641-06:00 level=DEBUG source=server.go:602 msg="model load progress 0.50"
+[?2026h[?25l[1G⠇ [K[?25h[?2026l[?2026h[?25l[1G⠏ [K[?25h[?2026ltime=2025-04-02T10:17:30.891-06:00 level=DEBUG source=server.go:602 msg="model load progress 0.56"
+[?2026h[?25l[1G⠋ [K[?25h[?2026l[?2026h[?25l[1G⠙ [K[?25h[?2026l[?2026h[?25l[1G⠹ [K[?25h[?2026ltime=2025-04-02T10:17:31.142-06:00 level=DEBUG source=server.go:602 msg="model load progress 0.63"
+[?2026h[?25l[1G⠸ [K[?25h[?2026l[?2026h[?25l[1G⠼ [K[?25h[?2026ltime=2025-04-02T10:17:31.392-06:00 level=DEBUG source=server.go:602 msg="model load progress 0.71"
+[?2026h[?25l[1G⠴ [K[?25h[?2026l[?2026h[?25l[1G⠦ [K[?25h[?2026l[?2026h[?25l[1G⠧ [K[?25h[?2026ltime=2025-04-02T10:17:31.643-06:00 level=DEBUG source=server.go:602 msg="model load progress 0.78"
+[?2026h[?25l[1G⠇ [K[?25h[?2026l[?2026h[?25l[1G⠏ [K[?25h[?2026ltime=2025-04-02T10:17:31.893-06:00 level=DEBUG source=server.go:602 msg="model load progress 0.85"
+[?2026h[?25l[1G⠋ [K[?25h[?2026l[?2026h[?25l[1G⠙ [K[?25h[?2026l[?2026h[?25l[1G⠹ [K[?25h[?2026ltime=2025-04-02T10:17:32.144-06:00 level=DEBUG source=server.go:602 msg="model load progress 0.91"
+[?2026h[?25l[1G⠸ [K[?25h[?2026l[?2026h[?25l[1G⠼ [K[?25h[?2026ltime=2025-04-02T10:17:32.395-06:00 level=DEBUG source=server.go:602 msg="model load progress 0.99"
+[?2026h[?25l[1G⠴ [K[?25h[?2026l[?2026h[?25l[1G⠦ [K[?25h[?2026l[?2026h[?25l[1G⠧ [K[?25h[?2026l[?2026h[?25l[1G⠇ [K[?25h[?2026l[?2026h[?25l[1G⠏ [K[?25h[?2026lllama_init_from_model: n_seq_max     = 4
+llama_init_from_model: n_ctx         = 8192
+llama_init_from_model: n_ctx_per_seq = 2048
+llama_init_from_model: n_batch       = 2048
+llama_init_from_model: n_ubatch      = 512
+llama_init_from_model: flash_attn    = 0
+llama_init_from_model: freq_base     = 500000.0
+llama_init_from_model: freq_scale    = 1
+llama_init_from_model: n_ctx_per_seq (2048) < n_ctx_train (131072) -- the full capacity of the model will not be utilized
+llama_kv_cache_init: kv_size = 8192, offload = 1, type_k = 'f16', type_v = 'f16', n_layer = 80, can_shift = 1
+llama_kv_cache_init: layer 0: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024
+llama_kv_cache_init: layer 1: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024
+llama_kv_cache_init: layer 2: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024
+llama_kv_cache_init: layer 3: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024
+llama_kv_cache_init: layer 4: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024
+llama_kv_cache_init: layer 5: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024
+llama_kv_cache_init: layer 6: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024
+llama_kv_cache_init: layer 7: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024
+llama_kv_cache_init: layer 8: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024
+llama_kv_cache_init: layer 9: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024
+llama_kv_cache_init: layer 10: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024
+llama_kv_cache_init: layer 11: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024
+llama_kv_cache_init: layer 12: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024
+llama_kv_cache_init: layer 13: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024
+llama_kv_cache_init: layer 14: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024
+llama_kv_cache_init: layer 15: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024
+llama_kv_cache_init: layer 16: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024
+llama_kv_cache_init: layer 17: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024
+llama_kv_cache_init: layer 18: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024
+llama_kv_cache_init: layer 19: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024
+llama_kv_cache_init: layer 20: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024
+llama_kv_cache_init: layer 21: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024
+llama_kv_cache_init: layer 22: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024
+llama_kv_cache_init: layer 23: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024
+llama_kv_cache_init: layer 24: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024
+llama_kv_cache_init: layer 25: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024
+llama_kv_cache_init: layer 26: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024
+llama_kv_cache_init: layer 27: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024
+llama_kv_cache_init: layer 28: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024
+llama_kv_cache_init: layer 29: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024
+llama_kv_cache_init: layer 30: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024
+llama_kv_cache_init: layer 31: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024
+llama_kv_cache_init: layer 32: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024
+llama_kv_cache_init: layer 33: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024
+llama_kv_cache_init: layer 34: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024
+llama_kv_cache_init: layer 35: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024
+llama_kv_cache_init: layer 36: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024
+llama_kv_cache_init: layer 37: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024
+llama_kv_cache_init: layer 38: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024
+llama_kv_cache_init: layer 39: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024
+llama_kv_cache_init: layer 40: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024
+llama_kv_cache_init: layer 41: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024
+llama_kv_cache_init: layer 42: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024
+llama_kv_cache_init: layer 43: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024
+llama_kv_cache_init: layer 44: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024
+llama_kv_cache_init: layer 45: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024
+llama_kv_cache_init: layer 46: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024
+llama_kv_cache_init: layer 47: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024
+llama_kv_cache_init: layer 48: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024
+llama_kv_cache_init: layer 49: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024
+llama_kv_cache_init: layer 50: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024
+llama_kv_cache_init: layer 51: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024
+llama_kv_cache_init: layer 52: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024
+llama_kv_cache_init: layer 53: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024
+llama_kv_cache_init: layer 54: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024
+llama_kv_cache_init: layer 55: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024
+llama_kv_cache_init: layer 56: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024
+llama_kv_cache_init: layer 57: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024
+llama_kv_cache_init: layer 58: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024
+llama_kv_cache_init: layer 59: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024
+llama_kv_cache_init: layer 60: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024
+llama_kv_cache_init: layer 61: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024
+llama_kv_cache_init: layer 62: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024
+llama_kv_cache_init: layer 63: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024
+llama_kv_cache_init: layer 64: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024
+llama_kv_cache_init: layer 65: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024
+llama_kv_cache_init: layer 66: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024
+llama_kv_cache_init: layer 67: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024
+llama_kv_cache_init: layer 68: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024
+llama_kv_cache_init: layer 69: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024
+llama_kv_cache_init: layer 70: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024
+llama_kv_cache_init: layer 71: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024
+llama_kv_cache_init: layer 72: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024
+llama_kv_cache_init: layer 73: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024
+llama_kv_cache_init: layer 74: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024
+llama_kv_cache_init: layer 75: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024
+llama_kv_cache_init: layer 76: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024
+llama_kv_cache_init: layer 77: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024
+llama_kv_cache_init: layer 78: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024
+llama_kv_cache_init: layer 79: n_embd_k_gqa = 1024, n_embd_v_gqa = 1024
+llama_kv_cache_init:      CUDA0 KV buffer size =  2560.00 MiB
+llama_init_from_model: KV self size  = 2560.00 MiB, K (f16): 1280.00 MiB, V (f16): 1280.00 MiB
+llama_init_from_model:  CUDA_Host  output buffer size =     2.08 MiB
+time=2025-04-02T10:17:32.896-06:00 level=DEBUG source=server.go:602 msg="model load progress 1.00"
+llama_init_from_model:      CUDA0 compute buffer size =  1104.00 MiB
+llama_init_from_model:  CUDA_Host compute buffer size =    32.01 MiB
+llama_init_from_model: graph nodes  = 2566
+llama_init_from_model: graph splits = 2
+[?2026h[?25l[1G⠋ [K[?25h[?2026l[?2026h[?25l[1G⠙ [K[?25h[?2026l[?2026h[?25l[1G⠹ [K[?25h[?2026ltime=2025-04-02T10:17:33.146-06:00 level=INFO source=server.go:596 msg="llama runner started in 67.88 seconds"
+time=2025-04-02T10:17:33.146-06:00 level=DEBUG source=sched.go:463 msg="finished setting up runner" model=/home/rmorain2/.ollama_models/blobs/sha256-4cd576d9aa16961244012223abf01445567b061f1814b57dfef699e4cf8df339
+[GIN] 2025/04/02 - 10:17:33 | 200 |          1m8s |       127.0.0.1 | POST     "/api/generate"
+time=2025-04-02T10:17:33.146-06:00 level=DEBUG source=sched.go:467 msg="context for request finished"
+time=2025-04-02T10:17:33.146-06:00 level=DEBUG source=sched.go:340 msg="runner with non-zero duration has gone idle, adding timer" modelPath=/home/rmorain2/.ollama_models/blobs/sha256-4cd576d9aa16961244012223abf01445567b061f1814b57dfef699e4cf8df339 duration=5m0s
+time=2025-04-02T10:17:33.146-06:00 level=DEBUG source=sched.go:358 msg="after processing request finished event" modelPath=/home/rmorain2/.ollama_models/blobs/sha256-4cd576d9aa16961244012223abf01445567b061f1814b57dfef699e4cf8df339 refCount=0
+[?25l[?2026h[?25l[1G[K[?25h[?2026l[2K[1G[?25h[?25l[?25hOLLAMA MODEL:  deepseek-r1:70b
+time=2025-04-02T10:17:35.812-06:00 level=DEBUG source=sched.go:576 msg="evaluating already loaded" model=/home/rmorain2/.ollama_models/blobs/sha256-4cd576d9aa16961244012223abf01445567b061f1814b57dfef699e4cf8df339
+time=2025-04-02T10:17:35.813-06:00 level=DEBUG source=routes.go:1501 msg="chat request" images=0 prompt="<｜User｜>Does the sun rise in the west? Just answer yes or no.<｜Assistant｜>"
+time=2025-04-02T10:17:35.814-06:00 level=DEBUG source=cache.go:104 msg="loading cache slot" id=0 cache=0 prompt=17 used=0 remaining=17
+[GIN] 2025/04/02 - 10:18:08 | 200 | 33.178481299s |       127.0.0.1 | POST     "/api/chat"
+time=2025-04-02T10:18:08.952-06:00 level=DEBUG source=sched.go:408 msg="context for request finished"
+time=2025-04-02T10:18:08.952-06:00 level=DEBUG source=sched.go:340 msg="runner with non-zero duration has gone idle, adding timer" modelPath=/home/rmorain2/.ollama_models/blobs/sha256-4cd576d9aa16961244012223abf01445567b061f1814b57dfef699e4cf8df339 duration=5m0s
+time=2025-04-02T10:18:08.952-06:00 level=DEBUG source=sched.go:358 msg="after processing request finished event" modelPath=/home/rmorain2/.ollama_models/blobs/sha256-4cd576d9aa16961244012223abf01445567b061f1814b57dfef699e4cf8df339 refCount=0
+<think>
+Alright, so I'm trying to figure out whether the sun rises in the west. Hmm, this seems like a straightforward question, but I want to make sure I understand it correctly. From what I know, the sun appears to rise in the east and set in the west because of Earth's rotation from west to east. But wait, is that always the case?
+
+I remember learning that during certain times or under specific conditions, things might look different. For example, near the poles, the sun can stay up for days or not rise at all. Maybe that affects where it seems to rise and set? Or perhaps there are other celestial events or phenomena that could make the sun appear as if it's rising in the west.
+
+I also think about how different cultures might have myths or stories about the sun rising in the west, like in some religious end-time prophecies. But I'm not sure if those are scientifically accurate or just metaphorical.
+
+Then there's the possibility of astronomical events like solar eclipses or equinoxes affecting the sunrise direction. Maybe during an eclipse, could it look like the sun is coming from a different direction? Or perhaps on specific dates when daylight hours are extreme?
+
+Wait, Earth's rotation and orbit determine the apparent movement of the sun. The Earth spins from west to east, so we see the sun moving east to west across the sky each day. That means sunrise is in the east and sunset in the west. But could there be a situation where this reverses? Maybe if Earth's rotation were to suddenly change direction, but that's highly unlikely and not something that happens naturally.
+
+Another angle: when you're in space or on another planet, the sun's apparent movement might differ, but we're talking about Earth here. So, unless someone is viewing from a different perspective, like high altitude or near the poles, I don't think it changes much.
+
+I also recall that during the winter and summer solstices, the sunrise and sunset points shift north and south, respectively, but they still remain on the eastern and western horizons. They don't actually switch sides.
+
+So, putting this all together: Earth's rotation causes the sun to rise east and set west. There are no natural phenomena that make it rise in the west without some kind of catastrophic event changing Earth's rotation, which isn't happening. Cultural stories aside, scientifically speaking, the answer should be no.
+</think>
+
+No
+Reading story from file:  stories/jaguar_knight.txt
+Story:  JAGUAR_KNIGHT WAS AN INHABITANT OF THE GREAT TENOCHTITLAN. PRINCESS WAS AN INHABITANT OF THE GREAT TENOCHTITLAN. TLALOC —THE GOD OF THE RAIN— WAS ANGRY AND SENT A STORM. THE HEAVY RAIN DAMAGED THE OLD WOODEN BRIDGE. WHEN JAGUAR_KNIGHT TRIED TO CROSS THE RIVER THE BRIDGE COLLAPSED INJURING BADLY JAGUAR_KNIGHT'S HEAD. PRINCESS KNEW THAT JAGUAR_KNIGHT COULD DIE AND THAT PRINCESS HAD TO DO SOMETHING ABOUT IT. PRINCESS HAD HEARD THAT THE TEPESCOHUITLE WAS AN EFFECTIVE CURATIVE PLANT. SO, PRINCESS PREPARED A PLASMA AND APPLIED IT TO JAGUAR_KNIGHT'S WOUNDS. IT WORKED AND JAGUAR_KNIGHT STARTED TO RECUPERATE! JAGUAR_KNIGHT REALISED THAT PRINCESS'S DETERMINATION HAD SAVED JAGUAR_KNIGHT'S LIFE. DURING THE LAST WAR PRINCESS'S FATHER HUMILIATED ENEMY'S FAMILY. NOW, IT WAS TIME OF REVENGE AND ENEMY KIDNAPPED PRINCESS. THEY WENT TO THE FOREST WHERE ENEMY TIED PRINCESS TO A HUGE ROCK. EXACTLY AT MIDNIGHT ENEMY WOULD CUT PRINCESS UP. ALTHOUGH IT WAS VERY DANGEROUS JAGUAR_KNIGHT DECIDED TO DO SOMETHING IN ORDER TO LIBERATE PRINCESS. FOR SOME MINUTES JAGUAR_KNIGHT PRAYED TO QUETZALCOATL —THE FEATHERED SNAKE, THE GOD BETWEEN THE GODS— AND ASKED FOR WISDOM AND BRAVENESS. NOW JAGUAR_KNIGHT WAS READY TO FIND OUT ITS FATE. PRINCESS WAS REALLY ANGRY FOR WHAT HAD HAPPENED AND AFFRONTED ENEMY. ENEMY'S FRAME OF MIND WAS VERY VOLATILE AND WITHOUT THINKING ABOUT IT ENEMY CHARGED AGAINST PRINCESS. MEANWHILE JAGUAR_KNIGHT DECIDED TO START A SEARCH FOR ENEMY. AFTER HARD WORK AND DIFFICULT MOMENTS JAGUAR_KNIGHT COULD FINALLY FIND ENEMY. JAGUAR_KNIGHT, FULL OF ANGER, TOOK A DAGGER AND ATTACKED ENEMY. JAGUAR_KNIGHT THREW SOME DUST IN ENEMY'S FACE. THEN, USING A DAGGER JAGUAR_KNIGHT PERFORATED ENEMY'S CHEST. IMITATING THE SACRED CEREMONY OF THE SACRIFICE, JAGUAR_KNIGHT TOOK ENEMY'S HEART WITH ONE HAND AND RAISED IT TOWARDS THE SUN AS A SIGN OF RESPECT TO THE GODS. JAGUAR_KNIGHT WALKED TOWARDS PRINCESS. FULL OF ADMIRATION FOR ALL THE BRAVENESS THAT PRINCESS HAD SHOWN IN THOSE HARD MOMENTS JAGUAR_KNIGHT LIBERATED PRINCESS! ALTHOUGH AT THE BEGINNING PRINCESS DID NOT WANT TO ADMIT IT, PRINCESS FELL IN LOVE WITH JAGUAR_KNIGHT. PRINCESS WAS KISSING JAGUAR_KNIGHT WHEN SUDDENLY PRINCESS RECOGNISED JAGUAR_KNIGHT'S TATTOO. IT WAS THE SAME AS THE ONE USED BY THE FRATERNITY WHICH HAD MURDERED PRINCESS'S FATHER SOME MONTHS AGO. AT ONCE ALL THOSE TERRIBLE MEMORIES WERE PRESENT AGAIN. PRINCESS HAD AMBIVALENT THOUGHTS TOWARDS JAGUAR_KNIGHT. ON THE ONE HAND PRINCESS HAD STRONG FEELINGS FOR JAGUAR_KNIGHT BUT ON THE OTHER HAND PRINCESS ABOMINATED WHAT JAGUAR_KNIGHT DID. PRINCESS FELT A DEEPLY ODIUM FOR JAGUAR_KNIGHT. INVOKING HUITZILOPOCHTLI, GOD OF THE DEAD, PRINCESS CUT JAGUAR_KNIGHT'S JUGULAR. THE BLOOD COVERED THE FLOOR. PRINCESS TOOK A DAGGER AND CUT PRINCESS’S THROAT. PRINCESS BLED TO DEATH WHILE TONATIU (THE GOD REPRESENTING THE SUN) DISAPPEARED IN THE HORIZON.
+Reading story action prompt from file:  prompts/story_action.txt
+Story Action Prompt:  You are a narrative analysis expert that systematically identifies and interprets actions, preconditions, and effects (called postconditions) within stories, contributing to a structured understanding of a narrative. You are primarily focused on actions that relate to the emotional relationships between characters (called emotional links) and actions that build tension within the narrative (called tensions).
+
+You are focused on specific types of emotional links. By default, consider two types of emotional links: `friendship` and `love`. `friendship` refers to how much one character likes another character in a platonic sense. `love` refers to romantic love. 
+
+You are also focused on specific types of tensions. By default, consider the following tension types:
+
+1. `character_dead`
+2. `life_at_risk`
+3. `health_at_risk`
+4. `prisoner`
+5. `clashing_emotions`
+6. `love_competition`
+
+`character_dead` means a character has died. `life_at_risk` means a character’s life is at risk. `health_at_risk` means a character's health is at risk. `prisoner` means a character is in prison or detained in some way. `clashing_emotions` is produced when a character establishes two or more emotional Links of any type but opposite intensity towards another character. For example, if a princess initially hates an enemy (negative emotional link) but later develops feelings of love or gratitude towards the same enemy (positive emotional link), this would create `clashing_emotions`. A tension of `love_competion` arises when two different characters have an emotional link of type `love` towards the same third character.
+
+Analyze the given story and extract the essential actions from the main characters. Focus on actions that relate to the emotional links between characters and the tensions in the narrative. 
+
+Organize the actions in chronological order and in JSON format . The JSON should have an `action` key for each action. The value for each action should be as simple and general as possible so that it can be reused in other stories, avoid character names, and be in Snake_case. Each `action` should have a key for the number of characters involved in the action called `n_characters`, a key called `subject` for the character performing the action, and a key called `object` for the character receiving the action. If the action lacks a `subject` or `object` store a value of `-` in the key. For now, only include these specified keys in the JSON object. Make sure that `n_characters` is consistent with the presence of the `subject` and `object` characters. The same character may be both the `subject` and the `object` character if the character is performing an action on themself.
+
+Here is the story:
+JAGUAR_KNIGHT WAS AN INHABITANT OF THE GREAT TENOCHTITLAN. PRINCESS WAS AN INHABITANT OF THE GREAT TENOCHTITLAN. TLALOC —THE GOD OF THE RAIN— WAS ANGRY AND SENT A STORM. THE HEAVY RAIN DAMAGED THE OLD WOODEN BRIDGE. WHEN JAGUAR_KNIGHT TRIED TO CROSS THE RIVER THE BRIDGE COLLAPSED INJURING BADLY JAGUAR_KNIGHT'S HEAD. PRINCESS KNEW THAT JAGUAR_KNIGHT COULD DIE AND THAT PRINCESS HAD TO DO SOMETHING ABOUT IT. PRINCESS HAD HEARD THAT THE TEPESCOHUITLE WAS AN EFFECTIVE CURATIVE PLANT. SO, PRINCESS PREPARED A PLASMA AND APPLIED IT TO JAGUAR_KNIGHT'S WOUNDS. IT WORKED AND JAGUAR_KNIGHT STARTED TO RECUPERATE! JAGUAR_KNIGHT REALISED THAT PRINCESS'S DETERMINATION HAD SAVED JAGUAR_KNIGHT'S LIFE. DURING THE LAST WAR PRINCESS'S FATHER HUMILIATED ENEMY'S FAMILY. NOW, IT WAS TIME OF REVENGE AND ENEMY KIDNAPPED PRINCESS. THEY WENT TO THE FOREST WHERE ENEMY TIED PRINCESS TO A HUGE ROCK. EXACTLY AT MIDNIGHT ENEMY WOULD CUT PRINCESS UP. ALTHOUGH IT WAS VERY DANGEROUS JAGUAR_KNIGHT DECIDED TO DO SOMETHING IN ORDER TO LIBERATE PRINCESS. FOR SOME MINUTES JAGUAR_KNIGHT PRAYED TO QUETZALCOATL —THE FEATHERED SNAKE, THE GOD BETWEEN THE GODS— AND ASKED FOR WISDOM AND BRAVENESS. NOW JAGUAR_KNIGHT WAS READY TO FIND OUT ITS FATE. PRINCESS WAS REALLY ANGRY FOR WHAT HAD HAPPENED AND AFFRONTED ENEMY. ENEMY'S FRAME OF MIND WAS VERY VOLATILE AND WITHOUT THINKING ABOUT IT ENEMY CHARGED AGAINST PRINCESS. MEANWHILE JAGUAR_KNIGHT DECIDED TO START A SEARCH FOR ENEMY. AFTER HARD WORK AND DIFFICULT MOMENTS JAGUAR_KNIGHT COULD FINALLY FIND ENEMY. JAGUAR_KNIGHT, FULL OF ANGER, TOOK A DAGGER AND ATTACKED ENEMY. JAGUAR_KNIGHT THREW SOME DUST IN ENEMY'S FACE. THEN, USING A DAGGER JAGUAR_KNIGHT PERFORATED ENEMY'S CHEST. IMITATING THE SACRED CEREMONY OF THE SACRIFICE, JAGUAR_KNIGHT TOOK ENEMY'S HEART WITH ONE HAND AND RAISED IT TOWARDS THE SUN AS A SIGN OF RESPECT TO THE GODS. JAGUAR_KNIGHT WALKED TOWARDS PRINCESS. FULL OF ADMIRATION FOR ALL THE BRAVENESS THAT PRINCESS HAD SHOWN IN THOSE HARD MOMENTS JAGUAR_KNIGHT LIBERATED PRINCESS! ALTHOUGH AT THE BEGINNING PRINCESS DID NOT WANT TO ADMIT IT, PRINCESS FELL IN LOVE WITH JAGUAR_KNIGHT. PRINCESS WAS KISSING JAGUAR_KNIGHT WHEN SUDDENLY PRINCESS RECOGNISED JAGUAR_KNIGHT'S TATTOO. IT WAS THE SAME AS THE ONE USED BY THE FRATERNITY WHICH HAD MURDERED PRINCESS'S FATHER SOME MONTHS AGO. AT ONCE ALL THOSE TERRIBLE MEMORIES WERE PRESENT AGAIN. PRINCESS HAD AMBIVALENT THOUGHTS TOWARDS JAGUAR_KNIGHT. ON THE ONE HAND PRINCESS HAD STRONG FEELINGS FOR JAGUAR_KNIGHT BUT ON THE OTHER HAND PRINCESS ABOMINATED WHAT JAGUAR_KNIGHT DID. PRINCESS FELT A DEEPLY ODIUM FOR JAGUAR_KNIGHT. INVOKING HUITZILOPOCHTLI, GOD OF THE DEAD, PRINCESS CUT JAGUAR_KNIGHT'S JUGULAR. THE BLOOD COVERED THE FLOOR. PRINCESS TOOK A DAGGER AND CUT PRINCESS’S THROAT. PRINCESS BLED TO DEATH WHILE TONATIU (THE GOD REPRESENTING THE SUN) DISAPPEARED IN THE HORIZON.
+time=2025-04-02T10:18:09.003-06:00 level=DEBUG source=sched.go:576 msg="evaluating already loaded" model=/home/rmorain2/.ollama_models/blobs/sha256-4cd576d9aa16961244012223abf01445567b061f1814b57dfef699e4cf8df339
+time=2025-04-02T10:18:09.004-06:00 level=DEBUG source=routes.go:1501 msg="chat request" images=0 prompt="<｜User｜>You are a narrative analysis expert that systematically identifies and interprets actions, preconditions, and effects (called postconditions) within stories, contributing to a structured understanding of a narrative. You are primarily focused on actions that relate to the emotional relationships between characters (called emotional links) and actions that build tension within the narrative (called tensions).\n\nYou are focused on specific types of emotional links. By default, consider two types of emotional links: `friendship` and `love`. `friendship` refers to how much one character likes another character in a platonic sense. `love` refers to romantic love. \n\nYou are also focused on specific types of tensions. By default, consider the following tension types:\n\n1. `character_dead`\n2. `life_at_risk`\n3. `health_at_risk`\n4. `prisoner`\n5. `clashing_emotions`\n6. `love_competition`\n\n`character_dead` means a character has died. `life_at_risk` means a character’s life is at risk. `health_at_risk` means a character's health is at risk. `prisoner` means a character is in prison or detained in some way. `clashing_emotions` is produced when a character establishes two or more emotional Links of any type but opposite intensity towards another character. For example, if a princess initially hates an enemy (negative emotional link) but later develops feelings of love or gratitude towards the same enemy (positive emotional link), this would create `clashing_emotions`. A tension of `love_competion` arises when two different characters have an emotional link of type `love` towards the same third character.\n\nAnalyze the given story and extract the essential actions from the main characters. Focus on actions that relate to the emotional links between characters and the tensions in the narrative. \n\nOrganize the actions in chronological order and in JSON format . The JSON should have an `action` key for each action. The value for each action should be as simple and general as possible so that it can be reused in other stories, avoid character names, and be in Snake_case. Each `action` should have a key for the number of characters involved in the action called `n_characters`, a key called `subject` for the character performing the action, and a key called `object` for the character receiving the action. If the action lacks a `subject` or `object` store a value of `-` in the key. For now, only include these specified keys in the JSON object. Make sure that `n_characters` is consistent with the presence of the `subject` and `object` characters. The same character may be both the `subject` and the `object` character if the character is performing an action on themself.\n\nHere is the story:\nJAGUAR_KNIGHT WAS AN INHABITANT OF THE GREAT TENOCHTITLAN. PRINCESS WAS AN INHABITANT OF THE GREAT TENOCHTITLAN. TLALOC —THE GOD OF THE RAIN— WAS ANGRY AND SENT A STORM. THE HEAVY RAIN DAMAGED THE OLD WOODEN BRIDGE. WHEN JAGUAR_KNIGHT TRIED TO CROSS THE RIVER THE BRIDGE COLLAPSED INJURING BADLY JAGUAR_KNIGHT'S HEAD. PRINCESS KNEW THAT JAGUAR_KNIGHT COULD DIE AND THAT PRINCESS HAD TO DO SOMETHING ABOUT IT. PRINCESS HAD HEARD THAT THE TEPESCOHUITLE WAS AN EFFECTIVE CURATIVE PLANT. SO, PRINCESS PREPARED A PLASMA AND APPLIED IT TO JAGUAR_KNIGHT'S WOUNDS. IT WORKED AND JAGUAR_KNIGHT STARTED TO RECUPERATE! JAGUAR_KNIGHT REALISED THAT PRINCESS'S DETERMINATION HAD SAVED JAGUAR_KNIGHT'S LIFE. DURING THE LAST WAR PRINCESS'S FATHER HUMILIATED ENEMY'S FAMILY. NOW, IT WAS TIME OF REVENGE AND ENEMY KIDNAPPED PRINCESS. THEY WENT TO THE FOREST WHERE ENEMY TIED PRINCESS TO A HUGE ROCK. EXACTLY AT MIDNIGHT ENEMY WOULD CUT PRINCESS UP. ALTHOUGH IT WAS VERY DANGEROUS JAGUAR_KNIGHT DECIDED TO DO SOMETHING IN ORDER TO LIBERATE PRINCESS. FOR SOME MINUTES JAGUAR_KNIGHT PRAYED TO QUETZALCOATL —THE FEATHERED SNAKE, THE GOD BETWEEN THE GODS— AND ASKED FOR WISDOM AND BRAVENESS. NOW JAGUAR_KNIGHT WAS READY TO FIND OUT ITS FATE. PRINCESS WAS REALLY ANGRY FOR WHAT HAD HAPPENED AND AFFRONTED ENEMY. ENEMY'S FRAME OF MIND WAS VERY VOLATILE AND WITHOUT THINKING ABOUT IT ENEMY CHARGED AGAINST PRINCESS. MEANWHILE JAGUAR_KNIGHT DECIDED TO START A SEARCH FOR ENEMY. AFTER HARD WORK AND DIFFICULT MOMENTS JAGUAR_KNIGHT COULD FINALLY FIND ENEMY. JAGUAR_KNIGHT, FULL OF ANGER, TOOK A DAGGER AND ATTACKED ENEMY. JAGUAR_KNIGHT THREW SOME DUST IN ENEMY'S FACE. THEN, USING A DAGGER JAGUAR_KNIGHT PERFORATED ENEMY'S CHEST. IMITATING THE SACRED CEREMONY OF THE SACRIFICE, JAGUAR_KNIGHT TOOK ENEMY'S HEART WITH ONE HAND AND RAISED IT TOWARDS THE SUN AS A SIGN OF RESPECT TO THE GODS. JAGUAR_KNIGHT WALKED TOWARDS PRINCESS. FULL OF ADMIRATION FOR ALL THE BRAVENESS THAT PRINCESS HAD SHOWN IN THOSE HARD MOMENTS JAGUAR_KNIGHT LIBERATED PRINCESS! ALTHOUGH AT THE BEGINNING PRINCESS DID NOT WANT TO ADMIT IT, PRINCESS FELL IN LOVE WITH JAGUAR_KNIGHT. PRINCESS WAS KISSING JAGUAR_KNIGHT WHEN SUDDENLY PRINCESS RECOGNISED JAGUAR_KNIGHT'S TATTOO. IT WAS THE SAME AS THE ONE USED BY THE FRATERNITY WHICH HAD MURDERED PRINCESS'S FATHER SOME MONTHS AGO. AT ONCE ALL THOSE TERRIBLE MEMORIES WERE PRESENT AGAIN. PRINCESS HAD AMBIVALENT THOUGHTS TOWARDS JAGUAR_KNIGHT. ON THE ONE HAND PRINCESS HAD STRONG FEELINGS FOR JAGUAR_KNIGHT BUT ON THE OTHER HAND PRINCESS ABOMINATED WHAT JAGUAR_KNIGHT DID. PRINCESS FELT A DEEPLY ODIUM FOR JAGUAR_KNIGHT. INVOKING HUITZILOPOCHTLI, GOD OF THE DEAD, PRINCESS CUT JAGUAR_KNIGHT'S JUGULAR. THE BLOOD COVERED THE FLOOR. PRINCESS TOOK A DAGGER AND CUT PRINCESS’S THROAT. PRINCESS BLED TO DEATH WHILE TONATIU (THE GOD REPRESENTING THE SUN) DISAPPEARED IN THE HORIZON.<｜Assistant｜>"
+time=2025-04-02T10:18:09.015-06:00 level=DEBUG source=cache.go:104 msg="loading cache slot" id=0 cache=509 prompt=1578 used=2 remaining=1576
+time=2025-04-02T10:18:41.904-06:00 level=DEBUG source=cache.go:231 msg="context limit hit - shifting" id=0 limit=2048 input=2048 keep=5 discard=1021
+time=2025-04-02T10:19:49.435-06:00 level=DEBUG source=cache.go:231 msg="context limit hit - shifting" id=0 limit=2048 input=2048 keep=5 discard=1021
+[GIN] 2025/04/02 - 10:20:42 | 200 |         2m33s |       127.0.0.1 | POST     "/api/chat"
+time=2025-04-02T10:20:42.133-06:00 level=DEBUG source=sched.go:408 msg="context for request finished"
+time=2025-04-02T10:20:42.133-06:00 level=DEBUG source=sched.go:340 msg="runner with non-zero duration has gone idle, adding timer" modelPath=/home/rmorain2/.ollama_models/blobs/sha256-4cd576d9aa16961244012223abf01445567b061f1814b57dfef699e4cf8df339 duration=5m0s
+time=2025-04-02T10:20:42.133-06:00 level=DEBUG source=sched.go:358 msg="after processing request finished event" modelPath=/home/rmorain2/.ollama_models/blobs/sha256-4cd576d9aa16961244012223abf01445567b061f1814b57dfef699e4cf8df339 refCount=0
+<think>
+Alright, I'm trying to figure out how to approach this narrative analysis task. The user has provided a detailed story and wants me to extract actions related to emotional links and tensions, organizing them in JSON format. 
+
+First, I need to understand the key components: emotional links (friendship and love) and tensions (like character_dead or love_competition). The JSON should have each action with subject, object, n_characters.
+
+I'll start by reading through the story carefully. It's about Jaguar_Knight and Princess in Tenochtitlan. There's a storm caused by Tlaloc, which damages a bridge. Jaguar gets injured, Princess helps him, they develop feelings, but then Princess finds out he's part of a group that killed her father, leading to tragic events.
+
+I'll break down the story into key actions, focusing on interactions between characters and emotional or tense moments. For each action, I need to determine if it relates to friendship, love, or one of the tensions like life_at_risk or health_at_risk.
+
+First event: Tlaloc sends a storm causing the bridge collapse. That's an environmental action but doesn't directly relate to emotional links or tensions between characters. So maybe not included unless it sets up tension.
+
+Jaguar tries to cross and gets injured. This is health_at_risk, so that should be noted as a tension. The action here is "injure_head" with Jaguar as object.
+
+Princess knows he could die (life_at_risk) and decides to help by using a curative plant. Her actions are preparing plasma and applying it. These are separate actions, both showing her care, which builds a friendship or love link.
+
+Jaguar realizes Princess saved him, indicating gratitude, so an action like "express_gratitude" from Jaguar to Princess.
+
+Next, the enemy kidnaps Princess for revenge. That's a prisoner tension. Action is "kidnap" with object as Princess.
+
+Princess is tied up and scheduled to be killed at midnight—another life_at_risk situation. She confronts Enemy, who charges her, adding clashing_emotions since she's angry but also scared? Or perhaps the volatile state of Enemy creates tension.
+
+Jaguar prays for wisdom and bravery, showing his determination to save Princess. This is a solo action, so n_characters=1.
+
+He starts searching, finds Enemy, attacks with dust and dagger—actions like "attack_with_dagger". Then he performs a ritual with the heart, which is another action but more about the plot than emotions.
+
+Jaguar frees Princess, showing liberation. She admires his bravery, leading to her falling in love. Kissing is an expression of love.
+
+But then she sees the tattoo, linking Jaguar to her father's murderers. This creates ambivalent thoughts—love vs. hatred. So actions like "recognize_tattoo", which leads to conflicted emotions (clashing_emotions).
+
+She invokes a god and cuts his jugular, leading to his death (character_dead). Then she kills herself, another character_dead.
+
+I need to map each of these events into the JSON structure, ensuring each action is correctly categorized under emotional links or tensions. I'll go step by step through the story, extract each relevant interaction, determine if it's a tension or emotional link, and structure accordingly.
+</think>
+
+Here is the structured breakdown of the narrative analysis based on the provided story:
+
+### Emotional Links and Tensions Analysis
+
+1. **Health-at-Risk Tension**
+   - **Action**: Jaguar_Knight injures his head after bridge collapse.
+     - **Subject**: Bridge (environmental factor)
+     - **Object**: Jaguar_Knight
+     - **n_characters**: 1
+
+2. **Life-at-Risk Tension**
+   - **Action**: Princess realizes Jaguar could die from injuries.
+     - **Subject**: Princess
+     - **Object**: Jaguar_Knight
+     - **n_characters**: 1
+
+3. **Love/Friendship Emotional Link**
+   - **Action**: Princess prepares curative plasma to help Jaguar.
+     - **Subject**: Princess
+     - **Object**: Curative Plasma (tool)
+     - **n_characters**: 1
+   - **Action**: Princess applies plasma, saving Jaguar.
+     - **Subject**: Princess
+     - **Object**: Jaguar_Knight
+     - **n_characters**: 2
+
+4. **Gratitude Emotional Link**
+   - **Action**: Jaguar expresses gratitude to Princess for saving him.
+     - **Subject**: Jaguar_Knight
+     - **Object**: Princess
+     - **n_characters**: 2
+
+5. **Prisoner Tension**
+   - **Action**: Enemy kidnaps Princess for revenge.
+     - **Subject**: Enemy
+     - **Object**: Princess
+     - **n_characters**: 2
+
+6. **Life-at-Risk Tension**
+   - **Action**: Enemy ties Princess up, planning to kill her at midnight.
+     - **Subject**: Enemy
+     - **Object**: Princess
+     - **n_characters**: 2
+
+7. **Clashing-Emotions Tension**
+   - **Action**: Princess confronts Enemy, who charges angrily.
+     - **Subject**: Princess and Enemy
+     - **n_characters**: 2
+
+8. **Determination Emotional Link**
+   - **Action**: Jaguar prays for bravery to rescue Princess.
+     - **Subject**: Jaguar_Knight
+     - **Object**: Gods (invocation)
+     - **n_characters**: 1
+
+9. **Confrontation Tension**
+   - **Action**: Jaguar finds Enemy and attacks with dust and dagger.
+     - **Subject**: Jaguar_Knight
+     - **Object**: Enemy
+     - **n_characters**: 2
+
+10. **Ritualistic Action (Plot Progression)**
+    - **Action**: Jaguar performs ritual with Enemy's heart.
+      - **Subject**: Jaguar_Knight
+      - **Object**: Enemy's Heart (symbolic)
+      - **n_characters**: 1
+
+11. **Liberation Emotional Link**
+    - **Action**: Jaguar frees Princess, showing bravery.
+      - **Subject**: Jaguar_Knight
+      - **Object**: Princess
+      - **n_characters**: 2
+
+12. **Love Emotional Link**
+    - **Action**: Princess kisses Jaguar, expressing love.
+      - **Subject**: Princess
+      - **Object**: Jaguar_Knight
+      - **n_characters**: 2
+
+13. **Clashing-Emotions Tension**
+    - **Action**: Princess recognizes Jaguar's tattoo linked to her father's death.
+      - **Subject**: Princess
+      - **Object**: Tattoo (symbol)
+      - **n_characters**: 1
+
+14. **Character Deaths (Tension)**
+    - **Action**: Princess kills Jaguar in anger.
+      - **Subject**: Princess
+      - **Object**: Jaguar_Knight
+      - **n_characters**: 2
+    - **Action**: Princess commits suicide in grief.
+      - **Subject**: Princess
+      - **Object**: Herself
+      - **n_characters**: 1
+
+### JSON Structure Representation
+
+```json
+[
+  {
+    "action": "injure_head",
+    "subject": "Jaguar_Knight",
+    "object": null,
+    "n_characters": 1,
+    "category": "health-at-risk"
+  },
+  {
+    "action": "realize_potential_death",
+    "subject": "Princess",
+    "object": "Jaguar_Knight",
+    "n_characters": 1,
+    "category": "life-at-risk"
+  },
+  {
+    "action": "prepare_curative_plasma",
+    "subject": "Princess",
+    "object": "curative plasma",
+    "n_characters": 1,
+    "category": "love/friendship"
+  },
+  {
+    "action": "apply_curative_plasma",
+    "subject": "Princess",
+    "object": "Jaguar_Knight",
+    "n_characters": 2,
+    "category": "love/friendship"
+  },
+  {
+    "action": "express_gratitude",
+    "subject": "Jaguar_Knight",
+    "object": "Princess",
+    "n_characters": 2,
+    "category": "gratitude"
+  },
+  {
+    "action": "kidnap",
+    "subject": "Enemy",
+    "object": "Princess",
+    "n_characters": 2,
+    "category": "prisoner"
+  },
+  {
+    "action": "tie_up_and_plan_execution",
+    "subject": "Enemy",
+    "object": "Princess",
+    "n_characters": 2,
+    "category": "life-at-risk"
+  },
+  {
+    "action": "confront_angrily",
+    "subject": "Enemy",
+    "object": "Princess",
+    "n_characters": 2,
+    "category": "clashing-emotions"
+  },
+  {
+    "action": "pray_for_bravery",
+    "subject": "Jaguar_Knight",
+    "object": "gods",
+    "n_characters": 1,
+    "category": "determination"
+  },
+  {
+    "action": "attack_with_dust_and_dagger",
+    "subject": "Jaguar_Knight",
+    "object": "Enemy",
+    "n_characters": 2,
+    "category": "confrontation"
+  },
+  {
+    "action": "perform_ritual_with_heart",
+    "subject": "Jaguar_Knight",
+    "object": "Enemy's heart",
+    "n_characters": 1,
+    "category": "ritualistic action"
+  },
+  {
+    "action": "liberate_princess",
+    "subject": "Jaguar_Knight",
+    "object": "Princess",
+    "n_characters": 2,
+    "category": "liberation"
+  },
+  {
+    "action": "kiss",
+    "subject": "Princess",
+    "object": "Jaguar_Knight",
+    "n_characters": 2,
+    "category": "love"
+  },
+  {
+    "action": "recognize_tattoo",
+    "subject": "Princess",
+    "object": "tattoo",
+    "n_characters": 1,
+    "category": "clashing-emotions"
+  },
+  {
+    "action": "kill_jaguar_in_anger",
+    "subject": "Princess",
+    "object": "Jaguar_Knight",
+    "n_characters": 2,
+    "category": "character-death"
+  },
+  {
+    "action": "commit_suicide_in_grief",
+    "subject": "Princess",
+    "object": "herself",
+    "n_characters": 1,
+    "category": "character-death"
+  }
+]
+```
+
+This JSON structure captures the key events, categorizing each under emotional links or tensions, and details the subjects, objects, and number of characters involved.
+Saved response to file:  responses/jaguar_knight/2025-04-02-10-17-35/story_action.txt
+Reading DPS prompt from file:  prompts/dps.txt
+time=2025-04-02T10:20:42.195-06:00 level=DEBUG source=sched.go:576 msg="evaluating already loaded" model=/home/rmorain2/.ollama_models/blobs/sha256-4cd576d9aa16961244012223abf01445567b061f1814b57dfef699e4cf8df339
+time=2025-04-02T10:20:42.196-06:00 level=DEBUG source=server.go:968 msg="new runner detected, loading model for cgo tokenization"
+llama_model_loader: loaded meta data with 30 key-value pairs and 724 tensors from /home/rmorain2/.ollama_models/blobs/sha256-4cd576d9aa16961244012223abf01445567b061f1814b57dfef699e4cf8df339 (version GGUF V3 (latest))
+llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+llama_model_loader: - kv   0:                       general.architecture str              = llama
+llama_model_loader: - kv   1:                               general.type str              = model
+llama_model_loader: - kv   2:                               general.name str              = DeepSeek R1 Distill Llama 70B
+llama_model_loader: - kv   3:                           general.basename str              = DeepSeek-R1-Distill-Llama
+llama_model_loader: - kv   4:                         general.size_label str              = 70B
+llama_model_loader: - kv   5:                          llama.block_count u32              = 80
+llama_model_loader: - kv   6:                       llama.context_length u32              = 131072
+llama_model_loader: - kv   7:                     llama.embedding_length u32              = 8192
+llama_model_loader: - kv   8:                  llama.feed_forward_length u32              = 28672
+llama_model_loader: - kv   9:                 llama.attention.head_count u32              = 64
+llama_model_loader: - kv  10:              llama.attention.head_count_kv u32              = 8
+llama_model_loader: - kv  11:                       llama.rope.freq_base f32              = 500000.000000
+llama_model_loader: - kv  12:     llama.attention.layer_norm_rms_epsilon f32              = 0.000010
+llama_model_loader: - kv  13:                 llama.attention.key_length u32              = 128
+llama_model_loader: - kv  14:               llama.attention.value_length u32              = 128
+llama_model_loader: - kv  15:                          general.file_type u32              = 15
+llama_model_loader: - kv  16:                           llama.vocab_size u32              = 128256
+llama_model_loader: - kv  17:                 llama.rope.dimension_count u32              = 128
+llama_model_loader: - kv  18:                       tokenizer.ggml.model str              = gpt2
+llama_model_loader: - kv  19:                         tokenizer.ggml.pre str              = llama-bpe
+llama_model_loader: - kv  20:                      tokenizer.ggml.tokens arr[str,128256]  = ["!", "\"", "#", "$", "%", "&", "'", ...
+llama_model_loader: - kv  21:                  tokenizer.ggml.token_type arr[i32,128256]  = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+llama_model_loader: - kv  22:                      tokenizer.ggml.merges arr[str,280147]  = ["Ġ Ġ", "Ġ ĠĠĠ", "ĠĠ ĠĠ", "...
+llama_model_loader: - kv  23:                tokenizer.ggml.bos_token_id u32              = 128000
+llama_model_loader: - kv  24:                tokenizer.ggml.eos_token_id u32              = 128001
+llama_model_loader: - kv  25:            tokenizer.ggml.padding_token_id u32              = 128001
+llama_model_loader: - kv  26:               tokenizer.ggml.add_bos_token bool             = true
+llama_model_loader: - kv  27:               tokenizer.ggml.add_eos_token bool             = false
+llama_model_loader: - kv  28:                    tokenizer.chat_template str              = {% if not add_generation_prompt is de...
+llama_model_loader: - kv  29:               general.quantization_version u32              = 2
+llama_model_loader: - type  f32:  162 tensors
+llama_model_loader: - type q4_K:  441 tensors
+llama_model_loader: - type q5_K:   40 tensors
+llama_model_loader: - type q6_K:   81 tensors
+print_info: file format = GGUF V3 (latest)
+print_info: file type   = Q4_K - Medium
+print_info: file size   = 39.59 GiB (4.82 BPW) 
+init_tokenizer: initializing tokenizer for type 2
+load: control token: 128254 '<|reserved_special_token_246|>' is not marked as EOG
+load: control token: 128249 '<|reserved_special_token_241|>' is not marked as EOG
+load: control token: 128246 '<|reserved_special_token_238|>' is not marked as EOG
+load: control token: 128243 '<|reserved_special_token_235|>' is not marked as EOG
+load: control token: 128242 '<|reserved_special_token_234|>' is not marked as EOG
+load: control token: 128241 '<|reserved_special_token_233|>' is not marked as EOG
+load: control token: 128240 '<|reserved_special_token_232|>' is not marked as EOG
+load: control token: 128235 '<|reserved_special_token_227|>' is not marked as EOG
+load: control token: 128231 '<|reserved_special_token_223|>' is not marked as EOG
+load: control token: 128230 '<|reserved_special_token_222|>' is not marked as EOG
+load: control token: 128228 '<|reserved_special_token_220|>' is not marked as EOG
+load: control token: 128225 '<|reserved_special_token_217|>' is not marked as EOG
+load: control token: 128218 '<|reserved_special_token_210|>' is not marked as EOG
+load: control token: 128214 '<|reserved_special_token_206|>' is not marked as EOG
+load: control token: 128213 '<|reserved_special_token_205|>' is not marked as EOG
+load: control token: 128207 '<|reserved_special_token_199|>' is not marked as EOG
+load: control token: 128206 '<|reserved_special_token_198|>' is not marked as EOG
+load: control token: 128204 '<|reserved_special_token_196|>' is not marked as EOG
+load: control token: 128200 '<|reserved_special_token_192|>' is not marked as EOG
+load: control token: 128199 '<|reserved_special_token_191|>' is not marked as EOG
+load: control token: 128198 '<|reserved_special_token_190|>' is not marked as EOG
+load: control token: 128196 '<|reserved_special_token_188|>' is not marked as EOG
+load: control token: 128194 '<|reserved_special_token_186|>' is not marked as EOG
+load: control token: 128193 '<|reserved_special_token_185|>' is not marked as EOG
+load: control token: 128188 '<|reserved_special_token_180|>' is not marked as EOG
+load: control token: 128187 '<|reserved_special_token_179|>' is not marked as EOG
+load: control token: 128185 '<|reserved_special_token_177|>' is not marked as EOG
+load: control token: 128184 '<|reserved_special_token_176|>' is not marked as EOG
+load: control token: 128180 '<|reserved_special_token_172|>' is not marked as EOG
+load: control token: 128179 '<|reserved_special_token_171|>' is not marked as EOG
+load: control token: 128178 '<|reserved_special_token_170|>' is not marked as EOG
+load: control token: 128177 '<|reserved_special_token_169|>' is not marked as EOG
+load: control token: 128176 '<|reserved_special_token_168|>' is not marked as EOG
+load: control token: 128175 '<|reserved_special_token_167|>' is not marked as EOG
+load: control token: 128171 '<|reserved_special_token_163|>' is not marked as EOG
+load: control token: 128170 '<|reserved_special_token_162|>' is not marked as EOG
+load: control token: 128169 '<|reserved_special_token_161|>' is not marked as EOG
+load: control token: 128168 '<|reserved_special_token_160|>' is not marked as EOG
+load: control token: 128165 '<|reserved_special_token_157|>' is not marked as EOG
+load: control token: 128162 '<|reserved_special_token_154|>' is not marked as EOG
+load: control token: 128158 '<|reserved_special_token_150|>' is not marked as EOG
+load: control token: 128156 '<|reserved_special_token_148|>' is not marked as EOG
+load: control token: 128155 '<|reserved_special_token_147|>' is not marked as EOG
+load: control token: 128154 '<|reserved_special_token_146|>' is not marked as EOG
+load: control token: 128151 '<|reserved_special_token_143|>' is not marked as EOG
+load: control token: 128149 '<|reserved_special_token_141|>' is not marked as EOG
+load: control token: 128147 '<|reserved_special_token_139|>' is not marked as EOG
+load: control token: 128146 '<|reserved_special_token_138|>' is not marked as EOG
+load: control token: 128144 '<|reserved_special_token_136|>' is not marked as EOG
+load: control token: 128142 '<|reserved_special_token_134|>' is not marked as EOG
+load: control token: 128141 '<|reserved_special_token_133|>' is not marked as EOG
+load: control token: 128138 '<|reserved_special_token_130|>' is not marked as EOG
+load: control token: 128136 '<|reserved_special_token_128|>' is not marked as EOG
+load: control token: 128135 '<|reserved_special_token_127|>' is not marked as EOG
+load: control token: 128134 '<|reserved_special_token_126|>' is not marked as EOG
+load: control token: 128133 '<|reserved_special_token_125|>' is not marked as EOG
+load: control token: 128131 '<|reserved_special_token_123|>' is not marked as EOG
+load: control token: 128128 '<|reserved_special_token_120|>' is not marked as EOG
+load: control token: 128124 '<|reserved_special_token_116|>' is not marked as EOG
+load: control token: 128123 '<|reserved_special_token_115|>' is not marked as EOG
+load: control token: 128122 '<|reserved_special_token_114|>' is not marked as EOG
+load: control token: 128119 '<|reserved_special_token_111|>' is not marked as EOG
+load: control token: 128115 '<|reserved_special_token_107|>' is not marked as EOG
+load: control token: 128112 '<|reserved_special_token_104|>' is not marked as EOG
+load: control token: 128110 '<|reserved_special_token_102|>' is not marked as EOG
+load: control token: 128109 '<|reserved_special_token_101|>' is not marked as EOG
+load: control token: 128108 '<|reserved_special_token_100|>' is not marked as EOG
+load: control token: 128106 '<|reserved_special_token_98|>' is not marked as EOG
+load: control token: 128103 '<|reserved_special_token_95|>' is not marked as EOG
+load: control token: 128102 '<|reserved_special_token_94|>' is not marked as EOG
+load: control token: 128101 '<|reserved_special_token_93|>' is not marked as EOG
+load: control token: 128097 '<|reserved_special_token_89|>' is not marked as EOG
+load: control token: 128091 '<|reserved_special_token_83|>' is not marked as EOG
+load: control token: 128090 '<|reserved_special_token_82|>' is not marked as EOG
+load: control token: 128089 '<|reserved_special_token_81|>' is not marked as EOG
+load: control token: 128087 '<|reserved_special_token_79|>' is not marked as EOG
+load: control token: 128085 '<|reserved_special_token_77|>' is not marked as EOG
+load: control token: 128081 '<|reserved_special_token_73|>' is not marked as EOG
+load: control token: 128078 '<|reserved_special_token_70|>' is not marked as EOG
+load: control token: 128076 '<|reserved_special_token_68|>' is not marked as EOG
+load: control token: 128075 '<|reserved_special_token_67|>' is not marked as EOG
+load: control token: 128073 '<|reserved_special_token_65|>' is not marked as EOG
+load: control token: 128068 '<|reserved_special_token_60|>' is not marked as EOG
+load: control token: 128067 '<|reserved_special_token_59|>' is not marked as EOG
+load: control token: 128065 '<|reserved_special_token_57|>' is not marked as EOG
+load: control token: 128063 '<|reserved_special_token_55|>' is not marked as EOG
+load: control token: 128062 '<|reserved_special_token_54|>' is not marked as EOG
+load: control token: 128060 '<|reserved_special_token_52|>' is not marked as EOG
+load: control token: 128059 '<|reserved_special_token_51|>' is not marked as EOG
+load: control token: 128057 '<|reserved_special_token_49|>' is not marked as EOG
+load: control token: 128054 '<|reserved_special_token_46|>' is not marked as EOG
+load: control token: 128046 '<|reserved_special_token_38|>' is not marked as EOG
+load: control token: 128045 '<|reserved_special_token_37|>' is not marked as EOG
+load: control token: 128044 '<|reserved_special_token_36|>' is not marked as EOG
+load: control token: 128043 '<|reserved_special_token_35|>' is not marked as EOG
+load: control token: 128038 '<|reserved_special_token_30|>' is not marked as EOG
+load: control token: 128036 '<|reserved_special_token_28|>' is not marked as EOG
+load: control token: 128035 '<|reserved_special_token_27|>' is not marked as EOG
+load: control token: 128032 '<|reserved_special_token_24|>' is not marked as EOG
+load: control token: 128028 '<|reserved_special_token_20|>' is not marked as EOG
+load: control token: 128027 '<|reserved_special_token_19|>' is not marked as EOG
+load: control token: 128024 '<|reserved_special_token_16|>' is not marked as EOG
+load: control token: 128023 '<|reserved_special_token_15|>' is not marked as EOG
+load: control token: 128022 '<|reserved_special_token_14|>' is not marked as EOG
+load: control token: 128021 '<|reserved_special_token_13|>' is not marked as EOG
+load: control token: 128018 '<|reserved_special_token_10|>' is not marked as EOG
+load: control token: 128016 '<|reserved_special_token_8|>' is not marked as EOG
+load: control token: 128012 '<｜Assistant｜>' is not marked as EOG
+load: control token: 128011 '<｜User｜>' is not marked as EOG
+load: control token: 128005 '<|reserved_special_token_2|>' is not marked as EOG
+load: control token: 128004 '<|finetune_right_pad_id|>' is not marked as EOG
+load: control token: 128002 '<|reserved_special_token_0|>' is not marked as EOG
+load: control token: 128252 '<|reserved_special_token_244|>' is not marked as EOG
+load: control token: 128190 '<|reserved_special_token_182|>' is not marked as EOG
+load: control token: 128183 '<|reserved_special_token_175|>' is not marked as EOG
+load: control token: 128137 '<|reserved_special_token_129|>' is not marked as EOG
+load: control token: 128182 '<|reserved_special_token_174|>' is not marked as EOG
+load: control token: 128040 '<|reserved_special_token_32|>' is not marked as EOG
+load: control token: 128048 '<|reserved_special_token_40|>' is not marked as EOG
+load: control token: 128092 '<|reserved_special_token_84|>' is not marked as EOG
+load: control token: 128215 '<|reserved_special_token_207|>' is not marked as EOG
+load: control token: 128107 '<|reserved_special_token_99|>' is not marked as EOG
+load: control token: 128208 '<|reserved_special_token_200|>' is not marked as EOG
+load: control token: 128145 '<|reserved_special_token_137|>' is not marked as EOG
+load: control token: 128031 '<|reserved_special_token_23|>' is not marked as EOG
+load: control token: 128129 '<|reserved_special_token_121|>' is not marked as EOG
+load: control token: 128201 '<|reserved_special_token_193|>' is not marked as EOG
+load: control token: 128074 '<|reserved_special_token_66|>' is not marked as EOG
+load: control token: 128095 '<|reserved_special_token_87|>' is not marked as EOG
+load: control token: 128186 '<|reserved_special_token_178|>' is not marked as EOG
+load: control token: 128143 '<|reserved_special_token_135|>' is not marked as EOG
+load: control token: 128229 '<|reserved_special_token_221|>' is not marked as EOG
+load: control token: 128007 '<|end_header_id|>' is not marked as EOG
+load: control token: 128055 '<|reserved_special_token_47|>' is not marked as EOG
+load: control token: 128056 '<|reserved_special_token_48|>' is not marked as EOG
+load: control token: 128061 '<|reserved_special_token_53|>' is not marked as EOG
+load: control token: 128153 '<|reserved_special_token_145|>' is not marked as EOG
+load: control token: 128152 '<|reserved_special_token_144|>' is not marked as EOG
+load: control token: 128212 '<|reserved_special_token_204|>' is not marked as EOG
+load: control token: 128172 '<|reserved_special_token_164|>' is not marked as EOG
+load: control token: 128160 '<|reserved_special_token_152|>' is not marked as EOG
+load: control token: 128041 '<|reserved_special_token_33|>' is not marked as EOG
+load: control token: 128181 '<|reserved_special_token_173|>' is not marked as EOG
+load: control token: 128094 '<|reserved_special_token_86|>' is not marked as EOG
+load: control token: 128118 '<|reserved_special_token_110|>' is not marked as EOG
+load: control token: 128236 '<|reserved_special_token_228|>' is not marked as EOG
+load: control token: 128148 '<|reserved_special_token_140|>' is not marked as EOG
+load: control token: 128042 '<|reserved_special_token_34|>' is not marked as EOG
+load: control token: 128139 '<|reserved_special_token_131|>' is not marked as EOG
+load: control token: 128173 '<|reserved_special_token_165|>' is not marked as EOG
+load: control token: 128239 '<|reserved_special_token_231|>' is not marked as EOG
+load: control token: 128157 '<|reserved_special_token_149|>' is not marked as EOG
+load: control token: 128052 '<|reserved_special_token_44|>' is not marked as EOG
+load: control token: 128026 '<|reserved_special_token_18|>' is not marked as EOG
+load: control token: 128003 '<|reserved_special_token_1|>' is not marked as EOG
+load: control token: 128019 '<|reserved_special_token_11|>' is not marked as EOG
+load: control token: 128116 '<|reserved_special_token_108|>' is not marked as EOG
+load: control token: 128161 '<|reserved_special_token_153|>' is not marked as EOG
+load: control token: 128000 '<｜begin▁of▁sentence｜>' is not marked as EOG
+load: control token: 128226 '<|reserved_special_token_218|>' is not marked as EOG
+load: control token: 128159 '<|reserved_special_token_151|>' is not marked as EOG
+load: control token: 128088 '<|reserved_special_token_80|>' is not marked as EOG
+load: control token: 128163 '<|reserved_special_token_155|>' is not marked as EOG
+load: control token: 128113 '<|reserved_special_token_105|>' is not marked as EOG
+load: control token: 128250 '<|reserved_special_token_242|>' is not marked as EOG
+load: control token: 128125 '<|reserved_special_token_117|>' is not marked as EOG
+load: control token: 128053 '<|reserved_special_token_45|>' is not marked as EOG
+load: control token: 128224 '<|reserved_special_token_216|>' is not marked as EOG
+load: control token: 128247 '<|reserved_special_token_239|>' is not marked as EOG
+load: control token: 128251 '<|reserved_special_token_243|>' is not marked as EOG
+load: control token: 128216 '<|reserved_special_token_208|>' is not marked as EOG
+load: control token: 128006 '<|start_header_id|>' is not marked as EOG
+load: control token: 128211 '<|reserved_special_token_203|>' is not marked as EOG
+load: control token: 128077 '<|reserved_special_token_69|>' is not marked as EOG
+load: control token: 128237 '<|reserved_special_token_229|>' is not marked as EOG
+load: control token: 128086 '<|reserved_special_token_78|>' is not marked as EOG
+load: control token: 128001 '<｜end▁of▁sentence｜>' is not marked as EOG
+load: control token: 128227 '<|reserved_special_token_219|>' is not marked as EOG
+load: control token: 128058 '<|reserved_special_token_50|>' is not marked as EOG
+load: control token: 128100 '<|reserved_special_token_92|>' is not marked as EOG
+load: control token: 128209 '<|reserved_special_token_201|>' is not marked as EOG
+load: control token: 128084 '<|reserved_special_token_76|>' is not marked as EOG
+load: control token: 128071 '<|reserved_special_token_63|>' is not marked as EOG
+load: control token: 128070 '<|reserved_special_token_62|>' is not marked as EOG
+load: control token: 128049 '<|reserved_special_token_41|>' is not marked as EOG
+load: control token: 128197 '<|reserved_special_token_189|>' is not marked as EOG
+load: control token: 128072 '<|reserved_special_token_64|>' is not marked as EOG
+load: control token: 128223 '<|reserved_special_token_215|>' is not marked as EOG
+load: control token: 128217 '<|reserved_special_token_209|>' is not marked as EOG
+load: control token: 128111 '<|reserved_special_token_103|>' is not marked as EOG
+load: control token: 128203 '<|reserved_special_token_195|>' is not marked as EOG
+load: control token: 128051 '<|reserved_special_token_43|>' is not marked as EOG
+load: control token: 128030 '<|reserved_special_token_22|>' is not marked as EOG
+load: control token: 128117 '<|reserved_special_token_109|>' is not marked as EOG
+load: control token: 128010 '<|python_tag|>' is not marked as EOG
+load: control token: 128238 '<|reserved_special_token_230|>' is not marked as EOG
+load: control token: 128255 '<|reserved_special_token_247|>' is not marked as EOG
+load: control token: 128202 '<|reserved_special_token_194|>' is not marked as EOG
+load: control token: 128132 '<|reserved_special_token_124|>' is not marked as EOG
+load: control token: 128248 '<|reserved_special_token_240|>' is not marked as EOG
+load: control token: 128167 '<|reserved_special_token_159|>' is not marked as EOG
+load: control token: 128127 '<|reserved_special_token_119|>' is not marked as EOG
+load: control token: 128105 '<|reserved_special_token_97|>' is not marked as EOG
+load: control token: 128039 '<|reserved_special_token_31|>' is not marked as EOG
+load: control token: 128232 '<|reserved_special_token_224|>' is not marked as EOG
+load: control token: 128166 '<|reserved_special_token_158|>' is not marked as EOG
+load: control token: 128130 '<|reserved_special_token_122|>' is not marked as EOG
+load: control token: 128114 '<|reserved_special_token_106|>' is not marked as EOG
+load: control token: 128234 '<|reserved_special_token_226|>' is not marked as EOG
+load: control token: 128191 '<|reserved_special_token_183|>' is not marked as EOG
+load: control token: 128064 '<|reserved_special_token_56|>' is not marked as EOG
+load: control token: 128140 '<|reserved_special_token_132|>' is not marked as EOG
+load: control token: 128096 '<|reserved_special_token_88|>' is not marked as EOG
+load: control token: 128098 '<|reserved_special_token_90|>' is not marked as EOG
+load: control token: 128192 '<|reserved_special_token_184|>' is not marked as EOG
+load: control token: 128093 '<|reserved_special_token_85|>' is not marked as EOG
+load: control token: 128150 '<|reserved_special_token_142|>' is not marked as EOG
+load: control token: 128222 '<|reserved_special_token_214|>' is not marked as EOG
+load: control token: 128233 '<|reserved_special_token_225|>' is not marked as EOG
+load: control token: 128220 '<|reserved_special_token_212|>' is not marked as EOG
+load: control token: 128034 '<|reserved_special_token_26|>' is not marked as EOG
+load: control token: 128033 '<|reserved_special_token_25|>' is not marked as EOG
+load: control token: 128253 '<|reserved_special_token_245|>' is not marked as EOG
+load: control token: 128195 '<|reserved_special_token_187|>' is not marked as EOG
+load: control token: 128099 '<|reserved_special_token_91|>' is not marked as EOG
+load: control token: 128189 '<|reserved_special_token_181|>' is not marked as EOG
+load: control token: 128210 '<|reserved_special_token_202|>' is not marked as EOG
+load: control token: 128174 '<|reserved_special_token_166|>' is not marked as EOG
+load: control token: 128083 '<|reserved_special_token_75|>' is not marked as EOG
+load: control token: 128080 '<|reserved_special_token_72|>' is not marked as EOG
+load: control token: 128104 '<|reserved_special_token_96|>' is not marked as EOG
+load: control token: 128082 '<|reserved_special_token_74|>' is not marked as EOG
+load: control token: 128219 '<|reserved_special_token_211|>' is not marked as EOG
+load: control token: 128017 '<|reserved_special_token_9|>' is not marked as EOG
+load: control token: 128050 '<|reserved_special_token_42|>' is not marked as EOG
+load: control token: 128205 '<|reserved_special_token_197|>' is not marked as EOG
+load: control token: 128047 '<|reserved_special_token_39|>' is not marked as EOG
+load: control token: 128164 '<|reserved_special_token_156|>' is not marked as EOG
+load: control token: 128020 '<|reserved_special_token_12|>' is not marked as EOG
+load: control token: 128069 '<|reserved_special_token_61|>' is not marked as EOG
+load: control token: 128245 '<|reserved_special_token_237|>' is not marked as EOG
+load: control token: 128121 '<|reserved_special_token_113|>' is not marked as EOG
+load: control token: 128079 '<|reserved_special_token_71|>' is not marked as EOG
+load: control token: 128037 '<|reserved_special_token_29|>' is not marked as EOG
+load: control token: 128244 '<|reserved_special_token_236|>' is not marked as EOG
+load: control token: 128029 '<|reserved_special_token_21|>' is not marked as EOG
+load: control token: 128221 '<|reserved_special_token_213|>' is not marked as EOG
+load: control token: 128066 '<|reserved_special_token_58|>' is not marked as EOG
+load: control token: 128120 '<|reserved_special_token_112|>' is not marked as EOG
+load: control token: 128015 '<｜▁pad▁｜>' is not marked as EOG
+load: control token: 128025 '<|reserved_special_token_17|>' is not marked as EOG
+load: control token: 128126 '<|reserved_special_token_118|>' is not marked as EOG
+load: special_eos_id is not in special_eog_ids - the tokenizer config may be incorrect
+load: special tokens cache size = 256
+load: token to piece cache size = 0.7999 MB
+print_info: arch             = llama
+print_info: vocab_only       = 1
+print_info: model type       = ?B
+print_info: model params     = 70.55 B
+print_info: general.name     = DeepSeek R1 Distill Llama 70B
+print_info: vocab type       = BPE
+print_info: n_vocab          = 128256
+print_info: n_merges         = 280147
+print_info: BOS token        = 128000 '<｜begin▁of▁sentence｜>'
+print_info: EOS token        = 128001 '<｜end▁of▁sentence｜>'
+print_info: EOT token        = 128009 '<|eot_id|>'
+print_info: EOM token        = 128008 '<|eom_id|>'
+print_info: PAD token        = 128001 '<｜end▁of▁sentence｜>'
+print_info: LF token         = 198 'Ċ'
+print_info: EOG token        = 128001 '<｜end▁of▁sentence｜>'
+print_info: EOG token        = 128008 '<|eom_id|>'
+print_info: EOG token        = 128009 '<|eot_id|>'
+print_info: max token length = 256
+llama_model_load: vocab only - skipping tensors
+time=2025-04-02T10:20:42.404-06:00 level=DEBUG source=prompt.go:78 msg="truncating input messages which exceed context length" truncated=2
+time=2025-04-02T10:20:42.404-06:00 level=DEBUG source=routes.go:1501 msg="chat request" images=0 prompt="<｜User｜>Convert the JSON object to a structure called Definition of Previous Stories (DPS). \n\nHere is a formal description:\n\n```\nStory = ‘STO’, <Sequence of Actions>.\nSequence of Actions = <Action>, {<Sequence of Actions>}.\nAction = <String Subject Character (optional)> <String Action> <String Object Character (optional)>.\nString Character = <String>.\nString Action = <String>.\nString = Any character represented in ASCIII.\n; = Begin inline comment.\n```\nHere is an example:\n```\nSto ;1\nEagle_Knight Actor\nJaguar_Knight Actor\nEagle_Knight Was_In_Love_With Princess\nJaguar_Knight Was_In_Love_With Princess\nPrincess Was_In_Love_With Warrior\nEagle_Knight Got_Jealous_Of Warrior\nEagle_Knight Killed Warrior\nPrincess Attacked Eagle_Knight\nEagle_Knight Wounded Princess\nJaguar_Knight Attacked Eagle_Knight\nJaguar_Knight Fought Eagle_Knight\nJaguar_Knight Killed Eagle_Knight\nJaguar_Knight Exiled Jaguar_Knight\n```\n\nEnsure that the action and character name strings used in the DPS syntax match the strings used in the JSON object. An action is not required to have a `subject` or an `object` character. If a `subject` or an `object` are missing from the JSON object simply do not add it to the action line.\n<｜Assistant｜>"
+time=2025-04-02T10:20:42.407-06:00 level=DEBUG source=cache.go:104 msg="loading cache slot" id=0 cache=1824 prompt=308 used=2 remaining=306
+time=2025-04-02T10:22:37.549-06:00 level=DEBUG source=cache.go:231 msg="context limit hit - shifting" id=0 limit=2048 input=2048 keep=5 discard=1021
+[GIN] 2025/04/02 - 10:23:11 | 200 |         2m29s |       127.0.0.1 | POST     "/api/chat"
+time=2025-04-02T10:23:11.226-06:00 level=DEBUG source=sched.go:408 msg="context for request finished"
+time=2025-04-02T10:23:11.226-06:00 level=DEBUG source=sched.go:340 msg="runner with non-zero duration has gone idle, adding timer" modelPath=/home/rmorain2/.ollama_models/blobs/sha256-4cd576d9aa16961244012223abf01445567b061f1814b57dfef699e4cf8df339 duration=5m0s
+time=2025-04-02T10:23:11.226-06:00 level=DEBUG source=sched.go:358 msg="after processing request finished event" modelPath=/home/rmorain2/.ollama_models/blobs/sha256-4cd576d9aa16961244012223abf01445567b061f1814b57dfef699e4cf8df339 refCount=0
+<think>
+Alright, so I've got this problem where I need to convert a JSON object into something called DPS format. Let me try to understand what's being asked here.
+
+First, I'll read through the user's query carefully. They provided a formal description of the DPS structure and an example. The goal is to take a given JSON object and translate it into this specific syntax.
+
+Looking at the formal description:
+
+- Story starts with 'STO' followed by comments if any.
+- A Sequence of Actions is a list where each action can lead to more actions.
+- Each Action consists of optional Subject, mandatory Action, and optional Object. All are strings.
+
+In the example provided, I see that each line represents an action with subject, action, object. Sometimes the subject or object might be missing in the JSON, so those should be omitted in DPS if not present.
+
+Now, the user's example shows how the conversion works. Each key-value pair in the JSON becomes a line in DPS, but only for the actions. The keys under "actions" are the ones that matter here. So I need to parse each action and its subject and object accordingly.
+
+I also notice that the DPS format doesn't require the story name or any identifiers beyond 'STO' at the beginning. So my focus is solely on converting the actions part of the JSON into the correct syntax.
+
+When processing the JSON, I'll look for the "actions" array. Each element in this array should have a subject, action, and object. If either subject or object is missing, they shouldn't appear in the DPS line.
+
+For example, if an action has only an action string, like {"action": "ran"}, then the DPS line would just be "ran". But looking at the example, it seems that actions usually have a subject and sometimes an object. So I need to make sure to check for their presence.
+
+I should also ensure that strings are correctly formatted, using underscores where necessary, as in the example. The user emphasized matching the strings from JSON exactly, so no changes there except formatting into DPS syntax.
+
+Another point is handling inline comments starting with ';'. But since the provided JSON doesn't have any comments, I might not need to handle those unless the input includes them.
+
+So, putting it all together:
+
+1. Start with 'Sto' followed by a comment if needed (but in this case, no story name was given).
+2. Iterate through each action in the JSON's "actions" array.
+3. For each action, construct a line that includes subject, action, and object as available.
+
+Wait, actually, looking back at the example provided by the user, I see that they have multiple characters involved, like Eagle_Knight, Jaguar_Knight, etc., each performing actions with objects. So each action is on a separate line in DPS, structured as "Subject Action Object" if both are present, or just "Action" if subject and object are missing.
+
+But wait, the example shows that sometimes only two parts are present: for instance, "Jaguar_Knight Attacked Eagle_Knight". That's subject, action, object. So each line is Subject (if exists) + Action (mandatory) + Object (if exists).
+
+So in code terms, for each action:
+
+- If 'subject' exists and is not empty, include it.
+- Include the 'action'.
+- If 'object' exists and is not empty, include it.
+
+Thus, each DPS line is constructed by concatenating these parts with spaces.
+
+I need to make sure that if either subject or object is missing in the JSON, they are omitted from the DPS line. So no trailing or leading spaces; just the existing components.
+
+Testing this logic with the example given:
+
+The JSON had actions like:
+- {"subject": "Eagle_Knight", "action": "Was_In_Love_With", "object": "Princess"}
+Which becomes "Eagle_Knight Was_In_Love_With Princess"
+
+And another action without object or subject, but in this case, all have both. So the example DPS lines are correctly formed.
+
+Another test case: suppose an action is {"action": "Ran"}, then DPS line is "Ran".
+
+If an action has only a subject and action: {"subject": "John", "action": "ran"}, then DPS would be "John ran".
+
+Similarly, if it's just object and action: {"action": "ran", "object": "away"}, the DPS line would be "ran away".
+
+So I need to handle all these cases.
+
+Now, regarding the actual conversion process:
+
+I'll read each JSON action, check for subject and object. For each part present, add them in order: subject, action, object. Each separated by a space, no trailing spaces.
+
+In code, perhaps using Python, I can loop through each action dictionary in the actions list. For each, build the line by checking if 'subject' exists (and is non-empty string), then add it, followed by action, then check if 'object' exists and is non-empty, then add it.
+
+Wait, but what's the exact structure of the JSON? The user provided an example where the actions are key-value pairs under "actions". Each action has subject, action, object. So in code:
+
+json = {
+    "story": "...",
+    "actions": [
+        {"subject": "...", "action": "...", "object": "..."},
+        ...
+    ]
+}
+
+So I need to process each element of the actions array.
+
+Now, considering edge cases: what if subject or object is an empty string? Should those be included? According to the problem statement, if they are missing from JSON, don't include. But in JSON, if a key exists with a null value, should that be treated as missing?
+
+The user's instruction says "if a subject or an object are missing from the JSON object simply do not add it." So perhaps we need to check if the keys exist and have non-null values.
+
+Wait, but in JSON, if a key is present but has a null value, like {"subject": null}, should that be treated as missing? Or only when the key isn't present?
+
+The problem statement says "if a subject or an object are missing from the JSON object." So I think it refers to the keys not being present. So in code, if 'subject' is not a key in the action dictionary, then omit. Similarly for object.
+
+Alternatively, perhaps the user means that if the value is null or empty string, it's considered missing. But the example shows that all actions have both subject and object, so maybe we can assume that each action has subject and object as needed.
+
+But to be precise, in code I should check whether 'subject' exists and is non-empty, same for 'object'. Because if a key exists but its value is an empty string, perhaps it's considered missing. But the problem statement isn't clear on this. Since the example includes all parts when present, I'll assume that only when the keys are absent should they be omitted.
+
+Alternatively, in JSON, sometimes optional fields might not be present at all. So if 'subject' is not a key, then omit. Similarly for object.
+
+Thus, in code, for each action in actions:
+
+line_parts = []
+
+if 'subject' in action and action['subject']:
+    line_parts.append(action['subject'])
+
+line_parts.append(action['action'])  # since action is mandatory
+
+if 'object' in action and action['object']:
+    line_parts.append(action['object'])
+
+Then, join the parts with spaces.
+
+This would handle cases where subject or object are missing (either key not present or value is empty).
+
+But perhaps it's safer to assume that if the key exists but has a null value, treat as missing. So in code:
+
+for action in actions:
+    parts = []
+    if 'subject' in action and action['subject'] is not None and action['subject'] != '':
+        parts.append(action['subject'])
+    parts.append(action['action'])
+    if 'object' in action and action['object'] is not None and action['object'] != '':
+        parts.append(action['object'])
+    dps_line = ' '.join(parts)
+    # add to DPS output
+
+This way, even if the key exists but value is empty or null, it's omitted.
+
+Now, considering the example provided by the user:
+
+They have an action with subject and object. So each line includes all three parts.
+
+Another example: suppose an action like {"action": "ran"} → line is "ran".
+
+If action is {"subject": "John", "action": "ran"} → line is "John ran".
+
+If action is {"action": "ran", "object": "away"} → line is "ran away".
+
+Now, putting this into code. Assuming the JSON structure has 'actions' as a list of dictionaries with 'action' being present (since it's mandatory).
+
+So in Python:
+
+dps_output = []
+for action in json_data['actions']:
+    parts = []
+    if 'subject' in action and action['subject'] not in (None, ''):
+        parts.append(action['subject'])
+    parts.append(action['action'])
+    if 'object' in action and action['object'] not in (None, ''):
+        parts.append(action['object'])
+    dps_line = ' '.join(parts)
+    dps_output.append(dps_line)
+
+Then, the DPS lines are collected. Finally, combine them with newlines.
+
+But the user's initial question was just to convert JSON to this format, but didn't provide the exact structure beyond "actions". So perhaps I should ask for more details if necessary, but assuming that it's as described.
+
+So in conclusion, each action is processed into a line with subject (if present), action, object (if present). Each part joined by spaces.
+</think>
+
+To convert JSON data containing actions into the specified format, follow these steps:
+
+1. **Extract Actions**: Retrieve the list of actions from the JSON data.
+2. **Process Each Action**: For each action:
+   - Check if `subject` exists and is non-empty; include it if so.
+   - Include the mandatory `action`.
+   - Check if `object` exists and is non-empty; include it if so.
+3. **Form Lines**: Combine the parts of each action into a string with spaces.
+4. **Combine All Lines**: Join all individual lines into a single output, separated by newlines.
+
+Here's how the conversion looks:
+
+**JSON Input Example:**
+```json
+{
+    "actions": [
+        {
+            "subject": "Eagle",
+            "action": "flies",
+            "object": "high"
+        },
+        {
+            "action": "runs"
+        }
+    ]
+}
+```
+
+**Converted Output:**
+```
+Eagle flies high
+runs
+```
+
+This method ensures each action is correctly formatted with optional `subject` and `object`, while always including the mandatory `action`.
+Saved response to file:  responses/jaguar_knight/2025-04-02-10-17-35/dps.txt
+Reading emotional preconditions prompt from file:  prompts/emotional_preconditions.txt
+time=2025-04-02T10:23:11.283-06:00 level=DEBUG source=sched.go:576 msg="evaluating already loaded" model=/home/rmorain2/.ollama_models/blobs/sha256-4cd576d9aa16961244012223abf01445567b061f1814b57dfef699e4cf8df339
+time=2025-04-02T10:23:11.285-06:00 level=DEBUG source=prompt.go:78 msg="truncating input messages which exceed context length" truncated=2
+time=2025-04-02T10:23:11.285-06:00 level=DEBUG source=routes.go:1501 msg="chat request" images=0 prompt="<｜User｜>For each action, identify or infer the preconditions related to emotional links. A precondition is a requirement that needs to be satisfied in order for a character to perform a specific action. These requirements take the form of either an emotional link or a tension. An emotional link that is a precondition is an emotional link that should exist in order for taking the action to make sense.\n\n\nEach emotional link has a magnitude of an integer value in the range [-3, 3]. In order to take a particular action and satisfy the precondition, a character might need to have a specific type and magnitude of emotional link towards another character before performing an action.\n\nFor example, if character `a` attacks character `b`, and the precondition requires an emotional link type of `friendship` and a magnitude of -3 (indicating hatred) from character `a` to character `b`, then character `a` must have an emotional link of type `friendship` of magnitude -3 toward character `b` in order to `attack`. \n\nPreconditions are optional.\n\nIdentify or infer the preconditions that relate to emotional links by following the instructions below. \n\nInstructions for each action:\n1. Create a new key called `preconditions`.\n2. In the `preconditions` key create an object with a key called `emotional_links`\n3. Assign an array to the `emotional_links` key containing the identified or inferred emotional links.\n\tA. If there are no required `emotional_links`, leave the array empty\n4. Each `emotional_link` is an object with keys `type`, `magnitude`, `from`, and `to`\n\tA. `type` contains the type of the emotional link as defined previously.\n\tB. `magnitude` contains the intensity of the emotional link in the range [-3, 3]\n\tC. `from` contains either values ‘a’ or ‘b’ to indicate the character that is the source of the emotional link. ‘a’ refers to the `subject` performing the action and ‘b’ refers to the `object` receiving the action\n\tD. `to` contains either values ‘a’ or ‘b’ to indicate the character that is the target of the emotional link. ‘a’ refers to the `subject` performing the action and ‘b’ refers to the `object` receiving the action\n\nReturn this new JSON object.\n<｜Assistant｜>"
+time=2025-04-02T10:23:11.286-06:00 level=DEBUG source=cache.go:104 msg="loading cache slot" id=0 cache=1536 prompt=485 used=2 remaining=483
+[GIN] 2025/04/02 - 10:24:45 | 200 |         1m33s |       127.0.0.1 | POST     "/api/chat"
+time=2025-04-02T10:24:45.211-06:00 level=DEBUG source=sched.go:408 msg="context for request finished"
+time=2025-04-02T10:24:45.211-06:00 level=DEBUG source=sched.go:340 msg="runner with non-zero duration has gone idle, adding timer" modelPath=/home/rmorain2/.ollama_models/blobs/sha256-4cd576d9aa16961244012223abf01445567b061f1814b57dfef699e4cf8df339 duration=5m0s
+time=2025-04-02T10:24:45.211-06:00 level=DEBUG source=sched.go:358 msg="after processing request finished event" modelPath=/home/rmorain2/.ollama_models/blobs/sha256-4cd576d9aa16961244012223abf01445567b061f1814b57dfef699e4cf8df339 refCount=0
+<think>
+Alright, so I need to figure out how to identify preconditions related to emotional links for each action provided by the user. The user has given an example where character 'a' attacks 'b', requiring a friendship emotional link with a magnitude of -3 from 'a' to 'b'. 
+
+First, I should understand what an emotional link is. It's a relationship between two characters that can be positive or negative, measured on a scale from -3 (extremely negative) to 3 (extremely positive). The type could be things like friendship, love, trust, hatred, etc.
+
+When processing each action, I need to create a new JSON object with a 'preconditions' key. Inside that, there's an 'emotional_links' array. Each element in this array is an object specifying the type of emotional link, its magnitude, and who it's from and to.
+
+I should think about what each action implies emotionally. For example, attacking someone usually comes from negative emotions like anger or hatred. So for an attack, maybe the attacker (a) has a strong negative link towards the target (b). 
+
+Similarly, if one character hugs another, that probably indicates a positive emotional link, maybe love or affection. The magnitude might be high, say 3.
+
+But sometimes actions don't necessarily have preconditions. For example, waving at someone could be neutral, so there might not be any required emotional links unless specified otherwise.
+
+I also need to ensure the 'from' and 'to' fields correctly point to 'a' (the subject) and 'b' (the object). So in each case, I have to determine if the action implies an emotional state from a to b or vice versa.
+
+Wait, for example, if 'a' is giving something to 'b', it might imply trust or friendship. But maybe in some cases, it could be out of obligation with a neutral magnitude, but that's less likely. So perhaps I should assume the most common emotional link associated with each action.
+
+I need to go through each action one by one and analyze what emotional links they require. Let me think about how to approach this systematically:
+
+1. Identify the action.
+2. Determine if there is an inherent emotional implication (e.g., attack implies negative emotions).
+3. Decide the type of emotional link based on the action.
+4. Assign a magnitude that makes sense for the action's intensity.
+5. Set 'from' as 'a' since the subject is performing the action, and 'to' as 'b', the object.
+
+Wait, but sometimes the target might have an emotion towards the subject. For example, if 'b' fears 'a', that could be a precondition for certain actions. But I think in this case, we're focusing on the emotional links from the subject ('a') to the object ('b'), as per the user's instruction.
+
+So each action will likely have its own set of preconditions based on the emotions the subject holds towards the object. If an action doesn't imply any specific emotion, then the 'emotional_links' array remains empty.
+
+Let me test this with a few examples:
+
+- **Attack**: Typically implies anger or hatred from 'a' to 'b'. So type could be 'hatred' with magnitude -3.
+- **Hug**: Implies affection or love. Type is 'affection', magnitude 2.
+- **Give**: Might imply trust or friendship, so type 'trust', magnitude 1.
+- **Steal from**: Implies distrust or greed towards the target. Maybe type 'distrust', magnitude -2.
+
+I should make sure that each emotional link makes sense in the context of the action and isn't forced. Also, consider if multiple emotional links could be applicable, but I think usually it's one primary emotion per action.
+
+Wait, what about actions like "question"? Questioning someone might not inherently have an emotional link unless the context implies suspicion or curiosity. So maybe 'curiosity' with a low positive magnitude?
+
+But since preconditions are optional, if the action doesn't clearly imply an emotion, I can leave it empty.
+
+I also need to make sure that each emotional_link object includes all four keys: type, magnitude, from, and to. Since in most cases, 'from' is 'a' and 'to' is 'b', but maybe sometimes 'to' could be 'a'? Hmm, not likely because the action is directed towards 'b'.
+
+Wait no, the emotional link is always from the subject ('a') to the object ('b'), so 'from' should be 'a' and 'to' should be 'b'. Unless the action is something where 'b's emotion towards 'a' affects the action, but I think per instructions, we're focusing on what the subject feels towards the object.
+
+I think that's all. Now, when applying this to each action provided by the user, I can systematically determine if an emotional link exists and its details.
+</think>
+
+To identify preconditions related to emotional links for each action, follow these steps:
+
+1. **Analyze the Action**: Understand the nature of the action (e.g., attack, hug, give).
+2. **Determine Emotional Implication**: Identify if the action inherently implies a specific emotion or relationship.
+3. **Specify Emotional Link Type**: Choose an emotional link type based on the action's context (e.g., hatred for attack, affection for hug).
+4. **Assign Magnitude**: Set the intensity of the emotional link within the range [-3, 3].
+5. **Define Direction**: Typically, 'from' is the subject ('a') and 'to' is the object ('b').
+
+Here’s how each action could be processed:
+
+- **Attack**:
+  - Type: "hatred"
+  - Magnitude: -3
+  - From: "a"
+  - To: "b"
+
+- **Hug**:
+  - Type: "affection"
+  - Magnitude: 2
+  - From: "a"
+  - To: "b"
+
+- **Give**:
+  - Type: "trust"
+  - Magnitude: 1
+  - From: "a"
+  - To: "b"
+
+- **Steal from**:
+  - Type: "distrust"
+  - Magnitude: -2
+  - From: "a"
+  - To: "b"
+
+If an action doesn't imply a specific emotion, the 'emotional_links' array remains empty.
+
+**Example JSON Object for Action "Attack":**
+
+```json
+{
+  "preconditions": {
+    "emotional_links": [
+      {
+        "type": "hatred",
+        "magnitude": -3,
+        "from": "a",
+        "to": "b"
+      }
+    ]
+  }
+}
+```
+
+This approach ensures each action's emotional preconditions are systematically evaluated and represented.
+Saved response to file:  responses/jaguar_knight/2025-04-02-10-17-35/emotional_preconditions.txt
+Traceback (most recent call last):
+  File "/home/rmorain2/git/LLMEXICA/parse_story.py", line 256, in <module>
+    main()
+  File "/home/rmorain2/git/LLMEXICA/parse_story.py", line 135, in main
+    json_object = parse_response_json(response.message.content)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/rmorain2/git/LLMEXICA/parse_story.py", line 46, in parse_response_json
+    key, value = line.split(": ")
+    ^^^^^^^^^^
+ValueError: not enough values to unpack (expected 2, got 1)

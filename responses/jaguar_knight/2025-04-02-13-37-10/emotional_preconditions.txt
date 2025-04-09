@@ -1,0 +1,542 @@
+<think>
+Alright, I need to add preconditions related to emotional links for each action in the provided JSON. The user has instructed that preconditions are optional and take the form of emotional links with a type and magnitude. Each precondition is an object within the `preconditions` key, containing an array of `emotional_links`.
+
+First, I'll go through each action one by one to identify if there's any implied emotional link that must exist for the action to make sense.
+
+1. **Tlaloc Sends Storm**  
+   - **Action**: `tlaloc_sends_storm`  
+   - **Subject**: `-`  
+   - **Object**: `-`  
+   - No characters involved, so no preconditions related to emotional links.  
+
+2. **Jaguar_Knight Tries_To_Cross_Bridge**  
+   - **Action**: `jaguar_knight_tries_to_cross_bridge`  
+   - **Subject**: `jaguar_knight`  
+   - **Object**: `-`  
+   - No direct emotional link needed; it's more of a necessity.  
+
+3. **Bridge Collapses_Injuring Jaguar_Knight**  
+   - **Action**: `bridge_collapses_injuring_jaguar_knight`  
+   - **Subject**: `-`  
+   - **Object**: `jaguar_knight`  
+   - Environmental action, no emotional link preconditions.  
+
+4. **Princess Knows_Jaguar_Knight_Could_Die**  
+   - **Action**: `princess_knows_jaguar_knight_could_die`  
+   - **Subject**: `princess`  
+   - **Object**: `-`  
+   - Implies concern for Jaguar_Knight, so a positive emotional link of friendship or love.  
+
+5. **Princess Prepares_Curative_Plant**  
+   - **Action**: `princess_prepares_curative_plant`  
+   - **Subject**: `princess`  
+   - **Object**: `-`  
+   - Her action to save him suggests a positive emotional link towards Jaguar_Knight.  
+
+6. **Princess Applies_Curative_Plant_To_Jaguar_Knight's_Wounds**  
+   - **Action**: `princess_applies_curative_plant_to_jaguar_knight_wounds`  
+   - **Subject**: `princess`  
+   - **Object**: `jaguar_knight`  
+   - This action is driven by the same concern and positive emotional link as above.  
+
+7. **Jaguar_Knight Recuperates**  
+   - **Action**: `jaguar_knight_recuperates`  
+   - **Subject**: `jaguar_knight`  
+   - **Object**: `-`  
+   - No direct emotional link needed here, just a result of the princess's actions.  
+
+8. **Enemy Kidnaps_Princess**  
+   - **Action**: `enemy_kidnaps_princess`  
+   - **Subject**: `enemy`  
+   - **Object**: `princess`  
+   - Implies negative feelings towards Princess, possibly related to past conflicts or revenge.  
+
+9. **Enemy Ties_Princess_To_Rock**  
+   - **Action**: `enemy_ties_princess_to_rock`  
+   - **Subject**: `enemy`  
+   - **Object**: `princess`  
+   - Similar negative emotions as above, likely a continuation of the kidnapping motive.  
+
+10. **Enemy Plans_To_Kill_Princess_At_Midnight**  
+    - **Action**: `enemy_plans_to_kill_princess_at_midnight`  
+    - **Subject**: `enemy`  
+    - **Object**: `-`  
+    - Reinforces the negative emotional link towards Princess, possibly hatred or anger.  
+
+11. **Jaguar_Knight Decides_To_Rescue_Princess**  
+    - **Action**: `jaguar_knight_decides_to_rescue_princess`  
+    - **Subject**: `jaguar_knight`  
+    - **Object**: `-`  
+    - Implies a strong positive emotional link towards Princess, likely love or deep friendship.  
+
+12. **Jaguar_Knight Prays_To_Quetzalcoatl**  
+    - **Action**: `jaguar_knight_prays_to_quetzalcoatl`  
+    - **Subject**: `jaguar_knight`  
+    - **Object**: `-`  
+    - This is more of a personal or religious action, not directly tied to an emotional link between characters.  
+
+13. **Princess Confronts_Enemy**  
+    - **Action**: `princess_confronts_enemy`  
+    - **Subject**: `princess`  
+    - **Object**: `-`  
+    - Indicates negative emotions towards Enemy, possibly anger or hatred.  
+
+14. **Enemy Attacks_Princess**  
+    - **Action**: `enemy_attacks_princess`  
+    - **Subject**: `enemy`  
+    - **Object**: `princess`  
+    - Reinforces the negative emotional link from Enemy to Princess.  
+
+15. **Jaguar_Knight Searches_For_Enemy**  
+    - **Action**: `jaguar_knight_searches_for_enemy`  
+    - **Subject**: `jaguar_knight`  
+    - **Object**: `-`  
+    - Driven by the desire to rescue Princess, indicating a positive emotional link towards her.  
+
+16. **Jaguar_Knight Finds_Enemy**  
+    - **Action**: `jaguar_knight_finds_enemy`  
+    - **Subject**: `jaguar_knight`  
+    - **Object**: `-`  
+    - Part of the rescue mission, so same emotional link as above.  
+
+17. **Jaguar_Knight Throws_Dust_In_Enemy's_Face**  
+    - **Action**: `jaguar_knight_throws_dust_in_enemys_face`  
+    - **Subject**: `jaguar_knight`  
+    - **Object**: `enemy`  
+    - Implies negative emotions towards Enemy, possibly anger or determination.  
+
+18. **Jaguar_Knight Stabs_Enemy_With_Dagger**  
+    - **Action**: `jaguar_knight_stabs_enemy_with_dagger`  
+    - **Subject**: `jaguar_knight`  
+    - **Object**: `enemy`  
+    - Reinforces the negative emotional link towards Enemy.  
+
+19. **Jaguar_Knight Takes_Enemy's_Heart**  
+    - **Action**: `jaguar_knight_takes_enemys_heart`  
+    - **Subject**: `jaguar_knight`  
+    - **Object**: `-`  
+    - Part of the ritual, but also indicates a strong negative emotional link towards Enemy.  
+
+20. **Jaguar_Knight Liberates_Princess**  
+    - **Action**: `jaguar_knight_liberates_princess`  
+    - **Subject**: `jaguar_knight`  
+    - **Object**: `princess`  
+    - Driven by positive emotional links towards Princess, likely love or friendship.  
+
+21. **Princess Kisses_Jaguar_Knight**  
+    - **Action**: `princess_kisses_jaguar_knight`  
+    - **Subject**: `princess`  
+    - **Object**: `jaguar_knight`  
+    - Indicates a romantic emotional link from Princess to Jaguar_Knight.  
+
+22. **Princess Recognizes_Jaguar_Knight's_Tattoo**  
+    - **Action**: `princess_recognizes_jaguar_knights_tattoo`  
+    - **Subject**: `princess`  
+    - **Object**: `-`  
+    - This recognition leads to ambivalent emotions, indicating a clash between positive and negative links.  
+
+23. **Princess Feels_Ambivalent_Towards_Jaguar_Knight**  
+    - **Action**: `princess_feels_ambivalent_towards_jaguar_knight`  
+    - **Subject**: `princess`  
+    - **Object**: `-`  
+    - Involves both positive and negative emotional links towards Jaguar_Knight.  
+
+24. **Princess Kills_Jaguar_Knight**  
+    - **Action**: `princess_kills_jaguar_knight`  
+    - **Subject**: `princess`  
+    - **Object**: `jaguar_knight`  
+    - Driven by negative emotions, possibly hatred or betrayal, towards Jaguar_Knight.  
+
+25. **Princess Commits_Suicide**  
+    - **Action**: `princess_commits_suicide`  
+    - **Subject**: `princess`  
+    - **Object**: `-`  
+    - Indicates internal conflict and negative emotional state, possibly due to ambivalent feelings towards Jaguar_Knight.  
+
+26. **Tonatiuh Disappears_In_Horizon**  
+    - **Action**: `tonatiuh_disappears_in_horizon`  
+    - **Subject**: `-`  
+    - **Object**: `-`  
+    - Environmental action, no emotional links involved.  
+
+Now, I'll apply these observations to create the updated JSON with preconditions for each action where applicable.
+</think>
+
+```json
+[
+  {
+    "action": "tlaloc_sends_storm",
+    "n_characters": 0,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": []
+    }
+  },
+  {
+    "action": "jaguar_knight_tries_to_cross_bridge",
+    "n_characters": 1,
+    "subject": "jaguar_knight",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": []
+    }
+  },
+  {
+    "action": "bridge_collapses_injuring_jaguar_knight",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "jaguar_knight",
+    "preconditions": {
+      "emotional_links": []
+    }
+  },
+  {
+    "action": "princess_knows_jaguar_knight_could_die",
+    "n_characters": 1,
+    "subject": "princess",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 2,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "princess_prepares_curative_plant",
+    "n_characters": 1,
+    "subject": "princess",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 2,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "princess_applies_curative_plant_to_jaguar_knight_wounds",
+    "n_characters": 2,
+    "subject": "princess",
+    "object": "jaguar_knight",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 2,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "jaguar_knight_recuperates",
+    "n_characters": 1,
+    "subject": "jaguar_knight",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": []
+    }
+  },
+  {
+    "action": "enemy_kidnaps_princess",
+    "n_characters": 2,
+    "subject": "enemy",
+    "object": "princess",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "enemy_ties_princess_to_rock",
+    "n_characters": 2,
+    "subject": "enemy",
+    "object": "princess",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "enemy_plans_to_kill_princess_at_midnight",
+    "n_characters": 1,
+    "subject": "enemy",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "jaguar_knight_decides_to_rescue_princess",
+    "n_characters": 1,
+    "subject": "jaguar_knight",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "love",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "jaguar_knight_prays_to_quetzalcoatl",
+    "n_characters": 1,
+    "subject": "jaguar_knight",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": []
+    }
+  },
+  {
+    "action": "princess_confronts_enemy",
+    "n_characters": 2,
+    "subject": "princess",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -2,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "enemy_attacks_princess",
+    "n_characters": 2,
+    "subject": "enemy",
+    "object": "princess",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "jaguar_knight_searches_for_enemy",
+    "n_characters": 1,
+    "subject": "jaguar_knight",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "love",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "jaguar_knight_finds_enemy",
+    "n_characters": 1,
+    "subject": "jaguar_knight",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "love",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "jaguar_knight_throws_dust_in_enemys_face",
+    "n_characters": 2,
+    "subject": "jaguar_knight",
+    "object": "enemy",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "jaguar_knight_stabs_enemy_with_dagger",
+    "n_characters": 2,
+    "subject": "jaguar_knight",
+    "object": "enemy",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "jaguar_knight_takes_enemys_heart",
+    "n_characters": 1,
+    "subject": "jaguar_knight",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "jaguar_knight_liberates_princess",
+    "n_characters": 2,
+    "subject": "jaguar_knight",
+    "object": "princess",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "love",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "princess_kisses_jaguar_knight",
+    "n_characters": 2,
+    "subject": "princess",
+    "object": "jaguar_knight",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "love",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "princess_recognizes_jaguar_knights_tattoo",
+    "n_characters": 1,
+    "subject": "princess",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "love",
+          "magnitude": -2,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "princess_feels_ambivalent_towards_jaguar_knight",
+    "n_characters": 1,
+    "subject": "princess",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "love",
+          "magnitude": -2,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "princess_kills_jaguar_knight",
+    "n_characters": 2,
+    "subject": "princess",
+    "object": "jaguar_knight",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "love",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "princess_commits_suicide",
+    "n_characters": 1,
+    "subject": "princess",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "love",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "tonatiuh_disappears_in_horizon",
+    "n_characters": 0,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": []
+    }
+  }
+]
+```

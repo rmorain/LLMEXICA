@@ -1,0 +1,80 @@
+<think>
+Alright, I need to convert the given JSON into the DPS format as per the user's request. Let me start by understanding what the user provided.
+
+The JSON contains a series of actions from the story, each with 'action', 'n_characters', 'subject', and 'object'. The task is to translate these into the specified DPS structure.
+
+First, I'll look at the example the user gave. It starts with 'Sto ;1' followed by the actors involved and then the sequence of actions. Each action line includes the subject, action, and object if applicable.
+
+So, for each JSON object, I need to create a corresponding action line in DPS. If an action has both subject and object, it'll be "Subject Action Object". If either is missing, I omit it.
+
+Let me go through each action one by one:
+
+1. **storm_damage_bridge**: No subject or object, so just the action.
+2. **character_injured**: Object is jaguar_knight, no subject mentioned.
+3. **character_healed**: Subject is princess, object is jaguar_knight.
+4. **character_realize_gratitude**: Only subject, jaguar_knight.
+5. **enemy_kidnap_princess**: Subject is enemy, object is princess.
+6. **character_tied_to_rock**: Subject is enemy, object is princess.
+7. **character_pray_for_wisdom**: Subject is jaguar_knight.
+8. **character_search_for_enemy**: Subject is jaguar_knight, object is enemy.
+9. **character_attack_with_dagger**: Subject is jaguar_knight, object is enemy.
+10. **character_throw_dust_in_face**: Subject is jaguar_knight, object is enemy.
+11. **character_perforate_chest_with_dagger**: Subject is jaguar_knight, object is enemy.
+12. **character_take_heart_as_offering**: Only subject, jaguar_knight.
+13. **character_liberate_princess**: Subject is jaguar_knight, object is princess.
+14. **character_fall_in_love**: Subject is princess, object is jaguar_knight.
+15. **characters_share_romantic_kiss**: Both subjects are princess and jaguar_knight.
+16. **character_recognize_tattoo**: Only subject, princess.
+17. **character_feel_ambivalent_emotions**: Subject is princess, object is jaguar_knight.
+18. **character_cut_jugular**: Subject is princess, object is jaguar_knight.
+19. **character_cut_own_throat**: Only subject, princess.
+
+I notice that the DPS example lists all actors first and then actions. So I'll list all unique characters involved: storm, bridge, jaguar_knight, princess, tlaloc, quetzalcoatl, enemy, huitzilopochtli, tonatiuh.
+
+Wait, in the JSON, some actions don't have specific subjects or objects, so in DPS, they might not need to be listed as actors. But since the example includes all involved characters, I'll include them.
+
+Now, for each action line:
+
+- If 'subject' and 'object' are present, format as "Subject Action Object".
+- If only one is present, just include that part.
+- If neither is present, just the action.
+
+Let me construct each line accordingly. For example, the first action in JSON is "storm_damage_bridge", which doesn't have subject or object, so it's just that action string.
+
+I'll proceed similarly for all actions, ensuring consistency with the format and including all necessary characters as actors at the top.
+</think>
+
+```plaintext
+<DPS>
+Sto ;1
+storm Actor
+bridge Actor
+jaguar_knight Actor
+princess Actor
+tlaloc Actor
+quetzalcoatl Actor
+enemy Actor
+huitzilopochtli Actor
+tonatiuh Actor
+
+storm_damage_bridge
+character_injured jaguar_knight
+character_healed princess jaguar_knight
+character_realize_gratitude jaguar_knight
+enemy_kidnap_princess enemy princess
+character_tied_to_rock enemy princess
+character_pray_for_wisdom jaguar_knight
+character_search_for_enemy jaguar_knight enemy
+character_attack_with_dagger jaguar_knight enemy
+character_throw_dust_in_face jaguar_knight enemy
+character_perforate_chest_with_dagger jaguar_knight enemy
+character_take_heart_as_offering jaguar_knight
+character_liberate_princess jaguar_knight princess
+character_fall_in_love princess jaguar_knight
+characters_share_romantic_kiss princess jaguar_knight
+character_recognize_tattoo princess
+character_feel_ambivalent_emotions princess jaguar_knight
+character_cut_jugular princess jaguar_knight
+character_cut_own_throat princess
+</DPS>
+```

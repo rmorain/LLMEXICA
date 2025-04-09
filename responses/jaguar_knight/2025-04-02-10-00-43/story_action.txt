@@ -1,0 +1,118 @@
+<think>
+Okay, so I need to figure out how to analyze the given story using a narrative analysis expert's approach. The user provided a detailed query where they want me to act as an expert who can parse actions in the story related to emotional links and tensions. Let me start by understanding exactly what needs to be done.
+
+First, I remember that this person is focusing on two types of emotional links: friendship and love. So, I need to look for actions that involve these relationships between characters. Also, they’re considering six specific tensions: character_dead, life_at_risk, health_at_risk, prisoner, LOVE_COMPLEX, and clashing_emotions.
+
+The user also specified that the actions should be in JSON format with keys like action, n_characters (number of characters involved), subject (the one performing the action), and object (the one receiving it). If either is missing, I'll leave a - symbol. Also, each action needs to have these keys consistently.
+
+Looking at the story, there are several high-level actions happening. Let me go through them step by step.
+
+1. JAGUAR_KNIGHT sent a storm with heavy rain damaging the bridge. This seems like something that affects other characters, so maybe this is part of a larger tension regarding health or safety. But I need to check if it's directly about character_dead or health_at_risk.
+
+2. PRINCESS preparing plasma and applying it to JAGUAR_KNIGHT’s wounds, which helped recive his life. This action involves the PRINCESS and JAGUAR_KNIGHT, so that could be a LOVE_COMPLEX tension since both are in love with each other. 
+
+3. JAGUAR_KNIGHT searching for enemy, attacking, releasing PRINCESS after a fight. This is a high-energy action involving both characters, possibly contributing to a conflict between them.
+
+4. JAGUAR_KNIGHT using daggers and perforating the enemy’s chest as a sign of respect to the gods (God of theods in TRS). This shows respect from God of theods, which is an emotional link towards the enemy. So this could be a love_link between the two characters.
+
+5. JAGUAR_KNIGHT liberation of PRINCESS after the fight, despite PRINCESS not wanting to admit it. Their feelings about each other change, which ties into LOVE_COMPLEX tension again.
+
+6. PRINCESS reacting with HUITZILOPOCHTLI and cutting their at-thrink, symbolizing the dead. This is a character dead situation for PRINCESS, so that's an action related to character_dead.
+
+7. PRINCESS turning on TONATIU (the sun god) in the horizon, which could be part of a love or affection towards the sun god, possibly a love link but not sure about it yet.
+
+Now, I need to map each high-level action to specific emotional links and tensions. 
+
+- The heavy rain damaging the bridge is likely health_at_risk for JAGUAR_KNIGHT and character_dead for PRINCESS if they're near the bridge.
+  
+- The plasma attack showing their love is LOVE_COMPLEX.
+
+- The attack releasing the enemy could be a high tension between them, possibly LOVE_COMPLEX.
+
+- liberation of PRINCESS shows PRINCESS moving away from JAGUAR_KNIGHT’s affection, maybe LOVE-complex again.
+
+- Cut at-thrink as dead is character_dead for PRINCESS.
+
+- HUITZILOPOCHTLI symbolizing the sun god could be a love towards the sun god if there's an emotional link, but not sure yet.
+
+Now, putting this together in JSON format. I'll start with the highest-level actions:
+
+1. JAGUAR_KNIGHT sent a storm - health_at_risk for PRINCESS and character_dead for JAGUAR_KNIGHT.
+
+2. PRINCESS preparing plasma and showing love between them: LOVE_COMPLEX.
+
+3. JAGUAR_KNIGHT attacking the enemy: LOVE-complex.
+
+4. JAGUAR_KNIGHT liberation of PRINCESS - LOVE-complex again.
+
+5. Cut at-thrink symbolizing dead: character_dead for PRINCESS.
+
+6. HUITZILOPOCHTLI with sun god: possibly LOVE towards the sun, but not sure.
+
+Each action should be mapped to emotional links and tensions appropriately.
+</think>
+
+Here’s an analysis of the actions in the story based on the specified emotional links (friendship and love) and tensions:
+
+1. **JAGUAR_KNIGHT sent a storm with heavy rain damaging the bridge**  
+   - **Tension**: Health_at_risk for PRINCESS (if they are near the bridge) and character_dead for JAGUAR_KNIGHT (if they were killed by the storm).
+
+2. **PRINCESS preparing plasma and applying it to JAGUAR_KNIGHT’s wounds**  
+   - **Emotional Link**: LOVE_COMPLEX: PRINCESS and JAGUAR_KNIGHT are in a deep love relationship.
+
+3. **JAGUAR_KNIGHT attacking the enemy as a sign of respect to the gods (God of theods)**  
+   - **Emotional Link**: LOVE_COMPLEX: JAGUAR_KNIGHT’s respect for the God of theods shows mutual affection between them.
+
+4. **JAGUAR_KNIGHT releasing PRINCESS after a fight**  
+   - **Emotional Link**: LOVE-complex: PRINCESS leaves JAGUAR_KNIGHT’s heart, showing strong feelings and leaving behind her.
+
+5. **PRINCESS cutting their at-thrink as dead (sun god)**  
+   - **Tension**: Character_dead for PRINCESS if they are near the sun god.
+
+6. **PRINCESS turning on TONATIU (the sun god) in the horizon**  
+   - **Emotional Link**: Possibly LOVE towards the sun god, but not directly linked to any specific relationship.
+
+### JSON Format:
+
+```json
+[
+  {
+    "action": "JAGUAR_KNIGHT sent a storm",
+    "n_characters": ["PRINCESS", "JAGUAR_KNIGHT"],
+    "subject": "JAGUAR_KNIGHT",
+    "object": "PRINCESS"
+  },
+  {
+    "action": "PRINCESS preparing plasma",
+    "n_characters": ["PRINCESS", "JAGUAR_KNIGHT"],
+    "subject": "PRINCESS",
+    "object": "JAGUAR_KNIGHT"
+  },
+  {
+    "action": "JAGUAR_KNIGHT attacking",
+    "n_characters": ["JAGUAR_KNIGHT", "_enemy"],
+    "subject": "JAGUAR_KNIGHT",
+    "object": "enemy"
+  },
+  {
+    "action": "JAGUAR_KNIGHT liberation of PRINCESS",
+    "n_characters": ["JAGUAR_KNIGHT", "PRINCESS"],
+    "subject": "PRINCESS",
+    "object": ""
+  },
+  {
+    "action": "Cut at-thrink symbolizing dead",
+    "n_characters": ["PRINCESS", "sun god"],
+    "subject": "PRINCESS",
+    "object": "dead"
+  },
+  {
+    "action": "HUITZILOPOCHTLI with sun",
+    "n_characters": ["PRINCESS", "sun god"],
+    "subject": "PRINCESS",
+    "object": ""
+  }
+]
+```
+
+This analysis maps the high-level actions to specific emotional links and tensions based on the relationships between PRINCESS, JAGUAR_KNIGHT, and their environment.

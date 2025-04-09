@@ -1,0 +1,50 @@
+<think>
+Alright, I need to convert the provided JSON into the specified DPS format. First, I'll recall the structure of the DPS example given. It starts with 'Sto' followed by a number, then lists actors and actions.
+
+Looking at the JSON, each action is between characters or involves one character. I'll extract each action line by line, ensuring that if there's no subject or object, they are omitted in DPS.
+
+I notice that some actions involve two characters, like 'prepare_curative_plasma' with Princess as subject and Jaguar_Knight as object. Others only have a subject, like 'pray_for_wisdom_braveness', where the subject is implied but there's no object.
+
+I'll list each action in order, translating the JSON keys into DPS syntax. For actions without subjects or objects, I'll represent them with just the action name. Also, I need to ensure that character names match exactly as in the JSON.
+
+I should also handle the special case where a character is both subject and object, but in this JSON, it seems each action has distinct characters or none at all. Finally, I'll compile all these into the DPS structure under the <DPS> tags.
+</think>
+
+Here is the converted JSON object to the Definition of Previous Stories (DPS) format:
+
+```plaintext
+<DPS>
+Sto ;1
+Princess Actor
+Jaguar_Knight Actor
+Enemy Actor
+Tlaloc Actor
+Quetzalcoatl Actor
+Huitzilopochtli Actor
+Tonatiu Actor
+
+storm_caused_by_god Tlaloc storm_caused_by_god -
+bridge_collapse_injure_head - bridge_collapse_injure_head jaguar_knight
+prepare_curative_plasma princess prepare_curative_plasma jaguar_knight
+apply_plasma_to_wounds princess apply_plasma_to_wounds jaguar_knight
+realize_determination_save_life - realize_determination_save_life -
+kidnap_princess enemy kidnep_princess princess
+tie_to_rock enemy tie_to_rock princess
+pray_for_wisdom_braveness jaguar_knight pray_for_wisdom_braveness quetzalcoatl
+confront_enemy_angrily princess confront_enemy_angrily enemy
+charge_against_princess enemy charge_against_princess princess
+search_for_enemy jaguar_knight search_for_enemy -
+attack_with_dagger jaguar_knight attack_with_dagger enemy
+throw_dust_in_face jaguar_knight throw_dust_in_face enemy
+perforate_chest_with_dagger jaguar_knight perforate_chest_with_dagger enemy
+imitate_sacred_ceremony jaguar_knight imitate_sacred_ceremony -
+liberate_princess jaguar_knight liberate_princess princess
+fall_in_love princess fall_in_love -
+kiss princess kiss jaguar_knight
+recognize_tattoo princess recognize_tattoo -
+feel_ambivalent_thoughts princess feel_ambivalent_thoughts -
+invoke_god_of_dead princess invoke_god_of_dead huitzilopochtli
+cut_jugular princess cut_jugular jaguar_knight
+cut_own_throat princess cut_own_throat -
+</DPS>
+```

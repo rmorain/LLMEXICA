@@ -1,0 +1,55 @@
+<think>
+Alright, so I'm trying to help the user convert their JSON story analysis into this DPS format. First, let me make sure I understand what DPS is. From the example given, it looks like DPS starts with "Sto" followed by a sequence of actions. Each action has a subject, an action verb, and an object, all separated by spaces.
+
+Looking back at the JSON provided earlier, each action is structured with "subject," "action," and "object." Some actions have both subject and object, while others might only have one or neither. For example, "storm_damage_bridge" doesn't involve any specific characters, so in DPS, it would just be that action without a subject or object.
+
+Now, I need to go through each JSON entry and translate it into the DPS syntax. That means for every action in the JSON array, I'll create a corresponding line in the DPS format. If an action has both subject and object, I'll include them; if not, I'll omit them accordingly.
+
+Let's take the first few actions:
+
+1. "storm_damage_bridge" – no subject or object, so it's just that.
+2. "character_injured_head" – here, the object is "jaguar_knight," but there's no subject since the storm caused the injury. So, maybe I can represent this as "-" injured_head "jaguar_knight."
+
+Wait, in DPS, if the subject is missing, do we just omit it? From the example, actions like "Was_In_Love_With" have both subject and object, but for actions without a subject or object, they seem to be absent. So perhaps I should represent it as "- injured_head jaguar_knight."
+
+But looking at the example again, all actions have both subject and object, so maybe in cases where one is missing, we can use "-" to indicate absence.
+
+Continuing this way for each action:
+
+- "prepare_curative_plasma" has subject "princess" and object "jaguar_knight," so it would be "princess prepare_curative_plasma jaguar_knight."
+- "apply_plasma_to_wounds" similarly would be "princess apply_plasma_to_wounds jaguar_knight."
+
+For actions where both subject and object are the same, like "cut_own_throat_with_dagger," it's represented as "princess cut_own_throat_with_dagger princess." But wait, in the DPS example, actions don't have repeated characters, so maybe I should just list it once or find another way. Alternatively, since DPS allows for actions to have both subject and object, even if they are the same character, it's okay.
+
+I also need to ensure that the action strings match exactly as in the JSON. For example, "liberate_princess" becomes "jaguar_knight liberate_princess princess."
+
+Going through each action step by step and converting them accordingly should give me the complete DPS structure. I'll make sure to handle cases where subject or object are missing by using "-" appropriately.
+
+Finally, wrapping everything up with "Sto" at the beginning and enclosing it within <DPS> tags as per the user's instruction.
+</think>
+
+```plaintext
+<DPS>
+Sto ;1
+- storm_damage_bridge -
+- character_injured_head jaguar_knight
+princess prepare_curative_plasma jaguar_knight
+princess apply_plasma_to_wounds jaguar_knight
+- character_recuperate jaguar_knight
+enemy enemy_kidnap_princess princess
+enemy tie_character_to_rock princess
+jaguar_knight character_pray_for_wisdom -
+jaguar_knight search_for_enemy enemy
+jaguar_knight attack_with_dagger enemy
+jaguar_knight throw_dust_in_face enemy
+jaguar_knight perforate_chest_with_dagger enemy
+- imitate_sacred_ceremony -
+jaguar_knight liberate_princess princess
+princess kiss_character jaguar_knight
+- recognize_tattoo princess
+- invoke_god_of_the_dead -
+princess cut_jugular_with_dagger jaguar_knight
+- character_bleed_to_death jaguar_knight
+princess cut_own_throat_with_dagger princess
+</DPS>
+```

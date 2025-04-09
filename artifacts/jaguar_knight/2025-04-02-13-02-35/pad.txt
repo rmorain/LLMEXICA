@@ -1,0 +1,123 @@
+
+ACT
+storm_caused_by_god 1
+POS
+
+ACT
+bridge_collapse_injure_head 1
+POS
+T Hr a *
+
+ACT
+prepare_curative_plasma 2
+PRE
+E a b +3 1
+T Hr b *
+POS
+E b a +3 1
+T Hn b *
+
+ACT
+apply_plasma_to_wounds 2
+PRE
+E a b +3 1
+T Hr b *
+POS
+E b a +3 1
+T Hn b *
+
+ACT
+realize_determination_save_life 1
+POS
+
+ACT
+kidnap_princess 2
+POS
+T Pr b *
+
+ACT
+tie_to_rock 2
+POS
+T Pr b *
+
+ACT
+pray_for_wisdom_braveness 1
+POS
+E a b +3 1
+
+ACT
+confront_enemy_angrily 2
+POS
+E a b -3 1
+
+ACT
+charge_against_princess 2
+POS
+T Lr b *
+
+ACT
+search_for_enemy 1
+POS
+
+ACT
+attack_with_dagger 2
+PRE
+E a b -3 1
+POS
+T Pf b *
+
+ACT
+throw_dust_in_face 2
+PRE
+E a b -3 1
+POS
+
+ACT
+perforate_chest_with_dagger 2
+PRE
+E a b -3 1
+POS
+
+ACT
+imitate_sacred_ceremony 1
+POS
+
+ACT
+liberate_princess 2
+POS
+T Pf b *
+
+ACT
+fall_in_love 1
+POS
+E a b +3 2
+
+ACT
+kiss 2
+POS
+
+ACT
+recognize_tattoo 1
+POS
+T Ce *
+
+ACT
+feel_ambivalent_thoughts 1
+POS
+E a b -3 1
+T Ce *
+
+ACT
+invoke_god_of_dead 1
+POS
+T Ad *
+
+ACT
+cut_jugular 2
+POS
+T Ad *
+
+ACT
+cut_own_throat 1
+POS
+T Ad *

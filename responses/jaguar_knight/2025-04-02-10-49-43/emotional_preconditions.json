@@ -1,0 +1,303 @@
+[
+    {
+        "action": "storm_damage_bridge",
+        "n_characters": 1,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "character_injured",
+        "n_characters": 2,
+        "subject": "-",
+        "object": "jaguar_knight",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "character_healed",
+        "n_characters": 2,
+        "subject": "princess",
+        "object": "jaguar_knight",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": 2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "character_realize_gratitude",
+        "n_characters": 1,
+        "subject": "jaguar_knight",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": 2,
+                    "from": "a",
+                    "to": "-"
+                }
+            ]
+        }
+    },
+    {
+        "action": "enemy_kidnap_princess",
+        "n_characters": 2,
+        "subject": "enemy",
+        "object": "princess",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "character_tied_to_rock",
+        "n_characters": 2,
+        "subject": "enemy",
+        "object": "princess",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "character_pray_for_wisdom",
+        "n_characters": 1,
+        "subject": "jaguar_knight",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": 2,
+                    "from": "a",
+                    "to": "-"
+                }
+            ]
+        }
+    },
+    {
+        "action": "character_search_for_enemy",
+        "n_characters": 2,
+        "subject": "jaguar_knight",
+        "object": "enemy",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "-"
+                },
+                {
+                    "type": "friendship",
+                    "magnitude": -2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "character_attack_with_dagger",
+        "n_characters": 2,
+        "subject": "jaguar_knight",
+        "object": "enemy",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "character_throw_dust_in_face",
+        "n_characters": 2,
+        "subject": "jaguar_knight",
+        "object": "enemy",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "character_perforate_chest_with_dagger",
+        "n_characters": 2,
+        "subject": "jaguar_knight",
+        "object": "enemy",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "character_take_heart_as_offering",
+        "n_characters": 1,
+        "subject": "jaguar_knight",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "character_liberate_princess",
+        "n_characters": 2,
+        "subject": "jaguar_knight",
+        "object": "princess",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "character_fall_in_love",
+        "n_characters": 2,
+        "subject": "princess",
+        "object": "jaguar_knight",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "love",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "characters_share_romantic_kiss",
+        "n_characters": 2,
+        "subject": "princess",
+        "object": "jaguar_knight",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "love",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                },
+                {
+                    "type": "love",
+                    "magnitude": 3,
+                    "from": "b",
+                    "to": "a"
+                }
+            ]
+        }
+    },
+    {
+        "action": "character_recognize_tattoo",
+        "n_characters": 1,
+        "subject": "princess",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -2,
+                    "from": "a",
+                    "to": "-"
+                }
+            ]
+        }
+    },
+    {
+        "action": "character_feel_ambivalent_emotions",
+        "n_characters": 2,
+        "subject": "princess",
+        "object": "jaguar_knight",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "love",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                },
+                {
+                    "type": "friendship",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "character_cut_jugular",
+        "n_characters": 2,
+        "subject": "princess",
+        "object": "jaguar_knight",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "character_cut_own_throat",
+        "n_characters": 1,
+        "subject": "princess",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "-"
+                }
+            ]
+        }
+    }
+]

@@ -1,0 +1,165 @@
+<think>
+Alright, I need to convert the provided JSON into the Primitive Action Description (PAD) language as per the user's instructions. The PAD syntax requires specifying each action with preconditions and postconditions in a specific format.
+
+First, I'll review the PAD syntax:
+
+- Each action starts with 'ACT' followed by the action name and number of characters.
+- Preconditions are optional and listed under 'PRE'.
+- Postconditions are mandatory and include both emotional links and tensions after 'POS'.
+
+I need to ensure that each JSON object is accurately translated into PAD, maintaining the correct format for emotional links and tensions. Emotional links have a type (1 for friendship, 2 for love) and magnitude (with + or - signs). Tensions use specific codes like 'Lr' for life_at_risk.
+
+Let's start with the first action:
+
+1. **storm_damage_bridge**: No characters, so no preconditions or postconditions.
+2. **character_injured**: jaguar_knight is injured, health_at_risk applies.
+3. **character_healed**: princess heals jaguar_knight, resolving health_at_risk and strengthening friendship.
+
+I'll structure each action in PAD accordingly, ensuring proper spacing and syntax. For actions without preconditions, I'll omit the 'PRE' section. Postconditions must always be present.
+
+Now, I'll convert each JSON object into PAD format.
+</think>
+
+```plaintext
+ACT storm_damage_bridge 1
+POS
+
+ACT character_injured 2
+PRE
+T Hr b *
+POS
+T Hr b *
+
+ACT character_healed 2
+PRE
+E a b +2 1
+T Hr b *
+POS
+E b a +3 1
+T Hn b a
+
+ACT character_realize_gratitude 1
+PRE
+E a * +2 1
+POS
+E a * +3 1
+
+ACT enemy_kidnap_princess 2
+PRE
+E a b -3 1
+POS
+E a b -3 1
+T Pr b *
+T Lr b *
+
+ACT character_tied_to_rock 2
+PRE
+E a b -3 1
+T Pr b *
+T Lr b *
+POS
+E a b -3 1
+T Pr b *
+T Lr b *
+
+ACT character_pray_for_wisdom 1
+PRE
+E a * +2 1
+T Lr * *
+POS
+E a * +3 1
+
+ACT character_search_for_enemy 2
+PRE
+E a * +3 1
+E a b -2 1
+T Pr * *
+T Lr * *
+POS
+E a * +3 1
+E a b -2 1
+
+ACT character_attack_with_dagger 2
+PRE
+E a b -3 1
+T Lr a *
+T Lr b *
+POS
+E a b -3 1
+
+ACT character_throw_dust_in_face 2
+PRE
+E a b -3 1
+T Lr a *
+T Lr b *
+POS
+E a b -3 1
+
+ACT character_perforate_chest_with_dagger 2
+PRE
+E a b -3 1
+T Lr a *
+T Lr b *
+POS
+E a b -3 1
+
+ACT character_take_heart_as_offering 1
+PRE
+T Ad * *
+POS
+
+ACT character_liberate_princess 2
+PRE
+E a b +3 1
+T Pr b *
+POS
+E b a +4 1
+T Pn b a
+T Ln b a
+
+ACT character_fall_in_love 2
+PRE
+E a b +3 2
+POS
+E a b +4 2
+
+ACT characters_share_romantic_kiss 2
+PRE
+E a b +3 2
+E b a +3 2
+POS
+E a b +4 2
+E b a +4 2
+
+ACT character_recognize_tattoo 1
+PRE
+E a * -2 1
+POS
+E a * -3 1
+
+ACT character_feel_ambivalent_emotions 2
+PRE
+E a b +3 2
+E a b -3 1
+T Ce * *
+POS
+E a b +2 2
+E a b -3 1
+T Ce * *
+
+ACT character_cut_jugular 2
+PRE
+E a b -3 1
+T Lr a *
+T Ad b *
+POS
+E a b -3 1
+
+ACT character_cut_own_throat 1
+PRE
+E a * -3 1
+T Ad * *
+T Lr a *
+POS
+E a * -3 1
+```

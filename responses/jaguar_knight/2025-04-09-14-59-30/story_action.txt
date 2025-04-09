@@ -1,0 +1,154 @@
+<think>
+Alright, I need to figure out how to approach this query. The user is asking for a narrative analysis of a given story, focusing on emotional links and tensions. They provided specific types for both, so first, I should make sure I understand those correctly.
+
+The user wants me to extract actions from the main characters that relate to emotional relationships (either friendship or love) and build tension in the story. The tensions include things like character death, life at risk, health issues, imprisonment, clashing emotions, and love competition.
+
+Looking at the story, it's about Jaguar Knight and Princess dealing with various conflicts and emotional shifts. I need to go through each event step by step, identify the key actions, and categorize them under the specified types.
+
+First, the storm caused by Tlaloc damages a bridge, leading to Jaguar Knight's injury. That's a clear case of health at risk for him. Then Princess uses a curative plant to save him, which shows a positive emotional link, likely friendship since it's about saving his life without romantic elements yet.
+
+Next, the enemy kidnaps Princess, which introduces the prisoner tension and puts her life at risk. Jaguar Knight decides to rescue her, leading to an action where he liberates her, further building their bond—now potentially shifting towards love as she admires him.
+
+However, there's a twist when Princess recognizes his tattoo linked to her father's murder. This creates clashing emotions because she loves him but hates what he did. The tension here is significant because it leads to tragic consequences: she kills him and then herself.
+
+I need to structure each action in chronological order, using the JSON format specified. Each action should have subject, object, and n_characters. I must avoid character names and keep actions simple for reusability.
+
+So, breaking down the story:
+
+1. Storm causes bridge collapse (health at risk).
+2. Princess saves Jaguar Knight (friendship link).
+3. Enemy kidnaps Princess (prisoner tension).
+4. Jaguar Knight searches and finds enemy.
+5. He attacks and kills the enemy, liberates Princess (love starts).
+6. Princess kisses him but then recognizes the tattoo (clashing emotions).
+7. She kills him (character dead), then herself (another character dead).
+
+Each of these steps should be an action in the JSON with appropriate keys filled out. Making sure that actions without a subject or object have '-' and n_characters reflects the participants.
+
+I think I've covered all necessary points, ensuring each action relates to emotional links or tension types as specified.
+</think>
+
+```json
+[
+  {
+    "action": "storm_damage_bridge",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "-"
+  },
+  {
+    "action": "character_injured_head",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "jaguar_knight"
+  },
+  {
+    "action": "prepare_curative_plasma",
+    "n_characters": 2,
+    "subject": "princess",
+    "object": "jaguar_knight"
+  },
+  {
+    "action": "apply_plasma_to_wounds",
+    "n_characters": 2,
+    "subject": "princess",
+    "object": "jaguar_knight"
+  },
+  {
+    "action": "character_recuperate",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "jaguar_knight"
+  },
+  {
+    "action": "enemy_kidnap_princess",
+    "n_characters": 2,
+    "subject": "enemy",
+    "object": "princess"
+  },
+  {
+    "action": "tie_character_to_rock",
+    "n_characters": 2,
+    "subject": "enemy",
+    "object": "princess"
+  },
+  {
+    "action": "character_pray_for_wisdom",
+    "n_characters": 1,
+    "subject": "jaguar_knight",
+    "object": "-"
+  },
+  {
+    "action": "search_for_enemy",
+    "n_characters": 2,
+    "subject": "jaguar_knight",
+    "object": "enemy"
+  },
+  {
+    "action": "attack_with_dagger",
+    "n_characters": 2,
+    "subject": "jaguar_knight",
+    "object": "enemy"
+  },
+  {
+    "action": "throw_dust_in_face",
+    "n_characters": 2,
+    "subject": "jaguar_knight",
+    "object": "enemy"
+  },
+  {
+    "action": "perforate_chest_with_dagger",
+    "n_characters": 2,
+    "subject": "jaguar_knight",
+    "object": "enemy"
+  },
+  {
+    "action": "imitate_sacred_ceremony",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "-"
+  },
+  {
+    "action": "liberate_princess",
+    "n_characters": 2,
+    "subject": "jaguar_knight",
+    "object": "princess"
+  },
+  {
+    "action": "kiss_character",
+    "n_characters": 2,
+    "subject": "princess",
+    "object": "jaguar_knight"
+  },
+  {
+    "action": "recognize_tattoo",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "princess"
+  },
+  {
+    "action": "invoke_god_of_the_dead",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "-"
+  },
+  {
+    "action": "cut_jugular_with_dagger",
+    "n_characters": 2,
+    "subject": "princess",
+    "object": "jaguar_knight"
+  },
+  {
+    "action": "character_bleed_to_death",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "jaguar_knight"
+  },
+  {
+    "action": "cut_own_throat_with_dagger",
+    "n_characters": 2,
+    "subject": "princess",
+    "object": "princess"
+  }
+]
+```

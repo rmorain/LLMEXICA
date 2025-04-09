@@ -1,0 +1,118 @@
+<think>
+Okay, so I'm trying to figure out how to analyze this story using the guidelines provided. The user wants me to extract actions related to emotional links and tensions in a JSON format. 
+
+First, I need to identify the main characters: Jaguar_Knight, Princess, Tlaloc (the god), Enemy, Quetzalcoatl, Huitzilopochtli, and Tonatiuh. But for the analysis, I should focus on actions between them that relate to emotional links (friendship or love) and tensions like character death, life at risk, etc.
+
+Looking through the story step by step:
+
+1. Tlaloc sends a storm, damaging the bridge. This causes Jaguar_Knight's injury. So, an action where Tlaloc acts on the bridge, causing damage. That's an environmental action but leads to health risk for Jaguar_Knight.
+
+2. Jaguar_Knight tries to cross and gets injured. His life is at risk because of the bridge collapse.
+
+3. Princess knows he could die and decides to act. She prepares a curative plant and applies it, saving his life. This shows a positive emotional link (friendship or love) from Princess towards Jaguar_Knight.
+
+4. Jaguar_Knight realizes Princess saved him, indicating mutual respect or friendship.
+
+5. Enemy kidnaps Princess as revenge for her father's actions in the past. This introduces tension of prisoner and possibly love competition if both have feelings for someone.
+
+6. Enemy ties Princess to a rock and plans to kill her at midnight. Life is definitely at risk here.
+
+7. Jaguar_Knight decides to rescue her, showing bravery but also emotional investment (could be love or friendship).
+
+8. He prays to Quetzalcoatl for wisdom and bravery before acting. This is more of a personal action, not directly relating to others, so maybe not an emotional link.
+
+9. Princess confronts Enemy angrily, leading to volatile emotions. Clashing emotions here because she's angry but also scared or determined.
+
+10. Enemy attacks her without thinking, which escalates the tension (life at risk).
+
+11. Jaguar_Knight starts searching for Enemy, finds him, and attacks. This is a high-tension action with health risks involved.
+
+12. He uses dust to distract, then stabs Enemy, imitates a sacrifice. This leads to Enemy's death, so character dead tension.
+
+13. After killing Enemy, Jaguar_Knight frees Princess, showing his emotional link (love or friendship).
+
+14. Princess admires his bravery, leading her to fall in love with him. Clear romantic emotional link here.
+
+15. They kiss, but then she recognizes his tattoo linked to her father's murderers. This creates clashing emotions: love and hatred towards the same person.
+
+16. She feels ambivalent, torn between love and hatred. So, clashing emotions tension arises.
+
+17. In anger, Princess kills Jaguar_Knight, leading to his death (character dead).
+
+18. Then she takes her own life with a dagger (another character dead), bleeding out as the sun sets.
+
+So, I need to map these events into actions with subject, object, n_characters, and action type. Each action should be in snake_case without character names, so generalize them.
+
+I'll go through each event, extract the relevant actions, assign subjects and objects where applicable, count characters involved, and categorize them under emotional links or tensions as needed.
+</think>
+
+Here is a structured analysis of the story's key events, focusing on emotional links and narrative tensions:
+
+1. **Storm Damages Bridge**  
+   - **Action**: `storm_damage_bridge`
+   - **Tension**: Environmental setup leading to subsequent health risks.
+
+2. **Jaguar_Knight Injured**  
+   - **Action**: `bridge_collapse_injuring_jaguar_knight`
+   - **Subject**: `-`
+   - **Object**: `Jaguar_Knight`
+   - **n_characters**: 1
+   - **Tension**: Health at risk.
+
+3. **Princess Saves Jaguar_Knight**  
+   - **Action**: `princess_saves_jaguar_knight`
+   - **Subject**: `Princess`
+   - **Object**: `Jaguar_Knight`
+   - **n_characters**: 2
+   - **Emotional Link**: Friendship/Love.
+
+4. **Gratitude from Jaguar_Knight**  
+   - **Action**: `jaguar_knight_realizes_princess_saved_life`
+   - **Subject**: `Jaguar_Knight`
+   - **Object**: `-`
+   - **n_characters**: 1
+   - **Emotional Link**: Respect/Admiration.
+
+5. **Enemy Kidnaps Princess**  
+   - **Action**: `enemy_kidnaps_princess`
+   - **Subject**: `Enemy`
+   - **Object**: `Princess`
+   - **n_characters**: 2
+   - **Tension**: Prisoner/Life at risk.
+
+6. **Jaguar_Knight Rescues Princess**  
+   - **Action**: `jaguar_knight_rescues_princess`
+   - **Subject**: `Jaguar_Knight`
+   - **Object**: `Princess`
+   - **n_characters**: 2
+   - **Emotional Link**: Love.
+
+7. **Romantic Moment and Tattoo Discovery**  
+   - **Action**: `princess_recognizes_jaguar_knight_tattoo`
+   - **Subject**: `Princess`
+   - **Object**: `-`
+   - **n_characters**: 1
+   - **Tension**: Clashing emotions (love vs. hatred).
+
+8. **Ambivalent Feelings**  
+   - **Action**: `princess_feels_ambivalent_towards_jaguar_knight`
+   - **Subject**: `Princess`
+   - **Object**: `-`
+   - **n_characters**: 1
+   - **Tension**: Clashing emotions.
+
+9. **Jaguar_Knight's Death**  
+   - **Action**: `princess_kills_jaguar_knight`
+   - **Subject**: `Princess`
+   - **Object**: `Jaguar_Knight`
+   - **n_characters**: 2
+   - **Tension**: Character dead.
+
+10. **Princess's Suicide**  
+    - **Action**: `princess_commits_suicide`
+    - **Subject**: `Princess`
+    - **Object**: `-`
+    - **n_characters**: 1
+    - **Tension**: Character dead.
+
+This analysis captures the essential emotional dynamics and tensions, providing a clear narrative structure.

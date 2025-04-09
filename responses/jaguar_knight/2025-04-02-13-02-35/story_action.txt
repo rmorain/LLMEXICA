@@ -1,0 +1,164 @@
+<think>
+Alright, I need to analyze this story step by step as a narrative analysis expert focusing on emotional links and tensions.
+
+First, the storm caused by Tlaloc damages the bridge. Jaguar_Knight tries to cross it and gets injured. That's definitely a health_at_risk situation since he's badly hurt.
+
+Princess finds out about his condition and knows he could die. She uses a curative plant to heal him. This action shows her determination, so this is an emotional link of friendship because she's saving his life in a platonic way.
+
+Jaguar_Knight realizes she saved him, which strengthens their bond. So that's another friendship emotional link as gratitude builds their relationship.
+
+Next, there's a revenge plot where the enemy kidnaps Princess and ties her up. This creates prisoner tension for her. Jaguar decides to rescue her despite the danger, showing life_at_risk tension for both of them.
+
+Princess is angry at the enemy, leading to clashing emotions because earlier she was scared but now she's confronting him. The enemy attacks her, which adds to the tension, specifically life_at_risk since she's about to be killed.
+
+Jaguar prays for wisdom and bravery, showing his internal preparation but not directly an emotional link yet. He finds the enemy, leading to a confrontation where he attacks and kills the enemy. This frees Princess, so another prisoner tension resolution.
+
+After being rescued, Princess feels admiration for Jaguar_Knight, developing romantic feelings. They kiss, which is a clear love emotional link.
+
+But then she recognizes his tattoo linked to her father's murder. This creates clashing emotions: she loves him but hates what he did. She kills him and herself, leading to both characters_dead tension.
+
+Each action needs to be in JSON with subject, object, and number of characters. I'll list them chronologically as they appear.
+</think>
+
+```json
+[
+    {
+        "action": "storm_caused_by_god",
+        "n_characters": 1,
+        "subject": "-",
+        "object": "-"
+    },
+    {
+        "action": "bridge_collapse_injure_head",
+        "n_characters": 1,
+        "subject": "-",
+        "object": "jaguar_knight"
+    },
+    {
+        "action": "prepare_curative_plasma",
+        "n_characters": 2,
+        "subject": "princess",
+        "object": "jaguar_knight"
+    },
+    {
+        "action": "apply_plasma_to_wounds",
+        "n_characters": 2,
+        "subject": "princess",
+        "object": "jaguar_knight"
+    },
+    {
+        "action": "realize_determination_save_life",
+        "n_characters": 1,
+        "subject": "-",
+        "object": "-"
+    },
+    {
+        "action": "kidnap_princess",
+        "n_characters": 2,
+        "subject": "enemy",
+        "object": "princess"
+    },
+    {
+        "action": "tie_to_rock",
+        "n_characters": 2,
+        "subject": "enemy",
+        "object": "princess"
+    },
+    {
+        "action": "pray_for_wisdom_braveness",
+        "n_characters": 1,
+        "subject": "-",
+        "object": "-"
+    },
+    {
+        "action": "confront_enemy_angrily",
+        "n_characters": 2,
+        "subject": "princess",
+        "object": "enemy"
+    },
+    {
+        "action": "charge_against_princess",
+        "n_characters": 2,
+        "subject": "enemy",
+        "object": "princess"
+    },
+    {
+        "action": "search_for_enemy",
+        "n_characters": 1,
+        "subject": "-",
+        "object": "-"
+    },
+    {
+        "action": "attack_with_dagger",
+        "n_characters": 2,
+        "subject": "jaguar_knight",
+        "object": "enemy"
+    },
+    {
+        "action": "throw_dust_in_face",
+        "n_characters": 2,
+        "subject": "jaguar_knight",
+        "object": "enemy"
+    },
+    {
+        "action": "perforate_chest_with_dagger",
+        "n_characters": 2,
+        "subject": "jaguar_knight",
+        "object": "enemy"
+    },
+    {
+        "action": "imitate_sacred_ceremony",
+        "n_characters": 1,
+        "subject": "-",
+        "object": "-"
+    },
+    {
+        "action": "liberate_princess",
+        "n_characters": 2,
+        "subject": "jaguar_knight",
+        "object": "princess"
+    },
+    {
+        "action": "fall_in_love",
+        "n_characters": 1,
+        "subject": "-",
+        "object": "-"
+    },
+    {
+        "action": "kiss",
+        "n_characters": 2,
+        "subject": "princess",
+        "object": "jaguar_knight"
+    },
+    {
+        "action": "recognize_tattoo",
+        "n_characters": 1,
+        "subject": "-",
+        "object": "-"
+    },
+    {
+        "action": "feel_ambivalent_thoughts",
+        "n_characters": 1,
+        "subject": "-",
+        "object": "-"
+    },
+    {
+        "action": "invoke_god_of_dead",
+        "n_characters": 1,
+        "subject": "-",
+        "object": "-"
+    },
+    {
+        "action": "cut_jugular",
+        "n_characters": 2,
+        "subject": "princess",
+        "object": "jaguar_knight"
+    },
+    {
+        "action": "cut_own_throat",
+        "n_characters": 1,
+        "subject": "-",
+        "object": "-"
+    }
+]
+```

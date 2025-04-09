@@ -45,3 +45,4 @@ T Hn b a
 ```
 
 If there are no preconditions, omit the line containing “PRE”. Ensure that the same information contained in the JSON object is contained in the PAD structure. Ensure that negative numbers have a minus sign (-) before the integer and positive numbers have a plus sign (+) before the integer. Check for proper spacing. For emotional links and tensions, use the string literals “*” and “-” like before in the JSON object to indicate any character or no character.
+Return your result between <PAD></PAD> tags.

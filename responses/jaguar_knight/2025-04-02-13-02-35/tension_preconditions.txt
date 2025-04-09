@@ -1,0 +1,367 @@
+<think>
+Alright, I need to go through each action in the provided JSON and identify or infer the preconditions related to tensions. Tensions can be of several types: `character_dead`, `life_at_risk`, `health_at_risk`, `prisoner`, `clashing_emotions`, and `love_competition`.
+
+I'll start by understanding what each tension means:
+
+1. **character_dead**: A character has died.
+2. **life_at_risk**: A character's life is in danger.
+3. **health_at_risk**: A character's health is compromised.
+4. **prisoner**: A character is being held captive.
+5. **clashing_emotions**: Conflicting emotions within a character towards another.
+6. **love_competition**: Two characters have romantic feelings for the same third character.
+
+Now, I'll go through each action and determine if any tensions are preconditions for that action.
+
+1. **storm_caused_by_god**: This is an environmental event, no direct tension related to characters.
+2. **bridge_collapse_injure_head**: Causes health risk for Jaguar_Knight.
+3. **prepare_curative_plasma**: Done because Jaguar_Knight's health is at risk.
+4. **apply_plasma_to_wounds**: Same as above.
+5. **realize_determination_save_life**: Implies life_at_risk.
+6. **kidnap_princess**: Creates prisoner tension for Princess.
+7. **tie_to_rock**: Reinforces prisoner tension.
+8. **pray_for_wisdom_braveness**: Driven by the need to save Princess, indicating her life is at risk.
+9. **confront_enemy_angrily**: Confrontation increases life_at_risk.
+10. **charge_against_princess**: Direct threat to her life.
+11. **search_for_enemy**: Motivated by Princess being a prisoner and her life at risk.
+12. **attack_with_dagger**: Aims to liberate, so Princess is still a prisoner.
+13. **throw_dust_in_face**: Part of the rescue, Princess still a prisoner.
+14. **perforate_chest_with_dagger**: Same as above.
+15. **imitate_sacred_ceremony**: No direct tension related to characters.
+16. **liberate_princess**: Ends the prisoner tension.
+17. **fall_in_love**: No tension here, just emotional link.
+18. **kiss**: Same as above.
+19. **recognize_tattoo**: Leads to clashing emotions in Princess.
+20. **feel_ambivalent_thoughts**: Directly relates to clashing_emotions.
+21. **invoke_god_of_dead**: Part of the tension leading to death.
+22. **cut_jugular**: Results in character dead.
+23. **cut_own_throat**: Also results in character dead.
+
+For each action, I'll assign the relevant tensions as preconditions. If an action doesn't involve a tension, the array will be empty.
+</think>
+
+Here is the JSON object with preconditions related to tensions:
+
+```json
+[
+    {
+        "action": "storm_caused_by_god",
+        "n_characters": 1,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "tensions": []
+        }
+    },
+    {
+        "action": "bridge_collapse_injure_head",
+        "n_characters": 1,
+        "subject": "-",
+        "object": "jaguar_knight",
+        "preconditions": {
+            "tensions": [
+                {
+                    "type": "health_at_risk",
+                    "from": "*",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "prepare_curative_plasma",
+        "n_characters": 2,
+        "subject": "princess",
+        "object": "jaguar_knight",
+        "preconditions": {
+            "tensions": [
+                {
+                    "type": "health_at_risk",
+                    "from": "*",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "apply_plasma_to_wounds",
+        "n_characters": 2,
+        "subject": "princess",
+        "object": "jaguar_knight",
+        "preconditions": {
+            "tensions": [
+                {
+                    "type": "health_at_risk",
+                    "from": "*",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "realize_determination_save_life",
+        "n_characters": 1,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "*",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "kidnap_princess",
+        "n_characters": 2,
+        "subject": "enemy",
+        "object": "princess",
+        "preconditions": {
+            "tensions": [
+                {
+                    "type": "prisoner",
+                    "from": "*",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "tie_to_rock",
+        "n_characters": 2,
+        "subject": "enemy",
+        "object": "princess",
+        "preconditions": {
+            "tensions": [
+                {
+                    "type": "prisoner",
+                    "from": "*",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "pray_for_wisdom_braveness",
+        "n_characters": 1,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "*",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "confront_enemy_angrily",
+        "n_characters": 2,
+        "subject": "princess",
+        "object": "enemy",
+        "preconditions": {
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "*",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "charge_against_princess",
+        "n_characters": 2,
+        "subject": "enemy",
+        "object": "princess",
+        "preconditions": {
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "*",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "search_for_enemy",
+        "n_characters": 1,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "tensions": [
+                {
+                    "type": "prisoner",
+                    "from": "*",
+                    "to": "b"
+                },
+                {
+                    "type": "life_at_risk",
+                    "from": "*",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "attack_with_dagger",
+        "n_characters": 2,
+        "subject": "jaguar_knight",
+        "object": "enemy",
+        "preconditions": {
+            "tensions": [
+                {
+                    "type": "prisoner",
+                    "from": "*",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "throw_dust_in_face",
+        "n_characters": 2,
+        "subject": "jaguar_knight",
+        "object": "enemy",
+        "preconditions": {
+            "tensions": [
+                {
+                    "type": "prisoner",
+                    "from": "*",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "perforate_chest_with_dagger",
+        "n_characters": 2,
+        "subject": "jaguar_knight",
+        "object": "enemy",
+        "preconditions": {
+            "tensions": [
+                {
+                    "type": "prisoner",
+                    "from": "*",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "imitate_sacred_ceremony",
+        "n_characters": 1,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "tensions": []
+        }
+    },
+    {
+        "action": "liberate_princess",
+        "n_characters": 2,
+        "subject": "jaguar_knight",
+        "object": "princess",
+        "preconditions": {
+            "tensions": [
+                {
+                    "type": "prisoner",
+                    "from": "*",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "fall_in_love",
+        "n_characters": 1,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "tensions": []
+        }
+    },
+    {
+        "action": "kiss",
+        "n_characters": 2,
+        "subject": "princess",
+        "object": "jaguar_knight",
+        "preconditions": {
+            "tensions": []
+        }
+    },
+    {
+        "action": "recognize_tattoo",
+        "n_characters": 1,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "tensions": []
+        }
+    },
+    {
+        "action": "feel_ambivalent_thoughts",
+        "n_characters": 1,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "tensions": [
+                {
+                    "type": "clashing_emotions",
+                    "from": "*",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "invoke_god_of_dead",
+        "n_characters": 1,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "tensions": [
+                {
+                    "type": "character_dead",
+                    "from": "*",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "cut_jugular",
+        "n_characters": 2,
+        "subject": "princess",
+        "object": "jaguar_knight",
+        "preconditions": {
+            "tensions": [
+                {
+                    "type": "character_dead",
+                    "from": "*",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "cut_own_throat",
+        "n_characters": 1,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "tensions": [
+                {
+                    "type": "character_dead",
+                    "from": "*",
+                    "to": "b"
+                }
+            ]
+        }
+    }
+]
+```
