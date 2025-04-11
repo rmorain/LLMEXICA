@@ -1,0 +1,307 @@
+<think>
+Alright, so I need to figure out how to add preconditions related to tensions for each action in the story about the princess and the frog. The user wants me to identify or infer these preconditions based on the actions performed by the characters.
+
+First, let's recall what preconditions are. They're requirements that must be satisfied for a character to perform an action. In this case, they relate to tensions like someone being a prisoner, life at risk, health at risk, or death.
+
+Okay, so I need to go through each action one by one and determine if there's a tension precondition needed. Let's start with the first action: "cry_over_lost_ball". The princess is crying because she lost her golden ball. This action doesn't directly involve any of the defined tensions, so no preconditions here.
+
+Next action: "offer_help_for_companionship". Here, the frog offers to help retrieve the ball in exchange for companionship. There's no immediate tension; it's more about the emotional link. So, no tension precondition needed.
+
+Moving on: "promise_friendship". The princess promises friendship to the frog. Again, this is about the emotional link and doesn't involve any tension precondition.
+
+The next action is "ignore_companion", where the princess ignores the frog after getting her ball back. This might create some emotional distress for the frog, but it's more about the emotional link rather than a tension like health at risk or imprisonment.
+
+Then comes "arrive_at_castle". The frog shows up at the castle. For him to do this, there isn't necessarily a tension precondition unless we consider his determination as a form of life at risk, but that seems like a stretch. So, probably no tension here.
+
+"Refuse_entry": The princess refuses to let the frog in despite his arrival. This could create some emotional distress or tension for the frog, but it's more about the emotional link turning negative rather than a specific tension precondition.
+
+"Inspist_on_keeping_promise": The king tells her to let the frog in. There’s no direct tension here unless we consider the father-daughter relationship dynamics, which might not fit into the predefined tensions.
+
+"Let_in_reluctantly": She lets him in reluctantly. This shows some internal conflict but doesn't directly tie to a specific tension like life at risk or health issues.
+
+"Sits_together": They sit together at the table. This is more about their interaction and doesn’t involve any of the defined tensions.
+
+"Requests_food_together": The frog asks to eat with her. Again, this is about companionship and not directly related to any tension precondition.
+
+"Eats_unwillingly": She eats unwillingly, showing discomfort. While she's uncomfortable, it doesn't necessarily tie to a specific tension like health at risk unless we consider her emotional state affecting her health, but that might be reaching beyond the instructions.
+
+"Requests_sleep_together": The frog asks to sleep together. This is more about their relationship and doesn’t involve any of the predefined tensions directly.
+
+"Refuses_and_throws": She refuses and throws him against the wall. This action leads to the transformation, so it's more about resolving the emotional link rather than a tension precondition.
+
+"Transforms_into_prince": After being thrown, the frog transforms into a prince. For this transformation to happen, there must be some underlying condition like a curse or imprisonment by a witch, which fits the 'prisoner' tension.
+
+"Explains_imprisonment_by_witch": The prince explains his past imprisonment. This directly relates to the 'prisoner' tension as he was under a witch's spell.
+
+"Heart_crack_due_to_emotion": Faithful Henry's heart cracks because of emotional strain. This ties to 'health_at_risk' since his heart might burst from grief and sadness, indicating a risk to his health.
+
+Okay, so focusing on the actions that involve tensions:
+
+1. "transform_into_prince" requires the precondition that the frog was a prisoner (under a witch's spell).
+2. "explain_imprisonment_by_witch" directly involves the 'prisoner' tension.
+3. "heart_crack_due_to_emotion" involves 'health_at_risk' for Faithful Henry.
+
+Other actions don't have direct tension preconditions unless we interpret emotional distress as health risks, but I think it's safer to stick to the explicit ones mentioned in the story.
+</think>
+
+Here is the JSON output with the identified or inferred tension preconditions for each action:
+
+```json
+[
+  {
+    "action": "cry_over_lost_ball",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": []
+    }
+  },
+  {
+    "action": "offer_help_for_companionship",
+    "n_characters": 2,
+    "subject": "frog",
+    "object": "princess",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 2,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "promise_friendship",
+    "n_characters": 2,
+    "subject": "princess",
+    "object": "frog",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 1,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "ignore_companion",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -2,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "arrive_at_castle",
+    "n_characters": 2,
+    "subject": "frog",
+    "object": "princess",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 2,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "refuse_entry",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "insist_on_keeping_promise",
+    "n_characters": 2,
+    "subject": "king",
+    "object": "princess",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": []
+    }
+  },
+  {
+    "action": "let_in_reluctantly",
+    "n_characters": 2,
+    "subject": "princess",
+    "object": "frog",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -1,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "sits_together",
+    "n_characters": 2,
+    "subject": "frog",
+    "object": "princess",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": []
+    }
+  },
+  {
+    "action": "request_food_together",
+    "n_characters": 2,
+    "subject": "frog",
+    "object": "princess",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 2,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "eats_unwillingly",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -2,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "request_sleep_together",
+    "n_characters": 2,
+    "subject": "frog",
+    "object": "princess",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 2,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "refuses_and_throws",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "transform_into_prince",
+    "n_characters": 2,
+    "subject": "frog",
+    "object": "princess",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "love",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "prisoner",
+          "from": "*",
+          "to": "a"
+        }
+      ]
+    }
+  },
+  {
+    "action": "explain_imprisonment_by_witch",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": [
+        {
+          "type": "prisoner",
+          "from": "*",
+          "to": "a"
+        }
+      ]
+    }
+  },
+  {
+    "action": "heart_crack_due_to_emotion",
+    "n_characters": 2,
+    "subject": "henry",
+    "object": "king",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": [
+        {
+          "type": "health_at_risk",
+          "from": "*",
+          "to": "a"
+        }
+      ]
+    }
+  }
+]
+```

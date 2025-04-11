@@ -1,0 +1,66 @@
+<think>
+Alright, so I need to figure out how to analyze this given story using the guidelines provided. The user wants me to identify actions related to emotional links (friendship and love) and tensions in the narrative, then organize them into a JSON structure with specific keys.
+
+First, I'll read through the story again to understand the main events. It's about a prince wanting to marry a real princess. He travels but can't find one until a stormy night when a princess arrives. The queen tests her by placing a pea under multiple mattresses and beds. The princess feels the pea and thus proves she's real, so the prince marries her.
+
+Now, focusing on emotional links: friendship isn't really present here. It's all about romantic love between the prince and the princess. So I need to capture actions that build their romantic relationship.
+
+Next, tensions. There are a few points where tension arises:
+1. The storm outside when the princess arrives.
+2. The queen testing the princess by making her sleep on the pea, which puts the princess's health at risk because she can't sleep and ends up bruised.
+3. The princess proving herself, which resolves the tension.
+
+I'll break down the story into key actions:
+
+1. Prince travels for a real princess - shows his desire (love).
+2. Storm happens, creating tension (life_at_risk due to harsh weather).
+3. Princess arrives, seeking shelter, which is an action related to her situation.
+4. Queen tests her by setting up the bed with a pea, which introduces health_at_risk for the princess.
+5. Princess sleeps badly because of the pea, showing she's genuine.
+6. Prince marries her, solidifying their love.
+
+Each action should be in Snake_case without character names, just 'prince' and 'princess'. I'll make sure each JSON object includes n_characters, subject, and object. For actions where only one character is involved, the other field will be '-'.
+
+I think that's all. Now I'll structure them in order.
+</think>
+
+```json
+[
+  {
+    "action": "travel_to_find",
+    "n_characters": 1,
+    "subject": "prince",
+    "object": "-"
+  },
+  {
+    "action": "storm_arrives",
+    "n_characters": 2,
+    "subject": "-",
+    "object": "princess"
+  },
+  {
+    "action": "seek_shelter",
+    "n_characters": 1,
+    "subject": "princess",
+    "object": "-"
+  },
+  {
+    "action": "test_with_pea",
+    "n_characters": 2,
+    "subject": "queen",
+    "object": "princess"
+  },
+  {
+    "action": "sleep_badly",
+    "n_characters": 1,
+    "subject": "princess",
+    "object": "-"
+  },
+  {
+    "action": "marry",
+    "n_characters": 2,
+    "subject": "prince",
+    "object": "princess"
+  }
+]
+```

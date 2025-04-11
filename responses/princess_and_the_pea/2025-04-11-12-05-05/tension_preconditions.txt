@@ -1,0 +1,128 @@
+<think>
+Okay, so I'm trying to understand how to add tension preconditions to each action in the story. The user wants me to identify when a tension is a prerequisite for an action and specify its type, source, and target.
+
+Starting with "travel_to_find": There's no direct tension here; it's more about the prince's desire. So no tensions needed.
+
+Next, "storm_arrives" creates a life_at_risk situation because of the harsh weather affecting the princess. The storm is an external factor, so 'from' would be '-', and 'to' is the princess.
+
+When the princess "seek_shelter", her action is motivated by the ongoing storm, which is still putting her life at risk. So similar to the previous step.
+
+The queen's "test_with_pea" doesn't directly involve tension; it's more about testing. So no tensions here.
+
+In "sleep_badly", the pea causes health issues for the princess, so health_at_risk applies here, from the action of sleeping (subject) to her own health.
+
+Finally, "marry" happens after all tensions are resolved, so no specific tension is needed here.
+
+I'll map these out accordingly.
+</think>
+
+```json
+[
+  {
+    "action": "travel_to_find",
+    "n_characters": 1,
+    "subject": "prince",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "love",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "storm_arrives",
+    "n_characters": 2,
+    "subject": "-",
+    "object": "princess",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "-",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "seek_shelter",
+    "n_characters": 1,
+    "subject": "princess",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "love",
+          "magnitude": 2,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "-",
+          "to": "a"
+        }
+      ]
+    }
+  },
+  {
+    "action": "test_with_pea",
+    "n_characters": 2,
+    "subject": "queen",
+    "object": "princess",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -1,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "sleep_badly",
+    "n_characters": 1,
+    "subject": "princess",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": [
+        {
+          "type": "health_at_risk",
+          "from": "a",
+          "to": "a"
+        }
+      ]
+    }
+  },
+  {
+    "action": "marry",
+    "n_characters": 2,
+    "subject": "prince",
+    "object": "princess",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "love",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  }
+]
+```

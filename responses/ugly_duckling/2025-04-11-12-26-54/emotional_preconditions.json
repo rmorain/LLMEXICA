@@ -1,0 +1,234 @@
+{
+    "actions": [
+        {
+            "action": "mother_duck_sits_on_nest",
+            "n_characters": 1,
+            "subject": "mother_duck",
+            "object": "-",
+            "preconditions": {
+                "emotional_links": [
+                    {
+                        "type": "love",
+                        "magnitude": 3,
+                        "from": "a",
+                        "to": "b"
+                    }
+                ]
+            }
+        },
+        {
+            "action": "large_egg_hatches",
+            "n_characters": 1,
+            "subject": "-",
+            "object": "-",
+            "preconditions": {
+                "emotional_links": []
+            }
+        },
+        {
+            "action": "mother_duck_takes_brood_to_water",
+            "n_characters": 2,
+            "subject": "mother_duck",
+            "object": "ducklings",
+            "preconditions": {
+                "emotional_links": [
+                    {
+                        "type": "love",
+                        "magnitude": 3,
+                        "from": "a",
+                        "to": "b"
+                    }
+                ]
+            }
+        },
+        {
+            "action": "ducklings_mock_and_bite_ugly_duckling",
+            "n_characters": 2,
+            "subject": "other_ducklings",
+            "object": "ugly_duckling",
+            "preconditions": {
+                "emotional_links": [
+                    {
+                        "type": "friendship",
+                        "magnitude": -3,
+                        "from": "a",
+                        "to": "b"
+                    }
+                ]
+            }
+        },
+        {
+            "action": "mother_defends_duckling",
+            "n_characters": 2,
+            "subject": "mother_duck",
+            "object": "ugly_duckling",
+            "preconditions": {
+                "emotional_links": [
+                    {
+                        "type": "love",
+                        "magnitude": 3,
+                        "from": "a",
+                        "to": "b"
+                    }
+                ]
+            }
+        },
+        {
+            "action": "duckling_runs_away_from_farmyard",
+            "n_characters": 1,
+            "subject": "ugly_duckling",
+            "object": "-",
+            "preconditions": {
+                "emotional_links": [
+                    {
+                        "type": "friendship",
+                        "magnitude": -2,
+                        "from": "b",
+                        "to": "a"
+                    }
+                ]
+            }
+        },
+        {
+            "action": "wild_ducks_mock_duckling",
+            "n_characters": 2,
+            "subject": "wild_ducks",
+            "object": "ugly_duckling",
+            "preconditions": {
+                "emotional_links": [
+                    {
+                        "type": "friendship",
+                        "magnitude": -2,
+                        "from": "a",
+                        "to": "b"
+                    }
+                ]
+            }
+        },
+        {
+            "action": "sportsmen_shoot_at_waterfowl",
+            "n_characters": 1,
+            "subject": "-",
+            "object": "-",
+            "preconditions": {
+                "emotional_links": []
+            }
+        },
+        {
+            "action": "dog_chases_duckling",
+            "n_characters": 2,
+            "subject": "dog",
+            "object": "ugly_duckling",
+            "preconditions": {
+                "emotional_links": []
+            }
+        },
+        {
+            "action": "duckling_escapes_to_cottage",
+            "n_characters": 1,
+            "subject": "ugly_duckling",
+            "object": "-",
+            "preconditions": {
+                "emotional_links": []
+            }
+        },
+        {
+            "action": "hen_and_cat_reject_duckling",
+            "n_characters": 2,
+            "subject": "hen",
+            "object": "ugly_duckling",
+            "preconditions": {
+                "emotional_links": [
+                    {
+                        "type": "friendship",
+                        "magnitude": -1,
+                        "from": "a",
+                        "to": "b"
+                    }
+                ]
+            }
+        },
+        {
+            "action": "duckling_faces_harsh_winter",
+            "n_characters": 1,
+            "subject": "-",
+            "object": "-",
+            "preconditions": {
+                "emotional_links": []
+            }
+        },
+        {
+            "action": "peasant_rescues_duckling_from_ice",
+            "n_characters": 2,
+            "subject": "peasant",
+            "object": "ugly_duckling",
+            "preconditions": {
+                "emotional_links": [
+                    {
+                        "type": "love",
+                        "magnitude": 2,
+                        "from": "a",
+                        "to": "b"
+                    }
+                ]
+            }
+        },
+        {
+            "action": "children_frighten_duckling",
+            "n_characters": 2,
+            "subject": "children",
+            "object": "duckling",
+            "preconditions": {
+                "emotional_links": [
+                    {
+                        "type": "friendship",
+                        "magnitude": -1,
+                        "from": "a",
+                        "to": "b"
+                    }
+                ]
+            }
+        },
+        {
+            "action": "duckling_discovers_reflection_in_water",
+            "n_characters": 1,
+            "subject": "duckling",
+            "object": "-",
+            "preconditions": {
+                "emotional_links": []
+            }
+        },
+        {
+            "action": "swans_welcome_duckling",
+            "n_characters": 2,
+            "subject": "swans",
+            "object": "duckling",
+            "preconditions": {
+                "emotional_links": [
+                    {
+                        "type": "friendship",
+                        "magnitude": 3,
+                        "from": "a",
+                        "to": "b"
+                    }
+                ]
+            }
+        },
+        {
+            "action": "children_accept_and_feed_swan",
+            "n_characters": 2,
+            "subject": "children",
+            "object": "swan",
+            "preconditions": {
+                "emotional_links": [
+                    {
+                        "type": "friendship",
+                        "magnitude": 2,
+                        "from": "a",
+                        "to": "b"
+                    }
+                ]
+            }
+        }
+    ]
+}

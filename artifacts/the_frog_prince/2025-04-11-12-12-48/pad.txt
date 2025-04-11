@@ -1,0 +1,31 @@
+ACT cry_over_lost_ball 1
+POS
+T Hr * a
+
+ACT offer_help_for_companionship 2
+PRE
+E a b +2 1
+POS
+E b a +1 1
+
+ACT promise_friendship 2
+PRE
+E a b +1 1
+POS
+E a b +2 1
+
+ACT insist_on_keeping_promise 2
+POS
+E b a +1 1
+
+ACT sits_together 2
+POS
+E b a +1 1
+
+ACT transform_into_prince 2
+PRE
+E a b +3 2
+T Pr * a
+POS
+T Pf * a
+

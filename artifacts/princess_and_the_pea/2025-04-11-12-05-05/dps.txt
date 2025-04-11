@@ -1,0 +1,5 @@
+STO
+storm_arrives princess
+princess seek_shelter
+queen test_with_pea princess
+prince marry princess

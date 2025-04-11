@@ -1,0 +1,137 @@
+<think>
+Alright, so I need to analyze this story about the princess and the frog. The user wants me to extract actions related to emotional links (friendship or love) and tensions like character death, life at risk, health issues, or imprisonment.
+
+First, I'll read through the story carefully to identify key events. The princess loses her golden ball down a well, a frog offers to retrieve it in exchange for companionship. She agrees but then ignores him until he shows up at the castle. Despite her reluctance, she lets him in under her father's insistence. Eventually, when she throws the frog against the wall, he transforms into a prince.
+
+Looking for emotional links: The main ones are between the princess and the frog (which later turns into love with the prince). Initially, it's more of a reluctant friendship but evolves into romance after the transformation.
+
+Tensions involved here include the princess being upset about losing her ball (emotional distress), the frog's persistence creating tension in their interactions. The imprisonment is metaphorical—since the prince was under a witch's spell, trapped as a frog until the princess helps him.
+
+Now, I need to break down each action step by step. Start with the princess crying over the lost ball, that's an emotional moment (tension: health at risk due to distress). Then the frog offers help in exchange for companionship—that's a key emotional link action.
+
+She promises friendship but doesn't uphold it, which adds tension. When the frog comes to the castle and she refuses him, that's another tense moment. Her father makes her let him in, building more tension as she's forced into this relationship.
+
+The frog's persistence and her eventual acceptance lead to the transformation, resolving some tensions but introducing romantic love elements. The faithful servant Henry's cracking heart adds another layer of emotional tension related to health risks because his heart might burst from grief.
+
+I need to structure these actions in JSON with each action having subject, object, and number of characters involved. Making sure to keep it simple without character names and using snake_case.
+
+Let me list them out:
+
+1. Princess cries over the ball (health at risk).
+2. Frog offers help for companionship (emotional link: friendship).
+3. She promises friendship.
+4. Ignores him, creating tension.
+5. Frog arrives at castle, she refuses (tension).
+6. Father tells her to let him in (family influence on emotional links).
+7. She reluctantly lets frog in and sits with him (building friendship despite reluctance).
+8. Frog wants to eat together, adding tension as she's unwilling.
+9. He asks to sleep in her bed, causing fear and emotional distress.
+10. She throws him against the wall, transforming into a prince (love is revealed).
+11. Prince explains his imprisonment by witch (prisoner tension resolved).
+12. Faithful Henry's heart cracks, indicating health risk due to emotional strain.
+
+Each of these steps should be translated into JSON actions with the correct keys and snake_case.
+</think>
+
+Here is the structured JSON output based on the analysis:
+
+```json
+[
+  {
+    "action": "cry_over_lost_ball",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "-"
+  },
+  {
+    "action": "offer_help_for_companionship",
+    "n_characters": 2,
+    "subject": "frog",
+    "object": "princess"
+  },
+  {
+    "action": "promise_friendship",
+    "n_characters": 2,
+    "subject": "princess",
+    "object": "frog"
+  },
+  {
+    "action": "ignore_companion",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "-"
+  },
+  {
+    "action": "arrive_at_castle",
+    "n_characters": 2,
+    "subject": "frog",
+    "object": "princess"
+  },
+  {
+    "action": "refuse_entry",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "-"
+  },
+  {
+    "action": "insist_on_keeping_promise",
+    "n_characters": 2,
+    "subject": "king",
+    "object": "princess"
+  },
+  {
+    "action": "let_in_reluctantly",
+    "n_characters": 2,
+    "subject": "princess",
+    "object": "frog"
+  },
+  {
+    "action": "sit_together",
+    "n_characters": 2,
+    "subject": "frog",
+    "object": "princess"
+  },
+  {
+    "action": "request_food_together",
+    "n_characters": 2,
+    "subject": "frog",
+    "object": "princess"
+  },
+  {
+    "action": "eat_unwillingly",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "-"
+  },
+  {
+    "action": "request_sleep_together",
+    "n_characters": 2,
+    "subject": "frog",
+    "object": "princess"
+  },
+  {
+    "action": "refuse_and_throw",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "-"
+  },
+  {
+    "action": "transform_into_prince",
+    "n_characters": 2,
+    "subject": "frog",
+    "object": "princess"
+  },
+  {
+    "action": "explain_imprisonment_by_witch",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "-"
+  },
+  {
+    "action": "heart_crack_due_to_emotion",
+    "n_characters": 2,
+    "subject": "henry",
+    "object": "king"
+  }
+]
+```

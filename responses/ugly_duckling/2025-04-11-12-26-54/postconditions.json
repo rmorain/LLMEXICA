@@ -1,0 +1,350 @@
+<think>
+Okay, I need to identify postconditions for each action in "The Ugly Duckling" story. Postconditions are changes in emotional links or tensions resulting from an action. The user has provided specific instructions on how to structure these postconditions within a JSON format.
+
+First, I'll review each action and determine the resulting emotional links and tensions. If preconditions exist, postconditions must differ from them. There are also special normal tensions that can resolve existing ones.
+
+1. **mother_duck_sits_on_nest**
+   - Emotional Links: Strengthened bond (love) between mother and ducklings.
+   
+2. **large_egg_hatches**
+   - Resolves health_at_risk, introduces life_normal.
+   
+3. **mother_duck_takes_brood_to_water**
+   - Strengthens love from mother to ducklings; resolves initial life_at_risk.
+
+4. **ducklings_mock_and_bite_ugly_duckling**
+   - Worsens friendship links (increased dislike) towards the ugly duckling.
+   
+5. **mother_defends_duckling**
+   - Reinforces mother's love and improves the duckling's feelings towards her.
+
+6. **duckling_runs_away_from_farmyard**
+   - Reduces life_at_risk but introduces new emotional distances (friendship).
+   
+7. **wild_ducks_mock_duckling**
+   - Increases health risks due to stress.
+   
+8. **sportsmen_shoot_at_waterfowl**
+   - No change; keeps life_at_risk active.
+   
+9. **dog_chases_duckling**
+   - Worsens life and health risks.
+   
+10. **duckling_escapes_to_cottage**
+    - Temporarily resolves life_at_risk, introduces hope (emotional link).
+    
+11. **hen_and_cat_reject_duckling**
+    - Negatively impacts friendship links with the hen and cat.
+    
+12. **duckling_faces_harsh_winter**
+    - Increases health and life risks due to cold.
+    
+13. **peasant_rescues_duckling_from_ice**
+    - Resolves life_at_risk, introduces positive emotional link (gratitude).
+    
+14. **children_frighten_duckling**
+    - Negatively impacts the duckling's well-being.
+    
+15. **duckling_discovers_reflection_in_water**
+    - No tension changes; resolves self-image issues.
+    
+16. **swans_welcome_duckling**
+    - Strengthens friendship and love links with swans.
+    
+17. **children_accept_and_feed_swan**
+    - Resolves life_at_risk, establishes positive emotional links.
+
+Now, I'll map each action to its postconditions in the specified JSON format.
+</think>
+
+```json
+{
+  "actions": [
+    {
+      "action": "mother_duck_sits_on_nest",
+      "n_characters": 1,
+      "subject": "mother_duck",
+      "object": "-",
+      "postconditions": {
+        "emotional_links": [
+          {
+            "type": "love",
+            "magnitude": 3,
+            "from": "a",
+            "to": "b"
+          }
+        ],
+        "tensions": []
+      }
+    },
+    {
+      "action": "large_egg_hatches",
+      "n_characters": 1,
+      "subject": "-",
+      "object": "-",
+      "postconditions": {
+        "emotional_links": [],
+        "tensions": [
+          {
+            "type": "life_normal"
+          }
+        ]
+      }
+    },
+    {
+      "action": "mother_duck_takes_brood_to_water",
+      "n_characters": 2,
+      "subject": "mother_duck",
+      "object": "ducklings",
+      "postconditions": {
+        "emotional_links": [
+          {
+            "type": "love",
+            "magnitude": 3,
+            "from": "a",
+            "to": "b"
+          }
+        ],
+        "tensions": [
+          {
+            "type": "life_normal"
+          }
+        ]
+      }
+    },
+    {
+      "action": "ducklings_mock_and_bite_ugly_duckling",
+      "n_characters": 2,
+      "subject": "other_ducklings",
+      "object": "ugly_duckling",
+      "postconditions": {
+        "emotional_links": [
+          {
+            "type": "friendship",
+            "magnitude": -3,
+            "from": "b",
+    "to": "a"
+          }
+        ],
+        "tensions": []
+      }
+    },
+    {
+      "action": "mother_defends_duckling",
+      "n_characters": 2,
+      "subject": "mother_duck",
+      "object": "ugly_duckling",
+      "postconditions": {
+        "emotional_links": [
+          {
+            "type": "love",
+            "magnitude": 3,
+            "from": "a",
+    "to": "b"
+          }
+        ],
+        "tensions": []
+      }
+    },
+    {
+      "action": "duckling_runs_away_from_farmyard",
+      "n_characters": 1,
+      "subject": "ugly_duckling",
+      "object": "-",
+      "postconditions": {
+        "emotional_links": [
+          {
+            "type": "friendship",
+            "magnitude": -2,
+            "from": "a",
+    "to": "b"
+          }
+        ],
+        "tensions": []
+      }
+    },
+    {
+      "action": "wild_ducks_mock_duckling",
+      "n_characters": 2,
+      "subject": "wild_ducks",
+      "object": "ugly_duckling",
+      "postconditions": {
+        "emotional_links": [
+          {
+            "type": "friendship",
+            "magnitude": -3,
+            "from": "a",
+    "to": "b"
+          }
+        ],
+        "tensions": []
+      }
+    },
+    {
+      "action": "sportsmen_shoot_at_waterfowl",
+      "n_characters": 1,
+      "subject": "-",
+      "object": "-",
+      "postconditions": {
+        "emotional_links": [],
+        "tensions": [
+          {
+            "type": "life_at_risk"
+          }
+        ]
+      }
+    },
+    {
+      "action": "dog_chases_duckling",
+      "n_characters": 2,
+      "subject": "dog",
+      "object": "ugly_duckling",
+      "postconditions": {
+        "emotional_links": [],
+        "tensions": [
+          {
+            "type": "life_at_risk"
+          }
+        ]
+      }
+    },
+    {
+      "action": "duckling_escapes_to_cottage",
+      "n_characters": 1,
+      "subject": "ugly_duckling",
+      "object": "-",
+      "postconditions": {
+        "emotional_links": [
+          {
+            "type": "love",
+            "magnitude": 2,
+            "from": "a",
+    "to": "b"
+          }
+        ],
+        "tensions": []
+      }
+    },
+    {
+      "action": "hen_and_cat_reject_duckling",
+      "n_characters": 2,
+      "subject": "hen",
+      "object": "ugly_duckling",
+      "postconditions": {
+        "emotional_links": [
+          {
+            "type": "friendship",
+            "magnitude": -1,
+            "from": "a",
+    "to": "b"
+          }
+        ],
+        "tensions": []
+      }
+    },
+    {
+      "action": "duckling_faces_harsh_winter",
+      "n_characters": 1,
+      "subject": "-",
+      "object": "-",
+      "postconditions": {
+        "emotional_links": [],
+        "tensions": [
+          {
+            "type": "health_at_risk"
+          }
+        ]
+      }
+    },
+    {
+      "action": "peasant_rescues_duckling_from_ice",
+      "n_characters": 2,
+      "subject": "peasant",
+      "object": "ugly_duckling",
+      "postconditions": {
+        "emotional_links": [
+          {
+            "type": "love",
+            "magnitude": 3,
+            "from": "a",
+    "to": "b"
+          }
+        ],
+        "tensions": [
+          {
+            "type": "life_normal"
+          }
+        ]
+      }
+    },
+    {
+      "action": "children_frighten_duckling",
+      "n_characters": 2,
+      "subject": "children",
+      "object": "duckling",
+      "postconditions": {
+        "emotional_links": [
+          {
+            "type": "friendship",
+            "magnitude": -1,
+            "from": "a",
+    "to": "b"
+          }
+        ],
+        "tensions": []
+      }
+    },
+    {
+      "action": "duckling_discovers_reflection_in_water",
+      "n_characters": 1,
+      "subject": "duckling",
+      "object": "-",
+      "postconditions": {
+        "emotional_links": [
+          {
+            "type": "love",
+            "magnitude": 3,
+            "from": "a",
+    "to": "b"
+          }
+        ],
+        "tensions": []
+      }
+    },
+    {
+      "action": "swans_welcome_duckling",
+      "n_characters": 2,
+      "subject": "swans",
+      "object": "duckling",
+      "postconditions": {
+        "emotional_links": [
+          {
+            "type": "friendship",
+            "magnitude": 3,
+            "from": "a",
+    "to": "b"
+          }
+        ],
+        "tensions": []
+      }
+    },
+    {
+      "action": "children_accept_and_feed_swan",
+      "n_characters": 2,
+      "subject": "children",
+      "object": "swan",
+      "postconditions": {
+        "emotional_links": [
+          {
+            "type": "friendship",
+            "magnitude": 3,
+            "from": "a",
+    "to": "b"
+          }
+        ],
+        "tensions": []
+      }
+    }
+  ]
+}
+```

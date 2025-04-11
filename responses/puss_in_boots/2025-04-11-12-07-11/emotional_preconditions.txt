@@ -1,0 +1,329 @@
+<think>
+Alright, I need to figure out how to add preconditions related to emotional links for each action in the provided JSON. The user wants me to identify or infer these preconditions based on the story.
+
+First, I'll go through each action one by one and determine if there are any emotional links that must exist for the action to make sense. Emotional links can be either friendship or love, with a magnitude between -3 and 3.
+
+Starting with "cat_requests_help": Puss asks his master for items. The cat must have some level of friendship with the master to ask for help, so maybe a positive magnitude like 2.
+
+Next, "cat_promises_assistance": Since Puss is offering help, he likely feels a strong bond, so a higher magnitude, say 3, from cat to master.
+
+"master_provides_items": The master trusts the cat enough to provide what's needed. This suggests a positive friendship link from master to cat, maybe 2.
+
+"cat_catches_rabbit": Puss uses cunning to catch prey, which shows his loyalty and friendship towards the master, so another magnitude of 3 from cat to master.
+
+"cat_presents_gift_to_king": Presenting gifts requires trust from the king, indicating a positive friendship link from cat to king, maybe 1 since it's initial.
+
+"king_receives_gift": The king is pleased, showing positive feelings towards Puss. So a magnitude of 2 from king to cat.
+
+"cat_catches_birds": Similar to catching rabbits, Puss acts out of loyalty, so friendship magnitude 3 from cat to master.
+
+"master_follows_cat_advice": Trust is crucial here; the master trusts Puss, indicating positive friendship from master to cat, magnitude 2.
+
+"cat_cries_for_help": This action is driven by Puss's care for his master, so a strong friendship link of 3 from cat to master.
+
+"king_assists_master": The king helps because he likes Puss, showing positive feelings towards the cat, so magnitude 1 from king to cat.
+
+"princess_falls_in_love": Romantic love starts here. High magnitude of 3 from princess to master and vice versa.
+
+"cat_threatens_workers": No emotional link needed here since it's about fear, not an existing bond.
+
+"king_impressed_by_estate": The king's positive feelings towards the Marquis indicate a friendship link of magnitude 2 from king to master.
+
+"cat_meets_ogre": No specific emotional link needed for this meeting.
+
+"ogre_transforms_into_lion": This is just an action, no preconditions on emotions.
+
+"cat_kills_ogre": Driven by protection and loyalty towards the master, so friendship magnitude 3 from cat to master.
+
+"king_visits_castle": The king's interest suggests a positive link of 2 from king to master.
+
+"marquis_marry_princess": Strong romantic love with high magnitude of 3 in both directions.
+
+I need to ensure each precondition makes sense and accurately reflects the emotional state necessary for the action. I'll structure these as objects within each action, ensuring 'from' and 'to' are correctly assigned based on subject and object.
+</think>
+
+Here is the JSON output with preconditions related to emotional links added:
+
+```json
+[
+  {
+    "action": "cat_requests_help",
+    "n_characters": 2,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 2,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "cat_promises_assistance",
+    "n_characters": 2,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "master_provides_items",
+    "n_characters": 2,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 2,
+          "from": "b",
+          "to": "a"
+        }
+      ]
+    }
+  },
+  {
+    "action": "cat_catches_rabbit",
+    "n_characters": 2,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "cat_presents_gift_to_king",
+    "n_characters": 2,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 1,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "king_receives_gift",
+    "n_characters": 2,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 2,
+          "from": "b",
+          "to": "a"
+        }
+      ]
+    }
+  },
+  {
+    "action": "cat_catches_birds",
+    "n_characters": 2,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "master_follows_cat_advice",
+    "n_characters": 2,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 2,
+          "from": "b",
+          "to": "a"
+        }
+      ]
+    }
+  },
+  {
+    "action": "cat_cries_for_help",
+    "n_characters": 2,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "king_assists_master",
+    "n_characters": 2,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 1,
+          "from": "b",
+          "to": "a"
+        }
+      ]
+    }
+  },
+  {
+    "action": "princess_falls_in_love",
+    "n_characters": 2,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "love",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        },
+        {
+          "type": "love",
+          "magnitude": 3,
+          "from": "b",
+          "to": "a"
+        }
+      ]
+    }
+  },
+  {
+    "action": "cat_threatens_workers",
+    "n_characters": 2,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": []
+    }
+  },
+  {
+    "action": "king_impressed_by_estate",
+    "n_characters": 2,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 2,
+          "from": "b",
+          "to": "a"
+        }
+      ]
+    }
+  },
+  {
+    "action": "cat_meets_ogre",
+    "n_characters": 2,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": []
+    }
+  },
+  {
+    "action": "ogre_transforms_into_lion",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": []
+    }
+  },
+  {
+    "action": "cat_kills_ogre",
+    "n_characters": 2,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "king_visits_castle",
+    "n_characters": 2,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 2,
+          "from": "b",
+          "to": "a"
+        }
+      ]
+    }
+  },
+  {
+    "action": "marquis_marry_princess",
+    "n_characters": 2,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "love",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        },
+        {
+          "type": "love",
+          "magnitude": 3,
+          "from": "b",
+          "to": "a"
+        }
+      ]
+    }
+  }
+]
+```

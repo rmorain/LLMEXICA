@@ -1,0 +1,426 @@
+<think>
+Alright, so I need to figure out how to add postconditions for each action in the story about the princess and the frog. The user wants me to identify changes to emotional links or tensions caused by each action. At least one postcondition is required per action, and they can't be the same as preconditions.
+
+First, let's recall what postconditions are—they’re changes resulting from an action. They can affect either emotional links (friendship or love) or tensions (like resolving a prisoner situation).
+
+Starting with "cry_over_lost_ball": The princess cries because she lost her ball. This doesn't directly change any emotional link but might create some internal tension for her, like emotional distress.
+
+Next, "offer_help_for_companionship": The frog offers to help retrieve the ball in exchange for companionship. This action likely increases the friendship bond between them, so a positive emotional link from princess to frog makes sense as a postcondition.
+
+"Promise_friendship": She promises friendship, which should strengthen their bond further, increasing the friendship magnitude.
+
+"Ignore_companion": She ignores him after getting her ball back. This would weaken or create a negative friendship link from princess to frog.
+
+"Arrive_at_castle": The frog shows up at the castle, showing determination. Maybe this creates a slight positive emotional link as he's persistent.
+
+"Refuse_entry": She refuses to let him in, which might make the frog feel unwanted, creating a negative emotional link towards her.
+
+"Inspist_on_keeping_promise": The king tells her to let the frog in. This could create respect or fear from princess to king but doesn't directly affect her link with the frog.
+
+"Let_in_reluctantly": She lets him in reluctantly. This might not change their emotional link much, maybe keeps it slightly negative.
+
+"Sits_together": They sit together at the table. Proximity might slightly improve their friendship bond.
+
+"Requests_food_together": The frog asks to eat with her. This could be seen as a friendly gesture, potentially improving their emotional link.
+
+"Eats_unwillingly": She eats unwillingly, showing discomfort. This might create a negative emotional link towards him.
+
+"Requests_sleep_together": The frog asks to sleep together. This could be seen as intrusive, creating a more negative emotional link from princess to frog.
+
+"Refuses_and_throws": She refuses and throws him against the wall. This would likely make their friendship link very negative or even shift it towards romantic feelings after transformation.
+
+"Transforms_into_prince": After being thrown, the frog transforms into a prince. This should resolve the 'prisoner' tension and create a strong romantic emotional link from princess to prince.
+
+"Explains_imprisonment_by_witch": The prince explains his past imprisonment. This resolves the 'prisoner' tension as he's now free.
+
+"Heart_crack_due_to_emotion": Faithful Henry's heart cracks because of emotional strain. This indicates ongoing health risks, so a 'health_at_risk' tension remains or is created here.
+
+I need to make sure that each postcondition isn't the same as its precondition and reflects changes accurately.
+</think>
+
+Here is the JSON output with the identified or inferred postconditions for each action:
+
+```json
+[
+  {
+    "action": "cry_over_lost_ball",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": [
+        {
+          "type": "health_at_risk",
+          "from": "*",
+          "to": "a"
+        }
+      ]
+    }
+  },
+  {
+    "action": "offer_help_for_companionship",
+    "n_characters": 2,
+    "subject": "frog",
+    "object": "princess",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 2,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 1,
+          "from": "b",
+          "to": "a"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "promise_friendship",
+    "n_characters": 2,
+    "subject": "princess",
+    "object": "frog",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 1,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 2,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "ignore_companion",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -2,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "arrive_at_castle",
+    "n_characters": 2,
+    "subject": "frog",
+    "object": "princess",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 2,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": []
+    }
+  },
+  {
+    "action": "refuse_entry",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -4,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "insist_on_keeping_promise",
+    "n_characters": 2,
+    "subject": "king",
+    "object": "princess",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 1,
+          "from": "b",
+          "to": "a"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "let_in_reluctantly",
+    "n_characters": 2,
+    "subject": "princess",
+    "object": "frog",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -1,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": []
+    }
+  },
+  {
+    "action": "sits_together",
+    "n_characters": 2,
+    "subject": "frog",
+    "object": "princess",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 1,
+          "from": "b",
+          "to": "a"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "request_food_together",
+    "n_characters": 2,
+    "subject": "frog",
+    "object": "princess",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 2,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": []
+    }
+  },
+  {
+    "action": "eats_unwillingly",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -2,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": []
+    }
+  },
+  {
+    "action": "request_sleep_together",
+    "n_characters": 2,
+    "subject": "frog",
+    "object": "princess",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 2,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": []
+    }
+  },
+  {
+    "action": "refuses_and_throws",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "love",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "transform_into_prince",
+    "n_characters": 2,
+    "subject": "frog",
+    "object": "princess",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "love",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "prisoner",
+          "from": "*",
+          "to": "a"
+        }
+      ]
+    },
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": [
+        {
+          "type": "prisoner_freed",
+          "from": "*",
+          "to": "a"
+        }
+      ]
+    }
+  },
+  {
+    "action": "explain_imprisonment_by_witch",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": [
+        {
+          "type": "prisoner",
+          "from": "*",
+          "to": "a"
+        }
+      ]
+    },
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": []
+    }
+  },
+  {
+    "action": "heart_crack_due_to_emotion",
+    "n_characters": 2,
+    "subject": "henry",
+    "object": "king",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": [
+        {
+          "type": "health_at_risk",
+          "from": "*",
+          "to": "a"
+        }
+      ]
+    },
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": []
+    }
+  }
+]
+```

@@ -1,0 +1,80 @@
+ACT sing_and_dance_together 2
+PRE
+E a b +2 1
+POS
+E a b +3 1
+
+ACT smell_pig_inside_house 2
+PRE
+T Lr * b
+POS
+T Lr * b
+
+ACT knock_on_door_and_request_entry 2
+PRE
+T Lr * b
+POS
+E a b -1 1
+
+ACT refuse_entry_through_keyhole 2
+PRE
+E a b -2 1
+T Lr * b
+POS
+E a b +3 1
+
+ACT escape_and_hide 2
+PRE
+E a b +2 1
+T Lr * b
+POS
+E a b +3 1
+
+ACT knock_on_door_and_request_entry 2
+PRE
+T Lr * b
+POS
+E a b -1 1
+
+ACT refuse_entry_through_keyhole 2
+PRE
+E a b -2 1
+T Lr * b
+POS
+E a b +3 1
+
+ACT escape_and_hide_together 2
+PRE
+E a b +2 1
+T Lr * b
+POS
+E a b +3 1
+
+ACT slam_door_before_wolf_enters 3
+PRE
+E a b -2 1
+T Lr * b
+POS
+E a b +3 1
+
+ACT knock_on_door_and_request_entry 2
+PRE
+T Lr * b
+POS
+E a b -1 1
+
+ACT refuse_entry_through_keyhole 3
+PRE
+E a b -2 1
+T Lr * b
+POS
+E a b +3 1
+
+ACT make_blazing_fire_and_boil_water 1
+PRE
+E a b +2 1
+T Lr * b
+T Pr * b
+POS
+T Ad * b
+

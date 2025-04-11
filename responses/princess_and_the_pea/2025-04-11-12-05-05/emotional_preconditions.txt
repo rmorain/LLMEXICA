@@ -1,0 +1,104 @@
+<think>
+Alright, let's tackle this step by step. The user wants me to add preconditions related to emotional links for each action in the story. I need to identify when an emotional link is a prerequisite for an action and specify its type (friendship or love) and magnitude (-3 to 3).
+
+Starting with the first action: "travel_to_find". The prince's motivation here is his desire for romantic love, so he must have a strong positive emotional link towards the concept of finding a princess. Since there's no specific object here, it's more about his internal drive.
+
+Next, "storm_arrives" creates tension but doesn't directly involve an emotional link between characters, so no preconditions here.
+
+When the princess "seek_shelter", she might have a neutral or slightly positive feeling towards the prince or queen for helping her. It’s not a strong emotion, just enough to seek help.
+
+The queen's action of "test_with_pea" is driven by skepticism about the princess. This implies a negative emotional link from the queen towards the princess, maybe around -1 or -2.
+
+In "sleep_badly", the princess feels discomfort due to the test, but it’s more about her physical state than an emotional link. No precondition needed here.
+
+Finally, "marry" requires a strong positive emotional link of love between the prince and princess. The magnitude should be high, like 3, as it's a significant commitment.
+
+I'll map these out for each action.
+</think>
+
+```json
+[
+  {
+    "action": "travel_to_find",
+    "n_characters": 1,
+    "subject": "prince",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "love",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "storm_arrives",
+    "n_characters": 2,
+    "subject": "-",
+    "object": "princess",
+    "preconditions": {
+      "emotional_links": []
+    }
+  },
+  {
+    "action": "seek_shelter",
+    "n_characters": 1,
+    "subject": "princess",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "love",
+          "magnitude": 2,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "test_with_pea",
+    "n_characters": 2,
+    "subject": "queen",
+    "object": "princess",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -1,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "sleep_badly",
+    "n_characters": 1,
+    "subject": "princess",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": []
+    }
+  },
+  {
+    "action": "marry",
+    "n_characters": 2,
+    "subject": "prince",
+    "object": "princess",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "love",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  }
+]
+```

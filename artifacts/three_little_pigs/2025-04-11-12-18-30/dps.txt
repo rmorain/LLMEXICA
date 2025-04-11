@@ -1,0 +1,13 @@
+STO
+sing_and_dance_together
+smell_pig_inside_house
+knock_on_door_and_request_entry
+refuse_entry_through_keyhole
+escape_and_hide
+knock_on_door_and_request_entry
+refuse_entry_through_keyhole
+escape_and_hide_together
+slam_door_before_wolf_enters
+knock_on_door_and_request_entry
+refuse_entry_through_keyhole
+make_blazing_fire_and_boil_water

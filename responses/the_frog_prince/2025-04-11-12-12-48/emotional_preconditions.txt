@@ -1,0 +1,267 @@
+<think>
+Alright, so I need to figure out how to add preconditions related to emotional links for each action in the story about the princess and the frog. The user wants me to identify or infer these preconditions based on the actions performed by the characters.
+
+First, let's recall what preconditions are. They're requirements that must be satisfied for a character to perform an action. In this case, they relate to emotional links—specifically friendship or love—and tensions like someone being a prisoner or at risk of harm.
+
+Okay, so I need to go through each action one by one and determine if there's an emotional link precondition needed. Let's start with the first action: "cry_over_lost_ball". The princess is crying because she lost her golden ball. This action doesn't really involve another character directly; it's more about her own emotions. So, I don't think there's an emotional link precondition here.
+
+Next action: "offer_help_for_companionship". Here, the frog offers to help retrieve the ball in exchange for companionship. For the frog to make this offer, he must have some positive feelings towards the princess. It seems like a friendship link with a magnitude of 2 because he's willing to help her.
+
+Moving on: "promise_friendship". The princess promises friendship to the frog. This implies that she is willing to form a bond with him. So, there should be a friendship link from her to him with a magnitude of 1, indicating a tentative agreement.
+
+The next action is "ignore_companion", where the princess ignores the frog after getting her ball back. This suggests that she doesn't value their agreed-upon friendship. Therefore, an emotional link of type friendship with a negative magnitude (-2) from her to him would be a precondition for this action.
+
+Then comes "arrive_at_castle". The frog shows up at the castle. For him to do this, he must still have positive feelings towards the princess, expecting their friendship. So, a friendship link with magnitude 2 from him to her is needed here.
+
+"Refuse_entry": The princess refuses to let the frog in despite his arrival. This indicates that she doesn't want to keep the promise of friendship, showing a negative emotional link—friendship with magnitude -3 from her to him.
+
+"Inspist_on_keeping_promise": The king tells her to let the frog in. For this to happen, the princess must have some level of respect or fear towards her father, which is an emotional link. However, since the focus is on friendship and love between the main characters (princess and frog), maybe this isn't directly relevant.
+
+"Let_in_reluctantly": She lets him in reluctantly. This suggests that she doesn’t have strong positive feelings but feels obliged. So, a weak negative friendship link from her to him—maybe magnitude -1.
+
+"Sits_together": They sit together at the table. For this, there needs to be some level of acceptance or tolerance from the princess towards the frog. Perhaps a neutral to slightly negative friendship link.
+
+"Requests_food_together": The frog asks to eat with her. This implies he expects companionship, so a positive friendship link from him to her is needed.
+
+"Eats_unwillingly": She eats unwillingly, showing discomfort. A negative emotional link towards the frog—friendship magnitude -2 from her to him.
+
+"Requests_sleep_together": The frog asks to sleep together. Again, he expects companionship, so a positive friendship link from him to her with magnitude 2.
+
+"Refuses_and_throws": She refuses and throws him against the wall. This indicates strong negative feelings—friendship magnitude -3 from her to him.
+
+"Transforms_into_prince": After being thrown, the frog transforms into a prince. For this transformation to make sense in the story context, there must be an underlying romantic link once he becomes human-like. So, a love link with magnitude 3 from her to him would be necessary.
+
+"Explains_imprisonment_by_witch": The prince explains his past imprisonment. This doesn't directly involve emotional links between characters but sets up the backstory.
+
+"Heart_crack_due_to_emotion": Faithful Henry's heart cracks because of emotional strain. This relates to health risk, so it's about tension rather than emotional links.
+
+Okay, I think that covers all the actions with their respective preconditions based on emotional links.
+</think>
+
+Here is the JSON output with the identified or inferred emotional link preconditions for each action:
+
+```json
+[
+  {
+    "action": "cry_over_lost_ball",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": []
+    }
+  },
+  {
+    "action": "offer_help_for_companionship",
+    "n_characters": 2,
+    "subject": "frog",
+    "object": "princess",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 2,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "promise_friendship",
+    "n_characters": 2,
+    "subject": "princess",
+    "object": "frog",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 1,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "ignore_companion",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -2,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "arrive_at_castle",
+    "n_characters": 2,
+    "subject": "frog",
+    "object": "princess",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 2,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "refuse_entry",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "insist_on_keeping_promise",
+    "n_characters": 2,
+    "subject": "king",
+    "object": "princess",
+    "preconditions": {
+      "emotional_links": []
+    }
+  },
+  {
+    "action": "let_in_reluctantly",
+    "n_characters": 2,
+    "subject": "princess",
+    "object": "frog",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -1,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "sits_together",
+    "n_characters": 2,
+    "subject": "frog",
+    "object": "princess",
+    "preconditions": {
+      "emotional_links": []
+    }
+  },
+  {
+    "action": "request_food_together",
+    "n_characters": 2,
+    "subject": "frog",
+    "object": "princess",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 2,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "eats_unwillingly",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -2,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "request_sleep_together",
+    "n_characters": 2,
+    "subject": "frog",
+    "object": "princess",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 2,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "refuses_and_throws",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "transform_into_prince",
+    "n_characters": 2,
+    "subject": "frog",
+    "object": "princess",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "love",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "explain_imprisonment_by_witch",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": []
+    }
+  },
+  {
+    "action": "heart_crack_due_to_emotion",
+    "n_characters": 2,
+    "subject": "henry",
+    "object": "king",
+    "preconditions": {
+      "emotional_links": []
+    }
+  }
+]
+```

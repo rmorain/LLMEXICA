@@ -1,0 +1,413 @@
+<think>
+Okay, I need to add preconditions related to tensions for each action in the provided JSON. The user wants me to identify or infer these preconditions based on the story.
+
+First, I'll go through each action one by one and determine if there are any tensions that must exist for the action to make sense. Tensions can be character_dead, life_at_risk, health_at_risk, or prisoner.
+
+Starting with "cat_requests_help": Puss asks his master for items because the master is at risk of hunger, so this relates to health_at_risk from the master's perspective.
+
+"cat_promises_assistance": The cat promises help because he sees the master's misery, which is a life_at_risk situation for the master.
+
+"master_provides_items": The master provides items due to his own desperation, indicating health_at_risk.
+
+"cat_catches_rabbit": Puss acts to prevent the master's hunger, so it's about the master's health_at_risk.
+
+"cat_presents_gift_to_king": No direct tension here since it's about gaining favor.
+
+"king_receives_gift": No specific tension for this action.
+
+"cat_catches_birds": Similar to catching rabbits, aimed at helping the master avoid hunger.
+
+"master_follows_cat_advice": The master is in a life_at_risk situation without help.
+
+"cat_cries_for_help": This action is taken because the master is drowning, which is life_at_risk.
+
+"king_assists_master": The king helps because he's aware of the master's life being at risk.
+
+"princess_falls_in_love": No tension here since it's about emotions.
+
+"cat_threatens_workers": Puss threatens others to protect his master, so the workers are under threat, which is life_at_risk for them.
+
+"king_impressed_by_estate": No specific tension here.
+
+"cat_meets_ogre": Meeting an ogre implies potential danger, so life_at_risk for the cat.
+
+"ogre_transforms_into_lion": The transformation poses a direct threat to Puss, so life_at_risk.
+
+"cat_kills_ogre": This action is taken because the ogre is a threat, so it's about the cat's life being at risk.
+
+"king_visits_castle": No specific tension here.
+
+"marquis_marry_princess": No tension as it's a positive event.
+
+I need to make sure each precondition accurately reflects the necessary tension for the action. I'll structure these within each action, assigning 'from' and 'to' based on who is affected.
+</think>
+
+Here is the JSON output with preconditions related to tensions added:
+
+```json
+[
+  {
+    "action": "cat_requests_help",
+    "n_characters": 2,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 2,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "health_at_risk",
+          "from": "b",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "cat_promises_assistance",
+    "n_characters": 2,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "b",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "master_provides_items",
+    "n_characters": 2,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 2,
+          "from": "b",
+          "to": "a"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "health_at_risk",
+          "from": "b",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "cat_catches_rabbit",
+    "n_characters": 2,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "health_at_risk",
+          "from": "b",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "cat_presents_gift_to_king",
+    "n_characters": 2,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 1,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "king_receives_gift",
+    "n_characters": 2,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 2,
+          "from": "b",
+          "to": "a"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "cat_catches_birds",
+    "n_characters": 2,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "health_at_risk",
+          "from": "b",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "master_follows_cat_advice",
+    "n_characters": 2,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 2,
+          "from": "b",
+          "to": "a"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "b",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "cat_cries_for_help",
+    "n_characters": 2,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "b",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "king_assists_master",
+    "n_characters": 2,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 1,
+          "from": "b",
+          "to": "a"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "a",
+          "to": "a"
+        }
+      ]
+    }
+  },
+  {
+    "action": "princess_falls_in_love",
+    "n_characters": 2,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "love",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        },
+        {
+          "type": "love",
+          "magnitude": 3,
+          "from": "b",
+          "to": "a"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "cat_threatens_workers",
+    "n_characters": 2,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "king_impressed_by_estate",
+    "n_characters": 2,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 2,
+          "from": "b",
+          "to": "a"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "cat_meets_ogre",
+    "n_characters": 2,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "a",
+          "to": "a"
+        }
+      ]
+    }
+  },
+  {
+    "action": "ogre_transforms_into_lion",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": []
+    }
+  },
+  {
+    "action": "cat_kills_ogre",
+    "n_characters": 2,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "a",
+          "to": "a"
+        }
+      ]
+    }
+  },
+  {
+    "action": "king_visits_castle",
+    "n_characters": 2,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 2,
+          "from": "b",
+          "to": "a"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "marquis_marry_princess",
+    "n_characters": 2,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "love",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        },
+        {
+          "type": "love",
+          "magnitude": 3,
+          "from": "b",
+          "to": "a"
+        }
+      ],
+      "tensions": []
+    }
+  }
+]
+```

@@ -1,0 +1,302 @@
+<think>
+Alright, I need to identify or infer preconditions related to tensions for each action in "The Ugly Duckling" story. The user has provided specific instructions on how to structure these preconditions within a JSON format. Let's break down the task step by step.
+
+First, I'll review each action and determine if there are any tensions that must exist for the action to occur. Tensions can be of types like `character_dead`, `life_at_risk`, `health_at_risk`, or `prisoner`. Each tension should specify its type, source (`from`), and target (`to`).
+
+1. **mother_duck_sits_on_nest**
+   - The mother duck sitting on the nest is more about an emotional link (love) than tension. So, no tension preconditions here.
+
+2. **large_egg_hatches**
+   - This event is about hatching and relates to health risk due to the difficulty in breaking out of the shell.
+   
+3. **mother_duck_takes_brood_to_water**
+   - Taking the ducklings to water involves life_at_risk as they are vulnerable in a new environment.
+
+4. **ducklings_mock_and_bite_ugly_duckling**
+   - Mocking and biting cause health risks for the ugly duckling.
+   
+5. **mother_defends_duckling**
+   - The mother's defense is partly due to her perception of life_at_risk for her child.
+
+6. **duckling_runs_away_from_farmyard**
+   - Running away implies life_at_risk from the hostile environment.
+   
+7. **wild_ducks_mock_duckling**
+   - Mocking by wild ducks adds to health risks due to stress and isolation.
+
+8. **sportsmen_shoot_at_waterfowl**
+   - Shooting directly causes life_at_risk for all waterfowl.
+   
+9. **dog_chases_duckling**
+   - The chase puts the duckling's life at risk.
+   
+10. **duckling_escapes_to_cottage**
+    - Seeking shelter is a response to previous life-threatening situations, indicating ongoing risks.
+
+11. **hen_and_cat_reject_duckling**
+    - Rejection adds to emotional stress, affecting health.
+    
+12. **duckling_faces_harsh_winter**
+    - Harsh winter conditions pose direct health and life risks.
+    
+13. **peasant_rescues_duckling_from_ice**
+    - Rescue is needed because the duckling's life was at risk from freezing.
+
+14. **children_frighten_duckling**
+    - Frightening causes immediate stress, risking his well-being.
+    
+15. **duckling_discovers_reflection_in_water**
+    - This action doesn't involve tension; it's about self-realization.
+    
+16. **swans_welcome_duckling**
+    - Welcoming reduces previous tensions but isn't a precondition for the action itself.
+    
+17. **children_accept_and_feed_swan**
+    - Acceptance reduces life_at_risk as they ensure his safety.
+
+Now, I'll map each action to its tension preconditions in the specified JSON format.
+</think>
+
+```json
+{
+  "actions": [
+    {
+      "action": "mother_duck_sits_on_nest",
+      "n_characters": 1,
+      "subject": "mother_duck",
+      "object": "-",
+      "preconditions": {
+        "tensions": []
+      }
+    },
+    {
+      "action": "large_egg_hatches",
+      "n_characters": 1,
+      "subject": "-",
+      "object": "-",
+      "preconditions": {
+        "tensions": [
+          {
+            "type": "health_at_risk",
+            "from": "*",
+            "to": "b"
+          }
+        ]
+      }
+    },
+    {
+      "action": "mother_duck_takes_brood_to_water",
+      "n_characters": 2,
+      "subject": "mother_duck",
+      "object": "ducklings",
+      "preconditions": {
+        "tensions": [
+          {
+            "type": "life_at_risk",
+            "from": "*",
+            "to": "b"
+          }
+        ]
+      }
+    },
+    {
+      "action": "ducklings_mock_and_bite_ugly_duckling",
+      "n_characters": 2,
+      "subject": "other_ducklings",
+      "object": "ugly_duckling",
+      "preconditions": {
+        "tensions": [
+          {
+            "type": "health_at_risk",
+            "from": "a",
+            "to": "b"
+          }
+        ]
+      }
+    },
+    {
+      "action": "mother_defends_duckling",
+      "n_characters": 2,
+      "subject": "mother_duck",
+      "object": "ugly_duckling",
+      "preconditions": {
+        "tensions": [
+          {
+            "type": "life_at_risk",
+            "from": "*",
+            "to": "b"
+          }
+        ]
+      }
+    },
+    {
+      "action": "duckling_runs_away_from_farmyard",
+      "n_characters": 1,
+      "subject": "ugly_duckling",
+      "object": "-",
+      "preconditions": {
+        "tensions": [
+          {
+            "type": "life_at_risk",
+            "from": "*",
+            "to": "a"
+          }
+        ]
+      }
+    },
+    {
+      "action": "wild_ducks_mock_duckling",
+      "n_characters": 2,
+      "subject": "wild_ducks",
+      "object": "ugly_duckling",
+      "preconditions": {
+        "tensions": [
+          {
+            "type": "health_at_risk",
+            "from": "a",
+            "to": "b"
+          }
+        ]
+      }
+    },
+    {
+      "action": "sportsmen_shoot_at_waterfowl",
+      "n_characters": 1,
+      "subject": "-",
+      "object": "-",
+      "preconditions": {
+        "tensions": [
+          {
+            "type": "life_at_risk",
+            "from": "*",
+            "to": "*"
+          }
+        ]
+      }
+    },
+    {
+      "action": "dog_chases_duckling",
+      "n_characters": 2,
+      "subject": "dog",
+      "object": "ugly_duckling",
+      "preconditions": {
+        "tensions": [
+          {
+            "type": "life_at_risk",
+            "from": "a",
+            "to": "b"
+          }
+        ]
+      }
+    },
+    {
+      "action": "duckling_escapes_to_cottage",
+      "n_characters": 1,
+      "subject": "ugly_duckling",
+      "object": "-",
+      "preconditions": {
+        "tensions": [
+          {
+            "type": "life_at_risk",
+            "from": "*",
+            "to": "a"
+          }
+        ]
+      }
+    },
+    {
+      "action": "hen_and_cat_reject_duckling",
+      "n_characters": 2,
+      "subject": "hen",
+      "object": "ugly_duckling",
+      "preconditions": {
+        "tensions": [
+          {
+            "type": "health_at_risk",
+            "from": "a",
+            "to": "b"
+          }
+        ]
+      }
+    },
+    {
+      "action": "duckling_faces_harsh_winter",
+      "n_characters": 1,
+      "subject": "-",
+      "object": "-",
+      "preconditions": {
+        "tensions": [
+          {
+            "type": "life_at_risk",
+            "from": "*",
+            "to": "*"
+          }
+        ]
+      }
+    },
+    {
+      "action": "peasant_rescues_duckling_from_ice",
+      "n_characters": 2,
+      "subject": "peasant",
+      "object": "ugly_duckling",
+      "preconditions": {
+        "tensions": [
+          {
+            "type": "life_at_risk",
+            "from": "*",
+            "to": "b"
+          }
+        ]
+      }
+    },
+    {
+      "action": "children_frighten_duckling",
+      "n_characters": 2,
+      "subject": "children",
+      "object": "duckling",
+      "preconditions": {
+        "tensions": [
+          {
+            "type": "health_at_risk",
+            "from": "a",
+            "to": "b"
+          }
+        ]
+      }
+    },
+    {
+      "action": "duckling_discovers_reflection_in_water",
+      "n_characters": 1,
+      "subject": "duckling",
+      "object": "-",
+      "preconditions": {
+        "tensions": []
+      }
+    },
+    {
+      "action": "swans_welcome_duckling",
+      "n_characters": 2,
+      "subject": "swans",
+      "object": "duckling",
+      "preconditions": {
+        "tensions": []
+      }
+    },
+    {
+      "action": "children_accept_and_feed_swan",
+      "n_characters": 2,
+      "subject": "children",
+      "object": "swan",
+      "preconditions": {
+        "tensions": [
+          {
+            "type": "life_at_risk",
+            "from": "*",
+            "to": "b"
+          }
+        ]
+      }
+    }
+  ]
+}
+```

@@ -1,0 +1,7 @@
+STO
+cry_over_lost_ball
+frog offer_help_for_companionship princess
+princess promise_friendship frog
+king insist_on_keeping_promise princess
+frog sits_together princess
+frog transform_into_prince princess

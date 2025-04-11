@@ -1,0 +1,24 @@
+ACT storm_arrives 2
+PRE
+T Lr - b
+POS
+T Hr - b
+
+ACT seek_shelter 1
+PRE
+T Lr - a
+POS
+T Ln - a
+
+ACT test_with_pea 2
+POS
+T Hr a b
+
+ACT marry 2
+PRE
+E a b +3 2
+POS
+E a b +3 2
+T Ln - a
+T Hn - b
+
