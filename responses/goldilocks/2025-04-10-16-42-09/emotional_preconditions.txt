@@ -1,0 +1,135 @@
+<think>
+Okay, so I'm trying to figure out how to add preconditions related to emotional links for each action in the story "Goldilocks and the Three Bears." The user has provided a specific structure for the JSON output, which includes adding a `preconditions` key with an array of emotional links. Each emotional link should have a type (either friendship or love), magnitude (-3 to 3), and specify who is the source (`from`) and target (`to`) of the emotion.
+
+First, I'll go through each action identified earlier:
+
+1. **goldilocks_enters_house**: This action doesn't involve any other character directly, so there are no emotional links here. The array for emotional_links should be empty.
+
+2. **bears_find_tampered_porridge**: The bears are the subjects here, and they discover that someone has been at their porridge. Since this is more about discovering something rather than an action driven by emotions towards another character, there might not be any specific emotional link preconditions required for them to find the tampered porridge.
+
+3. **goldilocks_wakes_up**: Goldilocks wakes up because of the bears' voices. This action doesn't inherently require a precondition based on her emotions towards someone else unless we infer that she feels fear or guilt, which could be linked to friendship (negative magnitude) towards the bears. However, since the story doesn't explicitly state any prior relationship, it's safe to leave emotional_links empty.
+
+4. **goldilocks_jumps_out_window**: This action is driven by Goldilocks' reaction to being caught by the bears. Here, one could infer that she feels fear or dislike towards the bears, which might translate into a friendship emotional link with a negative magnitude (like -2). She's scared and wants to escape, indicating a negative emotional state towards them.
+
+So, for each action:
+
+- **goldilocks_enters_house**: No preconditions, so `preconditions` will have an empty array for `emotional_links`.
+  
+- **bears_find_tampered_porridge**: Again, no direct emotional link is required for the bears to check their porridge. So, `emotional_links` remains empty.
+  
+- **goldilocks_wakes_up**: No explicit emotional precondition needed unless we assume she feels fear. Since it's not explicitly stated, I'll keep `emotional_links` empty.
+  
+- **goldilocks_jumps_out_window**: Here, Goldilocks is scared of the bears, so there might be a negative friendship link towards them. The magnitude could be -2 (dislike or fear).
+
+Now, applying this to each action:
+
+1. For "goldilocks_enters_house":
+   ```json
+   {
+     "action": "goldilocks_enters_house",
+     "n_characters": 1,
+     "subject": "-",
+     "object": "-",
+     "preconditions": {
+       "emotional_links": []
+     }
+   }
+   ```
+
+2. For "bears_find_tampered_porridge":
+   ```json
+   {
+     "action": "bears_find_tampered_porridge",
+     "n_characters": 3,
+     "subject": "the_three_bears",
+     "object": "-",
+     "preconditions": {
+       "emotional_links": []
+     }
+   }
+   ```
+
+3. For "goldilocks_wakes_up":
+   ```json
+   {
+     "action": "goldilocks_wakes_up",
+     "n_characters": 1,
+     "subject": "goldilocks",
+     "object": "-",
+     "preconditions": {
+       "emotional_links": []
+     }
+   }
+   ```
+
+4. For "goldilocks_jumps_out_window":
+   ```json
+   {
+     "action": "goldilocks_jumps_out_window",
+     "n_characters": 1,
+     "subject": "goldilocks",
+     "object": "-",
+     "preconditions": {
+       "emotional_links": [
+         {
+           "type": "friendship",
+           "magnitude": -2,
+           "from": "a",
+           "to": "b"
+         }
+       ]
+     }
+   }
+   ```
+   Here, 'a' is Goldilocks (the subject), and 'b' refers to the bears (the objects she's scared of).
+
+I think this captures the necessary preconditions based on emotional links for each action.
+</think>
+
+```json
+[
+  {
+    "action": "goldilocks_enters_house",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": []
+    }
+  },
+  {
+    "action": "bears_find_tampered_porridge",
+    "n_characters": 3,
+    "subject": "the_three_bears",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": []
+    }
+  },
+  {
+    "action": "goldilocks_wakes_up",
+    "n_characters": 1,
+    "subject": "goldilocks",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": []
+    }
+  },
+  {
+    "action": "goldilocks_jumps_out_window",
+    "n_characters": 1,
+    "subject": "goldilocks",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -2,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  }
+]
+```

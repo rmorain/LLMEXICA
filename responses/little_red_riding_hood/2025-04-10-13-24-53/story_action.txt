@@ -1,0 +1,111 @@
+<think>
+Alright, I'm trying to figure out how to analyze the given story using the guidelines provided. The user wants me to extract actions related to emotional links (friendship or love) and tensions from the narrative.
+
+First, I need to read through the story carefully. It's about Little Red Riding Hood, her grandmother, her mother, and a wolf. The main events involve the girl visiting her sick grandmother with some treats, encountering a wolf who eats the grandmother and then disguises himself as her. Eventually, the wolf eats Little Red Riding Hood too.
+
+Now, focusing on emotional links: there's love between the mother and daughter, grandmother and granddaughter. The mother sends Little Red to see her grandmother because she's ill, showing care. That's an action of love from the mother towards the daughter and grandmother.
+
+The girl interacts with the wolf, but that's more about tension than emotional links. So the first action is the mother sending her daughter, which involves three characters: the subject is the mother, object is Little Red Riding Hood, and it's a love link.
+
+Next, when Little Red meets the wolf in the forest. She tells him where she's going, which might not directly relate to emotional links but sets up the tension. However, since the wolf is a threat, this starts building tension, specifically life_at_risk for both her and her grandmother.
+
+Then, the wolf reaches the grandmother's house first, knocks on the door, disguises his voice, and eats her. This creates a character_dead tension because the grandmother dies here. The action is the wolf eating the grandmother, so subject is wolf, object is grandmother.
+
+After that, Little Red arrives, talks to the wolf (who's disguised), which again relates to life_at_risk because she doesn't know the danger. She enters and they converse, but when she notices something's wrong with "grandmother," the wolf reveals himself and eats her too. This adds another character_dead tension as both grandmother and Little Red Riding Hood die.
+
+So I need to map these events into JSON actions. Each action should be a general statement without names, using snake_case. The keys are action, n_characters, subject, object.
+
+Let me list the steps:
+
+1. Mother sends daughter with cakes: subject is mother, object is daughter.
+2. Daughter meets wolf and talks: both are subjects and objects, so n_characters=2.
+3. Wolf reaches grandmother's house, eats her: subject is wolf, object is grandmother.
+4. Grandmother dies (tension).
+5. Daughter interacts with disguised wolf: n_characters=2.
+6. Daughter gets suspicious about "grandmother": no specific action here, but the next action is wolf eating her.
+
+Wait, perhaps I should break it down more accurately:
+
+- Mother sends daughter to grandmother: that's one action.
+- Daughter meets wolf and tells him where she's going: another action.
+- Wolf arrives at grandmother's house, disguises as her: action with subject wolf, object grandmother (but she dies).
+- Grandmother's death is a postcondition, so an action where wolf eats grandmother.
+- Daughter arrives, talks to wolf (disguised), which leads to her entry and the wolf eating her.
+
+So I think six actions:
+
+1. Mother sends daughter on errand with cakes.
+2. Daughter meets wolf in forest and tells him destination.
+3. Wolf reaches grandmother's house first and eats her.
+4. Grandmother dies (tension).
+5. Daughter talks to disguised wolf upon arrival.
+6. Wolf reveals identity and eats the daughter.
+
+Wait, but I need to ensure each action relates to emotional links or tensions.
+
+So:
+
+1. Mother sends daughter: love link from mother to daughter and grandmother.
+2. Daughter meets wolf: starts life_at_risk tension for both.
+3. Wolf eats grandmother: character_dead tension.
+4. Grandmother dies (tension).
+5. Daughter interacts with wolf, increasing tension until she's eaten.
+
+I think the actions are:
+
+1. send_little_red_with_cakes
+2. little_red_meets_wolf_and_tells_destination
+3. wolf_arrives_first_and_eats_grandmother
+4. grandmother_dies (tension)
+5. little_red_interacts_with_disguised_wolf
+6. wolf_reveals_identity_and_eats_little_red
+
+Each action needs to be in snake_case, general terms without names.
+
+So the JSON will have these actions with their subjects and objects.
+</think>
+
+Here is the structured analysis of the story based on emotional links and tensions:
+
+```json
+[
+  {
+    "action": "send_little_red_with_cakes",
+    "n_characters": 2,
+    "subject": "mother",
+    "object": "little_red_riding_hood"
+  },
+  {
+    "action": "little_red_meets_wolf_and_tells_destination",
+    "n_characters": 2,
+    "subject": "little_red_riding_hood",
+    "object": "wolf"
+  },
+  {
+    "action": "wolf_arrives_first_and_eats_grandmother",
+    "n_characters": 2,
+    "subject": "wolf",
+    "object": "grandmother"
+  },
+  {
+    "action": "grandmother_dies",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "-"
+  },
+  {
+    "action": "little_red_interacts_with_disguised_wolf",
+    "n_characters": 2,
+    "subject": "little_red_riding_hood",
+    "object": "wolf"
+  },
+  {
+    "action": "wolf_reveals_identity_and_eats_little_red",
+    "n_characters": 2,
+    "subject": "wolf",
+    "object": "little_red_riding_hood"
+  }
+]
+```
+
+This JSON captures the key actions, focusing on emotional links (love) and tensions (life_at_risk, character_dead), organized chronologically.

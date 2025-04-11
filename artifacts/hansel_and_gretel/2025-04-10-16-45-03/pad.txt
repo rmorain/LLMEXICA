@@ -1,0 +1,55 @@
+ACT man_expresses_anxiety_to_wife 2
+PRE
+E a - +3 2
+POS
+T Lr * *
+
+ACT woman_proposes_abandoning_children 2
+PRE
+E a - -3 1
+POS
+T Lr * *
+
+ACT children_overhear_stepmothers_plan 2
+POS
+T Lr * *
+
+ACT brotherComforts_sister 2
+PRE
+E a b +3 1
+POS
+E b a +3 2
+
+ACT boy_prepares_escape_plan 1
+PRE
+E a - +3 2
+POS
+T Ln * *
+
+ACT family_enters_forest 4
+POS
+T Lr * *
+
+ACT father_abandons_children 2
+PRE
+E a - -2 2
+POS
+T Lr * *
+
+ACT boy_leaves_trail 1
+PRE
+E a - +3 2
+POS
+T Ln * *
+
+ACT children_find_way_home 2
+POS
+E * * +3 2
+T Ln * *
+
+ACT father_reunites_with_children 3
+PRE
+E a - +3 2
+POS
+T Ln * *
+

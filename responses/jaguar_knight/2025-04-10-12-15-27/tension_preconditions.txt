@@ -1,0 +1,214 @@
+<think>
+Alright, I'm trying to figure out how to identify preconditions related to tensions for each action in this story. Let me go through each step carefully.
+
+First, I need to understand what a "tension" is in this context. From the problem statement, tensions include things like character_dead, life_at_risk, health_at_risk, prisoner, clashing_emotions, and love_competition. These are situations that create conflict or suspense in the narrative.
+
+For each action, I need to determine if there's a precondition related to one of these tensions. A precondition here means that for an action to make sense, a certain tension must already exist. For example, if Character A rescues Character B, it might be because Character B is in a prisoner tension.
+
+I'll go through each action one by one:
+
+1. **Storm causes bridge collapse**: This action leads to Jaguar Knight being injured. So, the precondition here is that there's a risk to his health, which falls under `health_at_risk`.
+
+2. **Princess saves Jaguar Knight**: Princess acts because Jaguar Knight was badly injured and could die if not helped. So, the tension before this action is both `health_at_risk` and `life_at_risk`.
+
+3. **Jaguar Knight feels grateful**: This is more about emotional links rather than a tension precondition. No specific tension is required for him to feel gratitude.
+
+4. **Enemy kidnaps Princess**: Kidnapping leads to Princess being held captive, so the precondition here is that she's now a `prisoner`.
+
+5. **Jaguar Knight prays for help**: This action doesn't inherently require a tension precondition; it's more about seeking assistance.
+
+6. **Enemy attacks Princess**: Attacking her puts her life at risk, so the precondition is `life_at_risk`.
+
+7. **Jaguar Knight searches for enemy**: He's searching to rescue Princess because she's a prisoner and her life might be at risk. So, both `prisoner` and `life_at_risk` are preconditions here.
+
+8. **Jaguar Knight fights enemy**: Fighting occurs in the context of rescuing Princess from captivity and potential danger, so again `prisoner` and `life_at_risk`.
+
+9. **Princess feels conflicted**: Her internal conflict arises because she's torn between her love for Jaguar Knight and hatred towards his past actions. This creates a tension of `clashing_emotions`.
+
+10. **Princess kills Jaguar Knight**: She kills him out of anger, which stems from the earlier `clashing_emotions` tension.
+
+11. **Princess commits suicide**: After killing Jaguar Knight, her death is tragic, resulting in both characters being dead, so the tension here is `character_dead`.
+
+I need to map these preconditions accurately for each action, ensuring that I correctly identify the type of tension and whether it applies to the subject or object of the action. If there are multiple tensions, I should list all of them.
+
+Also, I have to remember that if there's no applicable tension precondition for an action, I leave the array empty. For example, praying doesn't inherently require a tension precondition unless specified.
+
+By carefully analyzing each action and linking it to the appropriate tension, I can create a comprehensive JSON structure that outlines these preconditions.
+</think>
+
+Here is the enhanced JSON with preconditions related to tensions:
+
+```json
+[
+  {
+    "action": "storm_causes_bridge_collapse",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "tensions": [
+        {
+          "type": "health_at_risk",
+          "from": "b",
+          "to": "-"
+        }
+      ]
+    }
+  },
+  {
+    "action": "princess_saves_jaguar_knight",
+    "n_characters": 2,
+    "subject": "princess",
+    "object": "jaguar_knight",
+    "preconditions": {
+      "tensions": [
+        {
+          "type": "health_at_risk",
+          "from": "b",
+          "to": "-"
+        },
+        {
+          "type": "life_at_risk",
+          "from": "b",
+          "to": "-"
+        }
+      ]
+    }
+  },
+  {
+    "action": "jaguar_knight_feels_grateful",
+    "n_characters": 1,
+    "subject": "jaguar_knight",
+    "object": "-",
+    "preconditions": {
+      "tensions": []
+    }
+  },
+  {
+    "action": "enemy_kidnaps_princess",
+    "n_characters": 2,
+    "subject": "enemy",
+    "object": "princess",
+    "preconditions": {
+      "tensions": [
+        {
+          "type": "prisoner",
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "jaguar_knight_prays_for_help",
+    "n_characters": 1,
+    "subject": "jaguar_knight",
+    "object": "-",
+    "preconditions": {
+      "tensions": []
+    }
+  },
+  {
+    "action": "enemy_attacks_princess",
+    "n_characters": 2,
+    "subject": "enemy",
+    "object": "princess",
+    "preconditions": {
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "jaguar_knight_searches_for_enemy",
+    "n_characters": 1,
+    "subject": "jaguar_knight",
+    "object": "-",
+    "preconditions": {
+      "tensions": [
+        {
+          "type": "prisoner",
+          "from": "-",
+          "to": "-"
+        },
+        {
+          "type": "life_at_risk",
+          "from": "-",
+          "to": "-"
+        }
+      ]
+    }
+  },
+  {
+    "action": "jaguar_knight_fights_enemy",
+    "n_characters": 2,
+    "subject": "jaguar_knight",
+    "object": "enemy",
+    "preconditions": {
+      "tensions": [
+        {
+          "type": "prisoner",
+          "from": "-",
+          "to": "-"
+        },
+        {
+          "type": "life_at_risk",
+          "from": "-",
+          "to": "-"
+        }
+      ]
+    }
+  },
+  {
+    "action": "princess_feels_conflicted",
+    "n_characters": 1,
+    "subject": "princess",
+    "object": "-",
+    "preconditions": {
+      "tensions": [
+        {
+          "type": "clashing_emotions",
+          "from": "a",
+          "to": "-"
+        }
+      ]
+    }
+  },
+  {
+    "action": "princess_kills_jaguar_knight",
+    "n_characters": 2,
+    "subject": "princess",
+    "object": "jaguar_knight",
+    "preconditions": {
+      "tensions": [
+        {
+          "type": "clashing_emotions",
+          "from": "a",
+          "to": "-"
+        }
+      ]
+    }
+  },
+  {
+    "action": "princess_commits_suicide",
+    "n_characters": 1,
+    "subject": "princess",
+    "object": "-",
+    "preconditions": {
+      "tensions": [
+        {
+          "type": "character_dead",
+          "from": "a",
+          "to": "-"
+        }
+      ]
+    }
+  }
+]
+```
+
+This JSON structure identifies the preconditions related to tensions for each action, providing a clear understanding of the underlying conflicts and motivations in the narrative.

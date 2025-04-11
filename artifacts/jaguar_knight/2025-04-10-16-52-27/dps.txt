@@ -1,0 +1,11 @@
+STO
+bridge_collapse
+Princess princess_heals_jaguar Jaguar_Knight
+Enemy enemy_kidnaps_princess Princess
+Enemy enemy_attacks_princess Princess
+Jaguar_Knight jaguar_kills_enemy Enemy
+Jaguar_Knight princess_liberated_by_jaguar Princess
+Jaguar_Knight jaguar_admires_princess_bravery
+Princess princess_recognizes_tattoo
+Princess princess_kills_jaguar Jaguar_Knight
+Princess princess_commits_suicide

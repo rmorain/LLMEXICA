@@ -1,0 +1,36 @@
+ACT sit_in Chair 4
+PRE
+T Ce * *
+POS
+E b a +1 1
+
+ACT sleep_in_bed 4
+PRE
+T Pr * *
+POS
+E b a +1 1
+
+ACT find_spoon_in_porridge 1
+PRE
+T Lr a *
+POS
+E a b -2 1
+
+ACT find_spoon_in_porridge 1
+PRE
+T Lr a *
+POS
+E a b -2 1
+
+ACT find_empty_porridge_bowl 1
+PRE
+T Hr a *
+POS
+E a b -3 1
+
+ACT find_goldilocks_in_bed 4
+PRE
+T Pr * *
+POS
+T Pf * *
+

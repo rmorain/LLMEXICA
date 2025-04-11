@@ -1,0 +1,36 @@
+ACT mother_tells_jack_to_sell_cow 2
+PRE
+E a b +2 2
+POS
+E b a -1 2
+
+ACT jack_meets_man_at_market 2
+POS
+E a b 0 1
+
+ACT mother_angry_with_jack 2
+PRE
+E a b -2 2
+POS
+E b a -1 2
+
+ACT giant_wife_gives_food_to_jack 2
+PRE
+E a b +1 1
+POS
+E b a +1 1
+T Hn - b
+
+ACT wife_denies_jack_presence_to_giant 2
+PRE
+E a b +1 1
+POS
+E b a +1 1
+T Ln - b
+
+ACT jack_gives_coins_to_mother 2
+PRE
+E a b +1 2
+POS
+E b a +2 2
+

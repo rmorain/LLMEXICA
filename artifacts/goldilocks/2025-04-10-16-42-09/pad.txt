@@ -1,0 +1,25 @@
+ACT goldilocks_enters_house 1
+POS
+T Lr * a
+
+ACT bears_find_tampered_porridge 3
+PRE
+T Lr * a
+POS
+E b a -1 1
+T Lr * a
+
+ACT goldilocks_wakes_up 1
+POS
+E a b -1 1
+T Lr * a
+
+ACT goldilocks_jumps_out_window 1
+PRE
+E a b -2 1
+T Lr a a
+POS
+E b a -3 1
+E a b -2 1
+T Ln - a
+

@@ -1,0 +1,12 @@
+STO
+mother mother_instructs_sell_cow jack
+jack jack_trades_cow_for_beans man
+mother mother_angry_at_jack jack
+mother_throws_beans_out_window
+jack jack_sad_and_sleeps
+jack jack_climbs_beanstalk
+giant's wife giant_wife_gives_food_to_jack jack
+giant giant-threatens-jack jack
+giant giant_counts_gold
+jack jack_steals_gold_from_giant giant
+jack jack_gives_coins_to_mother mother

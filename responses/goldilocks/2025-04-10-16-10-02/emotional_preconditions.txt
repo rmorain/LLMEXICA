@@ -1,0 +1,161 @@
+<think>
+Alright, let me try to work through this step by step. So, I've got a story about Goldilocks and the Three Bears, and I need to analyze each action in terms of emotional links and preconditions. The user wants me to identify or infer the emotional links that serve as preconditions for each character's actions.
+
+First, I'll recall what an emotional link is. There are two types: `friendship` and `love`. Each has a magnitude from -3 to 3. A positive value indicates a stronger bond, while negative suggests dislike or hatred. Preconditions mean that before a character can perform an action, certain emotional links must exist.
+
+Looking at the story, Goldilocks doesn't have any prior relationship with the Bears. She's just a curious and naughty girl who happens upon their house. The Bears are a family unit, but there’s no indication of romantic love between them; it's all platonic. So, I'm mainly looking at `friendship` type links here.
+
+Now, let's go through each action one by one:
+
+1. **Taste Porridge**: Goldilocks tastes the Great Big Bear's porridge. Since she doesn't know them, there’s no emotional link here. So, preconditions are empty.
+
+2. **Eat Entire Porridge**: She eats all of Little Wee Bear's porridge. Again, no prior emotional link; it's just her curiosity or hunger driving this action.
+
+3. **Sit in Hard Chair**: She sits in the Great Big Bear's chair. No emotional link here either; she’s just testing things out.
+
+4. **Sit in Soft Chair**: Sits in Middle-sized Bear's chair. Same as above, no emotional connection needed.
+
+5. **Break Chair**: Breaks Little Wee Bear's chair. This might indicate some frustration or recklessness, but that's more about her temperament than an emotional link with the Bears.
+
+6. **Lie in High Bed**: Lies in Great Big Bear's bed. Again, just exploring, no prior emotional connection.
+
+7. **Lie in Soft Bed**: Lies in Middle-sized Bear's bed. Same reasoning; it’s about comfort seeking rather than any emotional tie.
+
+8. **Fall Asleep in Bed**: Falls asleep in Little Wee Bear's bed. She’s tired from her activities, so no specific emotional link here.
+
+9. **Discover Porridge Tampering**: The Bears notice their porridge has been tasted. This is more about the state of the porridge than any emotions towards Goldilocks since they don’t know her yet.
+
+10. **Find Chair Broken**: They find the broken chair. Again, it's about the state of their belongings, not emotional connections.
+
+11. **Discover Sleeping Goldilocks**: The Bears find Goldilocks asleep. This is the first time they interact, so no pre-existing emotional links here.
+
+12. **Wake Up to Noise**: Goldilocks wakes up when Little Wee Bear speaks. She’s startled by the noise, not due to any emotional link with him.
+
+13. **Escape Through Window**: She escapes because she's scared of being caught, again driven by fear rather than any emotional connection.
+
+Throughout all these actions, there are no instances where an emotional link is a precondition for the action. Goldilocks doesn't have any prior relationship with the Bears, and her actions are driven by curiosity, hunger, tiredness, or fear rather than any emotional bonds. The Bears react to the state of their belongings but don’t exhibit emotions towards Goldilocks until after these actions.
+
+Therefore, all preconditions related to emotional links are empty because there's no existing bond that facilitates these actions.
+</think>
+
+```json
+[
+    {
+        "action": "taste_porridge",
+        "n_characters": 2,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "eat_entire_porridge",
+        "n_characters": 2,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "sit_in_hard_chair",
+        "n_characters": 2,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "sit_in_soft_chair",
+        "n_characters": 2,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "break_chair",
+        "n_characters": 2,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "lie_in_high_bed",
+        "n_characters": 2,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "lie_in_soft_bed",
+        "n_characters": 2,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "fall_asleep_in_bed",
+        "n_characters": 2,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "discover_porridge_tampering",
+        "n_characters": 3,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "find_chair_broken",
+        "n_characters": 3,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "discover_sleeping_goldilocks",
+        "n_characters": 4,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "wake_up_to_noise",
+        "n_characters": 1,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "escape_through_window",
+        "n_characters": 1,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    }
+]
+```

@@ -1,0 +1,18 @@
+STO
+father_feels_guilt_over_children
+stepmother stepmother_suggests_abandoning_children father
+children_overhear_stepmother
+Hansel hansel Comforts_gretel Gretel
+family_enters_forest
+father father_abandons_children children
+Hansel hansel_leaves_trail_of_pebbles
+children_find_way_home
+stepmother_dies stepmother
+family_enters_forest_again
+Hansel hansel_leaves_trail_of_breadcrumbs
+birds_eat_breadcrumbs
+children_lost_in_forest
+witch witch_captures_children children
+Gretel gretel_outsmarts_witch witch
+witch_dies witch
+children_escape_forest

@@ -1,0 +1,164 @@
+
+Alright, I need to go through each action and identify the postconditions, which are changes in emotional links or tensions resulting from the action. At least one postcondition is required for each action, and if there were preconditions, the postconditions shouldn't repeat them.
+
+Starting with "prince_feels_sad": The prince feels sad because he hasn’t found a real princess yet. This sadness might strengthen his desire for love, so I can infer that his emotional link towards a potential princess becomes more positive, maybe increasing from -2 to +1 as he's hopeful now.
+
+Next is "king_opens_gate": The king opens the gate for the princess during a storm. This kind act could make the princess feel positively towards the king, developing a friendship bond with a magnitude of +2.
+
+Third action: "queen_tests_princess". The queen tests the princess by placing a pea under mattresses to check her sensitivity. If the princess passes, it might create a positive emotional link between them, perhaps increasing the queen’s trust in the princess from -1 to +1.
+
+Fourth action: "princess_reports_bad_sleep". After feeling the pea, the princess reports her discomfort, which confirms she's real. This might strengthen the romantic bond between the prince and princess, increasing their mutual love from +2 to +3.
+
+Fifth action: "prince_marry_princess": They get married, solidifying their romantic relationship. The emotional links here would be at their peak, maybe both feeling a strong love towards each other with magnitude +3.
+
+As for tensions, none of the actions introduce or resolve any of the specified tension types like life_at_risk or prisoner, so the tensions array remains empty in each case.
+</think>
+
+```json
+[
+    {
+        "action": "prince_feels_sad",
+        "n_characters": 1,
+        "subject": "prince",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "love",
+                    "magnitude": -2,
+                    "from": "a",
+                    "to": "-"
+                }
+            ],
+            "tensions": []
+        },
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": []
+        }
+    },
+    {
+        "action": "king_opens_gate",
+        "n_characters": 2,
+        "subject": "king",
+        "object": "princess",
+        "preconditions": {
+            "emotional_links": [],
+            "tensions": []
+        },
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": +2,
+                    "from": "b",
+                    "to": "a"
+                }
+            ],
+            "tensions": []
+        }
+    },
+    {
+        "action": "queen_tests_princess",
+        "n_characters": 2,
+        "subject": "queen",
+        "object": "princess",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -1,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": []
+        },
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": +1,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": []
+        }
+    },
+    {
+        "action": "princess_reports_bad_sleep",
+        "n_characters": 2,
+        "subject": "princess",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "love",
+                    "magnitude": +2,
+                    "from": "a",
+                    "to": "-"
+                }
+            ],
+            "tensions": []
+        },
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "love",
+                    "magnitude": +3,
+                    "from": "a",
+                    "to": "b"
+                },
+                {
+                    "type": "love",
+                    "magnitude": +3,
+                    "from": "b",
+                    "to": "a"
+                }
+            ],
+            "tensions": []
+        }
+    },
+    {
+        "action": "prince_marry_princess",
+        "n_characters": 2,
+        "subject": "prince",
+        "object": "princess",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "love",
+                    "magnitude": +3,
+                    "from": "a",
+                    "to": "b"
+                },
+                {
+                    "type": "love",
+                    "magnitude": +3,
+                    "from": "b",
+                    "to": "a"
+                }
+            ],
+            "tensions": []
+        },
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "love",
+                    "magnitude": +3,
+                    "from": "a",
+                    "to": "b"
+                },
+                {
+                    "type": "love",
+                    "magnitude": +3,
+                    "from": "b",
+                    "to": "a"
+                }
+            ],
+            "tensions": []
+        }
+    }
+]
+```

@@ -1,0 +1,147 @@
+<think>
+Alright, so I need to analyze this story and extract the essential actions related to emotional links and tensions. The user provided a detailed narrative, so my first step is to read through it carefully.
+
+I notice there are two main characters: Jaguar_Knight and Princess. Their interactions drive both the emotional links and the tensions. My focus should be on identifying when their emotions towards each other change and when tense situations arise.
+
+Starting from the beginning, the storm causes the bridge collapse, injuring Jaguar_Knight. That's a clear health risk, so I'll note that as a tension of type 'health_at_risk'. The Princess then helps him by using a curative plant, which shows her care. This action is crucial because it establishes a positive emotional link of friendship.
+
+As the story progresses, Jaguar_Knight realizes the Princess saved his life, which strengthens their bond further. Then, there's a shift when the enemy kidnaps the Princess, creating another tension type 'prisoner'. Jaguar_Knight decides to rescue her, showing bravery and deepening their relationship into love. The action where he liberates her would be an emotional link of love.
+
+However, the plot twist comes when the Princess recognizes Jaguar_Knight's tattoo linked to her father's murder. This creates a clash in her emotions—love on one side and hatred on the other. That's a 'clashing_emotions' tension. She then kills him and herself, leading to both characters' deaths, which falls under 'character_dead'.
+
+I need to ensure each action is captured in JSON with the correct keys: subject, object, n_characters, and type. I'll go through each event chronologically, making sure not to include character names but generalize the actions.
+
+Let me list out all the key events:
+
+1. Storm causes bridge collapse.
+2. Jaguar_Knight gets injured (health risk).
+3. Princess saves him with plasma (friendship link).
+4. Realization of life-saving deepens bond (love link).
+5. Enemy kidnaps Princess (prisoner tension).
+6. Jaguar_Knight rescues her (liberation action, love link).
+7. Tattoo recognition causes emotional clash.
+8. Princess kills Jaguar_Knight and herself (character dead).
+
+Each of these will be converted into JSON actions with appropriate types and keys. I have to ensure the subjects and objects are correctly assigned without using names, just '-' if not applicable.
+
+I think that's all. Now, organizing them in order should give a clear structure as per the user's instructions.
+</think>
+
+```json
+[
+  {
+    "action": "storm_caused_damage",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "-"
+  },
+  {
+    "action": "character_injured",
+    "n_characters": 2,
+    "subject": "JAGUAR_KNIGHT",
+    "object": "PRINCESS"
+  },
+  {
+    "action": "character_saved",
+    "n_characters": 2,
+    "subject": "PRINCESS",
+    "object": "JAGUAR_KNIGHT"
+  },
+  {
+    "action": "character_realized_gratitude",
+    "n_characters": 1,
+    "subject": "JAGUAR_KNIGHT",
+    "object": "-"
+  },
+  {
+    "action": "princess_kidnapped",
+    "n_characters": 2,
+    "subject": "ENEMY",
+    "object": "PRINCESS"
+  },
+  {
+    "action": "character_prayed_for_help",
+    "n_characters": 1,
+    "subject": "JAGUAR_KNIGHT",
+    "object": "-"
+  },
+  {
+    "action": "princess_angrily_confronted_enemy",
+    "n_characters": 2,
+    "subject": "PRINCESS",
+    "object": "ENEMY"
+  },
+  {
+    "action": "character_searched_for_enemy",
+    "n_characters": 1,
+    "subject": "JAGUAR_KNIGHT",
+    "object": "-"
+  },
+  {
+    "action": "enemy_found",
+    "n_characters": 2,
+    "subject": "JAGUAR_KNIGHT",
+    "object": "ENEMY"
+  },
+  {
+    "action": "character_attacked_enemy",
+    "n_characters": 2,
+    "subject": "JAGUAR_KNIGHT",
+    "object": "ENEMY"
+  },
+  {
+    "action": "enemy_killed",
+    "n_characters": 2,
+    "subject": "JAGUAR_KNIGHT",
+    "object": "ENEMY"
+  },
+  {
+    "action": "character_performed_ceremony",
+    "n_characters": 1,
+    "subject": "JAGUAR_KNIGHT",
+    "object": "-"
+  },
+  {
+    "action": "princess_liberated",
+    "n_characters": 2,
+    "subject": "JAGUAR_KNIGHT",
+    "object": "PRINCESS"
+  },
+  {
+    "action": "character_fell_in_love",
+    "n_characters": 2,
+    "subject": "PRINCESS",
+    "object": "JAGUAR_KNIGHT"
+  },
+  {
+    "action": "princess_kissed_jaguar_knight",
+    "n_characters": 2,
+    "subject": "PRINCESS",
+    "object": "JAGUAR_KNIGHT"
+  },
+  {
+    "action": "character_recognized_tattoo",
+    "n_characters": 1,
+    "subject": "PRINCESS",
+    "object": "-"
+  },
+  {
+    "action": "princess_felt_conflicted_emotions",
+    "n_characters": 1,
+    "subject": "PRINCESS",
+    "object": "-"
+  },
+  {
+    "action": "jaguar_knight_killed",
+    "n_characters": 2,
+    "subject": "PRINCESS",
+    "object": "JAGUAR_KNIGHT"
+  },
+  {
+    "action": "princess_killed_herself",
+    "n_characters": 1,
+    "subject": "PRINCESS",
+    "object": "-"
+  }
+]
+```

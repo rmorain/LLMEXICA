@@ -1,0 +1,11 @@
+STO
+father man_expresses_anxiety_to_wife
+stepmother woman_proposes_abandoning_children father
+children_overhear_stepmothers_plan Hansel_and_Gretel
+Hansel brotherComforts_sister Gretel
+Hansel boy_prepares_escape_plan
+family_enters_forest
+father father_abandons_children children
+Hansel boy_leaves_trail
+children_find_way_home
+father father_reunites_with_children Hansel_and_Gretel

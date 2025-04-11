@@ -1,0 +1,7 @@
+STO
+sit_in Chair
+sleep_in_bed
+Great Big Bear find_spoon_in_porridge
+Middle-sized Bear find_spoon_in_porridge
+Little Wee Bear find_empty_porridge_bowl
+find_goldilocks_in_bed

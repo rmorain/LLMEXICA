@@ -1,0 +1,41 @@
+ACT mother_shows_love 2
+PRE
+E a b +3 2
+POS
+E b a +3 2
+
+ACT character_meets_predator 2
+PRE
+T Lr b a
+POS
+E a b -2 1
+T Lr b a
+
+ACT predator_plans_deception 1
+PRE
+E a b -3 1
+T Lr * b
+POS
+E a b -3 1
+T Lr * b
+
+ACT predator_kills_and_disguises 2
+PRE
+E a b -3 1
+T Ad - b
+T Lr * a
+POS
+E a b -2 2
+T Ad - b
+T Lr * a
+
+ACT character_interacts_with_predator 2
+PRE
+E a b +3 2
+T Lr * a
+T Hr - b
+POS
+E a b -3 1
+T Lr * a
+T Hr - b
+

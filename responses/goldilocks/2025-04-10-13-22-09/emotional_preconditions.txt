@@ -1,0 +1,249 @@
+<think>
+Alright, let's tackle this problem step by step. I need to analyze each action from the story and identify any preconditions related to emotional links. Emotional links can be of type `friendship` or `love`, with a magnitude between -3 and 3.
+
+First, I'll go through each action one by one:
+
+1. **Action: taste_porridge**
+   - **Subject:** Goldilocks
+   - **Object:** Bears' porridge
+   - This is the first interaction where Goldilocks samples each bear's porridge. Since she doesn't know the bears yet, there’s no prior emotional link. Her action is driven by curiosity or hunger, not by any existing relationship.
+
+2. **Action: sit_in Chair**
+   - **Subject:** Goldilocks
+   - **Object:** Bears' chairs
+   - Again, Goldilocks has no established relationship with the bears. She sits in their chairs out of comfort-seeking behavior, not due to any emotional connection.
+
+3. **Action: sleep_in_bed**
+   - **Subject:** Goldilocks
+   - **Object:** Little Wee Bear's bed
+   - This action is about rest after eating. There's no indication that Goldilocks has any feelings towards the bears; she simply finds the bed comfortable.
+
+4. **Action: find_spoon_in_porridge (Great Big Bear)**
+   - **Subject:** Great Big Bear
+   - **Object:** His porridge
+   - The bear notices someone has been at his porridge, leading to suspicion or anger. This could imply a negative emotional link towards the unknown intruder.
+
+5. **Action: find_spoon_in_porridge (Middle-sized Bear)**
+   - Similar to the previous action, the Middle-sized Bear is upset about his porridge being tasted. Again, this suggests a negative emotional link.
+
+6. **Action: find_empty_porridge_bowl (Little Wee Bear)**
+   - The Little Wee Bear is angry because his porridge was eaten entirely. This indicates a stronger negative emotion towards Goldilocks compared to the other bears.
+
+7. **Action: investigate_house**
+   - **Subject:** Three Bears
+   - They are searching their house after noticing disturbances, indicating suspicion and concern about an intruder.
+
+8. **Action: find_disarranged_cushion (Great Big Bear)**
+   - The Great Big Bear notices his cushion was moved, adding to the growing negative emotions towards Goldilocks.
+
+9. **Action: find_squashed_cushion (Middle-sized Bear)**
+   - Similar negative feelings arise as the Middle-sized Bear finds his cushion squashed.
+
+10. **Action: find_broken_chair (Little Wee Bear)**
+    - The Little Wee Bear is angry about his chair being broken, reinforcing a strong negative emotional link towards Goldilocks.
+
+11. **Action: search_bedroom**
+    - The Bears are now thoroughly investigating the upstairs area, driven by suspicion and growing tension regarding an intruder.
+
+12. **Action: find_displaced_pillow (Great Big Bear)**
+    - Finding his pillow moved adds to the Great Big Bear's irritation towards Goldilocks.
+
+13. **Action: find_displaced_bolster (Middle-sized Bear)**
+    - The Middle-sized Bear is similarly annoyed upon finding his bolster displaced.
+
+14. **Action: find_goldilocks_in_bed**
+    - Finally, discovering Goldilocks in bed leads to the peak of negative emotions from all three bears towards her.
+
+For each action, I need to determine if there are any preconditions based on emotional links. Since the story doesn't depict any prior relationships or positive emotions between Goldilocks and the Bears, all relevant emotional links here are negative. Specifically, as the Bears discover evidence of Goldilocks' actions, their negative feelings escalate.
+
+For example, when each Bear finds their porridge tampered with or their belongings disturbed, it implies a growing negative emotional link (friendship type) from the Bear towards Goldilocks. The magnitude increases as they find more severe disturbances—tasting porridge is less invasive than eating it all or breaking furniture.
+
+So, for actions where Bears react to Goldilocks' intrusions, I'll infer preconditions based on these negative emotional links. Each action involving a Bear's reaction should have a precondition of a friendship-type link with an increasingly negative magnitude from the Bear towards Goldilocks.
+</think>
+
+```json
+[
+    {
+        "action": "taste_porridge",
+        "n_characters": 4,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "sit_in Chair",
+        "n_characters": 4,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "sleep_in_bed",
+        "n_characters": 4,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "find_spoon_in_porridge",
+        "n_characters": 1,
+        "subject": "Great Big Bear",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "find_spoon_in_porridge",
+        "n_characters": 1,
+        "subject": "Middle-sized Bear",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "find_empty_porridge_bowl",
+        "n_characters": 1,
+        "subject": "Little Wee Bear",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "investigate_house",
+        "n_characters": 3,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "find_disarranged_cushion",
+        "n_characters": 1,
+        "subject": "Great Big Bear",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "find_squashed_cushion",
+        "n_characters": 1,
+        "subject": "Middle-sized Bear",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "find_broken_chair",
+        "n_characters": 1,
+        "subject": "Little Wee Bear",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "search_bedroom",
+        "n_characters": 3,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "find_displaced_pillow",
+        "n_characters": 1,
+        "subject": "Great Big Bear",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "find_displaced_bolster",
+        "n_characters": 1,
+        "subject": "Middle-sized Bear",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "find_goldilocks_in_bed",
+        "n_characters": 4,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    }
+]
+```

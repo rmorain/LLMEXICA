@@ -1,0 +1,331 @@
+<think>
+Alright, so I need to analyze each action and determine the postconditions, which are changes in emotional links or tensions resulting from the action. At least one postcondition is required for each action, and if there were preconditions, the postconditions can't be the same as those.
+
+Starting with "mother_sends_daughter_to_visit_grandmother". This action likely strengthens LRRH's love for her mother and grandmother due to the caring gesture. So, positive emotional links of love from both LRRH to her mother and grandmother. No new tensions are introduced here since it's a positive action.
+
+Next, "little_red_riding_hood_meets_wolf_in_forest" introduces a negative emotional link from LRRH towards the wolf as she might feel fear or distrust. This meeting also creates a `life_at_risk` tension for LRRH because of the potential danger posed by the wolf.
+
+When the wolf asks LRRH about her grandmother, this increases the risk to both LRRH and her grandmother, so a `life_at_risk` tension is maintained or intensified. Additionally, LRRH might develop a negative emotional link towards the wolf due to the suspicious interaction.
+
+LRRH telling the wolf about her grandmother could make her more trusting of the wolf initially, creating a positive friendship link, but this also increases the risk to her grandmother's life, maintaining the `life_at_risk` tension for her grandmother.
+
+The wolf running to the grandmother's house leads to the grandmother's death, so after this action, she is dead (`character_dead`). This also results in a negative emotional link from LRRH towards the wolf upon discovering what happened.
+
+Killing and eating the grandmother obviously results in her death, intensifying the `life_at_risk` tension for both characters involved. The emotional links turn strongly negative as LRRH would feel grief and hatred towards the wolf.
+
+LRRH gathering flowers and nuts doesn't involve any character interactions, so no emotional links are affected here. However, since she's distracted, it might indirectly maintain her life at risk due to the delay in reaching her grandmother.
+
+The wolf disguising himself as the grandmother leads to LRRH trusting him, which can create a false positive emotional link of friendship from LRRH towards the wolf (thinking he's her grandmother). This deception also keeps her life at risk as she’s unaware of the danger.
+
+LRRH arriving at the house with the intent to visit maintains the `health_at_risk` tension for the grandmother, and upon finding the wolf, this might turn into a `life_at_risk` situation for herself. Emotional links would turn negative once she realizes the deception.
+
+The wolf deceiving LRRH results in her trust turning into fear or anger, creating a negative emotional link towards him. Her life remains at risk due to the wolf's intentions.
+
+LRRH getting into bed with the wolf, unaware of the danger, results in her life being at immediate risk and likely intensifies her negative emotional links once she discovers the truth.
+
+Finally, eating LRRH by the wolf results in her death, creating a `character_dead` postcondition. This action would leave a lasting negative emotional impact on any surviving characters and resolve the `life_at_risk` tension as it turns into death.
+</think>
+
+Here is the updated JSON with postconditions for each action:
+
+```json
+[
+  {
+    "action": "mother_sends_daughter_to_visit_grandmother",
+    "n_characters": 2,
+    "subject": "-",
+    "object": "-",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "love",
+          "magnitude": 1,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "little_red_riding_hood_meets_wolf_in_forest",
+    "n_characters": 2,
+    "subject": "-",
+    "object": "-",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -1,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "-",
+          "to": "a"
+        }
+      ]
+    }
+  },
+  {
+    "action": "wolf_asks_little_red_riding_hood_about_grandmother",
+    "n_characters": 2,
+    "subject": "-",
+    "object": "-",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -1,
+          "from": "b",
+          "to": "a"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "-",
+          "to": "a"
+        },
+        {
+          "type": "life_at_risk",
+          "from": "-",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "little_red_riding_hood_tells_wolf_about_grandmother",
+    "n_characters": 2,
+    "subject": "-",
+    "object": "-",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 1,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "-",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "wolf_runs_to_grandmothers_house",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "-",
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "-",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "wolf_kills_grandmother_and_eats_her",
+    "n_characters": 2,
+    "subject": "-",
+    "object": "-",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "character_dead",
+          "from": "-",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "little_red_riding_hood_gathers_flowers_and_nuts",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "-",
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": []
+    }
+  },
+  {
+    "action": "wolf_disguises_as_grandmother_in_bed",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "-",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -2,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "-",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "little_red_riding_hood_arrives_at_grandmothers_house",
+    "n_characters": 2,
+    "subject": "-",
+    "object": "-",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "love",
+          "magnitude": 1,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "health_at_risk",
+          "from": "-",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "wolf_deceives_little_red_riding_hood",
+    "n_characters": 2,
+    "subject": "-",
+    "object": "-",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -3,
+          "from": "b",
+          "to": "a"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "-",
+          "to": "a"
+        }
+      ]
+    }
+  },
+  {
+    "action": "little_red_riding_hood_gets_into_bed_with_wolf",
+    "n_characters": 2,
+    "subject": "-",
+    "object": "-",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "-",
+          "to": "a"
+        }
+      ]
+    }
+  },
+  {
+    "action": "wolf_eats_little_red_riding_hood",
+    "n_characters": 2,
+    "subject": "-",
+    "object": "-",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "character_dead",
+          "from": "-",
+          "to": "a"
+        }
+      ]
+    }
+  }
+]
+```
+
+### Explanation:
+
+1. **Mother Sends Daughter to Visit Grandmother:**
+   - Positive emotional links of love are strengthened between LRRH and her mother/grandmother.
+
+2. **LRRH Meets Wolf in Forest:**
+   - LRRH develops a negative friendship link towards the wolf due to fear or distrust.
+   - A `life_at_risk` tension is introduced for LRRH because of the potential danger posed by the wolf.
+
+3. **Wolf Asks LRRH About Grandmother:**
+   - Both characters develop negative emotional links due to suspicion and increased risk.
+   - Maintains or intensifies the `life_at_risk` tension for both LRRH and her grandmother.
+
+4. **LRRH Tells Wolf About Grandmother:**
+   - Despite a temporary positive trust, it increases the risk to her grandmother’s life, maintaining the `life_at_risk` tension.
+
+5. **Wolf Runs to Grandmother's House:**
+   - Increases the `life_at_risk` tension for the grandmother as the wolf approaches.
+
+6. **Wolf Kills and Eats Grandmother:**
+   - Results in the grandmother's death (`character_dead`), intensifying negative emotional links from LRRH towards the wolf.
+
+7. **LRRH Gathers Flowers and Nuts:**
+   - No direct impact on emotional links or tensions, but indirectly maintains her life at risk due to delay.
+
+8. **Wolf Disguises as Grandmother:**
+   - Creates a false positive emotional link of trust from LRRH towards the wolf (thinking he's her grandmother).
+   - Maintains the `life_at_risk` tension for LRRH as she remains unaware of the danger.
+
+9. **LRRH Arrives at Grandmother's House:**
+   - Reaffirms the existing `health_at_risk` tension for the grandmother and introduces a potential `life_at_risk` situation upon discovering the wolf.
+
+10. **Wolf Deceives LRRH:**
+    - Turns LRRH's trust into fear or anger, creating a strong negative emotional link towards the wolf.
+    - Maintains the `life_at_risk` tension as LRRH is now in immediate danger.
+
+11. **LRRH Gets Into Bed With Wolf:**
+    - Intensifies the negative emotional links from LRRH towards the wolf and increases her life risk.
+
+12. **Wolf Eats LRRH:**
+    - Results in LRRH's death (`character_dead`), leaving lasting negative emotional impacts on any surviving characters and resolving the `life_at_risk` tension as it culminates in her demise.

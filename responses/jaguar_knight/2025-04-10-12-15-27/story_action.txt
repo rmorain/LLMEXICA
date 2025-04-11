@@ -1,0 +1,122 @@
+<think>
+Okay, I need to analyze this story and extract the essential actions related to emotional links and tensions. Let's break it down step by step.
+
+First, I'll read through the entire story to get a good grasp of what happens. It involves Jaguar Knight, Princess, and several gods. The main events include a storm damaging a bridge, Jaguar getting injured, Princess saving him, Princess being kidnapped, Jaguar rescuing her, and then a tragic ending where both die.
+
+Now, focusing on emotional links: friendship and love. I should identify actions that show these between the characters. For tensions, the types are character_dead, life_at_risk, health_at_risk, prisoner, clashing_emotions, and love_competition.
+
+Starting from the beginning:
+
+1. The storm is caused by Tlaloc, damaging the bridge. This sets up a tension of health_at_risk when Jaguar tries to cross and gets injured.
+2. Princess knows Jaguar could die, showing concern (friendship or love). She uses a curative plant to save him, which resolves his health risk but establishes a strong emotional link (love).
+3. Jaguar realizes Princess saved his life, so his feelings for her might deepen, indicating mutual emotional links of love.
+4. The enemy kidnaps Princess, creating a prisoner tension and putting her life at risk.
+5. Jaguar decides to rescue her despite the danger, showing bravery and strengthening their bond.
+6. While captive, Princess is angry and confronts the enemy, leading to the enemy attacking her—another life_at_risk moment.
+7. Jaguar searches for the enemy, fights him, kills him, and frees Princess. This action resolves the prisoner tension but introduces a new conflict when Princess sees Jaguar's tattoo.
+8. The tattoo reminds Princess of her father's murder, causing clashing emotions: she loves Jaguar but hates his actions. This creates a tension of clashing_emotions.
+9. In the end, both characters die, leading to character_dead tensions.
+
+I need to list these events in chronological order as JSON objects with action, n_characters, subject, and object.
+
+Each action should be concise and avoid character names, using general terms. I'll make sure each entry reflects whether it's a friendship, love, or tension event and categorize the tension types accordingly.
+
+Now, organizing them:
+
+1. Storm causes bridge collapse (health_at_risk).
+2. Princess saves Jaguar (love).
+3. Jaguar feels grateful (love).
+4. Enemy kidnaps Princess (prisoner, life_at_risk).
+5. Jaguar prays for help (n_characters=1, subject only).
+6. Enemy attacks Princess (life_at_risk).
+7. Jaguar searches and fights enemy (life_at_risk, prisoner resolved).
+8. Princess has mixed emotions (clashing_emotions).
+9. Princess kills Jaguar (character_dead).
+10. Princess dies (character_dead).
+
+I think that covers all the key points without missing any tensions or emotional links.
+</think>
+
+Here is a structured JSON representation of the essential actions from the story, focusing on emotional links and tensions:
+
+```json
+[
+  {
+    "action": "storm_causes_bridge_collapse",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "-",
+    "tension": "health_at_risk"
+  },
+  {
+    "action": "princess_saves_jaguar_knight",
+    "n_characters": 2,
+    "subject": "princess",
+    "object": "jaguar_knight",
+    "emotional_link": "love"
+  },
+  {
+    "action": "jaguar_knight_feels_grateful",
+    "n_characters": 1,
+    "subject": "jaguar_knight",
+    "object": "-",
+    "emotional_link": "love"
+  },
+  {
+    "action": "enemy_kidnaps_princess",
+    "n_characters": 2,
+    "subject": "enemy",
+    "object": "princess",
+    "tension": ["prisoner", "life_at_risk"]
+  },
+  {
+    "action": "jaguar_knight_prays_for_help",
+    "n_characters": 1,
+    "subject": "jaguar_knight",
+    "object": "-"
+  },
+  {
+    "action": "enemy_attacks_princess",
+    "n_characters": 2,
+    "subject": "enemy",
+    "object": "princess",
+    "tension": "life_at_risk"
+  },
+  {
+    "action": "jaguar_knight_searches_for_enemy",
+    "n_characters": 1,
+    "subject": "jaguar_knight",
+    "object": "-"
+  },
+  {
+    "action": "jaguar_knight_fights_enemy",
+    "n_characters": 2,
+    "subject": "jaguar_knight",
+    "object": "enemy",
+    "tension": ["life_at_risk", "prisoner"]
+  },
+  {
+    "action": "princess_feels_conflicted",
+    "n_characters": 1,
+    "subject": "princess",
+    "object": "-",
+    "tension": "clashing_emotions"
+  },
+  {
+    "action": "princess_kills_jaguar_knight",
+    "n_characters": 2,
+    "subject": "princess",
+    "object": "jaguar_knight",
+    "tension": "character_dead"
+  },
+  {
+    "action": "princess_commits_suicide",
+    "n_characters": 1,
+    "subject": "princess",
+    "object": "-",
+    "tension": "character_dead"
+  }
+]
+```
+
+This JSON captures the essential actions, emotional links, and tensions in a structured format.

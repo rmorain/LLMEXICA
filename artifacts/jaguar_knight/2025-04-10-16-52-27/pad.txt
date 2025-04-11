@@ -1,0 +1,57 @@
+ACT bridge_collapse 0
+POS
+T Hr - b
+
+ACT princess_heals_jaguar 2
+PRE
+E a b +2 2
+T Hr - b
+POS
+E b a +2 2
+T Hn - b
+
+ACT enemy_kidnaps_princess 2
+PRE
+E a b -3 1
+POS
+T Pr - b
+
+ACT enemy_attacks_princess 2
+PRE
+E a b -3 1
+POS
+T Lr - b
+
+ACT jaguar_kills_enemy 2
+PRE
+E a b -3 1
+T Lr - b
+POS
+T Pf - -
+T Ad - b
+
+ACT princess_liberated_by_jaguar 2
+PRE
+T Pr - b
+POS
+E b a +3 2
+T Pf - -
+
+ACT jaguar_admires_princess_bravery 1
+POS
+E a b +3 2
+
+ACT princess_recognizes_tattoo 1
+POS
+E a b -3 1
+
+ACT princess_kills_jaguar 2
+PRE
+E a b -3 2
+POS
+T Ad - b
+
+ACT princess_commits_suicide 1
+POS
+T Ad - a
+

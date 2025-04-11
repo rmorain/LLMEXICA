@@ -1,0 +1,238 @@
+<think>
+Alright, so I need to add preconditions related to tensions for each action in the story. Tensions include things like a character being at risk of death, their life or health being in danger, or being held prisoner.
+
+Let me go through each action one by one and think about what tension must exist for that action to happen.
+
+1. **bridge_collapse**: This is an event caused by the storm damaging the bridge. Since no specific characters are involved here, there's no direct tension related to a character. So, tensions precondition is empty.
+
+2. **princess_heals_jaguar**: For Princess to heal Jaguar, he must be injured, which implies his health is at risk. So, the precondition is that Jaguar's health is in danger.
+
+3. **enemy_kidnaps_princess**: This action puts Princess in a prisoner situation. Therefore, the precondition is that she is now a prisoner.
+
+4. **jaguar_decides_to_rescue_princess**: Jaguar decides to rescue her because she is in captivity (prisoner). So, the tension here is that Princess is being held prisoner.
+
+5. **princess_confronts_enemy**: Confronting the enemy suggests that Princess's life might be at risk since the enemy is hostile. So, her life is in danger.
+
+6. **enemy_attacks_princess**: The enemy attacking her directly endangers her life. Thus, the tension is life_at_risk for Princess.
+
+7. **jaguar_searches_for_enemy**: Jaguar is searching because he wants to rescue Princess from captivity. So, the tension here is that she is a prisoner.
+
+8. **jaguar_kills_enemy**: This action leads to the enemy's death, so the precondition is that the enemy is in a situation where their life is at risk due to Jaguar's actions.
+
+9. **princess_liberated_by_jaguar**: After being rescued, Princess is no longer a prisoner, but the liberation itself doesn't require a tension precondition beyond her previous state of captivity.
+
+10. **jaguar_admires_princess_bravery**: This action doesn't inherently involve a tension; it's more about emotional links. So, tensions are empty here.
+
+11. **princess_kisses_jaguar**: Again, this is an expression of emotion without inherent tension. No specific tension precondition needed.
+
+12. **princess_recognizes_tattoo**: Recognition leads to conflict but doesn't directly tie to a tension; it's more about knowledge or emotional state.
+
+13. **princess_kills_jaguar**: This action results in Jaguar's death, so the precondition is that his life is at risk leading up to this moment.
+
+14. **princess_commits_suicide**: After killing Jaguar, Princess takes her own life, implying her life was at risk due to her actions or emotional state.
+
+I think I've covered all the necessary points for each action, determining which tensions must exist as preconditions.
+</think>
+
+Here is the JSON output with preconditions related to tensions for each action:
+
+```json
+[
+  {
+    "action": "bridge_collapse",
+    "n_characters": 0,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": []
+    }
+  },
+  {
+    "action": "princess_heals_jaguar",
+    "n_characters": 2,
+    "subject": "Princess",
+    "object": "Jaguar_Knight",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": [
+        {
+          "type": "health_at_risk",
+          "from": "-",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "enemy_kidnaps_princess",
+    "n_characters": 2,
+    "subject": "Enemy",
+    "object": "Princess",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": [
+        {
+          "type": "prisoner",
+          "from": "-",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "jaguar_decides_to_rescue_princess",
+    "n_characters": 1,
+    "subject": "Jaguar_Knight",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": [
+        {
+          "type": "prisoner",
+          "from": "-",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "princess_confronts_enemy",
+    "n_characters": 2,
+    "subject": "Princess",
+    "object": "Enemy",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "-",
+          "to": "a"
+        }
+      ]
+    }
+  },
+  {
+    "action": "enemy_attacks_princess",
+    "n_characters": 2,
+    "subject": "Enemy",
+    "object": "Princess",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "-",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "jaguar_searches_for_enemy",
+    "n_characters": 1,
+    "subject": "Jaguar_Knight",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": [
+        {
+          "type": "prisoner",
+          "from": "-",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "jaguar_kills_enemy",
+    "n_characters": 2,
+    "subject": "Jaguar_Knight",
+    "object": "Enemy",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "-",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "princess_liberated_by_jaguar",
+    "n_characters": 2,
+    "subject": "Jaguar_Knight",
+    "object": "Princess",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": []
+    }
+  },
+  {
+    "action": "jaguar_admires_princess_bravery",
+    "n_characters": 1,
+    "subject": "Jaguar_Knight",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": []
+    }
+  },
+  {
+    "action": "princess_kisses_jaguar",
+    "n_characters": 2,
+    "subject": "Princess",
+    "object": "Jaguar_Knight",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": []
+    }
+  },
+  {
+    "action": "princess_recognizes_tattoo",
+    "n_characters": 1,
+    "subject": "Princess",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": []
+    }
+  },
+  {
+    "action": "princess_kills_jaguar",
+    "n_characters": 2,
+    "subject": "Princess",
+    "object": "Jaguar_Knight",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "-",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "princess_commits_suicide",
+    "n_characters": 1,
+    "subject": "Princess",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "-",
+          "to": "a"
+        }
+      ]
+    }
+  }
+]
+```
+
+This JSON structure includes preconditions related to tensions, indicating the type of tension and the characters involved. Each precondition ensures that the necessary tension exists for the action to occur.

@@ -1,0 +1,6 @@
+STO
+Mother mother_shows_love Little Red Riding Hood
+Little Red Riding Hood character_meets_predator Wolf
+Wolf predator_plans_deception
+Wolf predator_kills_and_disguises Grandmother
+Little Red Riding Hood character_interacts_with_predator Wolf

@@ -1,0 +1,10 @@
+STO
+bridge_collapsed_due_to_damage JAGUAR_KNIGHT
+character_injured_head JAGUAR_KNIGHT
+PRINCESS applied_plasma_to_wounds JAGUAR_KNIGHT
+character_recuperated JAGUAR_KNIGHT
+ENEMY princess_kidnapped_by_enemy PRINCESS
+JAGUAR_KNIGHT jaguar_knight_found_enemy ENEMY
+JAGUAR_KNIGHT jaguar_knight_performed_sacred_ceremony
+PRINCESS princess_recognized_tattoo_on_jaguar_knight JAGUAR_KNIGHT
+PRINCESS princess_cut_jaguar_knight's_jugular JAGUAR_KNIGHT

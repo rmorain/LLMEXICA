@@ -1,0 +1,10 @@
+STO
+storm_causes_bridge_collapse
+princess princess_saves_jaguar_knight jaguar_knight
+jaguar_knight jaguar_knight_feels_grateful
+enemy enemy_kidnaps_princess princess
+enemy enemy_attacks_princess princess
+jaguar_knight jaguar_knight_fights_enemy enemy
+princess princess_feels_conflicted
+princess princess_kills_jaguar_knight jaguar_knight
+princess princess_commits_suicide

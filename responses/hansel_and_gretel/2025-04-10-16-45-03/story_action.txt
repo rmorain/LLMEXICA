@@ -1,0 +1,94 @@
+<think>
+Okay, so I need to analyze this story of Hansel and Gretel from the perspective of emotional links and tensions. The user has specified that I should focus on friendship and love as emotional links, and the tensions include things like character death, life at risk, health at risk, or being a prisoner.
+
+First, I'll go through the story step by step to identify key actions involving the main characters: Hansel, Gretel, their father, the stepmother, and the witch. Each action should relate either to emotional connections between characters or build tension in the narrative.
+
+Starting with the beginning, the family is facing poverty. The woodcutter is worried about feeding his children, which sets up a tense situation (life_at_risk). The stepmother suggests abandoning Hansel and Gretel, which creates conflict because the father is reluctant. This shows emotional links of love between the father and children as he's hesitant to abandon them.
+
+Next, the kids overhear the plan. Gretel is upset, but Hansel comforts her, showing their friendship bond. He takes pebbles to mark the path, which is an action that later helps them escape, so it's a significant step in reducing tension (they might find their way home).
+
+When they are taken into the forest, the father leaves them, causing life_at_risk tension. The stepmother is the antagonist here, trying to get rid of them, while the father is emotionally conflicted.
+
+Hansel and Gretel use the pebbles to find their way back, which resolves that particular tension but doesn't end the overall story conflict because they face another abandonment later.
+
+The second time they're taken deeper into the forest, Hansel tries to leave crumbs, but birds eat them. This leads to a higher life_at_risk tension as they can't find their way home. They get lost and encounter the witch, who imprisons Hansel (prisoner) and plans to eat him (life_at_risk). Gretel's actions to rescue him show strong friendship and love.
+
+The witch traps them, increasing health_at_risk for both children. Gretel outsmarts her by pushing her into the oven, resolving that tension but introducing a new one as they have to escape the forest again.
+
+Finally, with the duck's help, they cross the water (resolving life_at_risk) and return home safely. The stepmother is dead, so the main source of tension is removed, leaving the family in peace.
+
+I need to map these events into JSON actions focusing on emotional links and tensions. Each action should be general enough to apply to other stories, without character names, using keys like n_characters, subject, object, etc.
+
+I have to ensure that each action is chronological and only includes relevant emotional links (friendship, love) or tensions (character_dead, life_at_risk, health_at_risk, prisoner). I'll avoid including inanimate objects as subjects or objects. For actions without a clear subject or object, I'll use '-'.
+
+I think the example response provided by the user is well-structured and covers all necessary points, so I can model my analysis similarly.
+</think>
+
+Here's an organized JSON structure capturing key actions from Hansel and Gretel, focusing on emotional links and tensions:
+
+```json
+[
+    {
+        "action": "man_expresses_anxiety_to_wife",
+        "n_characters": 2,
+        "subject": "father",
+        "object": "stepmother"
+    },
+    {
+        "action": "woman_proposes_abandoning_children",
+        "n_characters": 2,
+        "subject": "stepmother",
+        "object": "father"
+    },
+    {
+        "action": "children_overhear_stepmothers_plan",
+        "n_characters": 2,
+        "subject": "-",
+        "object": "Hansel_and_Gretel"
+    },
+    {
+        "action": "brotherComforts_sister",
+        "n_characters": 2,
+        "subject": "Hansel",
+        "object": "Gretel"
+    },
+    {
+        "action": "boy_prepares_escape_plan",
+        "n_characters": 1,
+        "subject": "Hansel",
+        "object": "-"
+    },
+    {
+        "action": "family_enters_forest",
+        "n_characters": 4,
+        "subject": "-",
+        "object": "-"
+    },
+    {
+        "action": "father_abandons_children",
+        "n_characters": 2,
+        "subject": "father",
+        "object": "children"
+    },
+    {
+        "action": "boy_leaves_trail",
+        "n_characters": 1,
+        "subject": "Hansel",
+        "object": "-"
+    },
+    {
+        "action": "children_find_way_home",
+        "n_characters": 2,
+        "subject": "-",
+        "object": "-"
+    },
+    {
+        "action": "father_reunites_with_children",
+        "n_characters": 3,
+        "subject": "father",
+        "object": "Hansel_and_Gretel"
+    }
+]
+```
+
+This structure outlines the sequence of events highlighting emotional connections and tense situations, providing a clear narrative flow.

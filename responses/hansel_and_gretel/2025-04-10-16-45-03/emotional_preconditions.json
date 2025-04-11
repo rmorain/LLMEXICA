@@ -1,0 +1,155 @@
+[
+    {
+        "action": "man_expresses_anxiety_to_wife",
+        "n_characters": 2,
+        "subject": "father",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "love",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "woman_proposes_abandoning_children",
+        "n_characters": 2,
+        "subject": "stepmother",
+        "object": "father",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "children_overhear_stepmothers_plan",
+        "n_characters": 2,
+        "subject": "-",
+        "object": "Hansel_and_Gretel",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "brotherComforts_sister",
+        "n_characters": 2,
+        "subject": "Hansel",
+        "object": "Gretel",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "boy_prepares_escape_plan",
+        "n_characters": 1,
+        "subject": "Hansel",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "love",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "family_enters_forest",
+        "n_characters": 4,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "father_abandons_children",
+        "n_characters": 2,
+        "subject": "father",
+        "object": "children",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "love",
+                    "magnitude": -2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "boy_leaves_trail",
+        "n_characters": 1,
+        "subject": "Hansel",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "love",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "children_find_way_home",
+        "n_characters": 2,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "father_reunites_with_children",
+        "n_characters": 3,
+        "subject": "father",
+        "object": "Hansel_and_Gretel",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "love",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    }
+]

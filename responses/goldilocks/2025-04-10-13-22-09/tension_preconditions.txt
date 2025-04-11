@@ -1,0 +1,286 @@
+<think>
+Okay, so I need to analyze each action in the story of Goldilocks and the Three Bears and identify or infer the preconditions related to tensions. Tensions are specific types like `character_dead`, `life_at_risk`, etc., as defined earlier.
+
+Let me start by reviewing each action one by one and think about what kind of tension might be a precondition for that action.
+
+1. **Action: taste_porridge**
+   - **Subject:** Goldilocks
+   - **Object:** Bears' porridge
+   - Tensions here could relate to `health_at_risk` if eating the porridge poses a health risk, but since she's just tasting and it's not mentioned that the porridge is harmful, maybe no tension.
+
+2. **Action: sit_in Chair**
+   - **Subject:** Goldilocks
+   - **Object:** Bears' chairs
+   - Sitting in someone else's chair without permission might create a `clashing_emotions` if she feels guilt or fear of getting caught, but it's not clear from the story.
+
+3. **Action: sleep_in_bed**
+   - **Subject:** Goldilocks
+   - **Object:** Little Wee Bear's bed
+   - Sleeping in someone else's bed could lead to `prisoner` tension if she gets trapped or discovered, which happens later when the Bears find her.
+
+4. **Action: find_spoon_in_porridge (Great Big Bear)**
+   - **Subject:** Great Big Bear
+   - **Object:** His porridge
+   - Finding a spoon in his porridge suggests someone was there, leading to suspicion and tension like `life_at_risk` if he feels threatened.
+
+5. **Action: find_spoon_in_porridge (Middle-sized Bear)**
+   - Similar to the Great Big Bear's reaction, this could also imply a sense of unease or threat, relating to `life_at_risk`.
+
+6. **Action: find_empty_porridge_bowl (Little Wee Bear)**
+   - Discovering his porridge is all gone adds to the tension, possibly escalating the feeling that their home was invaded, which ties into `health_at_risk` if they're worried about their well-being.
+
+7. **Action: investigate_house**
+   - The Bears are searching because they suspect an intruder, indicating a `life_at_risk` or `health_at_risk` tension as they might fear for their safety.
+
+8. **Action: find_disarranged_cushion (Great Big Bear)**
+   - Finding the cushion moved adds to the tension of someone being in their house, possibly `prisoner` if they think someone is still there.
+
+9. **Action: find_squashed_cushion (Middle-sized Bear)**
+   - Similar to the previous action, finding a squashed cushion increases the tension related to an intruder, maybe `prisoner`.
+
+10. **Action: find_broken_chair (Little Wee Bear)**
+    - The broken chair indicates vandalism or forced entry, leading to heightened tensions like `life_at_risk` if they feel their safety is compromised.
+
+11. **Action: search_bedroom**
+    - Searching the bedroom after finding disturbances downstairs could be driven by fear of an intruder, tying into `prisoner` or `health_at_risk`.
+
+12. **Action: find_displaced_pillow (Great Big Bear)**
+    - Finding his pillow moved adds to the ongoing tension of someone being in their home, possibly leading to `life_at_risk`.
+
+13. **Action: find_displaced_bolster (Middle-sized Bear)**
+    - Similar to the previous action, this increases the tension related to an intruder, again tying into `prisoner` or `health_at_risk`.
+
+14. **Action: find_goldilocks_in_bed**
+    - Finally discovering Goldilocks in bed is the peak of tension, where they confront her, leading to direct confrontation and possible `life_at_risk` if she feels threatened.
+
+For each action, I need to determine if there's a precondition based on these tensions. Since the story involves an intruder (Goldilocks) causing disturbances, most actions after her initial entry involve some form of tension related to risk or safety concerns for the Bears.
+
+Actions like `find_spoon_in_porridge`, `find_empty_porridge_bowl`, and subsequent discoveries create a progression of tension from suspicion to clear threat. Therefore, these actions would have preconditions related to tensions such as `life_at_risk` or `health_at_risk`.
+
+Goldilocks' actions inside the Bears' house also create tension for her own safety, especially when she is eventually found in bed. Her escape could imply a `prisoner` or `life_at_risk` situation if she fears consequences.
+
+Now, I'll structure each action with inferred tensions as preconditions.
+</think>
+
+```json
+[
+    {
+        "action": "taste_porridge",
+        "n_characters": 4,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [],
+            "tensions": []
+        }
+    },
+    {
+        "action": "sit_in Chair",
+        "n_characters": 4,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "clashing_emotions",
+                    "from": "*",
+                    "to": "*"
+                }
+            ]
+        }
+    },
+    {
+        "action": "sleep_in_bed",
+        "n_characters": 4,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "prisoner",
+                    "from": "*",
+                    "to": "*"
+                }
+            ]
+        }
+    },
+    {
+        "action": "find_spoon_in_porridge",
+        "n_characters": 1,
+        "subject": "Great Big Bear",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "find_spoon_in_porridge",
+        "n_characters": 1,
+        "subject": "Middle-sized Bear",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "find_empty_porridge_bowl",
+        "n_characters": 1,
+        "subject": "Little Wee Bear",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "health_at_risk",
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "investigate_house",
+        "n_characters": 3,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "*",
+                    "to": "*"
+                }
+            ]
+        }
+    },
+    {
+        "action": "find_disarranged_cushion",
+        "n_characters": 1,
+        "subject": "Great Big Bear",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "prisoner",
+                    "from": "*",
+                    "to": "*"
+                }
+            ]
+        }
+    },
+    {
+        "action": "find_squashed_cushion",
+        "n_characters": 1,
+        "subject": "Middle-sized Bear",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "prisoner",
+                    "from": "*",
+                    "to": "*"
+                }
+            ]
+        }
+    },
+    {
+        "action": "find_broken_chair",
+        "n_characters": 1,
+        "subject": "Little Wee Bear",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "*",
+                    "to": "*"
+                }
+            ]
+        }
+    },
+    {
+        "action": "search_bedroom",
+        "n_characters": 3,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "prisoner",
+                    "from": "*",
+                    "to": "*"
+                }
+            ]
+        }
+    },
+    {
+        "action": "find_displaced_pillow",
+        "n_characters": 1,
+        "subject": "Great Big Bear",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "*",
+                    "to": "*"
+                }
+            ]
+        }
+    },
+    {
+        "action": "find_displaced_bolster",
+        "n_characters": 1,
+        "subject": "Middle-sized Bear",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "*",
+                    "to": "*"
+                }
+            ]
+        }
+    },
+    {
+        "action": "find_goldilocks_in_bed",
+        "n_characters": 4,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "prisoner",
+                    "from": "*",
+                    "to": "*"
+                }
+            ]
+        }
+    }
+]
+```

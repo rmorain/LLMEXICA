@@ -1,0 +1,118 @@
+<think>
+Alright, I'm trying to figure out how to analyze this story about Goldilocks and the Three Bears using the guidelines provided. The user wants me to focus on emotional links (friendship and love) and tensions like character death or risk, health issues, imprisonment, clashing emotions, or love competition.
+
+First, I'll read through the story carefully. It's a classic tale where Goldilocks trespasses into the Bears' house, eats their porridge, sits in their chairs, sleeps in their bed, and then gets discovered. The story is more about her mischief and the Bears' reaction rather than deep emotional relationships or romantic elements.
+
+Since the user mentioned focusing on actions related to emotional links and tensions, I need to identify any moments where characters show affection, friendship, or love. However, Goldilocks doesn't really interact with the Bears in an emotional way; she's more of a trespasser causing trouble. The Bears themselves seem to be a family unit, but their interactions are minimal beyond reacting to Goldilocks' actions.
+
+Looking at tensions, there's no character death, health risk, or imprisonment. There is some risk when Goldilocks breaks the chair and later jumps out the window, which could imply a life-at-risk situation for her. Also, the Bears discover that someone has been in their house, leading to tension as they search for the intruder.
+
+I need to structure each action chronologically, using JSON with keys like action, n_characters, subject, object. Each action should be simple and avoid character names, using snake_case.
+
+Let me break down the story:
+
+1. Goldilocks tastes the Great Big Bear's porridge.
+2. Tastes Middle-sized Bear's porridge.
+3. Eats Little Wee Bear's porridge.
+4. Sits in Great Big Bear's chair.
+5. Sits in Middle-sized Bear's chair.
+6. Breaks Little Wee Bear's chair.
+7. Sleeps in Great Big Bear's bed.
+8. Lies in Middle-sized Bear's bed.
+9. Falls asleep in Little Wee Bear's bed.
+10. Bears return, find porridge tampered with.
+11. Find chairs disturbed.
+12. Discover Goldilocks asleep.
+13. Goldilocks wakes up, sees Bears, escapes.
+
+Now, for each action, I'll determine the type and whether it relates to emotional links or tensions. Since there's no emotional link beyond the Bears being upset, which is more about tension. The main tensions are life_at_risk when Goldilocks breaks the chair and jumps out the window, and prisoner isn't applicable here.
+
+I also need to check for clashing emotions or love competition, but nothing in the story fits that. So, I'll focus on actions leading to tension, specifically life_at_risk when she falls from the chair and escapes through the window.
+
+Each JSON entry will have an action key with a description, n_characters (how many involved), subject (who did it), object (who it was done to). If there's no subject or object, use '-'.
+
+I think that's about it. Now I'll structure each identified action into the required format.
+</think>
+
+```json
+[
+    {
+        "action": "taste_porridge",
+        "n_characters": 2,
+        "subject": "-",
+        "object": "-"
+    },
+    {
+        "action": "eat_entire_porridge",
+        "n_characters": 2,
+        "subject": "-",
+        "object": "-"
+    },
+    {
+        "action": "sit_in_hard_chair",
+        "n_characters": 2,
+        "subject": "-",
+        "object": "-"
+    },
+    {
+        "action": "sit_in_soft_chair",
+        "n_characters": 2,
+        "subject": "-",
+        "object": "-"
+    },
+    {
+        "action": "break_chair",
+        "n_characters": 2,
+        "subject": "-",
+        "object": "-"
+    },
+    {
+        "action": "lie_in_high_bed",
+        "n_characters": 2,
+        "subject": "-",
+        "object": "-"
+    },
+    {
+        "action": "lie_in_soft_bed",
+        "n_characters": 2,
+        "subject": "-",
+        "object": "-"
+    },
+    {
+        "action": "fall_asleep_in_bed",
+        "n_characters": 2,
+        "subject": "-",
+        "object": "-"
+    },
+    {
+        "action": "discover_porridge_tampering",
+        "n_characters": 3,
+        "subject": "-",
+        "object": "-"
+    },
+    {
+        "action": "find_chair_broken",
+        "n_characters": 3,
+        "subject": "-",
+        "object": "-"
+    },
+    {
+        "action": "discover_sleeping_goldilocks",
+        "n_characters": 4,
+        "subject": "-",
+        "object": "-"
+    },
+    {
+        "action": "wake_up_to_noise",
+        "n_characters": 1,
+        "subject": "-",
+        "object": "-"
+    },
+    {
+        "action": "escape_through_window",
+        "n_characters": 1,
+        "subject": "-",
+        "object": "-"
+    }
+]
+```

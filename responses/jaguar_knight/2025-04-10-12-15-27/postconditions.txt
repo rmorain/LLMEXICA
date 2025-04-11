@@ -1,0 +1,228 @@
+<think>
+Alright, so I need to identify postconditions for each action in this story. Postconditions are changes to emotional links or tensions caused by an action. At least one postcondition is required per action, and if there were preconditions, the postconditions can't be the same.
+
+Let's start with the first action:
+
+1. **Storm causes bridge collapse**: This leads to Jaguar Knight being injured, so it introduces a `health_at_risk` tension. There are no emotional links here, so the postcondition is just this tension.
+
+2. **Princess saves Jaguar Knight**: Saving him likely strengthens their bond. So, Princess develops a positive emotional link towards Jaguar Knight (love). Also, saving him resolves his health risk, introducing `health_normal`.
+
+3. **Jaguar Knight feels grateful**: Gratitude suggests he has a positive emotional link towards Princess.
+
+4. **Enemy kidnaps Princess**: This creates a `prisoner` tension and puts her life at risk.
+
+5. **Jaguar Knight prays for help**: No direct postconditions on emotional links or tensions, just seeking assistance.
+
+6. **Enemy attacks Princess**: Puts her life more at risk, so `life_at_risk`.
+
+7. **Jaguar Knight searches for enemy**: His determination might strengthen his emotional link towards Princess.
+
+8. **Jaguar Knight fights enemy**: Fights to rescue her, which resolves the prisoner tension and life risk, introducing `prisoner_freed` and `life_normal`. Also strengthens his bond with her.
+
+9. **Princess feels conflicted**: Her mixed emotions create a `clashing_emotions` tension.
+
+10. **Princess kills Jaguar Knight**: This causes both characters to die, leading to `character_dead`.
+
+11. **Princess commits suicide**: Results in her death, adding another `character_dead`.
+
+For each action, I'll map these postconditions accordingly.
+</think>
+
+Here is the enhanced JSON with postconditions for each action:
+
+```json
+[
+  {
+    "action": "storm_causes_bridge_collapse",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "-",
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": [
+        {
+          "type": "health_at_risk"
+        }
+      ]
+    }
+  },
+  {
+    "action": "princess_saves_jaguar_knight",
+    "n_characters": 2,
+    "subject": "princess",
+    "object": "jaguar_knight",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "love",
+          "magnitude": 1,
+          "from": "b",
+          "to": "a"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "health_normal"
+        }
+      ]
+    }
+  },
+  {
+    "action": "jaguar_knight_feels_grateful",
+    "n_characters": 1,
+    "subject": "jaguar_knight",
+    "object": "-",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 2,
+          "from": "a",
+          "to": "-"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "enemy_kidnaps_princess",
+    "n_characters": 2,
+    "subject": "enemy",
+    "object": "princess",
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": [
+        {
+          "type": "prisoner"
+        },
+        {
+          "type": "life_at_risk"
+        }
+      ]
+    }
+  },
+  {
+    "action": "jaguar_knight_prays_for_help",
+    "n_characters": 1,
+    "subject": "jaguar_knight",
+    "object": "-",
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": []
+    }
+  },
+  {
+    "action": "enemy_attacks_princess",
+    "n_characters": 2,
+    "subject": "enemy",
+    "object": "princess",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -1,
+          "from": "b",
+          "to": "a"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk"
+        }
+      ]
+    }
+  },
+  {
+    "action": "jaguar_knight_searches_for_enemy",
+    "n_characters": 1,
+    "subject": "jaguar_knight",
+    "object": "-",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "love",
+          "magnitude": 2,
+          "from": "a",
+          "to": "-"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "jaguar_knight_fights_enemy",
+    "n_characters": 2,
+    "subject": "jaguar_knight",
+    "object": "enemy",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "love",
+          "magnitude": 3,
+          "from": "a",
+          "to": "-"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "prisoner_freed"
+        },
+        {
+          "type": "life_normal"
+        }
+      ]
+    }
+  },
+  {
+    "action": "princess_feels_conflicted",
+    "n_characters": 1,
+    "subject": "princess",
+    "object": "-",
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": [
+        {
+          "type": "clashing_emotions"
+        }
+      ]
+    }
+  },
+  {
+    "action": "princess_kills_jaguar_knight",
+    "n_characters": 2,
+    "subject": "princess",
+    "object": "jaguar_knight",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "love",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "character_dead"
+        }
+      ]
+    }
+  },
+  {
+    "action": "princess_commits_suicide",
+    "n_characters": 1,
+    "subject": "princess",
+    "object": "-",
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": [
+        {
+          "type": "character_dead"
+        }
+      ]
+    }
+  }
+]
+```
+
+This JSON structure outlines the postconditions for each action, showing how emotional links and tensions evolve throughout the narrative.

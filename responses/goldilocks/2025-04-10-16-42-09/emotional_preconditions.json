@@ -1,0 +1,45 @@
+[
+    {
+        "action": "goldilocks_enters_house",
+        "n_characters": 1,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "bears_find_tampered_porridge",
+        "n_characters": 3,
+        "subject": "the_three_bears",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "goldilocks_wakes_up",
+        "n_characters": 1,
+        "subject": "goldilocks",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "goldilocks_jumps_out_window",
+        "n_characters": 1,
+        "subject": "goldilocks",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    }
+]

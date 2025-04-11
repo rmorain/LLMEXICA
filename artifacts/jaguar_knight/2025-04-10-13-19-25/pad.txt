@@ -1,0 +1,22 @@
+ACT character_injured 2
+PRE
+T Hr a -
+POS
+E b a -1 1
+
+ACT princess_kidnapped 2
+PRE
+E b a -1 1
+POS
+T Pr a b
+
+ACT character_attacked_enemy 2
+PRE
+E a b -3 1
+POS
+T Lr - -
+
+ACT character_fell_in_love 2
+POS
+E a b +3 2
+

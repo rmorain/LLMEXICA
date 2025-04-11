@@ -1,0 +1,201 @@
+<think>
+Alright, let's tackle this problem step by step. The user has provided a story about Jaguar Knight and Princess, and they want me to analyze it for emotional links and tensions. They've also given specific instructions on how to structure the JSON output with preconditions related to these emotional links.
+
+First, I need to understand what an "emotional link" is. From the problem statement, there are two types: friendship (platonic) and love (romantic). Each of these can have a magnitude from -3 to 3, where negative values indicate negative emotions like hatred or anger, and positive values indicate affection or love.
+
+Next, I need to identify "tensions" in the story. The tensions specified are character_dead, life_at_risk, health_at_risk, prisoner, clashing_emotions, and love_competition. These are events or situations that create conflict or suspense in the narrative.
+
+Now, for each action in the story, I have to determine if there's a precondition related to an emotional link. A precondition is essentially why a character performs an action; it’s the motivation behind their behavior. For example, if Character A attacks Character B, the precondition might be that Character A feels hatred towards Character B.
+
+I'll go through each action one by one:
+
+1. **Storm causes bridge collapse**: This is more of an event setting up the story. There's no direct emotional link here; it's just a plot device to put Jaguar Knight in danger. So, preconditions related to emotional links would be empty.
+
+2. **Princess saves Jaguar Knight**: Here, Princess acts to save Jaguar Knight because she cares about him. This suggests a positive emotional link of love with a magnitude that's at least moderate, say 2. So, the precondition is that Princess (the subject) has a positive emotional link towards Jaguar Knight (the object).
+
+3. **Jaguar Knight feels grateful**: After being saved, Jaguar Knight feels gratitude towards Princess. This indicates a positive emotional link of friendship or love. The magnitude here could be around 2 as well.
+
+4. **Enemy kidnaps Princess**: Kidnapping is an act that usually stems from negative emotions like hatred or revenge. So, the enemy must have a strong negative emotional link towards Princess, maybe a magnitude of -3 (hatred).
+
+5. **Jaguar Knight prays for help**: This action doesn't directly involve another character, so there's no specific emotional link precondition here.
+
+6. **Enemy attacks Princess**: Again, attacking someone suggests a negative emotional link, probably hatred with a high magnitude (-3).
+
+7. **Jaguar Knight searches for the enemy**: Jaguar Knight is motivated by his positive feelings towards Princess. This requires a strong emotional link of love, maybe around 2 or higher.
+
+8. **Jaguar Knight fights the enemy**: Similar to searching, fighting to rescue someone indicates a strong positive emotional link towards the person being rescued (Princess), so love with magnitude 3.
+
+9. **Princess feels conflicted**: This is an internal conflict where Princess has mixed emotions about Jaguar Knight. She loves him but hates his past actions. This creates a clash in her emotional links, hence "clashing_emotions" tension.
+
+10. **Princess kills Jaguar Knight and herself**: The ultimate tragic ending. For Princess to kill someone she loves, there must be an intense negative emotion towards something he did (his tattoo linked to her father's murder). So, her emotional link shifts from love (positive) to hatred (negative), with a high magnitude (-3).
+
+In each case, I need to assign the type of emotional link, its magnitude, and specify which character is the source ('from') and target ('to'). This helps in understanding the motivation behind each action.
+
+I also need to ensure that if there are no emotional links involved in an action, the preconditions array remains empty. For example, praying doesn't necessarily require a specific emotional link towards someone else unless it's specified.
+
+By systematically going through each action and assigning these preconditions, I can build a comprehensive JSON structure that captures the motivations and emotions driving the characters' actions.
+</think>
+
+Here is the enhanced JSON with preconditions related to emotional links:
+
+```json
+[
+  {
+    "action": "storm_causes_bridge_collapse",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": []
+    }
+  },
+  {
+    "action": "princess_saves_jaguar_knight",
+    "n_characters": 2,
+    "subject": "princess",
+    "object": "jaguar_knight",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "love",
+          "magnitude": 2,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "jaguar_knight_feels_grateful",
+    "n_characters": 1,
+    "subject": "jaguar_knight",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 2,
+          "from": "a",
+          "to": "-"
+        }
+      ]
+    }
+  },
+  {
+    "action": "enemy_kidnaps_princess",
+    "n_characters": 2,
+    "subject": "enemy",
+    "object": "princess",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "jaguar_knight_prays_for_help",
+    "n_characters": 1,
+    "subject": "jaguar_knight",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": []
+    }
+  },
+  {
+    "action": "enemy_attacks_princess",
+    "n_characters": 2,
+    "subject": "enemy",
+    "object": "princess",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "jaguar_knight_searches_for_enemy",
+    "n_characters": 1,
+    "subject": "jaguar_knight",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "love",
+          "magnitude": 2,
+          "from": "a",
+          "to": "-"
+        }
+      ]
+    }
+  },
+  {
+    "action": "jaguar_knight_fights_enemy",
+    "n_characters": 2,
+    "subject": "jaguar_knight",
+    "object": "enemy",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "love",
+          "magnitude": 3,
+          "from": "a",
+          "to": "-"
+        }
+      ]
+    }
+  },
+  {
+    "action": "princess_feels_conflicted",
+    "n_characters": 1,
+    "subject": "princess",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "love",
+          "magnitude": -3,
+          "from": "a",
+          "to": "-"
+        }
+      ]
+    }
+  },
+  {
+    "action": "princess_kills_jaguar_knight",
+    "n_characters": 2,
+    "subject": "princess",
+    "object": "jaguar_knight",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "love",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "princess_commits_suicide",
+    "n_characters": 1,
+    "subject": "princess",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": []
+    }
+  }
+]
+```
+
+This JSON structure captures the preconditions related to emotional links for each action, enhancing the understanding of character motivations.

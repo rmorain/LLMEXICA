@@ -1,0 +1,224 @@
+<think>
+Okay, so I need to help the user enhance their JSON by adding postconditions for each action in the story of Little Red Riding Hood. The user has provided specific instructions on what postconditions are and how they should be structured. Postconditions include changes to emotional links and tensions resulting from the action.
+
+First, I'll go through each action one by one.
+
+1. **Action: send_little_red_with_cakes**
+   - **Subject:** mother
+   - **Object:** little_red_riding_hood
+   - The mother sends her daughter with cakes for the grandmother because she's ill. This action strengthens the positive emotional link of `love` between the mother and Little Red, as well as between the mother and the grandmother.
+   - Tensions: The grandmother's health is at risk, so the tension `health_at_risk` is introduced.
+
+2. **Action: little_red_meets_wolf_and_tells_destination**
+   - **Subject:** little_red_riding_hood
+   - **Object:** wolf
+   - Little Red meets the wolf and tells him where she's going. The wolf now knows her destination, increasing the tension `life_at_risk` for both Little Red and her grandmother.
+   - Emotional Links: No significant change here since they just met.
+
+3. **Action: wolf_arrives_first_and_eats_grandmother**
+   - **Subject:** wolf
+   - **Object:** grandmother
+   - The wolf eats the grandmother, which results in her death. This introduces the tension `character_dead` for the grandmother.
+   - Emotional Links: The wolf develops a negative emotional link of `friendship` towards the grandmother due to his predatory nature.
+
+4. **Action: grandmother_dies**
+   - There are no subjects or objects here; it's just an event. So, this action results in the tension `character_dead` for the grandmother.
+   - Emotional Links: None, as it's a result of the previous action.
+
+5. **Action: little_red_interacts_with_disguised_wolf**
+   - **Subject:** little_red_riding_hood
+   - **Object:** wolf (disguised as grandmother)
+   - Little Red interacts with the wolf, thinking he's her grandmother. This creates a positive emotional link of `love` from Little Red towards the disguised wolf.
+   - Tensions: The interaction increases the tension `life_at_risk` for Little Red.
+
+6. **Action: wolf_reveals_identity_and_eats_little_red**
+   - **Subject:** wolf
+   - **Object:** little_red_riding_hood
+   - The wolf reveals his true identity and eats Little Red, resulting in her death. This introduces the tension `character_dead` for Little Red.
+   - Emotional Links: The wolf develops a negative emotional link of `friendship` towards Little Red.
+
+Now, I need to represent these postconditions in the JSON structure. For each action, I'll add `postconditions` with `emotional_links` and `tensions`.
+
+Here’s how I would map this:
+
+1. **send_little_red_with_cakes**
+   - Emotional Links:
+     - Mother to Little Red: `love`, +2
+     - Mother to Grandmother: `love`, +2
+   - Tensions:
+     - `health_at_risk` for grandmother
+
+2. **little_red_meets_wolf_and_tells_destination**
+   - Emotional Links: None
+   - Tensions:
+     - `life_at_risk` for Little Red and Grandmother
+
+3. **wolf_arrives_first_and_eats_grandmother**
+   - Emotional Links:
+     - Wolf to Grandmother: `friendship`, -2
+   - Tensions:
+     - `character_dead` for Grandmother
+
+4. **grandmother_dies**
+   - Emotional Links: None
+   - Tensions:
+     - `character_dead` for Grandmother
+
+5. **little_red_interacts_with_disguised_wolf**
+   - Emotional Links:
+     - Little Red to Wolf (disguised): `love`, +2
+   - Tensions:
+     - `life_at_risk` for Little Red
+
+6. **wolf_reveals_identity_and_eats_little_red**
+   - Emotional Links:
+     - Wolf to Little Red: `friendship`, -2
+   - Tensions:
+     - `character_dead` for Little Red
+
+I need to ensure that each postcondition is correctly formatted with the appropriate keys and values, indicating how emotional links and tensions are affected by each action.
+</think>
+
+Here is the enhanced JSON with postconditions for each action:
+
+```json
+[
+  {
+    "action": "send_little_red_with_cakes",
+    "n_characters": 2,
+    "subject": "mother",
+    "object": "little_red_riding_hood",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "love",
+          "magnitude": 2,
+          "from": "a",
+          "to": "b"
+        },
+        {
+          "type": "love",
+          "magnitude": 2,
+          "from": "a",
+          "to": "grandmother"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "health_at_risk",
+          "from": "*",
+          "to": "grandmother"
+        }
+      ]
+    }
+  },
+  {
+    "action": "little_red_meets_wolf_and_tells_destination",
+    "n_characters": 2,
+    "subject": "little_red_riding_hood",
+    "object": "wolf",
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "b",
+          "to": "a"
+        },
+        {
+          "type": "life_at_risk",
+          "from": "*",
+          "to": "grandmother"
+        }
+      ]
+    }
+  },
+  {
+    "action": "wolf_arrives_first_and_eats_grandmother",
+    "n_characters": 2,
+    "subject": "wolf",
+    "object": "grandmother",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -2,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "character_dead",
+          "from": "*",
+          "to": "grandmother"
+        }
+      ]
+    }
+  },
+  {
+    "action": "grandmother_dies",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "-",
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": [
+        {
+          "type": "character_dead",
+          "from": "*",
+          "to": "grandmother"
+        }
+      ]
+    }
+  },
+  {
+    "action": "little_red_interacts_with_disguised_wolf",
+    "n_characters": 2,
+    "subject": "little_red_riding_hood",
+    "object": "wolf",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "love",
+          "magnitude": 2,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "b",
+          "to": "a"
+        }
+      ]
+    }
+  },
+  {
+    "action": "wolf_reveals_identity_and_eats_little_red",
+    "n_characters": 2,
+    "subject": "wolf",
+    "object": "little_red_riding_hood",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -2,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "character_dead",
+          "from": "*",
+          "to": "little_red_riding_hood"
+        }
+      ]
+    }
+  }
+]
+```
+
+This JSON structure includes postconditions that detail the changes in emotional links and tensions resulting from each action, providing a comprehensive understanding of how each event impacts the characters and narrative dynamics.

@@ -1,0 +1,48 @@
+ACT bridge_collapsed_due_to_damage 1
+POS
+E - b -1 1
+T Hr * b
+
+ACT character_injured_head 1
+PRE
+T Hr * b
+POS
+E - b -2 1
+
+ACT applied_plasma_to_wounds 2
+PRE
+E a b +3 1
+T Hr * b
+POS
+T Hn * b
+
+ACT character_recuperated 1
+POS
+E - b +3 1
+
+ACT princess_kidnapped_by_enemy 2
+PRE
+T Pr * b
+POS
+E - b -3 1
+
+ACT jaguar_knight_found_enemy 2
+POS
+E a b -2 1
+T Lr * b
+
+ACT jaguar_knight_performed_sacred_ceremony 1
+POS
+E a - +1 1
+
+ACT princess_recognized_tattoo_on_jaguar_knight 2
+POS
+E a b -2 1
+
+ACT princess_cut_jaguar_knight's_jugular 2
+PRE
+E a b -3 1
+T Lr * b
+POS
+T Ad * b
+

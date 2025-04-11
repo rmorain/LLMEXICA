@@ -1,0 +1,165 @@
+<think>
+Alright, I need to verify the logical consistency of each action in the story "Goldilocks and the Three Bears" according to the user's instructions. The main points are ensuring that the number of characters (`n_characters`) matches the references in preconditions and postconditions, avoiding illogical states like dead characters having emotions, and ensuring that preconditions and postconditions are different.
+
+First, I'll go through each action:
+
+1. **goldilocks_enters_house**:
+   - `n_characters`: 1 (Goldilocks)
+   - Preconditions: No emotional links or tensions.
+   - Postconditions: Introduces a tension (`life_at_risk` for Goldilocks).
+   - Check: Since only Goldilocks is involved, all references should be to 'a'. No preconditions, so postconditions are new.
+
+2. **bears_find_tampered_porridge**:
+   - `n_characters`: 3 (the Three Bears)
+   - Preconditions: Tension from unknown intruder (`*` to Bears).
+   - Postconditions: Bears develop negative friendship towards Goldilocks (`friendship`, magnitude -1, from 'b' to 'a').
+     Also, maintain the existing tension.
+   - Check: Using 'b' for Bears and 'a' for Goldilocks makes sense since `n_characters` is 3, but in emotional links, it's about their attitude towards her.
+
+3. **goldilocks_wakes_up**:
+   - `n_characters`: 1 (Goldilocks)
+   - Preconditions: No preconditions.
+   - Postconditions: Goldilocks feels negative towards Bears (`friendship`, magnitude -1, from 'a' to 'b').
+     Also, maintain the tension.
+   - Check: Only 'a' is used since it's about her emotions.
+
+4. **goldilocks_jumps_out_window**:
+   - `n_characters`: 1 (Goldilocks)
+   - Preconditions: Negative friendship link and life_at_risk tension.
+   - Postconditions: Both Goldilocks and Bears have increased negative links (`friendship` magnitudes -3 and -2).
+     Tension resolves to `life_normal`.
+   - Check: Using 'a' for both from and to is correct since it's about her own action affecting herself.
+
+I think each action now correctly references the appropriate characters without logical inconsistencies.
+</think>
+
+```json
+[
+  {
+    "action": "goldilocks_enters_house",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "*",
+          "to": "a"
+        }
+      ]
+    }
+  },
+  {
+    "action": "bears_find_tampered_porridge",
+    "n_characters": 3,
+    "subject": "the_three_bears",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "*",
+          "to": "a"
+        }
+      ]
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -1,
+          "from": "b",
+          "to": "a"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "*",
+          "to": "a"
+        }
+      ]
+    }
+  },
+  {
+    "action": "goldilocks_wakes_up",
+    "n_characters": 1,
+    "subject": "goldilocks",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -1,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "*",
+          "to": "a"
+        }
+      ]
+    }
+  },
+  {
+    "action": "goldilocks_jumps_out_window",
+    "n_characters": 1,
+    "subject": "goldilocks",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -2,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "a",
+          "to": "a"
+        }
+      ]
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -3,
+          "from": "b",
+          "to": "a"
+        },
+        {
+          "type": "friendship",
+          "magnitude": -2,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_normal",
+          "from": "-",
+          "to": "a"
+        }
+      ]
+    }
+  }
+]
+```

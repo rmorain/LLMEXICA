@@ -8,14 +8,11 @@ You are also focused on specific types of tensions. By default, consider the fol
 2. `life_at_risk`
 3. `health_at_risk`
 4. `prisoner`
-5. `clashing_emotions`
-6. `love_competition`
 
-`character_dead` means a character has died. `life_at_risk` means a character’s life is at risk. `health_at_risk` means a character's health is at risk. `prisoner` means a character is in prison or detained in some way. `clashing_emotions` is produced when a character establishes two or more emotional Links of any type but opposite intensity towards another character. For example, if a princess initially hates an enemy (negative emotional link) but later develops feelings of love or gratitude towards the same enemy (positive emotional link), this would create `clashing_emotions`. A tension of `love_competion` arises when two different characters have an emotional link of type `love` towards the same third character.
-
+`character_dead` means a character has died. `life_at_risk` means a character’s life is at risk. `health_at_risk` means a character's health is at risk. `prisoner` means a character is in prison or detained in some way. 
 Analyze the given story and extract the essential actions from the main characters. Focus on actions that relate to the emotional links between characters and the tensions in the narrative. 
 
-Organize the actions in chronological order and in JSON format . The JSON should have an `action` key for each action. The value for each action should be as simple and general as possible so that it can be reused in other stories, avoid character names, and be in Snake_case. Each `action` should have a key for the number of characters involved in the action called `n_characters`, a key called `subject` for the character performing the action, and a key called `object` for the character receiving the action. If the action lacks a `subject` or `object` store a value of `-` in the key. For now, only include these specified keys in the JSON object. Make sure that `n_characters` is consistent with the presence of the `subject` and `object` characters. The same character may be both the `subject` and the `object` character if the character is performing an action on themself.
+Organize the actions in chronological order and in JSON format . The JSON should have an `action` key for each action. The value for each action should be as simple and general as possible so that it can be reused in other stories, avoid character names, and be in Snake_case. Each `action` should have a key for the number of characters involved in the action called `n_characters`, a key called `subject` for the character performing the action, and a key called `object` for the character receiving the action. If the action lacks a `subject` or `object` store a value of `-` in the key. Only include actions where the `subject` and `object` refer to characters and not inanimate objects. For now, only include these specified keys in the JSON object. Make sure that `n_characters` is consistent with the presence of the `subject` and `object` characters. The same character may be both the `subject` and the `object` character if the character is performing an action on themself.
 
 Here is the story:
 <STORY>

@@ -1,0 +1,7 @@
+STO
+Jack's_mother mother_tells_jack_to_sell_cow Jack
+Jack jack_meets_man_at_market Man
+Jack's_mother mother_angry_with_jack Jack
+Giant's_wife giant_wife_gives_food_to_jack Jack
+Giant's_wife wife_denies_jack_presence_to_giant Giant
+Jack jack_gives_coins_to_mother Jack's_mother

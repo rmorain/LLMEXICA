@@ -1,0 +1,112 @@
+<think>
+Okay, I need to analyze this story about Goldilocks and the Three Bears using the guidelines provided. The user wants me to extract actions related to emotional links (friendship or love) and tensions (like character dead, life at risk, etc.). 
+
+First, I'll go through each part of the story step by step.
+
+The story starts with the three bears living together and preparing their porridge, chairs, and beds. There's no emotional link here since it's just setting up their characters.
+
+Then Goldilocks comes into their house while they're out. She tastes the porridge, sits in the chairs, and sleeps in their beds without permission. Her actions are more about causing tension rather than building emotional links. Each time she uses something that isn't hers, she creates a disturbance, which relates to tensions like life_at_risk or health_at_risk if her actions put anyone in danger.
+
+When the bears return, they find their porridge has been tasted and some is missing. This leads them to investigate further, finding their chairs and beds disturbed. Each bear reacts with anger, but I don't see any emotional links developing here—just tension as they realize someone has been in their house.
+
+Goldilocks wakes up when the Little Wee Bear speaks and escapes out the window. The story doesn't mention what happens to her after that, so no resolution on emotional links or additional tensions beyond what's already occurred.
+
+I need to map these events into actions without using character names and in Snake_case. Each action should have n_characters, subject, and object. For example, when Goldilocks tastes the porridge, she's the subject and the bears are objects, so n_characters would be 4 (including all three bears). 
+
+I'll structure each event chronologically, ensuring actions relate to emotional links or tensions. Since there’s no friendship or love in this story, emotional links might not apply here. The tensions are more about someone invading their home, which could tie into life_at_risk if Goldilocks's presence endangers the bears, but that's a stretch.
+
+Each action should be as general as possible for reusability. So actions like "taste_porridge", "sit_in Chair", etc., without specifics about who did what beyond subject and object.
+
+I'll make sure to avoid including any extra keys and keep each JSON entry focused only on the required fields: action, n_characters, subject, object.
+</think>
+
+Here is a structured analysis of the essential actions in the story, focusing on emotional links and tensions:
+
+```json
+[
+    {
+        "action": "taste_porridge",
+        "n_characters": 4,
+        "subject": "-",
+        "object": "-"
+    },
+    {
+        "action": "sit_in Chair",
+        "n_characters": 4,
+        "subject": "-",
+        "object": "-"
+    },
+    {
+        "action": "sleep_in_bed",
+        "n_characters": 4,
+        "subject": "-",
+        "object": "-"
+    },
+    {
+        "action": "find_spoon_in_porridge",
+        "n_characters": 1,
+        "subject": "Great Big Bear",
+        "object": "-"
+    },
+    {
+        "action": "find_spoon_in_porridge",
+        "n_characters": 1,
+        "subject": "Middle-sized Bear",
+        "object": "-"
+    },
+    {
+        "action": "find_empty_porridge_bowl",
+        "n_characters": 1,
+        "subject": "Little Wee Bear",
+        "object": "-"
+    },
+    {
+        "action": "investigate_house",
+        "n_characters": 3,
+        "subject": "-",
+        "object": "-"
+    },
+    {
+        "action": "find_disarranged_cushion",
+        "n_characters": 1,
+        "subject": "Great Big Bear",
+        "object": "-"
+    },
+    {
+        "action": "find_squashed_cushion",
+        "n_characters": 1,
+        "subject": "Middle-sized Bear",
+        "object": "-"
+    },
+    {
+        "action": "find_broken_chair",
+        "n_characters": 1,
+        "subject": "Little Wee Bear",
+        "object": "-"
+    },
+    {
+        "action": "search_bedroom",
+        "n_characters": 3,
+        "subject": "-",
+        "object": "-"
+    },
+    {
+        "action": "find_displaced_pillow",
+        "n_characters": 1,
+        "subject": "Great Big Bear",
+        "object": "-"
+    },
+    {
+        "action": "find_displaced_bolster",
+        "n_characters": 1,
+        "subject": "Middle-sized Bear",
+        "object": "-"
+    },
+    {
+        "action": "find_goldilocks_in_bed",
+        "n_characters": 4,
+        "subject": "-",
+        "object": "-"
+    }
+]
+```

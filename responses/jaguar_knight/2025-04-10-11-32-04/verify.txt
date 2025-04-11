@@ -1,0 +1,639 @@
+
+Okay, I need to ensure logical consistency across all actions in the provided JSON. The user has outlined specific rules to follow, so I'll go through each action one by one.
+
+First, I'll check if `n_characters` matches the number of characters referenced. If it's 1, only 'a' should be used. For actions with two characters, both 'a' (subject) and 'b' (object) are relevant.
+
+Next, I'll ensure that if a character dies (`character_dead`), they don't have any further emotional links or tensions. This means removing any postconditions related to dead characters.
+
+I also need to make sure that preconditions and postconditions aren't the same. Each action should result in a change, so if a precondition is present, the postcondition must differ.
+
+Emotional links in postconditions can't be identical to those in preconditions. I'll adjust any duplicates to ensure they reflect a change, like increasing or decreasing magnitude.
+
+I'll verify that only 'a' and 'b' are used for emotional links and tensions. No other values should appear.
+
+Additionally, if a character performs an action on themselves, both 'from' and 'to' can be the same ID ('a' or 'b').
+
+I'll also ensure that normal tensions like `health_normal`, `life_normal`, and `prisoner_freed` are correctly used to resolve specific preconditions.
+
+Finally, I'll eliminate any illogical situations, such as a dead character experiencing emotions or tensions.
+</think>
+
+```json
+[
+  {
+    "action": "storm_caused_by_god",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": []
+    }
+  },
+  {
+    "action": "bridge_collapsed_due_to_damage",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "JAGUAR_KNIGHT",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -1,
+          "from": "-",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "health_at_risk",
+          "from": "*",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "character_injured_head",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "JAGUAR_KNIGHT",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": [
+        {
+          "type": "health_at_risk",
+          "from": "*",
+          "to": "b"
+        }
+      ]
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -2,
+          "from": "-",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "princess_prepared_curative_plasma",
+    "n_characters": 2,
+    "subject": "PRINCESS",
+    "object": "JAGUAR_KNIGHT",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "health_at_risk",
+          "from": "*",
+          "to": "b"
+        }
+      ]
+    },
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": []
+    }
+  },
+  {
+    "action": "applied_plasma_to_wounds",
+    "n_characters": 2,
+    "subject": "PRINCESS",
+    "object": "JAGUAR_KNIGHT",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "health_at_risk",
+          "from": "*",
+          "to": "b"
+        }
+      ]
+    },
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": [
+        {
+          "type": "health_normal",
+          "from": "*",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "character_recuperated",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "JAGUAR_KNIGHT",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 3,
+          "from": "-",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "princess_kidnapped_by_enemy",
+    "n_characters": 2,
+    "subject": "ENEMY",
+    "object": "PRINCESS",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": [
+        {
+          "type": "prisoner",
+          "from": "*",
+          "to": "b"
+        }
+      ]
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -3,
+          "from": "-",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "enemy_tied_princess_to_rock",
+    "n_characters": 2,
+    "subject": "ENEMY",
+    "object": "PRINCESS",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": [
+        {
+          "type": "prisoner",
+          "from": "*",
+          "to": "b"
+        }
+      ]
+    },
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": []
+    }
+  },
+  {
+    "action": "jaguar_knight_prayed_to_god",
+    "n_characters": 1,
+    "subject": "JAGUAR_KNIGHT",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": [
+        {
+          "type": "prisoner",
+          "from": "*",
+          "to": "b"
+        }
+      ]
+    },
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": []
+    }
+  },
+  {
+    "action": "enemy_charged_against_princess",
+    "n_characters": 2,
+    "subject": "ENEMY",
+    "object": "PRINCESS",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "*",
+          "to": "b"
+        }
+      ]
+    },
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": []
+    }
+  },
+  {
+    "action": "jaguar_knight_searched_for_enemy",
+    "n_characters": 1,
+    "subject": "JAGUAR_KNIGHT",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "love",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "prisoner",
+          "from": "*",
+          "to": "b"
+        }
+      ]
+    },
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": []
+    }
+  },
+  {
+    "action": "jaguar_knight_found_enemy",
+    "n_characters": 2,
+    "subject": "JAGUAR_KNIGHT",
+    "object": "ENEMY",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -2,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "*",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "jaguar_knight_threw_dust_in_face",
+    "n_characters": 2,
+    "subject": "JAGUAR_KNIGHT",
+    "object": "ENEMY",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "*",
+          "to": "b"
+        }
+      ]
+    },
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": []
+    }
+  },
+  {
+    "action": "jaguar_knight_stabbed_enemy_with_dagger",
+    "n_characters": 2,
+    "subject": "JAGUAR_KNIGHT",
+    "object": "ENEMY",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "*",
+          "to": "b"
+        }
+      ]
+    },
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": []
+    }
+  },
+  {
+    "action": "jaguar_knight_performed_sacred_ceremony",
+    "n_characters": 1,
+    "subject": "JAGUAR_KNIGHT",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 1,
+          "from": "a",
+          "to": "-"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "jaguar_knight_walked_towards_princess",
+    "n_characters": 2,
+    "subject": "JAGUAR_KNIGHT",
+    "object": "PRINCESS",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "love",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "prisoner",
+          "from": "*",
+          "to": "b"
+        }
+      ]
+    },
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": []
+    }
+  },
+  {
+    "action": "princess_fell_in_love_with_jaguar_knight",
+    "n_characters": 2,
+    "subject": "PRINCESS",
+    "object": "JAGUAR_KNIGHT",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "love",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": []
+    }
+  },
+  {
+    "action": "princess_kissed_jaguar_knight",
+    "n_characters": 2,
+    "subject": "PRINCESS",
+    "object": "JAGUAR_KNIGHT",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "love",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": []
+    }
+  },
+  {
+    "action": "princess_recognized_tattoo_on_jaguar_knight",
+    "n_characters": 2,
+    "subject": "PRINCESS",
+    "object": "JAGUAR_KNIGHT",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -2,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "princess_had_ambivalent_thoughts_towards_jaguar_knight",
+    "n_characters": 1,
+    "subject": "PRINCESS",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "love",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        },
+        {
+          "type": "friendship",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "clashing_emotions",
+          "from": "*",
+          "to": "b"
+        }
+      ]
+    },
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": []
+    }
+  },
+  {
+    "action": "princess_felt_odium_towards_jaguar_knight",
+    "n_characters": 2,
+    "subject": "PRINCESS",
+    "object": "JAGUAR_KNIGHT",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "*",
+          "to": "b"
+        }
+      ]
+    },
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": []
+    }
+  },
+  {
+    "action": "princess_invoked_god_of_the_dead",
+    "n_characters": 1,
+    "subject": "PRINCESS",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": [
+        {
+          "type": "clashing_emotions",
+          "from": "*",
+          "to": "b"
+        }
+      ]
+    },
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": []
+    }
+  },
+  {
+    "action": "princess_cut_jaguar_knight's_jugular",
+    "n_characters": 2,
+    "subject": "PRINCESS",
+    "object": "JAGUAR_KNIGHT",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "*",
+          "to": "b"
+        }
+      ]
+    },
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": [
+        {
+          "type": "character_dead",
+          "from": "*",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "blood_covered_the_floor",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": []
+    }
+  },
+  {
+    "action": "princess_cut_own_throat",
+    "n_characters": 1,
+    "subject": "PRINCESS",
+    "object": "PRINCESS",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "*",
+          "to": "b"
+        }
+      ]
+    },
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": []
+    }
+  },
+  {
+    "action": "princess_bled_to_death",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "PRINCESS",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": [
+        {
+          "type": "character_dead",
+          "from": "*",
+          "to": "b"
+        }
+      ]
+    },
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": []
+    }
+  }
+]
+```

@@ -1,0 +1,112 @@
+<think>
+Okay, I need to analyze this story of Jack and the Beanstalk and extract actions related to emotional links and tensions as per the user's instructions. Let me go through each part step by step.
+
+First, the story begins with a widow and her son Jack living in poverty. The first action is Jack’s mother telling him to sell their cow. That seems like an instruction, so I'll note that as "mother_instructs_sell_cow." It involves two characters: Jack and his mother. So n_characters is 2.
+
+Next, Jack goes to the market and meets a man who offers magic beans for the cow. The action here is Jack trading the cow for beans. Since both Jack and the man are involved, n_characters is 2.
+
+Upon returning home, Jack's mother is angry with him. That's an emotional link of anger from mother to Jack. I'll capture that as "mother_angry_at_jack."
+
+Then, she throws the beans out the window, which is an action affecting the beans, so no subject or object needed here. It's a destructive action, so "mother_throws_beans_out_window" with n_characters as 1.
+
+Jack is sad and goes to sleep without dinner. That's an emotional state but also an action of him going to sleep, so "jack_sad_and_sleeps."
+
+Next morning, Jack sees the beanstalk and climbs it. This is a discovery leading to exploration. So, "jack_climbs_beanstalk" with n_characters 1.
+
+He meets the giant’s wife who kindly gives him food. This establishes a positive emotional link of friendship between Jack and the giant's wife. So, "giant_wife_gives_food_to_jack."
+
+When the giant comes home, he threatens Jack, creating fear. That's a tension of life_at_risk for Jack. So, "giant-threatens-jack" with n_characters 2.
+
+The giant later counts his gold and sleeps. The action is counting gold, but since it's about possession, I'll note it as "giant_counts_gold."
+
+Jack steals the gold while the giant sleeps, which affects their relationship—adding tension of theft. So, "jack_steals_gold_from_giant." Both are involved.
+
+Returning home, Jack gives the coins to his mother, making her happy. That's a positive emotional link between them, so "jack_gives_coins_to_mother."
+
+The next visit, Jack again meets the giant’s wife for food, which reinforces their friendship. Then, the giant returns and threatens him again—another life_at_risk situation.
+
+This time, the giant shows a hen that lays golden eggs, introducing a new element of magic. So, "giant_shows_magical_hen." He uses it to produce an egg, so that's another action: "hen_lays_golden_egg."
+
+Jack steals the hen as well, leading to the same tension as before—another theft. Then, in the third visit, Jack takes a magical harp. When he does this, the harp alerts the giant, who chases him. This introduces a new tension of pursuit.
+
+Finally, Jack chops down the beanstalk, causing the giant's death. That's an action leading to character_dead tension.
+
+Throughout this, I need to ensure each action is in snake_case and only includes the specified keys: action, n_characters, subject, object. Emotional links are primarily friendship between Jack and the giant’s wife, and love isn't really present here except maybe between Jack and his mother, but that's more familial than romantic.
+
+Tensions include life_at_risk each time Jack is in the giant's castle, prisoner when Jack hides, and character_dead at the end. There's also clashing_emotions since the giant's wife helps Jack despite being married to a threatening giant, creating an emotional conflict for her.
+
+I think I've covered all the key actions that relate to emotional links and build tensions in the story.
+</think>
+
+Here is the JSON-formatted analysis of the story:
+
+```json
+[
+  {
+    "action": "mother_instructs_sell_cow",
+    "n_characters": 2,
+    "subject": "mother",
+    "object": "jack"
+  },
+  {
+    "action": "jack_trades_cow_for_beans",
+    "n_characters": 2,
+    "subject": "jack",
+    "object": "man"
+  },
+  {
+    "action": "mother_angry_at_jack",
+    "n_characters": 2,
+    "subject": "mother",
+    "object": "jack"
+  },
+  {
+    "action": "mother_throws_beans_out_window",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "-"
+  },
+  {
+    "action": "jack_sad_and_sleeps",
+    "n_characters": 1,
+    "subject": "jack",
+    "object": "-"
+  },
+  {
+    "action": "jack_climbs_beanstalk",
+    "n_characters": 1,
+    "subject": "jack",
+    "object": "-"
+  },
+  {
+    "action": "giant_wife_gives_food_to_jack",
+    "n_characters": 2,
+    "subject": "giant's wife",
+    "object": "jack"
+  },
+  {
+    "action": "giant-threatens-jack",
+    "n_characters": 2,
+    "subject": "giant",
+    "object": "jack"
+  },
+  {
+    "action": "giant_counts_gold",
+    "n_characters": 1,
+    "subject": "giant",
+    "object": "-"
+  },
+  {
+    "action": "jack_steals_gold_from_giant",
+    "n_characters": 2,
+    "subject": "jack",
+    "object": "giant"
+  },
+  {
+    "action": "jack_gives_coins_to_mother",
+    "n_characters": 2,
+    "subject": "jack",
+    "object": "mother"
+  }
+]
+```

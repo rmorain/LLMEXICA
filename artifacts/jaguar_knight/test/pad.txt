@@ -1,0 +1,66 @@
+ACT storm_damage_bridge 1
+POS
+T Hr - *
+
+ACT character_injured_head 1
+POS
+T Hr - *
+
+ACT prepare_curative_plasma 2
+PRE
+E a b +2 1
+T Hr - b
+POS
+E a b +3 1
+
+ACT apply_plasma_to_wounds 2
+PRE
+E a b +2 1
+T Hr - b
+POS
+T Hn - *
+
+ACT character_recuperate 1
+POS
+T Hn - *
+
+ACT enemy_kidnap_princess 2
+PRE
+E a b -3 1
+POS
+T Pr - *
+
+ACT tie_character_to_rock 2
+PRE
+E a b -3 1
+POS
+T Pr - *
+
+ACT liberate_princess 2
+PRE
+E a b +3 2
+POS
+T Pf - *
+
+ACT recognize_tattoo 1
+PRE
+E b - -3 1
+POS
+T Ce - *
+
+ACT cut_jugular_with_dagger 2
+PRE
+E a b -3 1
+POS
+T Ad - *
+
+ACT character_bleed_to_death 1
+POS
+T Ad - *
+
+ACT cut_own_throat_with_dagger 2
+PRE
+E a b -3 2
+POS
+T Ad - *
+

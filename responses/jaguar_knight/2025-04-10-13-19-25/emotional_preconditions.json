@@ -1,0 +1,283 @@
+[
+    {
+        "action": "storm_caused_damage",
+        "n_characters": 1,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "character_injured",
+        "n_characters": 2,
+        "subject": "JAGUAR_KNIGHT",
+        "object": "PRINCESS",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "character_saved",
+        "n_characters": 2,
+        "subject": "PRINCESS",
+        "object": "JAGUAR_KNIGHT",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": 2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "character_realized_gratitude",
+        "n_characters": 1,
+        "subject": "JAGUAR_KNIGHT",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": 2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "princess_kidnapped",
+        "n_characters": 2,
+        "subject": "ENEMY",
+        "object": "PRINCESS",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "character_prayed_for_help",
+        "n_characters": 1,
+        "subject": "JAGUAR_KNIGHT",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "love",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "princess_angrily_confronted_enemy",
+        "n_characters": 2,
+        "subject": "PRINCESS",
+        "object": "ENEMY",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "character_searched_for_enemy",
+        "n_characters": 1,
+        "subject": "JAGUAR_KNIGHT",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "love",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "enemy_found",
+        "n_characters": 2,
+        "subject": "JAGUAR_KNIGHT",
+        "object": "ENEMY",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "character_attacked_enemy",
+        "n_characters": 2,
+        "subject": "JAGUAR_KNIGHT",
+        "object": "ENEMY",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "enemy_killed",
+        "n_characters": 2,
+        "subject": "JAGUAR_KNIGHT",
+        "object": "ENEMY",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "character_performed_ceremony",
+        "n_characters": 1,
+        "subject": "JAGUAR_KNIGHT",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "princess_liberated",
+        "n_characters": 2,
+        "subject": "JAGUAR_KNIGHT",
+        "object": "PRINCESS",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "love",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "character_fell_in_love",
+        "n_characters": 2,
+        "subject": "PRINCESS",
+        "object": "JAGUAR_KNIGHT",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "love",
+                    "magnitude": 2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "princess_kissed_jaguar_knight",
+        "n_characters": 2,
+        "subject": "PRINCESS",
+        "object": "JAGUAR_KNIGHT",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "love",
+                    "magnitude": 2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "character_recognized_tattoo",
+        "n_characters": 1,
+        "subject": "PRINCESS",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "love",
+                    "magnitude": 1,
+                    "from": "a",
+                    "to": "b"
+                },
+                {
+                    "type": "friendship",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "princess_felt_conflicted_emotions",
+        "n_characters": 1,
+        "subject": "PRINCESS",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "love",
+                    "magnitude": 1,
+                    "from": "a",
+                    "to": "b"
+                },
+                {
+                    "type": "friendship",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "jaguar_knight_killed",
+        "n_characters": 2,
+        "subject": "PRINCESS",
+        "object": "JAGUAR_KNIGHT",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "princess_killed_herself",
+        "n_characters": 1,
+        "subject": "PRINCESS",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "love",
+                    "magnitude": 2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    }
+]

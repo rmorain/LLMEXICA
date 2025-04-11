@@ -1,0 +1,178 @@
+<think>
+Alright, so I need to help the user by detailing how I would approach analyzing their story using narrative analysis. They provided a specific structure and types of emotional links and tensions they're interested in.
+
+First, I'll read through the story again to make sure I understand all the key events and character interactions. The main characters are Jaguar_Knight, Princess, Tlaloc, Quetzalcoatl, Enemy, and Huitzilopochtli. Each of them performs several actions that contribute to the emotional links and tensions.
+
+I notice that the user wants me to focus on two types of emotional links: friendship and love. So, I'll need to identify moments where these relationships develop or change between characters. For example, when Princess saves Jaguar_Knight, that's a clear sign of a strong bond forming, which could be categorized under friendship or love.
+
+Next, the tensions are specific categories like character_dead, life_at_risk, etc. I'll go through each event in the story and see where these tensions apply. For instance, when Jaguar_Knight is injured on the bridge, that's health_at_risk. Later, Princess being kidnapped introduces prisoner tension, and so on.
+
+I also need to extract actions and organize them chronologically. Each action should be concise, using snake_case, without character names. I'll make sure each JSON object includes n_characters, subject, and object, with '-' where applicable.
+
+One thing I'm careful about is ensuring that the same action isn't repeated if it's part of a sequence. For example, Jaguar_Knight attacking Enemy involves throwing dust and stabbing, but these are separate actions even though they're part of the same fight.
+
+I also notice that towards the end, Princess has conflicting emotions, which falls under clashing_emotions tension. Her love for Jaguar_Knight clashes with her hatred because of his tattoo, leading to tragic consequences.
+
+Finally, I'll structure all this information into a JSON format as per the user's instructions, making sure each action is properly categorized and the keys are correctly filled out.
+</think>
+
+```json
+[
+  {
+    "action": "storm_caused_by_god",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "-"
+  },
+  {
+    "action": "bridge_collapsed_due_to_damage",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "JAGUAR_KNIGHT"
+  },
+  {
+    "action": "character_injured_head",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "JAGUAR_KNIGHT"
+  },
+  {
+    "action": "princess_prepared_curative_plasma",
+    "n_characters": 2,
+    "subject": "PRINCESS",
+    "object": "JAGUAR_KNIGHT"
+  },
+  {
+    "action": "applied_plasma_to_wounds",
+    "n_characters": 2,
+    "subject": "PRINCESS",
+    "object": "JAGUAR_KNIGHT"
+  },
+  {
+    "action": "character_recuperated",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "JAGUAR_KNIGHT"
+  },
+  {
+    "action": "princess_kidnapped_by_enemy",
+    "n_characters": 2,
+    "subject": "ENEMY",
+    "object": "PRINCESS"
+  },
+  {
+    "action": "enemy_tied_princess_to_rock",
+    "n_characters": 2,
+    "subject": "ENEMY",
+    "object": "PRINCESS"
+  },
+  {
+    "action": "jaguar_knight_prayed_to_god",
+    "n_characters": 1,
+    "subject": "JAGUAR_KNIGHT",
+    "object": "-"
+  },
+  {
+    "action": "enemy_charged_against_princess",
+    "n_characters": 2,
+    "subject": "ENEMY",
+    "object": "PRINCESS"
+  },
+  {
+    "action": "jaguar_knight_searched_for_enemy",
+    "n_characters": 1,
+    "subject": "JAGUAR_KNIGHT",
+    "object": "-"
+  },
+  {
+    "action": "jaguar_knight_found_enemy",
+    "n_characters": 2,
+    "subject": "JAGUAR_KNIGHT",
+    "object": "ENEMY"
+  },
+  {
+    "action": "jaguar_knight_threw_dust_in_face",
+    "n_characters": 2,
+    "subject": "JAGUAR_KNIGHT",
+    "object": "ENEMY"
+  },
+  {
+    "action": "jaguar_knight_stabbed_enemy_with_dagger",
+    "n_characters": 2,
+    "subject": "JAGUAR_KNIGHT",
+    "object": "ENEMY"
+  },
+  {
+    "action": "jaguar_knight_performed_sacred_ceremony",
+    "n_characters": 1,
+    "subject": "JAGUAR_KNIGHT",
+    "object": "-"
+  },
+  {
+    "action": "jaguar_knight_walked_towards_princess",
+    "n_characters": 2,
+    "subject": "JAGUAR_KNIGHT",
+    "object": "PRINCESS"
+  },
+  {
+    "action": "princess_fell_in_love_with_jaguar_knight",
+    "n_characters": 2,
+    "subject": "PRINCESS",
+    "object": "JAGUAR_KNIGHT"
+  },
+  {
+    "action": "princess_kissed_jaguar_knight",
+    "n_characters": 2,
+    "subject": "PRINCESS",
+    "object": "JAGUAR_KNIGHT"
+  },
+  {
+    "action": "princess_recognized_tattoo_on_jaguar_knight",
+    "n_characters": 2,
+    "subject": "PRINCESS",
+    "object": "JAGUAR_KNIGHT"
+  },
+  {
+    "action": "princess_had_ambivalent_thoughts_towards_jaguar_knight",
+    "n_characters": 1,
+    "subject": "PRINCESS",
+    "object": "-"
+  },
+  {
+    "action": "princess_felt_odium_towards_jaguar_knight",
+    "n_characters": 2,
+    "subject": "PRINCESS",
+    "object": "JAGUAR_KNIGHT"
+  },
+  {
+    "action": "princess_invoked_god_of_the_dead",
+    "n_characters": 1,
+    "subject": "PRINCESS",
+    "object": "-"
+  },
+  {
+    "action": "princess_cut_jaguar_knight's_jugular",
+    "n_characters": 2,
+    "subject": "PRINCESS",
+    "object": "JAGUAR_KNIGHT"
+  },
+  {
+    "action": "blood_covered_the_floor",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "-"
+  },
+  {
+    "action": "princess_cut_own_throat",
+    "n_characters": 1,
+    "subject": "PRINCESS",
+    "object": "PRINCESS"
+  },
+  {
+    "action": "princess_bled_to_death",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "PRINCESS"
+  }
+]
+```

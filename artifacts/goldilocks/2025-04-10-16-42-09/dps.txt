@@ -1,0 +1,5 @@
+STO
+goldilocks_enters_house
+the_three_bears bears_find_tampered_porridge
+goldilocks goldilocks_wakes_up
+goldilocks goldilocks_jumps_out_window

@@ -1,0 +1,243 @@
+<think>
+Alright, I'm trying to understand how to add preconditions related to emotional links for each action in the story. So, first, I need to go through each action and figure out if there's an emotional link that must exist before the character can perform that action.
+
+Let me start with the first action: "bridge_collapse". This seems like an event caused by the storm, so it doesn't involve any characters directly. Therefore, there are no emotional links here. The preconditions should be empty.
+
+Next is "princess_heals_jaguar". For Princess to heal Jaguar, she must have some positive emotional link towards him. Since they develop romantic feelings later, I think a 'love' type with a magnitude of 2 makes sense here. So, Princess (a) has love of magnitude 2 towards Jaguar (b).
+
+Moving on to "enemy_kidnaps_princess". The enemy kidnaps Princess because he wants revenge. This implies some negative emotions towards her or her family. I think 'love' with a negative magnitude might not fit; perhaps 'friendship' with a negative magnitude? Or maybe it's hatred, so 'friendship' type with magnitude -3 from enemy (a) to Princess (b).
+
+Then we have "jaguar_decides_to_rescue_princess". Jaguar decides to rescue her because he cares about her. This suggests a positive emotional link, likely 'love', with a high magnitude like 3.
+
+In "princess_confronts_enemy", Princess confronts the enemy out of anger or fear for her life. This could be driven by negative emotions towards the enemy. Maybe 'friendship' type with magnitude -2 from Princess (a) to Enemy (b).
+
+"Enemy_attacks_princess" is an action where the enemy attacks Princess, indicating a strong negative emotion. So, similar to before, maybe 'friendship' with magnitude -3 from Enemy (a) to Princess (b).
+
+"Jaguar_searches_for_enemy" implies that Jaguar is motivated by his emotional link towards Princess. Again, likely 'love' with magnitude 3 from Jaguar (a) to Princess (b).
+
+In "jaguar_kills_enemy", Jaguar's action is driven by anger or a desire to protect Princess. This suggests a strong negative emotion towards the enemy, so 'friendship' type with magnitude -3 from Jaguar (a) to Enemy (b).
+
+"Princess_liberated_by_jaguar" is a result of Jaguar's successful rescue, so it's more about the action than an emotional link precondition.
+
+"Jaguar_admires_princess_bravery" indicates that Jaguar holds Princess in high regard. This would be a positive 'love' type with magnitude 3 from Jaguar (a) to Princess (b).
+
+"Princess_kisses_jaguar" is a clear expression of romantic feelings, so 'love' type with magnitude 3 from Princess (a) to Jaguar (b).
+
+"Princess_recognizes_tattoo" leads her to feel conflicted. This recognition doesn't necessarily require an emotional link precondition but is more about knowledge.
+
+Finally, "princess_kills_jaguar" and "princess_commits_suicide". These actions are driven by a mix of anger and sorrow towards Jaguar. So, perhaps 'love' with magnitude -3 from Princess (a) to Jaguar (b).
+
+I think I've covered each action and inferred the necessary emotional links as preconditions.
+</think>
+
+Here is the JSON output with preconditions related to emotional links for each action:
+
+```json
+[
+  {
+    "action": "bridge_collapse",
+    "n_characters": 0,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": []
+    }
+  },
+  {
+    "action": "princess_heals_jaguar",
+    "n_characters": 2,
+    "subject": "Princess",
+    "object": "Jaguar_Knight",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "love",
+          "magnitude": 2,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "enemy_kidnaps_princess",
+    "n_characters": 2,
+    "subject": "Enemy",
+    "object": "Princess",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "jaguar_decides_to_rescue_princess",
+    "n_characters": 1,
+    "subject": "Jaguar_Knight",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "love",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "princess_confronts_enemy",
+    "n_characters": 2,
+    "subject": "Princess",
+    "object": "Enemy",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -2,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "enemy_attacks_princess",
+    "n_characters": 2,
+    "subject": "Enemy",
+    "object": "Princess",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "jaguar_searches_for_enemy",
+    "n_characters": 1,
+    "subject": "Jaguar_Knight",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "love",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "jaguar_kills_enemy",
+    "n_characters": 2,
+    "subject": "Jaguar_Knight",
+    "object": "Enemy",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "princess_liberated_by_jaguar",
+    "n_characters": 2,
+    "subject": "Jaguar_Knight",
+    "object": "Princess",
+    "preconditions": {
+      "emotional_links": []
+    }
+  },
+  {
+    "action": "jaguar_admires_princess_bravery",
+    "n_characters": 1,
+    "subject": "Jaguar_Knight",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "love",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "princess_kisses_jaguar",
+    "n_characters": 2,
+    "subject": "Princess",
+    "object": "Jaguar_Knight",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "love",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "princess_recognizes_tattoo",
+    "n_characters": 1,
+    "subject": "Princess",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": []
+    }
+  },
+  {
+    "action": "princess_kills_jaguar",
+    "n_characters": 2,
+    "subject": "Princess",
+    "object": "Jaguar_Knight",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "love",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "princess_commits_suicide",
+    "n_characters": 1,
+    "subject": "Princess",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "love",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  }
+]
+```
+
+This JSON structure includes preconditions for emotional links where applicable, indicating the type, magnitude, and direction of the required emotional connections.

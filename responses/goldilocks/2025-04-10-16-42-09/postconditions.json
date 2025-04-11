@@ -1,0 +1,164 @@
+<think>
+Okay, so now I need to add postconditions for each action in the story "Goldilocks and the Three Bears." The user has provided specific instructions on how to structure this in JSON, including adding `emotional_links` and `tensions` under a new key called `postconditions`. Each emotional link should have a type (friendship or love), magnitude (-3 to 3), source (`from`), and target (`to`). Tensions should include any new tensions created by the action.
+
+First, I'll go through each action identified earlier:
+
+1. **goldilocks_enters_house**: This action doesn't involve any other character directly, so no emotional links are affected. However, entering the house without permission could create a tension related to potential risk for Goldilocks, perhaps `life_at_risk` or `health_at_risk`.
+
+2. **bears_find_tampered_porridge**: The bears discover that someone has been at their porridge, which might make them suspicious or annoyed. This could negatively affect their emotional links towards the intruder (Goldilocks), creating a negative friendship link. Additionally, this discovery could introduce a tension like `life_at_risk` if they feel threatened.
+
+3. **goldilocks_wakes_up**: Goldilocks waking up might not directly change any emotional links unless we consider that she feels fear or guilt upon realizing her actions, which could slightly adjust her emotional state towards the bears (more negative).
+
+4. **goldilocks_jumps_out_window**: This action clearly puts Goldilocks' life at risk, fitting the `life_at_risk` tension. Additionally, this event might create a lasting negative impression on both Goldilocks and the bears, affecting their emotional links.
+
+Now, applying this to each action:
+
+1. For "goldilocks_enters_house":
+   - **Emotional Links**: None directly affected.
+   - **Tensions**: Introduces `life_at_risk` for Goldilocks as she trespasses.
+   
+2. For "bears_find_tampered_porridge":
+   - **Emotional Links**: Bears develop a negative friendship link towards the unknown intruder (Goldilocks).
+   - **Tensions**: Bears feel their life might be at risk due to the intrusion.
+   
+3. For "goldilocks_wakes_up":
+   - **Emotional Links**: Goldilocks might feel more fear or guilt, slightly adjusting her emotional link to the bears.
+   - **Tensions**: Her waking up doesn't add new tension but maintains existing ones.
+   
+4. For "goldilocks_jumps_out_window":
+   - **Emotional Links**: Both Goldilocks and the bears experience heightened negative emotions towards each other due to the dangerous situation.
+   - **Tensions**: `life_at_risk` is resolved by her escaping, so perhaps a normal tension like `life_normal`.
+
+I think this approach captures how each action affects both emotional links and tensions in the story.
+</think>
+
+```json
+[
+  {
+    "action": "goldilocks_enters_house",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "*",
+          "to": "a"
+        }
+      ]
+    }
+  },
+  {
+    "action": "bears_find_tampered_porridge",
+    "n_characters": 3,
+    "subject": "the_three_bears",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "*",
+          "to": "a"
+        }
+      ]
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -1,
+          "from": "b",
+          "to": "a"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "*",
+          "to": "a"
+        }
+      ]
+    }
+  },
+  {
+    "action": "goldilocks_wakes_up",
+    "n_characters": 1,
+    "subject": "goldilocks",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -1,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "*",
+          "to": "a"
+        }
+      ]
+    }
+  },
+  {
+    "action": "goldilocks_jumps_out_window",
+    "n_characters": 1,
+    "subject": "goldilocks",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -2,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "a",
+          "to": "a"
+        }
+      ]
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -3,
+          "from": "b",
+          "to": "a"
+        },
+        {
+          "type": "friendship",
+          "magnitude": -2,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_normal",
+          "from": "-",
+          "to": "a"
+        }
+      ]
+    }
+  }
+]
+```

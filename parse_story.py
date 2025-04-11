@@ -2,7 +2,16 @@ import json
 import os
 from datetime import datetime
 
+import absl.app
+import absl.flags
 from ollama import ChatResponse, chat
+
+from utils import create_dps, create_pad
+
+FLAGS = absl.flags.FLAGS
+absl.flags.DEFINE_list(
+    "story_names", None, "Comma-separated list of story names to process."
+)
 
 
 def log_response(
@@ -48,20 +57,40 @@ def chat_round(model, messages, story_name, date_time, file_name):
 
 
 def verify_artifact(artifact, messages, model, story_name, date_time, artifact_type):
-    if artifact is not None:
-        return artifact, messages
-    # Ask model to regenerate the PAD artifact
-    if artifact_type == "JSON":
-        regenerate_prompt = "There is an error extracting the JSON artifact from the previous response. Please regenerate the JSON artifact. Make sure to wrap the JSON artifact in ```json``` tags."
+    if artifact is None:
+        # Ask model to regenerate the PAD artifact
+        if artifact_type == "JSON":
+            regenerate_prompt = "There is an error extracting the JSON artifact from the previous response. Please regenerate the JSON artifact. Make sure to wrap the JSON artifact in ```json``` tags."
+        else:
+            regenerate_prompt = f"There is an error extracting the {artifact_type} artifact from the previous response. Please regenerate the {artifact_type} artifact. Make sure to wrap the {artifact_type} artifact in <{artifact_type}></{artifact_type}> tags."
+        messages.append({"role": "user", "content": regenerate_prompt})
+        response, messages = chat_round(
+            model, messages, story_name, date_time, "pad.txt"
+        )
+        artifact = parse_response_json(
+            response.message.content, model, messages, story_name, date_time
+        )
+        print("Regenerated Artifact: ", artifact)
     else:
-        regenerate_prompt = f"There is an error extracting the {artifact_type} artifact from the previous response. Please regenerate the {artifact_type} artifact. Make sure to wrap the {artifact_type} artifact in <{artifact_type}></{artifact_type}> tags."
-    messages.append({"role": "user", "content": regenerate_prompt})
-    response, messages = chat_round(model, messages, story_name, date_time, "pad.txt")
-    artifact = extract_substring_between(
-        response.message.content, f"<{artifact_type}>", f"</{artifact_type}>"
-    )
-    print("Regenerated Artifact: ", artifact)
-
+        # Check if each action in the artifact has at least one postcondition
+        actions_with_no_postconditions = []
+        for action in artifact:
+            if len(action["postconditions"]) == 0:
+                actions_with_no_postconditions.append(action["name"])
+        if len(actions_with_no_postconditions) > 0:
+            print(
+                "The following actions have no postconditions: ",
+                actions_with_no_postconditions,
+            )
+            regenerate_prompt = f"The following actions have no postconditions: \n\n{actions_with_no_postconditions}.\n Please regenerate the JSON object to include postconditions for these actions. Make sure to wrap the JSON object in ```json``` tags."
+            messages.append({"role": "user", "content": regenerate_prompt})
+            response, messages = chat_round(
+                model, messages, story_name, date_time, "regen.txt"
+            )
+            artifact = parse_response_json(
+                response.message.content, model, messages, story_name, date_time
+            )
+            print("Regenerated Artifact: ", artifact)
     return artifact, messages
 
 
@@ -93,7 +122,7 @@ def extract_substring_between(text, start_substring, end_substring):
     return text[start_index + len(start_substring) : end_index]
 
 
-def parse_response_json(response_content):
+def parse_response_json(response_content, model, messages, story_name, date_time):
     json_string = extract_substring_between(response_content, "```json", "```")
     print("JSON string: ", json_string)
     try:
@@ -101,10 +130,18 @@ def parse_response_json(response_content):
     except json.JSONDecodeError as e:
         print("Error decoding JSON: ", e)
         json_object = None
+        # Prompt the model to regenerate the JSON object
+        regenerate_prompt = f"There is an error extracting the JSON object from the previous response. Here is the error: \n\n```{e}\n```\n\n Please regenerate the JSON object to correct the error. Make sure to wrap the JSON object in ```json``` tags."
+        messages.append({"role": "user", "content": regenerate_prompt})
+        response, messages = chat_round(
+            model, messages, story_name, date_time, "regen.txt"
+        )
+        json_object = json.loads(response.message.content)
+        print("Regenerated JSON: ", json_object)
     return json_object
 
 
-def main():
+def process_story(story_name: str):
     # Get start time
     start_time = datetime.now()
     model = os.getenv("OLLAMA_MODEL")
@@ -112,21 +149,8 @@ def main():
     # Get date and time
     date_time = datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
 
-    # Test chat with a single message
-    response: ChatResponse = chat(
-        model=model,
-        messages=[
-            {
-                "role": "user",
-                "content": "Does the sun rise in the west? Just answer yes or no.",
-            },
-        ],
-    )
-    print(response.message.content)
-
-    # Load story from stories/jaguar_knight.txt
+    # Load story from stories/<story_name>.txt
     story = ""
-    story_name = "jaguar_knight"
     with open(f"stories/{story_name}.txt", "r") as f:
         print("Reading story from file: ", f.name)
         story = f.read()
@@ -151,32 +175,6 @@ def main():
     response, messages = chat_round(
         model, messages, story_name, date_time, "story_action.txt"
     )
-    # Get story DPS
-    # Read story DPS prompt from prompts/dps.txt
-    dps_prompt = ""
-    with open("prompts/dps.txt", "r") as f:
-        print("Reading DPS prompt from file: ", f.name)
-        dps_prompt = f.read()
-    # Continue conversation with the DPS prompt including previous messages
-    messages.append(
-        {
-            "role": "user",
-            "content": dps_prompt,
-        },
-    )
-    response, messages = chat_round(model, messages, story_name, date_time, "dps.txt")
-
-    # Parse response for txt file
-    dps_artifact = extract_substring_between(
-        response.message.content, "<DPS>", "</DPS>"
-    )
-    print("DPS Artifact: ", dps_artifact)
-    # Verify DPS artifact
-    dps_artifact, messages = verify_artifact(
-        dps_artifact, messages, model, story_name, date_time, "DPS"
-    )
-    # Save DPS artifact to a file
-    log_artifact(dps_artifact, story_name, date_time, "dps.txt")
 
     # Get emotional preconditions
     # Read emotional preconditions prompt from prompts/emotional_preconditions.txt
@@ -235,7 +233,9 @@ def main():
         "tension_preconditions.txt",
     )
     # Parse response for JSON file
-    json_object = parse_response_json(response.message.content)
+    json_object = parse_response_json(
+        response.message.content, model, messages, story_name, date_time
+    )
     print(json_object)
     # Save JSON object to a file
     with open(
@@ -262,7 +262,9 @@ def main():
         model, messages, story_name, date_time, "postconditions.txt"
     )
     # Parse response for JSON file
-    json_object = parse_response_json(response.message.content)
+    json_object = parse_response_json(
+        response.message.content, model, messages, story_name, date_time
+    )
     print(json_object)
     # Save JSON object to a file
     with open(
@@ -289,7 +291,9 @@ def main():
         model, messages, story_name, date_time, "verify.txt"
     )
     # Parse response for JSON file
-    json_object = parse_response_json(response.message.content)
+    json_object = parse_response_json(
+        response.message.content, model, messages, story_name, date_time
+    )
     print(json_object)
     # Verify JSON object
     json_object, messages = verify_artifact(
@@ -298,36 +302,50 @@ def main():
     # Save JSON object as artifact
     log_artifact(json.dumps(json_object), story_name, date_time, "story_actions.json")
 
-    # Get pad prompt
-    # Read pad prompt from prompts/pad.txt
-    pad_prompt = ""
-    with open("prompts/pad.txt", "r") as f:
-        print("Reading pad prompt from file: ", f.name)
-        pad_prompt = f.read()
-    # Continue conversation with the pad prompt including previous messages
-    messages.append(
-        {
-            "role": "user",
-            "content": pad_prompt,
-        },
-    )
-    response, messages = chat_round(model, messages, story_name, date_time, "pad.txt")
-    # Parse response for PAD artifact
-    pad_artifact = extract_substring_between(
-        response.message.content, "<PAD>", "</PAD>"
-    )
-    print("PAD Artifact: ", pad_artifact)
-    # Verify PAD artifact
-    pad_artifact, messages = verify_artifact(
-        pad_artifact, messages, model, story_name, date_time, "PAD"
-    )
-    # Save PAD artifact to a file
-    log_artifact(pad_artifact, story_name, date_time, "pad.txt")
+    json_dir = os.path.join("artifacts", story_name, date_time)
+    # Create DPS file
+    try:
+        create_dps(json_object, json_dir)
+        # Create PAD file
+        create_pad(json_object, json_dir)
+    except KeyError as error:
+        regenerate_prompt = f"There is an error extracting data from the JSON object from the previous response. Here is the error: \n\n```{error}\n```\n\n Please regenerate the JSON object to correct the error. Make sure to wrap the JSON artifact in ```json``` tags."
+
+        messages.append({"role": "user", "content": regenerate_prompt})
+        response, messages = chat_round(
+            model, messages, story_name, date_time, "pad.txt"
+        )
+        json_object = parse_response_json(
+            response.message.content, model, messages, story_name, date_time
+        )
+        print("Regenerated JSON: ", json_object)
+        create_dps(json_object, json_dir)
+        # Create PAD file
+        create_pad(json_object, json_dir)
 
     # Print elapsed time
     elapsed_time = datetime.now() - start_time
     print("Elapsed time: ", elapsed_time)
 
 
+def process_all_stories():
+    # Get all stories in the stories directory
+    stories = os.listdir("stories")
+    for story in stories:
+        if story.endswith(".txt"):
+            story_name = story.split(".")[0]
+            print("Processing story: ", story_name)
+            process_story(story_name)
+
+
+def main(argv):
+    if FLAGS.story_names:
+        for story_name in FLAGS.story_names:
+            print("Processing story: ", story_name)
+            process_story(story_name)
+    else:
+        process_all_stories()
+
+
 if __name__ == "__main__":
-    main()
+    absl.app.run(main)

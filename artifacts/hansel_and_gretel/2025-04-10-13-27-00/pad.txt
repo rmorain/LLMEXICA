@@ -1,0 +1,92 @@
+ACT father_feels_guilt_over_children 1
+PRE
+E a b +3 2
+POS
+E a b +4 2
+
+ACT stepmother_suggests_abandoning_children 2
+PRE
+E a b -3 1
+POS
+E b a -4 1
+T Lr * b
+
+ACT children_overhear_stepmother 2
+POS
+E a b -2 1
+T Lr * b
+
+ACT hansel Comforts_gretel 2
+PRE
+E a b +3 1
+POS
+E b a +4 1
+T Ln * b
+
+ACT family_enters_forest 4
+POS
+T Lr * *
+
+ACT father_abandons_children 2
+PRE
+E a b +3 2
+POS
+E b a -4 1
+
+ACT hansel_leaves_trail_of_pebbles 1
+PRE
+E a b +2 1
+POS
+E b a +3 1
+T Ln * b
+
+ACT children_find_way_home 2
+POS
+E a b +3 1
+E b a +3 1
+T Ln * *
+
+ACT stepmother_dies 1
+POS
+T Ad * b
+
+ACT family_enters_forest_again 4
+POS
+T Lr * *
+
+ACT hansel_leaves_trail_of_breadcrumbs 1
+PRE
+E a b +2 1
+POS
+E b a +3 1
+T Ln * b
+
+ACT birds_eat_breadcrumbs 1
+POS
+T Lr * b
+
+ACT children_lost_in_forest 2
+POS
+T Lr * b
+
+ACT witch_captures_children 3
+POS
+T Pr a b
+T Lr * b
+
+ACT gretel_outsmarts_witch 2
+POS
+E b a +4 1
+T Pf * b
+T Ln * b
+
+ACT witch_dies 1
+POS
+T Ad * b
+
+ACT children_escape_forest 2
+POS
+E a b +4 1
+E b a +4 1
+T Ln * *
+

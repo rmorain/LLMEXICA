@@ -1,0 +1,407 @@
+<think>
+Alright, I need to verify each action's JSON entry for logical consistency. Let me go through each one step by step.
+
+1. **Action: taste_porridge**
+   - `n_characters`: 4 (Goldilocks and the three Bears)
+   - Preconditions: No emotional links or tensions
+   - Postconditions: No changes, so empty arrays
+
+2. **Action: sit_in Chair**
+   - `n_characters`: 4
+   - Postconditions include an emotional link from 'b' to 'a'. Since 'a' is the subject (Goldilocks) and 'b' is the object (Bears), this makes sense as Goldilocks develops a slight positive link towards the Bears.
+
+3. **Action: sleep_in_bed**
+   - Similar logic as above, Goldilocks develops a positive link towards the Bears.
+
+4. **Action: find_spoon_in_porridge (Great Big Bear)**
+   - `n_characters`: 1
+   - Only 'a' is used since it's one character.
+   - Postconditions have an emotional link from 'a' to 'b' with magnitude -2 and a tension of 'life_at_risk'.
+
+5. **Action: find_spoon_in_porridge (Middle-sized Bear)**
+   - Same as above, logical consistency maintained.
+
+6. **Action: find_empty_porridge_bowl (Little Wee Bear)**
+   - `n_characters`: 1
+   - Emotional link from 'a' to 'b' with magnitude -3 and tension 'health_at_risk'.
+
+7. **Action: investigate_house**
+   - `n_characters`: 3, but no specific subject or object.
+   - Tension of 'life_at_risk' applies to all.
+
+8. **Action: find_disarranged_cushion (Great Big Bear)**
+   - Logical, with emotional link and tension updates.
+
+9. **Action: find_squashed_cushion (Middle-sized Bear)**
+   - Consistent with the previous pattern.
+
+10. **Action: find_broken_chair (Little Wee Bear)**
+    - All entries are consistent.
+
+11. **Action: search_bedroom**
+    - Logical, affects all Bears.
+
+12. **Action: find_displaced_pillow (Great Big Bear)**
+    - Consistent with earlier actions.
+
+13. **Action: find_displaced_bolster (Middle-sized Bear)**
+    - Maintained consistency.
+
+14. **Action: find_goldilocks_in_bed**
+    - Tension resolved with 'prisoner_freed', which is logical as Goldilocks escapes.
+</think>
+
+```json
+[
+    {
+        "action": "taste_porridge",
+        "n_characters": 4,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [],
+            "tensions": []
+        },
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": []
+        }
+    },
+    {
+        "action": "sit_in Chair",
+        "n_characters": 4,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "clashing_emotions",
+                    "from": "*",
+                    "to": "*"
+                }
+            ]
+        },
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": 1,
+                    "from": "b",
+                    "to": "a"
+                }
+            ],
+            "tensions": []
+        }
+    },
+    {
+        "action": "sleep_in_bed",
+        "n_characters": 4,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "prisoner",
+                    "from": "*",
+                    "to": "*"
+                }
+            ]
+        },
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": 1,
+                    "from": "b",
+                    "to": "a"
+                }
+            ],
+            "tensions": []
+        }
+    },
+    {
+        "action": "find_spoon_in_porridge",
+        "n_characters": 1,
+        "subject": "Great Big Bear",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "a",
+                    "to": "*"
+                }
+            ]
+        },
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": []
+        }
+    },
+    {
+        "action": "find_spoon_in_porridge",
+        "n_characters": 1,
+        "subject": "Middle-sized Bear",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "a",
+                    "to": "*"
+                }
+            ]
+        },
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": []
+        }
+    },
+    {
+        "action": "find_empty_porridge_bowl",
+        "n_characters": 1,
+        "subject": "Little Wee Bear",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "health_at_risk",
+                    "from": "a",
+                    "to": "*"
+                }
+            ]
+        },
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": []
+        }
+    },
+    {
+        "action": "investigate_house",
+        "n_characters": 3,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "*",
+                    "to": "*"
+                }
+            ]
+        },
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": []
+        }
+    },
+    {
+        "action": "find_disarranged_cushion",
+        "n_characters": 1,
+        "subject": "Great Big Bear",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": [
+                {
+                    "type": "prisoner",
+                    "from": "*",
+                    "to": "*"
+                }
+            ]
+        },
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": []
+        }
+    },
+    {
+        "action": "find_squashed_cushion",
+        "n_characters": 1,
+        "subject": "Middle-sized Bear",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": [
+                {
+                    "type": "prisoner",
+                    "from": "*",
+                    "to": "*"
+                }
+            ]
+        },
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": []
+        }
+    },
+    {
+        "action": "find_broken_chair",
+        "n_characters": 1,
+        "subject": "Little Wee Bear",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "*",
+                    "to": "*"
+                }
+            ]
+        },
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": []
+        }
+    },
+    {
+        "action": "search_bedroom",
+        "n_characters": 3,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "prisoner",
+                    "from": "*",
+                    "to": "*"
+                }
+            ]
+        },
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": []
+        }
+    },
+    {
+        "action": "find_displaced_pillow",
+        "n_characters": 1,
+        "subject": "Great Big Bear",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "*",
+                    "to": "*"
+                }
+            ]
+        },
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": []
+        }
+    },
+    {
+        "action": "find_displaced_bolster",
+        "n_characters": 1,
+        "subject": "Middle-sized Bear",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "*",
+                    "to": "*"
+                }
+            ]
+        },
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": []
+        }
+    },
+    {
+        "action": "find_goldilocks_in_bed",
+        "n_characters": 4,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "prisoner",
+                    "from": "*",
+                    "to": "*"
+                }
+            ]
+        },
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "prisoner_freed",
+                    "from": "*",
+                    "to": "*"
+                }
+            ]
+        }
+    }
+]
+```

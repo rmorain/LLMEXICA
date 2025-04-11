@@ -1,0 +1,56 @@
+<think>
+Alright, so I need to analyze this story about the princess and the pea to extract actions related to emotional links (friendship or love) and tensions (like someone dying or being at risk). Let me break it down step by step.
+
+First, the story starts with a prince wanting to marry a real princess. He travels but can't find one, which makes him sad. That's an action where the subject is the prince feeling sad because he wants a real princess. Since there's no object here, I'll note that as the first action.
+
+Next, there's a storm, and a princess arrives at the gate. The king opens it, so that's another action—opening the gate with two characters involved: the king (subject) and the princess (object). 
+
+Then, the queen tests the princess by placing a pea under many mattresses. She takes off the bedding, lays down a pea, adds mattresses, and eider-down beds. That's an action where the queen is setting up the test, so she's the subject and the princess is the object.
+
+In the morning, they ask how she slept. The princess says she slept badly because of something hard in the bed. She's the subject here, talking to the others (object).
+
+Finally, they conclude she's a real princess and the prince marries her. That's another action involving both the prince and princess as subjects and objects.
+
+Now, considering emotional links, the prince wanting a real princess is about love. The actions don't show friendship, so all links here are romantic. Tensions include the princess being at risk because she might not pass the test, but since there's no physical danger or imprisonment, I think that's more of an emotional tension rather than the specified types like life_at_risk.
+
+I need to make sure each action is in snake_case and captures the essence without specifics. Each JSON object should have n_characters, subject, and object, with '-' if not applicable.
+</think>
+
+Here's a structured analysis of the story focusing on actions related to emotional links (friendship or love) and tensions:
+
+```json
+[
+    {
+        "action": "prince_feels_sad",
+        "n_characters": 1,
+        "subject": "prince",
+        "object": "-"
+    },
+    {
+        "action": "king_opens_gate",
+        "n_characters": 2,
+        "subject": "king",
+        "object": "princess"
+    },
+    {
+        "action": "queen_tests_princess",
+        "n_characters": 2,
+        "subject": "queen",
+        "object": "princess"
+    },
+    {
+        "action": "princess_reports_bad_sleep",
+        "n_characters": 2,
+        "subject": "princess",
+        "object": "-"
+    },
+    {
+        "action": "prince_marry_princess",
+        "n_characters": 2,
+        "subject": "prince",
+        "object": "princess"
+    }
+]
+```
+
+This JSON captures the key actions in the story, focusing on emotional links (romantic love between prince and princess) and the absence of specified tensions like life_at_risk.

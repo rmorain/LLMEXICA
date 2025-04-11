@@ -1,0 +1,253 @@
+<think>
+Alright, so I need to figure out how to identify or infer preconditions related to emotional links for each action in the Hansel and Gretel story. The goal is to determine if there are any specific emotional connections (like friendship or love) that must exist before a character can perform an action. Each precondition should have a type (friendship or love), a magnitude (-3 to 3), and indicate which character has this emotion towards whom.
+
+Okay, let's start with the first action: "father_feels_guilt_over_children". This seems like it's driven by the father's emotional link of love towards his children. The magnitude here would probably be positive since guilt implies a strong sense of responsibility or care. So, from 'a' (the subject, which is the father) to 'b' (the object, which are the children), with type 'love' and magnitude 3.
+
+Next action: "stepmother_suggests_abandoning_children". This suggests that the stepmother has a negative emotional link towards the children. It's more about dislike or hatred, so the type would be 'friendship' (since it's not romantic) but with a negative magnitude. From 'a' (stepmother) to 'b' (children), type 'friendship', magnitude -3.
+
+Then, "children_overhear_stepmother". This action doesn't necessarily require an emotional link precondition; it's more about the children hearing something. So no preconditions needed here.
+
+Moving on to "hansel Comforts_gretel". This shows a strong positive emotional link of friendship between Hansel and Gretel. From 'a' (Hansel) to 'b' (Gretel), type 'friendship', magnitude 3.
+
+Next, "family_enters_forest" is more of a setting action, so no preconditions related to emotional links are needed here.
+
+Then, "father_abandons_children". This must be preceded by the father's internal conflict. He agreed because of his wife's insistence, but he feels guilty and loves his children. So from 'a' (father) to 'b' (children), type 'love', magnitude 3.
+
+"hansel_leaves_trail_of_pebbles" shows Hansel's care for Gretel and himself, so it’s a positive friendship link from Hansel to Gretel, magnitude 2.
+
+"children_find_way_home" doesn’t require emotional links as a precondition; it’s more about the pebbles leading them home.
+
+"stepmother_dies" is an event where she dies, but it doesn't directly involve emotional links causing her death. So no preconditions here.
+
+The next action, "family_enters_forest_again", similar to before, doesn’t require emotional links as a precondition.
+
+"hansel_leaves_trail_of_breadcrumbs" again shows Hansel's care for Gretel, so friendship from 'a' (Hansel) to 'b' (Gretel), magnitude 2.
+
+"birds_eat_breadcrumbs" is an external event without emotional link preconditions.
+
+"children_lost_in_forest" doesn’t require emotional links as a precondition; it’s about their situation.
+
+"witch_captures_children" implies the witch has a negative emotional link towards children, so type 'friendship', magnitude -3 from 'a' (witch) to 'b' (children).
+
+"gretel_outsmarts_witch" shows Gretel's strong bond with Hansel and her determination to save him. From 'a' (Gretel) to 'b' (Hansel), type 'friendship', magnitude 3.
+
+"witch_dies" is a result of Gretel’s action, but doesn’t require an emotional link as a precondition.
+
+Finally, "children_escape_forest" doesn’t need emotional links as a precondition; it's the outcome of their actions.
+
+I think I've covered each action and identified where emotional links act as preconditions. Now, I'll map these into JSON format as per the instructions.
+</think>
+
+```json
+[
+  {
+    "action": "father_feels_guilt_over_children",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "love",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "stepmother_suggests_abandoning_children",
+    "n_characters": 2,
+    "subject": "stepmother",
+    "object": "father",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "children_overhear_stepmother",
+    "n_characters": 2,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": []
+    }
+  },
+  {
+    "action": "hansel Comforts_gretel",
+    "n_characters": 2,
+    "subject": "Hansel",
+    "object": "Gretel",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "family_enters_forest",
+    "n_characters": 4,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": []
+    }
+  },
+  {
+    "action": "father_abandons_children",
+    "n_characters": 2,
+    "subject": "father",
+    "object": "children",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "love",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "hansel_leaves_trail_of_pebbles",
+    "n_characters": 1,
+    "subject": "Hansel",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 2,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "children_find_way_home",
+    "n_characters": 2,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": []
+    }
+  },
+  {
+    "action": "stepmother_dies",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "stepmother",
+    "preconditions": {
+      "emotional_links": []
+    }
+  },
+  {
+    "action": "family_enters_forest_again",
+    "n_characters": 4,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": []
+    }
+  },
+  {
+    "action": "hansel_leaves_trail_of_breadcrumbs",
+    "n_characters": 1,
+    "subject": "Hansel",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 2,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "birds_eat_breadcrumbs",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": []
+    }
+  },
+  {
+    "action": "children_lost_in_forest",
+    "n_characters": 2,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": []
+    }
+  },
+  {
+    "action": "witch_captures_children",
+    "n_characters": 3,
+    "subject": "witch",
+    "object": "children",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "gretel_outsmarts_witch",
+    "n_characters": 2,
+    "subject": "Gretel",
+    "object": "witch",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "witch_dies",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "witch",
+    "preconditions": {
+      "emotional_links": []
+    }
+  },
+  {
+    "action": "children_escape_forest",
+    "n_characters": 2,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": []
+    }
+  }
+]
+```

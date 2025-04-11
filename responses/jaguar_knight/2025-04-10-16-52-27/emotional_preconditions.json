@@ -1,0 +1,205 @@
+[
+    {
+        "action": "bridge_collapse",
+        "n_characters": 0,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "princess_heals_jaguar",
+        "n_characters": 2,
+        "subject": "Princess",
+        "object": "Jaguar_Knight",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "love",
+                    "magnitude": 2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "enemy_kidnaps_princess",
+        "n_characters": 2,
+        "subject": "Enemy",
+        "object": "Princess",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "jaguar_decides_to_rescue_princess",
+        "n_characters": 1,
+        "subject": "Jaguar_Knight",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "love",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "princess_confronts_enemy",
+        "n_characters": 2,
+        "subject": "Princess",
+        "object": "Enemy",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "enemy_attacks_princess",
+        "n_characters": 2,
+        "subject": "Enemy",
+        "object": "Princess",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "jaguar_searches_for_enemy",
+        "n_characters": 1,
+        "subject": "Jaguar_Knight",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "love",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "jaguar_kills_enemy",
+        "n_characters": 2,
+        "subject": "Jaguar_Knight",
+        "object": "Enemy",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "princess_liberated_by_jaguar",
+        "n_characters": 2,
+        "subject": "Jaguar_Knight",
+        "object": "Princess",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "jaguar_admires_princess_bravery",
+        "n_characters": 1,
+        "subject": "Jaguar_Knight",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "love",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "princess_kisses_jaguar",
+        "n_characters": 2,
+        "subject": "Princess",
+        "object": "Jaguar_Knight",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "love",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "princess_recognizes_tattoo",
+        "n_characters": 1,
+        "subject": "Princess",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "princess_kills_jaguar",
+        "n_characters": 2,
+        "subject": "Princess",
+        "object": "Jaguar_Knight",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "love",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "princess_commits_suicide",
+        "n_characters": 1,
+        "subject": "Princess",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "love",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    }
+]

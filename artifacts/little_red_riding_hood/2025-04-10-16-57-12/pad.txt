@@ -1,0 +1,66 @@
+ACT mother_sends_daughter_to_visit_grandmother 2
+PRE
+E a b +3 2
+T Hr - b
+POS
+E a b +1 2
+
+ACT little_red_riding_hood_meets_wolf_in_forest 2
+POS
+E a b -1 1
+T Lr - a
+
+ACT wolf_asks_little_red_riding_hood_about_grandmother 2
+PRE
+E a b -1 1
+T Lr - a
+T Lr - b
+POS
+E a b -1 1
+T Lr - a
+T Lr - b
+
+ACT little_red_riding_hood_tells_wolf_about_grandmother 2
+PRE
+E a b +1 1
+T Lr - b
+POS
+E a b +1 1
+
+ACT wolf_runs_to_grandmothers_house 1
+PRE
+E a b -3 1
+POS
+T Lr - b
+
+ACT wolf_kills_grandmother_and_eats_her 2
+PRE
+E a b -3 1
+T Lr - b
+POS
+T Ad - b
+
+ACT little_red_riding_hood_arrives_at_grandmothers_house 2
+PRE
+E a b +3 2
+POS
+T Hr - b
+
+ACT wolf_deceives_little_red_riding_hood 2
+PRE
+E b a -3 1
+POS
+T Lr - a
+
+ACT little_red_riding_hood_gets_into_bed_with_wolf 2
+PRE
+E a b -3 1
+POS
+T Lr - a
+
+ACT wolf_eats_little_red_riding_hood 2
+PRE
+E a b -3 1
+POS
+T Ad - a
+

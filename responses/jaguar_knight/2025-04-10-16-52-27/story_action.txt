@@ -1,0 +1,141 @@
+<think>
+Okay, so I need to analyze this story and extract the essential actions related to emotional links (friendship or love) and tensions (like character_dead, life_at_risk, etc.). The user wants these in a JSON format with specific keys: action, n_characters, subject, object.
+
+First, I'll read through the story carefully. Jaguar Knight and Princess are main characters. Tensions include a storm damaging a bridge, leading to Jaguar's injury, then Princess helping him. Later, Princess is kidnapped by an enemy who wants revenge because her father humiliated his family. Jaguar rescues her but later, she finds out he has a tattoo linked to her father's murderers, leading to her killing him and herself.
+
+Now, I need to identify actions related to emotional links or tensions. Let me break it down step by step.
+
+1. **Storm Damages Bridge**: This is an action causing life_at_risk as the bridge collapses when Jaguar tries to cross. So, this should be an action with 'life_at_risk' tension. Subject might not be a character, so subject and object are '-'.
+
+2. **Princess Saves Jaguar**: Princess heals Jaguar's wounds after his injury. This shows love or friendship, but more likely romantic since later they kiss. So emotional link is 'love'. n_characters would be 2, with Princess as subject and Jaguar as object.
+
+3. **Enemy Kidnaps Princess**: This creates a prisoner tension. Subject is enemy, object is Princess.
+
+4. **Jaguar Decides to Rescue**: His action is to liberate her, so emotional link is love or friendship. But since they later have romantic feelings, it's love.
+
+5. **Princess Angry with Enemy**: Emotional state but maybe not an action. However, when she confronts him, that's an action related to tension (prisoner).
+
+6. **Enemy Charges at Princess**: Life_at_risk because he’s attacking her.
+
+7. **Jaguar Attacks and Kills Enemy**: This is a significant action leading to enemy's death (character_dead). It also affects the emotional link as Jaguar saves Princess, showing love.
+
+8. **Princess Liberated by Jaguar**: Another action with emotional link, likely romantic, since she admires him.
+
+9. **Princess Kisses Jaguar**: Direct emotional link of 'love'.
+
+10. **Princess Recognizes Tattoo**: This creates internal conflict but isn't an action towards another character yet. However, when she cuts his jugular and her throat, that's two actions with 'character_dead' tension.
+
+Each action needs to be in snake_case without names, just descriptions. Now, mapping each step to JSON:
+
+1. **bridge_collapse**: life_at_risk
+2. **princess_heals_jaguar**: love
+3. **enemy_kidnaps_princess**: prisoner
+4. **jaguar_rescues_princess**
+5. **princess_confronts_enemy**: prisoner
+6. **enemy_attacks_princess**: life_at_risk
+7. **jaguar_kills_enemy**: character_dead
+8. **princess_liberated_by_jaguar**: love
+9. **princess_kisses_jaguar**: love
+10. **princess_kills_jaguar**: character_dead and then princess kills herself.
+
+Wait, but in the example response, some actions are combined, like enemy_attacking, which includes throwing dust and using dagger. Also, some steps might be merged for simplicity.
+
+I need to ensure each action is as simple as possible. For example, 'enemy_charges_at_princess' could encompass the attack. Similarly, Jaguar's rescue involves searching and attacking, but in the example, it's split into actions like 'jaguar_searches_for_enemy', 'jaguar_throws_dust_in_enemys_face', etc.
+
+So I need to capture each distinct action with subjects and objects. Also, for actions without a clear subject or object, use '-'.
+
+I think I covered all the necessary points. Now, organizing them in chronological order as per the story.
+</think>
+
+Here is the JSON output capturing the essential actions from the narrative, focusing on emotional links and tensions:
+
+```json
+[
+  {
+    "action": "bridge_collapse",
+    "n_characters": 0,
+    "subject": "-",
+    "object": "-"
+  },
+  {
+    "action": "princess_heals_jaguar",
+    "n_characters": 2,
+    "subject": "Princess",
+    "object": "Jaguar_Knight"
+  },
+  {
+    "action": "enemy_kidnaps_princess",
+    "n_characters": 2,
+    "subject": "Enemy",
+    "object": "Princess"
+  },
+  {
+    "action": "jaguar_decides_to_rescue_princess",
+    "n_characters": 1,
+    "subject": "Jaguar_Knight",
+    "object": "-"
+  },
+  {
+    "action": "princess_confronts_enemy",
+    "n_characters": 2,
+    "subject": "Princess",
+    "object": "Enemy"
+  },
+  {
+    "action": "enemy_attacks_princess",
+    "n_characters": 2,
+    "subject": "Enemy",
+    "object": "Princess"
+  },
+  {
+    "action": "jaguar_searches_for_enemy",
+    "n_characters": 1,
+    "subject": "Jaguar_Knight",
+    "object": "-"
+  },
+  {
+    "action": "jaguar_kills_enemy",
+    "n_characters": 2,
+    "subject": "Jaguar_Knight",
+    "object": "Enemy"
+  },
+  {
+    "action": "princess_liberated_by_jaguar",
+    "n_characters": 2,
+    "subject": "Jaguar_Knight",
+    "object": "Princess"
+  },
+  {
+    "action": "jaguar_admires_princess_bravery",
+    "n_characters": 1,
+    "subject": "Jaguar_Knight",
+    "object": "-"
+  },
+  {
+    "action": "princess_kisses_jaguar",
+    "n_characters": 2,
+    "subject": "Princess",
+    "object": "Jaguar_Knight"
+  },
+  {
+    "action": "princess_recognizes_tattoo",
+    "n_characters": 1,
+    "subject": "Princess",
+    "object": "-"
+  },
+  {
+    "action": "princess_kills_jaguar",
+    "n_characters": 2,
+    "subject": "Princess",
+    "object": "Jaguar_Knight"
+  },
+  {
+    "action": "princess_commits_suicide",
+    "n_characters": 1,
+    "subject": "Princess",
+    "object": "-"
+  }
+]
+```
+
+This JSON structure captures each significant action, noting the number of characters involved and their roles as subject or object.

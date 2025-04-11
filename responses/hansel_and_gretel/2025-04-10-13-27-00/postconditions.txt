@@ -1,0 +1,396 @@
+<think>
+Okay, I need to figure out how to identify or infer postconditions for each action in the Hansel and Gretel story. Postconditions are changes to emotional links or tensions resulting from an action. At least one postcondition is required per action, and if there were preconditions, the postconditions shouldn't be the same.
+
+Let me go through each action one by one:
+
+1. **father_feels_guilt_over_children**: The father feels guilty, which likely strengthens his love for the children. So, an emotional link of type 'love' with increased magnitude from 'a' (father) to 'b' (children). No change in tensions yet.
+
+2. **stepmother_suggests_abandoning_children**: This action creates fear and dislike towards the stepmother, so Gretel would develop a negative friendship link towards her stepmother. Tension of `life_at_risk` is introduced for the children.
+
+3. **children_overhear_stepmother**: They become afraid, leading to a negative emotional link towards the stepmother (friendship, -2). The tension `life_at_risk` increases for them.
+
+4. **hansel Comforts_gretel**: Hansel's comfort strengthens their bond, so Gretel develops a positive friendship link towards Hansel. This action reduces the `life_at_risk` tension as they feel safer.
+
+5. **family_enters_forest**: Entering the forest introduces `life_at_risk` for all family members.
+
+6. **father_abandons_children**: The father abandons them, leading to a negative emotional link from children towards father (friendship, -3). Tension remains `life_at_risk`.
+
+7. **hansel_leaves_trail_of_pebbles**: This action helps them feel safer, reducing the `life_at_risk` tension and creating trust in Hansel.
+
+8. **children_find_way_home**: Finding their way home resolves the `life_at_risk` tension and strengthens their bond (friendship, +2 between both).
+
+9. **stepmother_dies**: Her death removes a source of negative emotions but doesn't directly affect emotional links much. Tension `character_dead` is resolved.
+
+10. **family_enters_forest_again**: Similar to before, introduces `life_at_risk` for all again.
+
+11. **hansel_leaves_trail_of_breadcrumbs**: Provides hope, reducing `life_at_risk` tension and increasing trust in Hansel (friendship +2).
+
+12. **birds_eat_breadcrumbs**: Increases the `life_at_risk` as they lose guidance.
+
+13. **children_lost_in_forest**: They remain at risk, so `life_at_risk` continues.
+
+14. **witch_captures_children**: Introduces new tension of being prisoners (`prisoner`) and increases `life_at_risk`.
+
+15. **gretel_outsmarts_witch**: Frees them from captivity (`prisoner_freed`) and reduces `life_at_risk`. Strengthens Gretel's positive emotional link towards Hansel.
+
+16. **witch_dies**: Resolves her threat, reducing tensions to normal (`character_dead`).
+
+17. **children_escape_forest**: Fully resolves the `life_at_risk` tension as they escape safely, strengthening their bond (friendship +3 between both).
+</think>
+
+```json
+[
+  {
+    "action": "father_feels_guilt_over_children",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "-",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "love",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "stepmother_suggests_abandoning_children",
+    "n_characters": 2,
+    "subject": "stepmother",
+    "object": "father",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -2,
+          "from": "b",
+          "to": "a"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "*",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "children_overhear_stepmother",
+    "n_characters": 2,
+    "subject": "-",
+    "object": "-",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -2,
+          "from": "b",
+          "to": "a"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "*",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "hansel Comforts_gretel",
+    "n_characters": 2,
+    "subject": "Hansel",
+    "object": "Gretel",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 3,
+          "from": "b",
+          "to": "a"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_normal",
+          "from": "*",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "family_enters_forest",
+    "n_characters": 4,
+    "subject": "-",
+    "object": "-",
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "*",
+          "to": "*"
+        }
+      ]
+    }
+  },
+  {
+    "action": "father_abandons_children",
+    "n_characters": 2,
+    "subject": "father",
+    "object": "children",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -3,
+          "from": "b",
+          "to": "a"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "hansel_leaves_trail_of_pebbles",
+    "n_characters": 1,
+    "subject": "Hansel",
+    "object": "-",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 2,
+          "from": "b",
+          "to": "a"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_normal",
+          "from": "*",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "children_find_way_home",
+    "n_characters": 2,
+    "subject": "-",
+    "object": "-",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 2,
+          "from": "a",
+          "to": "b"
+        },
+        {
+          "type": "friendship",
+          "magnitude": 2,
+          "from": "b",
+          "to": "a"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_normal",
+          "from": "*",
+          "to": "*"
+        }
+      ]
+    }
+  },
+  {
+    "action": "stepmother_dies",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "stepmother",
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": [
+        {
+          "type": "character_dead",
+          "from": "*",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "family_enters_forest_again",
+    "n_characters": 4,
+    "subject": "-",
+    "object": "-",
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "*",
+          "to": "*"
+        }
+      ]
+    }
+  },
+  {
+    "action": "hansel_leaves_trail_of_breadcrumbs",
+    "n_characters": 1,
+    "subject": "Hansel",
+    "object": "-",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 2,
+          "from": "b",
+          "to": "a"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_normal",
+          "from": "*",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "birds_eat_breadcrumbs",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "-",
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "*",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "children_lost_in_forest",
+    "n_characters": 2,
+    "subject": "-",
+    "object": "-",
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "*",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "witch_captures_children",
+    "n_characters": 3,
+    "subject": "witch",
+    "object": "children",
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": [
+        {
+          "type": "prisoner",
+          "from": "a",
+          "to": "b"
+        },
+        {
+          "type": "life_at_risk",
+          "from": "*",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "gretel_outsmarts_witch",
+    "n_characters": 2,
+    "subject": "Gretel",
+    "object": "witch",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 3,
+          "from": "b",
+          "to": "a"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "prisoner_freed",
+          "from": "*",
+          "to": "b"
+        },
+        {
+          "type": "life_normal",
+          "from": "*",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "witch_dies",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "witch",
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": [
+        {
+          "type": "character_dead",
+          "from": "*",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "children_escape_forest",
+    "n_characters": 2,
+    "subject": "-",
+    "object": "-",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        },
+        {
+          "type": "friendship",
+          "magnitude": 3,
+          "from": "b",
+          "to": "a"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_normal",
+          "from": "*",
+          "to": "*"
+        }
+      ]
+    }
+  }
+]
+```

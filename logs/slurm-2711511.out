@@ -1305,3 +1305,4 @@ time=2025-04-09T16:26:22.437-06:00 level=DEBUG source=sched.go:358 msg="after pr
 time=2025-04-09T16:26:23.943-06:00 level=DEBUG source=sched.go:576 msg="evaluating already loaded" model=/home/rmorain2/.ollama_models/blobs/sha256-9801e7fce27dbf3d0bfb468b7b21f1d132131a546dfc43e50518631b8b1800a9
 time=2025-04-09T16:26:23.944-06:00 level=DEBUG source=routes.go:1501 msg="chat request" images=0 prompt="<｜User｜>Does the sun rise in the west? Just answer yes or no.<｜Assistant｜>"
 time=2025-04-09T16:26:23.946-06:00 level=DEBUG source=cache.go:104 msg="loading cache slot" id=0 cache=0 prompt=17 used=0 remaining=17
+slurmstepd: error: *** JOB 2711511 ON m13h-2-2 CANCELLED AT 2025-04-09T17:23:02 DUE TO TIME LIMIT ***

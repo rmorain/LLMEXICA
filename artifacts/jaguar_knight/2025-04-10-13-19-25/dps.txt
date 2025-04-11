@@ -1,0 +1,5 @@
+STO
+JAGUAR_KNIGHT character_injured PRINCESS
+ENEMY princess_kidnapped PRINCESS
+JAGUAR_KNIGHT character_attacked_enemy ENEMY
+PRINCESS character_fell_in_love JAGUAR_KNIGHT

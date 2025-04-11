@@ -1,0 +1,329 @@
+
+Okay, so I need to figure out how to identify or infer postconditions for each action in this story about Goldilocks and the Three Bears. The user wants me to look at changes to emotional links and tensions caused by each action, ensuring that at least one postcondition is required per action and that they aren't the same as preconditions if any existed.
+
+First, let's recall what postconditions are: they're changes in emotional links or tensions resulting from an action. Emotional links can be of type `friendship` or `love`, with magnitudes between -3 and 3. Tensions include things like `character_dead`, `life_at_risk`, etc., and there are also normal tensions that resolve these.
+
+Now, I'll go through each action one by one to determine the postconditions:
+
+1. **Taste Porridge**: Goldilocks tastes Great Big Bear's porridge. She doesn't like it because it's too hot, so this might create a negative emotional link towards the Bears (friendship: -1). No direct tension is introduced here.
+
+2. **Eat Entire Porridge**: She eats all of Little Wee Bear's porridge. This action shows her disregard for others' property, which could lead to a more negative emotional link (friendship: -2) from the Bears towards Goldilocks when they find out.
+
+3. **Sit in Hard Chair**: Sits in Great Big Bear's chair and finds it too hard. Again, this is just exploration; no significant emotional change here.
+
+4. **Sit in Soft Chair**: Finds Middle-sized Bear's chair too soft. Still exploring, so minimal to no change in emotional links.
+
+5. **Break Chair**: Breaks Little Wee Bear's chair. This action introduces a tension of `life_at_risk` for Goldilocks as she falls and could get hurt. It also likely increases negative emotions from the Bears towards her (friendship: -3).
+
+6. **Lie in High Bed**: Finds Great Big Bear's bed too high, so no significant emotional change here.
+
+7. **Lie in Soft Bed**: Middle-sized Bear's bed is too soft; still just exploring comfort, so minimal impact on emotional links.
+
+8. **Fall Asleep in Bed**: Falls asleep in Little Wee Bear's bed, which leads to the Bears discovering her later. This introduces a tension of `prisoner` as they might detain her and negative emotions towards Goldilocks (friendship: -3).
+
+9. **Discover Porridge Tampering**: The Bears notice their porridge has been tasted. This creates a tension of `clashing_emotions` as they are upset about the intrusion, leading to stronger negative emotional links from the Bears towards Goldilocks.
+
+10. **Find Chair Broken**: They find the broken chair, adding to the tension of an intruder in their house and increasing their negative emotions (friendship: -3).
+
+11. **Discover Sleeping Goldilocks**: Finding her asleep introduces both `prisoner` and `clashing_emotions` tensions as they are angry and surprised. This also solidifies their negative emotional links towards her.
+
+12. **Wake Up to Noise**: Startled by the Bears, Goldilocks realizes she's been caught, leading to a `life_at_risk` tension for her safety.
+
+13. **Escape Through Window**: She escapes by jumping out the window, which resolves some tensions as she frees herself (`prisoner_freed`) but introduces `life_normal` since she might have escaped unharmed.
+
+Now, I need to ensure that each action has at least one postcondition and that they aren't the same as any preconditions. For actions with preconditions like breaking the chair or discovering Goldilocks, their postconditions should resolve or change those tensions accordingly.
+</think>
+
+```json
+[
+    {
+        "action": "taste_porridge",
+        "n_characters": 2,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [],
+            "tensions": []
+        },
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -1,
+                    "from": "b",
+                    "to": "a"
+                }
+            ],
+            "tensions": []
+        }
+    },
+    {
+        "action": "eat_entire_porridge",
+        "n_characters": 2,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [],
+            "tensions": []
+        },
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -2,
+                    "from": "b",
+                    "to": "a"
+                }
+            ],
+            "tensions": []
+        }
+    },
+    {
+        "action": "sit_in_hard_chair",
+        "n_characters": 2,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [],
+            "tensions": []
+        },
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": []
+        }
+    },
+    {
+        "action": "sit_in_soft_chair",
+        "n_characters": 2,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [],
+            "tensions": []
+        },
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": []
+        }
+    },
+    {
+        "action": "break_chair",
+        "n_characters": 2,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "*",
+                    "to": "*"
+                }
+            ]
+        },
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -3,
+                    "from": "b",
+                    "to": "a"
+                }
+            ],
+            "tensions": []
+        }
+    },
+    {
+        "action": "lie_in_high_bed",
+        "n_characters": 2,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [],
+            "tensions": []
+        },
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": []
+        }
+    },
+    {
+        "action": "lie_in_soft_bed",
+        "n_characters": 2,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [],
+            "tensions": []
+        },
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": []
+        }
+    },
+    {
+        "action": "fall_asleep_in_bed",
+        "n_characters": 2,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "prisoner",
+                    "from": "*",
+                    "to": "*"
+                }
+            ]
+        },
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -3,
+                    "from": "b",
+                    "to": "a"
+                }
+            ],
+            "tensions": []
+        }
+    },
+    {
+        "action": "discover_porridge_tampering",
+        "n_characters": 3,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "clashing_emotions",
+                    "from": "*",
+                    "to": "*"
+                }
+            ]
+        },
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -3,
+                    "from": "b",
+                    "to": "a"
+                }
+            ],
+            "tensions": []
+        }
+    },
+    {
+        "action": "find_chair_broken",
+        "n_characters": 3,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "*",
+                    "to": "*"
+                }
+            ]
+        },
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -3,
+                    "from": "b",
+                    "to": "a"
+                }
+            ],
+            "tensions": []
+        }
+    },
+    {
+        "action": "discover_sleeping_goldilocks",
+        "n_characters": 4,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "prisoner",
+                    "from": "*",
+                    "to": "*"
+                },
+                {
+                    "type": "clashing_emotions",
+                    "from": "*",
+                    "to": "*"
+                }
+            ]
+        },
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -3,
+                    "from": "b",
+                    "to": "a"
+                }
+            ],
+            "tensions": []
+        }
+    },
+    {
+        "action": "wake_up_to_noise",
+        "n_characters": 1,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "*",
+                    "to": "*"
+                }
+            ]
+        },
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": []
+        }
+    },
+    {
+        "action": "escape_through_window",
+        "n_characters": 1,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "*",
+                    "to": "*"
+                }
+            ]
+        },
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "prisoner_freed",
+                    "from": "-",
+                    "to": "-"
+                },
+                {
+                    "type": "life_normal",
+                    "from": "-",
+                    "to": "-"
+                }
+            ]
+        }
+    }
+]
+```

@@ -1,0 +1,74 @@
+<think>
+Alright, so I'm trying to figure out how to analyze this story using the guidelines provided. The user wants me to extract actions related to emotional links (friendship or love) and tensions (like character dead, life at risk, etc.) from "Goldilocks and the Three Bears." 
+
+First, I'll read through the story carefully to identify key events involving the main characters: the three bears and Goldilocks. The story doesn't mention any romantic relationships, so emotional links will likely focus on friendship, but looking at the bears' interactions, they seem more like a family unit rather than friends. However, their actions towards each other show cooperation and concern, which might count as friendship.
+
+Now, for tensions. I need to look for situations where characters are in danger or their well-being is at risk. The bears don't face life-threatening issues, but Goldilocks does have a risky situation when she jumps out the window. Also, her actions cause damage to the bears' property, which creates conflict.
+
+I'll go through each major event step by step:
+
+1. **Goldilocks enters the house uninvited.** This is an action without a subject since it's just her entering. It shows intrusion but doesn't directly tie into emotional links or tension yet.
+
+2. **Tasting porridge:** She tastes each bear's porridge, which affects their property but not their health. So this is more about causing damage rather than creating tension related to their well-being.
+
+3. **Sitting in chairs and breaking the Little Bear's chair.** Again, property damage, but no direct threat to health or life.
+
+4. **Sleeping in beds:** She sleeps in the Little Bear's bed, which is an invasion of privacy but doesn't directly cause tension unless it leads to a confrontation.
+
+5. **Bears return and find their porridge tampered with.** This creates conflict as they realize someone has been in their house. It introduces tension because they're investigating an intrusion, which could escalate.
+
+6. **Goldilocks waking up and jumping out the window.** Here, her action puts her life at risk, fitting the `life_at_risk` tension.
+
+7. **Chases or consequences:** The story ends without showing the bears chasing her, so no further tension beyond her jump.
+
+Now, I need to map these events into actions with subjects and objects where applicable. Each action should be in snake_case and as general as possible for reusability. Also, ensuring `n_characters` is accurate based on subject and object presence.
+
+I'll list the actions chronologically:
+
+- goldilocks_enters_house: No subject needed since it's just her entering.
+- bears_find_tampered_porridge: Bears are the subjects, porridge is an object but not a character, so object is '-'.
+- goldilocks_wakes_up: Only Goldilocks involved.
+- goldilocks_jumps_out_window: Her action putting her life at risk.
+
+Wait, I think I missed some actions. Let me re-examine:
+
+When Goldilocks enters, that's an action without subject or object beyond herself. Then she tastes porridge, sits in chairs, sleeps in beds—these are all her actions affecting the bears' belongings but not directly their emotional links unless considering the bears' reactions.
+
+The main tension arises when the bears discover the intrusion and Goldilocks' subsequent risky escape. So, focusing on these points:
+
+1. **Goldilocks enters the house**: Action without subject or object beyond herself.
+2. **Bears find porridge tampered with**: Bears as subjects, no specific character object since it's their porridge collectively.
+3. **Goldilocks wakes up**: Her action, no direct impact on others yet.
+4. **Goldilocks jumps out window**: This is a clear life-at-risk moment.
+
+I think these are the key actions related to tension and emotional links (which in this case are minimal since there's no strong friendship or love ties beyond the bears' unity). The primary focus here is on the tensions created by Goldilocks' intrusion and her risky escape.
+</think>
+
+```json
+[
+  {
+    "action": "goldilocks_enters_house",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "-"
+  },
+  {
+    "action": "bears_find_tampered_porridge",
+    "n_characters": 3,
+    "subject": "the_three_bears",
+    "object": "-"
+  },
+  {
+    "action": "goldilocks_wakes_up",
+    "n_characters": 1,
+    "subject": "goldilocks",
+    "object": "-"
+  },
+  {
+    "action": "goldilocks_jumps_out_window",
+    "n_characters": 1,
+    "subject": "goldilocks",
+    "object": "-"
+  }
+]
+```

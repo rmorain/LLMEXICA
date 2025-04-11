@@ -1,0 +1,333 @@
+<think>
+Alright, I'm looking at the user's request to analyze the story and identify preconditions related to emotional links for each action. The user provided a detailed set of instructions on how to structure the JSON output with preconditions.
+
+First, I need to understand what preconditions are in this context. They are requirements that must be met before an action can occur, specifically relating to emotional links or tensions. Emotional links can be friendship or love, and their magnitudes range from -3 to 3.
+
+I'll go through each action one by one. For example, the first action is "storm_caused_damage." Since this is an environmental event without any character involvement, there are no emotional links involved. So, the preconditions array will be empty.
+
+Moving on to where Jaguar_Knight gets injured, this creates a health risk tension but doesn't directly relate to an emotional link precondition, so again, no preconditions.
+
+When Princess saves Jaguar_Knight with plasma, it's driven by her care for him. This implies a positive friendship link from Princess (subject) to Jaguar_Knight (object). So, I'll set the type as "friendship" with a magnitude of 2.
+
+As Jaguar_Knight realizes gratitude, this emotional state is built on the existing positive feelings towards Princess. Thus, another friendship link precondition exists here.
+
+When Princess is kidnapped, it's about creating tension rather than an emotional link, so no preconditions are needed.
+
+Jaguar_Knight praying for help suggests determination to save Princess, indicating a strong love. Therefore, a "love" type with magnitude 3 from Jaguar_Knight (a) to Princess (b).
+
+Princess confronting the enemy angrily shows her negative emotions towards him, so a friendship link of -2 from Princess (a) to ENEMY (b).
+
+When Jaguar_Knight searches for the enemy, it's driven by love and concern for Princess, so another "love" link with magnitude 3.
+
+Finding the enemy is part of the narrative progression without direct emotional preconditions.
+
+Attacking the enemy is fueled by negative emotions, hence a friendship link of -3 from Jaguar_Knight (a) to ENEMY (b).
+
+Killing the enemy follows from the previous attack's precondition.
+
+Performing the ceremony doesn't require new emotional links beyond what's already established.
+
+Liberating Princess is driven by love, so another "love" link with magnitude 3 from Jaguar_Knight (a) to Princess (b).
+
+Princess falling in love is a direct result of her positive feelings towards Jaguar_Knight, hence a "love" link with magnitude 2.
+
+Kissing him follows naturally from the existing romantic feelings.
+
+Recognizing the tattoo introduces conflict. Princess now has mixed emotions: love and hatred. So, two emotional links—love at 1 (diminished) and friendship at -3 (hatred).
+
+Feeling conflicted is a result of these clashing emotions, hence both links are preconditions here.
+
+Killing Jaguar_Knight stems from the intense negative emotions, so a friendship link of -3 from Princess (a) to Jaguar_Knight (b).
+
+Finally, Princess taking her own life is driven by grief and guilt, requiring a "love" link towards herself with magnitude 2.
+
+Throughout this process, I have to ensure each precondition accurately reflects the necessary emotional state for the action to occur. I'll go through each action methodically, assigning the correct type, magnitude, and direction of the emotional links.
+</think>
+
+Here is the updated JSON with preconditions related to emotional links:
+
+```json
+[
+  {
+    "action": "storm_caused_damage",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": []
+    }
+  },
+  {
+    "action": "character_injured",
+    "n_characters": 2,
+    "subject": "JAGUAR_KNIGHT",
+    "object": "PRINCESS",
+    "preconditions": {
+      "emotional_links": []
+    }
+  },
+  {
+    "action": "character_saved",
+    "n_characters": 2,
+    "subject": "PRINCESS",
+    "object": "JAGUAR_KNIGHT",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 2,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "character_realized_gratitude",
+    "n_characters": 1,
+    "subject": "JAGUAR_KNIGHT",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 2,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "princess_kidnapped",
+    "n_characters": 2,
+    "subject": "ENEMY",
+    "object": "PRINCESS",
+    "preconditions": {
+      "emotional_links": []
+    }
+  },
+  {
+    "action": "character_prayed_for_help",
+    "n_characters": 1,
+    "subject": "JAGUAR_KNIGHT",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "love",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "princess_angrily_confronted_enemy",
+    "n_characters": 2,
+    "subject": "PRINCESS",
+    "object": "ENEMY",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -2,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "character_searched_for_enemy",
+    "n_characters": 1,
+    "subject": "JAGUAR_KNIGHT",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "love",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "enemy_found",
+    "n_characters": 2,
+    "subject": "JAGUAR_KNIGHT",
+    "object": "ENEMY",
+    "preconditions": {
+      "emotional_links": []
+    }
+  },
+  {
+    "action": "character_attacked_enemy",
+    "n_characters": 2,
+    "subject": "JAGUAR_KNIGHT",
+    "object": "ENEMY",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "enemy_killed",
+    "n_characters": 2,
+    "subject": "JAGUAR_KNIGHT",
+    "object": "ENEMY",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "character_performed_ceremony",
+    "n_characters": 1,
+    "subject": "JAGUAR_KNIGHT",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": []
+    }
+  },
+  {
+    "action": "princess_liberated",
+    "n_characters": 2,
+    "subject": "JAGUAR_KNIGHT",
+    "object": "PRINCESS",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "love",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "character_fell_in_love",
+    "n_characters": 2,
+    "subject": "PRINCESS",
+    "object": "JAGUAR_KNIGHT",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "love",
+          "magnitude": 2,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "princess_kissed_jaguar_knight",
+    "n_characters": 2,
+    "subject": "PRINCESS",
+    "object": "JAGUAR_KNIGHT",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "love",
+          "magnitude": 2,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "character_recognized_tattoo",
+    "n_characters": 1,
+    "subject": "PRINCESS",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "love",
+          "magnitude": 1,
+          "from": "a",
+          "to": "b"
+        },
+        {
+          "type": "friendship",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "princess_felt_conflicted_emotions",
+    "n_characters": 1,
+    "subject": "PRINCESS",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "love",
+          "magnitude": 1,
+          "from": "a",
+          "to": "b"
+        },
+        {
+          "type": "friendship",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "jaguar_knight_killed",
+    "n_characters": 2,
+    "subject": "PRINCESS",
+    "object": "JAGUAR_KNIGHT",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "princess_killed_herself",
+    "n_characters": 1,
+    "subject": "PRINCESS",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "love",
+          "magnitude": 2,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  }
+]
+```

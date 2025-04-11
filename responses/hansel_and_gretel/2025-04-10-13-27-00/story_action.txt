@@ -1,0 +1,126 @@
+<think>
+Okay, so I need to analyze the given story of Hansel and Gretel using the guidelines provided. The main goal is to identify actions related to emotional links (friendship and love) and tensions in the narrative. Then, organize these actions chronologically in a JSON format.
+
+First, I'll read through the story carefully to spot key events involving the characters. I should focus on interactions that show friendship or romantic love and any moments where tension arises as per the defined types: character_dead, life_at_risk, health_at_risk, prisoner, clashing_emotions, and love_competition.
+
+Starting from the beginning, the woodcutter is worried about feeding his children. His wife suggests abandoning them, which creates a tension of life_at_risk for Hansel and Gretel. The father is against it but eventually agrees due to the wife's insistence, showing emotional conflict (clashing_emotions) within him.
+
+Next, Hansel and Gretel overhear this plan. They show strong sibling bond (friendship) as Hansel comforts Gretel. Hansel gathers pebbles to mark their path, which is an action that helps them later. When the family goes into the forest, Hansel's actions to leave a trail create hope but also tension when they're left alone.
+
+When the children are abandoned and can't find their way back, it's life_at_risk again. They use the pebbles to return home, resolving that tension for now. The stepmother's death is another key point—character_dead—which brings relief but doesn’t directly tie into emotional links yet.
+
+The second trip into the forest has Hansel using breadcrumbs instead of pebbles, but birds eat them, leading to life_at_risk again as they get lost. Their encounter with the witch introduces health_at_risk and prisoner tensions as she imprisons Hansel and plans to eat him and Gretel.
+
+Gretel's cleverness in outsmarting the witch leads to the witch's death (character_dead) and their escape, which resolves those tensions. Finally, they return home safely, reuniting with their father and finding happiness together.
+
+Now, I'll map these events into actions. Each action should be concise, in snake_case, without character names, focusing on emotional links or tensions. The JSON structure will include n_characters, subject, object for each action.
+
+I need to ensure that the actions are in order as they appear in the story and accurately reflect either an emotional link (friendship/love) or a tension type. Each action should be simple enough to apply to other stories, so I'll keep them general.
+</think>
+
+```json
+[
+  {
+    "action": "father_feels_guilt_over_children",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "-"
+  },
+  {
+    "action": "stepmother_suggests_abandoning_children",
+    "n_characters": 2,
+    "subject": "stepmother",
+    "object": "father"
+  },
+  {
+    "action": "children_overhear_stepmother",
+    "n_characters": 2,
+    "subject": "-",
+    "object": "-"
+  },
+  {
+    "action": "hansel Comforts_gretel",
+    "n_characters": 2,
+    "subject": "Hansel",
+    "object": "Gretel"
+  },
+  {
+    "action": "family_enters_forest",
+    "n_characters": 4,
+    "subject": "-",
+    "object": "-"
+  },
+  {
+    "action": "father_abandons_children",
+    "n_characters": 2,
+    "subject": "father",
+    "object": "children"
+  },
+  {
+    "action": "hansel_leaves_trail_of_pebbles",
+    "n_characters": 1,
+    "subject": "Hansel",
+    "object": "-"
+  },
+  {
+    "action": "children_find_way_home",
+    "n_characters": 2,
+    "subject": "-",
+    "object": "-"
+  },
+  {
+    "action": "stepmother_dies",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "stepmother"
+  },
+  {
+    "action": "family_enters_forest_again",
+    "n_characters": 4,
+    "subject": "-",
+    "object": "-"
+  },
+  {
+    "action": "hansel_leaves_trail_of_breadcrumbs",
+    "n_characters": 1,
+    "subject": "Hansel",
+    "object": "-"
+  },
+  {
+    "action": "birds_eat_breadcrumbs",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "-"
+  },
+  {
+    "action": "children_lost_in_forest",
+    "n_characters": 2,
+    "subject": "-",
+    "object": "-"
+  },
+  {
+    "action": "witch_captures_children",
+    "n_characters": 3,
+    "subject": "witch",
+    "object": "children"
+  },
+  {
+    "action": "gretel_outsmarts_witch",
+    "n_characters": 2,
+    "subject": "Gretel",
+    "object": "witch"
+  },
+  {
+    "action": "witch_dies",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "witch"
+  },
+  {
+    "action": "children_escape_forest",
+    "n_characters": 2,
+    "subject": "-",
+    "object": "-"
+  }
+]
+```

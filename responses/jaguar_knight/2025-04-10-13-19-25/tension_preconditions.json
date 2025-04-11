@@ -1,0 +1,317 @@
+<think>
+Okay, so I need to analyze each action in the story and identify any preconditions related to tensions. The user provided a detailed set of instructions on how to structure the JSON output with these preconditions.
+
+First, I'll recall that tensions can be of several types: character_dead, life_at_risk, health_at_risk, prisoner, clashing_emotions, or love_competition. Each action may require certain tensions to exist before it makes sense.
+
+Starting with "storm_caused_damage," this action leads to the bridge collapsing and injuring Jaguar_Knight. The tension here is clearly a risk to his health, so I'll note that as a precondition of type 'health_at_risk'.
+
+Next, when Jaguar_Knight gets injured, this directly ties into the previous tension—his health is at risk. So, I'll include 'health_at_risk' again.
+
+Princess saving Jaguar_Knight with plasma happens because his life was at risk from the injury. Therefore, the precondition here is 'life_at_risk'.
+
+Jaguar_Knight realizing gratitude comes after he's been saved, so no specific tension is required beyond the existing health risk.
+
+When Princess is kidnapped by the enemy, this introduces a new tension: she is now a prisoner. So, I'll add 'prisoner' as a precondition.
+
+Jaguar_Knight praying for help is driven by his concern for Princess being held captive. Hence, 'prisoner' remains a precondition here.
+
+Princess confronting the enemy angrily happens while she's still a prisoner, so the tension type is still 'prisoner'.
+
+When Jaguar_Knight searches for the enemy, it's because Princess is a prisoner, so again, 'prisoner' is the precondition.
+
+Finding the enemy doesn't introduce new tensions beyond what's already present.
+
+Attacking the enemy is motivated by both the desire to free Princess and personal anger. So, 'prisoner' and 'life_at_risk' (since combat can endanger lives) are both preconditions.
+
+Killing the enemy follows from the attack, so the same tensions apply: 'prisoner' and 'life_at_risk'.
+
+Performing the ceremony after killing the enemy doesn't require new tensions beyond those already present.
+
+Liberating Princess directly relates to her being a prisoner, so 'prisoner' is the precondition here.
+
+Princess falling in love doesn't involve any tension preconditions; it's purely an emotional link.
+
+Kissing Jaguar_Knight also doesn't require any tension, just emotional links.
+
+Recognizing the tattoo introduces internal conflict for Princess. This creates 'clashing_emotions' as she now feels both love and hatred towards Jaguar_Knight.
+
+Feeling conflicted emotions is a direct result of the clashing emotions tension identified earlier.
+
+Killing Jaguar_Knight results from her conflicted state, so 'clashing_emotions' remains a precondition.
+
+Finally, Princess taking her own life is driven by grief and guilt, which ties back to the death of Jaguar_Knight, introducing 'character_dead' as a tension.
+
+I need to ensure that each action correctly references the appropriate tension type and direction. This involves checking whether the tension originates from the subject ('a'), the object ('b'), or is general. Most tensions in this story relate directly to the characters involved, so I'll assign them accordingly.
+</think>
+
+Here is the updated JSON with preconditions related to tensions:
+
+```json
+[
+  {
+    "action": "storm_caused_damage",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "tensions": [
+        {
+          "type": "health_at_risk",
+          "from": "a",
+          "to": "-"
+        }
+      ]
+    }
+  },
+  {
+    "action": "character_injured",
+    "n_characters": 2,
+    "subject": "JAGUAR_KNIGHT",
+    "object": "PRINCESS",
+    "preconditions": {
+      "tensions": [
+        {
+          "type": "health_at_risk",
+          "from": "a",
+          "to": "-"
+        }
+      ]
+    }
+  },
+  {
+    "action": "character_saved",
+    "n_characters": 2,
+    "subject": "PRINCESS",
+    "object": "JAGUAR_KNIGHT",
+    "preconditions": {
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "-",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "character_realized_gratitude",
+    "n_characters": 1,
+    "subject": "JAGUAR_KNIGHT",
+    "object": "-",
+    "preconditions": {
+      "tensions": []
+    }
+  },
+  {
+    "action": "princess_kidnapped",
+    "n_characters": 2,
+    "subject": "ENEMY",
+    "object": "PRINCESS",
+    "preconditions": {
+      "tensions": [
+        {
+          "type": "prisoner",
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "character_prayed_for_help",
+    "n_characters": 1,
+    "subject": "JAGUAR_KNIGHT",
+    "object": "-",
+    "preconditions": {
+      "tensions": [
+        {
+          "type": "prisoner",
+          "from": "-",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "princess_angrily_confronted_enemy",
+    "n_characters": 2,
+    "subject": "PRINCESS",
+    "object": "ENEMY",
+    "preconditions": {
+      "tensions": [
+        {
+          "type": "prisoner",
+          "from": "a",
+          "to": "-"
+        }
+      ]
+    }
+  },
+  {
+    "action": "character_searched_for_enemy",
+    "n_characters": 1,
+    "subject": "JAGUAR_KNIGHT",
+    "object": "-",
+    "preconditions": {
+      "tensions": [
+        {
+          "type": "prisoner",
+          "from": "-",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "enemy_found",
+    "n_characters": 2,
+    "subject": "JAGUAR_KNIGHT",
+    "object": "ENEMY",
+    "preconditions": {
+      "tensions": []
+    }
+  },
+  {
+    "action": "character_attacked_enemy",
+    "n_characters": 2,
+    "subject": "JAGUAR_KNIGHT",
+    "object": "ENEMY",
+    "preconditions": {
+      "tensions": [
+        {
+          "type": "prisoner",
+          "from": "-",
+          "to": "b"
+        },
+        {
+          "type": "life_at_risk",
+          "from": "a",
+          "to": "-"
+        }
+      ]
+    }
+  },
+  {
+    "action": "enemy_killed",
+    "n_characters": 2,
+    "subject": "JAGUAR_KNIGHT",
+    "object": "ENEMY",
+    "preconditions": {
+      "tensions": [
+        {
+          "type": "prisoner",
+          "from": "-",
+          "to": "b"
+        },
+        {
+          "type": "life_at_risk",
+          "from": "a",
+          "to": "-"
+        }
+      ]
+    }
+  },
+  {
+    "action": "character_performed_ceremony",
+    "n_characters": 1,
+    "subject": "JAGUAR_KNIGHT",
+    "object": "-",
+    "preconditions": {
+      "tensions": []
+    }
+  },
+  {
+    "action": "princess_liberated",
+    "n_characters": 2,
+    "subject": "JAGUAR_KNIGHT",
+    "object": "PRINCESS",
+    "preconditions": {
+      "tensions": [
+        {
+          "type": "prisoner",
+          "from": "-",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "character_fell_in_love",
+    "n_characters": 2,
+    "subject": "PRINCESS",
+    "object": "JAGUAR_KNIGHT",
+    "preconditions": {
+      "tensions": []
+    }
+  },
+  {
+    "action": "princess_kissed_jaguar_knight",
+    "n_characters": 2,
+    "subject": "PRINCESS",
+    "object": "JAGUAR_KNIGHT",
+    "preconditions": {
+      "tensions": []
+    }
+  },
+  {
+    "action": "character_recognized_tattoo",
+    "n_characters": 1,
+    "subject": "PRINCESS",
+    "object": "-",
+    "preconditions": {
+      "tensions": [
+        {
+          "type": "clashing_emotions",
+          "from": "a",
+          "to": "-"
+        }
+      ]
+    }
+  },
+  {
+    "action": "princess_felt_conflicted_emotions",
+    "n_characters": 1,
+    "subject": "PRINCESS",
+    "object": "-",
+    "preconditions": {
+      "tensions": [
+        {
+          "type": "clashing_emotions",
+          "from": "a",
+          "to": "-"
+        }
+      ]
+    }
+  },
+  {
+    "action": "jaguar_knight_killed",
+    "n_characters": 2,
+    "subject": "PRINCESS",
+    "object": "JAGUAR_KNIGHT",
+    "preconditions": {
+      "tensions": [
+        {
+          "type": "clashing_emotions",
+          "from": "a",
+          "to": "-"
+        }
+      ]
+    }
+  },
+  {
+    "action": "princess_killed_herself",
+    "n_characters": 1,
+    "subject": "PRINCESS",
+    "object": "-",
+    "preconditions": {
+      "tensions": [
+        {
+          "type": "character_dead",
+          "from": "-",
+          "to": "b"
+        }
+      ]
+    }
+  }
+]
+```

@@ -1,0 +1,190 @@
+[
+    {
+        "action": "mother_instructs_sell_cow",
+        "n_characters": 2,
+        "subject": "mother",
+        "object": "jack",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "jack_trades_cow_for_beans",
+        "n_characters": 2,
+        "subject": "jack",
+        "object": "man",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": 1,
+                    "from": "a",
+                    "to": "b"
+                },
+                {
+                    "type": "friendship",
+                    "magnitude": -2,
+                    "from": "a",
+                    "to": "situation"
+                }
+            ]
+        }
+    },
+    {
+        "action": "mother_angry_at_jack",
+        "n_characters": 2,
+        "subject": "mother",
+        "object": "jack",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "mother_throws_beans_out_window",
+        "n_characters": 1,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -2,
+                    "from": "a",
+                    "to": "-"
+                }
+            ]
+        }
+    },
+    {
+        "action": "jack_sad_and_sleeps",
+        "n_characters": 1,
+        "subject": "jack",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -2,
+                    "from": "a",
+                    "to": "-"
+                }
+            ]
+        }
+    },
+    {
+        "action": "jack_climbs_beanstalk",
+        "n_characters": 1,
+        "subject": "jack",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": 2,
+                    "from": "a",
+                    "to": "beanstalk"
+                }
+            ]
+        }
+    },
+    {
+        "action": "giant_wife_gives_food_to_jack",
+        "n_characters": 2,
+        "subject": "giant's wife",
+        "object": "jack",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": 2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "giant-threatens-jack",
+        "n_characters": 2,
+        "subject": "giant",
+        "object": "jack",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "giant_counts_gold",
+        "n_characters": 1,
+        "subject": "giant",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": 1,
+                    "from": "a",
+                    "to": "-"
+                }
+            ]
+        }
+    },
+    {
+        "action": "jack_steals_gold_from_giant",
+        "n_characters": 2,
+        "subject": "jack",
+        "object": "giant",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -1,
+                    "from": "a",
+                    "to": "b"
+                },
+                {
+                    "type": "love",
+                    "magnitude": 2,
+                    "from": "a",
+                    "to": "mother"
+                }
+            ]
+        }
+    },
+    {
+        "action": "jack_gives_coins_to_mother",
+        "n_characters": 2,
+        "subject": "jack",
+        "object": "mother",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "love",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    }
+]

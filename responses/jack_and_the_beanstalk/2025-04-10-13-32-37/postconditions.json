@@ -1,0 +1,328 @@
+<think>
+Alright, I need to help the user enhance their previous JSON output by adding postconditions for each action in the story of Jack and the Beanstalk. The goal is to identify changes to emotional links and tensions resulting from each character's actions.
+
+First, let me recall the actions extracted from the story:
+
+1. mother_instructs_sell_cow
+2. jack_trades_cow_for_beans
+3. mother_angry_at_jack
+4. mother_throws_beans_out_window
+5. jack_sad_and_sleeps
+6. jack_climbs_beanstalk
+7. giant_wife_gives_food_to_jack
+8. giant-threatens-jack
+9. giant_counts_gold
+10. jack_steals_gold_from_giant
+11. jack_gives_coins_to_mother
+
+For each action, I need to determine the resulting emotional links and tensions.
+
+Starting with "mother_instructs_sell_cow": This likely causes a negative emotional link from Jack towards his mother due to the harsh instruction. It also increases the tension of life_at_risk because selling the cow might worsen their situation.
+
+Next, "jack_trades_cow_for_beans": Jack's trust in the man leads to a positive link towards him, but there’s also a negative link towards his mother because he fears her reaction. The tension here is still life_at_risk due to potential consequences of losing the cow.
+
+"mother_angry_at_jack" strengthens the negative emotional link from the mother towards Jack and introduces clashing emotions in Jack—he might feel both fear and resentment towards his mother.
+
+Throwing the beans out the window by the mother shows her frustration, intensifying her negative link towards Jack. The tension remains life_at_risk as their situation hasn't improved.
+
+Jack's sadness leads to a negative self-emotional link and maintains the life_at_risk tension due to his hopeless state.
+
+Climbing the beanstalk introduces excitement in Jack (positive emotional link towards the beanstalk) but also increases life_at_risk as he ventures into danger.
+
+The giant's wife giving food creates a positive emotional link from Jack towards her, showing gratitude. This action reduces immediate life_at_risk as she helps him, creating a safer moment.
+
+When the giant threatens Jack, it intensifies the life_at_risk tension and establishes a negative emotional link from Jack towards the giant.
+
+Counting gold by the giant shows possessiveness but doesn't directly change emotional links; however, it maintains the underlying life_at_risk tension as Jack is still in danger.
+
+Stealing gold from the giant creates fear (negative link from the giant to Jack) and hope for Jack. This action introduces new tensions: prisoner (Jack hiding) and life_at_risk increases as the giant notices something amiss.
+
+Giving coins to his mother strengthens the positive emotional bond between them, reducing some life_at_risk tension as their situation improves temporarily.
+
+Each action needs these postconditions mapped. I'll structure each JSON object with the `postconditions` key containing both `emotional_links` and `tensions`, ensuring they differ from preconditions if any existed.
+</think>
+
+Here is the JSON-formatted analysis with postconditions for emotional links and tensions:
+
+```json
+[
+  {
+    "action": "mother_instructs_sell_cow",
+    "n_characters": 2,
+    "subject": "mother",
+    "object": "jack",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -1,
+          "from": "jack",
+          "to": "mother"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "-",
+          "to": "*"
+        }
+      ]
+    }
+  },
+  {
+    "action": "jack_trades_cow_for_beans",
+    "n_characters": 2,
+    "subject": "jack",
+    "object": "man",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 1,
+          "from": "jack",
+          "to": "man"
+        },
+        {
+          "type": "friendship",
+          "magnitude": -1,
+          "from": "jack",
+          "to": "mother"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "-",
+          "to": "*"
+        }
+      ]
+    }
+  },
+  {
+    "action": "mother_angry_at_jack",
+    "n_characters": 2,
+    "subject": "mother",
+    "object": "jack",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -2,
+          "from": "mother",
+          "to": "jack"
+        },
+        {
+          "type": "friendship",
+          "magnitude": -1,
+          "from": "jack",
+          "to": "mother"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "clashing_emotions",
+          "from": "jack",
+          "to": "mother"
+        }
+      ]
+    }
+  },
+  {
+    "action": "mother_throws_beans_out_window",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "-",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -2,
+          "from": "mother",
+          "to": "jack"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "-",
+          "to": "*"
+        }
+      ]
+    }
+  },
+  {
+    "action": "jack_sad_and_sleeps",
+    "n_characters": 1,
+    "subject": "jack",
+    "object": "-",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -2,
+          "from": "jack",
+          "to": "self"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "-",
+          "to": "*"
+        }
+      ]
+    }
+  },
+  {
+    "action": "jack_climbs_beanstalk",
+    "n_characters": 1,
+    "subject": "jack",
+    "object": "-",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 2,
+          "from": "jack",
+          "to": "beanstalk"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "jack",
+          "to": "*"
+        }
+      ]
+    }
+  },
+  {
+    "action": "giant_wife_gives_food_to_jack",
+    "n_characters": 2,
+    "subject": "giant's wife",
+    "object": "jack",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 2,
+          "from": "jack",
+          "to": "giant's wife"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_normal",
+          "from": "-",
+          "to": "*"
+        }
+      ]
+    }
+  },
+  {
+    "action": "giant-threatens-jack",
+    "n_characters": 2,
+    "subject": "giant",
+    "object": "jack",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -3,
+          "from": "jack",
+          "to": "giant"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "giant",
+          "to": "jack"
+        }
+      ]
+    }
+  },
+  {
+    "action": "giant_counts_gold",
+    "n_characters": 1,
+    "subject": "giant",
+    "object": "-",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 2,
+          "from": "giant",
+          "to": "gold"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "-",
+          "to": "*"
+        }
+      ]
+    }
+  },
+  {
+    "action": "jack_steals_gold_from_giant",
+    "n_characters": 2,
+    "subject": "jack",
+    "object": "giant",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -2,
+          "from": "giant",
+          "to": "jack"
+        },
+        {
+          "type": "friendship",
+          "magnitude": 1,
+          "from": "jack",
+          "to": "mother"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "prisoner",
+          "from": "giant",
+          "to": "jack"
+        },
+        {
+          "type": "life_at_risk",
+          "from": "jack",
+          "to": "*"
+        }
+      ]
+    }
+  },
+  {
+    "action": "jack_gives_coins_to_mother",
+    "n_characters": 2,
+    "subject": "jack",
+    "object": "mother",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "love",
+          "magnitude": 3,
+          "from": "mother",
+          "to": "jack"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_normal",
+          "from": "-",
+          "to": "*"
+        }
+      ]
+    }
+  }
+]
+```
+
+This JSON includes postconditions for each action, detailing changes in emotional links and tensions resulting from the characters' actions. Each postcondition reflects the outcomes inferred from the story context.

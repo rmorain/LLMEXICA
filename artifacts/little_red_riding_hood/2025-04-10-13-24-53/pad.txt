@@ -1,0 +1,38 @@
+ACT send_little_red_with_cakes 2
+PRE
+E a b +3 2
+E a grandmother +3 2
+T Hr * grandmother
+POS
+E a b +2 2
+E a grandmother +2 2
+T Hr * grandmother
+
+ACT little_red_meets_wolf_and_tells_destination 2
+POS
+T Lr b a
+
+ACT wolf_arrives_first_and_eats_grandmother 2
+PRE
+E a b -3 1
+POS
+T Ad * grandmother
+
+ACT grandmother_dies 1
+PRE
+T Ad * grandmother
+POS
+T Ad * grandmother
+
+ACT little_red_interacts_with_disguised_wolf 2
+PRE
+E a b +3 2
+POS
+T Lr b a
+
+ACT wolf_reveals_identity_and_eats_little_red 2
+PRE
+E a b -3 1
+POS
+T Ad * little_red_riding_hood
+

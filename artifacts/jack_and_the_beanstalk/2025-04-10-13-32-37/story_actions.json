@@ -1,0 +1,382 @@
+[
+    {
+        "action": "mother_instructs_sell_cow",
+        "n_characters": 2,
+        "subject": "mother",
+        "object": "jack",
+        "preconditions": {
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "-",
+                    "to": "*"
+                }
+            ]
+        },
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -1,
+                    "from": "jack",
+                    "to": "mother"
+                }
+            ],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "-",
+                    "to": "*"
+                }
+            ]
+        }
+    },
+    {
+        "action": "jack_trades_cow_for_beans",
+        "n_characters": 2,
+        "subject": "jack",
+        "object": "man",
+        "preconditions": {
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "-",
+                    "to": "*"
+                }
+            ]
+        },
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": 1,
+                    "from": "jack",
+                    "to": "man"
+                },
+                {
+                    "type": "friendship",
+                    "magnitude": -1,
+                    "from": "jack",
+                    "to": "mother"
+                }
+            ],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "-",
+                    "to": "*"
+                }
+            ]
+        }
+    },
+    {
+        "action": "mother_angry_at_jack",
+        "n_characters": 2,
+        "subject": "mother",
+        "object": "jack",
+        "preconditions": {
+            "tensions": [
+                {
+                    "type": "clashing_emotions",
+                    "from": "jack",
+                    "to": "mother"
+                }
+            ]
+        },
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -2,
+                    "from": "mother",
+                    "to": "jack"
+                },
+                {
+                    "type": "friendship",
+                    "magnitude": -1,
+                    "from": "jack",
+                    "to": "mother"
+                }
+            ],
+            "tensions": [
+                {
+                    "type": "clashing_emotions",
+                    "from": "jack",
+                    "to": "mother"
+                }
+            ]
+        }
+    },
+    {
+        "action": "mother_throws_beans_out_window",
+        "n_characters": 1,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "-",
+                    "to": "*"
+                }
+            ]
+        },
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -2,
+                    "from": "mother",
+                    "to": "jack"
+                }
+            ],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "-",
+                    "to": "*"
+                }
+            ]
+        }
+    },
+    {
+        "action": "jack_sad_and_sleeps",
+        "n_characters": 1,
+        "subject": "jack",
+        "object": "-",
+        "preconditions": {
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "-",
+                    "to": "*"
+                }
+            ]
+        },
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -2,
+                    "from": "jack",
+                    "to": "self"
+                }
+            ],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "-",
+                    "to": "*"
+                }
+            ]
+        }
+    },
+    {
+        "action": "jack_climbs_beanstalk",
+        "n_characters": 1,
+        "subject": "jack",
+        "object": "-",
+        "preconditions": {
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "jack",
+                    "to": "*"
+                }
+            ]
+        },
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": 2,
+                    "from": "jack",
+                    "to": "beanstalk"
+                }
+            ],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "jack",
+                    "to": "*"
+                }
+            ]
+        }
+    },
+    {
+        "action": "giant_wife_gives_food_to_jack",
+        "n_characters": 2,
+        "subject": "giant's wife",
+        "object": "jack",
+        "preconditions": {
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "jack",
+                    "to": "*"
+                }
+            ]
+        },
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": 2,
+                    "from": "jack",
+                    "to": "giant's wife"
+                }
+            ],
+            "tensions": [
+                {
+                    "type": "life_normal",
+                    "from": "-",
+                    "to": "*"
+                }
+            ]
+        }
+    },
+    {
+        "action": "giant-threatens-jack",
+        "n_characters": 2,
+        "subject": "giant",
+        "object": "jack",
+        "preconditions": {
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "giant",
+                    "to": "jack"
+                }
+            ]
+        },
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -3,
+                    "from": "jack",
+                    "to": "giant"
+                }
+            ],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "giant",
+                    "to": "jack"
+                }
+            ]
+        }
+    },
+    {
+        "action": "giant_counts_gold",
+        "n_characters": 1,
+        "subject": "giant",
+        "object": "-",
+        "preconditions": {
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "-",
+                    "to": "*"
+                }
+            ]
+        },
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": 2,
+                    "from": "giant",
+                    "to": "gold"
+                }
+            ],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "-",
+                    "to": "*"
+                }
+            ]
+        }
+    },
+    {
+        "action": "jack_steals_gold_from_giant",
+        "n_characters": 2,
+        "subject": "jack",
+        "object": "giant",
+        "preconditions": {
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "jack",
+                    "to": "*"
+                },
+                {
+                    "type": "prisoner",
+                    "from": "giant",
+                    "to": "jack"
+                }
+            ]
+        },
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -2,
+                    "from": "giant",
+                    "to": "jack"
+                },
+                {
+                    "type": "friendship",
+                    "magnitude": 1,
+                    "from": "jack",
+                    "to": "mother"
+                }
+            ],
+            "tensions": [
+                {
+                    "type": "prisoner",
+                    "from": "giant",
+                    "to": "jack"
+                },
+                {
+                    "type": "life_at_risk",
+                    "from": "jack",
+                    "to": "*"
+                }
+            ]
+        }
+    },
+    {
+        "action": "jack_gives_coins_to_mother",
+        "n_characters": 2,
+        "subject": "jack",
+        "object": "mother",
+        "preconditions": {
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "-",
+                    "to": "*"
+                }
+            ]
+        },
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "love",
+                    "magnitude": 3,
+                    "from": "mother",
+                    "to": "jack"
+                }
+            ],
+            "tensions": [
+                {
+                    "type": "life_normal",
+                    "from": "-",
+                    "to": "*"
+                }
+            ]
+        }
+    }
+]

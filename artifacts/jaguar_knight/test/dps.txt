@@ -6,16 +6,8 @@ princess apply_plasma_to_wounds jaguar_knight
 character_recuperate jaguar_knight
 enemy enemy_kidnap_princess princess
 enemy tie_character_to_rock princess
-jaguar_knight character_pray_for_wisdom
-jaguar_knight search_for_enemy enemy
-jaguar_knight attack_with_dagger enemy
-jaguar_knight throw_dust_in_face enemy
-jaguar_knight perforate_chest_with_dagger enemy
-imitate_sacred_ceremony
 jaguar_knight liberate_princess princess
-princess kiss_character jaguar_knight
 recognize_tattoo princess
-invoke_god_of_the_dead
 princess cut_jugular_with_dagger jaguar_knight
 character_bleed_to_death jaguar_knight
 princess cut_own_throat_with_dagger princess

@@ -1,0 +1,88 @@
+[
+    {
+        "action": "send_little_red_with_cakes",
+        "n_characters": 2,
+        "subject": "mother",
+        "object": "little_red_riding_hood",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "love",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                },
+                {
+                    "type": "love",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "grandmother"
+                }
+            ]
+        }
+    },
+    {
+        "action": "little_red_meets_wolf_and_tells_destination",
+        "n_characters": 2,
+        "subject": "little_red_riding_hood",
+        "object": "wolf",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "wolf_arrives_first_and_eats_grandmother",
+        "n_characters": 2,
+        "subject": "wolf",
+        "object": "grandmother",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "grandmother_dies",
+        "n_characters": 1,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {}
+    },
+    {
+        "action": "little_red_interacts_with_disguised_wolf",
+        "n_characters": 2,
+        "subject": "little_red_riding_hood",
+        "object": "wolf",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "love",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "wolf_reveals_identity_and_eats_little_red",
+        "n_characters": 2,
+        "subject": "wolf",
+        "object": "little_red_riding_hood",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    }
+]

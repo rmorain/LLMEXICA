@@ -1,0 +1,340 @@
+<think>
+Alright, I need to analyze each action in the story and identify the postconditions related to both emotional links and tensions. Postconditions are changes that occur as a result of an action. They must not be the same as preconditions if those exist.
+
+Let me go through each action one by one:
+
+1. **Action: taste_porridge**
+   - **Subject:** Goldilocks
+   - **Object:** Bears' porridge
+   - This is the first interaction, so no prior emotional links. After tasting, Goldilocks might have a neutral or slightly positive feeling towards the bears for their food, but since she doesn't know them, it's minimal.
+
+2. **Action: sit_in Chair**
+   - **Subject:** Goldilocks
+   - **Object:** Bears' chairs
+   - She sits in each chair and finds one comfortable. This might create a slight positive emotional link towards the Little Wee Bear, whose chair she liked.
+
+3. **Action: sleep_in_bed**
+   - **Subject:** Goldilocks
+   - **Object:** Little Wee Bear's bed
+   - After sleeping comfortably, she might develop a slightly positive feeling towards the Little Wee Bear for having a nice bed.
+
+4. **Action: find_spoon_in_porridge (Great Big Bear)**
+   - **Subject:** Great Big Bear
+   - **Object:** His porridge
+   - Discovering someone ate his porridge likely creates a negative emotional link from the Great Big Bear towards Goldilocks, as he feels violated.
+
+5. **Action: find_spoon_in_porridge (Middle-sized Bear)**
+   - Similar to the previous action, the Middle-sized Bear becomes upset and forms a negative emotional link towards Goldilocks.
+
+6. **Action: find_empty_porridge_bowl (Little Wee Bear)**
+   - The Little Wee Bear is angry about his porridge being eaten entirely, leading to a strong negative emotional link towards Goldilocks.
+
+7. **Action: investigate_house**
+   - The Bears are suspicious and start searching, increasing their negative emotions towards the unknown intruder (Goldilocks).
+
+8. **Action: find_disarranged_cushion (Great Big Bear)**
+   - Finding his cushion moved angers the Great Big Bear more, intensifying his negative emotional link towards Goldilocks.
+
+9. **Action: find_squashed_cushion (Middle-sized Bear)**
+   - The Middle-sized Bear becomes annoyed, strengthening his negative feelings towards Goldilocks.
+
+10. **Action: find_broken_chair (Little Wee Bear)**
+    - Discovering the broken chair makes the Little Wee Bear very angry, deepening his negative emotional link towards Goldilocks.
+
+11. **Action: search_bedroom**
+    - The Bears are now thoroughly investigating, driven by growing anger and suspicion, reinforcing their negative emotions towards Goldilocks.
+
+12. **Action: find_displaced_pillow (Great Big Bear)**
+    - Finding his pillow moved adds to the Great Big Bear's irritation, intensifying his negative emotional link.
+
+13. **Action: find_displaced_bolster (Middle-sized Bear)**
+    - The Middle-sized Bear is similarly annoyed, strengthening his negative feelings towards Goldilocks.
+
+14. **Action: find_goldilocks_in_bed**
+    - Finally discovering Goldilocks in bed leads to the peak of negative emotions from all three bears towards her, solidifying their strong negative emotional links.
+
+For tensions, each action after the initial intrusion escalates the Bears' sense of threat or risk. For example, finding porridge disturbed leads to `life_at_risk` tension as they feel unsafe. Discovering someone in their bed heightens this tension. When Goldilocks escapes, it could resolve some tensions like `prisoner`.
+
+Now, I'll map each action's postconditions based on these observations.
+</think>
+
+```json
+[
+    {
+        "action": "taste_porridge",
+        "n_characters": 4,
+        "subject": "-",
+        "object": "-",
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": []
+        }
+    },
+    {
+        "action": "sit_in Chair",
+        "n_characters": 4,
+        "subject": "-",
+        "object": "-",
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": 1,
+                    "from": "b",
+                    "to": "a"
+                }
+            ],
+            "tensions": []
+        }
+    },
+    {
+        "action": "sleep_in_bed",
+        "n_characters": 4,
+        "subject": "-",
+        "object": "-",
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": 1,
+                    "from": "b",
+                    "to": "a"
+                }
+            ],
+            "tensions": []
+        }
+    },
+    {
+        "action": "find_spoon_in_porridge",
+        "n_characters": 1,
+        "subject": "Great Big Bear",
+        "object": "-",
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "a",
+                    "to": "*"
+                }
+            ]
+        }
+    },
+    {
+        "action": "find_spoon_in_porridge",
+        "n_characters": 1,
+        "subject": "Middle-sized Bear",
+        "object": "-",
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "a",
+                    "to": "*"
+                }
+            ]
+        }
+    },
+    {
+        "action": "find_empty_porridge_bowl",
+        "n_characters": 1,
+        "subject": "Little Wee Bear",
+        "object": "-",
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": [
+                {
+                    "type": "health_at_risk",
+                    "from": "a",
+                    "to": "*"
+                }
+            ]
+        }
+    },
+    {
+        "action": "investigate_house",
+        "n_characters": 3,
+        "subject": "-",
+        "object": "-",
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "*",
+                    "to": "*"
+                }
+            ]
+        }
+    },
+    {
+        "action": "find_disarranged_cushion",
+        "n_characters": 1,
+        "subject": "Great Big Bear",
+        "object": "-",
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": [
+                {
+                    "type": "prisoner",
+                    "from": "*",
+                    "to": "*"
+                }
+            ]
+        }
+    },
+    {
+        "action": "find_squashed_cushion",
+        "n_characters": 1,
+        "subject": "Middle-sized Bear",
+        "object": "-",
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": [
+                {
+                    "type": "prisoner",
+                    "from": "*",
+                    "to": "*"
+                }
+            ]
+        }
+    },
+    {
+        "action": "find_broken_chair",
+        "n_characters": 1,
+        "subject": "Little Wee Bear",
+        "object": "-",
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "*",
+                    "to": "*"
+                }
+            ]
+        }
+    },
+    {
+        "action": "search_bedroom",
+        "n_characters": 3,
+        "subject": "-",
+        "object": "-",
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "prisoner",
+                    "from": "*",
+                    "to": "*"
+                }
+            ]
+        }
+    },
+    {
+        "action": "find_displaced_pillow",
+        "n_characters": 1,
+        "subject": "Great Big Bear",
+        "object": "-",
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "*",
+                    "to": "*"
+                }
+            ]
+        }
+    },
+    {
+        "action": "find_displaced_bolster",
+        "n_characters": 1,
+        "subject": "Middle-sized Bear",
+        "object": "-",
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "*",
+                    "to": "*"
+                }
+            ]
+        }
+    },
+    {
+        "action": "find_goldilocks_in_bed",
+        "n_characters": 4,
+        "subject": "-",
+        "object": "-",
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "prisoner_freed",
+                    "from": "*",
+                    "to": "*"
+                }
+            ]
+        }
+    }
+]
+```

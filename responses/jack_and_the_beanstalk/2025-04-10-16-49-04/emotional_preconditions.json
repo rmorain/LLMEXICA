@@ -1,0 +1,127 @@
+[
+    {
+        "action": "mother_tells_jack_to_sell_cow",
+        "n_characters": 2,
+        "subject": "Jack's mother",
+        "object": "Jack",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "love",
+                    "magnitude": 2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "jack_meets_man_at_market",
+        "n_characters": 2,
+        "subject": "Jack",
+        "object": "Man",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "mother_angry_with_jack",
+        "n_characters": 2,
+        "subject": "Jack's mother",
+        "object": "Jack",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "love",
+                    "magnitude": -2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "jack_sad_and_sleeps",
+        "n_characters": 1,
+        "subject": "Jack",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "jack_climbs_beanstalk",
+        "n_characters": 1,
+        "subject": "Jack",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "giant_wife_gives_food_to_jack",
+        "n_characters": 2,
+        "subject": "Giant's wife",
+        "object": "Jack",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": 1,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "giant_smells_englishman",
+        "n_characters": 1,
+        "subject": "Giant",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "wife_denies_jack_presence_to_giant",
+        "n_characters": 2,
+        "subject": "Giant's wife",
+        "object": "Giant",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": 2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "jack_takes_gold_coins",
+        "n_characters": 1,
+        "subject": "Jack",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "jack_gives_coins_to_mother",
+        "n_characters": 2,
+        "subject": "Jack",
+        "object": "Jack's mother",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "love",
+                    "magnitude": 2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    }
+]

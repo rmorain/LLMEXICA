@@ -1,0 +1,312 @@
+[
+    {
+        "action": "storm_caused_by_god",
+        "n_characters": 1,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "bridge_collapsed_due_to_damage",
+        "n_characters": 1,
+        "subject": "-",
+        "object": "JAGUAR_KNIGHT",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "character_injured_head",
+        "n_characters": 1,
+        "subject": "-",
+        "object": "JAGUAR_KNIGHT",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "princess_prepared_curative_plasma",
+        "n_characters": 2,
+        "subject": "PRINCESS",
+        "object": "JAGUAR_KNIGHT",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "applied_plasma_to_wounds",
+        "n_characters": 2,
+        "subject": "PRINCESS",
+        "object": "JAGUAR_KNIGHT",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "character_recuperated",
+        "n_characters": 1,
+        "subject": "-",
+        "object": "JAGUAR_KNIGHT",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "princess_kidnapped_by_enemy",
+        "n_characters": 2,
+        "subject": "ENEMY",
+        "object": "PRINCESS",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "enemy_tied_princess_to_rock",
+        "n_characters": 2,
+        "subject": "ENEMY",
+        "object": "PRINCESS",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "jaguar_knight_prayed_to_god",
+        "n_characters": 1,
+        "subject": "JAGUAR_KNIGHT",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "enemy_charged_against_princess",
+        "n_characters": 2,
+        "subject": "ENEMY",
+        "object": "PRINCESS",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "jaguar_knight_searched_for_enemy",
+        "n_characters": 1,
+        "subject": "JAGUAR_KNIGHT",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "love",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "jaguar_knight_found_enemy",
+        "n_characters": 2,
+        "subject": "JAGUAR_KNIGHT",
+        "object": "ENEMY",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "jaguar_knight_threw_dust_in_face",
+        "n_characters": 2,
+        "subject": "JAGUAR_KNIGHT",
+        "object": "ENEMY",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "jaguar_knight_stabbed_enemy_with_dagger",
+        "n_characters": 2,
+        "subject": "JAGUAR_KNIGHT",
+        "object": "ENEMY",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "jaguar_knight_performed_sacred_ceremony",
+        "n_characters": 1,
+        "subject": "JAGUAR_KNIGHT",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "jaguar_knight_walked_towards_princess",
+        "n_characters": 2,
+        "subject": "JAGUAR_KNIGHT",
+        "object": "PRINCESS",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "love",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "princess_fell_in_love_with_jaguar_knight",
+        "n_characters": 2,
+        "subject": "PRINCESS",
+        "object": "JAGUAR_KNIGHT",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "love",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "princess_kissed_jaguar_knight",
+        "n_characters": 2,
+        "subject": "PRINCESS",
+        "object": "JAGUAR_KNIGHT",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "love",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "princess_recognized_tattoo_on_jaguar_knight",
+        "n_characters": 2,
+        "subject": "PRINCESS",
+        "object": "JAGUAR_KNIGHT",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "princess_had_ambivalent_thoughts_towards_jaguar_knight",
+        "n_characters": 1,
+        "subject": "PRINCESS",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "love",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                },
+                {
+                    "type": "friendship",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "princess_felt_odium_towards_jaguar_knight",
+        "n_characters": 2,
+        "subject": "PRINCESS",
+        "object": "JAGUAR_KNIGHT",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "princess_invoked_god_of_the_dead",
+        "n_characters": 1,
+        "subject": "PRINCESS",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "princess_cut_jaguar_knight's_jugular",
+        "n_characters": 2,
+        "subject": "PRINCESS",
+        "object": "JAGUAR_KNIGHT",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "blood_covered_the_floor",
+        "n_characters": 1,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "princess_cut_own_throat",
+        "n_characters": 1,
+        "subject": "PRINCESS",
+        "object": "PRINCESS",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "princess_bled_to_death",
+        "n_characters": 1,
+        "subject": "-",
+        "object": "PRINCESS",
+        "preconditions": {
+            "emotional_links": []
+        }
+    }
+]
