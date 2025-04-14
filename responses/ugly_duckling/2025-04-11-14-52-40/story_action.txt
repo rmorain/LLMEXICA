@@ -1,0 +1,142 @@
+<think>
+Okay, so I need to analyze the given story of "The Ugly Duckling" and extract actions related to emotional links (friendship or love) and tensions (like character_dead, life_at_risk, etc.). The user has provided specific guidelines on how to structure this in JSON format.
+
+First, I'll read through the story again to identify key events. The main character is the Ugly Duckling, who faces a lot of hardship because of his appearance. His mother is supportive at first but later rejects him when he doesn't fit in. He meets various animals like ducks, geese, and swans.
+
+Looking for emotional links: There's the mother duck showing care initially, then rejecting her son. The other ducks and farm animals bully him, which shows a lack of friendship. Later, the swans accept him, forming a positive emotional link.
+
+For tensions, I need to find instances where characters are in danger or their health is at risk. The Ugly Duckling faces life-threatening situations like being shot by hunters, attacked by dogs, and freezing in ice during winter. These are clear cases of life_at_risk and health_at_risk.
+
+I'll list these events in chronological order:
+
+1. Mother duck sitting on the egg and caring for her brood.
+2. The Ugly Duckling hatches but is rejected because he's ugly.
+3. Mother duck introduces him to other ducks, who bully him.
+4. He runs away after being mistreated by farm animals.
+5. Meets wild geese but faces a shooting where some die (character_dead).
+6. Survives the hunt and hides.
+7. Seeks shelter in a cottage with a hen and cat, but feels unwelcome.
+8. Leaves to find water but is still avoided because of his looks.
+9. Tries to survive winter, almost freezes to death (health_at_risk).
+10. A peasant rescues him from ice, reviving him.
+11. Escapes the peasant's home and eventually finds swans who accept him.
+
+Each action needs to be in snake_case without character names. I'll assign subject and object where applicable, noting if it's the same character or not present.
+
+I have to ensure each JSON object has "action", "n_characters", "subject", and "object". For example, when the Ugly Duckling is bitten by ducks, "is_bitten_by" with subject as ducks and object as duckling.
+
+Wait, the user's example shows actions without specifying who exactly did what beyond subject and object. I should follow that structure, using general terms like "other_ducks", "farm_animals", etc., but since in the JSON we shouldn't use character names, perhaps just "ducks" or "animals".
+
+I think I've covered all necessary points. Now, I'll format these actions into JSON as per instructions.
+</think>
+
+Here is the structured analysis of "The Ugly Duckling" story based on the given guidelines:
+
+```json
+[
+  {
+    "action": "is_cared_for",
+    "n_characters": 2,
+    "subject": "-",
+    "object": "ducklings"
+  },
+  {
+    "action": "hatches_from_egg",
+    "n_characters": 1,
+    "subject": "ugly_duckling",
+    "object": "-"
+  },
+  {
+    "action": "is_rejected_by",
+    "n_characters": 2,
+    "subject": "other_ducks",
+    "object": "ugly_duckling"
+  },
+  {
+    "action": "introduces_to_others",
+    "n_characters": 2,
+    "subject": "mother_duck",
+    "object": "ugly_duckling"
+  },
+  {
+    "action": "is_bitten_by",
+    "n_characters": 2,
+    "subject": "other_ducks",
+    "object": "ugly_duckling"
+  },
+  {
+    "action": "runs_away_from",
+    "n_characters": 1,
+    "subject": "ugly_duckling",
+    "object": "-"
+  },
+  {
+    "action": "meets_wild_geese",
+    "n_characters": 2,
+    "subject": "wild_geese",
+    "object": "ugly_duckling"
+  },
+  {
+    "action": "is_shot_at",
+    "n_characters": 2,
+    "subject": "hunters",
+    "object": "ugly_duckling"
+  },
+  {
+    "action": "hides_from_hunters",
+    "n_characters": 1,
+    "subject": "ugly_duckling",
+    "object": "-"
+  },
+  {
+    "action": "seeks_shelter_in_cottage",
+    "n_characters": 2,
+    "subject": "ugly_duckling",
+    "object": "cottage"
+  },
+  {
+    "action": "feels_unwelcome_by",
+    "n_characters": 2,
+    "subject": "hen_and_cat",
+    "object": "ugly_duckling"
+  },
+  {
+    "action": "leaves_cottage",
+    "n_characters": 1,
+    "subject": "ugly_duckling",
+    "object": "-"
+  },
+  {
+    "action": "finds_water_but_is_avoided",
+    "n_characters": 2,
+    "subject": "other_animals",
+    "object": "ugly_duckling"
+  },
+  {
+    "action": "struggles_through_winter",
+    "n_characters": 1,
+    "subject": "ugly_duckling",
+    "object": "-"
+  },
+  {
+    "action": "is_rescued_from_ice_by",
+    "n_characters": 2,
+    "subject": "peasant",
+    "object": "ugly_duckling"
+  },
+  {
+    "action": "escapes_peasants_home",
+    "n_characters": 1,
+    "subject": "ugly_duckling",
+    "object": "-"
+  },
+  {
+    "action": "joins_swan_flock",
+    "n_characters": 2,
+    "subject": "swans",
+    "object": "ugly_duckling"
+  }
+]
+```
+
+This JSON structure captures the key actions and emotional links in a simple, reusable format as specified.

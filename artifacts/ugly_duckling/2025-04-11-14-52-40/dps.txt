@@ -1,0 +1,14 @@
+STO
+is_cared_for ducklings
+other_ducks is_rejected_by ugly_duckling
+mother_duck introduces_to_others ugly_duckling
+other_ducks is_bitten_by ugly_duckling
+ugly_duckling runs_away_from
+hunters is_shot_at ugly_duckling
+ugly_duckling hides_from_hunters
+hen_and_cat feels_unwelcome_by ugly_duckling
+ugly_duckling leaves_cottage
+ugly_duckling struggles_through_winter
+peasant is_rescued_from_ice_by ugly_duckling
+ugly_duckling escapes_peasants_home
+swans joins_swan_flock ugly_duckling

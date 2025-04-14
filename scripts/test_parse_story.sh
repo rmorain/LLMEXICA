@@ -2,7 +2,7 @@
 #SBATCH --nodes=1
 #SBATCH --gpus=1  
 #SBATCH --mem-per-cpu=256G
-#SBATCH --time=01:30:00
+#SBATCH --time=00:20:00
 #SBATCH --ntasks-per-node=4 
 
 #SBATCH -J "Test parsing story"   # job name

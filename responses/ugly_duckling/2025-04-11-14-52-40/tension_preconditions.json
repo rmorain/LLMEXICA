@@ -1,0 +1,237 @@
+<think>
+Alright, I need to analyze each action in "The Ugly Duckling" story and identify preconditions related to tensions. The user has defined four types of tension: `character_dead`, `life_at_risk`, `health_at_risk`, and `prisoner`. 
+
+Starting with the first action, "is_cared_for". This is about the mother duck caring for her ducklings. There's no inherent tension here; it's a nurturing act. So, tensions are empty.
+
+Next, "hatches_from_egg" – just the duckling emerging, no tension involved.
+
+Third action: "is_rejected_by". The other ducks reject him because he's ugly. This isn't directly a tension but more about emotional links. So, tensions remain empty here.
+
+Fourth action: "introduces_to_others". Again, introducing doesn't inherently imply tension unless there's a specific conflict. Since it's just an introduction, no tension is present.
+
+Fifth action: "is_bitten_by". The ducks bite him, which could imply `life_at_risk` since physical harm is involved. So, the subject (other_ducks) causes life risk to the object (ugly_duckling).
+
+Sixth action: "runs_away_from". The duckling runs away because he feels unsafe or rejected. This implies `life_at_risk` as he's escaping potential danger.
+
+Seventh action: "meets_wild_geese". Just a meeting, no tension here.
+
+Eighth action: "is_shot_at". Hunters shooting at him directly relates to `life_at_risk`.
+
+Ninth action: "hides_from_hunters". Hiding from hunters indicates `life_at_risk` as he's trying to avoid being shot.
+
+Tenth action: "seeks_shelter_in_cottage". Seeking shelter is more about safety but doesn't inherently imply tension unless the environment is dangerous. Since it's just seeking shelter, tensions are empty.
+
+Eleventh action: "feels_unwelcome_by". Feeling unwelcome relates more to emotional links than tension. So, no specific tension here.
+
+Twelfth action: "leaves_cottage". Leaving because he feels unwelcome doesn't inherently involve tension unless there's a direct threat. Since it's more about his feelings, tensions remain empty.
+
+Thirteenth action: "finds_water_but_is_avoided". Being avoided by others isn't a direct tension but more of an emotional link issue.
+
+Fourteenth action: "struggles_through_winter". This implies `health_at_risk` due to harsh weather conditions and lack of proper care.
+
+Fifteenth action: "is_rescued_from_ice_by". The duckling is rescued from freezing, indicating `health_at_risk` before the rescue.
+
+Sixteenth action: "escapes_peasants_home". Escaping might imply `life_at_risk` if there's a threat, but since it's not clear, I'll assume no tension here.
+
+Seventeenth action: "joins_swan_flock". A positive action without inherent tension. So, tensions are empty.
+
+I think I've covered all the actions and identified where tensions act as preconditions. Each precondition is based on the context of the action and the potential risks involved.
+</think>
+
+Here is the JSON object with the preconditions related to tensions for each action:
+
+```json
+[
+  {
+    "action": "is_cared_for",
+    "n_characters": 2,
+    "subject": "-",
+    "object": "ducklings",
+    "preconditions": {
+      "tensions": []
+    }
+  },
+  {
+    "action": "hatches_from_egg",
+    "n_characters": 1,
+    "subject": "ugly_duckling",
+    "object": "-",
+    "preconditions": {
+      "tensions": []
+    }
+  },
+  {
+    "action": "is_rejected_by",
+    "n_characters": 2,
+    "subject": "other_ducks",
+    "object": "ugly_duckling",
+    "preconditions": {
+      "tensions": []
+    }
+  },
+  {
+    "action": "introduces_to_others",
+    "n_characters": 2,
+    "subject": "mother_duck",
+    "object": "ugly_duckling",
+    "preconditions": {
+      "tensions": []
+    }
+  },
+  {
+    "action": "is_bitten_by",
+    "n_characters": 2,
+    "subject": "other_ducks",
+    "object": "ugly_duckling",
+    "preconditions": {
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "runs_away_from",
+    "n_characters": 1,
+    "subject": "ugly_duckling",
+    "object": "-",
+    "preconditions": {
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "-",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "meets_wild_geese",
+    "n_characters": 2,
+    "subject": "wild_geese",
+    "object": "ugly_duckling",
+    "preconditions": {
+      "tensions": []
+    }
+  },
+  {
+    "action": "is_shot_at",
+    "n_characters": 2,
+    "subject": "hunters",
+    "object": "ugly_duckling",
+    "preconditions": {
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "hides_from_hunters",
+    "n_characters": 1,
+    "subject": "ugly_duckling",
+    "object": "-",
+    "preconditions": {
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "-",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "seeks_shelter_in_cottage",
+    "n_characters": 2,
+    "subject": "ugly_duckling",
+    "object": "cottage",
+    "preconditions": {
+      "tensions": []
+    }
+  },
+  {
+    "action": "feels_unwelcome_by",
+    "n_characters": 2,
+    "subject": "hen_and_cat",
+    "object": "ugly_duckling",
+    "preconditions": {
+      "tensions": []
+    }
+  },
+  {
+    "action": "leaves_cottage",
+    "n_characters": 1,
+    "subject": "ugly_duckling",
+    "object": "-",
+    "preconditions": {
+      "tensions": []
+    }
+  },
+  {
+    "action": "finds_water_but_is_avoided",
+    "n_characters": 2,
+    "subject": "other_animals",
+    "object": "ugly_duckling",
+    "preconditions": {
+      "tensions": []
+    }
+  },
+  {
+    "action": "struggles_through_winter",
+    "n_characters": 1,
+    "subject": "ugly_duckling",
+    "object": "-",
+    "preconditions": {
+      "tensions": [
+        {
+          "type": "health_at_risk",
+          "from": "-",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "is_rescued_from_ice_by",
+    "n_characters": 2,
+    "subject": "peasant",
+    "object": "ugly_duckling",
+    "preconditions": {
+      "tensions": [
+        {
+          "type": "health_at_risk",
+          "from": "-",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "escapes_peasants_home",
+    "n_characters": 1,
+    "subject": "ugly_duckling",
+    "object": "-",
+    "preconditions": {
+      "tensions": []
+    }
+  },
+  {
+    "action": "joins_swan_flock",
+    "n_characters": 2,
+    "subject": "swans",
+    "object": "ugly_duckling",
+    "preconditions": {
+      "tensions": []
+    }
+  }
+]
+```
+
+This JSON object captures the preconditions related to tensions for each action in "The Ugly Duckling" story, specifying the type and direction of the tension where applicable.

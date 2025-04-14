@@ -1,0 +1,211 @@
+[
+    {
+        "action": "is_cared_for",
+        "n_characters": 2,
+        "subject": "-",
+        "object": "ducklings",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "love",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "hatches_from_egg",
+        "n_characters": 1,
+        "subject": "ugly_duckling",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "is_rejected_by",
+        "n_characters": 2,
+        "subject": "other_ducks",
+        "object": "ugly_duckling",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "introduces_to_others",
+        "n_characters": 2,
+        "subject": "mother_duck",
+        "object": "ugly_duckling",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "love",
+                    "magnitude": 2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "is_bitten_by",
+        "n_characters": 2,
+        "subject": "other_ducks",
+        "object": "ugly_duckling",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "runs_away_from",
+        "n_characters": 1,
+        "subject": "ugly_duckling",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "meets_wild_geese",
+        "n_characters": 2,
+        "subject": "wild_geese",
+        "object": "ugly_duckling",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "is_shot_at",
+        "n_characters": 2,
+        "subject": "hunters",
+        "object": "ugly_duckling",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "hides_from_hunters",
+        "n_characters": 1,
+        "subject": "ugly_duckling",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "seeks_shelter_in_cottage",
+        "n_characters": 2,
+        "subject": "ugly_duckling",
+        "object": "cottage",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "feels_unwelcome_by",
+        "n_characters": 2,
+        "subject": "hen_and_cat",
+        "object": "ugly_duckling",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "leaves_cottage",
+        "n_characters": 1,
+        "subject": "ugly_duckling",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "finds_water_but_is_avoided",
+        "n_characters": 2,
+        "subject": "other_animals",
+        "object": "ugly_duckling",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "struggles_through_winter",
+        "n_characters": 1,
+        "subject": "ugly_duckling",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "is_rescued_from_ice_by",
+        "n_characters": 2,
+        "subject": "peasant",
+        "object": "ugly_duckling",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "love",
+                    "magnitude": 1,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "escapes_peasants_home",
+        "n_characters": 1,
+        "subject": "ugly_duckling",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "joins_swan_flock",
+        "n_characters": 2,
+        "subject": "swans",
+        "object": "ugly_duckling",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    }
+]

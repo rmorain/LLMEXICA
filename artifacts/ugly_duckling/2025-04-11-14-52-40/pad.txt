@@ -1,0 +1,75 @@
+ACT is_cared_for 2
+PRE
+E a b +3 2
+POS
+E b a +3 2
+
+ACT is_rejected_by 2
+PRE
+E a b -3 1
+POS
+E b a -3 1
+
+ACT introduces_to_others 2
+PRE
+E a b +2 2
+POS
+E b a +3 2
+T Hr - b
+
+ACT is_bitten_by 2
+PRE
+E a b -3 1
+POS
+E b a -3 1
+T Lr - b
+
+ACT runs_away_from 1
+PRE
+T Lr - b
+POS
+E b a -3 1
+T Ln - b
+
+ACT is_shot_at 2
+POS
+E b a -3 1
+T Lr - b
+
+ACT hides_from_hunters 1
+PRE
+T Lr - b
+POS
+T Ln - b
+
+ACT feels_unwelcome_by 2
+POS
+E b a -3 1
+T Hr - b
+
+ACT leaves_cottage 1
+PRE
+T Hr - b
+POS
+T Hn - b
+
+ACT struggles_through_winter 1
+POS
+T Hr - b
+
+ACT is_rescued_from_ice_by 2
+PRE
+T Hr - b
+POS
+E b a +1 2
+T Hn - b
+
+ACT escapes_peasants_home 1
+POS
+T Ln - b
+
+ACT joins_swan_flock 2
+POS
+E b a +3 1
+E b a +2 2
+
