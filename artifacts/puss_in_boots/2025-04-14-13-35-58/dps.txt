@@ -1,0 +1,20 @@
+STO
+cat cat_promised_help_to_master master
+master master_gave_bag_and_boots_to_cat cat
+cat cat_caught_rabbit_in_bag
+cat cat_presented_rabbit_to_king king
+cat cat_caught_partridges_in_bag
+cat cat_presented_partridges_to_king king
+cat cat_advised_master_to_wash_in_river master
+cat cat_cried_for_help
+king king_sent_guards_to_help_master master
+king king_gave_master_new_clothes master
+princess_fell_in_love_with_master
+cat cat-threatened_mowers mowers
+cat cat-threatened_reapers reapers
+cat cat_entered_ogre_castle
+ogre ogre_transformed_into_lion
+cat cat_hid_in_gutter
+cat cat_ate_mouse mouse
+king king_visited_castle
+marquis marquis_married_princess princess

@@ -1,0 +1,38 @@
+ACT mother_gives_little_red_riding_hood_cake_and_butter 2
+PRE
+E a b +3 2
+POS
+E b a +3 2
+
+ACT mother_sends_little_red_riding_hood_to_grandmother 2
+PRE
+E a b +3 2
+T Hr - grandmother
+POS
+E b grandmother +3 2
+
+ACT wolf_attempts_to_eat_little_red_riding_hood 2
+POS
+E b a -3 1
+T Lr a b
+
+ACT wolf_eats_grandmother 2
+POS
+T Ad a b
+
+ACT wolf_imitates_grandmothers_voice 2
+PRE
+E a b -3 1
+POS
+E b a -3 1
+
+ACT little_red_riding_hood_notices_something_wrong 1
+PRE
+E a grandmother +3 2
+POS
+T Lr * a
+
+ACT wolf_eats_little_red_riding_hood 2
+POS
+T Ad a b
+

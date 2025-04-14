@@ -1,0 +1,102 @@
+<think>
+Okay, I need to analyze this story of Little Red Riding Hood and extract actions related to emotional links (friendship or love) and tensions (character_dead, life_at_risk, health_at_risk, prisoner). 
+
+First, the mother is very fond of her daughter and makes her cakes. That shows a strong emotional link of love. So that's an action where the mother is giving something to Little Red Riding Hood.
+
+Then, the mother asks her to take cake and butter to her sick grandmother. This action involves two characters, the mother and LRRH, showing both love (from the mother) and friendship or concern for the grandmother.
+
+Next, while in the woods, LRRH meets a wolf. The wolf wants to eat her but can't because of woodcutters nearby. So this is tension: life_at_risk because she's in danger from the wolf.
+
+The wolf asks where she's going, and she naively tells him about visiting her grandmother. This action doesn't directly involve emotional links or other specified tensions, so maybe it's not included unless it relates to gathering info that builds tension.
+
+Then, the wolf decides to go to the grandmother's house first. He arrives, knocks, disguises his voice as LRRH, and the grandmother lets him in. The wolf eats her up, which is a character_dead event. So that's an action with the wolf as subject and grandmother as object.
+
+The wolf then hides in bed, waiting for LRRH. When she arrives, he imitates the grandmother’s voice again. She enters and notices changes in "grandmother," which builds tension of life_at_risk because something is wrong. Finally, the wolf reveals himself and eats her too, another character_dead action.
+
+So actions related to emotional links are:
+
+1. Mother gives LRRH cake and butter (love).
+2. Mother sends LRRH to grandmother (love/concern).
+
+Tensions involved:
+
+- life_at_risk when wolf approaches LRRH.
+- prisoner? Not really, unless being eaten is considered as such, but more accurately it's character_dead.
+
+Each action should be in JSON with subject, object, and n_characters. Let me map these out step by step.
+
+First, mother gives items to LRRH: subject is mother, object is LRRH, n=2.
+
+Second, mother sends her on an errand: same as above.
+
+Third, wolf wants to eat LRRH: subject is wolf, object is LRRH, life_at_risk tension.
+
+Fourth, wolf arrives and knocks at grandmother's house. He impersonates LRRH, so subject is wolf, object is grandmother? Or is it the action of knocking? But in JSON, actions need to relate to emotional links or tensions, so eating grandmother is key here: subject wolf, object grandmother, character_dead.
+
+Fifth, wolf waits for LRRH and when she arrives, he speaks softly. So subject is wolf, object LRRH. She enters and notices something's wrong, leading to tension life_at_risk.
+
+Sixth, wolf eats LRRH: subject wolf, object LRRH, character_dead.
+
+Wait, but the story ends with both grandmother and LRRH being eaten. So two actions of character_dead.
+
+Let me make sure each action is captured correctly.
+</think>
+
+Here's the structured JSON output capturing the essential actions related to emotional links and tensions:
+
+```json
+[
+  {
+    "action": "mother_gives_little_red_riding_hood_cake_and_butter",
+    "n_characters": 2,
+    "subject": "mother",
+    "object": "little_red_riding_hood"
+  },
+  {
+    "action": "mother_sends_little_red_riding_hood_to_grandmother",
+    "n_characters": 2,
+    "subject": "mother",
+    "object": "little_red_riding_hood"
+  },
+  {
+    "action": "wolf_attempts_to_eat_little_red_riding_hood",
+    "n_characters": 2,
+    "subject": "wolf",
+    "object": "little_red_riding_hood",
+    "tension": "life_at_risk"
+  },
+  {
+    "action": "wolf_knocks_on_grandmothers_door",
+    "n_characters": 2,
+    "subject": "wolf",
+    "object": "grandmother"
+  },
+  {
+    "action": "wolf_eats_grandmother",
+    "n_characters": 2,
+    "subject": "wolf",
+    "object": "grandmother",
+    "tension": "character_dead"
+  },
+  {
+    "action": "wolf_imitates_grandmothers_voice",
+    "n_characters": 2,
+    "subject": "wolf",
+    "object": "little_red_riding_hood"
+  },
+  {
+    "action": "little_red_riding_hood_notices_something_wrong",
+    "n_characters": 1,
+    "subject": "little_red_riding_hood",
+    "object": "-",
+    "tension": "life_at_risk"
+  },
+  {
+    "action": "wolf_eats_little_red_riding_hood",
+    "n_characters": 2,
+    "subject": "wolf",
+    "object": "little_red_riding_hood",
+    "tension": "character_dead"
+  }
+]
+```

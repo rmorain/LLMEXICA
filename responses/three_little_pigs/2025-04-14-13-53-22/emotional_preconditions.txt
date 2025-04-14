@@ -1,0 +1,128 @@
+<think>
+Alright, I need to add preconditions related to emotional links for each action in the given story analysis. The user has provided a JSON array of actions with subjects, objects, n_characters, and the action itself. My task is to go through each action and identify any emotional links that are preconditions for those actions.
+
+First, let me recall what an emotional link precondition means here: it's an existing relationship between characters (either friendship or love) that must be present for a specific action to make sense. The magnitude ranges from -3 to 3, where negative values indicate dislike or hatred, and positive values indicate liking or love.
+
+Looking at the actions:
+
+1. **blow_down_house**: Wolf blows down first_pig's house.
+   - What emotional link would cause the wolf to attack? Probably hunger or predatory instincts, not an emotional link as defined (friendship or love). So no precondition here.
+
+2. **seek_help**: First pig seeks help from second_pig.
+   - This action implies that the first pig trusts or likes the second pig enough to ask for help. So a friendship link with a positive magnitude makes sense. Let's say magnitude 2, indicating trust and reliance.
+
+3. **blow_down_house**: Wolf blows down second_pig's house.
+   - Similar to the first attack, this is driven by hunger, not an emotional link between wolf and pig. No precondition needed.
+
+4. **seek_help**: First pig seeks help from third_pig.
+   - Again, seeking help implies trust or friendship. So another positive magnitude for friendship, maybe 2.
+
+5. **seek_help**: Second pig seeks help from third_pig.
+   - Same reasoning; the second pig trusts the third, so a positive friendship link with magnitude 2.
+
+6. **attempt_enter_through_chimney**: Wolf tries to enter through chimney.
+   - Driven by hunger or desire to eat them, not an emotional link. No precondition.
+
+7. **trap_enemy**: Third pig traps wolf in boiling water.
+   - The third pig's action is defensive, likely motivated by fear or self-preservation. However, if we consider the pigs' friendship, they might be protecting each other, so a positive friendship link (maybe magnitude 3 for strong bond) among the pigs could be a precondition enabling them to work together.
+
+Now, I'll go through each action and add the preconditions as inferred.
+
+For actions 2, 4, and 5, there are clear friendships that enable seeking help. For action 7, it's more about their collective safety, so a strong friendship bond makes sense.
+</think>
+
+```json
+[
+  {
+    "action": "blow_down_house",
+    "n_characters": 2,
+    "subject": "wolf",
+    "object": "first_pig",
+    "preconditions": {
+      "emotional_links": []
+    }
+  },
+  {
+    "action": "seek_help",
+    "n_characters": 2,
+    "subject": "first_pig",
+    "object": "second_pig",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 2,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "blow_down_house",
+    "n_characters": 2,
+    "subject": "wolf",
+    "object": "second_pig",
+    "preconditions": {
+      "emotional_links": []
+    }
+  },
+  {
+    "action": "seek_help",
+    "n_characters": 2,
+    "subject": "first_pig",
+    "object": "third_pig",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 2,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "seek_help",
+    "n_characters": 2,
+    "subject": "second_pig",
+    "object": "third_pig",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 2,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "attempt_enter_through_chimney",
+    "n_characters": 2,
+    "subject": "wolf",
+    "object": "third_pig",
+    "preconditions": {
+      "emotional_links": []
+    }
+  },
+  {
+    "action": "trap_enemy",
+    "n_characters": 2,
+    "subject": "third_pig",
+    "object": "wolf",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  }
+]
+```

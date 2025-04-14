@@ -1,0 +1,93 @@
+[
+    {
+        "action": "blow_down_house",
+        "n_characters": 2,
+        "subject": "wolf",
+        "object": "first_pig",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "seek_help",
+        "n_characters": 2,
+        "subject": "first_pig",
+        "object": "second_pig",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": 2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "blow_down_house",
+        "n_characters": 2,
+        "subject": "wolf",
+        "object": "second_pig",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "seek_help",
+        "n_characters": 2,
+        "subject": "first_pig",
+        "object": "third_pig",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": 2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "seek_help",
+        "n_characters": 2,
+        "subject": "second_pig",
+        "object": "third_pig",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": 2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "attempt_enter_through_chimney",
+        "n_characters": 2,
+        "subject": "wolf",
+        "object": "third_pig",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "trap_enemy",
+        "n_characters": 2,
+        "subject": "third_pig",
+        "object": "wolf",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    }
+]

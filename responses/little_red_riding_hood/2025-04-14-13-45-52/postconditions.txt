@@ -1,0 +1,158 @@
+<think>
+Okay, I need to analyze each action in the story and identify or infer the postconditions related to emotional links and tensions. Postconditions are changes resulting from an action, so they must differ from any preconditions if those exist. Also, at least one postcondition is required for each action.
+
+Starting with "mother_gives_little_red_riding_hood_cake_and_butter." This positive action likely strengthens the love between mother and LRRH. So, a new emotional link of `love` with magnitude 3 from LRRH to her mother would be a postcondition. No tension changes here since there was no prior tension.
+
+Next, "mother_sends_little_red_riding_hood_to_grandmother." This action is based on the grandmother's illness (`health_at_risk`). The act of sending help doesn't resolve it, but perhaps strengthens love from LRRH towards her grandmother. So, an emotional link of `love` with magnitude 3 from LRRH to grandmother is added.
+
+"Wolf_attempts_to_eat_little_red_riding_hood" causes fear and negative feelings towards the wolf. So, a `friendship` link with magnitude -3 from LRRH to wolf is created. The tension here increases `life_at_risk` for LRRH because of the encounter.
+
+"Wolf_knocks_on_grandmothers_door" deceives the grandmother, leading her to let the wolf in. This doesn't directly affect emotional links but sets up future tensions like `character_dead`.
+
+"Wolf_eats_grandmother" results in her death, so a postcondition is `character_dead`. No emotional link changes here as it's a negative action leading to death.
+
+"Wolf_imitates_grandmothers_voice" tricks LRRH into trusting him. This would create a negative emotional link from LRRH towards the wolf (`friendship` magnitude -3) once she realizes the deception, even though she trusts him now.
+
+"LITTLE_red_riding_hood_notices_something_wrong" makes her suspicious and fearful, increasing `life_at_risk` tension for herself. This could also make her more cautious or fearful towards others.
+
+"Wolf_eats_little_red_riding_hood" results in her death (`character_dead`). Again, no emotional links here as it's a fatal action.
+
+For each action, I need to ensure that postconditions are different from preconditions and reflect the changes accurately. Emotional links are adjusted based on positive or negative interactions, while tensions are updated to reflect new risks or resolutions.
+</think>
+
+```json
+[
+  {
+    "action": "mother_gives_little_red_riding_hood_cake_and_butter",
+    "n_characters": 2,
+    "subject": "mother",
+    "object": "little_red_riding_hood",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "love",
+          "magnitude": 3,
+          "from": "b",
+          "to": "a"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "mother_sends_little_red_riding_hood_to_grandmother",
+    "n_characters": 2,
+    "subject": "mother",
+    "object": "little_red_riding_hood",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "love",
+          "magnitude": 3,
+          "from": "b",
+          "to": "grandmother"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "wolf_attempts_to_eat_little_red_riding_hood",
+    "n_characters": 2,
+    "subject": "wolf",
+    "object": "little_red_riding_hood",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -3,
+          "from": "b",
+          "to": "a"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "wolf_knocks_on_grandmothers_door",
+    "n_characters": 2,
+    "subject": "wolf",
+    "object": "grandmother",
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": []
+    }
+  },
+  {
+    "action": "wolf_eats_grandmother",
+    "n_characters": 2,
+    "subject": "wolf",
+    "object": "grandmother",
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": [
+        {
+          "type": "character_dead",
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "wolf_imitates_grandmothers_voice",
+    "n_characters": 2,
+    "subject": "wolf",
+    "object": "little_red_riding_hood",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -3,
+          "from": "b",
+          "to": "a"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "little_red_riding_hood_notices_something_wrong",
+    "n_characters": 1,
+    "subject": "little_red_riding_hood",
+    "object": "-",
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "*",
+          "to": "a"
+        }
+      ]
+    }
+  },
+  {
+    "action": "wolf_eats_little_red_riding_hood",
+    "n_characters": 2,
+    "subject": "wolf",
+    "object": "little_red_riding_hood",
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": [
+        {
+          "type": "character_dead",
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  }
+]
+```

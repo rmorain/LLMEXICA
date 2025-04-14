@@ -1,0 +1,304 @@
+<think>
+Okay, I need to identify postconditions for each action in the story analysis. Postconditions are changes resulting from the actions, affecting either emotional links or tensions. At least one postcondition is required per action, and they can't be the same as preconditions if those exist.
+
+Let me go through each action:
+
+1. **blow_down_house**: Wolf blows down first_pig's house.
+   - This creates fear in the pig towards the wolf (negative emotional link).
+   - The tension of `life_at_risk` is now active for the pig.
+
+2. **seek_help**: First pig seeks help from second_pig.
+   - This strengthens their friendship bond.
+   - The first pig's life remains at risk until they find safety.
+
+3. **blow_down_house**: Wolf blows down second_pig's house.
+   - Both pigs now have a stronger fear of the wolf (negative emotional links).
+   - Their lives are now more directly at risk.
+
+4. **seek_help**: First pig seeks help from third_pig.
+   - Strengthens friendship between first and third pigs.
+   - Life_at_risk tension continues until they reach safety.
+
+5. **seek_help**: Second pig seeks help from third_pig.
+   - Strengthens friendship between second and third pigs.
+   - Both pigs' lives remain at risk.
+
+6. **attempt_enter_through_chimney**: Wolf tries to enter through chimney.
+   - Increases the pigs' fear, strengthening negative emotional links towards the wolf.
+   - Life_at_risk tension escalates as the wolf gets closer.
+
+7. **trap_enemy**: Third pig traps wolf in boiling water.
+   - The pigs feel safer and more trusting among themselves (positive emotional links).
+   - Resolves the life_at_risk tension for all pigs, replacing it with life_normal.
+
+Now, I'll map these postconditions into the JSON structure under `postconditions` with `emotional_links` and `tensions`.
+</think>
+
+```json
+[
+  {
+    "action": "blow_down_house",
+    "n_characters": 2,
+    "subject": "wolf",
+    "object": "first_pig",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -2,
+          "from": "b",
+          "to": "a"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "-",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "seek_help",
+    "n_characters": 2,
+    "subject": "first_pig",
+    "object": "second_pig",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 2,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "-",
+          "to": "a"
+        }
+      ]
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 3,
+          "from": "b",
+          "to": "a"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "-",
+          "to": "a"
+        }
+      ]
+    }
+  },
+  {
+    "action": "blow_down_house",
+    "n_characters": 2,
+    "subject": "wolf",
+    "object": "second_pig",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -2,
+          "from": "b",
+          "to": "a"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "-",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "seek_help",
+    "n_characters": 2,
+    "subject": "first_pig",
+    "object": "third_pig",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 2,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "-",
+          "to": "a"
+        }
+      ]
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 3,
+          "from": "b",
+          "to": "a"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "-",
+          "to": "a"
+        }
+      ]
+    }
+  },
+  {
+    "action": "seek_help",
+    "n_characters": 2,
+    "subject": "second_pig",
+    "object": "third_pig",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 2,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "-",
+          "to": "a"
+        }
+      ]
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 3,
+          "from": "b",
+          "to": "a"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "-",
+          "to": "a"
+        }
+      ]
+    }
+  },
+  {
+    "action": "attempt_enter_through_chimney",
+    "n_characters": 2,
+    "subject": "wolf",
+    "object": "third_pig",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "a",
+          "to": "*"
+        }
+      ]
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -3,
+          "from": "b",
+          "to": "a"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "-",
+          "to": "*"
+        }
+      ]
+    }
+  },
+  {
+    "action": "trap_enemy",
+    "n_characters": 2,
+    "subject": "third_pig",
+    "object": "wolf",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "-",
+          "to": "*"
+        }
+      ]
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 4,
+          "from": "b",
+          "to": "a"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_normal",
+          "from": "-",
+          "to": "*"
+        },
+        {
+          "type": "prisoner_freed",
+          "from": "a",
+          "to": "-"
+        }
+      ]
+    }
+  }
+]
+```

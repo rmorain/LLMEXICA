@@ -1,0 +1,8 @@
+STO
+wolf blow_down_house first_pig
+first_pig seek_help second_pig
+wolf blow_down_house second_pig
+first_pig seek_help third_pig
+second_pig seek_help third_pig
+wolf attempt_enter_through_chimney third_pig
+third_pig trap_enemy wolf

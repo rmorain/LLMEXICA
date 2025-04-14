@@ -1,0 +1,363 @@
+[
+    {
+        "action": "youngest_son_felt_sad",
+        "n_characters": 1,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "cat_promised_help_to_master",
+        "n_characters": 2,
+        "subject": "cat",
+        "object": "master",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": 2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "master_gave_bag_and_boots_to_cat",
+        "n_characters": 2,
+        "subject": "master",
+        "object": "cat",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": 2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "cat_caught_rabbit_in_bag",
+        "n_characters": 1,
+        "subject": "cat",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "cat_presented_rabbit_to_king",
+        "n_characters": 2,
+        "subject": "cat",
+        "object": "king",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": 1,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "cat_caught_partridges_in_bag",
+        "n_characters": 1,
+        "subject": "cat",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "cat_presented_partridges_to_king",
+        "n_characters": 2,
+        "subject": "cat",
+        "object": "king",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": 1,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "cat_advised_master_to_wash_in_river",
+        "n_characters": 2,
+        "subject": "cat",
+        "object": "master",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": 2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "master_washed_in_river",
+        "n_characters": 1,
+        "subject": "master",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "cat_cried_for_help",
+        "n_characters": 1,
+        "subject": "cat",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": 2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "king_sent_guards_to_help_master",
+        "n_characters": 2,
+        "subject": "king",
+        "object": "master",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": 1,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "cat_told_king_clothes_were_stolen",
+        "n_characters": 2,
+        "subject": "cat",
+        "object": "king",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": 1,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "king_gave_master_new_clothes",
+        "n_characters": 2,
+        "subject": "king",
+        "object": "master",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": 2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "princess_fell_in_love_with_master",
+        "n_characters": 1,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "love",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "cat-threatened_mowers",
+        "n_characters": 2,
+        "subject": "cat",
+        "object": "mowers",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": 2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "king_asked_about_meadow",
+        "n_characters": 2,
+        "subject": "king",
+        "object": "mowers",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "mowers_told_king_meadow_belonged_to_master",
+        "n_characters": 2,
+        "subject": "mowers",
+        "object": "king",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "cat-threatened_reapers",
+        "n_characters": 2,
+        "subject": "cat",
+        "object": "reapers",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": 2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "king_asked_about_corn",
+        "n_characters": 2,
+        "subject": "king",
+        "object": "reapers",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "reapers_told_king_corn_belonged_to_master",
+        "n_characters": 2,
+        "subject": "reapers",
+        "object": "king",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "cat_entered_ogre_castle",
+        "n_characters": 1,
+        "subject": "cat",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": 2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "ogre_transformed_into_lion",
+        "n_characters": 1,
+        "subject": "ogre",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "cat_hid_in_gutter",
+        "n_characters": 1,
+        "subject": "cat",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": 2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "ogre_transformed_into_mouse",
+        "n_characters": 1,
+        "subject": "ogre",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "cat_ate_mouse",
+        "n_characters": 2,
+        "subject": "cat",
+        "object": "mouse",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": 2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "king_visited_castle",
+        "n_characters": 1,
+        "subject": "king",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "marquis_married_princess",
+        "n_characters": 2,
+        "subject": "marquis",
+        "object": "princess",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "love",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                },
+                {
+                    "type": "love",
+                    "magnitude": 3,
+                    "from": "b",
+                    "to": "a"
+                }
+            ]
+        }
+    }
+]

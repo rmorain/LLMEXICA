@@ -14,4 +14,4 @@ export OLLAMA_CONTEXT_LENGTH=131072  # Set context length for the model
 ollama serve &
 sleep 10
 ollama run $OLLAMA_MODEL 
-python -u parse_story.py --story_names=ugly_duckling
+python -u parse_story.py --story_names=three_little_pigs

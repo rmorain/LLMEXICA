@@ -1,1 +1,642 @@
-[{"action": "send_out_into_world", "n_characters": 1, "subject": "-", "object": "-", "preconditions": {"emotional_links": [{"type": "love", "magnitude": 3, "from": "a", "to": "b"}], "tensions": []}, "postconditions": {"emotional_links": [], "tensions": []}}, {"action": "build_house_with_straw", "n_characters": 1, "subject": "-", "object": "-", "preconditions": {"emotional_links": [], "tensions": []}, "postconditions": {"emotional_links": [], "tensions": []}}, {"action": "build_house_with_sticks", "n_characters": 1, "subject": "-", "object": "-", "preconditions": {"emotional_links": [], "tensions": []}, "postconditions": {"emotional_links": [], "tensions": []}}, {"action": "sing_and_dance_together", "n_characters": 2, "subject": "-", "object": "-", "preconditions": {"emotional_links": [{"type": "friendship", "magnitude": 2, "from": "a", "to": "b"}], "tensions": []}, "postconditions": {"emotional_links": [{"type": "friendship", "magnitude": 3, "from": "a", "to": "b"}], "tensions": []}}, {"action": "build_house_with_bricks", "n_characters": 1, "subject": "-", "object": "-", "preconditions": {"emotional_links": [], "tensions": []}, "postconditions": {"emotional_links": [], "tensions": []}}, {"action": "smell_pig_inside_house", "n_characters": 2, "subject": "-", "object": "-", "preconditions": {"emotional_links": [], "tensions": [{"type": "life_at_risk", "from": "*", "to": "b"}]}, "postconditions": {"emotional_links": [], "tensions": [{"type": "life_at_risk", "from": "*", "to": "b"}]}}, {"action": "knock_on_door_and_request_entry", "n_characters": 2, "subject": "-", "object": "-", "preconditions": {"emotional_links": [], "tensions": [{"type": "life_at_risk", "from": "*", "to": "b"}]}, "postconditions": {"emotional_links": [{"type": "friendship", "magnitude": -1, "from": "a", "to": "b"}], "tensions": []}}, {"action": "refuse_entry_through_keyhole", "n_characters": 2, "subject": "-", "object": "-", "preconditions": {"emotional_links": [{"type": "friendship", "magnitude": -2, "from": "a", "to": "b"}], "tensions": [{"type": "life_at_risk", "from": "*", "to": "b"}]}, "postconditions": {"emotional_links": [{"type": "friendship", "magnitude": 3, "from": "a", "to": "b"}], "tensions": []}}, {"action": "threaten_to_blow_down_house", "n_characters": 2, "subject": "-", "object": "-", "preconditions": {"emotional_links": [], "tensions": [{"type": "life_at_risk", "from": "*", "to": "b"}]}, "postconditions": {"emotional_links": [], "tensions": []}}, {"action": "blow_down_straw_house", "n_characters": 1, "subject": "-", "object": "-", "preconditions": {"emotional_links": [], "tensions": [{"type": "life_at_risk", "from": "*", "to": "b"}]}, "postconditions": {"emotional_links": [], "tensions": []}}, {"action": "escape_and_hide", "n_characters": 2, "subject": "-", "object": "-", "preconditions": {"emotional_links": [{"type": "friendship", "magnitude": 2, "from": "a", "to": "b"}], "tensions": [{"type": "life_at_risk", "from": "*", "to": "b"}]}, "postconditions": {"emotional_links": [{"type": "friendship", "magnitude": 3, "from": "a", "to": "b"}], "tensions": []}}, {"action": "smell_pigs_inside_house", "n_characters": 2, "subject": "-", "object": "-", "preconditions": {"emotional_links": [], "tensions": [{"type": "life_at_risk", "from": "*", "to": "b"}]}, "postconditions": {"emotional_links": [], "tensions": []}}, {"action": "knock_on_door_and_request_entry", "n_characters": 2, "subject": "-", "object": "-", "preconditions": {"emotional_links": [], "tensions": [{"type": "life_at_risk", "from": "*", "to": "b"}]}, "postconditions": {"emotional_links": [{"type": "friendship", "magnitude": -1, "from": "a", "to": "b"}], "tensions": []}}, {"action": "refuse_entry_through_keyhole", "n_characters": 2, "subject": "-", "object": "-", "preconditions": {"emotional_links": [{"type": "friendship", "magnitude": -2, "from": "a", "to": "b"}], "tensions": [{"type": "life_at_risk", "from": "*", "to": "b"}]}, "postconditions": {"emotional_links": [{"type": "friendship", "magnitude": 3, "from": "a", "to": "b"}], "tensions": []}}, {"action": "threaten_to_blow_down_house", "n_characters": 2, "subject": "-", "object": "-", "preconditions": {"emotional_links": [], "tensions": [{"type": "life_at_risk", "from": "*", "to": "b"}]}, "postconditions": {"emotional_links": [], "tensions": []}}, {"action": "blow_down_stick_house", "n_characters": 1, "subject": "-", "object": "-", "preconditions": {"emotional_links": [], "tensions": [{"type": "life_at_risk", "from": "*", "to": "b"}]}, "postconditions": {"emotional_links": [], "tensions": []}}, {"action": "escape_and_hide_together", "n_characters": 2, "subject": "-", "object": "-", "preconditions": {"emotional_links": [{"type": "friendship", "magnitude": 2, "from": "a", "to": "b"}], "tensions": [{"type": "life_at_risk", "from": "*", "to": "b"}]}, "postconditions": {"emotional_links": [{"type": "friendship", "magnitude": 3, "from": "a", "to": "b"}], "tensions": []}}, {"action": "chase_pigs_down_lane", "n_characters": 2, "subject": "-", "object": "-", "preconditions": {"emotional_links": [], "tensions": [{"type": "life_at_risk", "from": "*", "to": "b"}]}, "postconditions": {"emotional_links": [], "tensions": []}}, {"action": "slam_door_before_wolf_enters", "n_characters": 3, "subject": "-", "object": "-", "preconditions": {"emotional_links": [{"type": "friendship", "magnitude": -2, "from": "a", "to": "b"}], "tensions": [{"type": "life_at_risk", "from": "*", "to": "b"}]}, "postconditions": {"emotional_links": [{"type": "friendship", "magnitude": 3, "from": "a", "to": "b"}], "tensions": []}}, {"action": "knock_on_door_and_request_entry", "n_characters": 2, "subject": "-", "object": "-", "preconditions": {"emotional_links": [], "tensions": [{"type": "life_at_risk", "from": "*", "to": "b"}]}, "postconditions": {"emotional_links": [{"type": "friendship", "magnitude": -1, "from": "a", "to": "b"}], "tensions": []}}, {"action": "refuse_entry_through_keyhole", "n_characters": 3, "subject": "-", "object": "-", "preconditions": {"emotional_links": [{"type": "friendship", "magnitude": -2, "from": "a", "to": "b"}], "tensions": [{"type": "life_at_risk", "from": "*", "to": "b"}]}, "postconditions": {"emotional_links": [{"type": "friendship", "magnitude": 3, "from": "a", "to": "b"}], "tensions": []}}, {"action": "threaten_to_blow_down_house", "n_characters": 2, "subject": "-", "object": "-", "preconditions": {"emotional_links": [], "tensions": [{"type": "life_at_risk", "from": "*", "to": "b"}]}, "postconditions": {"emotional_links": [], "tensions": []}}, {"action": "huff_and_puff_but_fail_to_blow_down_house", "n_characters": 1, "subject": "-", "object": "-", "preconditions": {"emotional_links": [], "tensions": [{"type": "life_at_risk", "from": "*", "to": "b"}]}, "postconditions": {"emotional_links": [], "tensions": []}}, {"action": "climb_on_roof_to_enter_through_chimney", "n_characters": 2, "subject": "-", "object": "-", "preconditions": {"emotional_links": [], "tensions": [{"type": "prisoner", "from": "*", "to": "b"}]}, "postconditions": {"emotional_links": [], "tensions": []}}, {"action": "make_blazing_fire_and_boil_water", "n_characters": 1, "subject": "-", "object": "-", "preconditions": {"emotional_links": [{"type": "friendship", "magnitude": 2, "from": "a", "to": "b"}], "tensions": [{"type": "life_at_risk", "from": "*", "to": "b"}, {"type": "prisoner", "from": "*", "to": "b"}]}, "postconditions": {"emotional_links": [], "tensions": [{"type": "character_dead", "from": "*", "to": "b"}]}}, {"action": "fall_into_scalding_water", "n_characters": 2, "subject": "-", "object": "-", "preconditions": {"emotional_links": [], "tensions": [{"type": "character_dead", "from": "*", "to": "b"}]}, "postconditions": {"emotional_links": [], "tensions": []}}]
+[
+    {
+        "action": "send_out_into_world",
+        "n_characters": 1,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "love",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": []
+        },
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": []
+        }
+    },
+    {
+        "action": "build_house_with_straw",
+        "n_characters": 1,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [],
+            "tensions": []
+        },
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": []
+        }
+    },
+    {
+        "action": "build_house_with_sticks",
+        "n_characters": 1,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [],
+            "tensions": []
+        },
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": []
+        }
+    },
+    {
+        "action": "sing_and_dance_together",
+        "n_characters": 2,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": 2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": []
+        },
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": []
+        }
+    },
+    {
+        "action": "build_house_with_bricks",
+        "n_characters": 1,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [],
+            "tensions": []
+        },
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": []
+        }
+    },
+    {
+        "action": "smell_pig_inside_house",
+        "n_characters": 2,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "*",
+                    "to": "b"
+                }
+            ]
+        },
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "*",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "knock_on_door_and_request_entry",
+        "n_characters": 2,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "*",
+                    "to": "b"
+                }
+            ]
+        },
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -1,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": []
+        }
+    },
+    {
+        "action": "refuse_entry_through_keyhole",
+        "n_characters": 2,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "*",
+                    "to": "b"
+                }
+            ]
+        },
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": []
+        }
+    },
+    {
+        "action": "threaten_to_blow_down_house",
+        "n_characters": 2,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "*",
+                    "to": "b"
+                }
+            ]
+        },
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": []
+        }
+    },
+    {
+        "action": "blow_down_straw_house",
+        "n_characters": 1,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "*",
+                    "to": "b"
+                }
+            ]
+        },
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": []
+        }
+    },
+    {
+        "action": "escape_and_hide",
+        "n_characters": 2,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": 2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "*",
+                    "to": "b"
+                }
+            ]
+        },
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": []
+        }
+    },
+    {
+        "action": "smell_pigs_inside_house",
+        "n_characters": 2,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "*",
+                    "to": "b"
+                }
+            ]
+        },
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": []
+        }
+    },
+    {
+        "action": "knock_on_door_and_request_entry",
+        "n_characters": 2,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "*",
+                    "to": "b"
+                }
+            ]
+        },
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -1,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": []
+        }
+    },
+    {
+        "action": "refuse_entry_through_keyhole",
+        "n_characters": 2,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "*",
+                    "to": "b"
+                }
+            ]
+        },
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": []
+        }
+    },
+    {
+        "action": "threaten_to_blow_down_house",
+        "n_characters": 2,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "*",
+                    "to": "b"
+                }
+            ]
+        },
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": []
+        }
+    },
+    {
+        "action": "blow_down_stick_house",
+        "n_characters": 1,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "*",
+                    "to": "b"
+                }
+            ]
+        },
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": []
+        }
+    },
+    {
+        "action": "escape_and_hide_together",
+        "n_characters": 2,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": 2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "*",
+                    "to": "b"
+                }
+            ]
+        },
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": []
+        }
+    },
+    {
+        "action": "chase_pigs_down_lane",
+        "n_characters": 2,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "*",
+                    "to": "b"
+                }
+            ]
+        },
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": []
+        }
+    },
+    {
+        "action": "slam_door_before_wolf_enters",
+        "n_characters": 3,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "*",
+                    "to": "b"
+                }
+            ]
+        },
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": []
+        }
+    },
+    {
+        "action": "knock_on_door_and_request_entry",
+        "n_characters": 2,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "*",
+                    "to": "b"
+                }
+            ]
+        },
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -1,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": []
+        }
+    },
+    {
+        "action": "refuse_entry_through_keyhole",
+        "n_characters": 3,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "*",
+                    "to": "b"
+                }
+            ]
+        },
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": []
+        }
+    },
+    {
+        "action": "threaten_to_blow_down_house",
+        "n_characters": 2,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "*",
+                    "to": "b"
+                }
+            ]
+        },
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": []
+        }
+    },
+    {
+        "action": "huff_and_puff_but_fail_to_blow_down_house",
+        "n_characters": 1,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "*",
+                    "to": "b"
+                }
+            ]
+        },
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": []
+        }
+    },
+    {
+        "action": "climb_on_roof_to_enter_through_chimney",
+        "n_characters": 2,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "prisoner",
+                    "from": "*",
+                    "to": "b"
+                }
+            ]
+        },
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": []
+        }
+    },
+    {
+        "action": "make_blazing_fire_and_boil_water",
+        "n_characters": 1,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": 2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "*",
+                    "to": "b"
+                },
+                {
+                    "type": "prisoner",
+                    "from": "*",
+                    "to": "b"
+                }
+            ]
+        },
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "character_dead",
+                    "from": "*",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "fall_into_scalding_water",
+        "n_characters": 2,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "character_dead",
+                    "from": "*",
+                    "to": "b"
+                }
+            ]
+        },
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": []
+        }
+    }
+]

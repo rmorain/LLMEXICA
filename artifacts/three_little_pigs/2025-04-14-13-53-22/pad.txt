@@ -1,0 +1,54 @@
+ACT blow_down_house 2
+PRE
+T Lr a b
+POS
+E b a -2 1
+T Lr - b
+
+ACT seek_help 2
+PRE
+E a b +2 1
+T Lr - a
+POS
+E b a +3 1
+T Lr - a
+
+ACT blow_down_house 2
+PRE
+T Lr a b
+POS
+E b a -2 1
+T Lr - b
+
+ACT seek_help 2
+PRE
+E a b +2 1
+T Lr - a
+POS
+E b a +3 1
+T Lr - a
+
+ACT seek_help 2
+PRE
+E a b +2 1
+T Lr - a
+POS
+E b a +3 1
+T Lr - a
+
+ACT attempt_enter_through_chimney 2
+PRE
+T Lr a *
+POS
+E b a -3 1
+T Lr - *
+
+ACT trap_enemy 2
+PRE
+E a b +3 1
+T Lr - *
+POS
+E b a +4 1
+T Ln - *
+T Pf a -
+

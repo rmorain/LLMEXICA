@@ -1,0 +1,474 @@
+<think>
+Okay, so I need to figure out the postconditions for each action in this story about Puss in Boots and his master. The user wants me to focus on how actions change emotional links or tensions, ensuring that at least one postcondition is present per action and that they don't repeat preconditions.
+
+Starting with "youngest_son_felt_sad": There's no interaction here, so emotional links remain unchanged, but the sadness might create a slight negative self-perception. Tensions-wise, nothing changes.
+
+Next, when the cat promises help, this positive action should improve the master's trust in the cat, increasing their friendship bond. No tension changes since it's a supportive move.
+
+The master giving items to the cat shows trust, so the emotional link of friendship from master to cat increases. Again, no tensions here as it's cooperative.
+
+When the cat catches a rabbit, this success strengthens the cat's reliability in the master's eyes, boosting their friendship. No tension changes since it's a positive outcome.
+
+Presenting the rabbit to the king makes the king favorably disposed towards both the cat and the master, creating new friendly links. Tensions remain unaffected as it's a peaceful interaction.
+
+Catching partridges follows the same logic as catching rabbits; it reinforces trust and friendship. Presenting them to the king further cements positive emotional links without affecting tensions.
+
+The cat advising the master to wash in the river is based on trust, so the master's reliance on the cat increases their friendship bond. No tension changes here since it's a strategic move.
+
+When the master washes in the river, this action doesn't directly affect emotions but sets up future actions. No emotional links change, and no new tensions arise.
+
+The cat crying for help is a call to action that relies on existing trust, so after this, the master feels gratitude towards the cat, enhancing their friendship. This action also resolves the life_at_risk tension as help arrives.
+
+King sending guards to help introduces a new friendly link from the king to the master and resolves the life_at_risk tension by ensuring the master's safety.
+
+The cat telling the king about stolen clothes maintains trust between them, so no change in emotional links. The king giving clothes is a positive action that strengthens friendship bonds without affecting tensions.
+
+Princess falling in love with the master is a direct result of their interaction, creating a romantic link. No tensions involved here since it's a positive development.
+
+When the cat threatens mowers and reapers, it scares them into compliance, which doesn't affect emotional links but creates a life_at_risk tension if they don't obey.
+
+King asking about the meadow and receiving answers shows trust in the master, slightly increasing friendship. No tensions here as it's informational.
+
+Cat entering the ogre's castle introduces potential danger, creating a life_at_risk tension for the cat.
+
+Ogre transforming into a lion causes fear, so the cat experiences a negative emotional link towards the ogre. This also creates a life_at_risk tension for the cat.
+
+The cat hiding in the gutter is a reaction to fear, resolving the immediate life_at_risk but leaving the underlying tension until the ogre is dealt with.
+
+Ogre transforming into a mouse doesn't change emotions but sets up the next action where the cat eats him, resolving the tension permanently by eliminating the threat.
+
+Cat eating the mouse removes the ogre's danger, so the life_at_risk tension is resolved, and the castle becomes safe for everyone.
+
+King visiting the castle after these events shows trust in the master, enhancing their friendship. No tensions remain as the situation is now safe.
+
+Finally, the marquis marrying the princess solidifies their romantic emotional link and resolves any remaining social or relational tensions through their union.
+
+I need to ensure each action's postconditions are logically consistent with the story's flow, adjusting emotional links and resolving or introducing tensions appropriately.
+</think>
+
+```json
+[
+  {
+    "action": "youngest_son_felt_sad",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "-",
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": []
+    }
+  },
+  {
+    "action": "cat_promised_help_to_master",
+    "n_characters": 2,
+    "subject": "cat",
+    "object": "master",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 1,
+          "from": "b",
+          "to": "a"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "master_gave_bag_and_boots_to_cat",
+    "n_characters": 2,
+    "subject": "master",
+    "object": "cat",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 1,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "cat_caught_rabbit_in_bag",
+    "n_characters": 1,
+    "subject": "cat",
+    "object": "-",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 1,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "cat_presented_rabbit_to_king",
+    "n_characters": 2,
+    "subject": "cat",
+    "object": "king",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 1,
+          "from": "b",
+          "to": "a"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "cat_caught_partridges_in_bag",
+    "n_characters": 1,
+    "subject": "cat",
+    "object": "-",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 1,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "cat_presented_partridges_to_king",
+    "n_characters": 2,
+    "subject": "cat",
+    "object": "king",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 1,
+          "from": "b",
+          "to": "a"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "cat_advised_master_to_wash_in_river",
+    "n_characters": 2,
+    "subject": "cat",
+    "object": "master",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 1,
+          "from": "b",
+          "to": "a"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "master_washed_in_river",
+    "n_characters": 1,
+    "subject": "master",
+    "object": "-",
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": []
+    }
+  },
+  {
+    "action": "cat_cried_for_help",
+    "n_characters": 1,
+    "subject": "cat",
+    "object": "-",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 1,
+          "from": "b",
+          "to": "a"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_normal",
+          "from": "-",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "king_sent_guards_to_help_master",
+    "n_characters": 2,
+    "subject": "king",
+    "object": "master",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 1,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_normal",
+          "from": "-",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "cat_told_king_clothes_were_stolen",
+    "n_characters": 2,
+    "subject": "cat",
+    "object": "king",
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": []
+    }
+  },
+  {
+    "action": "king_gave_master_new_clothes",
+    "n_characters": 2,
+    "subject": "king",
+    "object": "master",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 1,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "princess_fell_in_love_with_master",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "-",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "love",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "cat-threatened_mowers",
+    "n_characters": 2,
+    "subject": "cat",
+    "object": "mowers",
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "king_asked_about_meadow",
+    "n_characters": 2,
+    "subject": "king",
+    "object": "mowers",
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": []
+    }
+  },
+  {
+    "action": "mowers_told_king_meadow_belonged_to_master",
+    "n_characters": 2,
+    "subject": "mowers",
+    "object": "king",
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": []
+    }
+  },
+  {
+    "action": "cat-threatened_reapers",
+    "n_characters": 2,
+    "subject": "cat",
+    "object": "reapers",
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "king_asked_about_corn",
+    "n_characters": 2,
+    "subject": "king",
+    "object": "reapers",
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": []
+    }
+  },
+  {
+    "action": "reapers_told_king_corn_belonged_to_master",
+    "n_characters": 2,
+    "subject": "reapers",
+    "object": "king",
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": []
+    }
+  },
+  {
+    "action": "cat_entered_ogre_castle",
+    "n_characters": 1,
+    "subject": "cat",
+    "object": "-",
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "a",
+          "to": "*"
+        }
+      ]
+    }
+  },
+  {
+    "action": "ogre_transformed_into_lion",
+    "n_characters": 1,
+    "subject": "ogre",
+    "object": "-",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -2,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "b",
+          "to": "a"
+        }
+      ]
+    }
+  },
+  {
+    "action": "cat_hid_in_gutter",
+    "n_characters": 1,
+    "subject": "cat",
+    "object": "-",
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": [
+        {
+          "type": "life_normal",
+          "from": "-",
+          "to": "a"
+        }
+      ]
+    }
+  },
+  {
+    "action": "ogre_transformed_into_mouse",
+    "n_characters": 1,
+    "subject": "ogre",
+    "object": "-",
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": []
+    }
+  },
+  {
+    "action": "cat_ate_mouse",
+    "n_characters": 2,
+    "subject": "cat",
+    "object": "mouse",
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": [
+        {
+          "type": "life_normal",
+          "from": "-",
+          "to": "*"
+        }
+      ]
+    }
+  },
+  {
+    "action": "king_visited_castle",
+    "n_characters": 1,
+    "subject": "king",
+    "object": "-",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 1,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "marquis_married_princess",
+    "n_characters": 2,
+    "subject": "marquis",
+    "object": "princess",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "love",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        },
+        {
+          "type": "love",
+          "magnitude": 3,
+          "from": "b",
+          "to": "a"
+        }
+      ],
+      "tensions": []
+    }
+  }
+]
+```

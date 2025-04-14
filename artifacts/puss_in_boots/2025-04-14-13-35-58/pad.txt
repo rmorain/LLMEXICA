@@ -1,0 +1,98 @@
+ACT cat_promised_help_to_master 2
+PRE
+E a b +2 1
+POS
+E b a +1 1
+
+ACT master_gave_bag_and_boots_to_cat 2
+PRE
+E a b +2 1
+POS
+E a b +1 1
+
+ACT cat_caught_rabbit_in_bag 1
+POS
+E a b +1 1
+
+ACT cat_presented_rabbit_to_king 2
+PRE
+E a b +1 1
+POS
+E b a +1 1
+
+ACT cat_caught_partridges_in_bag 1
+POS
+E a b +1 1
+
+ACT cat_presented_partridges_to_king 2
+PRE
+E a b +1 1
+POS
+E b a +1 1
+
+ACT cat_advised_master_to_wash_in_river 2
+PRE
+E a b +2 1
+POS
+E b a +1 1
+
+ACT cat_cried_for_help 1
+PRE
+E a b +2 1
+POS
+E b a +1 1
+T Ln - b
+
+ACT king_sent_guards_to_help_master 2
+POS
+E a b +1 1
+T Ln - b
+
+ACT king_gave_master_new_clothes 2
+POS
+E a b +1 1
+
+ACT princess_fell_in_love_with_master 1
+POS
+E a b +3 2
+
+ACT cat-threatened_mowers 2
+PRE
+E a b +2 1
+POS
+T Lr a b
+
+ACT cat-threatened_reapers 2
+PRE
+E a b +2 1
+POS
+T Lr a b
+
+ACT cat_entered_ogre_castle 1
+PRE
+E a b +2 1
+POS
+T Lr a *
+
+ACT ogre_transformed_into_lion 1
+POS
+E a b -2 1
+T Lr b a
+
+ACT cat_hid_in_gutter 1
+POS
+T Ln - a
+
+ACT cat_ate_mouse 2
+POS
+T Ln - *
+
+ACT king_visited_castle 1
+POS
+E a b +1 1
+
+ACT marquis_married_princess 2
+POS
+E a b +3 2
+E b a +3 2
+

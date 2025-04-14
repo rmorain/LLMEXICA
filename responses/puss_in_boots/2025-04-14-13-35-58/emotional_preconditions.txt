@@ -1,0 +1,403 @@
+<think>
+Alright, I need to analyze each action in the story to identify preconditions related to emotional links. The user wants me to focus on two types of emotional links: friendship and love, and assign a magnitude from -3 to 3.
+
+First, I'll go through each action one by one. For actions where an emotional link is necessary for the character to perform that action, I'll note the type, magnitude, and direction (from subject 'a' to object 'b').
+
+Starting with "youngest_son_felt_sad": there's no interaction with another character here, so no emotional links involved. Preconditions are empty.
+
+Next, "cat_promised_help_to_master": The cat helps because he cares about his master, indicating a positive friendship link from the cat (a) to the master (b). I'll set magnitude to 2 as it shows loyalty but not the deepest bond yet.
+
+"master_gave_bag_and_boots_to_cat": The master trusts the cat enough to provide items, suggesting a moderate trust, so friendship from master (a) to cat (b) with magnitude 2.
+
+"cat_caught_rabbit_in_bag": No direct emotional link here; it's about the cat's ability. Preconditions remain empty.
+
+"cat_presented_rabbit_to_king": The cat wants to help his master by gaining favor, indicating friendship from cat (a) to king (b), but since they're just meeting, magnitude is 1.
+
+Similarly, "cat_caught_partridges_in_bag" and presenting them involves the same motivation, so preconditions repeat.
+
+When advising the master to wash in the river, the cat's action is based on their existing friendship. The master follows without question, showing trust: friendship from master (a) to cat (b), magnitude 2.
+
+The master washing in the river doesn't require an emotional link as it's following advice.
+
+"cat_cried_for_help": This shows the cat cares about his master, so friendship from cat (a) to master (b), magnitude 2.
+
+King sending guards is based on trust built by previous actions. The king trusts the cat, so friendship from king (a) to cat (b), magnitude 1.
+
+Cat telling king clothes were stolen is again based on their bond: friendship from cat (a) to king (b), magnitude 1.
+
+King giving new clothes is driven by his trust in the cat and the master. Friendship from king (a) to master (b), magnitude 2.
+
+Princess falling in love with the master happens after they meet, so a romantic link from princess (a) to master (b), magnitude 3 as it's an intense feeling.
+
+The cat intimidating mowers and reapers is about friendship from cat (a) to master (b), magnitude 2 each time, ensuring the master gains a good reputation.
+
+Finally, when the marquis marries the princess, their love is solidified. It requires a romantic link of magnitude 3 from both sides: marquis (a) to princess (b) and vice versa.
+
+Throughout this process, I ensure that each emotional link makes sense contextually and adjust magnitudes based on the intensity of the relationship at that point in the story.
+</think>
+
+```json
+[
+  {
+    "action": "youngest_son_felt_sad",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": []
+    }
+  },
+  {
+    "action": "cat_promised_help_to_master",
+    "n_characters": 2,
+    "subject": "cat",
+    "object": "master",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 2,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "master_gave_bag_and_boots_to_cat",
+    "n_characters": 2,
+    "subject": "master",
+    "object": "cat",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 2,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "cat_caught_rabbit_in_bag",
+    "n_characters": 1,
+    "subject": "cat",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": []
+    }
+  },
+  {
+    "action": "cat_presented_rabbit_to_king",
+    "n_characters": 2,
+    "subject": "cat",
+    "object": "king",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 1,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "cat_caught_partridges_in_bag",
+    "n_characters": 1,
+    "subject": "cat",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": []
+    }
+  },
+  {
+    "action": "cat_presented_partridges_to_king",
+    "n_characters": 2,
+    "subject": "cat",
+    "object": "king",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 1,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "cat_advised_master_to_wash_in_river",
+    "n_characters": 2,
+    "subject": "cat",
+    "object": "master",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 2,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "master_washed_in_river",
+    "n_characters": 1,
+    "subject": "master",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": []
+    }
+  },
+  {
+    "action": "cat_cried_for_help",
+    "n_characters": 1,
+    "subject": "cat",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 2,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "king_sent_guards_to_help_master",
+    "n_characters": 2,
+    "subject": "king",
+    "object": "master",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 1,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "cat_told_king_clothes_were_stolen",
+    "n_characters": 2,
+    "subject": "cat",
+    "object": "king",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 1,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "king_gave_master_new_clothes",
+    "n_characters": 2,
+    "subject": "king",
+    "object": "master",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 2,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "princess_fell_in_love_with_master",
+    "n_characters": 1,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "love",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "cat-threatened_mowers",
+    "n_characters": 2,
+    "subject": "cat",
+    "object": "mowers",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 2,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "king_asked_about_meadow",
+    "n_characters": 2,
+    "subject": "king",
+    "object": "mowers",
+    "preconditions": {
+      "emotional_links": []
+    }
+  },
+  {
+    "action": "mowers_told_king_meadow_belonged_to_master",
+    "n_characters": 2,
+    "subject": "mowers",
+    "object": "king",
+    "preconditions": {
+      "emotional_links": []
+    }
+  },
+  {
+    "action": "cat-threatened_reapers",
+    "n_characters": 2,
+    "subject": "cat",
+    "object": "reapers",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 2,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "king_asked_about_corn",
+    "n_characters": 2,
+    "subject": "king",
+    "object": "reapers",
+    "preconditions": {
+      "emotional_links": []
+    }
+  },
+  {
+    "action": "reapers_told_king_corn_belonged_to_master",
+    "n_characters": 2,
+    "subject": "reapers",
+    "object": "king",
+    "preconditions": {
+      "emotional_links": []
+    }
+  },
+  {
+    "action": "cat_entered_ogre_castle",
+    "n_characters": 1,
+    "subject": "cat",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 2,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "ogre_transformed_into_lion",
+    "n_characters": 1,
+    "subject": "ogre",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": []
+    }
+  },
+  {
+    "action": "cat_hid_in_gutter",
+    "n_characters": 1,
+    "subject": "cat",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 2,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "ogre_transformed_into_mouse",
+    "n_characters": 1,
+    "subject": "ogre",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": []
+    }
+  },
+  {
+    "action": "cat_ate_mouse",
+    "n_characters": 2,
+    "subject": "cat",
+    "object": "mouse",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 2,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "king_visited_castle",
+    "n_characters": 1,
+    "subject": "king",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": []
+    }
+  },
+  {
+    "action": "marquis_married_princess",
+    "n_characters": 2,
+    "subject": "marquis",
+    "object": "princess",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "love",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        },
+        {
+          "type": "love",
+          "magnitude": 3,
+          "from": "b",
+          "to": "a"
+        }
+      ]
+    }
+  }
+]
+```
