@@ -1,0 +1,46 @@
+ACT hears_despair 2
+PRE
+E a b +3 1
+T Lr - b
+POS
+E a b +3 1
+
+ACT presents_gift 2
+PRE
+E a b +3 1
+T Lr - b
+POS
+E a b +3 1
+
+ACT receives_clothes 2
+PRE
+E a b +3 1
+T Lr - b
+POS
+E a b +3 1
+
+ACT falls_in_love 2
+PRE
+E a b +3 2
+POS
+E a b +3 2
+
+ACT eats_ogre 2
+PRE
+E a b +3 1
+T Lr - b
+POS
+E a b +3 1
+
+ACT invites_castle 2
+PRE
+E a b +3 1
+POS
+E a b +3 1
+
+ACT marries_princess 2
+PRE
+E a b +3 2
+POS
+E a b +3 2
+

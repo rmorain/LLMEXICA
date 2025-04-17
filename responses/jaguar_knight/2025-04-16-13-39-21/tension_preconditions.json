@@ -1,0 +1,327 @@
+<think>
+Okay, so now I need to add preconditions related to tensions for each action in the JSON. The user wants me to identify or infer the necessary tensions that must exist for a character to perform an action. These tensions can be of types like `character_dead`, `life_at_risk`, `health_at_risk`, or `prisoner`.
+
+First, I'll recall what each tension means:
+- `character_dead`: A character has died.
+- `life_at_risk`: A character's life is in danger.
+- `health_at_risk`: A character's health is compromised.
+- `prisoner`: A character is being held captive.
+
+I need to go through each action and determine if any of these tensions are preconditions for that action. For example, if a character heals another, it might be because the recipient's health was at risk.
+
+Let me process each action:
+
+1. **Heal (Princess heals Jaguar_Knight)**:
+   - Jaguar_Knight was injured from the bridge collapse. So, his health was at risk.
+   - Tension: `health_at_risk` from Jaguar_Knight to himself, since he's the one injured.
+
+2. **Kidnap (Enemy kidnaps Princess)**:
+   - Kidnapping puts her life at risk and makes her a prisoner.
+   - Tensions: `life_at_risk` and `prisoner`, both affecting Princess.
+
+3. **Tie_up (Enemy ties Princess)**:
+   - This action continues her being a prisoner and her life remains at risk.
+
+4. **Attack (Enemy charges at Princess)**:
+   - Directly threatens her life, so `life_at_risk`.
+
+5. **Search (Jaguar_Knight searches for Enemy)**:
+   - He's searching because the enemy has taken Princess, so preconditions include her being a prisoner and her life at risk.
+
+6. **Attack (Jaguar_Knight attacks Enemy)**:
+   - His motivation is to save Princess from danger, so `life_at_risk` and `prisoner`.
+
+7. **Liberate (Jaguar frees Princess)**:
+   - This action aims to relieve the tensions of her being a prisoner and her life at risk.
+
+8. **Kiss (Princess kisses Jaguar_Knight)**:
+   - No direct tension here; it's an emotional link, so no tensions as preconditions.
+
+9. **Realize_identity (Princess realizes tattoo)**:
+   - This leads to tension within Princess but doesn't directly tie to the predefined tension types.
+
+10. **Kill (Princess kills Jaguar_Knight)**:
+    - Results in his death, so `character_dead`.
+
+11. **Kill (Princess kills herself)**:
+    - She dies, so `character_dead` applied to herself.
+
+Now, for each action, I'll add the tensions as preconditions. If there are no applicable tensions, the array remains empty.
+
+I need to structure this correctly in JSON, ensuring that each tension specifies type, from, and to, using 'a' for subject and 'b' for object.
+</think>
+
+Here's the enhanced JSON with tension preconditions added:
+
+```json
+[
+  {
+    "action": "heal",
+    "n_characters": 2,
+    "subject": "Princess",
+    "object": "Jaguar_Knight",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 2,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "health_at_risk",
+          "from": "b",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "kidnap",
+    "n_characters": 2,
+    "subject": "Enemy",
+    "object": "Princess",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "b",
+          "to": "b"
+        },
+        {
+          "type": "prisoner",
+          "from": "b",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "tie_up",
+    "n_characters": 2,
+    "subject": "Enemy",
+    "object": "Princess",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "prisoner",
+          "from": "b",
+          "to": "b"
+        },
+        {
+          "type": "life_at_risk",
+          "from": "b",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "attack",
+    "n_characters": 2,
+    "subject": "Enemy",
+    "object": "Princess",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "b",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "search",
+    "n_characters": 2,
+    "subject": "Jaguar_Knight",
+    "object": "Enemy",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 2,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "prisoner",
+          "from": "Enemy",
+          "to": "Princess"
+        },
+        {
+          "type": "life_at_risk",
+          "from": "Enemy",
+          "to": "Princess"
+        }
+      ]
+    }
+  },
+  {
+    "action": "attack",
+    "n_characters": 2,
+    "subject": "Jaguar_Knight",
+    "object": "Enemy",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "Enemy",
+          "to": "Princess"
+        },
+        {
+          "type": "prisoner",
+          "from": "Enemy",
+          "to": "Princess"
+        }
+      ]
+    }
+  },
+  {
+    "action": "liberate",
+    "n_characters": 2,
+    "subject": "Jaguar_Knight",
+    "object": "Princess",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "prisoner",
+          "from": "Enemy",
+          "to": "Princess"
+        },
+        {
+          "type": "life_at_risk",
+          "from": "Enemy",
+          "to": "Princess"
+        }
+      ]
+    }
+  },
+  {
+    "action": "kiss",
+    "n_characters": 2,
+    "subject": "Princess",
+    "object": "Jaguar_Knight",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "realize_identity",
+    "n_characters": 2,
+    "subject": "Princess",
+    "object": "Jaguar_Knight",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -2,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "kill",
+    "n_characters": 2,
+    "subject": "Princess",
+    "object": "Jaguar_Knight",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "character_dead",
+          "from": "b",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "kill",
+    "n_characters": 1,
+    "subject": "Princess",
+    "object": "Princess",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -3,
+          "from": "a",
+          "to": "a"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "character_dead",
+          "from": "a",
+          "to": "a"
+        }
+      ]
+    }
+  }
+]
+```
+
+This JSON now includes both emotional links and tensions as preconditions for each action, providing a comprehensive analysis of the narrative's underlying motivations and risks.

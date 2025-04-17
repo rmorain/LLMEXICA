@@ -1,0 +1,129 @@
+<think>
+Alright, so I'm trying to figure out how to add preconditions related to emotional links for each action in the given story analysis. The user has provided a specific format to follow, which involves adding a "preconditions" key to each action, containing an array of emotional_links. Each emotional_link should specify the type, magnitude, and direction (from and to).
+
+First, I'll go through each action one by one.
+
+1. **Action: heals_wounds**
+   - **Subject:** Princess
+   - **Object:** Jaguar_Knight
+   - **n_characters:** 2
+
+   The princess heals Jaguar_Knight's wounds because she cares about him. This suggests a positive emotional link, likely non-romantic since it's before any romantic feelings develop.
+
+2. **Action: liberates**
+   - **Subject:** Jaguar_Knight
+   - **Object:** Princess
+   - **n_characters:** 2
+
+   Jaguar_Knight rescues the princess because he cares about her safety and well-being, indicating a strong positive emotional link towards her.
+
+3. **Action: kisses**
+   - **Subject:** Princess
+   - **Object:** Jaguar_Knight
+   - **n_characters:** 2
+
+   The kiss indicates romantic feelings between them, so this should be categorized under the romantic type with a high magnitude.
+
+4. **Action: kills**
+   - **Subject:** Princess
+   - **Object:** Jaguar_Knight
+   - **n_characters:** 2
+
+   This action is driven by hatred or intense anger due to discovering the tattoo linked to her father's murder, so a negative non-romantic link with high magnitude.
+
+5. **Action: kills_self**
+   - **Subject:** Princess
+   - **Object:** -
+   - **n_characters:** 1
+
+   This action is driven by internal emotional conflict and grief, but since it's self-directed, there are no direct emotional links to another character in this specific action.
+
+Now, applying these insights:
+
+- For each action, I'll determine if there's an emotional link precondition.
+- Assign the type as either "non-romantic" or "romantic".
+- Set magnitude based on the intensity of emotions inferred from the story context.
+- Use 'a' and 'b' to indicate source (from) and target (to).
+
+I need to ensure that if an action involves both subject and object, the emotional link directions are correctly set. If an action doesn't have a valid object or subject, I might need to adjust accordingly.
+
+Finally, structure all this into the specified JSON format, adding the "preconditions" key with the identified emotional links for each action.
+</think>
+
+```json
+[
+    {
+        "action": "heals_wounds",
+        "n_characters": 2,
+        "subject": "Princess",
+        "object": "Jaguar_Knight",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "liberates",
+        "n_characters": 2,
+        "subject": "Jaguar_Knight",
+        "object": "Princess",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "kisses",
+        "n_characters": 2,
+        "subject": "Princess",
+        "object": "Jaguar_Knight",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "romantic",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "kills",
+        "n_characters": 2,
+        "subject": "Princess",
+        "object": "Jaguar_Knight",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "kills_self",
+        "n_characters": 1,
+        "subject": "Princess",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    }
+]
+```

@@ -1,0 +1,17 @@
+STO
+face_poverty
+stepmother plan_abandonment father
+Hansel gather_pebbles
+Gretel weep
+Hansel comfort Gretel
+father abandon_children children
+Hansel leave_trail
+lose_way
+find_house
+witch capture_children children
+witch imprison Hansel
+witch force_work Gretel
+Gretel plan_escape Hansel
+Gretel kill_witch witch
+Gretel free_hansel Hansel
+return_home

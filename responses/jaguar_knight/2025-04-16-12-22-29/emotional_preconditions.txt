@@ -1,0 +1,244 @@
+<think>
+Okay, so I'm trying to help this user who has provided a story and wants an analysis focusing on emotional links and tensions within the narrative. From what I understand, they want me to identify preconditions for each action in terms of emotional links between characters.
+
+First, I need to go through each action listed in the JSON and determine if there's an emotional link that serves as a precondition for that action. Emotional links can be either 'non-romantic' or 'romantic', and they have a magnitude from -3 to 3.
+
+Let me start with the first action: "suffers_injury". The subject is Jaguar_Knight, and there's no object involved. Since this action doesn't involve another character, I don't think there's an emotional link here. So, the preconditions for this action would have an empty array for emotional_links.
+
+Next, "applies_curative_plant" involves Princess (subject) helping Jaguar_Knight (object). This suggests a positive non-romantic emotional link from Princess to Jaguar_Knight. The magnitude might be around 2 since she goes out of her way to save him.
+
+Moving on to "kidnaps", the subject is Enemy and the object is Princess. Kidnapping usually stems from negative emotions, so I'd infer a non-romantic link with a magnitude of -3 (hatred) from Enemy to Princess.
+
+"Ties_to_rock" continues the previous action, so the emotional link here would be consistent: Enemy's hatred towards Princess.
+
+"Prays" is Jaguar_Knight praying for help. This suggests he has a positive non-romantic link towards himself or perhaps towards the gods, but since we're focusing on inter-character links, maybe this action doesn't have an applicable precondition related to emotional links between characters.
+
+"Searches_for_enemy" implies that Jaguar_Knight is determined to rescue Princess, showing a strong positive non-romantic link towards her. The magnitude here could be 3, indicating a very strong bond or determination.
+
+"Throws_dust", "attacks_with_dagger", and "takes_heart" all involve Jaguar_Knight confronting Enemy. These actions likely stem from anger or hatred towards Enemy, so a non-romantic link with a magnitude of -2 to -3 from Jaguar_Knight to Enemy makes sense here.
+
+"Liberates_prisoner" is Jaguar_Knight freeing Princess, which again shows his positive feelings towards her. This would be a non-romantic link with a high magnitude, maybe 3.
+
+"Kisses" is a romantic action between Princess and Jaguar_Knight. Here, the emotional link would be romantic with a magnitude of 3, indicating deep affection.
+
+"Recognizes_tattoo" leads to Princess feeling hatred towards Jaguar_Knight because of his association with her father's murderers. This introduces a non-romantic link from Princess to Jaguar_Knight with a magnitude of -3.
+
+"Cuts_jugular" and "cuts_throat" are tragic actions resulting from the intense negative emotions Princess now feels towards Jaguar_Knight and herself. These would have preconditions of strong negative emotional links.
+
+I need to ensure that each precondition is accurately inferred based on the story's context and that the magnitudes reflect the intensity of the emotions involved. Also, I should format everything correctly in JSON with the specified keys.
+</think>
+
+```json
+[
+  {
+    "action": "suffers_injury",
+    "n_characters": 1,
+    "subject": "Jaguar_Knight",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": []
+    }
+  },
+  {
+    "action": "applies_curative_plant",
+    "n_characters": 2,
+    "subject": "Princess",
+    "object": "Jaguar_Knight",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 2,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "kidnaps",
+    "n_characters": 2,
+    "subject": "Enemy",
+    "object": "Princess",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "ties_to_rock",
+    "n_characters": 2,
+    "subject": "Enemy",
+    "object": "Princess",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "prays",
+    "n_characters": 1,
+    "subject": "Jaguar_Knight",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": []
+    }
+  },
+  {
+    "action": "searches_for_enemy",
+    "n_characters": 1,
+    "subject": "Jaguar_Knight",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "throws_dust",
+    "n_characters": 2,
+    "subject": "Jaguar_Knight",
+    "object": "Enemy",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -2,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "attacks_with_dagger",
+    "n_characters": 2,
+    "subject": "Jaguar_Knight",
+    "object": "Enemy",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "takes_heart",
+    "n_characters": 2,
+    "subject": "Jaguar_Knight",
+    "object": "Enemy",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "liberates_prisoner",
+    "n_characters": 2,
+    "subject": "Jaguar_Knight",
+    "object": "Princess",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "kisses",
+    "n_characters": 2,
+    "subject": "Princess",
+    "object": "Jaguar_Knight",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "recognizes_tattoo",
+    "n_characters": 1,
+    "subject": "Princess",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "cuts_jugular",
+    "n_characters": 2,
+    "subject": "Princess",
+    "object": "Jaguar_Knight",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "cuts_throat",
+    "n_characters": 1,
+    "subject": "Princess",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  }
+]
+```

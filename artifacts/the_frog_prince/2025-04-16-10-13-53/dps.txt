@@ -1,0 +1,18 @@
+STO
+princess loses_ball
+princess cries
+princess promises_companionship frog
+frog retrieves_ball
+princess runs_away
+frog knocks_on_door princess
+princess refuses_entry frog
+king commands_obedience princess
+princess opens_door
+frog enters_castle
+frog requests_lift princess
+princess lifts_to_table frog
+frog requests_food princess
+princess shares_meal frog
+frog requests_sleep princess
+princess throws_against_wall frog
+frog transforms_into_prince

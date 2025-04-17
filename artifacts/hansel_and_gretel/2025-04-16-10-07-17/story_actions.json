@@ -1,0 +1,564 @@
+[
+    {
+        "action": "argues",
+        "n_characters": 2,
+        "subject": "stepmother",
+        "object": "father",
+        "emotional_link": "non-romantic",
+        "tension": "life_at_risk",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "b",
+                    "to": "a"
+                }
+            ],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "b",
+                    "to": "a"
+                }
+            ]
+        },
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "-",
+                    "to": "*"
+                }
+            ]
+        }
+    },
+    {
+        "action": "weeps",
+        "n_characters": 2,
+        "subject": "Gretel",
+        "object": "stepmother",
+        "emotional_link": "non-romantic",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "-",
+                    "to": "*"
+                }
+            ]
+        },
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "-",
+                    "to": "*"
+                }
+            ]
+        }
+    },
+    {
+        "action": "comforts",
+        "n_characters": 2,
+        "subject": "Hansel",
+        "object": "Gretel",
+        "emotional_link": "non-romantic",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "-",
+                    "to": "*"
+                }
+            ]
+        },
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 3,
+                    "from": "b",
+                    "to": "a"
+                }
+            ],
+            "tensions": [
+                {
+                    "type": "life_normal",
+                    "from": "-",
+                    "to": "*"
+                }
+            ]
+        }
+    },
+    {
+        "action": "gathers_pebbles",
+        "n_characters": 1,
+        "subject": "Hansel",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [],
+            "tensions": []
+        },
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "life_normal",
+                    "from": "a",
+                    "to": "*"
+                }
+            ]
+        }
+    },
+    {
+        "action": "abandons",
+        "n_characters": 4,
+        "subject": "stepmother",
+        "object": "children",
+        "emotional_link": "non-romantic",
+        "tension": "life_at_risk",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "b",
+                    "to": "a"
+                }
+            ],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "b",
+                    "to": "a"
+                }
+            ]
+        },
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "-",
+                    "to": "*"
+                }
+            ]
+        }
+    },
+    {
+        "action": "follows_pebbles",
+        "n_characters": 2,
+        "subject": "Hansel and Gretel",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [],
+            "tensions": []
+        },
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "life_normal",
+                    "from": "a",
+                    "to": "*"
+                }
+            ]
+        }
+    },
+    {
+        "action": "argues",
+        "n_characters": 2,
+        "subject": "stepmother",
+        "object": "father",
+        "emotional_link": "non-romantic",
+        "tension": "life_at_risk",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "b",
+                    "to": "a"
+                }
+            ],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "b",
+                    "to": "a"
+                }
+            ]
+        },
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "-",
+                    "to": "*"
+                }
+            ]
+        }
+    },
+    {
+        "action": "scatters_breadcrumbs",
+        "n_characters": 1,
+        "subject": "Hansel",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [],
+            "tensions": []
+        },
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "life_normal",
+                    "from": "a",
+                    "to": "*"
+                }
+            ]
+        }
+    },
+    {
+        "action": "abandons",
+        "n_characters": 4,
+        "subject": "stepmother",
+        "object": "children",
+        "emotional_link": "non-romantic",
+        "tension": "life_at_risk",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "b",
+                    "to": "a"
+                }
+            ],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "b",
+                    "to": "a"
+                }
+            ]
+        },
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "-",
+                    "to": "*"
+                }
+            ]
+        }
+    },
+    {
+        "action": "captures",
+        "n_characters": 2,
+        "subject": "witch",
+        "object": "Hansel",
+        "emotional_link": "-",
+        "tension": "prisoner, health_at_risk",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": [
+                {
+                    "type": "prisoner",
+                    "from": "a",
+                    "to": "b"
+                },
+                {
+                    "type": "health_at_risk",
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        },
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "b",
+                    "to": "a"
+                }
+            ],
+            "tensions": [
+                {
+                    "type": "prisoner",
+                    "from": "a",
+                    "to": "b"
+                },
+                {
+                    "type": "health_at_risk",
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "imprisons",
+        "n_characters": 2,
+        "subject": "witch",
+        "object": "Hansel",
+        "emotional_link": "-",
+        "tension": "prisoner",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": [
+                {
+                    "type": "prisoner",
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        },
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "b",
+                    "to": "a"
+                }
+            ],
+            "tensions": [
+                {
+                    "type": "prisoner",
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "tempts",
+        "n_characters": 2,
+        "subject": "witch",
+        "object": "Gretel",
+        "emotional_link": "-",
+        "tension": "life_at_risk, health_at_risk",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "a",
+                    "to": "b"
+                },
+                {
+                    "type": "health_at_risk",
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        },
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "b",
+                    "to": "a"
+                }
+            ],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "-",
+                    "to": "*"
+                },
+                {
+                    "type": "health_at_risk",
+                    "from": "-",
+                    "to": "*"
+                }
+            ]
+        }
+    },
+    {
+        "action": "kills",
+        "n_characters": 1,
+        "subject": "Gretel",
+        "object": "witch",
+        "emotional_link": "-",
+        "tension": "character_dead",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "-",
+                    "to": "*"
+                },
+                {
+                    "type": "prisoner",
+                    "from": "b",
+                    "to": "a"
+                }
+            ]
+        },
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": [
+                {
+                    "type": "character_dead",
+                    "from": "a",
+                    "to": "b"
+                },
+                {
+                    "type": "prisoner_freed",
+                    "from": "-",
+                    "to": "*"
+                },
+                {
+                    "type": "life_normal",
+                    "from": "-",
+                    "to": "*"
+                }
+            ]
+        }
+    },
+    {
+        "action": "escapes",
+        "n_characters": 2,
+        "subject": "Hansel and Gretel",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [],
+            "tensions": []
+        },
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "prisoner_freed",
+                    "from": "-",
+                    "to": "*"
+                }
+            ]
+        }
+    },
+    {
+        "action": "returns_home",
+        "n_characters": 2,
+        "subject": "Hansel and Gretel",
+        "object": "father",
+        "emotional_link": "non-romantic",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": []
+        },
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": []
+        }
+    }
+]

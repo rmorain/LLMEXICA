@@ -1,0 +1,108 @@
+<think>
+Okay, so I'm trying to figure out how to approach this task. The user wants me to act as a narrative analysis expert focusing on emotional links between characters and building tensions in a story. They provided a story about a miller's three sons, with the youngest having only a cat, which turns out to be a clever cat named Puss who helps him gain wealth and marry a princess.
+
+First, I need to extract actions related to emotional links (non-romantic and romantic) and tensions (like character dead, life at risk, etc.). The user provided an example JSON structure, so I should follow that format. Each action needs to be simple, in snake_case, with subject, object, and n_characters.
+
+I'll start by reading the story carefully and noting each significant event involving the main characters, especially Puss (the Cat), the youngest son (Marquis of Carabas), the King, and the Princess.
+
+1. The Cat hears the master express despair about his situation. This shows a non-romantic emotional link as the Cat is concerned.
+2. The Cat tricks the rabbit, which builds tension (life at risk for the rabbit).
+3. The Cat presents the rabbit to the King, showing the Cat's support and building the Marquis's reputation.
+4. Repeating similar actions with partridges again shows the Cat's efforts, reinforcing their non-romantic bond.
+5. The Cat advises the Marquis to bathe, leading to a setup where the Marquis's life is at risk (life_at_risk tension).
+6. The Cat cries for help, increasing tension as guards rush to save him.
+7. The King gives clothes to the Marquis, a kind gesture showing non-romantic support from the King.
+8. The Princess falls in love with the Marquis, which is a romantic emotional link.
+9. The Cat threatens workers, maintaining the illusion of the Marquis's wealth, building the Marquis-King relationship.
+10. The Ogre's castle and his transformation into a mouse creates life_at_risk tension for the Ogre, resolved by Puss eating him.
+11. The King invites the Marquis into the castle, showing trust (non-romantic link).
+12. The Marquis marries the Princess, solidifying the romantic link.
+
+I need to make sure each action is abstract and doesn't include specific names. I'll structure these events in chronological order, ensuring each JSON object has the correct keys: action, n_characters, subject, object. I also have to check that the actions accurately reflect the story's events without adding extra details.
+
+Now, I'll map out each action step-by-step, assigning the appropriate types and characters involved.
+</think>
+
+```json
+[
+  {
+    "action": "hears_despair",
+    "n_characters": 2,
+    "subject": "Cat",
+    "object": "Marquis_of_Carabas"
+  },
+  {
+    "tricks_rabbit": "tricks_animal",
+    "n_characters": 1,
+    "subject": "Cat",
+    "object": "-"
+  },
+  {
+    "presents_gift": "presents_gift",
+    "n_characters": 2,
+    "subject": "Cat",
+    "object": "King"
+  },
+  {
+    "tricks_animal": "tricks_animal",
+    "n_characters": 1,
+    "subject": "Cat",
+    "object": "-"
+  },
+  {
+    "bathes_master": "bathes_master",
+    "n_characters": 2,
+    "subject": "Marquis_of_Carabas",
+    "object": "-"
+  },
+  {
+    "cries_help": "cries_help",
+    "n_characters": 1,
+    "subject": "Cat",
+    "object": "-"
+  },
+  {
+    "receives_clothes": "receives_clothes",
+    "n_characters": 2,
+    "subject": "King",
+    "object": "Marquis_of_Carabas"
+  },
+  {
+    "falls_in_love": "falls_in_love",
+    "n_characters": 2,
+    "subject": "Princess",
+    "object": "Marquis_of_Carabas"
+  },
+  {
+    "threatens_workers": "threatens_workers",
+    "n_characters": 1,
+    "subject": "Cat",
+    "object": "-"
+  },
+  {
+    "transforms_mouse": "transforms_mouse",
+    "n_characters": 1,
+    "subject": "Ogre",
+    "object": "-"
+  },
+  {
+    "eats_ogre": "eats_ogre",
+    "n_characters": 2,
+    "subject": "Cat",
+    "object": "Ogre"
+  },
+  {
+    "invites_castle": "invites_castle",
+    "n_characters": 2,
+    "subject": "King",
+    "object": "Marquis_of_Carabas"
+
+  },
+  {
+    "marries_princess": "marries_princess",
+    "n_characters": 2,
+    "subject": "Marquis_of_Carabas",
+    "object": "Princess"
+  }
+]
+```

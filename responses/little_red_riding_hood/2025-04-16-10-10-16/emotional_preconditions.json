@@ -1,0 +1,248 @@
+[
+    {
+        "action": "cares_for",
+        "n_characters": 2,
+        "subject": "Mother",
+        "object": "Little Red Riding Hood",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "cares_for",
+        "n_characters": 2,
+        "subject": "Grandmother",
+        "object": "Little Red Riding Hood",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "sends_on_errand",
+        "n_characters": 2,
+        "subject": "Mother",
+        "object": "Little Red Riding Hood",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "communicates_with",
+        "n_characters": 2,
+        "subject": "Little Red Riding Hood",
+        "object": "Wolf",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "asks_about_whereabouts",
+        "n_characters": 2,
+        "subject": "Wolf",
+        "object": "Little Red Riding Hood",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "reveals_information",
+        "n_characters": 2,
+        "subject": "Little Red Riding Hood",
+        "object": "Wolf",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "decides_to_deceive",
+        "n_characters": 1,
+        "subject": "Wolf",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "knocks_on_door",
+        "n_characters": 2,
+        "subject": "Wolf",
+        "object": "Grandmother",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "falls_ill",
+        "n_characters": 1,
+        "subject": "Grandmother",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "hides_identity",
+        "n_characters": 2,
+        "subject": "Wolf",
+        "object": "Grandmother",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "enters_unknowingly",
+        "n_characters": 2,
+        "subject": "Grandmother",
+        "object": "Wolf",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "eats_up",
+        "n_characters": 2,
+        "subject": "Wolf",
+        "object": "Grandmother",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "hides_in_bed",
+        "n_characters": 1,
+        "subject": "Wolf",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "communicates_with",
+        "n_characters": 2,
+        "subject": "Little Red Riding Hood",
+        "object": "Wolf",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "notices_something_unusual",
+        "n_characters": 1,
+        "subject": "Little Red Riding Hood",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "comments_on_appearance",
+        "n_characters": 2,
+        "subject": "Little Red Riding Hood",
+        "object": "Wolf",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "reveals_true_identity",
+        "n_characters": 1,
+        "subject": "Wolf",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "eats_up",
+        "n_characters": 2,
+        "subject": "Wolf",
+        "object": "Little Red Riding Hood",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    }
+]

@@ -1,0 +1,158 @@
+<think>
+Alright, I need to analyze this story and extract actions related to emotional links and tensions as per the user's instructions. Let me read through the story again first.
+
+So, the story is about a princess who loses her golden ball down a well. A frog helps her retrieve it in exchange for promises of companionship. She agrees but doesn't take it seriously until the frog shows up at the castle. The king makes her keep her promise, and eventually, the frog turns into a prince after she throws him against the wall in frustration.
+
+First, I need to identify actions that relate to emotional links between characters. Emotional links can be non-romantic or romantic. Looking through the story, the princess's interaction with the frog starts off as reluctant but later becomes forced companionship. The frog's persistence and her eventual acceptance hint at a developing emotional link, which turns romantic when he transforms into a prince.
+
+Tensions in the story involve the princess being upset about losing her ball (emotional distress), the frog's life being at risk if he couldn't retrieve the ball, the princess's reluctance leading to the frog being a prisoner in the well until she agrees. Also, when the frog comes to the castle, there's tension as the princess is scared and the king enforces her promise.
+
+I'll go through each part of the story step by step.
+
+1. The princess loses her golden ball into the well. She cries because she can't retrieve it. This is an emotional link (non-romantic) with herself, showing distress.
+2. The frog offers help in exchange for companionship. This sets up a non-romantic emotional link between them, as he's asking to be her friend.
+3. After retrieving the ball, the princess runs away, ignoring the frog's plea. This shows tension (life_at_risk or prisoner? Maybe not directly. It's more about breaking a promise.)
+4. The next day, the frog arrives at the castle and asks to be let in. The princess is frightened, which introduces tension (prisoner as he's outside wanting in).
+5. The king forces her to let him in, so she does. This shows the emotional link changing, though reluctantly.
+6. The frog follows her to dinner, asking to sit with her, eat together, etc. These actions build on their forced companionship, an emotional link.
+7. Eventually, when he asks to sleep in her bed, she throws him against the wall, and he transforms into a prince. This action releases the romantic emotional link as they realize their connection.
+
+Also, Faithful Henry's heart cracks indicate health_at_risk tension due to his grief.
+
+Now, I need to map these into actions with subjects and objects, focusing on the types specified.
+
+Let me list them in order:
+
+1. cries (princess) - emotional link non-romantic.
+2. offers_help (frog to princess) - non-romantic link.
+3. promises_companionship (princess to frog).
+4. brings_ball_back (frog to princess).
+5. runs_away (princess, ignoring frog).
+6. arrives_at_castle (frog to princess).
+7. knocks_on_door (frog to princess).
+8. opens_door (princess to frog reluctantly).
+9. sits_together (both at table).
+10. eats_together (shared action).
+11. demands_lift (frog to princess).
+12. lifts (princess to frog, reluctantly).
+13. asks_for_bed (frog to princess).
+14. carries_upstairs (princess to frog).
+15. throws_against_wall (princess to frog).
+16. transforms_into_prince.
+17. hears_heart_cracking (Henry) - health_at_risk.
+
+Wait, some of these might not fit the exact action definitions or may need simplification. Also, I should ensure each action is abstract enough, using snake_case without specific names.
+
+I'll structure each action with subject, object, and n_characters, ensuring that the actions are in chronological order.
+</think>
+
+Here's a structured analysis of the story based on the identified emotional links and tensions:
+
+```json
+[
+  {
+    "action": "cries",
+    "n_characters": 1,
+    "subject": "princess",
+    "object": "-"
+  },
+  {
+    "action": "offers_help",
+    "n_characters": 2,
+    "subject": "frog",
+    "object": "princess"
+  },
+  {
+    "action": "promises_companionship",
+    "n_characters": 2,
+    "subject": "princess",
+    "object": "frog"
+  },
+  {
+    "action": "brings_ball_back",
+    "n_characters": 2,
+    "subject": "frog",
+    "object": "princess"
+  },
+  {
+    "action": "runs_away",
+    "n_characters": 1,
+    "subject": "princess",
+    "object": "-"
+  },
+  {
+    "action": "arrives_at_castle",
+    "n_characters": 2,
+    "subject": "frog",
+    "object": "princess"
+  },
+  {
+    "action": "knocks_on_door",
+    "n_characters": 2,
+    "subject": "frog",
+    "object": "princess"
+  },
+  {
+    "action": "opens_door",
+    "n_characters": 2,
+    "subject": "princess",
+    "object": "frog"
+  },
+  {
+    "action": "sits_together",
+    "n_characters": 2,
+    "subject": "princess",
+    "object": "frog"
+  },
+  {
+    "action": "eats_together",
+    "n_characters": 2,
+    "subject": "princess",
+    "object": "frog"
+  },
+  {
+    "action": "demands_lift",
+    "n_characters": 2,
+    "subject": "frog",
+    "object": "princess"
+  },
+  {
+    "action": "lifts",
+    "n_characters": 2,
+    "subject": "princess",
+    "object": "frog"
+  },
+  {
+    "action": "asks_for_bed",
+    "n_characters": 2,
+    "subject": "frog",
+    "object": "princess"
+  },
+  {
+    "action": "carries_upstairs",
+    "n_characters": 2,
+    "subject": "princess",
+    "object": "frog"
+  },
+  {
+    "action": "throws_against_wall",
+    "n_characters": 2,
+    "subject": "princess",
+    "object": "frog"
+  },
+  {
+    "action": "transforms_into_prince",
+    "n_characters": 1,
+    "subject": "frog",
+    "object": "-"
+  },
+  {
+    "action": "hears_heart_cracking",
+    "n_characters": 2,
+    "subject": "Henry",
+    "object": "princess"
+  }
+]
+```
+
+This JSON structure captures the essential actions, focusing on emotional links and tensions, while keeping the actions abstract and in chronological order.

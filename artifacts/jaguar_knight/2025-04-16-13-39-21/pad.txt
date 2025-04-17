@@ -1,0 +1,76 @@
+ACT heal 2
+PRE
+E a b +2 1
+T Hr b b
+POS
+E b a +3 1
+T Hn b b
+
+ACT kidnap 2
+PRE
+E a b -3 1
+T Lr b b
+T Pr b b
+POS
+E b a -3 1
+
+ACT tie_up 2
+PRE
+E a b -3 1
+T Pr b b
+T Lr b b
+POS
+E b a -4 1
+
+ACT attack 2
+PRE
+E a b -3 1
+T Lr b b
+POS
+E b a -4 1
+
+ACT search 2
+PRE
+E a b +2 1
+T Pr Enemy Princess
+T Lr Enemy Princess
+POS
+E a b +3 1
+
+ACT attack 2
+PRE
+E a b +3 1
+T Lr Enemy Princess
+T Pr Enemy Princess
+POS
+E b a +3 1
+
+ACT liberate 2
+PRE
+E a b +3 1
+T Pr Enemy Princess
+T Lr Enemy Princess
+POS
+E b a +4 1
+T Pf Enemy Princess
+T Ln Enemy Princess
+
+ACT kiss 2
+PRE
+E a b +3 2
+POS
+E a b +4 2
+
+ACT realize_identity 2
+PRE
+E a b -2 1
+POS
+E a b -4 1
+
+ACT kill 2
+PRE
+E a b -3 1
+T Ad b b
+POS
+E a b -5 1
+

@@ -1,0 +1,16 @@
+STO
+mother tells_to_sell Jack
+man offers_magic_beans Jack
+Jack gives_cow man
+mother scolds Jack
+Jack asks_for_food wife
+wife gives_food Jack
+giant threatens Jack
+wife lies_to_protect giant
+Jack steals_gold giant
+Jack gives_coins mother
+Jack steals_hen giant
+giant sees_stealing Jack
+giant chases Jack
+Jack steals_harp giant
+Jack kills giant

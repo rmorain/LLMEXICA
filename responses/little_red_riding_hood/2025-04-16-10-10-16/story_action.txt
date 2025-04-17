@@ -1,0 +1,128 @@
+<think>
+Okay, I need to analyze this story of Little Red Riding Hood and extract the essential actions related to emotional links and tensions. Let me go through each part step by step.
+
+First, the beginning talks about Little Red Riding Hood's mother and grandmother being very fond of her. So there are strong non-romantic emotional bonds here. The mother sends her on an errand, which shows trust and care. That's an action involving two characters: the mother as subject and LRRH as object.
+
+Next, LRRH meets the wolf in the forest. She tells him about visiting her grandmother, so that's communication between them. Since she doesn't know the danger, it's just a conversation without any emotional link yet.
+
+Then, the wolf decides to go see the grandmother first. He arrives and knocks on the door. The grandmother is ill, which introduces a health risk tension. When the wolf impersonates LRRH, that's deception, leading to the wolf entering and eating the grandmother. This creates a character dead tension.
+
+After that, the wolf hides in bed, expecting LRRH. She comes later, they communicate again, but this time she notices his big features. Each comment about his appearance is an action where she's noticing something different, indicating suspicion or fear.
+
+Finally, the wolf reveals himself and eats her, which introduces another character dead tension.
+
+So I'll list these actions in order, focusing on emotional links (non-romantic) between LRRH and her mother/grandmother, and tensions like health at risk, life at risk, and character dead.
+</think>
+
+```json
+[
+    {
+        "action": "cares_for",
+        "n_characters": 2,
+        "subject": "Mother",
+        "object": "Little Red Riding Hood"
+    },
+    {
+        "action": "cares_for",
+        "n_characters": 2,
+        "subject": "Grandmother",
+        "object": "Little Red Riding Hood"
+    },
+    {
+        "action": "sends_on_errand",
+        "n_characters": 2,
+        "subject": "Mother",
+        "object": "Little Red Riding Hood"
+    },
+    {
+        "action": "communicates_with",
+        "n_characters": 2,
+        "subject": "Little Red Riding Hood",
+        "object": "Wolf"
+    },
+    {
+        "action": "asks_about_whereabouts",
+        "n_characters": 2,
+        "subject": "Wolf",
+        "object": "Little Red Riding Hood"
+    },
+    {
+        "action": "reveals_information",
+        "n_characters": 2,
+        "subject": "Little Red Riding Hood",
+        "object": "Wolf"
+    },
+    {
+        "action": "decides_to_deceive",
+        "n_characters": 1,
+        "subject": "Wolf",
+        "object": "-"
+    },
+    {
+        "action": "knocks_on_door",
+        "n_characters": 2,
+        "subject": "Wolf",
+        "object": "Grandmother"
+    },
+    {
+        "action": "falls_ill",
+        "n_characters": 1,
+        "subject": "Grandmother",
+        "object": "-"
+    },
+    {
+        "action": "hides_identity",
+        "n_characters": 2,
+        "subject": "Wolf",
+        "object": "Grandmother"
+    },
+    {
+        "action": "enters_unknowingly",
+        "n_characters": 2,
+        "subject": "Grandmother",
+        "object": "Wolf"
+    },
+    {
+        "action": "eats_up",
+        "n_characters": 2,
+        "subject": "Wolf",
+        "object": "Grandmother"
+    },
+    {
+        "action": "hides_in_bed",
+        "n_characters": 1,
+        "subject": "Wolf",
+        "object": "-"
+    },
+    {
+        "action": "communicates_with",
+        "n_characters": 2,
+        "subject": "Little Red Riding Hood",
+        "object": "Wolf"
+    },
+    {
+        "action": "notices_something_unusual",
+        "n_characters": 1,
+        "subject": "Little Red Riding Hood",
+        "object": "-"
+    },
+    {
+        "action": "comments_on_appearance",
+        "n_characters": 2,
+        "subject": "Little Red Riding Hood",
+        "object": "Wolf"
+    },
+    {
+        "action": "reveals_true_identity",
+        "n_characters": 1,
+        "subject": "Wolf",
+        "object": "-"
+    },
+    {
+        "action": "eats_up",
+        "n_characters": 2,
+        "subject": "Wolf",
+        "object": "Little Red Riding Hood"
+    }
+]
+```

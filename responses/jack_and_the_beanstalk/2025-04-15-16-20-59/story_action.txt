@@ -1,0 +1,188 @@
+<think>
+Okay, so I need to analyze this story about Jack and the Beanstalk from a narrative analysis perspective. My focus is on extracting actions that relate to emotional links between characters (both non-romantic and romantic) and tensions in the story. The user has specified certain types of emotional links and tensions to consider.
+
+First, I'll read through the story carefully to identify all the key events involving Jack, his mother, the man, the giant, and the giant's wife. Each action should be abstracted into a simple verb form without including character names, and I need to track who is performing the action (subject) and who is receiving it (object). If there's no subject or object, I'll mark them as '-'.
+
+Starting from the beginning:
+
+1. Jack’s mother tells him to sell their cow. This is an instruction from mother to Jack, so the action would be 'tells_to_sell', with n_characters=2, subject='mother', object='Jack'.
+
+2. Jack meets a man who wants to buy the cow. The man offers magic beans in exchange. So the action here is 'offers_magic_beans' by the man to Jack.
+
+3. Jack gives the cow to the man and takes the beans. This would be 'gives_cow', with subject='Jack', object='man'.
+
+4. Returning home, mother is angry with Jack for trading the cow for beans. The action here is 'scolds', from mother to Jack.
+
+5. Mother throws the beans out the window. Since the beans are objects, and we’re only considering character interactions, this might not count unless it's directed towards someone, but since it's an action without a direct object (character), perhaps it’s excluded or marked with '-' for object.
+
+6. Jack is sad and goes to sleep without dinner. This seems like an internal state rather than an action towards another character, so maybe it doesn’t fit as an action in this context.
+
+Next day:
+
+7. Jack sees the beanstalk and climbs it. Again, climbing is an action without a direct character object, so perhaps not included or marked with '-' for object.
+
+8. Inside the giant's house, Jack asks the wife for food. So 'asks_for_food' from Jack to wife.
+
+9. The wife gives him bread and milk. Action: 'gives_food', subject='wife', object='Jack'.
+
+10. Giant comes home, smells an Englishman. He shouts his famous line. This is a threat or search for someone, so action could be 'threatens', with subject='giant', but since he doesn't have the object yet (he's looking), perhaps it's just the giant as subject and '-' as object.
+
+11. Wife says there’s no boy there. So she's lying to protect Jack, which is an action of 'lies_to_protect' from wife to giant.
+
+12. Giant eats and goes to sleep, then counts gold coins. These are actions without direct character interaction, so maybe not included unless they relate to emotional links or tensions.
+
+13. Jack steals a sack of gold. Action: 'steals_gold', subject='Jack', but since the object is giant (as he takes from him), it would be 'giant' as object? Or perhaps we don't include objects for stealing, so maybe '-'.
+
+14. Returns home and gives coins to mother. So action: 'gives_coins', Jack to mother.
+
+15. Mother is happy, so action: 'is_happy', but that's an emotional state rather than an action towards someone else, so perhaps it’s not included unless framed as an interaction.
+
+Second trip:
+
+16. Again, Jack climbs the beanstalk and meets the wife for food. So same actions as before: 'asks_for_food' and 'gives_food'.
+
+17. Giant returns, threatens again, wife lies to protect. Same as previous instance.
+
+18. Giant shows the hen that lays golden eggs. Action could be 'shows_hen', but since it's not directed at another character (he’s showing it to himself or his wife?), perhaps it's included with object='wife'.
+
+19. Jack steals the hen and escapes. So action: 'steals_hen', subject='Jack', object='giant' or '-'.
+
+Third trip:
+
+20. Again, climbs beanstalk, asks for food, gets bread and milk. Same actions as before.
+
+21. Giant comes home, threatens again, wife lies to protect. Same as previous instances.
+
+22. Jack takes the magical harp, which cries out for help. Action: 'steals_harp', subject='Jack'.
+
+23. Giant wakes up, sees Jack, so action: 'sees_stealing' with subject='giant', object='Jack'.
+
+24. Chases Jack down the beanstalk. Action: 'chases', giant as subject and Jack as object.
+
+25. Jack runs home, gets axe, chops beanstalk. This is an action without a direct character object unless we consider it as an action towards the giant indirectly, but since it's an inanimate object (beanstalk), perhaps it’s excluded or marked with '-'.
+
+26. Giant falls and dies. So action: 'kills' with subject='Jack', object='giant'.
+
+27. Jack and mother live happily ever after. Emotional state, so not an action towards someone else.
+
+Now, considering emotional links:
+
+- Non-romantic: The primary link is between Jack and his mother. There are actions where the mother instructs, scolds, receives coins, which indicate a non-romantic bond (motherly love). Also, the wife helps Jack each time he visits, showing kindness, indicating a non-romantic emotional link.
+
+- Romantic links: None in this story, as there's no romantic relationship between any characters mentioned.
+
+Tensions:
+
+1. Life at risk when Jack is hiding from the giant each time the giant threatens to kill him. Each visit creates tension where Jack’s life is at risk (life_at_risk).
+
+2. The giant dies at the end, so character_dead.
+
+3. Health isn't directly at risk unless we consider Jack's hunger or the mother's initial poverty, but not explicitly stated as health issues.
+
+4. Prisoner: There's no instance of a character being detained except when Jack is hiding, which might be considered, but perhaps it’s more about life_at_risk.
+
+So, in terms of tensions identified:
+
+- life_at_risk each time the giant threatens Jack
+
+- character_dead at the end with the giant’s death.
+
+Now, organizing all these actions into JSON format as per instructions. Each action must have subject, object (if applicable), and n_characters accordingly. Also, ensure that only relevant actions are included where both subject and object are characters.
+
+I think I've identified the key actions related to emotional links and tensions. Now, I'll structure them in order.
+</think>
+
+```json
+[
+  {
+    "action": "tells_to_sell",
+    "n_characters": 2,
+    "subject": "mother",
+    "object": "Jack"
+  },
+  {
+    "action": "offers_magic_beans",
+    "n_characters": 2,
+    "subject": "man",
+    "object": "Jack"
+  },
+  {
+    "action": "gives_cow",
+    "n_characters": 2,
+    "subject": "Jack",
+    "object": "man"
+  },
+  {
+    "action": "scolds",
+    "n_characters": 2,
+    "subject": "mother",
+    "object": "Jack"
+  },
+  {
+    "action": "asks_for_food",
+    "n_characters": 2,
+    "subject": "Jack",
+    "object": "wife"
+  },
+  {
+    "action": "gives_food",
+    "n_characters": 2,
+    "subject": "wife",
+    "object": "Jack"
+  },
+  {
+    "action": "threatens",
+    "n_characters": 1,
+    "subject": "giant",
+    "object": "-"
+  },
+  {
+    "action": "lies_to_protect",
+    "n_characters": 2,
+    "subject": "wife",
+    "object": "giant"
+  },
+  {
+    "action": "steals_gold",
+    "n_characters": 2,
+    "subject": "Jack",
+    "object": "giant"
+  },
+  {
+    "action": "gives_coins",
+    "n_characters": 2,
+    "subject": "Jack",
+    "object": "mother"
+  },
+  {
+    "action": "steals_hen",
+    "n_characters": 2,
+    "subject": "Jack",
+    "object": "giant"
+  },
+  {
+    "action": "sees_stealing",
+    "n_characters": 2,
+    "subject": "giant",
+    "object": "Jack"
+  },
+  {
+    "action": "chases",
+    "n_characters": 2,
+    "subject": "giant",
+    "object": "Jack"
+  },
+  {
+    "action": "steals_harp",
+    "n_characters": 1,
+    "subject": "Jack",
+    "object": "-"
+  },
+  {
+    "action": "kills",
+    "n_characters": 2,
+    "subject": "Jack",
+    "object": "giant"
+  }
+]
+```

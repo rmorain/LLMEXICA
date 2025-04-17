@@ -1,0 +1,178 @@
+[
+    {
+        "action": "heal",
+        "n_characters": 2,
+        "subject": "Princess",
+        "object": "Jaguar_Knight",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "kidnap",
+        "n_characters": 2,
+        "subject": "Enemy",
+        "object": "Princess",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "tie_up",
+        "n_characters": 2,
+        "subject": "Enemy",
+        "object": "Princess",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "attack",
+        "n_characters": 2,
+        "subject": "Enemy",
+        "object": "Princess",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "search",
+        "n_characters": 2,
+        "subject": "Jaguar_Knight",
+        "object": "Enemy",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "attack",
+        "n_characters": 2,
+        "subject": "Jaguar_Knight",
+        "object": "Enemy",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "liberate",
+        "n_characters": 2,
+        "subject": "Jaguar_Knight",
+        "object": "Princess",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "kiss",
+        "n_characters": 2,
+        "subject": "Princess",
+        "object": "Jaguar_Knight",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "romantic",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "realize_identity",
+        "n_characters": 2,
+        "subject": "Princess",
+        "object": "Jaguar_Knight",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "kill",
+        "n_characters": 2,
+        "subject": "Princess",
+        "object": "Jaguar_Knight",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "kill",
+        "n_characters": 1,
+        "subject": "Princess",
+        "object": "Princess",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "a"
+                }
+            ]
+        }
+    }
+]

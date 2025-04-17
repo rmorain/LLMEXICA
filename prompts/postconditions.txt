@@ -8,4 +8,6 @@ Instructions for each action:
 3. Assign an array of emotional links to the `emotional_links` key. Add emotional links that can be identified or inferred as a result of the action. In general, if a `subject` character performs an action on an `object` character that has a positive effect, let the `object` character develop a positive emotional link toward the `subject` character. However, if a `subject` character performs an action on an `object` character that has a negative effect, let the `object` character develop a negative emotional link toward the `subject` character.
 4. Assign an array of tensions to the `tensions` key. Add tensions that can be identified or inferred as a result of the action.
 
+Check to make sure the `subject` and `object` values are set appropriately for each action. If an action has an emotional link, both the `subject` and `object` values must be set to the appropriate character name and `n_characters` must be updated to reflect that change. If there are no reasobable direct or indirect values to set `object`, remove the problematic emotional links from the action.
+
 Return the new JSON object.

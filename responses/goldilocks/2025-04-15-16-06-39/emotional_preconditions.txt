@@ -1,0 +1,117 @@
+<think>
+Alright, so I need to figure out how to add preconditions related to emotional links for each action in the story of Goldilocks and the Three Bears. The user has provided a detailed structure that includes actions with their subjects and objects, and now they want me to enhance this by identifying any emotional links that must exist as preconditions for these actions.
+
+First, I need to understand what an emotional link is in this context. It's either non-romantic or romantic. Since the story doesn't involve any romantic relationships, all emotional links here are non-romantic. The magnitude of these links ranges from -3 to 3, where negative values indicate dislike or hatred, and positive values indicate liking or affection.
+
+Next, I need to go through each action one by one and determine if there's an emotional link that must exist for the character (subject) to perform that action towards another character (object). This means looking at why a character would do something based on how they feel about someone else.
+
+Let me start with the first action: "taste_porridge" where Goldilocks is the subject and Great Big Bear is the object. Why would Goldilocks taste the porridge? Well, she's curious or maybe hungry, but there's no indication that her action is motivated by any particular emotional link towards the Great Big Bear. She doesn't know them yet, so it's more about her own needs rather than how she feels about him.
+
+Moving on to the second action: "taste_porridge" with Goldilocks and Middle-sized Bear. Similar reasoning applies here. Her tasting his porridge isn't driven by any emotional link; it's just her trying different things out of curiosity or hunger.
+
+The third action is "eat_porridge," where she eats all of Little Wee Bear's porridge. Again, this seems more about her own desires rather than an emotional link towards the Little Wee Bear. She simply likes the taste, not necessarily because she feels a certain way about him.
+
+Next is "sit_in-chair" with Goldilocks and Great Big Bear. Here again, she sits in his chair out of curiosity or rest, not because of any emotional feelings towards him.
+
+The fifth action: "sit_in-chair" with Middle-sized Bear. Same as before; it's about her trying things out rather than emotional motivations.
+
+The sixth action is "break_chair," which happens when she sits in Little Wee Bear's chair and breaks it. This could imply some frustration or carelessness, but not necessarily an emotional link towards him. It’s more about her behavior than a pre-existing emotional state towards the bear.
+
+Seventh action: "lie_in-bed" with Goldilocks and Great Big Bear. She lies in his bed because she's tired, not due to any specific feelings towards him.
+
+Eighth action: "lie_in-bed" with Middle-sized Bear. Again, it's about her need for rest rather than emotional links.
+
+The ninth action is "sleep_in_bed," where she sleeps in Little Wee Bear's bed. This action doesn't suggest any particular emotional link; it's more about her seeking comfort or rest.
+
+In all these cases, Goldilocks' actions seem to be driven by her own needs and curiosity rather than specific emotional links towards the bears. The bears are mostly unaware of her presence until they return home, so there isn't a established emotional connection that drives their actions either.
+
+Therefore, for each action, I don't see any necessary preconditions related to emotional links because the motivations are more about immediate needs or curiosity than existing emotional relationships.
+</think>
+
+Here is the JSON object with preconditions added based on the thought process:
+
+```json
+[
+  {
+    "action": "taste_porridge",
+    "n_characters": 2,
+    "subject": "Goldilocks",
+    "object": "Great Big Bear",
+    "preconditions": {
+      "emotional_links": []
+    }
+  },
+  {
+    "action": "taste_porridge",
+    "n_characters": 2,
+    "subject": "Goldilocks",
+    "object": "Middle-sized Bear",
+    "preconditions": {
+      "emotional_links": []
+    }
+  },
+  {
+    "action": "eat_porridge",
+    "n_characters": 2,
+    "subject": "Goldilocks",
+    "object": "Little Wee Bear",
+    "preconditions": {
+      "emotional_links": []
+    }
+  },
+  {
+    "action": "sit_in-chair",
+    "n_characters": 2,
+    "subject": "Goldilocks",
+    "object": "Great Big Bear",
+    "preconditions": {
+      "emotional_links": []
+    }
+  },
+  {
+    "action": "sit_in-chair",
+    "n_characters": 2,
+    "subject": "Goldilocks",
+    "object": "Middle-sized Bear",
+    "preconditions": {
+      "emotional_links": []
+    }
+  },
+  {
+    "action": "break_chair",
+    "n_characters": 2,
+    "subject": "Goldilocks",
+    "object": "Little Wee Bear",
+    "preconditions": {
+      "emotional_links": []
+    }
+  },
+  {
+    "action": "lie_in-bed",
+    "n_characters": 2,
+    "subject": "Goldilocks",
+    "object": "Great Big Bear",
+    "preconditions": {
+      "emotional_links": []
+    }
+  },
+  {
+    "action": "lie_in-bed",
+    "n_characters": 2,
+    "subject": "Goldilocks",
+    "object": "Middle-sized Bear",
+    "preconditions": {
+      "emotional_links": []
+    }
+  },
+  {
+    "action": "sleep_in_bed",
+    "n_characters": 2,
+    "subject": "Goldilocks",
+    "object": "Little Wee Bear",
+    "preconditions": {
+      "emotional_links": []
+    }
+  }
+]
+```

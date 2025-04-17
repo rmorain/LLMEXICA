@@ -1,0 +1,344 @@
+
+Alright, so I need to go through each action in the story and identify or infer the postconditions related to both emotional links and tensions. Postconditions are changes that happen as a result of the action, and they can either be emotional links or tensions. At least one postcondition is required for each action.
+
+I'll start by analyzing each action one by one:
+
+1. **cares_for**: This indicates an increase in positive emotional link from Mother to LRRH. So, I'll note a non-romantic emotional link with increased magnitude.
+
+2. **sends_on_errand**: Similar to above, trust is built, so another positive emotional link from Mother to LRRH.
+
+3. **communicates_with**: Since LRRH talks to Wolf, there's no immediate change in emotional links unless it's negative due to future events. But since she doesn't know the danger yet, maybe a slight decrease or none.
+
+4. **asks_about_whereabouts**: Wolf shows interest, which might create suspicion but not an immediate emotional link change.
+
+5. **reveals_information**: LRRH shares details with Wolf, possibly increasing trust on her side, so positive towards Wolf, but since he's deceptive, it could later turn negative.
+
+6. **decides_to_deceive**: Wolf plans to trick Grandmother and LRRH, creating a negative emotional link from Wolf to both.
+
+7. **knocks_on_door**: Wolf tricks Grandmother, leading to her harm, so a decrease in trust from Grandmother towards Wolf if she knew, but since she doesn't, maybe a slight negative link after the action.
+
+8. **falls_ill**: Grandmother's health is already at risk, so this might increase concern from LRRH and Mother, creating stronger emotional bonds.
+
+9. **hides_identity**: Deception leads to harm, so negative emotional links towards Wolf from Grandmother and LRRH once they realize.
+
+10. **enters_unknowingly**: Grandmother lets Wolf in, leading to her death, so a significant decrease in trust if she had known, but as she doesn't, it's more about the tension of life at risk.
+
+11. **eats_up (Grandmother)**: Results in Grandmother's death, creating a permanent negative emotional link from LRRH and Mother towards Wolf.
+
+12. **hides_in_bed**: Wolf waiting to attack increases the tension of life at risk for LRRH.
+
+13. **communicates_with (again)**: LRRH talks to Wolf, not knowing it's him, so slight trust but later turns to fear.
+
+14. **notices_something_unusual**: LRRH becomes suspicious, leading to a negative emotional link towards the disguised Wolf.
+
+15. **comments_on_appearance**: Each comment increases suspicion and fear, solidifying negative links towards Wolf.
+
+16. **reveals_true_identity**: Wolf shows his intent, confirming the negative emotional links and increasing the tension of life at risk.
+
+17. **eats_up (LRRH)**: Results in LRRH's death, creating a permanent negative link from Mother towards Wolf.
+
+For each action, I'll map these changes, ensuring that postconditions reflect the outcomes accurately without repeating preconditions unless necessary.
+</think>
+
+```json
+[
+    {
+        "action": "cares_for",
+        "n_characters": 2,
+        "subject": "Mother",
+        "object": "Little Red Riding Hood",
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": []
+        }
+    },
+    {
+        "action": "cares_for",
+        "n_characters": 2,
+        "subject": "Grandmother",
+        "object": "Little Red Riding Hood",
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": []
+        }
+    },
+    {
+        "action": "sends_on_errand",
+        "n_characters": 2,
+        "subject": "Mother",
+        "object": "Little Red Riding Hood",
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": []
+        }
+    },
+    {
+        "action": "communicates_with",
+        "n_characters": 2,
+        "subject": "Little Red Riding Hood",
+        "object": "Wolf",
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": []
+        }
+    },
+    {
+        "action": "asks_about_whereabouts",
+        "n_characters": 2,
+        "subject": "Wolf",
+        "object": "Little Red Riding Hood",
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "-",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "reveals_information",
+        "n_characters": 2,
+        "subject": "Little Red Riding Hood",
+        "object": "Wolf",
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -1,
+                    "from": "b",
+                    "to": "a"
+                }
+            ],
+            "tensions": []
+        }
+    },
+    {
+        "action": "decides_to_deceive",
+        "n_characters": 1,
+        "subject": "Wolf",
+        "object": "-",
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": []
+        }
+    },
+    {
+        "action": "knocks_on_door",
+        "n_characters": 2,
+        "subject": "Wolf",
+        "object": "Grandmother",
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": [
+                {
+                    "type": "health_at_risk",
+                    "from": "-",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "falls_ill",
+        "n_characters": 1,
+        "subject": "Grandmother",
+        "object": "-",
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "health_at_risk",
+                    "from": "a",
+                    "to": "a"
+                }
+            ]
+        }
+    },
+    {
+        "action": "hides_identity",
+        "n_characters": 2,
+        "subject": "Wolf",
+        "object": "Grandmother",
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": []
+        }
+    },
+    {
+        "action": "enters_unknowingly",
+        "n_characters": 2,
+        "subject": "Grandmother",
+        "object": "Wolf",
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "b",
+                    "to": "a"
+                }
+            ],
+            "tensions": []
+        }
+    },
+    {
+        "action": "eats_up",
+        "n_characters": 2,
+        "subject": "Wolf",
+        "object": "Grandmother",
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "character_dead",
+                    "from": "-",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "hides_in_bed",
+        "n_characters": 1,
+        "subject": "Wolf",
+        "object": "-",
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "*",
+                    "to": "*"
+                }
+            ]
+        }
+    },
+    {
+        "action": "communicates_with",
+        "n_characters": 2,
+        "subject": "Little Red Riding Hood",
+        "object": "Wolf",
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "-",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "notices_something_unusual",
+        "n_characters": 1,
+        "subject": "Little Red Riding Hood",
+        "object": "-",
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": []
+        }
+    },
+    {
+        "action": "comments_on_appearance",
+        "n_characters": 2,
+        "subject": "Little Red Riding Hood",
+        "object": "Wolf",
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": []
+        }
+    },
+    {
+        "action": "reveals_true_identity",
+        "n_characters": 1,
+        "subject": "Wolf",
+        "object": "-",
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "*",
+                    "to": "*"
+                }
+            ]
+        }
+    },
+    {
+        "action": "eats_up",
+        "n_characters": 2,
+        "subject": "Wolf",
+        "object": "Little Red Riding Hood",
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "character_dead",
+                    "from": "-",
+                    "to": "b"
+                }
+            ]
+        }
+    }
+]
+```

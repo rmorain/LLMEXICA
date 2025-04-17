@@ -1,0 +1,171 @@
+
+
+Here is the JSON with postconditions added:
+
+```json
+[
+  {
+    "action": "loses_ball",
+    "n_characters": 1,
+    "subject": "princess",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": []
+    }
+  },
+  {
+    "action": "promises_companionship",
+    "emotional_link_type": "non-romantic",
+    "n_characters": 2,
+    "subject": "princess",
+    "object": "frog",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 1,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": []
+    }
+  },
+  {
+    "action": "ignores_request",
+    "n_characters": 1,
+    "subject": "princess",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -2,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": []
+    }
+  },
+  {
+    "action": "lets_in_reluctantly",
+    "emotional_link_type": "non-romantic",
+    "n_characters": 2,
+    "subject": "princess",
+    "object": "frog",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -1,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": []
+    }
+  },
+  {
+    "action": "sits_together",
+    "emotional_link_type": "non-romantic",
+    "n_characters": 2,
+    "subject": "princess",
+    "object": "frog",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 0,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": []
+    }
+  },
+  {
+    "action": "shares_food",
+    "emotional_link_type": "non-romantic",
+    "n_characters": 2,
+    "subject": "princess",
+    "object": "frog",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 1,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": []
+    }
+  },
+  {
+    "action": "goes_to_sleep",
+    "emotional_link_type": "romantic",
+    "n_characters": 2,
+    "subject": "princess",
+    "object": "frog",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 2,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": []
+    }
+  },
+  {
+    "action": "throws_against_wall",
+    "n_characters": 1,
+    "subject": "princess",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": []
+    }
+  }
+]
+```

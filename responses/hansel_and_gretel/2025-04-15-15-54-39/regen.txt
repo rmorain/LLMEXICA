@@ -1,0 +1,438 @@
+<think>
+Alright, so I need to fix the JSON by ensuring that each action has the correct `subject` and `object` values, and adjust `n_characters` accordingly.
+
+First, looking at "face_poverty": This is about the family facing poverty, involving all four characters. So, `subject` and `object` should be "-", but since it's a group action, `n_characters` remains 4.
+
+Next, "gather_pebbles" involves Hansel alone, so `subject` is "Hansel", `object` is "-", and `n_characters` is 1. The emotional link from Gretel to Hansel makes sense here.
+
+"Gretel weeps": She's the one crying, so `subject` is "Gretel", `object` is "-", and `n_characters` is 1. Emotional link from her to the stepmother is correct.
+
+"Leave_trail" is Hansel alone, same as "gather_pebbles".
+
+"Lose_way" involves both children, so `subject` and `object` are "-", but since it's about their mutual fear, `n_characters` is 2.
+
+"Find_house" also involves both, so similar to above.
+
+"Return_home" has both children returning, so `subject` and `object` are "-", with `n_characters` as 2.
+
+Now, I'll update each action accordingly.
+</think>
+
+```json
+[
+  {
+    "action": "face_poverty",
+    "n_characters": 4,
+    "subject": "-",
+    "object": "-",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -1,
+          "from": "*",
+          "to": "-"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "plan_abandonment",
+    "n_characters": 2,
+    "subject": "stepmother",
+    "object": "father",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "*",
+          "to": "*"
+        },
+        {
+          "type": "health_at_risk",
+          "from": "*",
+          "to": "*"
+        }
+      ]
+    }
+  },
+  {
+    "action": "gather_pebbles",
+    "n_characters": 1,
+    "subject": "Hansel",
+    "object": "-",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 2,
+          "from": "b",
+          "to": "a"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "health_normal",
+          "from": "*",
+          "to": "*"
+        }
+      ]
+    }
+  },
+  {
+    "action": "weep",
+    "n_characters": 1,
+    "subject": "Gretel",
+    "object": "-",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -3,
+          "from": "a",
+          "to": "-"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "*",
+          "to": "*"
+        },
+        {
+          "type": "health_at_risk",
+          "from": "*",
+          "to": "*"
+        }
+      ]
+    }
+  },
+  {
+    "action": "comfort",
+    "n_characters": 2,
+    "subject": "Hansel",
+    "object": "Gretel",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 3,
+          "from": "b",
+          "to": "a"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_normal",
+          "from": "*",
+          "to": "*"
+        }
+      ]
+    }
+  },
+  {
+    "action": "abandon_children",
+    "n_characters": 4,
+    "subject": "father",
+    "object": "children",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -2,
+          "from": "a",
+          "to": "b"
+        },
+        {
+          "type": "non-romantic",
+          "magnitude": -1,
+          "from": "a",
+          "to": "-"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "*",
+          "to": "*"
+        }
+      ]
+    }
+  },
+  {
+    "action": "leave_trail",
+    "n_characters": 1,
+    "subject": "Hansel",
+    "object": "-",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 2,
+          "from": "b",
+          "to": "a"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_normal",
+          "from": "*",
+          "to": "*"
+        }
+      ]
+    }
+  },
+  {
+    "action": "lose_way",
+    "n_characters": 2,
+    "subject": "-",
+    "object": "-",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -2,
+          "from": "a",
+          "to": "b"
+        },
+        {
+          "type": "non-romantic",
+          "magnitude": -2,
+          "from": "b",
+          "to": "a"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "*",
+          "to": "*"
+        },
+        {
+          "type": "health_at_risk",
+          "from": "*",
+          "to": "*"
+        }
+      ]
+    }
+  },
+  {
+    "action": "find_house",
+    "n_characters": 2,
+    "subject": "-",
+    "object": "-",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 1,
+          "from": "*",
+          "to": "-"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_normal",
+          "from": "*",
+          "to": "*"
+        }
+      ]
+    }
+  },
+  {
+    "action": "capture_children",
+    "n_characters": 3,
+    "subject": "witch",
+    "object": "children",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -2,
+          "from": "b",
+          "to": "a"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "prisoner",
+          "from": "*",
+          "to": "*"
+        },
+        {
+          "type": "life_at_risk",
+          "from": "*",
+          "to": "*"
+        }
+      ]
+    }
+  },
+  {
+    "action": "imprison",
+    "n_characters": 2,
+    "subject": "witch",
+    "object": "Hansel",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -3,
+          "from": "b",
+          "to": "a"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "prisoner",
+          "from": "*",
+          "to": "*"
+        }
+      ]
+    }
+  },
+  {
+    "action": "force_work",
+    "n_characters": 2,
+    "subject": "witch",
+    "object": "Gretel",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -3,
+          "from": "b",
+          "to": "a"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "prisoner",
+          "from": "*",
+          "to": "*"
+        },
+        {
+          "type": "health_at_risk",
+          "from": "*",
+          "to": "*"
+        }
+      ]
+    }
+  },
+  {
+    "action": "plan_escape",
+    "n_characters": 2,
+    "subject": "Gretel",
+    "object": "Hansel",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "prisoner_freed",
+          "from": "*",
+          "to": "*"
+        },
+        {
+          "type": "life_normal",
+          "from": "*",
+          "to": "*"
+        }
+      ]
+    }
+  },
+  {
+    "action": "kill_witch",
+    "n_characters": 2,
+    "subject": "Gretel",
+    "object": "witch",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "prisoner_freed",
+          "from": "*",
+          "to": "*"
+        },
+        {
+          "type": "life_normal",
+          "from": "*",
+          "to": "*"
+        }
+      ]
+    }
+  },
+  {
+    "action": "free_hansel",
+    "n_characters": 2,
+    "subject": "Gretel",
+    "object": "Hansel",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 3,
+          "from": "b",
+          "to": "a"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "prisoner_freed",
+          "from": "*",
+          "to": "*"
+        }
+      ]
+    }
+  },
+  {
+    "action": "return_home",
+    "n_characters": 2,
+    "subject": "-",
+    "object": "-",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 3,
+          "from": "*",
+          "to": "*"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_normal",
+          "from": "*",
+          "to": "*"
+        },
+        {
+          "type": "health_normal",
+          "from": "*",
+          "to": "*"
+        }
+      ]
+    }
+  }
+]
+```

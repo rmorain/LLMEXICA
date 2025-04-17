@@ -1,0 +1,262 @@
+[
+    {
+        "action": "face_poverty",
+        "n_characters": 4,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "plan_abandonment",
+        "n_characters": 2,
+        "subject": "stepmother",
+        "object": "father",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "b",
+                    "to": "a"
+                }
+            ]
+        }
+    },
+    {
+        "action": "gather_pebbles",
+        "n_characters": 1,
+        "subject": "Hansel",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "Gretel"
+                }
+            ]
+        }
+    },
+    {
+        "action": "weep",
+        "n_characters": 1,
+        "subject": "Gretel",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -2,
+                    "from": "a",
+                    "to": "stepmother"
+                }
+            ]
+        }
+    },
+    {
+        "action": "comfort",
+        "n_characters": 2,
+        "subject": "Hansel",
+        "object": "Gretel",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "abandon_children",
+        "n_characters": 4,
+        "subject": "father",
+        "object": "children",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -2,
+                    "from": "a",
+                    "to": "b"
+                },
+                {
+                    "type": "non-romantic",
+                    "magnitude": -1,
+                    "from": "a",
+                    "to": "wife"
+                }
+            ]
+        }
+    },
+    {
+        "action": "leave_trail",
+        "n_characters": 1,
+        "subject": "Hansel",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "Gretel"
+                }
+            ]
+        }
+    },
+    {
+        "action": "lose_way",
+        "n_characters": 2,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "find_house",
+        "n_characters": 2,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "capture_children",
+        "n_characters": 3,
+        "subject": "witch",
+        "object": "children",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "imprison",
+        "n_characters": 2,
+        "subject": "witch",
+        "object": "Hansel",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "force_work",
+        "n_characters": 2,
+        "subject": "witch",
+        "object": "Gretel",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "plan_escape",
+        "n_characters": 2,
+        "subject": "Gretel",
+        "object": "Hansel",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                },
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "witch"
+                }
+            ]
+        }
+    },
+    {
+        "action": "kill_witch",
+        "n_characters": 2,
+        "subject": "Gretel",
+        "object": "witch",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                },
+                {
+                    "type": "non-romantic",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "Hansel"
+                }
+            ]
+        }
+    },
+    {
+        "action": "free_hansel",
+        "n_characters": 2,
+        "subject": "Gretel",
+        "object": "Hansel",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "return_home",
+        "n_characters": 2,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 2,
+                    "from": "a",
+                    "to": "father"
+                }
+            ]
+        }
+    }
+]

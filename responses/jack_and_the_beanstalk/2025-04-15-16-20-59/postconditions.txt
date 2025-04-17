@@ -1,0 +1,325 @@
+
+Alright, I need to go through each action in the story of Jack and the Beanstalk and identify the postconditions, which include changes to emotional links and tensions as a result of the action. Postconditions are required for each action, so even if there are no preconditions, I have to infer what happens after the action is performed.
+
+Starting with "tells_to_sell": The mother tells Jack to sell the cow. This likely creates a negative non-romantic emotional link from Jack to his mother because he might feel resentful or upset about giving up their only asset. Additionally, this sets up tension as they are now without resources, which could lead to risks in their lives.
+
+"Offers_magic_beans": The man offers beans for the cow. Since Jack accepts, there's a slight positive emotional link from Jack towards the man initially, but it's short-lived and doesn't last because the mother gets angry. However, after realizing it was a trick, Jack might develop a negative link towards the man.
+
+"Gives_cow": Jack hands over the cow to the man in exchange for beans. This action probably reinforces any existing emotional links, like Jack feeling hopeful (positive) about the deal or distrust (negative).
+
+"Scolds": The mother scolds Jack when he returns with beans. This strengthens a negative non-romantic link from both Jack towards his mother and vice versa because of the conflict.
+
+"Asks_for_food": Jack asks the giant's wife for food, which she provides. This creates a positive emotional link from Jack to the wife as he is grateful for her help.
+
+"Gives_food": The wife gives him bread and milk. This reinforces the positive link from both characters towards each other, as the act of giving food establishes trust and kindness.
+
+"Threatens": The giant threatens Jack, creating a strong negative emotional link from Jack towards the giant out of fear or hatred. This also escalates the tension as Jack's life is now at risk.
+
+"Lies_to_protect": The wife lies to protect Jack from the giant. This strengthens her positive emotional link towards Jack and creates a negative link from her towards the giant, as she is protecting him against her husband.
+
+"Steals_gold": Jack takes gold from the giant. This action might create a more negative emotional link from the giant towards Jack, increasing the tension between them.
+
+"Gives_coins": Jack gives coins to his mother. This positive action strengthens the bond between them, creating a positive emotional link from both sides as they are relieved and happy.
+
+"Steals_hen": Similar to stealing gold, this reinforces the negative emotional links between Jack and the giant, with increased tension as Jack continues to take risks.
+
+"Sees_stealing": The giant notices Jack taking things. This heightens the negative emotions towards Jack and increases the life-at-risk tension for him.
+
+"Chases": The giant chases Jack, intensifying the negative emotional link from the giant towards Jack and keeping the life-at-risk tension active.
+
+"Steals_harp": Jack takes the harp, which angers the giant further. This action likely results in a more intense negative emotional link from both sides and keeps tensions high.
+
+"Kills": Jack kills the giant. This resolves some tensions (as the giant is no longer a threat) but also creates a significant change in their relationship, with a strong negative emotional link from Jack towards the giant.
+
+For each action, I'll outline how emotional links are affected and whether any tensions are resolved or created. Normal tensions like `life_normal` can be used to resolve `life_at_risk` if applicable.
+</think>
+
+```json
+[
+  {
+    "action": "tells_to_sell",
+    "n_characters": 2,
+    "subject": "mother",
+    "object": "Jack",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -1,
+          "from": "a",
+          "to": "b"
+        },
+        {
+          "type": "non-romantic",
+          "magnitude": -1,
+          "from": "b",
+          "to": "a"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "*",
+          "to": "*"
+        }
+      ]
+    }
+  },
+  {
+    "action": "offers_magic_beans",
+    "n_characters": 2,
+    "subject": "man",
+    "object": "Jack",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -2,
+          "from": "b",
+          "to": "a"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "gives_cow",
+    "n_characters": 2,
+    "subject": "Jack",
+    "object": "man",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -1,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "scolds",
+    "n_characters": 2,
+    "subject": "mother",
+    "object": "Jack",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -2,
+          "from": "a",
+          "to": "b"
+        },
+        {
+          "type": "non-romantic",
+          "magnitude": -2,
+          "from": "b",
+          "to": "a"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "asks_for_food",
+    "n_characters": 2,
+    "subject": "Jack",
+    "object": "wife",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 1,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "gives_food",
+    "n_characters": 2,
+    "subject": "wife",
+    "object": "Jack",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 1,
+          "from": "b",
+          "to": "a"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "threatens",
+    "n_characters": 1,
+    "subject": "giant",
+    "object": "-",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -3,
+          "from": "a",
+          "to": "-"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "lies_to_protect",
+    "n_characters": 2,
+    "subject": "wife",
+    "object": "giant",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 1,
+          "from": "a",
+          "to": "b"
+        },
+        {
+          "type": "non-romantic",
+          "magnitude": -2,
+          "from": "b",
+          "to": "a"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "steals_gold",
+    "n_characters": 2,
+    "subject": "Jack",
+    "object": "giant",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -2,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "gives_coins",
+    "n_characters": 2,
+    "subject": "Jack",
+    "object": "mother",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 1,
+          "from": "a",
+          "to": "b"
+        },
+        {
+          "type": "non-romantic",
+          "magnitude": 1,
+          "from": "b",
+          "to": "a"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "steals_hen",
+    "n_characters": 2,
+    "subject": "Jack",
+    "object": "giant",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -2,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "sees_stealing",
+    "n_characters": 2,
+    "subject": "giant",
+    "object": "Jack",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "chases",
+    "n_characters": 2,
+    "subject": "giant",
+    "object": "Jack",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "steals_harp",
+    "n_characters": 1,
+    "subject": "Jack",
+    "object": "-",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -2,
+          "from": "a",
+          "to": "-"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "kills",
+    "n_characters": 2,
+    "subject": "Jack",
+    "object": "giant",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  }
+]
+```

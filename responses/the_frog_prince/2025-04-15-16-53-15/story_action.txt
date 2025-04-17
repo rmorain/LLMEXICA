@@ -1,0 +1,88 @@
+<think>
+Okay, I need to analyze this story about the princess and the frog. The user wants me to extract actions related to emotional links and tensions. Let me start by reading through the story carefully.
+
+First, there's a king with beautiful daughters, especially the youngest. She plays near a well and loses her golden ball. That's where the frog comes in; he offers help but asks for companionship in return. The princess agrees, but she doesn't take it seriously until the frog shows up at the castle.
+
+I need to identify the actions that relate to emotional links. So, when the princess promises the frog companionship, that's a non-romantic link because they're not romantically involved yet. Then, when she tries to get rid of him and he persists, it shows tension but also his interest, which might hint at a romantic link later.
+
+Tensions in the story include the ball falling into the well (health_at_risk? No, more like an object loss), the princess crying (emotional distress), and the frog's persistence causing fear. Wait, when the princess is afraid of the frog, that's life_at_risk or health_at_risk? Maybe not directly. It's more emotional tension.
+
+When she throws the frog against the wall and he transforms into a prince, that resolves the tension but creates a romantic link. They get married, so that's definitely a romantic emotional link.
+
+I need to list each action in order. The princess loses the ball, promises companionship, tries to avoid him, lets him in under her father's orders, interacts reluctantly during dinner, and finally overcomes her disgust when he transforms. Each of these actions should be abstracted without character names.
+
+So, the actions would be:
+
+1. Throws_ball (n_characters=1, subject=princess)
+2. Promises_companionship (non-romantic link)
+3. Ignores_request
+4. Lets_in_reluctantly
+5. Sits_together (non-romantic becoming romantic)
+6. Shares_food
+7. Goes_to_sleep together
+8. Throws_against_wall
+9. Marries
+
+Each action needs to have subject and object if applicable, otherwise '-'. I'll structure this into JSON with each action as an entry in a list.
+
+I also need to note the emotional links: non-romantic turning into romantic after transformation. Tensions include the princess's fear and the frog's persistence, but the main tension types listed are character_dead, life_at_risk, etc., which aren't directly present here except maybe when she throws him (health risk?).
+
+Wait, the princess was afraid, so health_at_risk isn't exactly fitting. Maybe it's more about emotional tension rather than physical danger.
+
+I think I've covered all necessary actions and their links to emotions and tensions as per the user's guidelines.
+</think>
+
+```json
+[
+  {
+    "action": "loses_ball",
+    "n_characters": 1,
+    "subject": "princess"
+  },
+  {
+    "action": "promises_companionship",
+    "emotional_link_type": "non-romantic",
+    "n_characters": 2,
+    "subject": "princess",
+    "object": "frog"
+  },
+  {
+    "action": "ignores_request",
+    "n_characters": 1,
+    "subject": "princess"
+  },
+  {
+    "action": "lets_in_reluctantly",
+    "emotional_link_type": "non-romantic",
+    "n_characters": 2,
+    "subject": "princess",
+    "object": "frog"
+  },
+  {
+    "action": "sits_together",
+    "emotional_link_type": "non-romantic",
+    "n_characters": 2,
+    "subject": "princess",
+    "object": "frog"
+  },
+  {
+    "action": "shares_food",
+    "emotional_link_type": "non-romantic",
+    "n_characters": 2,
+    "subject": "princess",
+    "object": "frog"
+  },
+  {
+    "action": "goes_to_sleep",
+    "emotional_link_type": "romantic",
+    "n_characters": 2,
+    "subject": "princess",
+    "object": "frog"
+  },
+  {
+    "action": "throws_against_wall",
+    "n_characters": 1,
+    "subject": "princess"
+  }
+]
+```

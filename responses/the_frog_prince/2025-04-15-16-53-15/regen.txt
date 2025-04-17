@@ -1,0 +1,243 @@
+<think>
+Alright, I need to address the user's request to add postconditions to each action or remove the action if it doesn't have relevant postconditions. The user provided a list of actions that currently lack postconditions and wants the JSON updated accordingly.
+
+First, I'll go through each action one by one to determine appropriate postconditions. For example, when the princess loses her ball, this creates a tension because she's upset and can't retrieve it herself. So, the postcondition here would be that her emotional state becomes distressed.
+
+Next, promising companionship might lead to a positive emotional link towards the frog, as the princess is hopeful about getting her ball back. This indicates a slight increase in her affection towards him.
+
+Ignoring the frog's request could lead to increased dislike from the princess towards the frog, showing a negative postcondition.
+
+Reluctantly letting the frog in shows obedience but also continued dislike, so there's no significant change in emotional links, just a slight reduction in negativity.
+
+Sitting together might make the princess more comfortable with the frog, increasing her neutral affection slightly.
+
+Sharing food could lead to mutual positive feelings as they bond over the meal, indicating an increase in affection from both sides.
+
+Going to sleep together results in a romantic transformation, so this action leads to a significant increase in romantic affection between them.
+
+Throwing the frog against the wall is driven by disgust and resolves the tension when he transforms into a prince, leading to a positive emotional link as she realizes her mistake.
+
+I need to ensure each postcondition logically follows from the action. If an action doesn't have a clear postcondition, it should be removed, but in this case, all actions can have relevant postconditions added.
+</think>
+
+```json
+[
+  {
+    "action": "loses_ball",
+    "n_characters": 1,
+    "subject": "princess",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": [
+        {
+          "type": "health_at_risk",
+          "from": "a",
+          "to": "a"
+        }
+      ]
+    }
+  },
+  {
+    "action": "promises_companionship",
+    "emotional_link_type": "non-romantic",
+    "n_characters": 2,
+    "subject": "princess",
+    "object": "frog",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 1,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 2,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "ignores_request",
+    "n_characters": 1,
+    "subject": "princess",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -2,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "lets_in_reluctantly",
+    "emotional_link_type": "non-romantic",
+    "n_characters": 2,
+    "subject": "princess",
+    "object": "frog",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -1,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 0,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "sits_together",
+    "emotional_link_type": "non-romantic",
+    "n_characters": 2,
+    "subject": "princess",
+    "object": "frog",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 0,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 1,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "shares_food",
+    "emotional_link_type": "non-romantic",
+    "n_characters": 2,
+    "subject": "princess",
+    "object": "frog",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 1,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 2,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "goes_to_sleep",
+    "emotional_link_type": "romantic",
+    "n_characters": 2,
+    "subject": "princess",
+    "object": "frog",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 2,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "throws_against_wall",
+    "n_characters": 1,
+    "subject": "princess",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": [
+        {
+          "type": "prisoner_freed",
+          "from": "b",
+          "to": "-"
+        }
+      ]
+    }
+  }
+]
+```

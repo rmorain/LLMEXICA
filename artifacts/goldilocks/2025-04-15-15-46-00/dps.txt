@@ -1,0 +1,17 @@
+STO
+Goldilocks taste_porridge Great_Big_Bear
+Goldilocks taste_porridge Middlesized_Bear
+Goldilocks eat_porridge Little_Wee_Bear
+Goldilocks sit_in_char Great_Big_Bear
+Goldilocks sit_in_char Middlesized_Bear
+Goldilocks sit_in_char Little_Wee_Bear
+Goldilocks sleep_in_bed Little_Wee_Bear
+Great_Big_Bear find_tampered_porridge Goldilocks
+Middlesized_Bear find_tampered_porridge Goldilocks
+Little_Wee_Bear find_tampered_porridge Goldilocks
+Great_Big_Bear find_chair_tampered Goldilocks
+Middlesized_Bear find_chair_tampered Goldilocks
+Little_Wee_Bear find_chair_tampered Goldilocks
+Little_Wee_Bear find_in_bed Goldilocks
+Goldilocks wake_up
+Goldilocks flee

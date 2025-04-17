@@ -1,0 +1,203 @@
+[
+    {
+        "action": "tastes_porridge",
+        "n_characters": 2,
+        "subject": "Goldilocks",
+        "object": "Great Big Bear",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -1,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "tastes_porridge",
+        "n_characters": 2,
+        "subject": "Goldilocks",
+        "object": "Middle-sized Bear",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -1,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "eats_porridge",
+        "n_characters": 2,
+        "subject": "Goldilocks",
+        "object": "Little Wee Bear",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -1,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "sits_in_chair",
+        "n_characters": 2,
+        "subject": "Goldilocks",
+        "object": "Great Big Bear",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -1,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "sits_in_chair",
+        "n_characters": 2,
+        "subject": "Goldilocks",
+        "object": "Middle-sized Bear",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -1,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "sits_in_chair",
+        "n_characters": 2,
+        "subject": "Goldilocks",
+        "object": "Little Wee Bear",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -1,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "lies_in_bed",
+        "n_characters": 2,
+        "subject": "Goldilocks",
+        "object": "Great Big Bear",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -1,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "lies_in_bed",
+        "n_characters": 2,
+        "subject": "Goldilocks",
+        "object": "Middle-sized Bear",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -1,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "sleeps",
+        "n_characters": 1,
+        "subject": "Goldilocks",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "finds_goldilocks",
+        "n_characters": 2,
+        "subject": "Little Wee Bear",
+        "object": "Goldilocks",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "wakes_up",
+        "n_characters": 1,
+        "subject": "Goldilocks",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "sees_bears",
+        "n_characters": 2,
+        "subject": "Goldilocks",
+        "object": "Bears",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "jumps_out_window",
+        "n_characters": 1,
+        "subject": "Goldilocks",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    }
+]

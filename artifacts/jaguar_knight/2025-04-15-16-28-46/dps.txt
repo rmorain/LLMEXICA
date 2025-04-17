@@ -1,0 +1,6 @@
+STO
+Princess heals_wounds Jaguar_Knight
+Jaguar_Knight liberates Princess
+Princess kisses Jaguar_Knight
+Princess kills Jaguar_Knight
+Princess kills_self

@@ -1,0 +1,497 @@
+
+Alright, I need to go through each action in the Goldilocks story and determine the postconditions, which are changes to emotional links or tensions as a result of the action. For each action, I have to ensure that at least one postcondition is present and that if there were preconditions, the postconditions don't repeat them.
+
+Let's start by recalling what postconditions involve:
+
+1. **Emotional Links**: These can change based on the interaction between characters. If an action has a positive effect, it might create or strengthen a positive emotional link. Conversely, negative effects could lead to negative links.
+
+2. **Tensions**: Actions can introduce new tensions or resolve existing ones. Special normal tensions like `life_normal`, `health_normal`, and `prisoner_freed` can alleviate specific tensions if they were present in preconditions.
+
+Given the story, most actions involve Goldilocks interacting with the Bears' property, which generally has negative consequences, leading to negative emotional links. The only significant tension arises when Goldilocks flees, introducing a `life_at_risk` situation.
+
+Let's go through each action:
+
+1. **taste_porridge (Great Big Bear)**: This action likely leads to irritation from the Bears towards Goldilocks.
+2. **taste_porridge (Middle-sized Bear)**: Similar negative impact on emotional links.
+3. **eat_porridge (Little Wee Bear)**: More severe impact as she consumes all his porridge, increasing negative feelings.
+4. **sit_in_char (Great Big Bear)**: Discomfort or damage leads to frustration.
+5. **sit_in_char (Middle-sized Bear)**: Similar frustration but perhaps less intense than the Little Wee Bear's chair breaking.
+6. **sit_in_char (Little Wee Bear)**: Breaking the chair would lead to stronger negative emotions towards Goldilocks.
+7. **sleep_in_bed (Little Wee Bear)**: Invasion of privacy leads to trust issues and negative links.
+8. **find_tampered_porridge (Great Big Bear)**: Discovery increases suspicion or anger.
+9. **find_tampered_porridge (Middle-sized Bear)**: Similar reaction to the Great Big Bear.
+10. **find_tampered_porridge (Little Wee Bear)**: More upset due to the porridge being entirely eaten.
+11. **find_chair_tampered (Great Big Bear)**: Frustration increases upon finding more intrusion.
+12. **find_chair_tampered (Middle-sized Bear)**: Similar frustration as with the Great Big Bear.
+13. **find_chair_tampered (Little Wee Bear)**: Anger or disbelief at the damage done to his chair.
+14. **find_in_bed (Little Wee Bear)**: Shock and anger at finding Goldilocks, leading to stronger negative links and introducing a tension of `life_at_risk` for Goldilocks.
+15. **wake_up (Goldilocks)**: Realization of being caught leads to fear.
+16. **flee (Goldilocks)**: Escaping introduces the `life_at_risk` tension as she jumps out the window.
+
+For each action, I'll determine how emotional links and tensions change. For example, actions where Goldilocks damages property will worsen her relationship with the Bears, while her fleeing introduces a direct risk to her life.
+</think>
+
+```json
+[
+  {
+    "action": "taste_porridge",
+    "n_characters": 2,
+    "subject": "Goldilocks",
+    "object": "Great Big Bear",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -1,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -2,
+          "from": "b",
+          "to": "a"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "taste_porridge",
+    "n_characters": 2,
+    "subject": "Goldilocks",
+    "object": "Middle-sized Bear",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -1,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -2,
+          "from": "b",
+          "to": "a"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "eat_porridge",
+    "n_characters": 2,
+    "subject": "Goldilocks",
+    "object": "Little Wee Bear",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -2,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -3,
+          "from": "b",
+          "to": "a"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "sit_in_char",
+    "n_characters": 2,
+    "subject": "Goldilocks",
+    "object": "Great Big Bear",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -1,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -2,
+          "from": "b",
+          "to": "a"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "sit_in_char",
+    "n_characters": 2,
+    "subject": "Goldilocks",
+    "object": "Middle-sized Bear",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -1,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -2,
+          "from": "b",
+          "to": "a"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "sit_in_char",
+    "n_characters": 2,
+    "subject": "Goldilocks",
+    "object": "Little Wee Bear",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -1,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -3,
+          "from": "b",
+          "to": "a"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "sleep_in_bed",
+    "n_characters": 2,
+    "subject": "Goldilocks",
+    "object": "Little Wee Bear",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -1,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -3,
+          "from": "b",
+          "to": "a"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "find_tampered_porridge",
+    "n_characters": 2,
+    "subject": "Great Big Bear",
+    "object": "Goldilocks",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -1,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -2,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "find_tampered_porridge",
+    "n_characters": 2,
+    "subject": "Middle-sized Bear",
+    "object": "Goldilocks",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -1,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -2,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "find_tampered_porridge",
+    "n_characters": 2,
+    "subject": "Little Wee Bear",
+    "object": "Goldilocks",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -1,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "find_chair_tampered",
+    "n_characters": 2,
+    "subject": "Great Big Bear",
+    "object": "Goldilocks",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -1,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -2,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "find_chair_tampered",
+    "n_characters": 2,
+    "subject": "Middle-sized Bear",
+    "object": "Goldilocks",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -1,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -2,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "find_chair_tampered",
+    "n_characters": 2,
+    "subject": "Little Wee Bear",
+    "object": "Goldilocks",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -1,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "find_in_bed",
+    "n_characters": 2,
+    "subject": "Little Wee Bear",
+    "object": "Goldilocks",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "b",
+          "to": "-"
+        }
+      ]
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "wake_up",
+    "n_characters": 1,
+    "subject": "Goldilocks",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -2,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "flee",
+    "n_characters": 1,
+    "subject": "Goldilocks",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "a",
+          "to": "-"
+        }
+      ]
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  }
+]
+```

@@ -1,0 +1,212 @@
+[
+    {
+        "action": "suffers_injury",
+        "n_characters": 1,
+        "subject": "Jaguar_Knight",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "applies_curative_plant",
+        "n_characters": 2,
+        "subject": "Princess",
+        "object": "Jaguar_Knight",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "kidnaps",
+        "n_characters": 2,
+        "subject": "Enemy",
+        "object": "Princess",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "ties_to_rock",
+        "n_characters": 2,
+        "subject": "Enemy",
+        "object": "Princess",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "prays",
+        "n_characters": 1,
+        "subject": "Jaguar_Knight",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "searches_for_enemy",
+        "n_characters": 1,
+        "subject": "Jaguar_Knight",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "throws_dust",
+        "n_characters": 2,
+        "subject": "Jaguar_Knight",
+        "object": "Enemy",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "attacks_with_dagger",
+        "n_characters": 2,
+        "subject": "Jaguar_Knight",
+        "object": "Enemy",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "takes_heart",
+        "n_characters": 2,
+        "subject": "Jaguar_Knight",
+        "object": "Enemy",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "liberates_prisoner",
+        "n_characters": 2,
+        "subject": "Jaguar_Knight",
+        "object": "Princess",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "kisses",
+        "n_characters": 2,
+        "subject": "Princess",
+        "object": "Jaguar_Knight",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "romantic",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "recognizes_tattoo",
+        "n_characters": 1,
+        "subject": "Princess",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "cuts_jugular",
+        "n_characters": 2,
+        "subject": "Princess",
+        "object": "Jaguar_Knight",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "cuts_throat",
+        "n_characters": 1,
+        "subject": "Princess",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    }
+]

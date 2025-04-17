@@ -1,0 +1,72 @@
+ACT loses_ball 1
+POS
+T Hr a b
+
+ACT cries 1
+POS
+T Hn a b
+
+ACT promises_companionship 2
+PRE
+E a b +1 1
+POS
+T Pf a b
+
+ACT retrieves_ball 1
+PRE
+T Lr a b
+POS
+T Ln a b
+
+ACT runs_away 1
+POS
+T Hr a b
+
+ACT knocks_on_door 1
+POS
+T Hr a b
+
+ACT refuses_entry 2
+POS
+T Lr a b
+
+ACT commands_obedience 2
+POS
+T Pf a b
+
+ACT opens_door 1
+POS
+T Hn a b
+
+ACT enters_castle 1
+POS
+T Hr a b
+
+ACT requests_lift 2
+POS
+T Hr a b
+
+ACT lifts_to_table 2
+POS
+T Hr a b
+
+ACT requests_food 2
+POS
+T Hr a b
+
+ACT shares_meal 2
+POS
+T Hr a b
+
+ACT requests_sleep 2
+POS
+T Lr a b
+
+ACT throws_against_wall 2
+POS
+T Lr a b
+
+ACT transforms_into_prince 1
+POS
+T Ln a b
+

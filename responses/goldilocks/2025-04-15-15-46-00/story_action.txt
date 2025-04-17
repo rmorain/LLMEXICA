@@ -1,0 +1,233 @@
+<think>
+Alright, so I need to analyze this story about Goldilocks and the Three Bears using the guidelines provided. Let me break it down step by step.
+
+First, I'll read through the entire story to get a good grasp of the events and the interactions between the characters. The main characters here are Goldilocks and the three bears: Great Big Bear, Middle-sized Bear, and Little Wee Bear.
+
+The user wants me to extract actions related to emotional links (non-romantic and romantic) and tensions (character_dead, life_at_risk, health_at_risk, prisoner). Since this is a fairy tale, I don't expect any romantic emotional links. The focus will be on non-romantic relationships between Goldilocks and the bears, which are mostly negative due to her trespassing.
+
+Looking at the story, Goldilocks enters the Bears' house without permission, tastes their porridge, sits in their chairs, sleeps in their bed, and then flees when they discover her. Each of these actions can be broken down into specific actions with subjects and objects.
+
+Starting from the beginning:
+
+1. Goldilocks looks through the window, peeps in at the keyhole, lifts the latch, and enters the house. These are all actions without direct interaction between characters, so I might not include them unless they relate to emotional links or tensions. Since there's no immediate tension here other than her trespassing, which is more of a setup.
+
+2. She tastes each Bear's porridge. This action involves Goldilocks (subject) and each Bear (object). However, the story doesn't mention the Bears' reactions until later, so the emotional link here is non-romantic, likely negative from the Bears towards Goldilocks after they discover her actions.
+
+3. She sits in their chairs, breaking the Little Wee Bear's chair. Again, similar to above—actions with subjects and objects but no immediate emotional interactions beyond the consequences of her actions.
+
+4. She sleeps in Little Wee Bear's bed, which is where the Bears find her. This leads to the tension where Goldilocks' life might be at risk as she flees by jumping out the window. So here, 'life_at_risk' comes into play when she jumps.
+
+5. The Bears discover their porridge has been tasted and chairs sat in. Each Bear notices someone has been at their things, leading to the discovery of Goldilocks asleep.
+
+I need to map these events as actions in JSON format with action keys, n_characters, subject, and object. Since all interactions are between Goldilocks and each Bear, but sometimes multiple Bears are involved, I have to consider each individually.
+
+Wait, no, actually, when she tastes porridge or sits in chairs, it's one-on-one actions with each Bear. So each action should be separate for each Bear if possible, but sometimes the story groups them together.
+
+In the story, Goldilocks first tastes Great Big Bear's porridge, then Middle-sized, then Little Wee Bear's. Each of these is a separate 'taste_porridge' action with each Bear as object.
+
+Similarly, when she sits in their chairs, it's three separate actions: sit_in_great_big_bear's chair (too hard), middle-sized (too soft), and Little Wee Bear's (just right but breaks). So that would be three 'sit_in_char' actions with each Bear as object.
+
+She sleeps in Little Wee Bear's bed, so one action there.
+
+When the Bears return, they notice their porridge has been tasted. Each Bear notices their own porridge, leading to exclamations. These are separate actions where each Bear is the subject and Goldilocks (unbeknownst to them) is the object.
+
+Similarly, when they check their chairs, each Bear finds someone sat in their chair—again three actions with each Bear as subject and Goldilocks as object.
+
+Finally, Little Wee Bear finds Goldilocks asleep in his bed. This leads to her waking up and fleeing, which introduces a tension of life_at_risk as she jumps out the window.
+
+So putting this together, I'll list these actions chronologically:
+
+1. Goldilocks tastes each Bear's porridge: three 'taste_porridge' actions.
+2. She sits in their chairs: three 'sit_in_char' actions.
+3. Sleeps in Little Wee Bear's bed: one 'sleep_in_bed'.
+4. Bears return and notice porridge tampered with: three 'find_tampered_porridge'.
+5. Notice chairs: three 'find_chair_tampered'.
+6. Find Goldilocks asleep: one action leading to tension.
+
+Wait, but the JSON should include each specific event, so I need to ensure each Bear's individual actions are captured.
+
+Also, when she breaks the chair, it's an effect of her sitting in it, which adds a postcondition, but the user only wants actions, not effects. So focusing on the action 'sit_in_char' and whether it results in breaking is more about the state change, but for the action itself, it's just sitting.
+
+Similarly, when she eats all Little Wee Bear's porridge, that's an action beyond just tasting—it's 'eat_porridge'. So perhaps I need to split the actions: taste vs eat. The first two are tasted, but the third is eaten entirely.
+
+Wait, in the story:
+
+- She tasted Great Big Bear's porridge (too hot).
+- Tasted Middle-sized's (too cold).
+- Then she went to Little Wee Bear's, tasted it, liked it, and ate it all up. So that would be two actions: 'taste_porridge' for each of the first two Bears, then 'eat_porridge' for the third.
+
+So in JSON:
+
+1. taste_porridge (Great Big Bear)
+2. taste_porridge (Middle-sized Bear)
+3. eat_porridge (Little Wee Bear)
+
+Then she sits in chairs:
+
+4. sit_in_char (Great Big Bear's chair)
+5. sit_in_char (Middle-sized Bear's chair)
+6. sit_in_char (Little Wee Bear's chair, which breaks)
+
+Then sleeps:
+
+7. sleep_in_bed (Little Wee Bear's bed)
+
+Bears return and notice porridge:
+
+8. find_tampered_porridge (Great Big Bear)
+9. find_tampered_porridge (Middle-sized Bear)
+10. find_tampered_porridge (Little Wee Bear)
+
+Notice chairs:
+
+11. find_chair_tampered (Great Big Bear)
+12. find_chair_tampered (Middle-sized Bear)
+13. find_chair_tampered (Little Wee Bear)
+
+Find Goldilocks asleep:
+
+14. find_in_bed (Little Wee Bear)
+
+Then she wakes up and flees, leading to tension:
+
+15. life_at_risk when she jumps out.
+
+But in the JSON structure, each action is an object with action, n_characters, subject, object. So for each of these steps 1-15, I can map them accordingly.
+
+I need to ensure that for each action, if it's between two characters (subject and object), they are listed correctly. For example, when Goldilocks tastes Great Big Bear's porridge, the action is 'taste_porridge', subject: Goldilocks, object: Great Big Bear.
+
+Similarly, when Great Big Bear notices his porridge was tampered with, the action would be 'find_tampered_porridge', subject: Great Big Bear, object: Goldilocks (even though he doesn't know it's her yet). But in reality, from the Bears' perspective, they don't know who did it, so maybe the object is '-' or not applicable. Wait, but the action is about someone else affecting their property. Hmm.
+
+Wait, perhaps for these actions where a Bear notices something wrong with their belongings, the subject is the Bear, and the object would be Goldilocks since she's the one who caused it, even if they don't know her yet. So in the JSON, I can include her as the object because she is the cause.
+
+So action 'find_tampered_porridge' for Great Big Bear would have subject: Great Big Bear and object: Goldilocks.
+
+Same with chairs and beds.
+
+Now, considering that each Bear's porridge tasting and chair sitting are separate actions, I'll list them accordingly in chronological order.
+
+Additionally, when Goldilocks breaks the chair, it's a result of her sitting, but since the action is just 'sit_in_char', the breaking is an effect. However, the user wants to focus on the action itself, so we don't need to include the outcome unless it affects another action or tension.
+
+Finally, when she flees by jumping out the window, that introduces a life_at_risk tension because she might get hurt, which is one of the specified tensions.
+
+So in the JSON, I'll structure each action with the appropriate subject and object. For actions where only Goldilocks is involved (like her fleeing), the subject would be her, and there's no direct object unless it's about another character. But since she's acting alone in that moment, maybe n_characters is 1.
+
+Wait, for 'flee', the action is just her leaving, so subject: Goldilocks, object: '-', n_characters=1.
+
+But according to the guidelines, if the action lacks a subject or object, use '-'. So actions like sleeping would have subject: Goldilocks and object: Little Wee Bear's bed? Wait no, because we're supposed to include only character objects. Since beds are inanimate, perhaps for 'sleep_in_bed', the object is '-' since it's an action on an inanimate object.
+
+Wait, but earlier when she eats porridge or sits in chairs, those are actions where subject is Goldilocks and object is a Bear because their property was involved. But in the case of sleeping in bed, if the bed belongs to Little Wee Bear, perhaps the action 'sleep_in_bed' would have subject: Goldilocks and object: Little Wee Bear.
+
+Alternatively, since she's using his bed without his permission, maybe it's considered an action affecting him indirectly. So for actions like 'eat_porridge', 'sit_in_char', and 'sleep_in_bed', each Bear is the object because their belongings are involved.
+
+So in that case:
+
+- eat_porridge: subject Goldilocks, object Little Wee Bear
+- sit_in_char: same structure
+- sleep_in_bed: same
+
+Similarly, when Bears find their porridge tampered with, it's their action of discovering, so subject is the Bear, and object is Goldilocks because she caused it.
+
+So compiling all this, I'll create a JSON array where each element represents an action as per above.
+</think>
+
+```json
+[
+  {
+    "action": "taste_porridge",
+    "n_characters": 2,
+    "subject": "Goldilocks",
+    "object": "Great Big Bear"
+  },
+  {
+    "action": "taste_porridge",
+    "n_characters": 2,
+    "subject": "Goldilocks",
+    "object": "Middle-sized Bear"
+  },
+  {
+    "action": "eat_porridge",
+    "n_characters": 2,
+    "subject": "Goldilocks",
+    "object": "Little Wee Bear"
+  },
+  {
+    "action": "sit_in_char",
+    "n_characters": 2,
+    "subject": "Goldilocks",
+    "object": "Great Big Bear"
+  },
+  {
+    "action": "sit_in_char",
+    "n_characters": 2,
+    "subject": "Goldilocks",
+    "object": "Middle-sized Bear"
+  },
+  {
+    "action": "sit_in_char",
+    "n_characters": 2,
+    "subject": "Goldilocks",
+    "object": "Little Wee Bear"
+  },
+  {
+    "action": "sleep_in_bed",
+    "n_characters": 2,
+    "subject": "Goldilocks",
+    "object": "Little Wee Bear"
+  },
+  {
+    "action": "find_tampered_porridge",
+    "n_characters": 2,
+    "subject": "Great Big Bear",
+    "object": "Goldilocks"
+  },
+  {
+    "action": "find_tampered_porridge",
+    "n_characters": 2,
+    "subject": "Middle-sized Bear",
+    "object": "Goldilocks"
+  },
+  {
+    "action": "find_tampered_porridge",
+    "n_characters": 2,
+    "subject": "Little Wee Bear",
+    "object": "Goldilocks"
+  },
+  {
+    "action": "find_chair_tampered",
+    "n_characters": 2,
+    "subject": "Great Big Bear",
+    "object": "Goldilocks"
+  },
+  {
+    "action": "find_chair_tampered",
+    "n_characters": 2,
+    "subject": "Middle-sized Bear",
+    "object": "Goldilocks"
+  },
+  {
+    "action": "find_chair_tampered",
+    "n_characters": 2,
+    "subject": "Little Wee Bear",
+    "object": "Goldilocks"
+  },
+  {
+    "action": "find_in_bed",
+    "n_characters": 2,
+    "subject": "Little Wee Bear",
+    "object": "Goldilocks"
+  },
+  {
+    "action": "wake_up",
+    "n_characters": 1,
+    "subject": "Goldilocks",
+    "object": "-"
+  },
+  {
+    "action": "flee",
+    "n_characters": 1,
+    "subject": "Goldilocks",
+    "object": "-"
+  }
+]
+```

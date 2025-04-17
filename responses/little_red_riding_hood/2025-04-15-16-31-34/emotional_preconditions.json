@@ -1,0 +1,317 @@
+[
+    {
+        "action": "greet",
+        "n_characters": 2,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "express_affection",
+        "n_characters": 2,
+        "subject": "mother",
+        "object": "Little Red Riding Hood",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "express_affection",
+        "n_characters": 2,
+        "subject": "grandmother",
+        "object": "Little Red Riding Hood",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "give_task",
+        "n_characters": 2,
+        "subject": "mother",
+        "object": "Little Red Riding Hood",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "journey",
+        "n_characters": 1,
+        "subject": "Little Red Riding Hood",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "greet",
+        "n_characters": 2,
+        "subject": "wolf",
+        "object": "Little Red Riding Hood",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "share_information",
+        "n_characters": 2,
+        "subject": "Little Red Riding Hood",
+        "object": "wolf",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "b",
+                    "to": "a"
+                }
+            ]
+        }
+    },
+    {
+        "action": "plan_deception",
+        "n_characters": 1,
+        "subject": "wolf",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "Little Red Riding Hood"
+                }
+            ]
+        }
+    },
+    {
+        "action": "journey",
+        "n_characters": 2,
+        "subject": "wolf",
+        "object": "Little Red Riding Hood",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "gather_items",
+        "n_characters": 1,
+        "subject": "Little Red Riding Hood",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "arrive",
+        "n_characters": 1,
+        "subject": "wolf",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "grandmother"
+                }
+            ]
+        }
+    },
+    {
+        "action": "knock_on_door",
+        "n_characters": 2,
+        "subject": "wolf",
+        "object": "grandmother",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "deceive",
+        "n_characters": 2,
+        "subject": "wolf",
+        "object": "grandmother",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "enter",
+        "n_characters": 2,
+        "subject": "wolf",
+        "object": "grandmother's house",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "grandmother"
+                }
+            ]
+        }
+    },
+    {
+        "action": "attack",
+        "n_characters": 2,
+        "subject": "wolf",
+        "object": "grandmother",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "hide",
+        "n_characters": 1,
+        "subject": "wolf",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "Little Red Riding Hood"
+                }
+            ]
+        }
+    },
+    {
+        "action": "knock_on_door",
+        "n_characters": 2,
+        "subject": "Little Red Riding Hood",
+        "object": "grandmother's house",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "deceive",
+        "n_characters": 2,
+        "subject": "wolf",
+        "object": "Little Red Riding Hood",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "enter",
+        "n_characters": 2,
+        "subject": "Little Red Riding Hood",
+        "object": "grandmother's house",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "question",
+        "n_characters": 2,
+        "subject": "Little Red Riding Hood",
+        "object": "wolf",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "b",
+                    "to": "a"
+                }
+            ]
+        }
+    },
+    {
+        "action": "attack",
+        "n_characters": 2,
+        "subject": "wolf",
+        "object": "Little Red Riding Hood",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    }
+]

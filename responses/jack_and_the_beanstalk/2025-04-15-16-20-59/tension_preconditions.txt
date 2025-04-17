@@ -1,0 +1,244 @@
+<think>
+Okay, so I need to go through each action in the story of Jack and the Beanstalk and identify or infer the preconditions related to tensions. The user has defined four types of tensions: `character_dead`, `life_at_risk`, `health_at_risk`, and `prisoner`. For each action, I'll check if any of these tensions are present as preconditions.
+
+Starting with the first action: "tells_to_sell". The mother tells Jack to sell their cow. There's no immediate tension here; it's more about setting up the story. So, probably no tensions here.
+
+Next, "offers_magic_beans" – the man offers beans for the cow. Again, this is part of the setup and doesn't directly involve tension, so maybe no tensions here either.
+
+"Gives_cow" – Jack gives his cow to the man. No tension present yet, just an exchange.
+
+"Scolds" – The mother scolds Jack when he returns with beans. This could create some family conflict, but not one of the defined tensions. So, perhaps no tensions here.
+
+"Asks_for_food" – Jack asks the giant’s wife for food. Since Jack is in a strange place and needs help, this might imply that his life or well-being is at risk if he doesn't get food, so maybe `life_at_risk` applies here.
+
+"Gives_food" – The wife gives him bread and milk. This action resolves the previous tension of hunger or risk, so no tensions here.
+
+"Threatens" – The giant threatens Jack. This clearly puts Jack's life at risk, so the precondition here is `life_at_risk`.
+
+"Lies_to_protect" – The wife lies to protect Jack from the giant. This action is taken because there's an existing tension of Jack's life being at risk.
+
+"Steals_gold" – Jack takes gold from the giant. Stealing from someone dangerous implies that his life might be at risk if caught, so `life_at_risk` applies here as well.
+
+"Gives_coins" – Jack gives coins to his mother. This action reduces tension by improving their financial situation, so no tensions here.
+
+"Steals_hen" – Similar to stealing gold, this action puts Jack's life at risk if he gets caught.
+
+"Sees_stealing" – The giant notices Jack taking things, which escalates the tension as the giant becomes angry and starts chasing him. So, `life_at_risk` is a precondition here.
+
+"Chases" – The giant chases Jack, directly putting his life at risk.
+
+"Steals_harp" – Jack takes the harp, and since it's magical, this action might trigger additional risks or chases, so `life_at_risk` applies again.
+
+"Kills" – Jack kills the giant. This is a high-tension action because both characters' lives are at risk during the confrontation.
+
+For each action, I'll determine if any of these tensions exist and set up the preconditions accordingly. If there are no relevant tensions, the array remains empty. Each tension will be an object with type, from, and to keys.
+</think>
+
+```json
+[
+  {
+    "action": "tells_to_sell",
+    "n_characters": 2,
+    "subject": "mother",
+    "object": "Jack",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": []
+    }
+  },
+  {
+    "action": "offers_magic_beans",
+    "n_characters": 2,
+    "subject": "man",
+    "object": "Jack",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": []
+    }
+  },
+  {
+    "action": "gives_cow",
+    "n_characters": 2,
+    "subject": "Jack",
+    "object": "man",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": []
+    }
+  },
+  {
+    "action": "scolds",
+    "n_characters": 2,
+    "subject": "mother",
+    "object": "Jack",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": []
+    }
+  },
+  {
+    "action": "asks_for_food",
+    "n_characters": 2,
+    "subject": "Jack",
+    "object": "wife",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "gives_food",
+    "n_characters": 2,
+    "subject": "wife",
+    "object": "Jack",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": []
+    }
+  },
+  {
+    "action": "threatens",
+    "n_characters": 1,
+    "subject": "giant",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "a",
+          "to": "-"
+        }
+      ]
+    }
+  },
+  {
+    "action": "lies_to_protect",
+    "n_characters": 2,
+    "subject": "wife",
+    "object": "giant",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "b",
+          "to": "a"
+        }
+      ]
+    }
+  },
+  {
+    "action": "steals_gold",
+    "n_characters": 2,
+    "subject": "Jack",
+    "object": "giant",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "gives_coins",
+    "n_characters": 2,
+    "subject": "Jack",
+    "object": "mother",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": []
+    }
+  },
+  {
+    "action": "steals_hen",
+    "n_characters": 2,
+    "subject": "Jack",
+    "object": "giant",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "sees_stealing",
+    "n_characters": 2,
+    "subject": "giant",
+    "object": "Jack",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "chases",
+    "n_characters": 2,
+    "subject": "giant",
+    "object": "Jack",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "steals_harp",
+    "n_characters": 1,
+    "subject": "Jack",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "a",
+          "to": "-"
+        }
+      ]
+    }
+  },
+  {
+    "action": "kills",
+    "n_characters": 2,
+    "subject": "Jack",
+    "object": "giant",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  }
+]
+```

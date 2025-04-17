@@ -1,0 +1,98 @@
+[
+    {
+        "action": "desires",
+        "n_characters": 1,
+        "subject": "prince",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "romantic",
+                    "magnitude": 2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "arrives",
+        "n_characters": 1,
+        "subject": "princess",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 1,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "tests_sensitivity",
+        "n_characters": 2,
+        "subject": "queen",
+        "object": "princess",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "feels_pain",
+        "n_characters": 1,
+        "subject": "princess",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "marries",
+        "n_characters": 2,
+        "subject": "prince",
+        "object": "princess",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "romantic",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "places_in_museum",
+        "n_characters": 2,
+        "subject": "kingdom's people",
+        "object": "pea",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 1,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    }
+]

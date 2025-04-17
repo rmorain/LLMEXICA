@@ -1,0 +1,10 @@
+STO
+Goldilocks taste_porridge Great_Big_Bear
+Goldilocks taste_porridge Middlesized_Bear
+Goldilocks eat_porridge Little_Wee_Bear
+Goldilocks sit_in-chair Great_Big_Bear
+Goldilocks sit_in-chair Middlesized_Bear
+Goldilocks break_chair Little_Wee_Bear
+Goldilocks lie_in-bed Great_Big_Bear
+Goldilocks lie_in-bed Middlesized_Bear
+Goldilocks sleep_in_bed Little_Wee_Bear

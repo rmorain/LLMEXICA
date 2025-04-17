@@ -1,0 +1,299 @@
+[
+    {
+        "action": "cares_for",
+        "n_characters": 2,
+        "subject": "Mother",
+        "object": "Little Red Riding Hood",
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": []
+        }
+    },
+    {
+        "action": "cares_for",
+        "n_characters": 2,
+        "subject": "Grandmother",
+        "object": "Little Red Riding Hood",
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": []
+        }
+    },
+    {
+        "action": "sends_on_errand",
+        "n_characters": 2,
+        "subject": "Mother",
+        "object": "Little Red Riding Hood",
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": []
+        }
+    },
+    {
+        "action": "communicates_with",
+        "n_characters": 2,
+        "subject": "Little Red Riding Hood",
+        "object": "Wolf",
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "-",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "asks_about_whereabouts",
+        "n_characters": 2,
+        "subject": "Wolf",
+        "object": "Little Red Riding Hood",
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "-",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "reveals_information",
+        "n_characters": 2,
+        "subject": "Little Red Riding Hood",
+        "object": "Wolf",
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -1,
+                    "from": "b",
+                    "to": "a"
+                }
+            ],
+            "tensions": []
+        }
+    },
+    {
+        "action": "decides_to_deceive",
+        "n_characters": 1,
+        "subject": "Wolf",
+        "object": "-",
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": []
+        }
+    },
+    {
+        "action": "knocks_on_door",
+        "n_characters": 2,
+        "subject": "Wolf",
+        "object": "Grandmother",
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": [
+                {
+                    "type": "health_at_risk",
+                    "from": "-",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "falls_ill",
+        "n_characters": 1,
+        "subject": "Grandmother",
+        "object": "-",
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "health_at_risk",
+                    "from": "a",
+                    "to": "a"
+                }
+            ]
+        }
+    },
+    {
+        "action": "hides_identity",
+        "n_characters": 2,
+        "subject": "Wolf",
+        "object": "Grandmother",
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": []
+        }
+    },
+    {
+        "action": "enters_unknowingly",
+        "n_characters": 2,
+        "subject": "Grandmother",
+        "object": "Wolf",
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "b",
+                    "to": "a"
+                }
+            ],
+            "tensions": []
+        }
+    },
+    {
+        "action": "eats_up",
+        "n_characters": 2,
+        "subject": "Wolf",
+        "object": "Grandmother",
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "character_dead",
+                    "from": "-",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "hides_in_bed",
+        "n_characters": 1,
+        "subject": "Wolf",
+        "object": "-",
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "*",
+                    "to": "*"
+                }
+            ]
+        }
+    },
+    {
+        "action": "communicates_with",
+        "n_characters": 2,
+        "subject": "Little Red Riding Hood",
+        "object": "Wolf",
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "-",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "notices_something_unusual",
+        "n_characters": 2,
+        "subject": "Little Red Riding Hood",
+        "object": "Wolf",
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": []
+        }
+    },
+    {
+        "action": "comments_on_appearance",
+        "n_characters": 2,
+        "subject": "Little Red Riding Hood",
+        "object": "Wolf",
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": []
+        }
+    },
+    {
+        "action": "reveals_true_identity",
+        "n_characters": 1,
+        "subject": "Wolf",
+        "object": "-",
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "*",
+                    "to": "*"
+                }
+            ]
+        }
+    },
+    {
+        "action": "eats_up",
+        "n_characters": 2,
+        "subject": "Wolf",
+        "object": "Little Red Riding Hood",
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "character_dead",
+                    "from": "-",
+                    "to": "b"
+                }
+            ]
+        }
+    }
+]

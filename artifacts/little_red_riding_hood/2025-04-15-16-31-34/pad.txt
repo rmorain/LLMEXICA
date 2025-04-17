@@ -1,0 +1,12 @@
+ACT express_affection 2
+PRE
+E a b +3 1
+POS
+E b a +4 1
+
+ACT express_affection 2
+PRE
+E a b +3 1
+POS
+E b a +4 1
+

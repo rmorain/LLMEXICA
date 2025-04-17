@@ -1,0 +1,266 @@
+<think>
+Okay, so I'm trying to figure out how to add preconditions related to emotional links for each action in the given story. The user provided a list of actions with their respective subjects and objects, and now they want me to identify or infer the emotional links that serve as preconditions for those actions.
+
+First, I need to understand what an emotional link precondition is. From the instructions, it seems like a precondition is an emotional state (either non-romantic or romantic) between characters that must exist for a particular action to make sense. Each emotional link has a type and a magnitude, which indicates how strong the emotion is, ranging from -3 to 3.
+
+So, I'll go through each action one by one and think about what emotional links would need to be in place for that action to occur.
+
+1. **Action: hears_despair**
+   - Subject: Cat
+   - Object: Marquis_of_Carabas
+   - What precondition makes sense here? The Cat hears the master's despair, which implies that the Cat cares about his master. So there must be a non-romantic emotional link from the Cat to the Marquis with a positive magnitude.
+
+2. **Action: tricks_animal**
+   - Subject: Cat
+   - Object: -
+   - There’s no direct object here; the action is about tricking an animal. Since the object is '-', I don’t need to infer any specific emotional link precondition because it's not directed towards another character in the story.
+
+3. **Action: presents_gift**
+   - Subject: Cat
+   - Object: King
+   - The Cat wants to help his master by presenting a gift to the King, indicating loyalty and perhaps a desire to gain favor. So there should be a non-romantic link from the Cat to the Marquis (his master), not directly to the King.
+
+4. **Action: tricks_animal**
+   - Same as above; no need for an emotional link precondition here since it’s about tricking animals, not interacting with another character in the story.
+
+5. **Action: bathes_master**
+   - Subject: Marquis_of_Carabas
+   - Object: -
+   - The master is bathing because the Cat advised him to, indicating trust in the Cat. So there should be a non-romantic emotional link from the Marquis to the Cat with a positive magnitude.
+
+6. **Action: cries_help**
+   - Subject: Cat
+   - Object: -
+   - The Cat wants to help his master by crying out for help, so again, a non-romantic emotional link from the Cat to the Marquis is needed.
+
+7. **Action: receives_clothes**
+   - Subject: King
+   - Object: Marquis_of_Carabas
+   - The King helps the Marquis because he likes him or feels sorry for him. This suggests a non-romantic emotional link from the King to the Marquis with a positive magnitude.
+
+8. **Action: falls_in_love**
+   - Subject: Princess
+   - Object: Marquis_of_Carabas
+   - Romantic emotional link from the Princess to the Marquis, so type is romantic with a high positive magnitude.
+
+9. **Action: threatens_workers**
+   - Subject: Cat
+   - Object: -
+   - The Cat threatens workers to support his master, indicating loyalty and care for the Marquis. So non-romantic emotional link from the Cat to the Marquis.
+
+10. **Action: transforms_mouse**
+    - Subject: Ogre
+    - Object: -
+    - This action is about the Ogre's ability, not an interaction with another character, so no emotional link precondition needed.
+
+11. **Action: eats_ogre**
+    - Subject: Cat
+    - Object: Ogre
+    - The Cat wants to eliminate the Ogre to secure his master’s castle. So non-romantic emotional link from the Cat to the Marquis, positive magnitude.
+
+12. **Action: invites_castle**
+    - Subject: King
+    - Object: Marquis_of_Carabas
+    - The King invites the Marquis into the castle because he likes him or is impressed by his wealth. Non-romantic emotional link from the King to the Marquis, positive magnitude.
+
+13. **Action: marries_princess**
+    - Subject: Marquis_of_Carabas
+    - Object: Princess
+    - Romantic emotional link between them, high positive magnitude.
+
+Now, I need to make sure each precondition is correctly inferred and added to the JSON structure as per the instructions. Each emotional_link should have type, magnitude, from (a or b), and to (a or b). If the action doesn't involve an object character, I don’t include any emotional links for that action.
+
+I also need to ensure that if either subject or object is '-', I adjust accordingly or omit the link since it's not applicable.
+</think>
+
+```json
+[
+  {
+    "action": "hears_despair",
+    "n_characters": 2,
+    "subject": "Cat",
+    "object": "Marquis_of_Carabas",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "tricks_animal",
+    "n_characters": 1,
+    "subject": "Cat",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": []
+    }
+  },
+  {
+    "action": "presents_gift",
+    "n_characters": 2,
+    "subject": "Cat",
+    "object": "King",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "tricks_animal",
+    "n_characters": 1,
+    "subject": "Cat",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": []
+    }
+  },
+  {
+    "action": "bathes_master",
+    "n_characters": 2,
+    "subject": "Marquis_of_Carabas",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "cries_help",
+    "n_characters": 1,
+    "subject": "Cat",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "receives_clothes",
+    "n_characters": 2,
+    "subject": "King",
+    "object": "Marquis_of_Carabas",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "falls_in_love",
+    "n_characters": 2,
+    "subject": "Princess",
+    "object": "Marquis_of_Carabas",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "threatens_workers",
+    "n_characters": 1,
+    "subject": "Cat",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "transforms_mouse",
+    "n_characters": 1,
+    "subject": "Ogre",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": []
+    }
+  },
+  {
+    "action": "eats_ogre",
+    "n_characters": 2,
+    "subject": "Cat",
+    "object": "Ogre",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "invites_castle",
+    "n_characters": 2,
+    "subject": "King",
+    "object": "Marquis_of_Carabas",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "marries_princess",
+    "n_characters": 2,
+    "subject": "Marquis_of_Carabas",
+    "object": "Princess",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  }
+]
+```

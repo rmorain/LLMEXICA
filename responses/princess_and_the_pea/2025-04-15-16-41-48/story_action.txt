@@ -1,0 +1,61 @@
+<think>
+Alright, so I'm trying to figure out how to approach this narrative analysis task. The user provided a story about a prince searching for a real princess and the test the queen uses involving a pea under mattresses. They want me to extract actions related to emotional links (non-romantic or romantic) and tensions (like character dead, life at risk, etc.) from the story.
+
+First, I need to understand what each part entails. Emotional links are about how characters feel about each other, either platonically or romantically. Tensions involve conflicts or risks that create suspense in the story.
+
+Looking at the story, it's about a prince wanting a real princess. He's been searching and is sad because he can't find one. That sets up some emotional context—his desire for a real princess is a romantic link. Then a storm happens, and a princess arrives. The queen tests her by placing a pea under multiple mattresses to see if she's sensitive enough.
+
+I should break down the story into key events:
+
+1. Prince wants a real princess, is sad.
+2. Storm happens, princess comes.
+3. Queen tests with pea under mattresses.
+4. Princess feels the pea and proves herself.
+5. Prince marries her, pea goes to museum.
+
+Now, I need to identify actions that relate to emotional links or tensions. The prince's desire (romantic link) is an action—maybe 'desires' as a romantic link. His sadness might also be an emotional state but perhaps not an action per se.
+
+When the princess arrives during the storm, that's an action where she seeks shelter. Then the queen tests her sensitivity with the pea, which could relate to non-romantic trust or verification. The princess feeling the pea shows her royal sensitivity, which confirms her status and leads to the marriage—a romantic emotional link.
+
+As for tensions, I don't see any immediate life risks or imprisonment in this story. The storm is a setting but not a tension type listed. So maybe no tensions apply here beyond the test itself, which might be a mild tension of uncertainty but doesn't fit the specified types (character dead, life at risk, etc.).
+
+I'll structure each action with subject and object if applicable. For example, prince desires princess as a romantic link. Queen tests princess's sensitivity as a non-romantic link because it's about verifying her status.
+
+I need to make sure each action is in snake_case and doesn't include character names. Also, n_characters should reflect how many are involved—like 'desires' would be 1 (only the prince), while 'tests_sensitivity' involves queen and princess, so n_characters=2.
+
+Putting it all together, I'll list actions in order, assigning each to emotional links or tensions as they fit. Since there's no major tension beyond the test, perhaps only the emotional links are prominent here.
+</think>
+
+Here is the structured analysis of the story:
+
+1. **Action**: `desires`  
+   - **Emotional Link Type**: `romantic`  
+   - **Subject**: The prince  
+   - **Object**: A real princess  
+
+2. **Action**: `arrives`  
+   - **Emotional Link Type**: `non-romantic`  
+   - **Subject**: A princess  
+   - **Object**: The city gate  
+
+3. **Action**: `tests_sensitivity`  
+   - **Emotional Link Type**: `non-romantic`  
+   - **Subject**: The old queen  
+   - **Object**: The princess  
+
+4. **Action**: `feels_pain`  
+   - **Emotional Link Type**: `non-romantic`  
+   - **Subject**: The princess  
+   - **Object`: The pea under the mattresses  
+
+5. **Action**: `marries`  
+   - **Emotional Link Type**: `romantic`  
+   - **Subject**: The prince  
+   - **Object**: The princess  
+
+6. **Action**: `places_in_museum`  
+   - **Emotional Link Type**: `non-romantic`  
+   - **Subject**: The kingdom's people  
+   - **Object`: The pea  
+
+**Tensions Identified**: None of the specified tension types (character_dead, life_at_risk, health_at_risk, prisoner) are present in this narrative.

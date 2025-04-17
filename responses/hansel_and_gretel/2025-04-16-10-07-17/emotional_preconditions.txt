@@ -1,0 +1,279 @@
+<think>
+Alright, so I need to figure out how to add preconditions related to emotional links for each action in the story. The user has given me a detailed example of what they expect, so I'll follow that structure.
+
+First, I need to go through each action and determine if there are any emotional links that serve as preconditions for that action. Emotional links can be either 'non-romantic' or 'romantic', but in this story, it's all non-romantic since it involves family members and other characters like the witch.
+
+The magnitude of these emotional links ranges from -3 to 3. Negative magnitudes indicate negative emotions like hatred or anger, while positive ones indicate love or affection. Zero would mean a neutral relationship, but I don't think that applies here.
+
+Let me start with the first action: 'argues' between the stepmother and father about abandoning the children. The stepmother is arguing because she wants to get rid of the children to save resources. Her emotional link towards the children is likely negative, maybe a magnitude of -3 (hatred). So, for this action, there's an emotional link from 'b' (stepmother) to 'a' (father and children), type non-romantic, magnitude -3.
+
+Next, Gretel weeps when she hears the plan. This is a direct reaction to the stepmother's plan, so Gretel has a negative emotional link towards the stepmother. Magnitude maybe -2 since it's fear or sadness but not extreme hatred. So, from 'a' (Gretel) to 'b' (stepmother), type non-romantic, magnitude -2.
+
+Hansel comforts Gretel because he cares about her. This is a positive emotional link between them. Maybe magnitude 3 since it's strong brotherly love. From 'a' (Hansel) to 'b' (Gretel).
+
+When Hansel gathers pebbles, there doesn't seem to be an emotional link precondition; it's more of a practical action.
+
+The stepmother abandons the children, which again stems from her negative feelings towards them. So same as before: non-romantic, magnitude -3 from 'b' (stepmother) to 'a' (children).
+
+Hansel and Gretel follow the pebbles home, which shows their resourcefulness but doesn't directly relate to an emotional link.
+
+In the second argument between stepmother and father, it's similar to the first. Stepmother wants to abandon them again, so same precondition applies: non-romantic, magnitude -3 from 'b' (stepmother) to 'a' (father and children).
+
+Hansel scatters breadcrumbs, no emotional link needed.
+
+Abandoning the children again means the stepmother's negative feelings are still a precondition.
+
+Witch captures Hansel. The witch's motivation is to eat him, so her emotional link towards him is negative, maybe magnitude -3 (intent to harm). So from 'a' (witch) to 'b' (Hansel).
+
+Imprisoning Hansel is part of the witch's plan, same as above.
+
+The witch tempts Gretel with food. This could be a mix of manipulation and desire, so her emotional link might be negative towards Gretel but perhaps not as extreme. Maybe magnitude -2.
+
+Gretel kills the witch out of fear and self-defense. Her emotional link towards the witch is negative, maybe magnitude -3 (fear/anger). So from 'a' (Gretel) to 'b' (witch).
+
+Escaping doesn't require an emotional link; it's a necessary action for survival.
+
+Returning home, Hansel and Gretel have positive feelings towards their father. Maybe magnitude 2 since they're relieved and happy to see him.
+
+I think I've covered all actions now, assigning the appropriate preconditions where necessary.
+</think>
+
+Here is the JSON object with preconditions added for each action:
+
+```json
+[
+    {
+        "action": "argues",
+        "n_characters": 2,
+        "subject": "stepmother",
+        "object": "father",
+        "emotional_link": "non-romantic",
+        "tension": "life_at_risk",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "b",
+                    "to": "a"
+                }
+            ]
+        }
+    },
+    {
+        "action": "weeps",
+        "n_characters": 1,
+        "subject": "Gretel",
+        "object": "-",
+        "emotional_link": "non-romantic",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -2,
+                    "from": "a",
+                    "to": "stepmother"
+                }
+            ]
+        }
+    },
+    {
+        "action": "comforts",
+        "n_characters": 2,
+        "subject": "Hansel",
+        "object": "Gretel",
+        "emotional_link": "non-romantic",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "gathers_pebbles",
+        "n_characters": 1,
+        "subject": "Hansel",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "abandons",
+        "n_characters": 4,
+        "subject": "stepmother",
+        "object": "children",
+        "emotional_link": "non-romantic",
+        "tension": "life_at_risk",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "b",
+                    "to": "a"
+                }
+            ]
+        }
+    },
+    {
+        "action": "follows_pebbles",
+        "n_characters": 2,
+        "subject": "Hansel and Gretel",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "argues",
+        "n_characters": 2,
+        "subject": "stepmother",
+        "object": "father",
+        "emotional_link": "non-romantic",
+        "tension": "life_at_risk",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "b",
+                    "to": "a"
+                }
+            ]
+        }
+    },
+    {
+        "action": "scatters_breadcrumbs",
+        "n_characters": 1,
+        "subject": "Hansel",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "abandons",
+        "n_characters": 4,
+        "subject": "stepmother",
+        "object": "children",
+        "emotional_link": "non-romantic",
+        "tension": "life_at_risk",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "b",
+                    "to": "a"
+                }
+            ]
+        }
+    },
+    {
+        "action": "captures",
+        "n_characters": 2,
+        "subject": "witch",
+        "object": "Hansel",
+        "emotional_link": "-",
+        "tension": "prisoner, health_at_risk",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "imprisons",
+        "n_characters": 2,
+        "subject": "witch",
+        "object": "Hansel",
+        "emotional_link": "-",
+        "tension": "prisoner",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "tempts",
+        "n_characters": 2,
+        "subject": "witch",
+        "object": "Gretel",
+        "emotional_link": "-",
+        "tension": "life_at_risk, health_at_risk",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "kills",
+        "n_characters": 1,
+        "subject": "Gretel",
+        "object": "witch",
+        "emotional_link": "-",
+        "tension": "character_dead",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "escapes",
+        "n_characters": 2,
+        "subject": "Hansel and Gretel",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "returns_home",
+        "n_characters": 2,
+        "subject": "Hansel and Gretel",
+        "object": "father",
+        "emotional_link": "non-romantic",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    }
+]
+```
+
+This JSON object now includes preconditions for each action where applicable, specifying the emotional links that must exist for the characters to perform those actions.

@@ -1,0 +1,296 @@
+<think>
+Alright, so I need to go through each action in the story and identify any preconditions related to emotional links. Emotional links can be either non-romantic or romantic, but in this case, it's definitely non-romantic since there are no romantic elements between Goldilocks and the Bears.
+
+First, let me recall what a precondition is in this context: it’s an emotional link that must exist for a character to perform a specific action. The magnitude ranges from -3 to 3, where negative values indicate dislike or hatred, and positive values indicate liking or affection.
+
+Starting with the first action: "leave_to_cool". This involves all three Bears leaving their porridge to cool. Since this is a collaborative action, it suggests that they trust each other. So, there might be a non-romantic emotional link of trust among them. The magnitude could be positive, say 2, because it's a moderate level of trust, not extremely high or low.
+
+Next, Goldilocks "enter_house". This action doesn’t directly involve another character, so no emotional links are required here. She’s just being curious or nosy, which doesn’t depend on any prior emotions towards the Bears.
+
+Then, she "taste_food" from Great Big Bear's bowl. For her to take this action, she must be curious about their porridge. This curiosity isn’t necessarily an emotional link; it's more about her personality trait. So, no preconditions here either.
+
+Moving on, she continues to taste Middle-sized Bear's and Little Wee Bear’s porridge. Each time, the same logic applies—curiosity drives these actions, not any specific emotional links towards the Bears. Therefore, no preconditions are needed for these actions.
+
+When Goldilocks "eat_food_all" from Little Wee Bear's bowl, she must have a dislike or indifference towards him to consume all his porridge. This could be an emotional link of non-romantic type with a magnitude of -1 (mild dislike).
+
+Next, she sits in Great Big Bear’s chair and finds it too hard. There’s no emotional aspect here; it's just about comfort, so no preconditions.
+
+Similarly, sitting in Middle-sized Bear’s chair is about her preference for softness, not emotions towards him. Again, no preconditions needed.
+
+However, when she breaks Little Wee Bear’s chair, this could stem from frustration or carelessness, indicating a negative emotional link. So, maybe non-romantic with magnitude -2 (some frustration).
+
+Goldilocks then sleeps in the bed of Great Big Bear and finds it too high. This is about comfort, not emotions.
+
+She tries Middle-sized Bear’s bed and it’s also uncomfortable for her. Again, no emotional preconditions here.
+
+Finally, she rests in Little Wee Bear’s bed because it's just right. There might be a mild positive emotional link here since she feels comfortable, so non-romantic with magnitude 1 (comfort).
+
+The Bears return home and express anger about their porridge. Great Big Bear notices his spoon in the porridge, Middle-sized Bear sees his, and Little Wee Bear finds his porridge all gone. Each of these actions requires that the Bears feel violated or angry towards Goldilocks. So, non-romantic emotional links with magnitude -2 (anger) from each Bear towards Goldilocks.
+
+They check their chairs and find them disturbed, leading to similar emotions—non-romantic, magnitude -2 from each Bear towards Goldilocks.
+
+Going upstairs, they discover their beds have been slept in. Great Big Bear’s bed is disarranged, Middle-sized Bear’s bolster is moved, and Little Wee Bear finds Goldilocks asleep. These discoveries again involve anger or violation, so non-romantic links with magnitude -2 from each Bear towards Goldilocks.
+
+When Little Wee Bear finally sees Goldilocks, it's a direct confrontation. He might feel shocked or scared, indicating another non-romantic link of fear, magnitude -3 (intense negative emotion) from him towards her.
+
+Goldilocks wakes up, sees the Bears, and gets scared. This would be a non-romantic emotional link of fear with magnitude -3 from her towards them.
+
+She escapes through the window, which is driven by fear—non-romantic, magnitude -3 from her towards the Bears.
+
+Finally, the Bears don’t see Goldilocks again, indicating perhaps relief or lingering anger. This could be a non-romantic link of mild distrust, magnitude -1 from each Bear towards her.
+
+So, compiling all these preconditions ensures that each action is grounded in the necessary emotional states of the characters involved.
+</think>
+
+Here's the JSON object with preconditions related to emotional links for each action:
+
+```json
+[
+  {
+    "action": "leave_to_cool",
+    "n_characters": 3,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 2,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "enter_house",
+    "n_characters": 1,
+    "subject": "Goldilocks",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": []
+    }
+  },
+  {
+    "action": "taste_food",
+    "n_characters": 2,
+    "subject": "Goldilocks",
+    "object": "Great Big Bear",
+    "preconditions": {
+      "emotional_links": []
+    }
+  },
+  {
+    "action": "taste_food",
+    "n_characters": 2,
+    "subject": "Goldilocks",
+    "object": "Middle-sized Bear",
+    "preconditions": {
+      "emotional_links": []
+    }
+  },
+  {
+    "action": "eat_food_all",
+    "n_characters": 2,
+    "subject": "Goldilocks",
+    "object": "Little Wee Bear",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -1,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "sit_in-chair",
+    "n_characters": 2,
+    "subject": "Goldilocks",
+    "object": "Great Big Bear",
+    "preconditions": {
+      "emotional_links": []
+    }
+  },
+  {
+    "action": "sit_in-chair",
+    "n_characters": 2,
+    "subject": "Goldilocks",
+    "object": "Middle-sized Bear",
+    "preconditions": {
+      "emotional_links": []
+    }
+  },
+  {
+    "action": "break_chair",
+    "n_characters": 2,
+    "subject": "Goldilocks",
+    "object": "Little Wee Bear",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -2,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "sleep_in-bed",
+    "n_characters": 1,
+    "subject": "Goldilocks",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 1,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "return_home",
+    "n_characters": 3,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": []
+    }
+  },
+  {
+    "action": "express_anger_towards",
+    "n_characters": 2,
+    "subject": "Great Big Bear",
+    "object": "Goldilocks",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -2,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "express_anger_towards",
+    "n_characters": 2,
+    "subject": "Middle-sized Bear",
+    "object": "Goldilocks",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -2,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "express_anger_towards",
+    "n_characters": 2,
+    "subject": "Little Wee Bear",
+    "object": "Goldilocks",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "discover_in_bed",
+    "n_characters": 4,
+    "subject": "Little Wee Bear",
+    "object": "Goldilocks",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -2,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "wake_up",
+    "n_characters": 1,
+    "subject": "Goldilocks",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": []
+    }
+  },
+  {
+    "action": "see_characters",
+    "n_characters": 4,
+    "subject": "Goldilocks",
+    "object": "Three Bears",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "escape",
+    "n_characters": 1,
+    "subject": "Goldilocks",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "not_see_again",
+    "n_characters": 3,
+    "subject": "-",
+    "object": "Goldilocks",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -1,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  }
+]
+```
+
+### Explanation:
+- **Emotional Links**: Each action now includes `preconditions` with `emotional_links` where necessary. These links indicate the emotional state required for a character to perform an action.
+- **Magnitudes**: Ranging from -3 (intense dislike) to 2 (trust), these values reflect the intensity of the emotional link.
+- **Sources and Targets**: Each link specifies who is feeling the emotion (`from`) and towards whom (`to`).
+
+This JSON object captures the necessary emotional preconditions for each action, providing a structured understanding of the characters' motivations.

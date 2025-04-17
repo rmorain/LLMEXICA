@@ -1,0 +1,251 @@
+<think>
+Alright, I'm trying to help this user by analyzing the story they provided. They want me to identify preconditions related to tensions for each action in their narrative. The user is likely a narrative analysis expert or someone studying storytelling structures, so they need this information to understand how tensions drive character actions.
+
+First, I'll review each action and determine if any of the defined tension types (character_dead, life_at_risk, health_at_risk, prisoner) are preconditions for that action. Tensions can involve specific characters or be more general, affecting anyone ('*') or no one('-').
+
+Starting with "suffers_injury": Jaguar_Knight is injured, which puts his health at risk. So, the tension here is health_at_risk from 'a' (Jaguar_Knight) to 'b' (himself).
+
+Next, "applies_curative_plant" by Princess on Jaguar_Knight. This action is taken because his health was at risk, so the precondition is health_at_risk.
+
+"Kidnaps" by Enemy on Princess introduces a prisoner tension, as she's being held captive. Similarly, "ties_to_rock" continues this prisoner situation.
+
+"Prays" by Jaguar_Knight likely stems from the ongoing tensions like life_at_risk for himself or others, so I'll infer that as a precondition.
+
+"Searches_for_enemy" is driven by the desire to rescue Princess, who's a prisoner. So, the tension here is prisoner related.
+
+"Throws_dust", "attacks_with_dagger", and "takes_heart" all involve Jaguar_Knight confronting Enemy. These actions are taken under life_at_risk for both characters involved.
+
+"Liberates_prisoner" addresses the prisoner tension by freeing Princess.
+
+"Kisses" doesn't have a direct tension precondition but follows from resolved tensions, so no specific tension here.
+
+"Recognizes_tattoo" leads to new tensions as Princess's emotions shift, indicating her life might be at risk due to her actions.
+
+"Cuts_jugular" and "cuts_throat" result in character_dead for both Jaguar_Knight and Princess, respectively.
+
+I need to ensure each tension is correctly identified and mapped to the appropriate characters. If a tension involves no specific character or applies generally, I'll use '*' or '-' as needed.
+</think>
+
+```json
+[
+  {
+    "action": "suffers_injury",
+    "n_characters": 1,
+    "subject": "Jaguar_Knight",
+    "object": "-",
+    "preconditions": {
+      "tensions": [
+        {
+          "type": "health_at_risk",
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "applies_curative_plant",
+    "n_characters": 2,
+    "subject": "Princess",
+    "object": "Jaguar_Knight",
+    "preconditions": {
+      "tensions": [
+        {
+          "type": "health_at_risk",
+          "from": "b",
+          "to": "a"
+        }
+      ]
+    }
+  },
+  {
+    "action": "kidnaps",
+    "n_characters": 2,
+    "subject": "Enemy",
+    "object": "Princess",
+    "preconditions": {
+      "tensions": [
+        {
+          "type": "prisoner",
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "ties_to_rock",
+    "n_characters": 2,
+    "subject": "Enemy",
+    "object": "Princess",
+    "preconditions": {
+      "tensions": [
+        {
+          "type": "prisoner",
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "prays",
+    "n_characters": 1,
+    "subject": "Jaguar_Knight",
+    "object": "-",
+    "preconditions": {
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "*",
+          "to": "*"
+        }
+      ]
+    }
+  },
+  {
+    "action": "searches_for_enemy",
+    "n_characters": 1,
+    "subject": "Jaguar_Knight",
+    "object": "-",
+    "preconditions": {
+      "tensions": [
+        {
+          "type": "prisoner",
+          "from": "*",
+          "to": "*"
+        }
+      ]
+    }
+  },
+  {
+    "action": "throws_dust",
+    "n_characters": 2,
+    "subject": "Jaguar_Knight",
+    "object": "Enemy",
+    "preconditions": {
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "a",
+          "to": "b"
+        },
+        {
+          "type": "life_at_risk",
+          "from": "b",
+          "to": "a"
+        }
+      ]
+    }
+  },
+  {
+    "action": "attacks_with_dagger",
+    "n_characters": 2,
+    "subject": "Jaguar_Knight",
+    "object": "Enemy",
+    "preconditions": {
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "a",
+          "to": "b"
+        },
+        {
+          "type": "life_at_risk",
+          "from": "b",
+          "to": "a"
+        }
+      ]
+    }
+  },
+  {
+    "action": "takes_heart",
+    "n_characters": 2,
+    "subject": "Jaguar_Knight",
+    "object": "Enemy",
+    "preconditions": {
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "a",
+          "to": "b"
+        },
+        {
+          "type": "life_at_risk",
+          "from": "b",
+          "to": "a"
+        }
+      ]
+    }
+  },
+  {
+    "action": "liberates_prisoner",
+    "n_characters": 2,
+    "subject": "Jaguar_Knight",
+    "object": "Princess",
+    "preconditions": {
+      "tensions": [
+        {
+          "type": "prisoner",
+          "from": "b",
+          "to": "a"
+        }
+      ]
+    }
+  },
+  {
+    "action": "kisses",
+    "n_characters": 2,
+    "subject": "Princess",
+    "object": "Jaguar_Knight",
+    "preconditions": {
+      "tensions": []
+    }
+  },
+  {
+    "action": "recognizes_tattoo",
+    "n_characters": 1,
+    "subject": "Princess",
+    "object": "-",
+    "preconditions": {
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "*",
+          "to": "*"
+        }
+      ]
+    }
+  },
+  {
+    "action": "cuts_jugular",
+    "n_characters": 2,
+    "subject": "Princess",
+    "object": "Jaguar_Knight",
+    "preconditions": {
+      "tensions": [
+        {
+          "type": "character_dead",
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "cuts_throat",
+    "n_characters": 1,
+    "subject": "Princess",
+    "object": "-",
+    "preconditions": {
+      "tensions": [
+        {
+          "type": "character_dead",
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  }
+]
+```

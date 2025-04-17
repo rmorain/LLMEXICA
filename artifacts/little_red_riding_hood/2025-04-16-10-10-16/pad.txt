@@ -1,0 +1,79 @@
+ACT cares_for 2
+PRE
+E a b +3 1
+POS
+E a b +3 1
+
+ACT cares_for 2
+PRE
+E a b +3 1
+POS
+E a b +3 1
+
+ACT sends_on_errand 2
+PRE
+E a b +3 1
+POS
+E a b +3 1
+
+ACT communicates_with 2
+POS
+T Lr - b
+
+ACT asks_about_whereabouts 2
+POS
+T Lr - b
+
+ACT reveals_information 2
+POS
+E b a -1 1
+
+ACT knocks_on_door 2
+PRE
+E a b -3 1
+POS
+E a b -3 1
+T Hr - b
+
+ACT falls_ill 1
+PRE
+T Hr a a
+POS
+T Hr a a
+
+ACT hides_identity 2
+POS
+E a b -3 1
+
+ACT enters_unknowingly 2
+POS
+E b a -3 1
+
+ACT eats_up 2
+POS
+T Ad - b
+
+ACT hides_in_bed 1
+POS
+T Lr * *
+
+ACT communicates_with 2
+POS
+T Lr - b
+
+ACT notices_something_unusual 2
+POS
+E a b -2 1
+
+ACT comments_on_appearance 2
+POS
+E a b -3 1
+
+ACT reveals_true_identity 1
+POS
+T Lr * *
+
+ACT eats_up 2
+POS
+T Ad - b
+

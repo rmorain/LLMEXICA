@@ -1,0 +1,16 @@
+STO
+stepmother argues father
+Gretel weeps stepmother
+Hansel comforts Gretel
+Hansel gathers_pebbles
+stepmother abandons children
+Hansel_and_Gretel follows_pebbles
+stepmother argues father
+Hansel scatters_breadcrumbs
+stepmother abandons children
+witch captures Hansel
+witch imprisons Hansel
+witch tempts Gretel
+Gretel kills witch
+Hansel_and_Gretel escapes
+Hansel_and_Gretel returns_home father

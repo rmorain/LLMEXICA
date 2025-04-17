@@ -1,0 +1,122 @@
+<think>
+Alright, so I'm trying to analyze this story about the princess and the frog. The user wants me to extract actions related to emotional links and tensions. Let me break down the story step by step.
+
+First, the princess loses her golden ball down a well. She starts crying because she's upset, which shows her emotional state. Then a frog appears and offers help in exchange for companionship. This sets up a non-romantic emotional link at first since it's more about friendship or companionship.
+
+When the frog retrieves the ball, the princess is relieved but doesn't keep her promise. She runs away, showing that she doesn't value their agreement emotionally yet. The next day, the frog comes to the castle and insists on joining her, which creates tension because she's clearly uncomfortable. This is where the emotional link starts turning into a romantic one as the story progresses.
+
+The king tells her to let the frog in, so she reluctantly does. They sit together, eat, and he wants to sleep in her bed. She's hesitant, but eventually, after throwing him against the wall, he transforms into a prince. This is where the romantic emotional link solidifies because they end up getting married.
+
+Throughout the story, there are elements of tension like the frog's persistence, the princess's fear, and the transformation breaking the spell. These tensions keep the narrative engaging and drive the plot forward.
+
+I need to make sure each action in JSON correctly captures these moments, focusing on emotional links as non-romantic initially and then romantic. Also, note the tensions such as life_at_risk when the frog is in the well or prisoner as he's trapped until the spell breaks.
+</think>
+
+Here is the structured analysis of the story:
+
+```json
+[
+    {
+        "action": "loses_ball",
+        "n_characters": 1,
+        "subject": "princess",
+        "object": "-"
+    },
+    {
+        "action": "cries",
+        "n_characters": 1,
+        "subject": "princess",
+        "object": "-"
+    },
+    {
+        "action": "promises_companionship",
+        "n_characters": 2,
+        "subject": "princess",
+        "object": "frog"
+    },
+    {
+        "action": "retrieves_ball",
+        "n_characters": 1,
+        "subject": "frog",
+        "object": "-"
+    },
+    {
+        "action": "runs_away",
+        "n_characters": 1,
+        "subject": "princess",
+        "object": "-"
+    },
+    {
+        "action": "knocks_on_door",
+        "n_characters": 1,
+        "subject": "frog",
+        "object": "princess"
+    },
+    {
+        "action": "refuses_entry",
+        "n_characters": 2,
+        "subject": "princess",
+        "object": "frog"
+    },
+    {
+        "action": "commands_obedience",
+        "n_characters": 2,
+        "subject": "king",
+        "object": "princess"
+    },
+    {
+        "action": "opens_door",
+        "n_characters": 1,
+        "subject": "princess",
+        "object": "-"
+    },
+    {
+        "action": "enters_castle",
+        "n_characters": 1,
+        "subject": "frog",
+        "object": "-"
+    },
+    {
+        "action": "requests_lift",
+        "n_characters": 2,
+        "subject": "frog",
+        "object": "princess"
+    },
+    {
+        "action": "lifts_to_table",
+        "n_characters": 2,
+        "subject": "princess",
+        "object": "frog"
+    },
+    {
+        "action": "requests_food",
+        "n_characters": 2,
+        "subject": "frog",
+        "object": "princess"
+    },
+    {
+        "action": "shares_meal",
+        "n_characters": 2,
+        "subject": "princess",
+        "object": "frog"
+    },
+    {
+        "action": "requests_sleep",
+        "n_characters": 2,
+        "subject": "frog",
+        "object": "princess"
+    },
+    {
+        "action": "throws_against_wall",
+        "n_characters": 2,
+        "subject": "princess",
+        "object": "frog"
+    },
+    {
+        "action": "transforms_into_prince",
+        "n_characters": 1,
+        "subject": "frog",
+        "object": "-"
+    }
+]
+```

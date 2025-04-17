@@ -1,0 +1,534 @@
+
+Alright, so I need to figure out how to add postconditions for each action in the story of "Little Red Riding Hood." The user has provided a list of actions with preconditions related to both emotional links and tensions. Now, they want me to identify or infer the changes that result from these actions—these are called postconditions.
+
+Postconditions can affect either emotional links or tensions. Emotional links might become stronger or weaker after an action, and tensions might be resolved or exacerbated. For example, when the wolf attacks someone, it not only creates a `life_at_risk` tension but also likely worsens the emotional link between the characters involved.
+
+I'll go through each action one by one and determine what changes occur because of that action. If an action leads to a positive outcome, like expressing affection, the emotional links might strengthen. Conversely, if an action has a negative impact, like deception or attack, the emotional links could weaken or turn negative, and tensions might increase.
+
+For tensions, I need to see if they are resolved by the action or if new tensions are introduced. For instance, when the wolf eats the grandmother, it results in `character_dead`, which is a significant tension that can't be easily resolved unless there's some magical intervention in the story.
+
+I also need to ensure that postconditions don't repeat preconditions. If a precondition was a certain emotional link or tension, the postcondition should reflect a change from that state. For example, if a precondition was `life_at_risk`, a postcondition might either resolve it with `life_normal` or escalate it.
+
+I'll structure this information in JSON format as per the user's instructions, adding both `emotional_links` and `tensions` arrays under `postconditions`. Each entry will detail how these elements change as a result of the action. If an action doesn't lead to any changes in emotional links or tensions, I'll note that accordingly.
+
+Finally, I'll make sure that for each postcondition, the 'from' and 'to' are correctly assigned to reflect which characters are affected by the change. This helps in maintaining clarity on how relationships and risks evolve throughout the story.
+</think>
+
+Here is the updated JSON object with postconditions:
+
+```json
+[
+    {
+        "action": "greet",
+        "n_characters": 2,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [],
+            "tensions": []
+        },
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": []
+        }
+    },
+    {
+        "action": "express_affection",
+        "n_characters": 2,
+        "subject": "mother",
+        "object": "Little Red Riding Hood",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": []
+        },
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 4,
+                    "from": "b",
+                    "to": "a"
+                }
+            ],
+            "tensions": []
+        }
+    },
+    {
+        "action": "express_affection",
+        "n_characters": 2,
+        "subject": "grandmother",
+        "object": "Little Red Riding Hood",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": []
+        },
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 4,
+                    "from": "b",
+                    "to": "a"
+                }
+            ],
+            "tensions": []
+        }
+    },
+    {
+        "action": "give_task",
+        "n_characters": 2,
+        "subject": "mother",
+        "object": "Little Red Riding Hood",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": []
+        },
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": []
+        }
+    },
+    {
+        "action": "journey",
+        "n_characters": 1,
+        "subject": "Little Red Riding Hood",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [],
+            "tensions": []
+        },
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": []
+        }
+    },
+    {
+        "action": "greet",
+        "n_characters": 2,
+        "subject": "wolf",
+        "object": "Little Red Riding Hood",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        },
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": []
+        }
+    },
+    {
+        "action": "share_information",
+        "n_characters": 2,
+        "subject": "Little Red Riding Hood",
+        "object": "wolf",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "b",
+                    "to": "a"
+                }
+            ],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "b",
+                    "to": "a"
+                }
+            ]
+        },
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": []
+        }
+    },
+    {
+        "action": "plan_deception",
+        "n_characters": 1,
+        "subject": "wolf",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "Little Red Riding Hood"
+                }
+            ],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "a",
+                    "to": "Little Red Riding Hood"
+                }
+            ]
+        },
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": []
+        }
+    },
+    {
+        "action": "journey",
+        "n_characters": 2,
+        "subject": "wolf",
+        "object": "Little Red Riding Hood",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        },
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": []
+        }
+    },
+    {
+        "action": "gather_items",
+        "n_characters": 1,
+        "subject": "Little Red Riding Hood",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [],
+            "tensions": []
+        },
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": []
+        }
+    },
+    {
+        "action": "arrive",
+        "n_characters": 1,
+        "subject": "wolf",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "grandmother"
+                }
+            ],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "a",
+                    "to": "grandmother"
+                }
+            ]
+        },
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": []
+        }
+    },
+    {
+        "action": "knock_on_door",
+        "n_characters": 2,
+        "subject": "wolf",
+        "object": "grandmother",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        },
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": []
+        }
+    },
+    {
+        "action": "deceive",
+        "n_characters": 2,
+        "subject": "wolf",
+        "object": "grandmother",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        },
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": []
+        }
+    },
+    {
+        "action": "enter",
+        "n_characters": 2,
+        "subject": "wolf",
+        "object": "grandmother's house",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "grandmother"
+                }
+            ],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "a",
+                    "to": "grandmother"
+                }
+            ]
+        },
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": []
+        }
+    },
+    {
+        "action": "attack",
+        "n_characters": 2,
+        "subject": "wolf",
+        "object": "grandmother",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": [
+                {
+                    "type": "character_dead",
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        },
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": []
+        }
+    },
+    {
+        "action": "hide",
+        "n_characters": 1,
+        "subject": "wolf",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "Little Red Riding Hood"
+                }
+            ],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "a",
+                    "to": "Little Red Riding Hood"
+                }
+            ]
+        },
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": []
+        }
+    },
+    {
+        "action": "knock_on_door",
+        "n_characters": 2,
+        "subject": "Little Red Riding Hood",
+        "object": "grandmother's house",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": []
+        },
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": []
+        }
+    },
+    {
+        "action": "deceive",
+        "n_characters": 2,
+        "subject": "wolf",
+        "object": "Little Red Riding Hood",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        },
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": []
+        }
+    },
+    {
+        "action": "enter",
+        "n_characters": 2,
+        "subject": "Little Red Riding Hood",
+        "object": "grandmother's house",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": []
+        },
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": []
+        }
+    },
+    {
+        "action": "question",
+        "n_characters": 2,
+        "subject": "Little Red Riding Hood",
+        "object": "wolf",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "b",
+                    "to": "a"
+                }
+            ],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "b",
+                    "to": "a"
+                }
+            ]
+        },
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": []
+        }
+    },
+    {
+        "action": "attack",
+        "n_characters": 2,
+        "subject": "wolf",
+        "object": "Little Red Riding Hood",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        },
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": []
+        }
+    }
+]
+```

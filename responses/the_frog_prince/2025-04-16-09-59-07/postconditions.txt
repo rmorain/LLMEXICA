@@ -1,0 +1,490 @@
+
+Okay, so I need to go through each action in the story again, this time identifying postconditions related to both emotional links and tensions. Postconditions are changes that result from the action, either altering an existing emotional link or resolving a tension.
+
+Starting with the first action:
+
+1. **Action: cries**
+   - Subject: princess
+   - Object: -
+   - n_characters: 1
+
+   The princess is crying because she lost her golden ball. This action likely intensifies her emotional state, but since there's no other character involved, there's no change in emotional links between characters. However, this could set up a tension where her emotional well-being is at risk.
+
+2. **Action: offers_help**
+   - Subject: frog
+   - Object: princess
+   - n_characters: 2
+
+   The frog offering help can positively affect the princess's emotional link towards him, possibly making her more grateful or positive. This could reduce any existing tensions related to her being upset.
+
+3. **Action: promises_companionship**
+   - Subject: princess
+   - Object: frog
+   - n_characters: 2
+
+   The princess agreeing to companionship might create a new emotional link, perhaps of cautious acceptance towards the frog. No immediate tension resolution here since the promise is just made.
+
+4. **Action: brings_ball_back**
+   - Subject: frog
+   - Object: princess
+   - n_characters: 2
+
+   Retrieving the ball likely reduces the princess's distress, resolving any `health_at_risk` tension from her crying earlier. Her emotional link might improve towards the frog due to his help.
+
+5. **Action: runs_away**
+   - Subject: princess
+   - Object: -
+   - n_characters: 1
+
+   The princess leaving without thanking the frog could create a negative emotional link towards him, possibly making the frog feel rejected or unappreciated.
+
+6. **Action: arrives_at_castle**
+   - Subject: frog
+   - Object: princess
+   - n_characters: 2
+
+   The frog arriving at the castle might introduce a new tension as the princess is now faced with keeping her promise, possibly feeling trapped or anxious.
+
+7. **Action: knocks_on_door**
+   - Subject: frog
+   - Object: princess
+   - n_characters: 2
+
+   Knocking on the door could increase the princess's anxiety, maintaining or intensifying any existing tensions related to her obligation to the frog.
+
+8. **Action: opens_door**
+   - Subject: princess
+   - Object: frog
+   - n_characters: 2
+
+   Opening the door might slightly reduce tension as communication is initiated, but it doesn't resolve the underlying issue of the promise.
+
+9. **Action: sits_together**
+   - Subject: princess
+   - Object: frog
+   - n_characters: 2
+
+   Sitting together could start to build a tentative emotional link between them, though it might be strained due to the circumstances.
+
+10. **Action: eats_together**
+    - Subject: princess
+    - Object: frog
+    - n_characters: 2
+
+    Eating together might slightly improve their emotional link as they spend more time together, though the princess's reluctance could limit this effect.
+
+11. **Action: demands_lift**
+    - Subject: frog
+    - Object: princess
+    - n_characters: 2
+
+    The frog demanding to be lifted onto the table could create or intensify a negative emotional link from the princess towards him due to his persistence.
+
+12. **Action: lifts**
+    - Subject: princess
+    - Object: frog
+    - n_characters: 2
+
+    Lifting the frog might not significantly change their emotional links unless it's done reluctantly, which could maintain or worsen the princess's negative feelings.
+
+13. **Action: asks_for_bed**
+    - Subject: frog
+    - Object: princess
+    - n_characters: 2
+
+    Asking to share her bed likely increases the princess's discomfort and anxiety, potentially creating a new tension related to her feeling trapped or violated.
+
+14. **Action: carries_upstairs**
+    - Subject: princess
+    - Object: frog
+    - n_characters: 2
+
+    Carrying the frog upstairs continues the situation without necessarily resolving any tensions; it might maintain the existing emotional links and tensions.
+
+15. **Action: throws_against_wall**
+    - Subject: princess
+    - Object: frog
+    - n_characters: 2
+
+    Throwing the frog against the wall likely results in immediate resolution of tension as the frog is transformed into a prince, eliminating the `prisoner` status and any related risks.
+
+16. **Action: transforms_into_prince**
+    - Subject: frog
+    - Object: -
+    - n_characters: 1
+
+    The transformation resolves all previous tensions related to the frog being a prisoner or any risks associated with his presence.
+
+17. **Action: hears_heart_cracking**
+    - Subject: Henry
+    - Object: princess
+    - n_characters: 2
+
+    Henry's heart cracking indicates ongoing emotional distress, so this action doesn't resolve any tensions but might highlight his loyalty and concern for the prince.
+</think>
+
+```json
+[
+  {
+    "action": "cries",
+    "n_characters": 1,
+    "subject": "princess",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": [
+        {
+          "type": "health_at_risk"
+        }
+      ]
+    }
+  },
+  {
+    "action": "offers_help",
+    "n_characters": 2,
+    "subject": "frog",
+    "object": "princess",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 1,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": []
+    }
+  },
+  {
+    "action": "promises_companionship",
+    "n_characters": 2,
+    "subject": "princess",
+    "object": "frog",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 1,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "brings_ball_back",
+    "n_characters": 2,
+    "subject": "frog",
+    "object": "princess",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 2,
+          "from": "b",
+          "to": "a"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "health_normal"
+        }
+      ]
+    }
+  },
+  {
+    "action": "runs_away",
+    "n_characters": 1,
+    "subject": "princess",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -2,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": []
+    }
+  },
+  {
+    "action": "arrives_at_castle",
+    "n_characters": 2,
+    "subject": "frog",
+    "object": "princess",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 1,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": [
+        {
+          "type": "prisoner"
+        }
+      ]
+    }
+  },
+  {
+    "action": "knocks_on_door",
+    "n_characters": 2,
+    "subject": "frog",
+    "object": "princess",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 1,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": [
+        {
+          "type": "prisoner"
+        }
+      ]
+    }
+  },
+  {
+    "action": "opens_door",
+    "n_characters": 2,
+    "subject": "princess",
+    "object": "frog",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": []
+    }
+  },
+  {
+    "action": "sits_together",
+    "n_characters": 2,
+    "subject": "princess",
+    "object": "frog",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 1,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "eats_together",
+    "n_characters": 2,
+    "subject": "princess",
+    "object": "frog",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 1,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "demands_lift",
+    "n_characters": 2,
+    "subject": "frog",
+    "object": "princess",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -1,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "lifts",
+    "n_characters": 2,
+    "subject": "princess",
+    "object": "frog",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -1,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": []
+    }
+  },
+  {
+    "action": "asks_for_bed",
+    "n_characters": 2,
+    "subject": "frog",
+    "object": "princess",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": [
+        {
+          "type": "prisoner"
+        }
+      ]
+    }
+  },
+  {
+    "action": "carries_upstairs",
+    "n_characters": 2,
+    "subject": "princess",
+    "object": "frog",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": []
+    }
+  },
+  {
+    "action": "throws_against_wall",
+    "n_characters": 2,
+    "subject": "princess",
+    "object": "frog",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": [
+        {
+          "type": "prisoner_freed"
+        }
+      ]
+    }
+  },
+  {
+    "action": "transforms_into_prince",
+    "n_characters": 1,
+    "subject": "frog",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "prisoner_freed"
+        }
+      ]
+    }
+  },
+  {
+    "action": "hears_heart_cracking",
+    "n_characters": 2,
+    "subject": "Henry",
+    "object": "princess",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": [
+        {
+          "type": "health_normal"
+        }
+      ]
+    }
+  }
+]
+```

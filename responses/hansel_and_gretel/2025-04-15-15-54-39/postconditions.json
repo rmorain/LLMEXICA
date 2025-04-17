@@ -1,0 +1,456 @@
+
+Alright, I need to determine the postconditions for each action in the story of Hansel and Gretel. Postconditions involve changes to emotional links or tensions resulting from the action. Each action must have at least one postcondition, and if there were preconditions, the postconditions should not repeat them.
+
+Starting with "face_poverty": This sets up initial negative emotions towards the situation but doesn't resolve any tension yet. It creates a non-romantic emotional link of magnitude -1 from the family to their circumstances.
+
+"Plan_abandonment": The stepmother's plan increases her negative feelings towards the children, strengthening her hatred (magnitude -3). This introduces `life_at_risk` and `health_at_risk` tensions.
+
+"Gather_pebbles": Hansel's action builds Gretel's trust in him, creating a positive emotional link. It slightly alleviates their `health_at_risk` tension by giving them hope.
+
+"Gretel weeps": Her crying intensifies her fear, strengthening the negative emotional link towards the stepmother (magnitude -3). The `life_at_risk` and `health_at_risk` tensions persist.
+
+"Hansel comforts Gretel": Comforting strengthens their bond, creating a positive emotional link from Gretel to Hansel. This slightly reduces the `life_at_risk` tension as they feel supported.
+
+"Abandon_children": The father's action increases guilt towards the children (magnitude -2) and resentment towards his wife (magnitude -1). The `life_at_risk` tension remains.
+
+"Leave_trail": Hansel's precautionary measure builds Gretel's trust, creating a positive emotional link. It slightly reduces the `life_at_risk` tension due to their plan.
+
+"Lose_way": This increases fear and mistrust in each other (magnitude -2). The `life_at_risk` and `health_at_risk` tensions intensify.
+
+"Find_house": Discovering the house brings hope, creating a positive emotional link (magnitude 1) towards the house. It slightly reduces the `life_at_risk` tension.
+
+"Witch captures them": The witch's capture introduces `prisoner` and maintains `life_at_risk` tensions. Gretel develops fear (magnitude -2) towards the witch.
+
+"Imprison Hansel": Being imprisoned increases Gretel's fear (magnitude -3) towards the witch. The `prisoner` tension is introduced for Hansel.
+
+"Force Gretel to work": This maintains the `prisoner` and `health_at_risk` tensions, with Gretel feeling forced into labor.
+
+"Plan_escape": Planning their escape builds determination in Gretel, creating a positive emotional link towards Hansel. It introduces hope of resolving the `prisoner` tension.
+
+"Kill_witch": Killing the witch resolves the `prisoner` and `life_at_risk` tensions (using `prisoner_freed` and `life_normal`). Gretel feels relief and happiness.
+
+"Free Hansel": This action resolves the `prisoner` tension for Hansel, using `prisoner_freed`. He feels relieved.
+
+"Return_home": Returning home resolves all remaining tensions (`life_normal`, `health_normal`) and strengthens positive emotional links among the family.
+
+For each action, I'll determine how it affects emotional links and tensions, ensuring that postconditions reflect these changes without repeating preconditions.
+</think>
+
+```json
+[
+  {
+    "action": "face_poverty",
+    "n_characters": 4,
+    "subject": "-",
+    "object": "-",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -1,
+          "from": "*",
+          "to": "-"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "plan_abandonment",
+    "n_characters": 2,
+    "subject": "stepmother",
+    "object": "father",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -3,
+          "from": "stepmother",
+          "to": "children"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "*",
+          "to": "*"
+        },
+        {
+          "type": "health_at_risk",
+          "from": "*",
+          "to": "*"
+        }
+      ]
+    }
+  },
+  {
+    "action": "gather_pebbles",
+    "n_characters": 1,
+    "subject": "Hansel",
+    "object": "-",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 2,
+          "from": "Gretel",
+          "to": "Hansel"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "health_normal",
+          "from": "*",
+          "to": "*"
+        }
+      ]
+    }
+  },
+  {
+    "action": "weep",
+    "n_characters": 1,
+    "subject": "Gretel",
+    "object": "-",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -3,
+          "from": "Gretel",
+          "to": "stepmother"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "*",
+          "to": "*"
+        },
+        {
+          "type": "health_at_risk",
+          "from": "*",
+          "to": "*"
+        }
+      ]
+    }
+  },
+  {
+    "action": "comfort",
+    "n_characters": 2,
+    "subject": "Hansel",
+    "object": "Gretel",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 3,
+          "from": "Gretel",
+          "to": "Hansel"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_normal",
+          "from": "*",
+          "to": "*"
+        }
+      ]
+    }
+  },
+  {
+    "action": "abandon_children",
+    "n_characters": 4,
+    "subject": "father",
+    "object": "children",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -2,
+          "from": "father",
+          "to": "children"
+        },
+        {
+          "type": "non-romantic",
+          "magnitude": -1,
+          "from": "father",
+          "to": "wife"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "*",
+          "to": "*"
+        }
+      ]
+    }
+  },
+  {
+    "action": "leave_trail",
+    "n_characters": 1,
+    "subject": "Hansel",
+    "object": "-",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 2,
+          "from": "Gretel",
+          "to": "Hansel"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_normal",
+          "from": "*",
+          "to": "*"
+        }
+      ]
+    }
+  },
+  {
+    "action": "lose_way",
+    "n_characters": 2,
+    "subject": "-",
+    "object": "-",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -2,
+          "from": "Hansel",
+          "to": "Gretel"
+        },
+        {
+          "type": "non-romantic",
+          "magnitude": -2,
+          "from": "Gretel",
+          "to": "Hansel"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "*",
+          "to": "*"
+        },
+        {
+          "type": "health_at_risk",
+          "from": "*",
+          "to": "*"
+        }
+      ]
+    }
+  },
+  {
+    "action": "find_house",
+    "n_characters": 2,
+    "subject": "-",
+    "object": "-",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 1,
+          "from": "*",
+          "to": "-"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_normal",
+          "from": "*",
+          "to": "*"
+        }
+      ]
+    }
+  },
+  {
+    "action": "capture_children",
+    "n_characters": 3,
+    "subject": "witch",
+    "object": "children",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -2,
+          "from": "Gretel",
+          "to": "witch"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "prisoner",
+          "from": "*",
+          "to": "*"
+        },
+        {
+          "type": "life_at_risk",
+          "from": "*",
+          "to": "*"
+        }
+      ]
+    }
+  },
+  {
+    "action": "imprison",
+    "n_characters": 2,
+    "subject": "witch",
+    "object": "Hansel",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -3,
+          "from": "Gretel",
+          "to": "witch"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "prisoner",
+          "from": "*",
+          "to": "*"
+        }
+      ]
+    }
+  },
+  {
+    "action": "force_work",
+    "n_characters": 2,
+    "subject": "witch",
+    "object": "Gretel",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -3,
+          "from": "Gretel",
+          "to": "witch"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "prisoner",
+          "from": "*",
+          "to": "*"
+        },
+        {
+          "type": "health_at_risk",
+          "from": "*",
+          "to": "*"
+        }
+      ]
+    }
+  },
+  {
+    "action": "plan_escape",
+    "n_characters": 2,
+    "subject": "Gretel",
+    "object": "Hansel",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 3,
+          "from": "Gretel",
+          "to": "Hansel"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "prisoner_freed",
+          "from": "*",
+          "to": "*"
+        },
+        {
+          "type": "life_normal",
+          "from": "*",
+          "to": "*"
+        }
+      ]
+    }
+  },
+  {
+    "action": "kill_witch",
+    "n_characters": 2,
+    "subject": "Gretel",
+    "object": "witch",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -3,
+          "from": "Gretel",
+          "to": "witch"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "prisoner_freed",
+          "from": "*",
+          "to": "*"
+        },
+        {
+          "type": "life_normal",
+          "from": "*",
+          "to": "*"
+        }
+      ]
+    }
+  },
+  {
+    "action": "free_hansel",
+    "n_characters": 2,
+    "subject": "Gretel",
+    "object": "Hansel",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 3,
+          "from": "Hansel",
+          "to": "Gretel"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "prisoner_freed",
+          "from": "*",
+          "to": "*"
+        }
+      ]
+    }
+  },
+  {
+    "action": "return_home",
+    "n_characters": 2,
+    "subject": "-",
+    "object": "-",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 3,
+          "from": "*",
+          "to": "*"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_normal",
+          "from": "*",
+          "to": "*"
+        },
+        {
+          "type": "health_normal",
+          "from": "*",
+          "to": "*"
+        }
+      ]
+    }
+  }
+]
+```

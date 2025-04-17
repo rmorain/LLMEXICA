@@ -1,0 +1,189 @@
+[
+    {
+        "action": "hears_despair",
+        "n_characters": 2,
+        "subject": "Cat",
+        "object": "Marquis_of_Carabas",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "tricks_animal",
+        "n_characters": 1,
+        "subject": "Cat",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "presents_gift",
+        "n_characters": 2,
+        "subject": "Cat",
+        "object": "King",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "tricks_animal",
+        "n_characters": 1,
+        "subject": "Cat",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "bathes_master",
+        "n_characters": 2,
+        "subject": "Marquis_of_Carabas",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "cries_help",
+        "n_characters": 1,
+        "subject": "Cat",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "receives_clothes",
+        "n_characters": 2,
+        "subject": "King",
+        "object": "Marquis_of_Carabas",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "falls_in_love",
+        "n_characters": 2,
+        "subject": "Princess",
+        "object": "Marquis_of_Carabas",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "romantic",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "threatens_workers",
+        "n_characters": 1,
+        "subject": "Cat",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "transforms_mouse",
+        "n_characters": 1,
+        "subject": "Ogre",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "eats_ogre",
+        "n_characters": 2,
+        "subject": "Cat",
+        "object": "Ogre",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "invites_castle",
+        "n_characters": 2,
+        "subject": "King",
+        "object": "Marquis_of_Carabas",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "marries_princess",
+        "n_characters": 2,
+        "subject": "Marquis_of_Carabas",
+        "object": "Princess",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "romantic",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    }
+]

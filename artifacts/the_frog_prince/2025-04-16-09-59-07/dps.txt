@@ -1,0 +1,14 @@
+STO
+princess cries
+frog offers_help princess
+princess promises_companionship frog
+frog brings_ball_back princess
+frog arrives_at_castle princess
+frog knocks_on_door princess
+princess sits_together frog
+princess eats_together frog
+frog demands_lift princess
+frog asks_for_bed princess
+princess throws_against_wall frog
+frog transforms_into_prince
+Henry hears_heart_cracking princess

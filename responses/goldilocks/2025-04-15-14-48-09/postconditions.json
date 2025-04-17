@@ -1,0 +1,48 @@
+<think>
+Alright, I need to figure out how to identify or infer postconditions for each action in the story. The user provided a story about Goldilocks and the Three Bears, and previously, we identified one action: "goldilocks_jumps_out_window" with tension type "life_at_risk".
+
+First, I should understand what postconditions are. They are changes to emotional links or tensions caused by the action. At least one postcondition is required for each action, and they must not be the same as preconditions if any exist.
+
+For this action, Goldilocks jumps out the window because her life was at risk. Now, I need to determine what happens after she performs this action. Since she successfully escapes, it likely resolves the tension of her life being at risk.
+
+Additionally, jumping out the window might cause her some injury or harm, which could introduce a new tension related to her health being at risk.
+
+Regarding emotional links, there were no pre-existing emotional connections between Goldilocks and the Bears, so this action doesn't create any new ones. However, the Bears discovering that someone was in their house and ate their porridge might lead them to develop negative feelings towards Goldilocks, fearing future intrusions.
+
+So, the postconditions should include resolving the "life_at_risk" tension with a "life_normal" state for Goldilocks, indicating her life is no longer in immediate danger. Additionally, it could introduce a new tension of "health_at_risk" if she was injured from the fall. Lastly, the Bears might develop a negative emotional link towards Goldilocks due to the invasion and destruction of their property.
+
+I need to structure this in JSON format under `postconditions` with both `emotional_links` and `tensions` arrays.
+</think>
+
+```json
+[
+    {
+        "action": "goldilocks_jumps_out_window",
+        "n_characters": 1,
+        "subject": "Goldilocks",
+        "object": "-",
+        "type": "tension",
+        "tension_type": "life_at_risk",
+        "preconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "a",
+                    "to": "a"
+                }
+            ]
+        },
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "life_normal",
+                    "from": "a",
+                    "to": "a"
+                }
+            ]
+        }
+    }
+]
+```

@@ -1,0 +1,35 @@
+<think>
+Okay, I need to analyze this story about Goldilocks and the Three Bears. The user wants me to extract actions related to emotional links (friendship or love) and tensions like character death, life at risk, health at risk, or prisoner.
+
+First, I'll read through the story carefully. It's a classic tale where Goldilocks enters the bears' house, eats their porridge, sits in their chairs, sleeps in their bed, and then gets discovered. The Bears are upset but don't seem to harm her; she escapes by jumping out the window.
+
+Looking for emotional links: There doesn't seem to be any friendship or romantic love here. Goldilocks is a trespasser, and the bears are just trying to protect their home. So maybe there's no significant emotional link actions here. I should note that.
+
+Now, checking for tensions. Let's see:
+
+- Character_dead: No one dies in this story.
+- Life_at_risk: When Goldilocks jumps out the window, her life could be at risk. She might have broken her neck or gotten lost, but it's not explicitly stated she died. So maybe this counts as life_at_risk.
+- Health_at_risk: Not really, unless the fall is considered a health risk. But the story doesn't specify injuries.
+- Prisoner: No one is imprisoned here.
+
+So the main tension seems to be when Goldilocks' life is at risk during her escape.
+
+Now, actions related to emotional links or tensions. Since there are no emotional links, I'll focus on the tension action where her life is at risk.
+
+I should structure this in JSON format with each action having subject, object, n_characters, and the type (either emotional_link or tension). In this case, the only relevant action is Goldilocks jumping out the window, which puts her life at risk.
+
+So I'll create one JSON object for that action. The subject is Goldilocks, no object since she's acting on herself, and n_characters is 1.
+</think>
+
+```json
+[
+    {
+        "action": "goldilocks_jumps_out_window",
+        "n_characters": 1,
+        "subject": "Goldilocks",
+        "object": "-",
+        "type": "tension",
+        "tension_type": "life_at_risk"
+    }
+]
+```

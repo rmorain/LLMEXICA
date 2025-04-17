@@ -1,7 +1,7 @@
 import json
 import os
 
-EMOTIONAL_LINK_TYPES = {"friendship": 1, "love": 2}
+EMOTIONAL_LINK_TYPES = {"non-romantic": 1, "romantic": 2}
 
 TENSION_TYPES = {
     "character_dead": "Ad",

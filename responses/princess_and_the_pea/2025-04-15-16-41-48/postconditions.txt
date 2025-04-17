@@ -1,0 +1,156 @@
+
+
+To identify postconditions for each action, I need to consider how each action affects the emotional links and tensions. Since this story doesn't involve any of the specified tensions, the focus will primarily be on changes to emotional links.
+
+1. **Desires**:
+   - The prince's desire for a real princess sets up a romantic interest but doesn't immediately change an emotional link until he meets the princess.
+
+2. **Arrives**:
+   - The princess arriving creates an opportunity for the prince to assess her, potentially leading to a positive emotional link if she proves herself.
+
+3. **Tests Sensitivity**:
+   - This action verifies the princess's claim, which can strengthen the prince's belief and romantic interest in her.
+
+4. **Feels Pain**:
+   - The princess feeling pain from the pea confirms her sensitivity, reinforcing the prince's perception of her as a real princess, thus enhancing their emotional link.
+
+5. **Marries**:
+   - The marriage solidifies the romantic relationship between the prince and princess, creating a strong positive emotional bond.
+
+6. **Places in Museum**:
+   - Placing the pea in the museum commemorates the event, leaving a positive legacy but not directly affecting emotional links.
+
+Here's how I'll structure each action with its postconditions:
+
+```json
+[
+  {
+    "action": "desires",
+    "n_characters": 1,
+    "subject": "prince",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "romantic",
+          "magnitude": 2,
+          "from": "prince",
+          "to": "princess"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "arrives",
+    "n_characters": 1,
+    "subject": "princess",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 1,
+          "from": "princess",
+          "to": "kingdom"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "tests_sensitivity",
+    "n_characters": 2,
+    "subject": "queen",
+    "object": "princess",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 1,
+          "from": "queen",
+          "to": "princess"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "feels_pain",
+    "n_characters": 1,
+    "subject": "princess",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -1,
+          "from": "princess",
+          "to": "queen"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "marries",
+    "n_characters": 2,
+    "subject": "prince",
+    "object": "princess",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "romantic",
+          "magnitude": 3,
+          "from": "prince",
+          "to": "princess"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "places_in_museum",
+    "n_characters": 2,
+    "subject": "kingdom's people",
+    "object": "pea",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 1,
+          "from": "kingdom's people",
+          "to": "pea"
+        }
+      ],
+      "tensions": []
+    }
+  }
+]
+```
+
+This JSON structure captures the postconditions for each action, focusing primarily on changes to emotional links since tensions are not a factor in this story. Each `postconditions` object includes `emotional_links` that result from the action, indicating how characters perceive or feel about each other afterward.

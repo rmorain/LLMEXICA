@@ -1,0 +1,83 @@
+[
+    {
+        "action": "taste_porridge",
+        "n_characters": 2,
+        "subject": "Goldilocks",
+        "object": "Great Big Bear",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "taste_porridge",
+        "n_characters": 2,
+        "subject": "Goldilocks",
+        "object": "Middle-sized Bear",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "eat_porridge",
+        "n_characters": 2,
+        "subject": "Goldilocks",
+        "object": "Little Wee Bear",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "sit_in-chair",
+        "n_characters": 2,
+        "subject": "Goldilocks",
+        "object": "Great Big Bear",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "sit_in-chair",
+        "n_characters": 2,
+        "subject": "Goldilocks",
+        "object": "Middle-sized Bear",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "break_chair",
+        "n_characters": 2,
+        "subject": "Goldilocks",
+        "object": "Little Wee Bear",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "lie_in-bed",
+        "n_characters": 2,
+        "subject": "Goldilocks",
+        "object": "Great Big Bear",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "lie_in-bed",
+        "n_characters": 2,
+        "subject": "Goldilocks",
+        "object": "Middle-sized Bear",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "sleep_in_bed",
+        "n_characters": 2,
+        "subject": "Goldilocks",
+        "object": "Little Wee Bear",
+        "preconditions": {
+            "emotional_links": []
+        }
+    }
+]

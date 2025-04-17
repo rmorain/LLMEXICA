@@ -1,0 +1,328 @@
+<think>
+Alright, so I need to figure out how to add preconditions related to emotional links for each action in the Hansel and Gretel story. The user wants me to create a new key called "preconditions" with an array of emotional_links that have type, magnitude, from, and to.
+
+First, I'll go through each action one by one and think about what emotions are driving the characters' actions. For example, when the stepmother plots to abandon the children, she must have some negative feelings towards them. That would be a non-romantic emotional link with a negative magnitude.
+
+I also need to make sure that for each emotional link, I specify who is the source ('from') and who is the target ('to'). If the action involves two characters, like "abandons_children," then 'a' would be the subject (stepmother) and 'b' the object (children). The magnitude should reflect how strong the emotion is. For instance, if it's hatred, maybe a -3.
+
+I have to ensure that if an action doesn't involve any emotional links, I leave the array empty. Also, sometimes there might be multiple emotional links for a single action, so I need to account for all of them.
+
+For actions where the subject or object is '-', like "plots_abandonment," I should figure out who the characters are based on the context and update 'subject' and 'object' accordingly. Then assign the emotional link from 'a' (subject) to 'b' (object).
+
+I'll also need to be careful with actions where there's no clear object or subject, but since the user said if it's not possible to determine, I should remove those problematic links.
+
+Overall, this requires carefully analyzing each action, determining the underlying emotions that drive it, and structuring them according to the specified format.
+</think>
+
+Here is the JSON object with preconditions related to emotional links for each action:
+
+```json
+[
+  {
+    "action": "plots_abandonment",
+    "n_characters": 2,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "expresses_concern",
+    "n_characters": 2,
+    "subject": "father",
+    "object": "children",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "overhears_plan",
+    "n_characters": 2,
+    "subject": "Hansel and Gretel",
+    "object": "stepmother and father",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -2,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "prepares_escape",
+    "n_characters": 1,
+    "subject": "Hansel",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "abandons_children",
+    "n_characters": 2,
+    "subject": "stepmother and father",
+    "object": "children",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "feels_regret",
+    "n_characters": 1,
+    "subject": "father",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -2,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "finds_way_back",
+    "n_characters": 2,
+    "subject": "Hansel and Gretel",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "plans_second_abandonment",
+    "n_characters": 1,
+    "subject": "stepmother",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "reassures_sister",
+    "n_characters": 2,
+    "subject": "Hansel",
+    "object": "Gretel",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "loses_way",
+    "n_characters": 2,
+    "subject": "children",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -1,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "follows_bird",
+    "n_characters": 2,
+    "subject": "Hansel and Gretel",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -1,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "captures_children",
+    "n_characters": 2,
+    "subject": "witch",
+    "object": "children",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "imprisons_child",
+    "n_characters": 2,
+    "subject": "witch",
+    "object": "Hansel",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "forces_work",
+    "n_characters": 2,
+    "subject": "witch",
+    "object": "Gretel",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "plans_to_eat",
+    "n_characters": 1,
+    "subject": "witch",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "tricks_witch",
+    "n_characters": 2,
+    "subject": "Gretel",
+    "object": "witch",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -2,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "escapes_with_jewels",
+    "n_characters": 2,
+    "subject": "children",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "crosses_river",
+    "n_characters": 3,
+    "subject": "duck",
+    "object": "Hansel and Gretel",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -1,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "returns_home",
+    "n_characters": 2,
+    "subject": "children",
+    "object": "father",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  }
+]
+```
+
+This JSON object includes preconditions related to emotional links for each action, specifying the type, magnitude, and direction of the emotional link. The `emotional_links` array is empty if there are no required emotional links for an action.

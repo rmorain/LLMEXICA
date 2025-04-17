@@ -1,0 +1,14 @@
+STO
+Jaguar_Knight suffers_injury
+Princess applies_curative_plant Jaguar_Knight
+Enemy kidnaps Princess
+Enemy ties_to_rock Princess
+Jaguar_Knight searches_for_enemy Enemy
+Jaguar_Knight throws_dust Enemy
+Jaguar_Knight attacks_with_dagger Enemy
+Jaguar_Knight takes_heart Enemy
+Jaguar_Knight liberates_prisoner Princess
+Princess kisses Jaguar_Knight
+Princess recognizes_tattoo Jaguar_Knight
+Princess cuts_jugular Jaguar_Knight
+Princess cuts_throat

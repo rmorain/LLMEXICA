@@ -1,0 +1,55 @@
+<think>
+Alright, I'm trying to understand how to approach this problem. The user provided a story and asked for an analysis focusing on emotional links and tensions. They also specified the format for the JSON output.
+
+First, I need to identify the main characters: Jaguar_Knight, Princess, Tlaloc, Quetzalcoatl, Enemy, Huitzilopochtli, Tonatiuh. But since the focus is on actions between characters, maybe some gods can be excluded as they're not directly interacting in a way that forms emotional links or tensions.
+
+Looking at the story step by step:
+
+1. Tlaloc sends a storm, damaging the bridge. Jaguar_Knight tries to cross and gets injured. This sets up a life_at_risk tension.
+2. Princess uses a curative plant to save him. This shows non-romantic affection as she's helping him survive. So, an action where she heals him.
+3. Later, Enemy kidnaps Princess because of past humiliation. This introduces prisoner and life_at_risk tensions. Jaguar_Knight decides to rescue her, leading to actions like searching and attacking the enemy.
+4. After rescuing, Princess feels admiration, leading to romantic feelings. They kiss, indicating a romantic emotional link.
+5. Princess recognizes a tattoo linked to her father's murder, causing conflicting emotions: love vs. hatred. This is an internal conflict but also affects their emotional links.
+6. She kills Jaguar_Knight and then herself, resulting in both characters_dead, which is a tension.
+
+I need to extract each action, determine if it relates to emotional links or tensions, and structure them in JSON with subject, object, n_characters. Each action should be simple and in snake_case without character names.
+
+For example, when Princess heals Jaguar_Knight, the action is 'heals_wounds', subject is Princess, object is Jaguar_Knight, n_characters=2.
+
+I also need to ensure that each action only includes characters as subjects or objects, avoiding inanimate objects. Each JSON entry should be chronological and accurate based on the story events.
+</think>
+
+```json
+[
+    {
+        "action": "heals_wounds",
+        "n_characters": 2,
+        "subject": "Princess",
+        "object": "Jaguar_Knight"
+    },
+    {
+        "action": "liberates",
+        "n_characters": 2,
+        "subject": "Jaguar_Knight",
+        "object": "Princess"
+    },
+    {
+        "action": "kisses",
+        "n_characters": 2,
+        "subject": "Princess",
+        "object": "Jaguar_Knight"
+    },
+    {
+        "action": "kills",
+        "n_characters": 2,
+        "subject": "Princess",
+        "object": "Jaguar_Knight"
+    },
+    {
+        "action": "kills_self",
+        "n_characters": 1,
+        "subject": "Princess",
+        "object": "-"
+    }
+]
+```

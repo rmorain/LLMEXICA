@@ -1,0 +1,238 @@
+<think>
+Okay, so I'm trying to figure out how to add preconditions related to emotional links for each action in the Hansel and Gretel story. The user wants me to identify or infer these preconditions based on the actions identified earlier.
+
+First, I need to understand what a precondition is. From the instructions, a precondition is an emotional link that must exist between characters for a specific action to make sense. For example, if character A attacks character B, there might be a negative emotional link (like hatred) from A to B as a precondition.
+
+Each emotional link has a type (friendship or love) and a magnitude (-3 to 3). The links are directed, meaning they go from one character to another.
+
+So, I'll go through each action one by one:
+
+1. **stepmother_suggests_abandoning_children**
+   - Type: tension
+   - Tension Type: life_at_risk
+   - Subject: stepmother
+   - Object: children
+   - n_characters: 2
+
+   For the stepmother to suggest abandoning the children, there must be some emotional link. Since she's suggesting something harmful, I'd infer a negative emotional link towards the children.
+
+   Preconditions:
+   - Emotional Link Type: friendship
+   - Magnitude: -3 (hatred)
+   - From: stepmother ('a')
+   - To: children ('b')
+
+2. **father_reluctantly_agrees_to_abandon_children**
+   - Type: tension
+   - Tension Type: life_at_risk
+   - Subject: father
+   - Object: children
+   - n_characters: 2
+
+   The father agrees reluctantly, which suggests internal conflict but ultimately agreeing due to desperation. His emotional link towards the children is likely positive (love), and perhaps some negative self-directed emotion because of his situation.
+
+   Preconditions:
+   - Emotional Link Type: love
+   - Magnitude: 3 (deep love)
+   - From: father ('a')
+   - To: children ('b')
+
+3. **hansel_comforts_gretel**
+   - Type: emotional_link
+   - Emotional Link Type: friendship
+   - Subject: Hansel
+   - Object: Gretel
+   - n_characters: 2
+
+   Hansel comforts Gretel, showing a positive emotional link.
+
+   Preconditions:
+   - Emotional Link Type: friendship
+   - Magnitude: 3 (strong bond)
+   - From: Hansel ('a')
+   - To: Gretel ('b')
+
+4. **children_get_lost_in_forest**
+   - Type: tension
+   - Tension Type: life_at_risk
+   - Subject: -
+   - Object: children
+   - n_characters: 2
+
+   There are no specific emotional interactions here, just a tense situation. So, no preconditions related to emotional links.
+
+5. **witch_imprisons_hansel**
+   - Type: tension
+   - Tension Type: prisoner
+   - Subject: witch
+   - Object: Hansel
+   - n_characters: 2
+
+   The witch imprisons Hansel, indicating a negative emotional link towards him.
+
+   Preconditions:
+   - Emotional Link Type: friendship
+   - Magnitude: -3 (hatred)
+   - From: witch ('a')
+   - To: Hansel ('b')
+
+6. **gretel_kills_witch**
+   - Type: tension
+   - Tension Type: character_dead
+   - Subject: Gretel
+   - Object: witch
+   - n_characters: 2
+
+   Gretel kills the witch, suggesting a negative emotional link towards the witch.
+
+   Preconditions:
+   - Emotional Link Type: friendship
+   - Magnitude: -3 (hatred)
+   - From: Gretel ('a')
+   - To: witch ('b')
+
+7. **father_reunites_with_children**
+   - Type: emotional_link
+   - Emotional Link Type: love
+   - Subject: father
+   - Object: children
+   - n_characters: 3
+
+   The father is happy to see his children, indicating a positive emotional link.
+
+   Preconditions:
+   - Emotional Link Type: love
+   - Magnitude: 3 (deep love)
+   - From: father ('a')
+   - To: children ('b')
+
+I think I've covered each action with the appropriate preconditions based on inferred emotional links. Each precondition specifies the type, magnitude, and direction of the emotional link that must exist for the action to occur.
+</think>
+
+Here's a structured JSON representation of the actions with their respective preconditions:
+
+```json
+[
+  {
+    "action": "stepmother_suggests_abandoning_children",
+    "type": "tension",
+    "tension_type": "life_at_risk",
+    "subject": "stepmother",
+    "object": "children",
+    "n_characters": 2,
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "father_reluctantly_agrees_to_abandon_children",
+    "type": "tension",
+    "tension_type": "life_at_risk",
+    "subject": "father",
+    "object": "children",
+    "n_characters": 2,
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "love",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "hansel_comforts_gretel",
+    "type": "emotional_link",
+    "emotional_link_type": "friendship",
+    "subject": "Hansel",
+    "object": "Gretel",
+    "n_characters": 2,
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "children_get_lost_in_forest",
+    "type": "tension",
+    "tension_type": "life_at_risk",
+    "subject": "-",
+    "object": "children",
+    "n_characters": 2,
+    "preconditions": {
+      "emotional_links": []
+    }
+  },
+  {
+    "action": "witch_imprisons_hansel",
+    "type": "tension",
+    "tension_type": "prisoner",
+    "subject": "witch",
+    "object": "Hansel",
+    "n_characters": 2,
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "gretel_kills_witch",
+    "type": "tension",
+    "tension_type": "character_dead",
+    "subject": "Gretel",
+    "object": "witch",
+    "n_characters": 2,
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "father_reunites_with_children",
+    "type": "emotional_link",
+    "emotional_link_type": "love",
+    "subject": "father",
+    "object": "children",
+    "n_characters": 3,
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "love",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  }
+]
+```
+
+This JSON captures each action with its type, relevant preconditions based on emotional links, and the necessary details about the characters involved.

@@ -1,0 +1,27 @@
+<think>
+Alright, let's tackle this step by step. The user has provided a story about Goldilocks and the Three Bears and wants me to identify preconditions related to emotional links for each action. 
+
+First, I need to recall the previous actions extracted from the story. There was only one action identified: "goldilocks_jumps_out_window" with tension type "life_at_risk". The subject is Goldilocks, and there's no object since she's acting alone.
+
+Now, the task is to determine if this action has any preconditions based on emotional links. Emotional links are either friendship or love, each with a magnitude from -3 to 3. Preconditions mean that for an action to occur, certain emotional states must exist between characters.
+
+In this case, Goldilocks' action of jumping out the window is driven by fear. She was asleep in the Bears' house and got startled when they discovered her. There's no indication of friendship or love here; instead, it's more about fear or self-preservation. Since emotional links are specifically about friendship or romantic love, there doesn't seem to be any relevant preconditions here.
+
+Therefore, the `emotional_links` array should be empty because there are no required emotional links for this action. The Bears didn't have a prior relationship with Goldilocks that would influence her actions, and she wasn't motivated by any emotional ties towards them.
+</think>
+
+```json
+[
+    {
+        "action": "goldilocks_jumps_out_window",
+        "n_characters": 1,
+        "subject": "Goldilocks",
+        "object": "-",
+        "type": "tension",
+        "tension_type": "life_at_risk",
+        "preconditions": {
+            "emotional_links": []
+        }
+    }
+]
+```

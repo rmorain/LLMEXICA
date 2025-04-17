@@ -1,0 +1,233 @@
+<think>
+Alright, I need to figure out how to add postconditions for each action in the story of Goldilocks and the Three Bears. Postconditions involve changes to emotional links or tensions resulting from an action. Each action must have at least one postcondition, different from any preconditions.
+
+First, I'll go through each action one by one.
+
+1. **taste_porridge (Goldilocks -> Great Big Bear)**: Goldilocks tastes the porridge and finds it too hot. This negative experience might lead her to develop a slightly negative emotional link towards Great Big Bear because his porridge was uncomfortable for her. As for tensions, since she didn't like it, there's no new tension created.
+
+2. **taste_porridge (Goldilocks -> Middle-sized Bear)**: She finds this porridge too cold. This could lead to a slightly negative emotional link towards Middle-sized Bear as well because the porridge wasn't to her liking. No new tensions arise from this action.
+
+3. **eat_porridge (Goldilocks -> Little Wee Bear)**: She eats all of Little Wee Bear's porridge and likes it. This positive experience might lead her to develop a positive emotional link towards Little Wee Bear since she enjoyed his porridge. Again, no new tensions are created here.
+
+4. **sit_in-chair (Goldilocks -> Great Big Bear)**: The chair is too hard for her. This discomfort could result in a slightly negative emotional link towards Great Big Bear because the chair wasn't comfortable. No specific tension is introduced.
+
+5. **sit_in-chair (Goldilocks -> Middle-sized Bear)**: She finds this chair too soft. This might lead to a slightly negative emotional link towards Middle-sized Bear due to the discomfort caused by the chair's softness. No new tensions are present.
+
+6. **break_chair (Goldilocks -> Little Wee Bear)**: The chair breaks when she sits on it, which could cause frustration or anger towards Little Wee Bear because his chair broke. This might result in a negative emotional link. Additionally, the broken chair could introduce a tension related to property damage or conflict.
+
+7. **lie_in-bed (Goldilocks -> Great Big Bear)**: She finds the bed too high at the head. This inconvenience might lead to a slightly negative emotional link towards Great Big Bear because his bed wasn't comfortable for her. No specific tension arises from this action.
+
+8. **lie_in-bed (Goldilocks -> Middle-sized Bear)**: The bed is too high at the foot for her, causing discomfort. This could result in a slightly negative emotional link towards Middle-sized Bear due to the bed's inconvenience. No new tensions are introduced.
+
+9. **sleep_in_bed (Goldilocks -> Little Wee Bear)**: She falls asleep in his bed, which might indicate comfort and lead to a positive emotional link towards Little Wee Bear because she found his bed comfortable. However, when the bears find her, it introduces tension related to intrusion or conflict.
+
+In each case, I need to ensure that both `subject` and `object` are correctly identified and that `n_characters` reflects their involvement. Emotional links should be updated based on the impact of the action, and any new tensions arising from the action should be noted.
+</think>
+
+Here is the JSON object with postconditions added based on the thought process:
+
+```json
+[
+  {
+    "action": "taste_porridge",
+    "n_characters": 2,
+    "subject": "Goldilocks",
+    "object": "Great Big Bear",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -1,
+          "from": "Goldilocks",
+          "to": "Great Big Bear"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "taste_porridge",
+    "n_characters": 2,
+    "subject": "Goldilocks",
+    "object": "Middle-sized Bear",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -1,
+          "from": "Goldilocks",
+          "to": "Middle-sized Bear"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "eat_porridge",
+    "n_characters": 2,
+    "subject": "Goldilocks",
+    "object": "Little Wee Bear",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 1,
+          "from": "Goldilocks",
+          "to": "Little Wee Bear"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "sit_in-chair",
+    "n_characters": 2,
+    "subject": "Goldilocks",
+    "object": "Great Big Bear",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -1,
+          "from": "Goldilocks",
+          "to": "Great Big Bear"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "sit_in-chair",
+    "n_characters": 2,
+    "subject": "Goldilocks",
+    "object": "Middle-sized Bear",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -1,
+          "from": "Goldilocks",
+          "to": "Middle-sized Bear"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "break_chair",
+    "n_characters": 2,
+    "subject": "Goldilocks",
+    "object": "Little Wee Bear",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -2,
+          "from": "Goldilocks",
+          "to": "Little Wee Bear"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "Goldilocks",
+          "to": "Little Wee Bear"
+        }
+      ]
+    }
+  },
+  {
+    "action": "lie_in-bed",
+    "n_characters": 2,
+    "subject": "Goldilocks",
+    "object": "Great Big Bear",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -1,
+          "from": "Goldilocks",
+          "to": "Great Big Bear"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "lie_in-bed",
+    "n_characters": 2,
+    "subject": "Goldilocks",
+    "object": "Middle-sized Bear",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -1,
+          "from": "Goldilocks",
+          "to": "Middle-sized Bear"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "sleep_in_bed",
+    "n_characters": 2,
+    "subject": "Goldilocks",
+    "object": "Little Wee Bear",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 1,
+          "from": "Goldilocks",
+          "to": "Little Wee Bear"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "Goldilocks",
+          "to": "Little Wee Bear"
+        }
+      ]
+    }
+  }
+]
+```

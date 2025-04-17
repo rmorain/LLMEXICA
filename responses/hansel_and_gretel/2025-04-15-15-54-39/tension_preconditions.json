@@ -1,0 +1,318 @@
+<think>
+Alright, so I need to analyze each action in the story of Hansel and Gretel and determine the preconditions related to tensions for each one. The user has specified that preconditions are requirements that must be met for an action to make sense, focusing on tensions which can be of types like `character_dead`, `life_at_risk`, `health_at_risk`, or `prisoner`.
+
+First, I'll go through each action one by one and identify if there's a tension that serves as a precondition for the action. Tensions are situations that create conflict or stakes in the story.
+
+Starting with "face_poverty": This sets up the initial tension of `life_at_risk` because the family is struggling to survive, which affects all characters involved.
+
+"Plan_abandonment" by the stepmother: The plan is driven by the existing `life_at_risk` and `health_at_risk` tensions, affecting both the father and the children.
+
+"Gather_pebbles": Hansel's action is a response to the `health_at_risk` tension as they face starvation.
+
+"Gretel weeps": Her emotional state is a result of the `life_at_risk` and `health_at_risk` tensions affecting her.
+
+"Hansel comforts Gretel": This action is motivated by the ongoing `life_at_risk` and `health_at_risk` tensions.
+
+"Abandon_children": The father's reluctance is due to the existing `life_at_risk` tension.
+
+"Leave_trail": Hansel's precautionary measure is because of the `life_at_risk` tension.
+
+"Lose_way": This action results from the existing `life_at_risk` and `health_at_risk` tensions.
+
+"Find_house": The children’s hope is driven by their desperation under `life_at_risk`.
+
+"Witch captures them": The witch's malicious intent introduces `prisoner` and `life_at_risk` tensions.
+
+"Imprison Hansel": This action directly causes the `prisoner` tension for him.
+
+"Force Gretel to work": Maintains the `prisoner` and `health_at_risk` tensions.
+
+"Plan_escape": Gretel's plan is a response to being prisoners (`prisoner`) and their lives at risk (`life_at_risk`).
+
+"Kill_witch": This action resolves the `prisoner` and `life_at_risk` tensions by eliminating the witch.
+
+"Free Hansel": Removes the `prisoner` tension for him.
+
+"Return_home": Ends all previous tensions as they return safely.
+
+For each action, I'll determine if a tension exists that must be present for the action to occur. If so, I'll note the type of tension and which characters are involved.
+</think>
+
+```json
+[
+  {
+    "action": "face_poverty",
+    "n_characters": 4,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "*",
+          "to": "*"
+        }
+      ]
+    }
+  },
+  {
+    "action": "plan_abandonment",
+    "n_characters": 2,
+    "subject": "stepmother",
+    "object": "father",
+    "preconditions": {
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "*",
+          "to": "*"
+        },
+        {
+          "type": "health_at_risk",
+          "from": "*",
+          "to": "*"
+        }
+      ]
+    }
+  },
+  {
+    "action": "gather_pebbles",
+    "n_characters": 1,
+    "subject": "Hansel",
+    "object": "-",
+    "preconditions": {
+      "tensions": [
+        {
+          "type": "health_at_risk",
+          "from": "a",
+          "to": "*"
+        }
+      ]
+    }
+  },
+  {
+    "action": "weep",
+    "n_characters": 1,
+    "subject": "Gretel",
+    "object": "-",
+    "preconditions": {
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "*",
+          "to": "*"
+        },
+        {
+          "type": "health_at_risk",
+          "from": "*",
+          "to": "*"
+        }
+      ]
+    }
+  },
+  {
+    "action": "comfort",
+    "n_characters": 2,
+    "subject": "Hansel",
+    "object": "Gretel",
+    "preconditions": {
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "*",
+          "to": "*"
+        },
+        {
+          "type": "health_at_risk",
+          "from": "*",
+          "to": "*"
+        }
+      ]
+    }
+  },
+  {
+    "action": "abandon_children",
+    "n_characters": 4,
+    "subject": "father",
+    "object": "children",
+    "preconditions": {
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "*",
+          "to": "*"
+        }
+      ]
+    }
+  },
+  {
+    "action": "leave_trail",
+    "n_characters": 1,
+    "subject": "Hansel",
+    "object": "-",
+    "preconditions": {
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "*",
+          "to": "*"
+        }
+      ]
+    }
+  },
+  {
+    "action": "lose_way",
+    "n_characters": 2,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "*",
+          "to": "*"
+        },
+        {
+          "type": "health_at_risk",
+          "from": "*",
+          "to": "*"
+        }
+      ]
+    }
+  },
+  {
+    "action": "find_house",
+    "n_characters": 2,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "*",
+          "to": "*"
+        }
+      ]
+    }
+  },
+  {
+    "action": "capture_children",
+    "n_characters": 3,
+    "subject": "witch",
+    "object": "children",
+    "preconditions": {
+      "tensions": [
+        {
+          "type": "prisoner",
+          "from": "*",
+          "to": "*"
+        },
+        {
+          "type": "life_at_risk",
+          "from": "*",
+          "to": "*"
+        }
+      ]
+    }
+  },
+  {
+    "action": "imprison",
+    "n_characters": 2,
+    "subject": "witch",
+    "object": "Hansel",
+    "preconditions": {
+      "tensions": [
+        {
+          "type": "prisoner",
+          "from": "*",
+          "to": "*"
+        }
+      ]
+    }
+  },
+  {
+    "action": "force_work",
+    "n_characters": 2,
+    "subject": "witch",
+    "object": "Gretel",
+    "preconditions": {
+      "tensions": [
+        {
+          "type": "prisoner",
+          "from": "*",
+          "to": "*"
+        },
+        {
+          "type": "health_at_risk",
+          "from": "*",
+          "to": "*"
+        }
+      ]
+    }
+  },
+  {
+    "action": "plan_escape",
+    "n_characters": 2,
+    "subject": "Gretel",
+    "object": "Hansel",
+    "preconditions": {
+      "tensions": [
+        {
+          "type": "prisoner",
+          "from": "*",
+          "to": "*"
+        },
+        {
+          "type": "life_at_risk",
+          "from": "*",
+          "to": "*"
+        }
+      ]
+    }
+  },
+  {
+    "action": "kill_witch",
+    "n_characters": 2,
+    "subject": "Gretel",
+    "object": "witch",
+    "preconditions": {
+      "tensions": [
+        {
+          "type": "prisoner",
+          "from": "*",
+          "to": "*"
+        },
+        {
+          "type": "life_at_risk",
+          "from": "*",
+          "to": "*"
+        }
+      ]
+    }
+  },
+  {
+    "action": "free_hansel",
+    "n_characters": 2,
+    "subject": "Gretel",
+    "object": "Hansel",
+    "preconditions": {
+      "tensions": [
+        {
+          "type": "prisoner",
+          "from": "*",
+          "to": "*"
+        }
+      ]
+    }
+  },
+  {
+    "action": "return_home",
+    "n_characters": 2,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "tensions": []
+    }
+  }
+]
+```

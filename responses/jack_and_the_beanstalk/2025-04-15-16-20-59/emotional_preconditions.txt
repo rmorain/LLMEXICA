@@ -1,0 +1,284 @@
+<think>
+Okay, I'm trying to help create a JSON object with preconditions for each action in the story of Jack and the Beanstalk. The user wants me to identify emotional links that serve as preconditions for each action. Emotional links can be either 'non-romantic' or 'romantic', and they have a magnitude from -3 to 3.
+
+First, I need to go through each action one by one and determine if there are any emotional links required for the characters to perform those actions. Let's start with the first action: "tells_to_sell". The mother tells Jack to sell their cow. Why would she do that? Probably because they're in a difficult financial situation, so maybe the mother feels a sense of responsibility or love towards Jack. That sounds like a non-romantic emotional link with a positive magnitude.
+
+Next, "offers_magic_beans". The man offers beans for the cow. This might be a trick, indicating the man doesn't have good intentions towards Jack. So perhaps there's a negative non-romantic link from the man to Jack.
+
+"Gives_cow" – Jack gives his cow to the man. Since he's trading it for magic beans, maybe Jack trusts the man or is desperate. That could imply a positive emotional link from Jack to the man, but considering it's a trick, perhaps it's more neutral or slightly negative.
+
+"Scolds" – The mother scolds Jack when he returns with beans. This shows she's angry at him, so there's a negative non-romantic link from the mother to Jack.
+
+"Asks_for_food" – Jack asks the giant’s wife for food. He must feel safe enough around her or trust her, indicating a positive non-romantic link from Jack to the wife.
+
+"Gives_food" – The wife helps Jack by giving him bread and milk. She's kind to him, showing a positive emotional link towards Jack.
+
+"Threatens" – The giant threatens Jack. There's definitely negative feelings here; the giant doesn’t like Jack, so a strong negative non-romantic link from the giant to Jack.
+
+"Lies_to_protect" – The wife lies to protect Jack. She cares about him and wants to keep him safe, indicating a positive emotional link towards Jack.
+
+"Steals_gold" – Jack takes gold from the giant. This action suggests that Jack doesn't have positive feelings towards the giant; maybe fear or distrust, so negative non-romantic link from Jack to the giant.
+
+"Gives_coins" – Jack gives coins to his mother, showing love and responsibility, a strong positive emotional link from Jack to his mother.
+
+"Steals_hen" – Similar to stealing gold, Jack doesn't trust the giant, so another negative link from Jack to the giant.
+
+"Sees_stealing" – The giant notices Jack taking things, leading to anger. Negative feelings from the giant towards Jack.
+
+"Chases" – The giant chases Jack, clearly indicating strong negative emotions towards him.
+
+"Steals_harp" – Jack takes the harp, again showing distrust or dislike towards the giant.
+
+"Kills" – Jack kills the giant out of fear or self-defense. Strong negative emotions from Jack towards the giant.
+
+For each action, I need to set up preconditions with emotional links if they exist. If there are no relevant emotional links, the array remains empty. Each link has a type, magnitude, and direction (from and to).
+
+I also need to ensure that 'n_characters' is consistent with the presence of subject and object. For actions where either is '-', I might have to adjust based on whether an emotional link requires both characters.
+
+This process involves going through each action, determining if emotions drive it, and then setting up the preconditions accordingly.
+</think>
+
+```json
+[
+  {
+    "action": "tells_to_sell",
+    "n_characters": 2,
+    "subject": "mother",
+    "object": "Jack",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 2,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "offers_magic_beans",
+    "n_characters": 2,
+    "subject": "man",
+    "object": "Jack",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -1,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "gives_cow",
+    "n_characters": 2,
+    "subject": "Jack",
+    "object": "man",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -1,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "scolds",
+    "n_characters": 2,
+    "subject": "mother",
+    "object": "Jack",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -2,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "asks_for_food",
+    "n_characters": 2,
+    "subject": "Jack",
+    "object": "wife",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 1,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "gives_food",
+    "n_characters": 2,
+    "subject": "wife",
+    "object": "Jack",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 2,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "threatens",
+    "n_characters": 1,
+    "subject": "giant",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "lies_to_protect",
+    "n_characters": 2,
+    "subject": "wife",
+    "object": "giant",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "steals_gold",
+    "n_characters": 2,
+    "subject": "Jack",
+    "object": "giant",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -2,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "gives_coins",
+    "n_characters": 2,
+    "subject": "Jack",
+    "object": "mother",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "steals_hen",
+    "n_characters": 2,
+    "subject": "Jack",
+    "object": "giant",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -2,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "sees_stealing",
+    "n_characters": 2,
+    "subject": "giant",
+    "object": "Jack",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "chases",
+    "n_characters": 2,
+    "subject": "giant",
+    "object": "Jack",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "steals_harp",
+    "n_characters": 1,
+    "subject": "Jack",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -2,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "kills",
+    "n_characters": 2,
+    "subject": "Jack",
+    "object": "giant",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  }
+]
+```

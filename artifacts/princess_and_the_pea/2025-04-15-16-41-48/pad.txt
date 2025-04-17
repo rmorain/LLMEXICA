@@ -1,0 +1,24 @@
+ACT desires 2
+POS
+E a b +2 2
+
+ACT arrives 2
+POS
+E a b +1 1
+
+ACT tests_sensitivity 2
+POS
+E a b +1 1
+
+ACT feels_pain 2
+POS
+E a b -1 1
+
+ACT marries 2
+POS
+E a b +3 2
+
+ACT places_in_museum 2
+POS
+E a b +1 1
+

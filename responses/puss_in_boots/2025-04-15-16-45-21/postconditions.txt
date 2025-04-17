@@ -1,0 +1,441 @@
+
+Okay, so I need to figure out how to add postconditions for each action in the story. Postconditions are changes to emotional links or tensions that result from an action. Each action must have at least one postcondition, and if there were preconditions, the postconditions shouldn't be the same.
+
+I'll go through each action one by one and think about what changes occur after the action is performed.
+
+1. **Action: hears_despair**
+   - The Cat hears his master's despair.
+   - Postcondition: The master might feel hopeful because the Cat offers help, so their non-romantic emotional link strengthens (positive).
+
+2. **Action: tricks_animal**
+   - The Cat tricks an animal to get food.
+   - No direct emotional link change since it involves animals, but the Cat's resourcefulness could strengthen his bond with the master.
+
+3. **Action: presents_gift**
+   - The Cat presents a gift to the King.
+   - This positive action might make the King view the Marquis more favorably, increasing non-romantic links from the King to the Marquis.
+
+4. **Action: tricks_animal**
+   - Similar to above; no direct emotional link change.
+
+5. **Action: bathes_master**
+   - The master bathes on the Cat's advice.
+   - This shows trust in the Cat, so their non-romantic bond strengthens.
+
+6. **Action: cries_help**
+   - The Cat cries for help, leading to the Marquis being saved.
+   - The Marquis is grateful, so his emotional link to the Cat becomes more positive.
+
+7. **Action: receives_clothes**
+   - The King provides clothes to the Marquis.
+   - This act of kindness strengthens the non-romantic bond between the King and the Marquis.
+
+8. **Action: falls_in_love**
+   - Romantic feelings develop between the Princess and the Marquis.
+   - Their romantic emotional link becomes stronger.
+
+9. **Action: threatens_workers**
+   - The Cat threatens workers to maintain the illusion of wealth.
+   - Workers might fear the Cat, creating a negative non-romantic link from them to him.
+
+10. **Action: transforms_mouse**
+    - The Ogre transforms into a mouse.
+    - No direct emotional link change; it's about demonstrating power.
+
+11. **Action: eats_ogre**
+    - The Cat eliminates the Ogre, securing the castle.
+    - This success strengthens the non-romantic bond between the Cat and the Marquis.
+
+12. **Action: invites_castle**
+    - The King invites the Marquis into the castle.
+    - This trust and acceptance strengthen their non-romantic link.
+
+13. **Action: marries_princess**
+    - The Marquis marries the Princess.
+    - Their romantic bond solidifies with a high positive magnitude.
+
+I need to ensure each postcondition is correctly inferred and added under `postconditions` for each action in the JSON, updating emotional links and tensions as necessary without repeating preconditions.
+</think>
+
+```json
+[
+  {
+    "action": "hears_despair",
+    "n_characters": 2,
+    "subject": "Cat",
+    "object": "Marquis_of_Carabas",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "-",
+          "to": "b"
+        }
+      ]
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "tricks_animal",
+    "n_characters": 1,
+    "subject": "Cat",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "presents_gift",
+    "n_characters": 2,
+    "subject": "Cat",
+    "object": "King",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "-",
+          "to": "b"
+        }
+      ]
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "tricks_animal",
+    "n_characters": 1,
+    "subject": "Cat",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "bathes_master",
+    "n_characters": 2,
+    "subject": "Marquis_of_Carabas",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "-",
+          "to": "a"
+        }
+      ]
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "cries_help",
+    "n_characters": 1,
+    "subject": "Cat",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "-",
+          "to": "b"
+        }
+      ]
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "receives_clothes",
+    "n_characters": 2,
+    "subject": "King",
+    "object": "Marquis_of_Carabas",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "-",
+          "to": "b"
+        }
+      ]
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "falls_in_love",
+    "n_characters": 2,
+    "subject": "Princess",
+    "object": "Marquis_of_Carabas",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "threatens_workers",
+    "n_characters": 1,
+    "subject": "Cat",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "-",
+          "to": "*"
+        }
+      ]
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -3,
+          "from": "a",
+          "to": "*"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "transforms_mouse",
+    "n_characters": 1,
+    "subject": "Ogre",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": []
+    }
+  },
+  {
+    "action": "eats_ogre",
+    "n_characters": 2,
+    "subject": "Cat",
+    "object": "Ogre",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "-",
+          "to": "b"
+        }
+      ]
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "invites_castle",
+    "n_characters": 2,
+    "subject": "King",
+    "object": "Marquis_of_Carabas",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "marries_princess",
+    "n_characters": 2,
+    "subject": "Marquis_of_Carabas",
+    "object": "Princess",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  }
+]
+```

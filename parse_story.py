@@ -75,17 +75,66 @@ def verify_artifact(artifact, messages, model, story_name, date_time, artifact_t
         # Check if each action in the artifact has at least one postcondition
         actions_with_no_postconditions = []
         for action in artifact:
-            if len(action["postconditions"]) == 0:
-                actions_with_no_postconditions.append(action["name"])
+            if (
+                len(action["postconditions"]["emotional_links"]) == 0
+                and len(action["postconditions"]["tensions"]) == 0
+            ):
+                actions_with_no_postconditions.append(action["action"])
         if len(actions_with_no_postconditions) > 0:
             print(
                 "The following actions have no postconditions: ",
                 actions_with_no_postconditions,
             )
-            regenerate_prompt = f"The following actions have no postconditions: \n\n{actions_with_no_postconditions}.\n Please regenerate the JSON object to include postconditions for these actions. Make sure to wrap the JSON object in ```json``` tags."
+            regenerate_prompt = f"The following actions have no postconditions: \n\n{actions_with_no_postconditions}.\n Please regenerate the JSON object to include postconditions for these actions. Or if the action has no relevant postconditions, remove the action from the JSON object. Make sure to wrap the JSON object in ```json``` tags."
             messages.append({"role": "user", "content": regenerate_prompt})
             response, messages = chat_round(
-                model, messages, story_name, date_time, "regen.txt"
+                model, messages, story_name, date_time, "regen_post.txt"
+            )
+            artifact = parse_response_json(
+                response.message.content, model, messages, story_name, date_time
+            )
+            print("Regenerated Artifact: ", artifact)
+        # If an action has any emotional links, make sure `subject` and `object` are not '-'
+        actions_with_invalid_links = []
+        for action in artifact:
+            if len(action["postconditions"]["emotional_links"]) > 0 or (
+                "preconditions" in action
+                and len(action["preconditions"]["emotional_links"]) > 0
+            ):
+                if ("subject" in action and action["subject"] == "-") or (
+                    "object" in action and action["object"] == "-"
+                ):
+                    actions_with_invalid_links.append(action["action"])
+        if len(actions_with_invalid_links) > 0:
+            print(
+                "The following actions have emotional links but are missing a `subject` or `object`: ",
+                actions_with_invalid_links,
+            )
+            regenerate_prompt = f"The following actions have emotional links but are missing a `subject` or `object`: \n\n{actions_with_invalid_links}.\n Please regenerate the JSON object to include the correct `subject` or `object` values for these actions and update `n_characters` appropriately. If after review, there are no reasonable direct or indirect objects to set `object`, remove the problematic emotional links from the JSON object. Make sure to wrap the JSON object in ```json``` tags."
+            messages.append({"role": "user", "content": regenerate_prompt})
+            response, messages = chat_round(
+                model, messages, story_name, date_time, "regen_links.txt"
+            )
+            artifact = parse_response_json(
+                response.message.content, model, messages, story_name, date_time
+            )
+            print("Regenerated Artifact: ", artifact)
+
+        # If an action has a tension but `to` is '-'
+        actions_with_invalid_tensions = []
+        for action in artifact:
+            for tension in action["postconditions"]["tensions"]:
+                if tension["to"] == "-":
+                    actions_with_invalid_tensions.append(action["action"])
+        if len(actions_with_invalid_tensions) > 0:
+            print(
+                "The following actions have tensions but are missing a `to`: ",
+                actions_with_invalid_tensions,
+            )
+            regenerate_prompt = f"The following actions have tensions but are missing a `to`: \n\n{actions_with_invalid_tensions}.\n Please regenerate the JSON object to include the correct `to` values for these actions. `to` must be set to 'a' if the subject character is receiving the tension or 'b' if the object character is receiving the tension. It is illogical to set `to` to '-' meaning no character is receiving the tension. If no character is receiving the tension, remove the problematic tension. Also make sure `from` refers to the character ('a' or 'b') causing the tension. Make sure to wrap the JSON object in ```json``` tags."
+            messages.append({"role": "user", "content": regenerate_prompt})
+            response, messages = chat_round(
+                model, messages, story_name, date_time, "regen_tensions.txt"
             )
             artifact = parse_response_json(
                 response.message.content, model, messages, story_name, date_time

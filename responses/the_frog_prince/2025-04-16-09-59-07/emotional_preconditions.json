@@ -1,0 +1,204 @@
+[
+    {
+        "action": "cries",
+        "n_characters": 1,
+        "subject": "princess",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "offers_help",
+        "n_characters": 2,
+        "subject": "frog",
+        "object": "princess",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 1,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "promises_companionship",
+        "n_characters": 2,
+        "subject": "princess",
+        "object": "frog",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "brings_ball_back",
+        "n_characters": 2,
+        "subject": "frog",
+        "object": "princess",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "runs_away",
+        "n_characters": 1,
+        "subject": "princess",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "arrives_at_castle",
+        "n_characters": 2,
+        "subject": "frog",
+        "object": "princess",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 1,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "knocks_on_door",
+        "n_characters": 2,
+        "subject": "frog",
+        "object": "princess",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 1,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "opens_door",
+        "n_characters": 2,
+        "subject": "princess",
+        "object": "frog",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "sits_together",
+        "n_characters": 2,
+        "subject": "princess",
+        "object": "frog",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "eats_together",
+        "n_characters": 2,
+        "subject": "princess",
+        "object": "frog",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "demands_lift",
+        "n_characters": 2,
+        "subject": "frog",
+        "object": "princess",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "lifts",
+        "n_characters": 2,
+        "subject": "princess",
+        "object": "frog",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -1,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "asks_for_bed",
+        "n_characters": 2,
+        "subject": "frog",
+        "object": "princess",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "carries_upstairs",
+        "n_characters": 2,
+        "subject": "princess",
+        "object": "frog",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "throws_against_wall",
+        "n_characters": 2,
+        "subject": "princess",
+        "object": "frog",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "transforms_into_prince",
+        "n_characters": 1,
+        "subject": "frog",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "hears_heart_cracking",
+        "n_characters": 2,
+        "subject": "Henry",
+        "object": "princess",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    }
+]

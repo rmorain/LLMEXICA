@@ -1,0 +1,100 @@
+ACT tells_to_sell 2
+PRE
+E a b -1 1
+E b a -1 1
+T Lr * *
+POS
+E a b -1 1
+E b a -1 1
+T Lr * *
+
+ACT offers_magic_beans 2
+PRE
+E b a -2 1
+POS
+E b a -2 1
+
+ACT gives_cow 2
+PRE
+E a b -1 1
+POS
+E a b -1 1
+
+ACT scolds 2
+PRE
+E a b -2 1
+E b a -2 1
+POS
+E a b -2 1
+E b a -2 1
+
+ACT asks_for_food 2
+PRE
+E a b +1 1
+POS
+E a b +1 1
+
+ACT gives_food 2
+PRE
+E b a +1 1
+POS
+E b a +1 1
+
+ACT threatens 2
+PRE
+E a b -3 1
+POS
+E a b -3 1
+
+ACT lies_to_protect 2
+PRE
+E a b +1 1
+E b a -2 1
+POS
+E a b +1 1
+E b a -2 1
+
+ACT steals_gold 2
+PRE
+E a b -2 1
+POS
+E a b -2 1
+
+ACT gives_coins 2
+PRE
+E a b +1 1
+E b a +1 1
+POS
+E a b +1 1
+E b a +1 1
+
+ACT steals_hen 2
+PRE
+E a b -2 1
+POS
+E a b -2 1
+
+ACT sees_stealing 2
+PRE
+E a b -3 1
+POS
+E a b -3 1
+
+ACT chases 2
+PRE
+E a b -3 1
+POS
+E a b -3 1
+
+ACT steals_harp 2
+PRE
+E a b -3 1
+POS
+E a b -3 1
+
+ACT kills 2
+PRE
+E a b -3 1
+POS
+E a b -3 1
+

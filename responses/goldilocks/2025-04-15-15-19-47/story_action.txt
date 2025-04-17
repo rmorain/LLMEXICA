@@ -1,0 +1,164 @@
+<think>
+Okay, so I need to analyze this story of Goldilocks and the Three Bears using the guidelines provided. The user wants me to extract actions that relate to emotional links (both non-romantic and romantic) and tensions in the narrative. Since there are no romantic elements here, I'll focus on non-romantic emotional links and the specified tension types.
+
+First, I'll go through each event in the story step by step. The Bears leave their porridge to cool, which shows they're considerate of each other's comfort—maybe a non-romantic emotional link like trust or camaraderie. Then Goldilocks enters, starts tasting the porridges. This action doesn't involve emotional links but does show her curiosity and rudeness.
+
+When she eats up Little Wee Bear's porridge entirely, that could cause distress for him, so an emotional link of dislike or anger from the Bears towards Goldilocks. Next, she sits in their chairs, breaking the Little Wee Bear's chair. This adds more tension because now there's damage, which might escalate the conflict.
+
+Goldilocks then goes upstairs and sleeps in the Little Wee Bear's bed. When the Bears return and find their porridge tampered with, they express anger and suspicion, showing a clear non-romantic emotional link of distrust or hostility towards the intruder. They check each chair and bed, leading to the discovery of Goldilocks asleep.
+
+The tension here is high because it involves an intruder in their home, which fits the 'prisoner' category since she's caught. When they confront her, she flees, adding a life-at-risk moment if she jumps out the window. The story ends without resolving her fate, so that's a lingering tension.
+
+I need to map each action with the correct keys: n_characters, subject, object. Actions like 'taste_porridge' involve two characters (Goldilocks and each Bear), so n_characters is 2. Similarly, 'eat_porridge' would be Goldilocks as subject and Little Wee Bear as object.
+
+I have to ensure that each action is in snake_case and abstract enough for reuse. Also, avoid including any actions involving objects, only those between characters. So, when the Bears find their porridge tampered with, it's an emotional link of distrust or anger towards Goldilocks.
+
+Wait, some actions might not involve another character as object. For example, when Goldilocks breaks the chair, it's just her action without a direct object. But in this case, since she sits in the Bear's chairs, each 'sit_in-chair' action should have the respective Bear as object.
+
+Also, I need to consider if an action involves only one character or two. For instance, when Goldilocks falls asleep, it's just her, so subject is herself and no object. But when Bears find their things messed with, they are the subjects, but who is the object? It might be about the state of their belongings, which are objects, so perhaps these don't qualify as emotional links between characters.
+
+Wait, no—emotional links are between characters, so maybe those actions where a Bear reacts to Goldilocks's actions would count. Like when Great Big Bear notices his porridge was tasted, that's an action with himself as subject and Goldilocks as object? Or is it about the Bears expressing emotions towards an unknown person (Goldilocks), which is still an emotional link.
+
+I think each of these detection moments ("SOMEBODY HAS BEEN AT MY PORRIDGE!") indicates an emotional reaction towards the intruder, so that's a non-romantic emotional link where the Bears feel violated or angry towards Goldilocks. So each of those would be actions like 'express_anger_towards' with subject as Bear and object as Goldilocks.
+
+But in the JSON structure provided earlier, it's more about direct interactions. Maybe I should represent these as 'discover_vandalism' without an object since it's about their things, not another character. But according to the user's instruction, actions should involve subject and object as characters. So perhaps I need to model these as Bears noticing Goldilocks's presence, hence 'detect_intruder'.
+
+Wait, but when they first find the spoons in the porridge, that's an action of detecting something done by someone else. Since it's about their property, maybe it doesn't involve another character directly. So perhaps I should skip those and focus only on actions where both subject and object are characters.
+
+So, for each Bear checking their porridge, since they're not interacting with Goldilocks directly yet, maybe that's more of a setup for tension rather than emotional links. The emotional link would come when they confront her or react to her presence.
+
+When the Bears go upstairs and find Goldilocks in the bed, that's a direct interaction: Little Wee Bear discovers her. So that action would be 'find_in_bed' with subject as Little Wee Bear and object as Goldilocks.
+
+Then, when she wakes up and sees them, that's another emotional link of fear or surprise from Goldilocks towards the Bears. So an action like 'see_intruder' with Goldilocks as subject and the Bears as objects? Or since each Bear is a character, perhaps list all three as separate objects, but according to the structure, I can only have one object per action.
+
+Alternatively, maybe it's better to represent it as 'see_characters', with n_characters=4 (Goldilocks and the three Bears), but that might complicate things. Alternatively, since each Bear is a distinct character, perhaps multiple actions: Great Big Bear sees Goldilocks, Middle-sized Bear sees her, etc. But that would be repetitive.
+
+Alternatively, maybe just one action where the group of Bears discover Goldilocks, so n_characters=4 (three Bears and Goldilocks). So 'discover_in_bed' with subject as Little Wee Bear (since he's the one who actually finds her) and object as Goldilocks. Then Goldilocks sees them, which would be another action: 'see_characters' with subject as Goldilocks and object as the three Bears.
+
+Then she escapes, which is an action without a direct object—just herself fleeing, so n_characters=1. Finally, the Bears don't see her again, so that's an action of ceasing to see her.
+
+In terms of tensions, when Goldilocks breaks the chair, that's property damage but not directly a tension type listed (character_dead, life_at_risk, health_at_risk, prisoner). So maybe that doesn't count. When she is caught in bed, that could be considered 'prisoner' since she's intruding and now faces consequences—so that's a tension of type 'prisoner'. Her escape could involve 'life_at_risk' if jumping from the window is dangerous.
+
+So, compiling all these actions with their respective subjects and objects, ensuring n_characters matches. Also, making sure each action is abstract enough for other stories, like 'taste_food', 'eat_food_all', etc., without mentioning specific characters in the action name.
+</think>
+
+Here's a structured JSON representation of the essential actions from the story, focusing on emotional links and tensions:
+
+```json
+[
+  {
+    "action": "leave_to_cool",
+    "n_characters": 3,
+    "subject": "-",
+    "object": "-"
+  },
+  {
+    "action": "enter_house",
+    "n_characters": 1,
+    "subject": "Goldilocks",
+    "object": "-"
+  },
+  {
+    "action": "taste_food",
+    "n_characters": 2,
+    "subject": "Goldilocks",
+    "object": "Great Big Bear"
+  },
+  {
+    "action": "taste_food",
+    "n_characters": 2,
+    "subject": "Goldilocks",
+    "object": "Middle-sized Bear"
+  },
+  {
+    "action": "eat_food_all",
+    "n_characters": 2,
+    "subject": "Goldilocks",
+    "object": "Little Wee Bear"
+  },
+  {
+    "action": "sit_in-chair",
+    "n_characters": 2,
+    "subject": "Goldilocks",
+    "object": "Great Big Bear"
+  },
+  {
+    "action": "sit_in-chair",
+    "n_characters": 2,
+    "subject": "Goldilocks",
+    "object": "Middle-sized Bear"
+  },
+  {
+    "action": "break_chair",
+    "n_characters": 2,
+    "subject": "Goldilocks",
+    "object": "Little Wee Bear"
+  },
+  {
+    "action": "sleep_in-bed",
+    "n_characters": 1,
+    "subject": "Goldilocks",
+    "object": "-"
+  },
+  {
+    "action": "return_home",
+    "n_characters": 3,
+    "subject": "-",
+    "object": "-"
+  },
+  {
+    "action": "express_anger_towards",
+    "n_characters": 2,
+    "subject": "Great Big Bear",
+    "object": "Goldilocks"
+  },
+  {
+    "action": "express_anger_towards",
+    "n_characters": 2,
+    "subject": "Middle-sized Bear",
+    "object": "Goldilocks"
+  },
+  {
+    "action": "express_anger_towards",
+    "n_characters": 2,
+    "subject": "Little Wee Bear",
+    "object": "Goldilocks"
+  },
+  {
+    "action": "discover_in_bed",
+    "n_characters": 4,
+    "subject": "Little Wee Bear",
+    "object": "Goldilocks"
+  },
+  {
+    "action": "wake_up",
+    "n_characters": 1,
+    "subject": "Goldilocks",
+    "object": "-"
+  },
+  {
+    "action": "see_characters",
+    "n_characters": 4,
+    "subject": "Goldilocks",
+    "object": "Three Bears"
+  },
+  {
+    "action": "escape",
+    "n_characters": 1,
+    "subject": "Goldilocks",
+    "object": "-"
+  },
+  {
+    "action": "not_see_again",
+    "n_characters": 3,
+    "subject": "-",
+    "object": "Goldilocks"
+  }
+]
+```
+
+### Explanation:
+- **Emotional Links**: The actions "express_anger_towards" and "see_characters" highlight non-romantic emotional links, primarily distrust and anger towards Goldilocks.
+- **Tensions**: The action "discover_in_bed" introduces the tension type 'prisoner' as Goldilocks is caught intruding. Her subsequent escape might imply a 'life_at_risk' tension if her jump is perilous.
+
+This structured approach captures the essential interactions and tensions, maintaining simplicity and abstraction for potential reuse in other narratives.

@@ -1,0 +1,6 @@
+ACT goldilocks_jumps_out_window 1
+PRE
+T Lr a a
+POS
+T Ln a a
+

@@ -1,0 +1,304 @@
+<think>
+Alright, so I need to analyze each action in the story of Hansel and Gretel and determine the preconditions related to emotional links for each one. The user has specified that preconditions are requirements that must be met for an action to make sense, especially focusing on emotional links which can have types (non-romantic or romantic) and magnitudes ranging from -3 to 3.
+
+First, I'll go through each action one by one. For each action, I need to figure out if there's an emotional link that serves as a precondition for the action to happen. Emotional links are directed, meaning they have a source (from) and a target (to). The magnitude indicates how strong or weak the emotion is.
+
+Starting with "face_poverty": This is about the family facing poverty. There's no specific emotional link here; it's more of a situational setup. So, preconditions related to emotional links would be empty.
+
+Next, "plan_abandonment" by the stepmother towards the father: The stepmother must have some negative feelings towards the children to convince the father to abandon them. That would be a non-romantic link with a magnitude of -3 (hatred) from her to the children.
+
+Then, "gather_pebbles" by Hansel: Hansel's action is driven by his care for Gretel and himself. So, he has a positive emotional link towards Gretel, magnitude 3.
+
+"Gretel weeps": Her crying stems from fear and sadness about their situation, indicating her negative feelings (magnitude -2) towards the stepmother.
+
+"Hansel comforts Gretel": His comforting action is based on his love for her, so a non-romantic link with magnitude 3 from Hansel to Gretel.
+
+"Abandon_children": The father reluctantly abandons them because of the stepmother's influence. He must feel guilty or conflicted, so a non-romantic link towards the children with magnitude -2 (guilt) and also towards his wife with magnitude -1 (resentment).
+
+"Hansel leaves trail": This is about his responsibility to protect Gretel, so again a positive link from him to her.
+
+"Children get lost": No specific emotional links here; it's more of a result of their situation.
+
+"Find house": They are desperate and hopeful, which might stem from their mutual trust (non-romantic, magnitude 2).
+
+"Witch captures them": The witch's action is driven by malice towards children, so non-romantic link with magnitude -3 from her to the children.
+
+"Witch imprisons Hansel": Same as above, directed specifically at Hansel.
+
+"Gretel forced to work": Witch's malice towards Gretel, same as before.
+
+"Gretel plans escape": Her determination is based on her love for Hansel (magnitude 3) and hatred towards the witch (magnitude -3).
+
+"Kill witch": Driven by Gretel's hatred (magnitude -3) towards the witch and her love (magnitude 3) for Hansel.
+
+"Free Hansel": Gretel's action stems from her love (magnitude 3) for him.
+
+"Return home": Their relief is based on their positive feelings towards each other and their father, magnitude 2.
+
+So, I'll go through each action, determine if there are any emotional links required for the characters to perform those actions, set the type, magnitude, source, and target accordingly. If no emotional link is necessary, the preconditions will be empty.
+</think>
+
+```json
+[
+  {
+    "action": "face_poverty",
+    "n_characters": 4,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": []
+    }
+  },
+  {
+    "action": "plan_abandonment",
+    "n_characters": 2,
+    "subject": "stepmother",
+    "object": "father",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -3,
+          "from": "b",
+          "to": "a"
+        }
+      ]
+    }
+  },
+  {
+    "action": "gather_pebbles",
+    "n_characters": 1,
+    "subject": "Hansel",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "Gretel"
+        }
+      ]
+    }
+  },
+  {
+    "action": "weep",
+    "n_characters": 1,
+    "subject": "Gretel",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -2,
+          "from": "a",
+          "to": "stepmother"
+        }
+      ]
+    }
+  },
+  {
+    "action": "comfort",
+    "n_characters": 2,
+    "subject": "Hansel",
+    "object": "Gretel",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "abandon_children",
+    "n_characters": 4,
+    "subject": "father",
+    "object": "children",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -2,
+          "from": "a",
+          "to": "b"
+        },
+        {
+          "type": "non-romantic",
+          "magnitude": -1,
+          "from": "a",
+          "to": "wife"
+        }
+      ]
+    }
+  },
+  {
+    "action": "leave_trail",
+    "n_characters": 1,
+    "subject": "Hansel",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "Gretel"
+        }
+      ]
+    }
+  },
+  {
+    "action": "lose_way",
+    "n_characters": 2,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": []
+    }
+  },
+  {
+    "action": "find_house",
+    "n_characters": 2,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 2,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "capture_children",
+    "n_characters": 3,
+    "subject": "witch",
+    "object": "children",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "imprison",
+    "n_characters": 2,
+    "subject": "witch",
+    "object": "Hansel",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "force_work",
+    "n_characters": 2,
+    "subject": "witch",
+    "object": "Gretel",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "plan_escape",
+    "n_characters": 2,
+    "subject": "Gretel",
+    "object": "Hansel",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        },
+        {
+          "type": "non-romantic",
+          "magnitude": -3,
+          "from": "a",
+          "to": "witch"
+        }
+      ]
+    }
+  },
+  {
+    "action": "kill_witch",
+    "n_characters": 2,
+    "subject": "Gretel",
+    "object": "witch",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        },
+        {
+          "type": "non-romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "Hansel"
+        }
+      ]
+    }
+  },
+  {
+    "action": "free_hansel",
+    "n_characters": 2,
+    "subject": "Gretel",
+    "object": "Hansel",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "return_home",
+    "n_characters": 2,
+    "subject": "-",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 2,
+          "from": "a",
+          "to": "father"
+        }
+      ]
+    }
+  }
+]
+```

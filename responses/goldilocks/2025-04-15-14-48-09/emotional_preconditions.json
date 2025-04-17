@@ -1,0 +1,13 @@
+[
+    {
+        "action": "goldilocks_jumps_out_window",
+        "n_characters": 1,
+        "subject": "Goldilocks",
+        "object": "-",
+        "type": "tension",
+        "tension_type": "life_at_risk",
+        "preconditions": {
+            "emotional_links": []
+        }
+    }
+]

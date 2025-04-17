@@ -1,0 +1,8 @@
+STO
+Cat hears_despair Marquis_of_Carabas
+Cat presents_gift King
+King receives_clothes Marquis_of_Carabas
+Princess falls_in_love Marquis_of_Carabas
+Cat eats_ogre Ogre
+King invites_castle Marquis_of_Carabas
+Marquis_of_Carabas marries_princess Princess

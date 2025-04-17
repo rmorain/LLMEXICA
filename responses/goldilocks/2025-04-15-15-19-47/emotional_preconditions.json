@@ -1,0 +1,241 @@
+[
+    {
+        "action": "leave_to_cool",
+        "n_characters": 3,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "enter_house",
+        "n_characters": 1,
+        "subject": "Goldilocks",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "taste_food",
+        "n_characters": 2,
+        "subject": "Goldilocks",
+        "object": "Great Big Bear",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "taste_food",
+        "n_characters": 2,
+        "subject": "Goldilocks",
+        "object": "Middle-sized Bear",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "eat_food_all",
+        "n_characters": 2,
+        "subject": "Goldilocks",
+        "object": "Little Wee Bear",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -1,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "sit_in-chair",
+        "n_characters": 2,
+        "subject": "Goldilocks",
+        "object": "Great Big Bear",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "sit_in-chair",
+        "n_characters": 2,
+        "subject": "Goldilocks",
+        "object": "Middle-sized Bear",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "break_chair",
+        "n_characters": 2,
+        "subject": "Goldilocks",
+        "object": "Little Wee Bear",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "sleep_in-bed",
+        "n_characters": 1,
+        "subject": "Goldilocks",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 1,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "return_home",
+        "n_characters": 3,
+        "subject": "-",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "express_anger_towards",
+        "n_characters": 2,
+        "subject": "Great Big Bear",
+        "object": "Goldilocks",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "express_anger_towards",
+        "n_characters": 2,
+        "subject": "Middle-sized Bear",
+        "object": "Goldilocks",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "express_anger_towards",
+        "n_characters": 2,
+        "subject": "Little Wee Bear",
+        "object": "Goldilocks",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "discover_in_bed",
+        "n_characters": 4,
+        "subject": "Little Wee Bear",
+        "object": "Goldilocks",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "wake_up",
+        "n_characters": 1,
+        "subject": "Goldilocks",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "see_characters",
+        "n_characters": 4,
+        "subject": "Goldilocks",
+        "object": "Three Bears",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "escape",
+        "n_characters": 1,
+        "subject": "Goldilocks",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "not_see_again",
+        "n_characters": 3,
+        "subject": "-",
+        "object": "Goldilocks",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -1,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    }
+]

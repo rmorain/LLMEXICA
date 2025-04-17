@@ -1,0 +1,37 @@
+ACT heals_wounds 2
+PRE
+E a b +3 1
+T Hr b -
+POS
+E b a +3 1
+T Hn - -
+
+ACT liberates 2
+PRE
+E a b +3 1
+T Pr b -
+POS
+E b a +3 1
+T Pf - -
+
+ACT kisses 2
+PRE
+E a b +3 2
+POS
+E a b +3 2
+E b a +3 2
+
+ACT kills 2
+PRE
+E a b -3 1
+T Lr a b
+POS
+E a b -3 1
+T Ad - -
+
+ACT kills_self 1
+PRE
+T Lr a -
+POS
+T Ad - -
+

@@ -1,0 +1,290 @@
+<think>
+Alright, so I need to figure out how to add preconditions related to emotional links for each action in the given story about Goldilocks and the Three Bears. The user has provided a detailed explanation of what they expect, including how to structure the JSON with preconditions, specifically focusing on emotional_links.
+
+First, I'll go through each action one by one and think about what emotional links might be necessary as preconditions for those actions. Since emotional links can be either non-romantic or romantic, but in this story, it's all non-romantic, that simplifies things a bit.
+
+Starting with the first action: Goldilocks tasting Great Big Bear's porridge. For her to take that action, she must have some level of curiosity or perhaps rudeness towards the Bears. So maybe a negative non-romantic link from her to them, but not too intense since it's just tasting.
+
+Next, when she tastes Middle-sized Bear's porridge, similar reasoning applies. She's still curious and possibly disrespectful, so another precondition with a slightly negative magnitude.
+
+When she eats Little Wee Bear's porridge entirely, that shows more intent or hunger, so maybe the emotional link is stronger in terms of magnitude, perhaps indicating she feels entitled or very curious.
+
+Then, when she sits in each Bear's chair, especially breaking Little Wee Bear's chair, there might be some frustration or carelessness on her part towards the Bears. So a negative non-romantic link with moderate intensity.
+
+Sleeping in Little Wee Bear's bed indicates a sense of comfort or audacity from Goldilocks towards the Bears, so another emotional link, maybe slightly more positive since she feels comfortable enough to sleep there.
+
+When the Bears find their porridge tampered with, they must have some trust issues or anger towards whoever did it. Since they don't know who yet, but we do (Goldilocks), perhaps a negative non-romantic link from the Bears towards Goldilocks.
+
+Similarly, when they find their chairs tampered with, the same applies—frustration or suspicion towards the unknown person (Goldilocks).
+
+When Little Wee Bear finds Goldilocks asleep in his bed, that would likely evoke a strong reaction, so a more intense negative emotional link from him to her.
+
+Finally, when Goldilocks wakes up and flees, she must feel fear towards the Bears, which is another emotional link driving her action.
+
+I need to ensure each precondition's magnitude reflects how strong the emotional link is. For instance, actions like tasting porridge might have a lower magnitude (-1) compared to finding someone in your bed, which would be more intense (-3).
+
+Also, I should map 'from' and 'to' correctly. Since Goldilocks is initiating most actions towards the Bears, her emotional links are from 'a' (subject) to 'b' (object). When Bears find their belongings tampered with, their emotional links are from themselves ('a') to Goldilocks ('b'), even if they don't know it's her yet.
+
+This approach ensures that each action has appropriate preconditions based on the characters' inferred emotions.
+</think>
+
+```json
+[
+  {
+    "action": "taste_porridge",
+    "n_characters": 2,
+    "subject": "Goldilocks",
+    "object": "Great Big Bear",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -1,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "taste_porridge",
+    "n_characters": 2,
+    "subject": "Goldilocks",
+    "object": "Middle-sized Bear",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -1,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "eat_porridge",
+    "n_characters": 2,
+    "subject": "Goldilocks",
+    "object": "Little Wee Bear",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -2,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "sit_in_char",
+    "n_characters": 2,
+    "subject": "Goldilocks",
+    "object": "Great Big Bear",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -1,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "sit_in_char",
+    "n_characters": 2,
+    "subject": "Goldilocks",
+    "object": "Middle-sized Bear",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -1,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "sit_in_char",
+    "n_characters": 2,
+    "subject": "Goldilocks",
+    "object": "Little Wee Bear",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -1,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "sleep_in_bed",
+    "n_characters": 2,
+    "subject": "Goldilocks",
+    "object": "Little Wee Bear",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -1,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "find_tampered_porridge",
+    "n_characters": 2,
+    "subject": "Great Big Bear",
+    "object": "Goldilocks",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -1,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "find_tampered_porridge",
+    "n_characters": 2,
+    "subject": "Middle-sized Bear",
+    "object": "Goldilocks",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -1,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "find_tampered_porridge",
+    "n_characters": 2,
+    "subject": "Little Wee Bear",
+    "object": "Goldilocks",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -1,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "find_chair_tampered",
+    "n_characters": 2,
+    "subject": "Great Big Bear",
+    "object": "Goldilocks",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -1,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "find_chair_tampered",
+    "n_characters": 2,
+    "subject": "Middle-sized Bear",
+    "object": "Goldilocks",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -1,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "find_chair_tampered",
+    "n_characters": 2,
+    "subject": "Little Wee Bear",
+    "object": "Goldilocks",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -1,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "find_in_bed",
+    "n_characters": 2,
+    "subject": "Little Wee Bear",
+    "object": "Goldilocks",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "wake_up",
+    "n_characters": 1,
+    "subject": "Goldilocks",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -2,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "flee",
+    "n_characters": 1,
+    "subject": "Goldilocks",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  }
+]
+```

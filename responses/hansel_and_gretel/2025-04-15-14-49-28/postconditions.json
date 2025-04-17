@@ -1,0 +1,342 @@
+<think>
+Alright, I need to figure out how to identify or infer postconditions for each action in the Hansel and Gretel story. Postconditions are changes to emotional links or tensions caused by the action. Each action must have at least one postcondition, and if preconditions exist, the postconditions can't be the same.
+
+First, I'll recall what postconditions involve—both emotional links and tensions. Emotional links can become more positive or negative after an action, and tensions can either intensify, reduce, or resolve.
+
+Let's go through each action one by one:
+
+1. **stepmother_suggests_abandoning_children**
+   - **Preconditions**: Stepmother has a hatred towards the children.
+   - **Action**: She suggests abandoning them, which increases their life risk.
+   - **Postconditions**: 
+     - Emotional Links: Children develop a negative emotional link towards the stepmother (from fear or betrayal).
+     - Tensions: The risk to their lives is now more severe.
+
+2. **father_reluctantly_agrees_to_abandon_children**
+   - **Preconditions**: Father loves children but under pressure.
+   - **Action**: He agrees, leading to increased life risk.
+   - **Postconditions**:
+     - Emotional Links: Children feel betrayed by the father; negative emotional link.
+     - Tensions: Life at risk escalates.
+
+3. **hansel_comforts_gretel**
+   - **Preconditions**: Hansel and Gretel have a strong friendship bond.
+   - **Action**: Hansel comforts Gretel, reinforcing their bond.
+   - **Postconditions**:
+     - Emotional Links: Their friendship strengthens further.
+     - Tensions: Slightly reduces their immediate life risk tension.
+
+4. **children_get_lost_in_forest**
+   - **Preconditions**: They are at risk of being lost.
+   - **Action**: They get lost, increasing life risk.
+   - **Postconditions**:
+     - Emotional Links: They rely more on each other, strengthening friendship.
+     - Tensions: Life at risk is intensified.
+
+5. **witch_imprisons_hansel**
+   - **Preconditions**: Witch hates Hansel and imprisons him.
+   - **Action**: Hansel is imprisoned.
+   - **Postconditions**:
+     - Emotional Links: Gretel feels anger towards the witch; negative emotional link.
+     - Tensions: Prisoner tension remains active.
+
+6. **gretel_kills_witch**
+   - **Preconditions**: Witch is dead, Gretel acted out of hatred.
+   - **Action**: Witch dies, resolving some tensions.
+   - **Postconditions**:
+     - Emotional Links: Gretel feels empowered; positive self-link.
+     - Tensions: Prisoner tension resolved as Hansel is freed.
+
+7. **father_reunites_with_children**
+   - **Preconditions**: Father loves children deeply.
+   - **Action**: Happy reunion resolves previous tensions.
+   - **Postconditions**:
+     - Emotional Links: Family bonds strengthen; positive emotional links all around.
+     - Tensions: All previous life risks and prisoner tensions are resolved.
+
+I need to ensure each postcondition accurately reflects the changes in emotional links and tensions resulting from each action. Also, I must remember that at least one postcondition is required per action and that if preconditions exist, they shouldn't repeat as postconditions.
+</think>
+
+Here's a structured JSON representation of the actions with their respective postconditions:
+
+```json
+[
+  {
+    "action": "stepmother_suggests_abandoning_children",
+    "type": "tension",
+    "tension_type": "life_at_risk",
+    "subject": "stepmother",
+    "object": "children",
+    "n_characters": 2,
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "*",
+          "to": "b"
+        }
+      ]
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -2,
+          "from": "b",
+          "to": "a"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "*",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "father_reluctantly_agrees_to_abandon_children",
+    "type": "tension",
+    "tension_type": "life_at_risk",
+    "subject": "father",
+    "object": "children",
+    "n_characters": 2,
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "love",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "*",
+          "to": "b"
+        }
+      ]
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "love",
+          "magnitude": -1,
+          "from": "b",
+          "to": "a"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "*",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "hansel_comforts_gretel",
+    "type": "emotional_link",
+    "emotional_link_type": "friendship",
+    "subject": "Hansel",
+    "object": "Gretel",
+    "n_characters": 2,
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "*",
+          "to": "b"
+        }
+      ]
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 4,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_normal",
+          "from": "*",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "children_get_lost_in_forest",
+    "type": "tension",
+    "tension_type": "life_at_risk",
+    "subject": "-",
+    "object": "children",
+    "n_characters": 2,
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "-",
+          "to": "b"
+        }
+      ]
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": 4,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "-",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "witch_imprisons_hansel",
+    "type": "tension",
+    "tension_type": "prisoner",
+    "subject": "witch",
+    "object": "Hansel",
+    "n_characters": 2,
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "prisoner",
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -4,
+          "from": "b",
+          "to": "a"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "prisoner",
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "gretel_kills_witch",
+    "type": "tension",
+    "tension_type": "character_dead",
+    "subject": "Gretel",
+    "object": "witch",
+    "n_characters": 2,
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "friendship",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "character_dead",
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "love",
+          "magnitude": 4,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "prisoner_freed",
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "father_reunites_with_children",
+    "type": "emotional_link",
+    "emotional_link_type": "love",
+    "subject": "father",
+    "object": "children",
+    "n_characters": 3,
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "love",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "love",
+          "magnitude": 5,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  }
+]
+```
+
+This JSON captures each action with its type, relevant preconditions, and resulting postconditions. Each postcondition reflects changes in emotional links and tensions, ensuring that the narrative flow is accurately represented with appropriate resolutions and developments.

@@ -1,0 +1,319 @@
+<think>
+Alright, so I need to figure out how to add preconditions related to tensions for each action in the story. The user provided a list of actions with their respective subjects and objects, along with emotional link preconditions. Now, they want me to identify or infer tension preconditions.
+
+First, I recall that tensions can be of types like `character_dead`, `life_at_risk`, `health_at_risk`, or `prisoner`. These are situations that create suspense or conflict in the narrative. A precondition here means that a particular tension must exist for an action to make sense.
+
+I'll go through each action and think about what tensions might need to be present for that action to occur.
+
+1. **Action: hears_despair**
+   - Subject: Cat
+   - Object: Marquis_of_Carabas
+   - The master is despairing, which could imply his life or well-being is at risk if he doesn't get help. So maybe `life_at_risk` for the Marquis.
+
+2. **Action: tricks_animal**
+   - Subject: Cat
+   - Object: -
+   - This action is about tricking an animal, not directly related to any tension involving characters. No tension precondition needed here.
+
+3. **Action: presents_gift**
+   - Subject: Cat
+   - Object: King
+   - The Cat is trying to help his master avoid hunger, which could mean the Marquis's life is at risk if he fails. So `life_at_risk` for the Marquis.
+
+4. **Action: tricks_animal**
+   - Same as above; no tension needed since it’s about animals.
+
+5. **Action: bathes_master**
+   - Subject: Marquis_of_Carabas
+   - Object: -
+   - The master is bathing on the Cat's advice, which later leads to a situation where his life seems at risk (drowning). So `life_at_risk` for the Marquis.
+
+6. **Action: cries_help**
+   - Subject: Cat
+   - Object: -
+   - Crying for help implies that someone's life is at risk. Here, it’s the Marquis drowning, so `life_at_risk` for him.
+
+7. **Action: receives_clothes**
+   - Subject: King
+   - Object: Marquis_of_Carabas
+   - The King helps because the Marquis's clothes were stolen, which could imply he was in a risky situation. So `life_at_risk` or perhaps `health_at_risk`.
+
+8. **Action: falls_in_love**
+   - Subject: Princess
+   - Object: Marquis_of_Carabas
+   - This is about emotional links, not tensions, so no tension needed.
+
+9. **Action: threatens_workers**
+   - Subject: Cat
+   - Object: -
+   - The Cat threatens workers to maintain the illusion of the Marquis's wealth. No direct tension on characters, but maybe `life_at_risk` for the workers if they don’t comply.
+
+10. **Action: transforms_mouse**
+    - Subject: Ogre
+    - Object: -
+    - This is about the Ogre’s ability, not a tension involving another character.
+
+11. **Action: eats_ogre**
+    - Subject: Cat
+    - Object: Ogre
+    - The Ogre’s life is at risk as the Cat plans to eat him. So `life_at_risk` for the Ogre.
+
+12. **Action: invites_castle**
+    - Subject: King
+    - Object: Marquis_of_Carabas
+    - The King is impressed by the Marquis's supposed wealth, but no direct tension here.
+
+13. **Action: marries_princess**
+    - Subject: Marquis_of_Carabas
+    - Object: Princess
+    - This action resolves previous tensions and solidifies their union, so no specific tension needed.
+
+Now, I'll map these thoughts into the JSON structure as per instructions, adding `tensions` under `preconditions` for each action where applicable.
+</think>
+
+```json
+[
+  {
+    "action": "hears_despair",
+    "n_characters": 2,
+    "subject": "Cat",
+    "object": "Marquis_of_Carabas",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "-",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "tricks_animal",
+    "n_characters": 1,
+    "subject": "Cat",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": []
+    }
+  },
+  {
+    "action": "presents_gift",
+    "n_characters": 2,
+    "subject": "Cat",
+    "object": "King",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "-",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "tricks_animal",
+    "n_characters": 1,
+    "subject": "Cat",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": []
+    }
+  },
+  {
+    "action": "bathes_master",
+    "n_characters": 2,
+    "subject": "Marquis_of_Carabas",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "-",
+          "to": "a"
+        }
+      ]
+    }
+  },
+  {
+    "action": "cries_help",
+    "n_characters": 1,
+    "subject": "Cat",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "-",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "receives_clothes",
+    "n_characters": 2,
+    "subject": "King",
+    "object": "Marquis_of_Carabas",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "-",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "falls_in_love",
+    "n_characters": 2,
+    "subject": "Princess",
+    "object": "Marquis_of_Carabas",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "threatens_workers",
+    "n_characters": 1,
+    "subject": "Cat",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "-",
+          "to": "*"
+        }
+      ]
+    }
+  },
+  {
+    "action": "transforms_mouse",
+    "n_characters": 1,
+    "subject": "Ogre",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": []
+    }
+  },
+  {
+    "action": "eats_ogre",
+    "n_characters": 2,
+    "subject": "Cat",
+    "object": "Ogre",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "-",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "invites_castle",
+    "n_characters": 2,
+    "subject": "King",
+    "object": "Marquis_of_Carabas",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "marries_princess",
+    "n_characters": 2,
+    "subject": "Marquis_of_Carabas",
+    "object": "Princess",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  }
+]
+```

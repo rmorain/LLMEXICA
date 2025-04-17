@@ -1,0 +1,168 @@
+<think>
+Alright, so I need to analyze the story of Hansel and Gretel from a narrative perspective, focusing on emotional links between characters and tensions that build throughout the story. The user has provided specific categories for emotional links (non-romantic and romantic) and types of tension (character_dead, life_at_risk, health_at_risk, prisoner). My task is to extract the essential actions related to these elements and organize them into a JSON structure.
+
+First, I'll read through the story carefully to identify key events involving Hansel, Gretel, their father, stepmother, and the witch. Since there are no romantic relationships here, all emotional links will be non-romantic, focusing on the love and loyalty between siblings and the tension with the parents, especially the stepmother.
+
+I'll start by noting each significant action, ensuring that each entry includes the action type, number of characters involved, subject, object, emotional link, tension, and whether it's preconditions or postconditions. 
+
+The story begins with the family facing poverty, leading to the stepmother convincing the father to abandon Hansel and Gretel in the forest. This sets up initial tensions around life_at_risk because the children are left to fend for themselves. The emotional link here is non-romantic between the parents and children but turns negative due to the stepmother's malice.
+
+Hansel's plan to leave breadcrumbs (pebbles) shows his proactive nature, creating a tension of health_at_risk as they face starvation. Gretel's emotional distress is another key point, highlighting their bond. When they get lost, the life_at_risk tension intensifies because they can't find their way home.
+
+The second abandonment attempt sees Hansel unable to gather pebbles due to the locked door, so he uses breadcrumbs instead. This leads to the witch's trap when birds eat the crumbs, increasing life_at_risk and health_at_risk as they starve and become prisoners of the witch.
+
+In captivity, Hansel is caged (prisoner), and Gretel is forced into labor, introducing prisoner tension for both. The witch's plan to eat them heightens life_at_risk. Gretel outsmarting the witch by pushing her into the oven resolves some tensions but not all until they escape.
+
+Finally, their return home brings resolution as the stepmother is dead, and they are reunited with their father. This removes the remaining tensions, leaving only non-romantic emotional links of relief and happiness.
+
+I'll structure each action in chronological order, ensuring that each entry fits the specified format without using character names, keeping actions simple. Each action must relate to either an emotional link or a tension type.
+</think>
+
+```json
+[
+  {
+    "action": "face_poverty",
+    "n_characters": 4,
+    "subject": "-",
+    "object": "-",
+    "emotional_link": "non-romantic",
+    "tension": ["life_at_risk"],
+    "preconditions": true
+  },
+  {
+    "action": "plan_abandonment",
+    "n_characters": 2,
+    "subject": "stepmother",
+    "object": "father",
+    "emotional_link": "non-romantic",
+    "tension": ["life_at_risk"],
+    "preconditions": true
+  },
+  {
+    "action": "gather_pebbles",
+    "n_characters": 1,
+    "subject": "Hansel",
+    "object": "-",
+    "emotional_link": "non-romantic",
+    "tension": ["health_at_risk"],
+    "preconditions": true
+  },
+  {
+    "action": "weep",
+    "n_characters": 1,
+    "subject": "Gretel",
+    "object": "-",
+    "emotional_link": "non-romantic",
+    "tension": ["life_at_risk", "health_at_risk"],
+    "preconditions": true
+  },
+  {
+    "action": "comfort",
+    "n_characters": 2,
+    "subject": "Hansel",
+    "object": "Gretel",
+    "emotional_link": "non-romantic",
+    "tension": ["life_at_risk"],
+    "preconditions": true
+  },
+  {
+    "action": "abandon_children",
+    "n_characters": 4,
+    "subject": "father",
+    "object": "children",
+    "emotional_link": "non-romantic",
+    "tension": ["life_at_risk", "health_at_risk"],
+    "preconditions": true
+  },
+  {
+    "action": "leave_trail",
+    "n_characters": 1,
+    "subject": "Hansel",
+    "object": "-",
+    "emotional_link": "non-romantic",
+    "tension": ["life_at_risk", "health_at_risk"],
+    "preconditions": true
+  },
+  {
+    "action": "lose_way",
+    "n_characters": 2,
+    "subject": "-",
+    "object": "-",
+    "emotional_link": "non-romantic",
+    "tension": ["life_at_risk", "health_at_risk"],
+    "preconditions": true
+  },
+  {
+    "action": "find_house",
+    "n_characters": 2,
+    "subject": "-",
+    "object": "-",
+    "emotional_link": "non-romantic",
+    "tension": ["life_at_risk", "health_at_risk"],
+    "preconditions": true
+  },
+  {
+    "action": "capture_children",
+    "n_characters": 3,
+    "subject": "witch",
+    "object": "children",
+    "emotional_link": "non-romantic",
+    "tension": ["prisoner", "life_at_risk"],
+    "preconditions": true
+  },
+  {
+    "action": "imprison",
+    "n_characters": 2,
+    "subject": "witch",
+    "object": "Hansel",
+    "emotional_link": "non-romantic",
+    "tension": ["prisoner", "life_at_risk"],
+    "preconditions": true
+  },
+  {
+    "action": "force_work",
+    "n_characters": 2,
+    "subject": "witch",
+    "object": "Gretel",
+    "emotional_link": "non-romantic",
+    "tension": ["prisoner", "life_at_risk"],
+    "preconditions": true
+  },
+  {
+    "action": "plan_escape",
+    "n_characters": 2,
+    "subject": "Gretel",
+    "object": "Hansel",
+    "emotional_link": "non-romantic",
+    "tension": ["prisoner", "life_at_risk"],
+    "preconditions": true
+  },
+  {
+    "action": "kill_witch",
+    "n_characters": 2,
+    "subject": "Gretel",
+    "object": "witch",
+    "emotional_link": "non-romantic",
+    "tension": ["character_dead"],
+    "preconditions": true
+  },
+  {
+    "action": "free_hansel",
+    "n_characters": 2,
+    "subject": "Gretel",
+    "object": "Hansel",
+    "emotional_link": "non-romantic",
+    "tension": ["prisoner"],
+    "preconditions": true
+  },
+  {
+    "action": "return_home",
+    "n_characters": 2,
+    "subject": "-",
+    "object": "-",
+    "emotional_link": "non-romantic",
+    "tension": [],
+    "postconditions": true
+  }
+]
+```

@@ -1,0 +1,459 @@
+
+Okay, I need to ensure that each action in the JSON is logically consistent. This involves checking several aspects:
+
+1. **n_characters**: Must match the number of characters involved in preconditions and postconditions.
+2. **Emotional Links**: Ensure they don't reference dead characters and are correctly typed (non-romantic or romantic).
+3. **Tensions**: Ensure they resolve appropriately, using normal tensions where applicable.
+4. **Preconditions vs Postconditions**: They shouldn't be the same; postconditions must reflect a change.
+5. **JSON Syntax**: All keys present, correct values without invalid formats.
+
+I'll go through each action:
+
+1. **hears_despair**
+   - n_characters=2 with both subject and object set correctly.
+   - Emotional link from Cat to Marquis (non-romantic).
+   - Tension: life_at_risk for Marquis.
+   - Postconditions: Strengthened emotional bond.
+
+2. **tricks_animal**
+   - n_characters=1, so only 'a' should be used.
+   - No emotional links or tensions as it involves animals.
+   - However, the Cat's success might imply a stronger bond with the master post-action.
+
+3. **presents_gift**
+   - n_characters=2, both subject and object set.
+   - Emotional link from Cat to Marquis (non-romantic).
+   - Tension: life_at_risk for Marquis.
+   - Postconditions: Strengthened emotional bond between King and Marquis.
+
+4. **tricks_animal**
+   - Same as above; no changes needed.
+
+5. **bathes_master**
+   - n_characters=2, but object is '-', so emotional links should be adjusted.
+   - Tension: life_at_risk for master (Marquis).
+   - Postconditions: Trust in Cat strengthens bond.
+
+6. **cries_help**
+   - n_characters=1, so only 'a' (Cat) involved.
+   - Emotional link from Cat to Marquis (non-romantic).
+   - Tension: life_at_risk for Marquis.
+   - Postconditions: Gratitude from Marquis to Cat.
+
+7. **receives_clothes**
+   - n_characters=2, both set correctly.
+   - Emotional link from King to Marquis (non-romantic).
+   - Tension: Resolved as help is provided.
+   - Postconditions: Strengthened bond between King and Marquis.
+
+8. **falls_in_love**
+   - n_characters=2, emotional links correct (romantic).
+   - No tensions, postconditions solidify romantic bond.
+
+9. **threatens_workers**
+   - n_characters=1, but emotional link implies 'a' to '*' (workers).
+   - Tension: life_at_risk for workers.
+   - Postconditions: Negative emotional link from workers to Cat.
+
+10. **transforms_mouse**
+    - n_characters=1, no emotional links or tensions; postconditions none.
+
+11. **eats_ogre**
+    - n_characters=2, both set correctly.
+    - Emotional link from Cat to Marquis (non-romantic).
+    - Tension: life_at_risk for Ogre.
+    - Postconditions: Strengthened bond between Cat and Marquis.
+
+12. **invites_castle**
+    - n_characters=2, emotional links correct (non-romantic).
+    - No tensions; postconditions strengthen trust.
+
+13. **marries_princess**
+    - n_characters=2, romantic link solidified.
+    - Postconditions reflect commitment.
+
+I need to ensure all these points are correctly implemented in the JSON without logical inconsistencies and with proper syntax.
+</think>
+
+```json
+[
+  {
+    "action": "hears_despair",
+    "n_characters": 2,
+    "subject": "Cat",
+    "object": "Marquis_of_Carabas",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "-",
+          "to": "b"
+        }
+      ]
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "tricks_animal",
+    "n_characters": 1,
+    "subject": "Cat",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "presents_gift",
+    "n_characters": 2,
+    "subject": "Cat",
+    "object": "King",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "-",
+          "to": "b"
+        }
+      ]
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "tricks_animal",
+    "n_characters": 1,
+    "subject": "Cat",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "bathes_master",
+    "n_characters": 2,
+    "subject": "Marquis_of_Carabas",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "-",
+          "to": "a"
+        }
+      ]
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "cries_help",
+    "n_characters": 1,
+    "subject": "Cat",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "-",
+          "to": "b"
+        }
+      ]
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "receives_clothes",
+    "n_characters": 2,
+    "subject": "King",
+    "object": "Marquis_of_Carabas",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "-",
+          "to": "b"
+        }
+      ]
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "falls_in_love",
+    "n_characters": 2,
+    "subject": "Princess",
+    "object": "Marquis_of_Carabas",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "threatens_workers",
+    "n_characters": 1,
+    "subject": "Cat",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "-",
+          "to": "*"
+        }
+      ]
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -3,
+          "from": "a",
+          "to": "*"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "transforms_mouse",
+    "n_characters": 1,
+    "subject": "Ogre",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": []
+    }
+  },
+  {
+    "action": "eats_ogre",
+    "n_characters": 2,
+    "subject": "Cat",
+    "object": "Ogre",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "-",
+          "to": "b"
+        }
+      ]
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "invites_castle",
+    "n_characters": 2,
+    "subject": "King",
+    "object": "Marquis_of_Carabas",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "marries_princess",
+    "n_characters": 2,
+    "subject": "Marquis_of_Carabas",
+    "object": "Princess",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  }
+]
+```

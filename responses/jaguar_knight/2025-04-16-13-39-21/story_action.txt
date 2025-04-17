@@ -1,0 +1,249 @@
+<think>
+Okay, I need to help the user analyze a story and extract specific actions related to emotional links and tensions. Let me read through their query carefully.
+
+So, they want me to act as a narrative analysis expert focusing on two types of emotional links: non-romantic and romantic. Also, four tension types—character_dead, life_at_risk, health_at_risk, prisoner. My task is to go through the given story, identify key actions that fit these categories, and structure them in JSON.
+
+First, I'll break down the story step by step. The story involves Jaguar_Knight, Princess, and several gods. There are a few main events: the storm causing injury, healing, kidnapping, rescue, romantic feelings, conflict due to a tattoo, and tragic ending with deaths.
+
+I need to extract actions that relate to emotional links or build tension. Emotional links can be non-romantic (like loyalty, friendship) or romantic (love). Tensions are specific events like someone dying, life at risk, health issues, or being a prisoner.
+
+Starting from the beginning:
+
+1. TLALOC sends a storm causing bridge collapse and injury to Jaguar_Knight—this is health_at_risk tension.
+2. Princess heals Jaguar_Knight, showing non-romantic emotional link (care).
+3. Enemy kidnaps Princess, so she's a prisoner. Tension type: prisoner.
+4. Enemy plans to kill her at midnight—life_at_risk.
+5. Jaguar_Knight prays for wisdom and bravery—preparing for rescue, maybe building tension as he's about to face danger.
+6. Enemy charges at Princess, but she's angry—this is another life_at_risk moment since the enemy is attacking.
+7. Jaguar_Knight searches and finds the enemy, leading to a confrontation with attack actions. These are tensions too.
+8. After defeating the enemy, Jaguar_Knight frees Princess, showing non-romantic (admiration) link turning into romantic feelings when they kiss.
+9. Princess recognizes the tattoo, leading to conflict—mixed emotions here, both love and hatred, so emotional links shift from romantic to negative.
+10. She kills him and herself, resulting in their deaths—character_dead tension.
+
+Now, I need to map these events into actions with subjects, objects, and n_characters. Each action should be simple and in snake_case.
+
+Let me list them:
+
+- Storm causes injury: 'injure' by storm (n=1)
+- Princess heals Jaguar_Knight: 'heal' (n=2)
+- Kidnap: 'kidnap' (n=2)
+- Enemy threatens to kill: 'life_at_risk' (n=1, since enemy is the subject here)
+Wait, but in JSON, each action should have a subject and object as characters. So maybe 'threaten' with enemy as subject and Princess as object.
+But according to the user's example, actions are like 'eats_porridge', so I need to capture the action, not the tension type directly.
+
+Hmm, perhaps it's better to focus on actions that cause these tensions rather than labeling them. So, enemy kidnapping is an action (kidnap), which leads to prisoner tension.
+
+I'll go through each event and assign the correct action:
+
+1. Storm causes bridge collapse and injury: This is a significant event but maybe not directly an action between characters. However, it leads to Jaguar_Knight being injured, so perhaps 'injure' by storm? Or since storm is a god's action, maybe it's better to consider TLALOC as subject.
+Wait, the user said to focus on actions where subject and object are characters, not inanimate objects or gods. So maybe this event doesn't count because the subject is a god.
+
+Wait, no—the bridge collapse was caused by the storm (TLALOC), but the action of injuring is done by the bridge's collapse. However, the user wants actions where both subject and object are characters. So perhaps this event isn't directly an action between two characters, so maybe we skip it or find another way.
+
+But looking back, Jaguar_Knight was trying to cross when the bridge collapsed. So maybe 'collapse_bridge' with subject as bridge (but that's an object). Hmm, this is tricky. Maybe I should not include this since the subject isn't a character but a natural event caused by a god.
+
+Moving on: Princess heals Jaguar_Knight—this is a clear action between two characters.
+
+Then enemy kidnaps Princess—action 'kidnap' with enemy as subject and Princess as object.
+
+Enemy ties her up, so that's another action 'tie_up'.
+
+Enemy threatens to kill her at midnight: maybe 'threaten', but since it's a planned action, perhaps 'plan_execution'? Or just 'attack' when the time comes. Wait, in the story, after tying up, enemy charges against Princess, which is an attack.
+
+So actions would be:
+
+- Jaguar_Knight tries to cross bridge (maybe not included as subject isn't character)
+- Bridge collapses, injuring him—maybe skip
+- Princess heals: 'heal' (subject Princess, object Jaguar_Knight)
+- Enemy kidnaps: 'kidnap'
+- Ties her up: 'tie_up'
+- Charges against: 'attack'
+- Jaguar_Knight prays: maybe not an action with another character, so skip.
+- Searches for enemy: 'search'
+- Attacks enemy: 'attack', throws dust, stabs, etc.—maybe break into separate actions or combine as one attack.
+
+After defeating enemy, frees Princess: 'liberate'
+
+They kiss: 'kiss' (romantic link)
+
+Princess recognizes tattoo: 'recognize_tattoo'
+
+She kills him and herself: 'kill' twice—first Jaguar_Knight, then self.
+
+Wait, but in the story, she cuts his jugular, then her own throat. So two separate actions.
+
+So compiling all these:
+
+1. heal (n=2)
+2. kidnap (n=2)
+3. tie_up (n=2)
+4. attack (enemy charges) (n=2)
+5. search (Jaguar looking for enemy) but this is solo, so n=1? Or maybe 'search' without object.
+Wait, the user said to only include actions where subject and object are characters. So if Jaguar_Knight searches for enemy, subject is him, object is enemy—so that's okay.
+
+But in JSON, each action needs subject and object as characters or '-'.
+
+So:
+
+1. heal: subject Princess, object Jaguar_Knight
+2. kidnap: enemy kidnaps Princess
+3. tie_up: enemy ties Princess
+4. attack: enemy attacks Princess (when charging)
+5. search: Jaguar searches for enemy
+6. attack: Jaguar attacks enemy with dagger, etc.
+7. liberate: Jaguar frees Princess
+8. kiss: both do it, so mutual? Or subject and object as each other.
+
+Wait, in the story, Princess kisses Jaguar_Knight after liberation. So 'kiss' would be subject Princess, object Jaguar_Knight.
+
+Then she recognizes tattoo—action 'recognize', subject Princess, maybe object is Jaguar_Knight because his tattoo is recognized.
+
+Then she kills him: action 'kill', subject Princess, object Jaguar_Knight.
+
+She also kills herself: action 'kill', subject and object as herself. So n_characters=1.
+
+Wait, but the user said if same character is subject and object, it's allowed with n_characters accordingly.
+
+So I'll list all these actions in order:
+
+1. heal
+2. kidnap
+3. tie_up
+4. attack (enemy charges)
+5. search
+6. attack (Jaguar attacks enemy)
+7. liberate
+8. kiss
+9. recognize_tattoo
+10. kill (Princess kills Jaguar)
+11. kill (Princess kills herself)
+
+Wait, but 'recognize' isn't an action that directly affects another character—maybe it's more of an internal realization, so perhaps not included.
+
+Alternatively, the action is 'express_recognition' or similar. But the user's example had actions like 'eats_porridge', which are physical.
+
+So maybe only include actions where characters interact. So recognizing a tattoo might be considered, but as it's more internal, perhaps not.
+
+But the user said to focus on actions that relate to emotional links and tensions. Recognizing the tattoo affects their emotional link, so perhaps it should be included. How?
+
+Maybe 'realize_identity'—so action is 'realize', subject Princess, object Jaguar_Knight because she realizes his identity via the tattoo.
+
+So including that as an action.
+
+So final list:
+
+1. heal (Princess helps Jaguar)
+2. kidnap (enemy takes Princess)
+3. tie_up (enemy restrains her)
+4. attack (enemy charges at her)
+5. search (Jaguar looks for enemy)
+6. attack (Jaguar fights enemy)
+7. liberate (frees Princess)
+8. kiss
+9. realize_identity
+10. kill (Princess kills Jaguar)
+11. kill (Princess kills herself)
+
+Now, mapping each to JSON:
+
+Each action needs action name, n_characters, subject, object.
+
+Heal: action 'heal', n=2, sub=Princess, obj=Jaguar_Knight
+
+Kidnap: 'kidnap', n=2, sub=Enemy, obj=Princess
+
+Tie_up: same subjects
+
+Attack (enemy charges): 'attack', sub=Enemy, obj=Princess
+
+Search: 'search', sub=Jaguar, obj=Enemy (since he's searching for enemy)
+
+Attack (Jaguar vs Enemy): 'attack', sub=Jaguar, obj=Enemy
+
+Liberate: 'liberate', sub=Jaguar, obj=Princess
+
+Kiss: mutual? Or one-way. Since Princess kisses Jaguar, it's sub=Princess, obj=Jaguar.
+
+Realize_identity: sub=Princess, obj=Jaguar (she realizes his identity)
+
+Kill (Jaguar): sub=Princess, obj=Jaguar
+
+Kill (self): sub=Princess, obj=Princess, n=1
+
+I think that's all. Now, I'll structure this into JSON as per the user's instructions.
+</think>
+
+Here is the structured JSON output based on the provided story:
+
+```json
+[
+  {
+    "action": "heal",
+    "n_characters": 2,
+    "subject": "Princess",
+    "object": "Jaguar_Knight"
+  },
+  {
+    "action": "kidnap",
+    "n_characters": 2,
+    "subject": "Enemy",
+    "object": "Princess"
+  },
+  {
+    "action": "tie_up",
+    "n_characters": 2,
+    "subject": "Enemy",
+    "object": "Princess"
+  },
+  {
+    "action": "attack",
+    "n_characters": 2,
+    "subject": "Enemy",
+    "object": "Princess"
+  },
+  {
+    "action": "search",
+    "n_characters": 2,
+    "subject": "Jaguar_Knight",
+    "object": "Enemy"
+  },
+  {
+    "action": "attack",
+    "n_characters": 2,
+    "subject": "Jaguar_Knight",
+    "object": "Enemy"
+  },
+  {
+    "action": "liberate",
+    "n_characters": 2,
+    "subject": "Jaguar_Knight",
+    "object": "Princess"
+  },
+  {
+    "action": "kiss",
+    "n_characters": 2,
+    "subject": "Princess",
+    "object": "Jaguar_Knight"
+  },
+  {
+    "action": "realize_identity",
+    "n_characters": 2,
+    "subject": "Princess",
+    "object": "Jaguar_Knight"
+  },
+  {
+    "action": "kill",
+    "n_characters": 2,
+    "subject": "Princess",
+    "object": "Jaguar_Knight"
+  },
+  {
+    "action": "kill",
+    "n_characters": 1,
+    "subject": "Princess",
+    "object": "Princess"
+  }
+]
+```
+
+This JSON captures the essential actions related to emotional links and tensions in the narrative, focusing on interactions between characters.

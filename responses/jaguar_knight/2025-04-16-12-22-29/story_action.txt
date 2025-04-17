@@ -1,0 +1,134 @@
+<think>
+Alright, I'm trying to help this user who has provided a story and wants an analysis of the actions focusing on emotional links and tensions. They mentioned that they are a narrative analysis expert, so they probably need this for some academic or storytelling purpose.
+
+First, I'll read through the story carefully. It's about Jaguar_Knight and Princess living in Tenochtitlan. There's a storm caused by Tlaloc, which damages a bridge. Jaguar_Knight gets injured when trying to cross, and Princess saves him with a curative plant. Then, there's revenge from an enemy who kidnapped Princess. Jaguar_Knight rescues her, they fall in love, but then she recognizes his tattoo linked to her father's murder, leading to tragic consequences.
+
+I need to identify the actions that relate to emotional links (non-romantic and romantic) and tensions like character_dead, life_at_risk, etc. The user wants these actions organized in JSON format with specific keys: action, n_characters, subject, object.
+
+Let me start by breaking down the story step by step. 
+
+1. **Storm Damages Bridge**: This is a key event causing tension (life_at_risk). So, I'll note 'storm' as an action but wait—the user said to focus on actions involving characters, so maybe not include this since it's a natural event.
+
+2. **Jaguar_Knight Injured**: He tries to cross the bridge and gets hurt. This is life_at_risk, so the action would be 'suffers_injury' with subject as Jaguar_Knight and no object because it's self-inflicted or caused by an event.
+
+3. **Princess Saves Him**: She uses a curative plant, which shows her care (non-romantic emotional link). The action is 'applies_curative_plant', n_characters=2, subject Princess, object Jaguar_Knight.
+
+4. **Jaguar_Knight Recuperates**: This reduces tension but doesn't involve another character, so maybe not an action per the guidelines.
+
+5. **Enemy Kidnaps Princess**: This introduces prisoner and life_at_risk tensions. Action 'kidnaps' with subject Enemy, object Princess.
+
+6. **Princess Tied Up**: Another action by Enemy, increasing tension. Action 'ties_to_rock'.
+
+7. **Jaguar_Knight's Prayer**: He seeks help, showing determination (non-romantic link). Action 'prays', n_characters=1.
+
+8. **Enemy Attacks Princess**: Life_at_risk again. Action 'attacks', but since it's just charging, maybe not, as per the user's note to avoid specific actions without both subject and object.
+
+9. **Jaguar_Knight Searches for Enemy**: Determination again, action 'searches_for_enemy'.
+
+10. **Fights Enemy**: Actions include throwing dust, attacking with dagger, taking heart—each of these is an action involving two characters. So, 'throws_dust', 'attacks_with_dagger', 'takes_heart'.
+
+11. **Liberates Princess**: Shows bravery and romantic feelings. Action 'liberates_prisoner' (but the user prefers terms like 'liberates'), n_characters=2.
+
+12. **Romantic Kiss**: Romantic emotional link, action 'kisses'.
+
+13. **Princess Recognizes Tattoo**: This introduces conflict, changing her emotions from love to hatred. So, action 'recognizes_tattoo', subject Princess.
+
+14. **Princess Kills Jaguar_Knight and Herself**: These are tragic events leading to character_dead tension. Actions 'cuts_jugular' and 'cuts_throat'.
+
+I need to ensure each action is in snake_case, without character names, and that n_characters reflects the number of involved characters. Also, I should only include actions where both subject and object (if applicable) are characters.
+
+Wait, some actions might not fit because they involve objects or natural events. For example, 'storm' doesn't have a character subject, so it's excluded. Similarly, tying to a rock is done by Enemy on Princess, so that's included as 'ties_to_rock'.
+
+I should also check the order of events in the story and ensure the JSON follows that sequence.
+
+Now, putting this all together into the JSON structure with each action and their respective keys.
+</think>
+
+```json
+[
+  {
+    "action": "suffers_injury",
+    "n_characters": 1,
+    "subject": "Jaguar_Knight",
+    "object": "-"
+  },
+  {
+    "action": "applies_curative_plant",
+    "n_characters": 2,
+    "subject": "Princess",
+    "object": "Jaguar_Knight"
+  },
+  {
+    "action": "kidnaps",
+    "n_characters": 2,
+    "subject": "Enemy",
+    "object": "Princess"
+  },
+  {
+    "action": "ties_to_rock",
+    "n_characters": 2,
+    "subject": "Enemy",
+    "object": "Princess"
+  },
+  {
+    "action": "prays",
+    "n_characters": 1,
+    "subject": "Jaguar_Knight",
+    "object": "-"
+  },
+  {
+    "action": "searches_for_enemy",
+    "n_characters": 1,
+    "subject": "Jaguar_Knight",
+    "object": "-"
+  },
+  {
+    "action": "throws_dust",
+    "n_characters": 2,
+    "subject": "Jaguar_Knight",
+    "object": "Enemy"
+  },
+  {
+    "action": "attacks_with_dagger",
+    "n_characters": 2,
+    "subject": "Jaguar_Knight",
+    "object": "Enemy"
+  },
+  {
+    "action": "takes_heart",
+    "n_characters": 2,
+    "subject": "Jaguar_Knight",
+    "object": "Enemy"
+  },
+  {
+    "action": "liberates_prisoner",
+    "n_characters": 2,
+    "subject": "Jaguar_Knight",
+    "object": "Princess"
+  },
+  {
+    "action": "kisses",
+    "n_characters": 2,
+    "subject": "Princess",
+    "object": "Jaguar_Knight"
+  },
+  {
+    "action": "recognizes_tattoo",
+    "n_characters": 1,
+    "subject": "Princess",
+    "object": "-"
+  },
+  {
+    "action": "cuts_jugular",
+    "n_characters": 2,
+    "subject": "Princess",
+    "object": "Jaguar_Knight"
+  },
+  {
+    "action": "cuts_throat",
+    "n_characters": 1,
+    "subject": "Princess",
+    "object": "-"
+  }
+]
+```

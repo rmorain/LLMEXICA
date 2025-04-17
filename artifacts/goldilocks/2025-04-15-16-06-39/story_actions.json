@@ -1,0 +1,203 @@
+[
+    {
+        "action": "taste_porridge",
+        "n_characters": 2,
+        "subject": "Goldilocks",
+        "object": "Great Big Bear",
+        "preconditions": {
+            "emotional_links": [],
+            "tensions": []
+        },
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -1,
+                    "from": "Goldilocks",
+                    "to": "Great Big Bear"
+                }
+            ],
+            "tensions": []
+        }
+    },
+    {
+        "action": "taste_porridge",
+        "n_characters": 2,
+        "subject": "Goldilocks",
+        "object": "Middle-sized Bear",
+        "preconditions": {
+            "emotional_links": [],
+            "tensions": []
+        },
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -1,
+                    "from": "Goldilocks",
+                    "to": "Middle-sized Bear"
+                }
+            ],
+            "tensions": []
+        }
+    },
+    {
+        "action": "eat_porridge",
+        "n_characters": 2,
+        "subject": "Goldilocks",
+        "object": "Little Wee Bear",
+        "preconditions": {
+            "emotional_links": [],
+            "tensions": []
+        },
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 1,
+                    "from": "Goldilocks",
+                    "to": "Little Wee Bear"
+                }
+            ],
+            "tensions": []
+        }
+    },
+    {
+        "action": "sit_in-chair",
+        "n_characters": 2,
+        "subject": "Goldilocks",
+        "object": "Great Big Bear",
+        "preconditions": {
+            "emotional_links": [],
+            "tensions": []
+        },
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -1,
+                    "from": "Goldilocks",
+                    "to": "Great Big Bear"
+                }
+            ],
+            "tensions": []
+        }
+    },
+    {
+        "action": "sit_in-chair",
+        "n_characters": 2,
+        "subject": "Goldilocks",
+        "object": "Middle-sized Bear",
+        "preconditions": {
+            "emotional_links": [],
+            "tensions": []
+        },
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -1,
+                    "from": "Goldilocks",
+                    "to": "Middle-sized Bear"
+                }
+            ],
+            "tensions": []
+        }
+    },
+    {
+        "action": "break_chair",
+        "n_characters": 2,
+        "subject": "Goldilocks",
+        "object": "Little Wee Bear",
+        "preconditions": {
+            "emotional_links": [],
+            "tensions": []
+        },
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -2,
+                    "from": "Goldilocks",
+                    "to": "Little Wee Bear"
+                }
+            ],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "Goldilocks",
+                    "to": "Little Wee Bear"
+                }
+            ]
+        }
+    },
+    {
+        "action": "lie_in-bed",
+        "n_characters": 2,
+        "subject": "Goldilocks",
+        "object": "Great Big Bear",
+        "preconditions": {
+            "emotional_links": [],
+            "tensions": []
+        },
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -1,
+                    "from": "Goldilocks",
+                    "to": "Great Big Bear"
+                }
+            ],
+            "tensions": []
+        }
+    },
+    {
+        "action": "lie_in-bed",
+        "n_characters": 2,
+        "subject": "Goldilocks",
+        "object": "Middle-sized Bear",
+        "preconditions": {
+            "emotional_links": [],
+            "tensions": []
+        },
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -1,
+                    "from": "Goldilocks",
+                    "to": "Middle-sized Bear"
+                }
+            ],
+            "tensions": []
+        }
+    },
+    {
+        "action": "sleep_in_bed",
+        "n_characters": 2,
+        "subject": "Goldilocks",
+        "object": "Little Wee Bear",
+        "preconditions": {
+            "emotional_links": [],
+            "tensions": []
+        },
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 1,
+                    "from": "Goldilocks",
+                    "to": "Little Wee Bear"
+                }
+            ],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "Goldilocks",
+                    "to": "Little Wee Bear"
+                }
+            ]
+        }
+    }
+]

@@ -1,0 +1,343 @@
+
+
+Alright, I need to tackle this problem step by step. So, the user has provided a story about Goldilocks and the Three Bears, and they want me to analyze it from a narrative perspective, focusing on postconditions related to emotional links and tensions.
+
+First, let's understand what's being asked. Postconditions are changes that result from an action, affecting either emotional links or tensions. Emotional links can be non-romantic or romantic, but in this story, we're only dealing with non-romantic links. Tensions include things like a character dying, their life being at risk, health issues, or imprisonment.
+
+The story goes like this: Goldilocks enters the bears' house while they're out. She tastes their porridge, sits in their chairs, and sleeps in Baby Bear's bed. The bears return home to find their porridge has been tasted, chairs sat in, and someone sleeping in Baby Bear's bed. They confront Goldilocks, who then flees.
+
+Now, I need to extract actions from this story that relate to postconditions. Each action should be labeled in a simple, abstract way without mentioning specific characters, using snake_case. For each action, I'll note the subject (who performs it) and object (who receives it). If there's no subject or object, I'll use '-'.
+
+After extracting these actions, I need to verify that they accurately reflect the story. Then, for each action, identify any postconditions related to emotional links and tensions. Postconditions are changes that result from the action, such as an increase in negative emotions towards someone or a resolution of a tension.
+
+Let's start by listing potential actions from the story:
+
+1. Goldilocks tastes Great Big Bear's porridge.
+2. Goldilocks tastes Middle-sized Bear's porridge.
+3. Goldilocks tastes Little Wee Bear's porridge and eats it all.
+4. Goldilocks sits in Great Big Bear's chair (too hard).
+5. Goldilocks sits in Middle-sized Bear's chair (too soft).
+6. Goldilocks sits in Little Wee Bear's chair until it breaks.
+7. Goldilocks lies down in Great Big Bear's bed (too high at the head).
+8. Goldilocks lies down in Middle-sized Bear's bed (too high at the foot).
+9. Goldilocks lies down in Little Wee Bear's bed and falls asleep.
+10. The bears return home and find their porridge disturbed.
+11. Great Big Bear notices his spoon in the porridge.
+12. Middle-sized Bear notices his spoon in the porridge.
+13. Little Wee Bear notices his porridge is gone.
+14. Bears investigate further and find their chairs disturbed.
+15. Great Big Bear's chair cushion was not straight.
+16. Middle-sized Bear's chair cushion was squashed.
+17. Little Wee Bear's chair bottom broke.
+18. Bears go upstairs to check the beds.
+19. Great Big Bear notices his pillow moved.
+20. Middle-sized Bear notices his bolster moved.
+21. Little Wee Bear finds Goldilocks asleep in his bed.
+22. Goldilocks wakes up, sees the bears, and jumps out the window.
+
+Now, I need to translate these into the required JSON format. Each action should have 'action', 'n_characters' (number of characters involved), 'subject', and 'object'. If either is missing, use '-'.
+
+Let's start mapping:
+
+1. tastes_porridge: Goldilocks as subject, Great Big Bear as object.
+2. tastes_porridge: Goldilocks as subject, Middle-sized Bear as object.
+3. eats_porridge: Goldilocks as subject, Little Wee Bear as object (since she ate it all).
+4. sits_in_chair: Goldilocks as subject, Great Big Bear as object.
+5. sits_in_chair: Goldilocks as subject, Middle-sized Bear as object.
+6. sits_in_chair: Goldilocks as subject, Little Wee Bear as object.
+7. lies_in_bed: Goldilocks as subject, Great Big Bear as object.
+8. lies_in_bed: Goldilocks as subject, Middle-sized Bear as object.
+9. sleeps: Goldilocks as subject, Little Wee Bear's bed as object? Wait, objects should be characters, so maybe '-' since she's sleeping in the bed, not interacting directly with a character yet.
+10. investigate: Bears as subjects, house as object? No, need to involve characters. Maybe they check porridge and chairs, but these are objects. So perhaps no direct actions here.
+11. notices_spoon: Great Big Bear as subject, porridge (object is '-').
+12. notices_spoon: Middle-sized Bear as subject, porridge ('-').
+13. notices_porridge_missing: Little Wee Bear as subject, porridge ('-').
+14. investigate_chairs: Bears as subjects, chairs as objects ('-').
+15. notices_cushion: Great Big Bear, cushion ('-').
+16. notices_cushion: Middle-sized Bear, cushion ('-').
+17. notices_broken-chair: Little Wee Bear, chair ('-').
+18. go_upstairs: Bears as subjects, bedchamber as object ('-').
+19. notices_pillow: Great Big Bear, pillow ('-').
+20. notices_bolster: Middle-sized Bear, bolster ('-').
+21. finds_goldilocks: Little Wee Bear as subject, Goldilocks as object.
+22. wakes_up: Goldilocks as subject, herself as object (since she's waking up).
+23. sees_bears: Goldilocks as subject, bears as objects.
+24. jumps_out_window: Goldilocks as subject, window ('-').
+
+Now, I need to ensure that 'subject' and 'object' are characters, not inanimate objects. So actions involving porridge, chairs, beds should have '-' for object unless directly interacting with a character.
+
+So refining:
+
+1. tastes_porridge: subject=Goldilocks, object=Great Big Bear.
+2. tastes_porridge: subject=Goldilocks, object=Middle-sized Bear.
+3. eats_porridge: subject=Goldilocks, object=Little Wee Bear.
+4. sits_in_chair: subject=Goldilocks, object=Great Big Bear.
+5. sits_in_chair: subject=Goldilocks, object=Middle-sized Bear.
+6. sits_in_chair: subject=Goldilocks, object=Little Wee Bear.
+7. lies_in_bed: subject=Goldilocks, object=Great Big Bear.
+8. lies_in_bed: subject=Goldilocks, object=Middle-sized Bear.
+9. sleeps: subject=Goldilocks, object='-'
+10. investigate: subject=Bears, object='-'
+11. notices_spoon: subject=Great Big Bear, object='-'
+12. notices_spoon: subject=Middle-sized Bear, object='-'
+13. notices_porridge_missing: subject=Little Wee Bear, object='-'
+14. investigate_chairs: subject=Bears, object='-'
+15. notices_cushion: subject=Great Big Bear, object='-'
+16. notices_cushion: subject=Middle-sized Bear, object='-'
+17. notices_broken-chair: subject=Little Wee Bear, object='-'
+18. go_upstairs: subject=Bears, object='-'
+19. notices_pillow: subject=Great Big Bear, object='-'
+20. notices_bolster: subject=Middle-sized Bear, object='-'
+21. finds_goldilocks: subject=Little Wee Bear, object=Goldilocks.
+22. wakes_up: subject=Goldilocks, object='-'
+23. sees_bears: subject=Goldilocks, object=Bears.
+24. jumps_out_window: subject=Goldilocks, object='-'
+
+Now, I need to check each action for postconditions related to emotional links and tensions. For example:
+
+1. When Goldilocks tastes the porridge, she develops a negative non-romantic link towards the bears due to her rudeness.
+2. When she sits in their chairs and breaks one, this creates a health risk for herself.
+3. When the bears find their porridge disturbed, they develop anger (negative emotional links) towards Goldilocks.
+4. When Goldilocks wakes up and sees the bears, her fear leads to a life_at_risk tension, causing her to jump out the window.
+
+I'll need to map these postconditions for each action accordingly.
+</think>
+
+Here is the structured JSON output with postconditions related to emotional links and tensions:
+
+```json
+[
+    {
+        "action": "tastes_porridge",
+        "n_characters": 2,
+        "subject": "Goldilocks",
+        "object": "Great Big Bear",
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -1,
+                    "from": "b",
+                    "to": "a"
+                }
+            ],
+            "tensions": []
+        }
+    },
+    {
+        "action": "tastes_porridge",
+        "n_characters": 2,
+        "subject": "Goldilocks",
+        "object": "Middle-sized Bear",
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -1,
+                    "from": "b",
+                    "to": "a"
+                }
+            ],
+            "tensions": []
+        }
+    },
+    {
+        "action": "eats_porridge",
+        "n_characters": 2,
+        "subject": "Goldilocks",
+        "object": "Little Wee Bear",
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -1,
+                    "from": "b",
+                    "to": "a"
+                }
+            ],
+            "tensions": []
+        }
+    },
+    {
+        "action": "sits_in_chair",
+        "n_characters": 2,
+        "subject": "Goldilocks",
+        "object": "Great Big Bear",
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -1,
+                    "from": "b",
+                    "to": "a"
+                }
+            ],
+            "tensions": []
+        }
+    },
+    {
+        "action": "sits_in_chair",
+        "n_characters": 2,
+        "subject": "Goldilocks",
+        "object": "Middle-sized Bear",
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -1,
+                    "from": "b",
+                    "to": "a"
+                }
+            ],
+            "tensions": []
+        }
+    },
+    {
+        "action": "sits_in_chair",
+        "n_characters": 2,
+        "subject": "Goldilocks",
+        "object": "Little Wee Bear",
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -1,
+                    "from": "b",
+                    "to": "a"
+                }
+            ],
+            "tensions": [
+                {
+                    "type": "health_at_risk",
+                    "from": "a",
+                    "to": "a"
+                }
+            ]
+        }
+    },
+    {
+        "action": "lies_in_bed",
+        "n_characters": 2,
+        "subject": "Goldilocks",
+        "object": "Great Big Bear",
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -1,
+                    "from": "b",
+                    "to": "a"
+                }
+            ],
+            "tensions": []
+        }
+    },
+    {
+        "action": "lies_in_bed",
+        "n_characters": 2,
+        "subject": "Goldilocks",
+        "object": "Middle-sized Bear",
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -1,
+                    "from": "b",
+                    "to": "a"
+                }
+            ],
+            "tensions": []
+        }
+    },
+    {
+        "action": "sleeps",
+        "n_characters": 1,
+        "subject": "Goldilocks",
+        "object": "-",
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": []
+        }
+    },
+    {
+        "action": "finds_goldilocks",
+        "n_characters": 2,
+        "subject": "Little Wee Bear",
+        "object": "Goldilocks",
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "wakes_up",
+        "n_characters": 1,
+        "subject": "Goldilocks",
+        "object": "-",
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "sees_bears",
+        "n_characters": 2,
+        "subject": "Goldilocks",
+        "object": "Bears",
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "jumps_out_window",
+        "n_characters": 1,
+        "subject": "Goldilocks",
+        "object": "-",
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "health_at_risk",
+                    "from": "a",
+                    "to": "a"
+                }
+            ]
+        }
+    }
+]
+```
+
+This JSON structure captures the essential actions from the story, focusing on postconditions related to emotional links and tensions. Each action includes any changes that result from the action, such as the development of negative emotions or the introduction/resolution of risks.

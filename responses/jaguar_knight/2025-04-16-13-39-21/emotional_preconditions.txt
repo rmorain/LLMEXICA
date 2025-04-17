@@ -1,0 +1,231 @@
+<think>
+Alright, I need to help the user enhance their JSON by adding preconditions related to emotional links for each action in their story analysis. The user has provided a JSON structure that includes actions with subjects and objects, and now they want to add preconditions based on emotional links.
+
+First, let me understand what's being asked. For each action, I need to identify if there are any emotional links (either non-romantic or romantic) that must exist between the subject and object for that action to make sense. These emotional links have a magnitude from -3 to 3. 
+
+I'll go through each action one by one.
+
+1. **Heal**: Princess heals Jaguar_Knight.
+   - Why would she heal him? likely because she cares about him, which is a non-romantic link with a positive magnitude, maybe +2 (concern or care).
+
+2. **Kidnap**: Enemy kidnaps Princess.
+   - The enemy's action implies negative feelings towards the Princess, probably non-romantic hatred, so magnitude -3.
+
+3. **Tie_up**: Enemy ties up Princess.
+   - Similar to kidnap, it's about the enemy's negative emotions towards her, so another non-romantic link with magnitude -3.
+
+4. **Attack (Enemy charges)**: Enemy attacks Princess.
+   - Again, the enemy's negative feelings drive this action, so non-romantic with magnitude -3.
+
+5. **Search**: Jaguar_Knight searches for Enemy.
+   - He is motivated by a positive emotional link towards Princess, wanting to rescue her. So non-romantic from him to her, maybe +2 (determination).
+
+6. **Attack (Jaguar vs Enemy)**: Jaguar attacks the Enemy.
+   - His motivation is to save Princess, so non-romantic towards her with magnitude +3 (strong determination).
+
+7. **Liberate**: Jaguar frees Princess.
+   - His action stems from strong positive feelings towards her, non-romantic, magnitude +3.
+
+8. **Kiss**: Princess kisses Jaguar_Knight.
+   - This is a romantic link between them, so type romantic with magnitude +3 (love).
+
+9. **Realize_identity**: Princess realizes Jaguar's identity via tattoo.
+   - This leads to negative emotions towards him, non-romantic with magnitude -2 (resentment or betrayal).
+
+10. **Kill (Jaguar)**: Princess kills Jaguar_Knight.
+    - Driven by negative emotions due to his past actions, non-romantic with magnitude -3 (hatred).
+
+11. **Kill (self)**: Princess kills herself.
+    - This is a self-directed action, but the emotional link here would be towards herself, perhaps indicating despair or guilt, so non-romantic with magnitude -3.
+
+Now, for each action in the JSON, I'll add the preconditions section with these inferred emotional links. If an action doesn't have a clear emotional precondition, the array will be empty. However, based on the story, most actions are driven by emotional motivations.
+
+I need to ensure that each emotional link specifies type, magnitude, and direction (from 'a' to 'b', where 'a' is subject and 'b' is object). If the action involves only one character, like 'kill' towards self, then both from and to would be 'a'.
+
+Let me structure this for each action in the JSON provided.
+</think>
+
+Here's the enhanced JSON with preconditions added based on inferred emotional links:
+
+```json
+[
+  {
+    "action": "heal",
+    "n_characters": 2,
+    "subject": "Princess",
+    "object": "Jaguar_Knight",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 2,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "kidnap",
+    "n_characters": 2,
+    "subject": "Enemy",
+    "object": "Princess",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "tie_up",
+    "n_characters": 2,
+    "subject": "Enemy",
+    "object": "Princess",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "attack",
+    "n_characters": 2,
+    "subject": "Enemy",
+    "object": "Princess",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "search",
+    "n_characters": 2,
+    "subject": "Jaguar_Knight",
+    "object": "Enemy",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 2,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "attack",
+    "n_characters": 2,
+    "subject": "Jaguar_Knight",
+    "object": "Enemy",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "liberate",
+    "n_characters": 2,
+    "subject": "Jaguar_Knight",
+    "object": "Princess",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "kiss",
+    "n_characters": 2,
+    "subject": "Princess",
+    "object": "Jaguar_Knight",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "realize_identity",
+    "n_characters": 2,
+    "subject": "Princess",
+    "object": "Jaguar_Knight",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -2,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "kill",
+    "n_characters": 2,
+    "subject": "Princess",
+    "object": "Jaguar_Knight",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "kill",
+    "n_characters": 1,
+    "subject": "Princess",
+    "object": "Princess",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -3,
+          "from": "a",
+          "to": "a"
+        }
+      ]
+    }
+  }
+]
+```
+
+This JSON now includes preconditions for each action, detailing the necessary emotional links and their magnitudes that drive the characters' actions in the story.

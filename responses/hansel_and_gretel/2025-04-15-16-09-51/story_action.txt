@@ -1,0 +1,161 @@
+<think>
+Alright, so I've been given this story of Hansel and Gretel, and I need to analyze it by extracting the essential actions related to emotional links and tensions. The user wants me to focus on two types of emotional links—non-romantic and romantic—and four types of tensions: character_dead, life_at_risk, health_at_risk, and prisoner.
+
+First, I'll read through the story carefully to identify all the key actions involving the main characters. It's important to note that the user wants these actions in JSON format with specific keys like action, n_characters, subject, and object.
+
+I notice that the story is rich with interactions between Hansel, Gretel, their father, stepmother, and the witch. The emotional links here are all non-romantic since there's no romantic relationship involved. I'll need to capture actions that show affection, concern, or support between these characters.
+
+For tensions, there are several instances where characters' lives or health are at risk. The stepmother plotting to abandon Hansel and Gretel in the forest is a clear life_at_risk situation. Later, when they get lost and face starvation, that's another life_at_risk scenario. The witch capturing them adds prisoner tension, and her plan to eat them escalates it to life_at_risk again.
+
+I'll go through each significant event:
+
+1. Stepmother plans to abandon children: This shows the stepmother's malicious intent, creating a life_at_risk tension.
+2. Father consents but feels sorry: Emotional link as he's worried about his kids.
+3. Hansel and Gretel overhear and react: Their fear and Hansel's plan to help establish their non-romantic bond.
+4. Hansel gathers pebbles: Action showing preparation, no direct emotional link but sets up future actions.
+5. Stepmother takes children into the forest: Life_at_risk as they're abandoned.
+6. Father feels regret: Emotional pain, non-romantic link with children.
+7. Children find their way back using pebbles: Hansel comforts Gretel, strong non-romantic bond.
+8. Second abandonment attempt: Again, life_at_risk tension as stepmother insists.
+9. Hansel can't get pebbles, reassures Gretel: Emotional support, non-romantic link.
+10. Children lost in forest with crumbs eaten by birds: Life_at_risk due to starvation and being lost.
+11. Following the bird to witch's house: Enticed by food, leading to prisoner situation.
+12. Witch captures Hansel: Prisoner tension as he's locked up.
+13. Gretel forced to work: Prisoner and life_at_risk as she tries to save her brother.
+14. Witch plans to eat them: Life_at_risk intensifies.
+15. Gretel tricks witch into oven: Turning the tables, resolving prisoner and life_at_risk tensions.
+16. Escape with jewels: Overcoming past tensions, showing their non-romantic bond.
+17. Crossing river with duck: Another life_at_risk situation but they overcome it together.
+18. Return home to father: Reunion, strong emotional link.
+
+I need to make sure each action is abstract and not tied to specific characters. For example, "stepmother plots to abandon children" becomes "plots_abandonment." Each JSON object should have the correct number of characters involved. If an action involves two people, n_characters is 2, else 1 or 0 if no characters are involved.
+
+I also need to avoid including inanimate objects as subjects or objects. So actions like eating porridge would be excluded unless it's about a character eating, but since the user wants actions involving emotional links and tensions, I'll focus on those.
+
+Now, organizing all these events chronologically and ensuring each action is accurately reflected. Making sure not to miss any key points that contribute to emotional relationships or build tension.
+
+Finally, I'll verify that each JSON entry correctly captures the essence of the story without including unnecessary details, keeping the actions simple and reusable.
+</think>
+
+Here is the structured analysis of the narrative based on the given specifications:
+
+```json
+[
+  {
+    "action": "plots_abandonment",
+    "n_characters": 2,
+    "subject": "-",
+    "object": "-"
+  },
+  {
+    "action": "expresses_concern",
+    "n_characters": 2,
+    "subject": "father",
+    "object": "children"
+  },
+  {
+    "action": "overhears_plan",
+    "n_characters": 2,
+    "subject": "Hansel and Gretel",
+    "object": "stepmother and father"
+  },
+  {
+    "action": "prepares_escape",
+    "n_characters": 1,
+    "subject": "Hansel",
+    "object": "-"
+  },
+  {
+    "action": "abandons_children",
+    "n_characters": 2,
+    "subject": "stepmother and father",
+    "object": "children"
+  },
+  {
+    "action": "feels_regret",
+    "n_characters": 1,
+    "subject": "father",
+    "object": "-"
+  },
+  {
+    "action": "finds_way_back",
+    "n_characters": 2,
+    "subject": "Hansel and Gretel",
+    "object": "-"
+  },
+  {
+    "action": "plans_second_abandonment",
+    "n_characters": 1,
+    "subject": "stepmother",
+    "object": "-"
+  },
+  {
+    "action": "reassures_sister",
+    "n_characters": 2,
+    "subject": "Hansel",
+    "object": "Gretel"
+  },
+  {
+    "action": "loses_way",
+    "n_characters": 2,
+    "subject": "children",
+    "object": "-"
+  },
+  {
+    "action": "follows_bird",
+    "n_characters": 2,
+    "subject": "Hansel and Gretel",
+    "object": "-"
+  },
+  {
+    "action": "captures_children",
+    "n_characters": 1,
+    "subject": "witch",
+    "object": "children"
+  },
+  {
+    "action": "imprisons_child",
+    "n_characters": 2,
+    "subject": "witch",
+    "object": "Hansel"
+  },
+  {
+    "action": "forces_work",
+    "n_characters": 2,
+    "subject": "witch",
+    "object": "Gretel"
+  },
+  {
+    "action": "plans_to_eat",
+    "n_characters": 1,
+    "subject": "witch",
+    "object": "-"
+  },
+  {
+    "action": "tricks_witch",
+    "n_characters": 2,
+    "subject": "Gretel",
+    "object": "witch"
+  },
+  {
+    "action": "escapes_with_jewels",
+    "n_characters": 2,
+    "subject": "children",
+    "object": "-"
+  },
+  {
+    "action": "crosses_river",
+    "n_characters": 3,
+    "subject": "duck",
+    "object": "Hansel and Gretel"
+  },
+  {
+    "action": "returns_home",
+    "n_characters": 2,
+    "subject": "children",
+    "object": "father"
+  }
+]
+```
+
+Each action is abstracted to focus on the emotional links (non-romantic) and tensions (life_at_risk, prisoner). The JSON structure follows the specified keys with appropriate values.

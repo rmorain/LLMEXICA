@@ -1,0 +1,98 @@
+ACT taste_porridge 2
+PRE
+E a b -1 1
+POS
+E b a -2 1
+
+ACT taste_porridge 2
+PRE
+E a b -1 1
+POS
+E b a -2 1
+
+ACT eat_porridge 2
+PRE
+E a b -2 1
+POS
+E b a -3 1
+
+ACT sit_in_char 2
+PRE
+E a b -1 1
+POS
+E b a -2 1
+
+ACT sit_in_char 2
+PRE
+E a b -1 1
+POS
+E b a -2 1
+
+ACT sit_in_char 2
+PRE
+E a b -1 1
+POS
+E b a -3 1
+
+ACT sleep_in_bed 2
+PRE
+E a b -1 1
+POS
+E b a -3 1
+
+ACT find_tampered_porridge 2
+PRE
+E a b -1 1
+POS
+E a b -2 1
+
+ACT find_tampered_porridge 2
+PRE
+E a b -1 1
+POS
+E a b -2 1
+
+ACT find_tampered_porridge 2
+PRE
+E a b -1 1
+POS
+E a b -3 1
+
+ACT find_chair_tampered 2
+PRE
+E a b -1 1
+POS
+E a b -2 1
+
+ACT find_chair_tampered 2
+PRE
+E a b -1 1
+POS
+E a b -2 1
+
+ACT find_chair_tampered 2
+PRE
+E a b -1 1
+POS
+E a b -3 1
+
+ACT find_in_bed 2
+PRE
+E a b -3 1
+T Lr b -
+POS
+E a b -3 1
+
+ACT wake_up 1
+PRE
+E a b -2 1
+POS
+E a b -3 1
+
+ACT flee 1
+PRE
+E a b -3 1
+T Lr a -
+POS
+E a b -3 1
+

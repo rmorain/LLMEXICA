@@ -1,0 +1,151 @@
+<think>
+Alright, I need to help the user by adding preconditions related to emotional links for each action in their story analysis. The user is working on a narrative analysis project where they're identifying actions, emotional links, and tensions within stories.
+
+First, I'll look at each action one by one and determine what emotional links must exist before that action can happen. For example, when the princess loses her ball, there's no emotional link involved because it's just an accident. So, the preconditions for that action are empty.
+
+Next, when the princess promises companionship to the frog, she does this because she wants her ball back. This indicates a non-romantic emotional link with a neutral magnitude since it's more of a transaction than genuine affection. The precondition here is that she must have some level of trust or hope towards the frog.
+
+When she ignores his request later on, it shows she doesn't value their agreement much. So, there's a negative non-romantic link here, indicating dislike or disregard.
+
+When she reluctantly lets him in, her father's command influences this. She still has a negative emotional link towards the frog but obeys her father, so the precondition is her obedience to her father and continued dislike for the frog.
+
+During dinner, when they sit together, it's still a non-romantic interaction but with some level of tolerance rather than outright negativity. So, the magnitude is slightly positive here as she starts to accept him.
+
+When sharing food, there's a slight affection developing, so the magnitude increases a bit, showing a tentative friendship.
+
+Going to sleep together is where the emotional link shifts to romantic after the frog transforms into a prince. This action requires that she has developed some affection for him by then.
+
+Finally, throwing him against the wall is driven by her disgust and fear, which is a strong negative non-romantic link towards him before he changes.
+
+I need to make sure each precondition accurately reflects the emotional state necessary for the character to perform each action. This will help in understanding how the narrative progresses based on the characters' emotions.
+</think>
+
+Here is the JSON with preconditions related to emotional links added:
+
+```json
+[
+  {
+    "action": "loses_ball",
+    "n_characters": 1,
+    "subject": "princess",
+    "preconditions": {
+      "emotional_links": []
+    }
+  },
+  {
+    "action": "promises_companionship",
+    "emotional_link_type": "non-romantic",
+    "n_characters": 2,
+    "subject": "princess",
+    "object": "frog",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 1,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "ignores_request",
+    "n_characters": 1,
+    "subject": "princess",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -2,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "lets_in_reluctantly",
+    "emotional_link_type": "non-romantic",
+    "n_characters": 2,
+    "subject": "princess",
+    "object": "frog",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -1,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "sits_together",
+    "emotional_link_type": "non-romantic",
+    "n_characters": 2,
+    "subject": "princess",
+    "object": "frog",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 0,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "shares_food",
+    "emotional_link_type": "non-romantic",
+    "n_characters": 2,
+    "subject": "princess",
+    "object": "frog",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 1,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "goes_to_sleep",
+    "emotional_link_type": "romantic",
+    "n_characters": 2,
+    "subject": "princess",
+    "object": "frog",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 2,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "throws_against_wall",
+    "n_characters": 1,
+    "subject": "princess",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  }
+]
+```

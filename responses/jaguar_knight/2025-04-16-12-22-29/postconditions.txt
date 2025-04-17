@@ -1,0 +1,297 @@
+
+Okay, I need to help this user by identifying postconditions for each action in their story. The user is interested in narrative analysis, specifically how actions affect emotional links and tensions. They want me to outline what changes occur after each action, ensuring that these are not the same as preconditions.
+
+First, I'll go through each action one by one. For each, I'll consider both emotional_links and tensions postconditions.
+
+Starting with "suffers_injury": This increases health risks for Jaguar_Knight, so a tension of health_at_risk is added. No emotional link changes here since it's an injury without another character involved.
+
+Next, "applies_curative_plant" by Princess on Jaguar_Knight. This action heals him, reducing health_at_risk and possibly creating a positive non-romantic link from Jaguar_Knight to Princess as gratitude.
+
+"Kidnaps" by Enemy on Princess creates a prisoner tension. This might also foster hatred towards the Enemy from Princess, establishing a negative emotional link.
+
+"Ties_to_rock" continues the prisoner tension and reinforces the negative feelings between Enemy and Princess.
+
+"Prays" by Jaguar_Knight doesn't directly affect tensions but shows determination, perhaps improving his own non-romantic emotional link with himself or others.
+
+"Searches_for_enemy" is driven by the desire to free Princess. This action might increase life_at_risk for both Jaguar_Knight and Enemy as they approach confrontation.
+
+"Throws_dust", "attacks_with_dagger", and "takes_heart" all involve combat, increasing life_at_risk tensions. These actions likely create negative emotional links between Jaguar_Knight and Enemy due to the conflict.
+
+"Liberates_prisoner" frees Princess, resolving the prisoner tension and creating a positive non-romantic link from her to Jaguar_Knight.
+
+"Kisses" is a romantic action that strengthens the romantic emotional link between Princess and Jaguar_Knight.
+
+"Recognizes_tattoo" introduces negative emotions in Princess towards Jaguar_Knight, changing their emotional link to hatred.
+
+"Cuts_jugular" results in Jaguar_Knight's death, creating a character_dead tension. This action also leads Princess to self-harm out of grief.
+
+"Cuts_throat" results in Princess's death, another character_dead tension, and ends the story tragically.
+
+I need to ensure each postcondition accurately reflects the outcome of the action without repeating preconditions. Also, I'll adjust n_characters as needed when both subject and object are involved.
+</think>
+
+```json
+[
+  {
+    "action": "suffers_injury",
+    "n_characters": 1,
+    "subject": "Jaguar_Knight",
+    "object": "-",
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": [
+        {
+          "type": "health_at_risk"
+        }
+      ]
+    }
+  },
+  {
+    "action": "applies_curative_plant",
+    "n_characters": 2,
+    "subject": "Princess",
+    "object": "Jaguar_Knight",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 1,
+          "from": "Jaguar_Knight",
+          "to": "Princess"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "health_normal"
+        }
+      ]
+    }
+  },
+  {
+    "action": "kidnaps",
+    "n_characters": 2,
+    "subject": "Enemy",
+    "object": "Princess",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -1,
+          "from": "Princess",
+          "to": "Enemy"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "prisoner"
+        }
+      ]
+    }
+  },
+  {
+    "action": "ties_to_rock",
+    "n_characters": 2,
+    "subject": "Enemy",
+    "object": "Princess",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -2,
+          "from": "Princess",
+          "to": "Enemy"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "prisoner"
+        }
+      ]
+    }
+  },
+  {
+    "action": "prays",
+    "n_characters": 1,
+    "subject": "Jaguar_Knight",
+    "object": "-",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 1,
+          "from": "Jaguar_Knight",
+          "to": "Jaguar_Knight"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "searches_for_enemy",
+    "n_characters": 1,
+    "subject": "Jaguar_Knight",
+    "object": "-",
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": [
+        {
+          "type": "life_at_risk"
+        }
+      ]
+    }
+  },
+  {
+    "action": "throws_dust",
+    "n_characters": 2,
+    "subject": "Jaguar_Knight",
+    "object": "Enemy",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -1,
+          "from": "Enemy",
+          "to": "Jaguar_Knight"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk"
+        }
+      ]
+    }
+  },
+  {
+    "action": "attacks_with_dagger",
+    "n_characters": 2,
+    "subject": "Jaguar_Knight",
+    "object": "Enemy",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -2,
+          "from": "Enemy",
+          "to": "Jaguar_Knight"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk"
+        }
+      ]
+    }
+  },
+  {
+    "action": "takes_heart",
+    "n_characters": 2,
+    "subject": "Jaguar_Knight",
+    "object": "Enemy",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -3,
+          "from": "Enemy",
+          "to": "Jaguar_Knight"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk"
+        }
+      ]
+    }
+  },
+  {
+    "action": "liberates_prisoner",
+    "n_characters": 2,
+    "subject": "Jaguar_Knight",
+    "object": "Princess",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 2,
+          "from": "Princess",
+          "to": "Jaguar_Knight"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "prisoner_freed"
+        }
+      ]
+    }
+  },
+  {
+    "action": "kisses",
+    "n_characters": 2,
+    "subject": "Princess",
+    "object": "Jaguar_Knight",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "romantic",
+          "magnitude": 1,
+          "from": "Princess",
+          "to": "Jaguar_Knight"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "recognizes_tattoo",
+    "n_characters": 1,
+    "subject": "Princess",
+    "object": "-",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -2,
+          "from": "Princess",
+          "to": "Jaguar_Knight"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "cuts_jugular",
+    "n_characters": 2,
+    "subject": "Princess",
+    "object": "Jaguar_Knight",
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -3,
+          "from": "Princess",
+          "to": "Jaguar_Knight"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "character_dead"
+        }
+      ]
+    }
+  },
+  {
+    "action": "cuts_throat",
+    "n_characters": 1,
+    "subject": "Princess",
+    "object": "-",
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": [
+        {
+          "type": "character_dead"
+        }
+      ]
+    }
+  }
+]
+```

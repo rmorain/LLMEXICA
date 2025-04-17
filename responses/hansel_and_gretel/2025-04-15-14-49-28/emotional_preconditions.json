@@ -1,0 +1,121 @@
+[
+    {
+        "action": "stepmother_suggests_abandoning_children",
+        "type": "tension",
+        "tension_type": "life_at_risk",
+        "subject": "stepmother",
+        "object": "children",
+        "n_characters": 2,
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "father_reluctantly_agrees_to_abandon_children",
+        "type": "tension",
+        "tension_type": "life_at_risk",
+        "subject": "father",
+        "object": "children",
+        "n_characters": 2,
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "love",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "hansel_comforts_gretel",
+        "type": "emotional_link",
+        "emotional_link_type": "friendship",
+        "subject": "Hansel",
+        "object": "Gretel",
+        "n_characters": 2,
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "children_get_lost_in_forest",
+        "type": "tension",
+        "tension_type": "life_at_risk",
+        "subject": "-",
+        "object": "children",
+        "n_characters": 2,
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "witch_imprisons_hansel",
+        "type": "tension",
+        "tension_type": "prisoner",
+        "subject": "witch",
+        "object": "Hansel",
+        "n_characters": 2,
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "gretel_kills_witch",
+        "type": "tension",
+        "tension_type": "character_dead",
+        "subject": "Gretel",
+        "object": "witch",
+        "n_characters": 2,
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "friendship",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "father_reunites_with_children",
+        "type": "emotional_link",
+        "emotional_link_type": "love",
+        "subject": "father",
+        "object": "children",
+        "n_characters": 3,
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "love",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    }
+]

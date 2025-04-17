@@ -1,0 +1,276 @@
+
+Alright, I need to go through each action in the provided JSON and identify the postconditions. Postconditions involve changes to emotional links or tensions resulting from the action. If preconditions exist, the postconditions shouldn't be the same as them.
+
+Starting with "loses_ball": This event doesn't directly involve another character, so no change in emotional links or tensions. But since the princess is upset, maybe her stress increases, affecting health.
+
+"cries": Crying might lead to some stress relief, reducing tension related to health risks.
+
+"promises_companionship": Making a promise could reduce feelings of being trapped, freeing the princess from the pressure, thus resolving prisoner tension.
+
+"retrieves_ball": Successfully retrieving the ball removes the immediate risk the frog was in, so life_at_risk is resolved.
+
+"runs_away": Running away quickly might increase her stress or anxiety, impacting health.
+
+"knocks_on_door": The persistent knocking could create ongoing stress for the princess, affecting her health.
+
+"refuses_entry": Refusing entry creates conflict and ongoing tension, possibly increasing stress levels.
+
+"commands_obedience": The king's command might reduce the feeling of being trapped as the princess follows orders.
+
+"opens_door": Opening the door after hesitation reduces immediate tension but introduces new stressors from the frog's presence.
+
+"enters_castle": The frog entering creates a new dynamic, possibly increasing health-related tensions due to discomfort.
+
+"requests_lift": Lifting the frog might create physical or emotional strain, affecting health.
+
+"lifts_to_table": Being close increases social tension and stress, impacting health.
+
+"requests_food": Sharing food could ease some tension but also introduce discomfort, affecting health.
+
+"shares_meal": Eating together might reduce some stress but overall keeps health-related tensions present.
+
+"requests_sleep": Requesting to sleep together after previous events might increase life_at_risk tension due to potential conflict.
+
+"throws_against_wall": Throwing the frog could lead to immediate harm, increasing life_at_risk tension for both characters.
+
+"transforms_into_prince": Transformation resolves all existing tensions as the spell is broken and the princess feels relief.
+</think>
+
+```json
+[
+    {
+        "action": "loses_ball",
+        "n_characters": 1,
+        "subject": "princess",
+        "object": "-",
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": []
+        }
+    },
+    {
+        "action": "cries",
+        "n_characters": 1,
+        "subject": "princess",
+        "object": "-",
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "health_normal"
+                }
+            ]
+        }
+    },
+    {
+        "action": "promises_companionship",
+        "n_characters": 2,
+        "subject": "princess",
+        "object": "frog",
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "prisoner_freed"
+                }
+            ]
+        }
+    },
+    {
+        "action": "retrieves_ball",
+        "n_characters": 1,
+        "subject": "frog",
+        "object": "-",
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "life_normal"
+                }
+            ]
+        }
+    },
+    {
+        "action": "runs_away",
+        "n_characters": 1,
+        "subject": "princess",
+        "object": "-",
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "health_at_risk"
+                }
+            ]
+        }
+    },
+    {
+        "action": "knocks_on_door",
+        "n_characters": 1,
+        "subject": "frog",
+        "object": "princess",
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "health_at_risk"
+                }
+            ]
+        }
+    },
+    {
+        "action": "refuses_entry",
+        "n_characters": 2,
+        "subject": "princess",
+        "object": "frog",
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "life_at_risk"
+                }
+            ]
+        }
+    },
+    {
+        "action": "commands_obedience",
+        "n_characters": 2,
+        "subject": "king",
+        "object": "princess",
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "prisoner_freed"
+                }
+            ]
+        }
+    },
+    {
+        "action": "opens_door",
+        "n_characters": 1,
+        "subject": "princess",
+        "object": "-",
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "health_normal"
+                }
+            ]
+        }
+    },
+    {
+        "action": "enters_castle",
+        "n_characters": 1,
+        "subject": "frog",
+        "object": "-",
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "health_at_risk"
+                }
+            ]
+        }
+    },
+    {
+        "action": "requests_lift",
+        "n_characters": 2,
+        "subject": "frog",
+        "object": "princess",
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "health_at_risk"
+                }
+            ]
+        }
+    },
+    {
+        "action": "lifts_to_table",
+        "n_characters": 2,
+        "subject": "princess",
+        "object": "frog",
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "health_at_risk"
+                }
+            ]
+        }
+    },
+    {
+        "action": "requests_food",
+        "n_characters": 2,
+        "subject": "frog",
+        "object": "princess",
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "health_at_risk"
+                }
+            ]
+        }
+    },
+    {
+        "action": "shares_meal",
+        "n_characters": 2,
+        "subject": "princess",
+        "object": "frog",
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "health_at_risk"
+                }
+            ]
+        }
+    },
+    {
+        "action": "requests_sleep",
+        "n_characters": 2,
+        "subject": "frog",
+        "object": "princess",
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "life_at_risk"
+                }
+            ]
+        }
+    },
+    {
+        "action": "throws_against_wall",
+        "n_characters": 2,
+        "subject": "princess",
+        "object": "frog",
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "life_at_risk"
+                }
+            ]
+        }
+    },
+    {
+        "action": "transforms_into_prince",
+        "n_characters": 1,
+        "subject": "frog",
+        "object": "-",
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "life_normal"
+                }
+            ]
+        }
+    }
+]
+```

@@ -1,0 +1,38 @@
+ACT taste_porridge 2
+POS
+E Goldilocks Great Big Bear -1 1
+
+ACT taste_porridge 2
+POS
+E Goldilocks Middle-sized Bear -1 1
+
+ACT eat_porridge 2
+POS
+E Goldilocks Little Wee Bear +1 1
+
+ACT sit_in-chair 2
+POS
+E Goldilocks Great Big Bear -1 1
+
+ACT sit_in-chair 2
+POS
+E Goldilocks Middle-sized Bear -1 1
+
+ACT break_chair 2
+POS
+E Goldilocks Little Wee Bear -2 1
+T Lr Goldilocks Little Wee Bear
+
+ACT lie_in-bed 2
+POS
+E Goldilocks Great Big Bear -1 1
+
+ACT lie_in-bed 2
+POS
+E Goldilocks Middle-sized Bear -1 1
+
+ACT sleep_in_bed 2
+POS
+E Goldilocks Little Wee Bear +1 1
+T Lr Goldilocks Little Wee Bear
+

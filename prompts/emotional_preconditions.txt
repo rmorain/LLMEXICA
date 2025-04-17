@@ -1,9 +1,10 @@
 For each action, identify or infer the preconditions related to emotional links. A precondition is a requirement that needs to be satisfied in order for a character to perform a specific action. These requirements take the form of either an emotional link or a tension. An emotional link that is a precondition is an emotional link that should exist in order for taking the action to make sense.
 
-
 Each emotional link has a magnitude of an integer value in the range [-3, 3]. In order to take a particular action and satisfy the precondition, a character might need to have a specific type and magnitude of emotional link towards another character before performing an action.
 
-For example, if character `a` attacks character `b`, and the precondition requires an emotional link type of `friendship` and a magnitude of -3 (indicating hatred) from character `a` to character `b`, then character `a` must have an emotional link of type `friendship` of magnitude -3 toward character `b` in order to `attack`. 
+For example, if character `a` attacks character `b`, and the precondition requires an emotional link type of `non-romantic` and a magnitude of -3 (indicating hatred) from character `a` to character `b`, then character `a` must have an emotional link of type `non-romantic` of magnitude -3 toward character `b` in order to `attack`. 
+
+Emotional links must have a source character and a destination character like nodes in a directed graph. If the action calls for an emotional link but either the `subject` or `object` values are currently '-', set the `subject` or `object` to the appropriate character name and update `n_characters`. If there are no reasobable direct or indirect values to set `object`, remove the problematic emotional links from the action.
 
 Preconditions are optional.
 
