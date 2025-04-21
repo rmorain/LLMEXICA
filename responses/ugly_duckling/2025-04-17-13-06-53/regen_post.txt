@@ -1,0 +1,373 @@
+<think>
+Okay, I need to address the issue where some actions in the JSON object don't have any postconditions. The user pointed out that 'fly_away', 'fly_away', and 'struggle_in_storm' lack proper postconditions. My task is to either add appropriate postconditions for these actions or remove them if no relevant postconditions can be inferred.
+
+First, I'll look at each problematic action:
+
+1. **fly_away**: This action occurs twice in the JSON object. Flying away typically indicates a change in emotional state due to previous events. For example, after being rejected, the duckling flies away, which might lead to feelings of loneliness or sadness. So, adding an emotional link where the duckling develops a negative feeling towards the environment or the characters that caused it to leave would make sense.
+
+2. **struggle_in_storm**: This action involves the duckling facing harsh weather conditions, putting its life at risk. After struggling in the storm, the duckling might feel exhausted or more cautious about its surroundings. Therefore, a tension indicating that its health is at risk could be appropriate here.
+
+I'll modify each 'fly_away' action to include an emotional link postcondition where the duckling feels more isolated or scared. For 'struggle_in_storm', I'll add a tension postcondition indicating health risks due to the struggle.
+
+Now, I'll update the JSON object accordingly.
+</think>
+
+```json
+[
+    {
+        "action": "hatch_from_egg",
+        "n_characters": 1,
+        "subject": "-",
+        "object": "duckling",
+        "preconditions": {
+            "emotional_links": [],
+            "tensions": []
+        },
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 1,
+                    "from": "mother_duck",
+                    "to": "duckling"
+                }
+            ],
+            "tensions": []
+        }
+    },
+    {
+        "action": "reject",
+        "n_characters": 2,
+        "subject": "other_ducks",
+        "object": "duckling",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": []
+        },
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "duckling",
+                    "to": "other_ducks"
+                }
+            ],
+            "tensions": []
+        }
+    },
+    {
+        "action": "console",
+        "n_characters": 2,
+        "subject": "mother_duck",
+        "object": "duckling",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": []
+        },
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 3,
+                    "from": "duckling",
+                    "to": "mother_duck"
+                }
+            ],
+            "tensions": []
+        }
+    },
+    {
+        "action": "fly_away",
+        "n_characters": 1,
+        "subject": "duckling",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -2,
+                    "from": "b",
+                    "to": "a"
+                }
+            ],
+            "tensions": []
+        },
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -1,
+                    "from": "duckling",
+                    "to": "environment"
+                }
+            ],
+            "tensions": []
+        }
+    },
+    {
+        "action": "meet_wild-ducks",
+        "n_characters": 2,
+        "subject": "wild_ducks",
+        "object": "duckling",
+        "preconditions": {
+            "emotional_links": [],
+            "tensions": []
+        },
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 0,
+                    "from": "wild_ducks",
+                    "to": "duckling"
+                }
+            ],
+            "tensions": []
+        }
+    },
+    {
+        "action": "reject",
+        "n_characters": 2,
+        "subject": "wild_goose",
+        "object": "duckling",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": []
+        },
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "duckling",
+                    "to": "wild_goose"
+                }
+            ],
+            "tensions": []
+        }
+    },
+    {
+        "action": "fly_away",
+        "n_characters": 1,
+        "subject": "duckling",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -2,
+                    "from": "b",
+                    "to": "a"
+                }
+            ],
+            "tensions": []
+        },
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -1,
+                    "from": "duckling",
+                    "to": "environment"
+                }
+            ],
+            "tensions": []
+        }
+    },
+    {
+        "action": "meet_hen_and_cat",
+        "n_characters": 3,
+        "subject": "hen",
+        "object": "duckling",
+        "preconditions": {
+            "emotional_links": [],
+            "tensions": []
+        },
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 0,
+                    "from": "hen",
+                    "to": "duckling"
+                }
+            ],
+            "tensions": []
+        }
+    },
+    {
+        "action": "exclude",
+        "n_characters": 2,
+        "subject": "hen",
+        "object": "duckling",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -1,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": []
+        },
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -2,
+                    "from": "duckling",
+                    "to": "hen"
+                }
+            ],
+            "tensions": []
+        }
+    },
+    {
+        "action": "struggle_in_storm",
+        "n_characters": 1,
+        "subject": "duckling",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "*",
+                    "to": "a"
+                }
+            ]
+        },
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "health_at_risk",
+                    "from": "*",
+                    "to": "a"
+                }
+            ]
+        }
+    },
+    {
+        "action": "find_shelter",
+        "n_characters": 2,
+        "subject": "old_woman",
+        "object": "duckling",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 1,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": []
+        },
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 2,
+                    "from": "duckling",
+                    "to": "old_woman"
+                }
+            ],
+            "tensions": []
+        }
+    },
+    {
+        "action": "reject",
+        "n_characters": 2,
+        "subject": "children",
+        "object": "duckling",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": []
+        },
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "duckling",
+                    "to": "children"
+                }
+            ],
+            "tensions": []
+        }
+    },
+    {
+        "action": "meet_swans",
+        "n_characters": 2,
+        "subject": "swans",
+        "object": "duckling",
+        "preconditions": {
+            "emotional_links": [],
+            "tensions": []
+        },
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 3,
+                    "from": "swans",
+                    "to": "duckling"
+                }
+            ],
+            "tensions": []
+        }
+    },
+    {
+        "action": "discover_true_identity",
+        "n_characters": 1,
+        "subject": "-",
+        "object": "duckling",
+        "preconditions": {
+            "emotional_links": [],
+            "tensions": []
+        },
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 3,
+                    "from": "duckling",
+                    "to": "self"
+                }
+            ],
+            "tensions": []
+        }
+    }
+]
+```

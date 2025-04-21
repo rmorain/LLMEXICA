@@ -1,0 +1,116 @@
+<think>
+Alright, so I need to analyze this story about the Ugly Duckling and extract specific actions related to emotional links and tensions. The user wants me to focus on two types of emotional links: non-romantic and romantic. From what I remember in the story, there's no romantic relationship, so all emotional links here are non-romantic.
+
+Tensions include things like a character dying, life at risk, health issues, or being a prisoner. I should look for any instances where these tensions arise.
+
+First, I'll go through each event in the story and note down the actions involving characters. I need to make sure each action is abstract and not tied to specific names. For example, if the duckling is rejected by the ducks, that's an action like "reject".
+
+I should also capture any moments where a character's life or health is at risk. The most significant tension here is when the duckling freezes in the ice, which definitely puts his life at risk.
+
+Emotionally, the duckling faces a lot of rejection and isolation, so actions like "reject", "exclude", and "console" will be relevant. There are moments where characters show empathy or try to help him, even if it's not always positive.
+
+I also need to consider interactions between characters, like when the mother duck tries to protect her son despite his appearance, which would be an emotional link of support.
+
+Finally, I'll structure these actions in chronological order, ensuring each entry includes the action type, number of characters involved, subject, and object. Since there are no romantic links, all will be non-romantic, and tensions will mainly revolve around life being at risk.
+</think>
+
+```json
+[
+    {
+        "action": "hatch_from_egg",
+        "n_characters": 1,
+        "subject": "-",
+        "object": "duckling"
+    },
+    {
+        "action": "reject",
+        "n_characters": 2,
+        "subject": "other_ducks",
+        "object": "duckling"
+    },
+    {
+        "action": "console",
+        "n_characters": 2,
+        "subject": "mother_duck",
+        "object": "duckling"
+    },
+    {
+        "action": "fly_away",
+        "n_characters": 1,
+        "subject": "duckling",
+        "object": "-"
+    },
+    {
+        "action": "meet_wild-ducks",
+        "n_characters": 2,
+        "subject": "wild_ducks",
+        "object": "duckling"
+    },
+    {
+        "action": "reject",
+        "n_characters": 2,
+        "subject": "wild_goose",
+        "object": "duckling"
+    },
+    {
+        "action": "fly_away",
+        "n_characters": 1,
+        "subject": "duckling",
+        "object": "-"
+    },
+    {
+        "action": "meet_hen_and_cat",
+        "n_characters": 3,
+        "subject": "hen",
+        "object": "duckling"
+    },
+    {
+        "action": "exclude",
+        "n_characters": 2,
+        "subject": "hen",
+        "object": "duckling"
+    },
+    {
+        "action": "fly_away",
+        "n_characters": 1,
+        "subject": "duckling",
+        "object": "-"
+    },
+    {
+        "action": "struggle_in_storm",
+        "n_characters": 1,
+        "subject": "duckling",
+        "object": "-"
+    },
+    {
+        "action": "find_shelter",
+        "n_characters": 2,
+        "subject": "old_woman",
+        "object": "duckling"
+    },
+    {
+        "action": "reject",
+        "n_characters": 2,
+        "subject": "children",
+        "object": "duckling"
+    },
+    {
+        "action": "fly_away",
+        "n_characters": 1,
+        "subject": "duckling",
+        "object": "-"
+    },
+    {
+        "action": "meet_swans",
+        "n_characters": 2,
+        "subject": "swans",
+        "object": "duckling"
+    },
+    {
+        "action": "discover_true_identity",
+        "n_characters": 1,
+        "subject": "-",
+        "object": "duckling"
+    }
+]
+```

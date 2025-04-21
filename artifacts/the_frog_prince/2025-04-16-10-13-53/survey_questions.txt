@@ -1,0 +1,36 @@
+After princess loses_ball -,  princess has caused -'s health to be at risk.
+
+After princess cries -,  nobody has caused nobody's health to no longer be at risk.
+
+Before princess promises_companionship frog, it is likely that princess somewhat likes frog.
+After princess promises_companionship frog,  nobody has caused nobody to no longer be a prisoner.
+
+Before frog retrieves_ball -,  frog has caused -'s life to be at risk.
+After frog retrieves_ball -,  nobody has caused nobody's life to no longer be at risk.
+
+After princess runs_away -,  princess has caused -'s health to be at risk.
+
+After frog knocks_on_door princess,  frog has caused princess's health to be at risk.
+
+After princess refuses_entry frog,  princess has caused frog's life to be at risk.
+
+After king commands_obedience princess,  nobody has caused nobody to no longer be a prisoner.
+
+After princess opens_door -,  nobody has caused nobody's health to no longer be at risk.
+
+After frog enters_castle -,  frog has caused -'s health to be at risk.
+
+After frog requests_lift princess,  frog has caused princess's health to be at risk.
+
+After princess lifts_to_table frog,  princess has caused frog's health to be at risk.
+
+After frog requests_food princess,  frog has caused princess's health to be at risk.
+
+After princess shares_meal frog,  princess has caused frog's health to be at risk.
+
+After frog requests_sleep princess,  frog has caused princess's life to be at risk.
+
+After princess throws_against_wall frog,  princess has caused frog's life to be at risk.
+
+After frog transforms_into_prince -,  nobody has caused nobody's life to no longer be at risk.
+

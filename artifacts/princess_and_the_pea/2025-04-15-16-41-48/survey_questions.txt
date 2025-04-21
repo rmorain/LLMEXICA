@@ -1,0 +1,12 @@
+After prince desires princess, it is likely that prince is in love with princess.
+
+After princess arrives city gate, it is likely that princess somewhat likes city gate.
+
+After queen tests_sensitivity princess, it is likely that queen somewhat likes princess.
+
+After princess feels_pain pea, it is likely that princess somewhat dislikes pea.
+
+After prince marries princess, it is likely that prince is deeply in love with princess.
+
+After kingdom's people places_in_museum pea, it is likely that kingdom's people somewhat likes pea.
+

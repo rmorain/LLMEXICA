@@ -1,0 +1,376 @@
+<think>
+Alright, so the user wants me to analyze this story about the Ugly Duckling. They're asking for a narrative analysis focusing on emotional links and tensions. Let's break down what they need.
+
+First, I'll read through the story carefully. It starts with a duck hatching her eggs, one of which is different and ugly. The duckling faces rejection from his family and others because of his appearance. He goes through various trials, being bullied and mistreated, until he finally finds acceptance when he matures into a swan.
+
+Now, the user wants actions extracted in JSON format. Each action should have 'action', 'n_characters', 'subject', and 'object'. The actions must relate to emotional links (non-romantic or romantic) or tensions like character death, life at risk, etc.
+
+I'll start by identifying key events. When the duckling hatches, that's a significant point. His mother is worried he's not breaking out of the shell, showing concern—so an emotional link there.
+
+Next, interactions with other ducks and poultry: they bite him, push him, which are emotional links as well, non-romantic but negative. Then, when he runs away, that's a tension point—life at risk because he’s in the wild alone.
+
+He meets wild geese, but then hunters come with guns. The duckling is scared; that's 'health_at_risk' and 'life_at_risk'. He narrowly escapes by hiding.
+
+Later, he finds a cottage where animals live. The cat and hen are dismissive of him because he can't purr or lay eggs—another emotional link, non-romantic but negative.
+
+He leaves the cottage and continues facing hardships in winter, leading to 'health_at_risk' as he freezes. A peasant rescues him, which is a positive action, reducing tension.
+
+Finally, spring comes, and he realizes he's a swan. The other swans accept him—positive emotional link, non-romantic. He feels happy and ashamed, which ties back to his emotional journey.
+
+Throughout this process, I need to ensure each action is concise, without character names, just 'subject' and 'object'. Also, check the count of characters involved in each action.
+
+I'll structure the JSON with these actions in order, making sure each entry captures the right type of link or tension. For example, when he's pushed by ducks, it's a non-romantic emotional link with a negative connotation.
+
+Double-checking each event to ensure they fit into either emotional links (non-romantic) or tensions like life at risk, health issues, etc. Making sure no romantic elements are present as per the default types.
+
+I think that covers all the key points. Now I'll format this into JSON, ensuring each action is accurately represented with the correct keys and values.
+</think>
+
+Here is the analysis of the story in JSON format:
+
+```json
+[
+    {
+        "action": "hatches_from_egg",
+        "n_characters": 1,
+        "subject": "-",
+        "object": "duckling"
+    },
+    {
+        "action": "watches_over_nest",
+        "n_characters": 1,
+        "subject": "mother_duck",
+        "object": "-"
+    },
+    {
+        "action": "expresses_concern",
+        "n_characters": 2,
+        "subject": "mother_duck",
+        "object": "duckling"
+    },
+    {
+        "action": "visits_nest",
+        "n_characters": 2,
+        "subject": "old_duck",
+        "object": "mother_duck"
+    },
+    {
+        "action": "examines_egg",
+        "n_characters": 2,
+        "subject": "old_duck",
+        "object": "duckling"
+    },
+    {
+        "action": "encourages_patience",
+        "n_characters": 2,
+        "subject": "mother_duck",
+        "object": "old_duck"
+    },
+    {
+        "action": "hatches_from_egg",
+        "n_characters": 1,
+        "subject": "-",
+        "object": "duckling"
+    },
+    {
+        "action": "stares_at",
+        "n_characters": 2,
+        "subject": "mother_duck",
+        "object": "duckling"
+    },
+    {
+        "action": "plans_to_push_into_water",
+        "n_characters": 1,
+        "subject": "mother_duck",
+        "object": "-"
+    },
+    {
+        "action": "jumps_into_water",
+        "n_characters": 2,
+        "subject": "mother_duck",
+        "object": "ducklings"
+    },
+    {
+        "action": "swims_in_water",
+        "n_characters": 2,
+        "subject": "ducklings",
+        "object": "-"
+    },
+    {
+        "action": "comments_on_appearance",
+        "n_characters": 3,
+        "subject": "other_duck",
+        "object": "duckling"
+    },
+    {
+        "action": "bites_in_neck",
+        "n_characters": 2,
+        "subject": "spiteful_duck",
+        "object": "duckling"
+    },
+    {
+        "action": "defends",
+        "n_characters": 2,
+        "subject": "mother_duck",
+        "object": "duckling"
+    },
+    {
+        "action": "criticizes_appearance",
+        "n_characters": 3,
+        "subject": "old_duck",
+        "object": "duckling"
+    },
+    {
+        "action": "defends_character",
+        "n_characters": 2,
+        "subject": "mother_duck",
+        "object": "old_duck"
+    },
+    {
+        "action": "teases",
+        "n_characters": 4,
+        "subject": "other_animals",
+        "object": "duckling"
+    },
+    {
+        "action": "runs_away",
+        "n_characters": 1,
+        "subject": "duckling",
+        "object": "-"
+    },
+    {
+        "action": "flies_over_hedge",
+        "n_characters": 1,
+        "subject": "duckling",
+        "object": "-"
+    },
+    {
+        "action": "spends_night_on_moor",
+        "n_characters": 1,
+        "subject": "duckling",
+        "object": "-"
+    },
+    {
+        "action": "meets_wild_ducks",
+        "n_characters": 2,
+        "subject": "wild_duck",
+        "object": "duckling"
+    },
+    {
+        "action": "asks_about_origin",
+        "n_characters": 2,
+        "subject": "wild_duck",
+        "object": "duckling"
+    },
+    {
+        "action": "rejects_duckling",
+        "n_characters": 3,
+        "subject": "wild_goose",
+        "object": "duckling"
+    },
+    {
+        "action": "offers_to_join",
+        "n_characters": 2,
+        "subject": "wild_goose",
+        "object": "duckling"
+    },
+    {
+        "action": "falls_dead",
+        "n_characters": 1,
+        "subject": "-",
+        "object": "wild_goose"
+    },
+    {
+        "action": "hides_under_wing",
+        "n_characters": 1,
+        "subject": "duckling",
+        "object": "-"
+    },
+    {
+        "action": "escapes_from_dog",
+        "n_characters": 2,
+        "subject": "dog",
+        "object": "duckling"
+    },
+    {
+        "action": "runs_to_cottage",
+        "n_characters": 1,
+        "subject": "duckling",
+        "object": "-"
+    },
+    {
+        "action": "discovers_narrow_opening",
+        "n_characters": 1,
+        "subject": "duckling",
+        "object": "-"
+    },
+    {
+        "action": "enters_cottage",
+        "n_characters": 1,
+        "subject": "duckling",
+        "object": "-"
+    },
+    {
+        "action": "discovers_cottage_occupants",
+        "n_characters": 3,
+        "subject": "duckling",
+        "object": "tom_cat"
+    },
+    {
+        "action": "expresses_doubts_about_duckling",
+        "n_characters": 2,
+        "subject": "old_woman",
+        "object": "duckling"
+    },
+    {
+        "action": "rejects_duckling",
+        "n_characters": 3,
+        "subject": "tom_cat",
+        "object": "duckling"
+    },
+    {
+        "action": "asks_about_abilities",
+        "n_characters": 2,
+        "subject": "hen",
+        "object": "duckling"
+    },
+    {
+        "action": "rejects_duckling",
+        "n_characters": 3,
+        "subject": "hen",
+        "object": "duckling"
+    },
+    {
+        "action": "leaves_cottage",
+        "n_characters": 1,
+        "subject": "duckling",
+        "object": "-"
+    },
+    {
+        "action": "finds_water_to_swim",
+        "n_characters": 1,
+        "subject": "duckling",
+        "object": "-"
+    },
+    {
+        "action": "faces_rejection_from_animals",
+        "n_characters": 4,
+        "subject": "other_animals",
+        "object": "duckling"
+    },
+    {
+        "action": "endures_cold_weather",
+        "n_characters": 1,
+        "subject": "duckling",
+        "object": "-"
+    },
+    {
+        "action": "sees_beautiful_birds",
+        "n_characters": 2,
+        "subject": "swans",
+        "object": "duckling"
+    },
+    {
+        "action": "feels_unhappy",
+        "n_characters": 1,
+        "subject": "duckling",
+        "object": "-"
+    },
+    {
+        "action": "dives_into_water",
+        "n_characters": 1,
+        "subject": "duckling",
+        "object": "-"
+    },
+    {
+        "action": "freezes_in_ice",
+        "n_characters": 1,
+        "subject": "-",
+        "object": "duckling"
+    },
+    {
+        "action": "breaks_ice_with_shoe",
+        "n_characters": 2,
+        "subject": "peasant",
+        "object": "duckling"
+    },
+    {
+        "action": "carries_home",
+        "n_characters": 2,
+        "subject": "peasant",
+        "object": "duckling"
+    },
+    {
+        "action": "revives_in_warmth",
+        "n_characters": 1,
+        "subject": "-",
+        "object": "duckling"
+    },
+    {
+        "action": "escapes_from_children",
+        "n_characters": 2,
+        "subject": "children",
+        "object": "duckling"
+    },
+    {
+        "action": "hides_in_snow",
+        "n_characters": 1,
+        "subject": "duckling",
+        "object": "-"
+    },
+    {
+        "action": "finds_refuge_on_moor",
+        "n_characters": 1,
+        "subject": "duckling",
+        "object": "-"
+    },
+    {
+        "action": "feels_sun_and_hears_lark",
+        "n_characters": 1,
+        "subject": "-",
+        "object": "duckling"
+    },
+    {
+        "action": "flaps_wings",
+        "n_characters": 1,
+        "subject": "duckling",
+        "object": "-"
+    },
+    {
+        "action": "flies_into_garden",
+        "n_characters": 1,
+        "subject": "duckling",
+        "object": "-"
+    },
+    {
+        "action": "sees_beautiful_swans",
+        "n_characters": 2,
+        "subject": "swans",
+        "object": "duckling"
+    },
+    {
+        "action": "approaches_water",
+        "n_characters": 1,
+        "subject": "duckling",
+        "object": "-"
+    },
+    {
+        "action": "sees_reflection_in_water",
+        "n_characters": 2,
+        "subject": "-",
+        "object": "duckling"
+    },
+    {
+        "action": "welcomes_to_group",
+        "n_characters": 3,
+        "subject": "swans",
+        "object": "duckling"
+    },
+    {
+        "action": "throws_bread_into_water",
+        "n_characters": 2,
+        "subject": "children",
+        "object": "swans"
+    }
+]
+```

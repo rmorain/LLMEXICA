@@ -1,0 +1,42 @@
+ACT build_house_straw 1
+POS
+E a b +1 1
+
+ACT build_house_sticks 1
+POS
+E a b +1 1
+
+ACT build_house_bricks 1
+POS
+E a b +1 1
+
+ACT sing_and_dance_together 3
+PRE
+E a b +2 1
+E b c +2 1
+POS
+E a b +3 1
+E b c +3 1
+
+ACT escape 2
+PRE
+E a b +2 1
+T Lr - b
+POS
+E a b +3 1
+
+ACT escape 3
+PRE
+E a b +2 1
+E b c +2 1
+T Lr - c
+POS
+E a b +3 1
+E b c +3 1
+
+ACT boil 4
+PRE
+E a b -2 1
+POS
+E a b +1 1
+

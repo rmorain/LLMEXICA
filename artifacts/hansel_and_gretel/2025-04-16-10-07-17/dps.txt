@@ -1,11 +1,11 @@
 STO
-stepmother argues father
-Gretel weeps stepmother
+Stepmother argues with Father
+Gretel weeps at Stepmother
 Hansel comforts Gretel
 Hansel gathers_pebbles
 stepmother abandons children
 Hansel_and_Gretel follows_pebbles
-stepmother argues father
+Stepmother argues with Father
 Hansel scatters_breadcrumbs
 stepmother abandons children
 witch captures Hansel

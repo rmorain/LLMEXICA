@@ -1,0 +1,405 @@
+<think>
+Okay, I need to help the user by describing how an assistant would process their query about analyzing a story using narrative analysis techniques. The goal now is to identify postconditions for each action in the provided JSON, specifically focusing on changes to emotional links and tensions resulting from each action.
+
+First, I'll review the existing JSON structure, which already includes preconditions for both emotional links and tensions. Now, the task is to add a `postconditions` key to each action that includes changes to emotional links and tensions.
+
+Starting with "sends_out", this action strengthens the positive bond between the mother pig and her sons, so I'll increase their non-romantic link magnitude from 2 to 3. No new tensions are introduced here.
+
+When the pigs build their houses, especially the third little pig building with bricks, it shows responsibility. This increases trust among them, enhancing their emotional links.
+
+The pigs singing and dancing together further strengthens their bonds, so I'll increase their non-romantic links from 2 to 3.
+
+Each time the wolf huffs and puffs, the pigs' fear intensifies, worsening their emotional link with the wolf. After escaping, their trust in each other increases, improving their emotional links.
+
+Finally, when the pigs boil the wolf, it resolves the `life_at_risk` tension and leaves them feeling triumphant, slightly increasing their positive emotional links towards each other.
+
+I need to ensure that for each action, postconditions are logical consequences of the action itself. Emotional links should change based on whether the interaction was positive or negative, and tensions should be resolved if the threat is neutralized.
+</think>
+
+Here is the updated JSON with postconditions:
+
+```json
+[
+  {
+    "action": "sends_out",
+    "n_characters": 4,
+    "subject": "old mother pig",
+    "object": "three little pigs",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 2,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": []
+    }
+  },
+  {
+    "action": "build_house_straw",
+    "n_characters": 1,
+    "subject": "first little pig",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 1,
+          "from": "a",
+          "to": "-"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "build_house_sticks",
+    "n_characters": 1,
+    "subject": "second little pig",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 1,
+          "from": "a",
+          "to": "-"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "build_house_bricks",
+    "n_characters": 1,
+    "subject": "third little pig",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 1,
+          "from": "a",
+          "to": "-"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "sing_and_dance_together",
+    "n_characters": 3,
+    "subject": "first little pig, second little pig, third little pig",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 2,
+          "from": "a",
+          "to": "b"
+        },
+        {
+          "type": "non-romantic",
+          "magnitude": 2,
+          "from": "b",
+          "to": "c"
+        }
+      ],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        },
+        {
+          "type": "non-romantic",
+          "magnitude": 3,
+          "from": "b",
+          "to": "c"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "huff_and_puff",
+    "n_characters": 2,
+    "subject": "wolf",
+    "object": "first little pig",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    },
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": []
+    }
+  },
+  {
+    "action": "escape",
+    "n_characters": 2,
+    "subject": "first little pig",
+    "object": "second little pig",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 2,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "-",
+          "to": "b"
+        }
+      ]
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "huff_and_puff",
+    "n_characters": 2,
+    "subject": "wolf",
+    "object": "second little pig, third little pig",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    },
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": []
+    }
+  },
+  {
+    "action": "escape",
+    "n_characters": 3,
+    "subject": "first little pig, second little pig",
+    "object": "third little pig",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 2,
+          "from": "a",
+          "to": "b"
+        },
+        {
+          "type": "non-romantic",
+          "magnitude": 2,
+          "from": "b",
+          "to": "c"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "-",
+          "to": "c"
+        }
+      ]
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 3,
+          "from": "a",
+          "to": "b"
+        },
+        {
+          "type": "non-romantic",
+          "magnitude": 3,
+          "from": "b",
+          "to": "c"
+        }
+      ],
+      "tensions": []
+    }
+  },
+  {
+    "action": "huff_and_puff",
+    "n_characters": 2,
+    "subject": "wolf",
+    "object": "three little pigs",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    },
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": []
+    }
+  },
+  {
+    "action": "are_frightened",
+    "n_characters": 3,
+    "subject": "-",
+    "object": "three little pigs",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -2,
+          "from": "b",
+          "to": "a"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "-",
+          "to": "b"
+        }
+      ]
+    },
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": []
+    }
+  },
+  {
+    "action": "climb_down_chimney",
+    "n_characters": 2,
+    "subject": "wolf",
+    "object": "third little pig",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": [
+        {
+          "type": "life_at_risk",
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    },
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": []
+    }
+  },
+  {
+    "action": "fall_into_water",
+    "n_characters": 2,
+    "subject": "wolf",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [],
+      "tensions": []
+    }
+  },
+  {
+    "action": "boil",
+    "n_characters": 4,
+    "subject": "three little pigs",
+    "object": "wolf",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -2,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    },
+    "postconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 1,
+          "from": "a",
+          "to": "b"
+        }
+      ],
+      "tensions": []
+    }
+  }
+]
+```

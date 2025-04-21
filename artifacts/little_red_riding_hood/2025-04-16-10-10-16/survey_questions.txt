@@ -1,0 +1,35 @@
+After Mother cares_for Little Red Riding Hood, it is likely that Mother really likes Little Red Riding Hood.
+
+After Grandmother cares_for Little Red Riding Hood, it is likely that Grandmother really likes Little Red Riding Hood.
+
+After Mother sends_on_errand Little Red Riding Hood, it is likely that Mother really likes Little Red Riding Hood.
+
+After Little Red Riding Hood communicates_with Wolf,  nobody has caused Wolf's life to be at risk.
+
+After Wolf asks_about_whereabouts Little Red Riding Hood,  nobody has caused Little Red Riding Hood's life to be at risk.
+
+After Little Red Riding Hood reveals_information Wolf, it is likely that Wolf somewhat dislikes Little Red Riding Hood.
+
+After Wolf knocks_on_door Grandmother, it is likely that Wolf hates Grandmother.
+After Wolf knocks_on_door Grandmother,  nobody has caused Grandmother's health to be at risk.
+
+After Grandmother falls_ill -,  Grandmother has caused Grandmother's health to be at risk.
+
+After Wolf hides_identity Grandmother, it is likely that Wolf hates Grandmother.
+
+After Grandmother enters_unknowingly Wolf, it is likely that Wolf hates Grandmother.
+
+After Wolf eats_up Grandmother,  nobody has caused Grandmother to die.
+
+After Wolf hides_in_bed -,  anybody has caused anybody's life to be at risk.
+
+After Little Red Riding Hood communicates_with Wolf,  nobody has caused Wolf's life to be at risk.
+
+After Little Red Riding Hood notices_something_unusual Wolf, it is likely that Little Red Riding Hood dislikes Wolf.
+
+After Little Red Riding Hood comments_on_appearance Wolf, it is likely that Little Red Riding Hood hates Wolf.
+
+After Wolf reveals_true_identity -,  anybody has caused anybody's life to be at risk.
+
+After Wolf eats_up Little Red Riding Hood,  nobody has caused Little Red Riding Hood to die.
+

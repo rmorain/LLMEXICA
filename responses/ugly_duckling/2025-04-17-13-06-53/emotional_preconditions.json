@@ -1,0 +1,184 @@
+[
+    {
+        "action": "hatch_from_egg",
+        "n_characters": 1,
+        "subject": "-",
+        "object": "duckling",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "reject",
+        "n_characters": 2,
+        "subject": "other_ducks",
+        "object": "duckling",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "console",
+        "n_characters": 2,
+        "subject": "mother_duck",
+        "object": "duckling",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "fly_away",
+        "n_characters": 1,
+        "subject": "duckling",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -2,
+                    "from": "b",
+                    "to": "a"
+                }
+            ]
+        }
+    },
+    {
+        "action": "meet_wild-ducks",
+        "n_characters": 2,
+        "subject": "wild_ducks",
+        "object": "duckling",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "reject",
+        "n_characters": 2,
+        "subject": "wild_goose",
+        "object": "duckling",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "fly_away",
+        "n_characters": 1,
+        "subject": "duckling",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -2,
+                    "from": "b",
+                    "to": "a"
+                }
+            ]
+        }
+    },
+    {
+        "action": "meet_hen_and_cat",
+        "n_characters": 3,
+        "subject": "hen",
+        "object": "duckling",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "exclude",
+        "n_characters": 2,
+        "subject": "hen",
+        "object": "duckling",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -1,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "struggle_in_storm",
+        "n_characters": 1,
+        "subject": "duckling",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "find_shelter",
+        "n_characters": 2,
+        "subject": "old_woman",
+        "object": "duckling",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 1,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "reject",
+        "n_characters": 2,
+        "subject": "children",
+        "object": "duckling",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "meet_swans",
+        "n_characters": 2,
+        "subject": "swans",
+        "object": "duckling",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "discover_true_identity",
+        "n_characters": 1,
+        "subject": "-",
+        "object": "duckling",
+        "preconditions": {
+            "emotional_links": []
+        }
+    }
+]

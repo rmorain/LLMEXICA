@@ -1,0 +1,37 @@
+After duckling hatch_from_egg duckling, it is likely that mother_duck somewhat likes duckling.
+
+Before other ducks reject duckling, it is likely that other ducks dislikes duckling.
+After other ducks reject duckling, it is likely that duckling hates other_ducks.
+
+Before mother duck console duckling, it is likely that mother duck likes duckling.
+After mother duck console duckling, it is likely that duckling really likes mother_duck.
+
+Before duckling fly_away duckling, it is likely that duckling dislikes duckling.
+After duckling fly_away duckling, it is likely that duckling somewhat dislikes environment.
+
+After wild ducks meet_wild-ducks duckling, it is likely that wild_ducks  duckling.
+
+Before wild goose reject duckling, it is likely that wild goose dislikes duckling.
+After wild goose reject duckling, it is likely that duckling hates wild_goose.
+
+Before duckling fly_away duckling, it is likely that duckling dislikes duckling.
+After duckling fly_away duckling, it is likely that duckling somewhat dislikes environment.
+
+After hen meet_hen_and_cat duckling, it is likely that hen  duckling.
+
+Before hen exclude duckling, it is likely that hen somewhat dislikes duckling.
+After hen exclude duckling, it is likely that duckling dislikes hen.
+
+Before duckling struggle_in_storm duckling,  anybody has caused duckling's life to be at risk.
+After duckling struggle_in_storm duckling,  anybody has caused duckling's health to be at risk.
+
+Before old woman find_shelter duckling, it is likely that old woman somewhat likes duckling.
+After old woman find_shelter duckling, it is likely that duckling likes old_woman.
+
+Before children reject duckling, it is likely that children dislikes duckling.
+After children reject duckling, it is likely that duckling hates children.
+
+After swans meet_swans duckling, it is likely that swans really likes duckling.
+
+After duckling discover_true_identity duckling, it is likely that duckling really likes self.
+

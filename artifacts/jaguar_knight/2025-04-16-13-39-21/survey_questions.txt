@@ -1,0 +1,46 @@
+Before Princess heal Jaguar Knight, it is likely that Princess likes Jaguar Knight.
+Before Princess heal Jaguar Knight,  Jaguar Knight has caused Jaguar Knight's health to be at risk.
+After Princess heal Jaguar Knight, it is likely that Jaguar Knight really likes Princess.
+After Princess heal Jaguar Knight,  Jaguar Knight has caused Jaguar Knight's health to no longer be at risk.
+
+Before Enemy kidnap Princess, it is likely that Enemy hates Princess.
+Before Enemy kidnap Princess,  Princess has caused Princess's life to be at risk.
+Before Enemy kidnap Princess,  Princess has caused Princess to be a prisoner.
+After Enemy kidnap Princess, it is likely that Princess hates Enemy.
+
+Before Enemy tie_up Princess, it is likely that Enemy hates Princess.
+Before Enemy tie_up Princess,  Princess has caused Princess to be a prisoner.
+Before Enemy tie_up Princess,  Princess has caused Princess's life to be at risk.
+After Enemy tie_up Princess, it is likely that Princess hates Enemy.
+
+Before Enemy attack Princess, it is likely that Enemy hates Princess.
+Before Enemy attack Princess,  Princess has caused Princess's life to be at risk.
+After Enemy attack Princess, it is likely that Princess hates Enemy.
+
+Before Jaguar Knight search Enemy, it is likely that Jaguar Knight likes Enemy.
+Before Jaguar Knight search Enemy,  Enemy has caused Princess to be a prisoner.
+Before Jaguar Knight search Enemy,  Enemy has caused Princess's life to be at risk.
+After Jaguar Knight search Enemy, it is likely that Jaguar Knight really likes Enemy.
+
+Before Jaguar Knight attack Enemy, it is likely that Jaguar Knight really likes Enemy.
+Before Jaguar Knight attack Enemy,  Enemy has caused Princess's life to be at risk.
+Before Jaguar Knight attack Enemy,  Enemy has caused Princess to be a prisoner.
+After Jaguar Knight attack Enemy, it is likely that Enemy really likes Jaguar Knight.
+
+Before Jaguar Knight liberate Princess, it is likely that Jaguar Knight really likes Princess.
+Before Jaguar Knight liberate Princess,  Enemy has caused Princess to be a prisoner.
+Before Jaguar Knight liberate Princess,  Enemy has caused Princess's life to be at risk.
+After Jaguar Knight liberate Princess, it is likely that Princess really likes Jaguar Knight.
+After Jaguar Knight liberate Princess,  Enemy has caused Princess to no longer be a prisoner.
+After Jaguar Knight liberate Princess,  Enemy has caused Princess's life to no longer be at risk.
+
+Before Princess kiss Jaguar Knight, it is likely that Princess is deeply in love with Jaguar Knight.
+After Princess kiss Jaguar Knight, it is likely that Princess is deeply in love with Jaguar Knight.
+
+Before Princess realize_identity Jaguar Knight, it is likely that Princess dislikes Jaguar Knight.
+After Princess realize_identity Jaguar Knight, it is likely that Princess hates Jaguar Knight.
+
+Before Princess kill Jaguar Knight, it is likely that Princess hates Jaguar Knight.
+Before Princess kill Jaguar Knight,  Jaguar Knight has caused Jaguar Knight to die.
+After Princess kill Jaguar Knight, it is likely that Princess hates Jaguar Knight.
+

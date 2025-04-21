@@ -1,0 +1,74 @@
+ACT hatch_from_egg 1
+POS
+E mother_duck duckling +1 1
+
+ACT reject 2
+PRE
+E a b -2 1
+POS
+E duckling other_ducks -3 1
+
+ACT console 2
+PRE
+E a b +2 1
+POS
+E duckling mother_duck +3 1
+
+ACT fly_away 1
+PRE
+E b a -2 1
+POS
+E duckling environment -1 1
+
+ACT meet_wild-ducks 2
+POS
+E wild_ducks duckling 0 1
+
+ACT reject 2
+PRE
+E a b -2 1
+POS
+E duckling wild_goose -3 1
+
+ACT fly_away 1
+PRE
+E b a -2 1
+POS
+E duckling environment -1 1
+
+ACT meet_hen_and_cat 3
+POS
+E hen duckling 0 1
+
+ACT exclude 2
+PRE
+E a b -1 1
+POS
+E duckling hen -2 1
+
+ACT struggle_in_storm 1
+PRE
+T Lr * a
+POS
+T Hr * a
+
+ACT find_shelter 2
+PRE
+E a b +1 1
+POS
+E duckling old_woman +2 1
+
+ACT reject 2
+PRE
+E a b -2 1
+POS
+E duckling children -3 1
+
+ACT meet_swans 2
+POS
+E swans duckling +3 1
+
+ACT discover_true_identity 1
+POS
+E duckling self +3 1
+

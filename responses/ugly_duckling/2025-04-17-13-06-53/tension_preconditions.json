@@ -1,0 +1,233 @@
+<think>
+Alright, so I need to analyze each action in the story to identify or infer preconditions related to tensions. The user has defined four types of tensions: `character_dead`, `life_at_risk`, `health_at_risk`, and `prisoner`. My task is to go through each action and determine if any of these tensions are present as preconditions for that action.
+
+First, I'll recall the story to identify where such tensions occur. The duckling faces several hardships: being rejected, struggling in a storm, nearly freezing to death, and so on. These events likely tie into the `life_at_risk` or `health_at_risk` tensions.
+
+Let me go through each action one by one:
+
+1. **hatch_from_egg**: This is just the duckling emerging; no tension here.
+2. **reject**: The other ducks reject him, but this doesn't directly put his life at risk.
+3. **console**: The mother comforts him, which might alleviate any underlying tension.
+4. **fly_away**: He leaves due to rejection, but again, not a direct threat to his life.
+5. **meet_wild-ducks**: Meeting new characters without immediate danger.
+6. **reject by wild_goose**: Another rejection, but no physical harm.
+7. **fly_away again**: Continuing to leave situations, no tension here.
+8. **meet_hen_and_cat**: New environment with some exclusion, but not life-threatening.
+9. **exclude**: Excluded by hen and cat, still no direct risk.
+10. **struggle_in_storm**: Here, the duckling faces a severe storm, which could put his life at risk.
+11. **find_shelter**: Finds shelter, reducing any previous tension.
+12. **reject by children**: Rejected again, but not physically harmed.
+13. **meet_swans**: Positive interaction with swans, no tension.
+14. **discover_true_identity**: Realization without immediate danger.
+
+From this analysis, the only action that clearly involves a tension precondition is **struggle_in_storm**, where the duckling's life is at risk due to the harsh weather conditions. For all other actions, there are either emotional links or no preconditions related to tensions.
+
+Now, I'll structure each action with the appropriate `tensions` array within the `preconditions`. Most will have an empty array except for **struggle_in_storm**, which will include a tension of type `life_at_risk`.
+</think>
+
+```json
+[
+    {
+        "action": "hatch_from_egg",
+        "n_characters": 1,
+        "subject": "-",
+        "object": "duckling",
+        "preconditions": {
+            "emotional_links": [],
+            "tensions": []
+        }
+    },
+    {
+        "action": "reject",
+        "n_characters": 2,
+        "subject": "other_ducks",
+        "object": "duckling",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": []
+        }
+    },
+    {
+        "action": "console",
+        "n_characters": 2,
+        "subject": "mother_duck",
+        "object": "duckling",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": []
+        }
+    },
+    {
+        "action": "fly_away",
+        "n_characters": 1,
+        "subject": "duckling",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -2,
+                    "from": "b",
+                    "to": "a"
+                }
+            ],
+            "tensions": []
+        }
+    },
+    {
+        "action": "meet_wild-ducks",
+        "n_characters": 2,
+        "subject": "wild_ducks",
+        "object": "duckling",
+        "preconditions": {
+            "emotional_links": [],
+            "tensions": []
+        }
+    },
+    {
+        "action": "reject",
+        "n_characters": 2,
+        "subject": "wild_goose",
+        "object": "duckling",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": []
+        }
+    },
+    {
+        "action": "fly_away",
+        "n_characters": 1,
+        "subject": "duckling",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -2,
+                    "from": "b",
+                    "to": "a"
+                }
+            ],
+            "tensions": []
+        }
+    },
+    {
+        "action": "meet_hen_and_cat",
+        "n_characters": 3,
+        "subject": "hen",
+        "object": "duckling",
+        "preconditions": {
+            "emotional_links": [],
+            "tensions": []
+        }
+    },
+    {
+        "action": "exclude",
+        "n_characters": 2,
+        "subject": "hen",
+        "object": "duckling",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -1,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": []
+        }
+    },
+    {
+        "action": "struggle_in_storm",
+        "n_characters": 1,
+        "subject": "duckling",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "*",
+                    "to": "a"
+                }
+            ]
+        }
+    },
+    {
+        "action": "find_shelter",
+        "n_characters": 2,
+        "subject": "old_woman",
+        "object": "duckling",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 1,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": []
+        }
+    },
+    {
+        "action": "reject",
+        "n_characters": 2,
+        "subject": "children",
+        "object": "duckling",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": []
+        }
+    },
+    {
+        "action": "meet_swans",
+        "n_characters": 2,
+        "subject": "swans",
+        "object": "duckling",
+        "preconditions": {
+            "emotional_links": [],
+            "tensions": []
+        }
+    },
+    {
+        "action": "discover_true_identity",
+        "n_characters": 1,
+        "subject": "-",
+        "object": "duckling",
+        "preconditions": {
+            "emotional_links": [],
+            "tensions": []
+        }
+    }
+]
+```

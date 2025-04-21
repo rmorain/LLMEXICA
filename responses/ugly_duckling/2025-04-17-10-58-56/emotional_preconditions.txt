@@ -1,0 +1,762 @@
+<think>
+Alright, so I've been given a task to analyze a story about an Ugly Duckling and identify preconditions related to emotional links for each action in the narrative. The user provided a detailed instruction on how to approach this, including modifying a JSON structure to include these preconditions.
+
+First, I need to understand what exactly is required here. Emotional links are connections between characters that drive their actions. These can be either non-romantic or romantic and have a magnitude from -3 to 3, indicating the strength of the emotion—whether it's positive, neutral, or negative.
+
+The story itself is about a duckling who faces rejection because of his appearance, eventually finding acceptance when he matures into a swan. This journey involves various interactions where emotional links play a crucial role. For example, the mother duck’s concern for her egg, the other ducks' dislike towards the duckling, and the eventual acceptance by the swans.
+
+Now, looking at each action in the JSON provided, I need to determine if there are any preconditions based on emotional links that must be met for the action to occur. For example, when the mother duck expresses concern over her egg, this action is driven by a non-romantic emotional link of care or worry towards her child.
+
+I also need to ensure that each precondition is correctly structured with `type`, `magnitude`, `from`, and `to`. If an action doesn't have any emotional links as preconditions, the array remains empty. It's important to map these accurately to avoid misrepresenting the narrative.
+
+One challenge here is ensuring consistency in assigning magnitudes. For instance, when the duckling is rejected by the other ducks, the magnitude should reflect a strong negative emotion, perhaps -3 for hatred or intense dislike. Conversely, the mother duck’s concern might be a positive magnitude, indicating care and affection.
+
+I also need to handle cases where the subject or object in an action is not explicitly named. In such scenarios, I have to infer based on the context of the story who the characters are and adjust `n_characters` accordingly.
+
+Another point to consider is that some actions might not have emotional preconditions—they could be driven by external circumstances rather than emotional states. For example, the duckling hiding under his wing during a hunt is more about survival instinct than an emotional link.
+
+I'll go through each action one by one, assess whether an emotional link is a precondition for that action, and then assign the appropriate type and magnitude. This will involve careful reading of the story to understand the characters' motivations and emotions at each step.
+
+Additionally, I need to ensure that the JSON structure remains valid after adding these preconditions. Each entry should have the `preconditions` key with an `emotional_links` array containing the necessary objects.
+
+Overall, this task requires a deep understanding of narrative analysis, emotional intelligence in stories, and meticulous attention to detail to accurately map each action's preconditions based on the characters' emotional states.
+</think>
+
+Here is the modified JSON with the identified or inferred preconditions related to emotional links:
+
+```json
+[
+    {
+        "action": "hatches_from_egg",
+        "n_characters": 1,
+        "subject": "-",
+        "object": "duckling",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "watches_over_nest",
+        "n_characters": 1,
+        "subject": "mother_duck",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "expresses_concern",
+        "n_characters": 2,
+        "subject": "mother_duck",
+        "object": "duckling",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "visits_nest",
+        "n_characters": 2,
+        "subject": "old_duck",
+        "object": "mother_duck",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 1,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "examines_egg",
+        "n_characters": 2,
+        "subject": "old_duck",
+        "object": "duckling",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -1,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "encourages_patience",
+        "n_characters": 2,
+        "subject": "mother_duck",
+        "object": "old_duck",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "hatches_from_egg",
+        "n_characters": 1,
+        "subject": "-",
+        "object": "duckling",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "stares_at",
+        "n_characters": 2,
+        "subject": "mother_duck",
+        "object": "duckling",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -1,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "plans_to_push_into_water",
+        "n_characters": 1,
+        "subject": "mother_duck",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "jumps_into_water",
+        "n_characters": 2,
+        "subject": "mother_duck",
+        "object": "ducklings",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "swims_in_water",
+        "n_characters": 2,
+        "subject": "ducklings",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "comments_on_appearance",
+        "n_characters": 3,
+        "subject": "other_duck",
+        "object": "duckling",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "bites_in_neck",
+        "n_characters": 2,
+        "subject": "spiteful_duck",
+        "object": "duckling",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "defends",
+        "n_characters": 2,
+        "subject": "mother_duck",
+        "object": "duckling",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "criticizes_appearance",
+        "n_characters": 3,
+        "subject": "old_duck",
+        "object": "duckling",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "defends_character",
+        "n_characters": 2,
+        "subject": "mother_duck",
+        "object": "old_duck",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "teases",
+        "n_characters": 4,
+        "subject": "other_animals",
+        "object": "duckling",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "runs_away",
+        "n_characters": 1,
+        "subject": "duckling",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "flies_over_hedge",
+        "n_characters": 1,
+        "subject": "duckling",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "spends_night_on_moor",
+        "n_characters": 1,
+        "subject": "duckling",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "meets_wild_ducks",
+        "n_characters": 2,
+        "subject": "wild_duck",
+        "object": "duckling",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -1,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "asks_about_origin",
+        "n_characters": 2,
+        "subject": "wild_duck",
+        "object": "duckling",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -1,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "rejects_duckling",
+        "n_characters": 3,
+        "subject": "wild_goose",
+        "object": "duckling",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "offers_to_join",
+        "n_characters": 2,
+        "subject": "wild_goose",
+        "object": "duckling",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -1,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "falls_dead",
+        "n_characters": 1,
+        "subject": "-",
+        "object": "wild_goose",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "hides_under_wing",
+        "n_characters": 1,
+        "subject": "duckling",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "escapes_from_dog",
+        "n_characters": 2,
+        "subject": "dog",
+        "object": "duckling",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "runs_to_cottage",
+        "n_characters": 1,
+        "subject": "duckling",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "discovers_narrow_opening",
+        "n_characters": 1,
+        "subject": "duckling",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "enters_cottage",
+        "n_characters": 1,
+        "subject": "duckling",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "discovers_cottage_occupants",
+        "n_characters": 3,
+        "subject": "duckling",
+        "object": "tom_cat",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -1,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "expresses_doubts_about_duckling",
+        "n_characters": 2,
+        "subject": "old_woman",
+        "object": "duckling",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -1,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "rejects_duckling",
+        "n_characters": 3,
+        "subject": "tom_cat",
+        "object": "duckling",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "asks_about_abilities",
+        "n_characters": 2,
+        "subject": "hen",
+        "object": "duckling",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -1,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "rejects_duckling",
+        "n_characters": 3,
+        "subject": "hen",
+        "object": "duckling",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "leaves_cottage",
+        "n_characters": 1,
+        "subject": "duckling",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "finds_water_to_swim",
+        "n_characters": 1,
+        "subject": "duckling",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "faces_rejection_from_animals",
+        "n_characters": 4,
+        "subject": "other_animals",
+        "object": "duckling",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "endures_cold_weather",
+        "n_characters": 1,
+        "subject": "duckling",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "sees_beautiful_birds",
+        "n_characters": 2,
+        "subject": "swans",
+        "object": "duckling",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 1,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "feels_unhappy",
+        "n_characters": 1,
+        "subject": "duckling",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "dives_into_water",
+        "n_characters": 1,
+        "subject": "duckling",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "freezes_in_ice",
+        "n_characters": 1,
+        "subject": "-",
+        "object": "duckling",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "breaks_ice_with_shoe",
+        "n_characters": 2,
+        "subject": "peasant",
+        "object": "duckling",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 1,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "carries_home",
+        "n_characters": 2,
+        "subject": "peasant",
+        "object": "duckling",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 1,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "revives_in_warmth",
+        "n_characters": 1,
+        "subject": "-",
+        "object": "duckling",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "escapes_from_children",
+        "n_characters": 2,
+        "subject": "children",
+        "object": "duckling",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -1,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "hides_in_snow",
+        "n_characters": 1,
+        "subject": "duckling",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "finds_refuge_on_moor",
+        "n_characters": 1,
+        "subject": "duckling",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "feels_sun_and_hears_lark",
+        "n_characters": 1,
+        "subject": "-",
+        "object": "duckling",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "flaps_wings",
+        "n_characters": 1,
+        "subject": "duckling",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "flies_into_garden",
+        "n_characters": 1,
+        "subject": "duckling",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "sees_beautiful_swans",
+        "n_characters": 2,
+        "subject": "swans",
+        "object": "duckling",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 1,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "approaches_water",
+        "n_characters": 1,
+        "subject": "duckling",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "sees_reflection_in_water",
+        "n_characters": 2,
+        "subject": "-",
+        "object": "duckling",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "welcomes_to_group",
+        "n_characters": 3,
+        "subject": "swans",
+        "object": "duckling",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "throws_bread_into_water",
+        "n_characters": 2,
+        "subject": "children",
+        "object": "swans",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 1,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    }
+]
+```
+
+This JSON now includes preconditions related to emotional links where applicable. Each precondition is based on the inferred or explicit emotions of the characters involved in the action.

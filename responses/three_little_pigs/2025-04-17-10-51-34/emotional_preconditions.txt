@@ -1,0 +1,238 @@
+<think>
+Alright, I need to help the user by describing how an assistant would process their query about analyzing a story using narrative analysis techniques. The goal is to extract specific actions related to emotional links and tensions in the story and then infer preconditions based on emotional links for each action.
+
+First, I'll start by reviewing the previous JSON structure provided by the user. Each action has keys like 'action', 'n_characters', 'subject', and 'object'. Now, the new task is to add a 'preconditions' key to each action that includes an array of emotional_links. Each emotional link should specify the type (non-romantic or romantic), magnitude (-3 to 3), and the source ('from') and target ('to') characters.
+
+Looking at each action one by one, I'll need to determine if there are any emotional links required as preconditions for that action. For example, when the mother pig sends out her sons, it's likely driven by a positive non-romantic emotional link because she wants the best for them. So, I'll set the magnitude to 2.
+
+Next, when each little pig builds their house, there doesn't seem to be an emotional link precondition since these are individual actions based on their characteristics (lazy, hardworking). Therefore, no emotional links are needed here.
+
+When the pigs sing and dance together, this suggests a positive relationship among them. I'll infer a non-romantic link with a magnitude of 2 from each pig to the others.
+
+The wolf's actions are driven by hunger and greed, which can be seen as a negative emotional link towards the pigs. So, for each 'huff_and_puff' action, there should be a non-romantic link with a magnitude of -3 from the wolf to the pigs.
+
+When the first little pig escapes to the second, it implies trust and reliance, so a positive link (magnitude 2) from the first pig to the second. Similarly, when both escape to the third's house, there's a mutual trust, so non-romantic links with magnitude 2 between all three pigs.
+
+The wolf's persistence in attacking is again driven by hunger, so consistent negative links are present each time he huffs and puffs. Finally, when the pigs boil the wolf, it shows relief and triumph, indicating positive links among themselves (magnitude 1).
+
+I need to ensure that for each action, if there's an emotional link, it's correctly inferred with appropriate magnitude and direction. If no links are present, the array remains empty. Also, I must update 'n_characters' if adding a link changes the number of involved characters.
+
+This process ensures that each action in the JSON now includes preconditions based on emotional links where applicable, enhancing the narrative analysis.
+</think>
+
+Here is the updated JSON with preconditions for emotional links:
+
+```json
+[
+  {
+    "action": "sends_out",
+    "n_characters": 4,
+    "subject": "old mother pig",
+    "object": "three little pigs",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 2,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "build_house_straw",
+    "n_characters": 1,
+    "subject": "first little pig",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": []
+    }
+  },
+  {
+    "action": "build_house_sticks",
+    "n_characters": 1,
+    "subject": "second little pig",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": []
+    }
+  },
+  {
+    "action": "build_house_bricks",
+    "n_characters": 1,
+    "subject": "third little pig",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": []
+    }
+  },
+  {
+    "action": "sing_and_dance_together",
+    "n_characters": 3,
+    "subject": "first little pig, second little pig, third little pig",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 2,
+          "from": "a",
+          "to": "b"
+        },
+        {
+          "type": "non-romantic",
+          "magnitude": 2,
+          "from": "b",
+          "to": "c"
+        }
+      ]
+    }
+  },
+  {
+    "action": "huff_and_puff",
+    "n_characters": 2,
+    "subject": "wolf",
+    "object": "first little pig",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "escape",
+    "n_characters": 2,
+    "subject": "first little pig",
+    "object": "second little pig",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 2,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "huff_and_puff",
+    "n_characters": 2,
+    "subject": "wolf",
+    "object": "second little pig, third little pig",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "escape",
+    "n_characters": 3,
+    "subject": "first little pig, second little pig",
+    "object": "third little pig",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": 2,
+          "from": "a",
+          "to": "b"
+        },
+        {
+          "type": "non-romantic",
+          "magnitude": 2,
+          "from": "b",
+          "to": "c"
+        }
+      ]
+    }
+  },
+  {
+    "action": "huff_and_puff",
+    "n_characters": 2,
+    "subject": "wolf",
+    "object": "three little pigs",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "are_frightened",
+    "n_characters": 3,
+    "subject": "-",
+    "object": "three little pigs",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -2,
+          "from": "b",
+          "to": "a"
+        }
+      ]
+    }
+  },
+  {
+    "action": "climb_down_chimney",
+    "n_characters": 2,
+    "subject": "wolf",
+    "object": "third little pig",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -3,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  },
+  {
+    "action": "fall_into_water",
+    "n_characters": 2,
+    "subject": "wolf",
+    "object": "-",
+    "preconditions": {
+      "emotional_links": []
+    }
+  },
+  {
+    "action": "boil",
+    "n_characters": 4,
+    "subject": "three little pigs",
+    "object": "wolf",
+    "preconditions": {
+      "emotional_links": [
+        {
+          "type": "non-romantic",
+          "magnitude": -2,
+          "from": "a",
+          "to": "b"
+        }
+      ]
+    }
+  }
+]
+```
+
+This JSON now includes preconditions for emotional links where applicable. Each emotional link has a type (`non-romantic` or `romantic`), magnitude, and direction (from `a` to `b`, etc.). If no emotional link is required for an action, the array remains empty.

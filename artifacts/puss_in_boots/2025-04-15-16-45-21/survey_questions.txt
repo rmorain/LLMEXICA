@@ -1,0 +1,25 @@
+Before Cat hears_despair Marquis of Carabas, it is likely that Cat really likes Marquis of Carabas.
+Before Cat hears_despair Marquis of Carabas,  nobody has caused Marquis of Carabas's life to be at risk.
+After Cat hears_despair Marquis of Carabas, it is likely that Cat really likes Marquis of Carabas.
+
+Before Cat presents_gift King, it is likely that Cat really likes King.
+Before Cat presents_gift King,  nobody has caused King's life to be at risk.
+After Cat presents_gift King, it is likely that Cat really likes King.
+
+Before King receives_clothes Marquis of Carabas, it is likely that King really likes Marquis of Carabas.
+Before King receives_clothes Marquis of Carabas,  nobody has caused Marquis of Carabas's life to be at risk.
+After King receives_clothes Marquis of Carabas, it is likely that King really likes Marquis of Carabas.
+
+Before Princess falls_in_love Marquis of Carabas, it is likely that Princess is deeply in love with Marquis of Carabas.
+After Princess falls_in_love Marquis of Carabas, it is likely that Princess is deeply in love with Marquis of Carabas.
+
+Before Cat eats_ogre Ogre, it is likely that Cat really likes Ogre.
+Before Cat eats_ogre Ogre,  nobody has caused Ogre's life to be at risk.
+After Cat eats_ogre Ogre, it is likely that Cat really likes Ogre.
+
+Before King invites_castle Marquis of Carabas, it is likely that King really likes Marquis of Carabas.
+After King invites_castle Marquis of Carabas, it is likely that King really likes Marquis of Carabas.
+
+Before Marquis of Carabas marries_princess Princess, it is likely that Marquis of Carabas is deeply in love with Princess.
+After Marquis of Carabas marries_princess Princess, it is likely that Marquis of Carabas is deeply in love with Princess.
+

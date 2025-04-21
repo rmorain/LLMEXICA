@@ -1,0 +1,230 @@
+<think>
+Alright, I'm trying to figure out how to approach this problem. So, from what I understand, the user has provided a story about an Ugly Duckling and wants me to analyze it by identifying actions, their preconditions related to emotional links, and any existing tensions.
+
+First, I need to break down each action in the story and see if there are any emotional links that act as preconditions for those actions. Emotional links can be either non-romantic or romantic, but since this is a story about a duckling's journey, it's safe to say all emotional links here will be non-romantic.
+
+Each action should have a `preconditions` key containing an array of `emotional_links`. Each `emotional_link` needs to specify the type (non-romantic), magnitude (on a scale from -3 to 3), and the direction (from 'a' to 'b', where 'a' is the subject and 'b' is the object).
+
+I also need to consider tensions, which include things like life at risk, health issues, or being a prisoner. For example, when the duckling is freezing in the ice, that's a clear tension of `life_at_risk`.
+
+Let me go through each action one by one:
+
+1. **hatch_from_egg**: This is the starting point. There’s no emotional link here since it's just the duckling emerging.
+
+2. **reject**: The other ducks reject the duckling because he's ugly. Here, there must be a negative emotional link from the ducks to the duckling, maybe magnitude -2.
+
+3. **console**: The mother consoles the duckling, showing affection. So, a positive emotional link from mother to duckling, perhaps +2.
+
+4. **fly_away**: The duckling leaves due to rejection, so the precondition is the negative link from others.
+
+5. **meet_wild-ducks**: Meeting new characters; no strong emotion initially, but when they reject him, we have another negative link.
+
+6. **reject by wild_goose**: Similar to before, a negative emotional link leading to rejection.
+
+7. **fly_away again**: Result of ongoing rejection.
+
+8. **meet_hen_and_cat**: New interactions where the hen and cat exclude him, indicating negative links.
+
+9. **exclude**: The hen and cat don't want him around, another negative emotional link.
+
+10. **struggle_in_storm**: This is more about physical struggle than emotions, so no precondition needed here.
+
+11. **find_shelter**: The old woman provides shelter, which might be a neutral or slightly positive emotional link, maybe +1.
+
+12. **reject by children**: They frighten him, leading to another negative link.
+
+13. **meet_swans**: Finally, a positive interaction where the swans accept him, indicating a shift in emotional links from others towards him.
+
+14. **discover_true_identity**: The realization that he's a swan, so internal acceptance rather than an external precondition.
+
+I need to map each action with its corresponding preconditions. For actions like "reject" and "exclude," I'll assign negative magnitudes. Positive interactions will have positive magnitudes. Actions without clear emotional drivers won't have preconditions.
+
+I also have to ensure that for each `emotional_link`, the 'from' and 'to' are correctly set based on the subject and object of each action.
+</think>
+
+```json
+[
+    {
+        "action": "hatch_from_egg",
+        "n_characters": 1,
+        "subject": "-",
+        "object": "duckling",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "reject",
+        "n_characters": 2,
+        "subject": "other_ducks",
+        "object": "duckling",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "console",
+        "n_characters": 2,
+        "subject": "mother_duck",
+        "object": "duckling",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "fly_away",
+        "n_characters": 1,
+        "subject": "duckling",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -2,
+                    "from": "b",
+                    "to": "a"
+                }
+            ]
+        }
+    },
+    {
+        "action": "meet_wild-ducks",
+        "n_characters": 2,
+        "subject": "wild_ducks",
+        "object": "duckling",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "reject",
+        "n_characters": 2,
+        "subject": "wild_goose",
+        "object": "duckling",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "fly_away",
+        "n_characters": 1,
+        "subject": "duckling",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -2,
+                    "from": "b",
+                    "to": "a"
+                }
+            ]
+        }
+    },
+    {
+        "action": "meet_hen_and_cat",
+        "n_characters": 3,
+        "subject": "hen",
+        "object": "duckling",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "exclude",
+        "n_characters": 2,
+        "subject": "hen",
+        "object": "duckling",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -1,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "struggle_in_storm",
+        "n_characters": 1,
+        "subject": "duckling",
+        "object": "-",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "find_shelter",
+        "n_characters": 2,
+        "subject": "old_woman",
+        "object": "duckling",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 1,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "reject",
+        "n_characters": 2,
+        "subject": "children",
+        "object": "duckling",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "meet_swans",
+        "n_characters": 2,
+        "subject": "swans",
+        "object": "duckling",
+        "preconditions": {
+            "emotional_links": []
+        }
+    },
+    {
+        "action": "discover_true_identity",
+        "n_characters": 1,
+        "subject": "-",
+        "object": "duckling",
+        "preconditions": {
+            "emotional_links": []
+        }
+    }
+]
+```

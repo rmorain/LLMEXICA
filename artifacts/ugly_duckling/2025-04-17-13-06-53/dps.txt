@@ -1,0 +1,15 @@
+STO
+duckling hatch_from_egg duckling
+other_ducks reject duckling
+mother_duck console duckling
+duckling fly_away duckling
+wild_ducks meet_wild-ducks duckling
+wild_goose reject duckling
+duckling fly_away duckling
+hen meet_hen_and_cat duckling
+hen exclude duckling
+duckling struggle_in_storm duckling
+old_woman find_shelter duckling
+children reject duckling
+swans meet_swans duckling
+duckling discover_true_identity duckling

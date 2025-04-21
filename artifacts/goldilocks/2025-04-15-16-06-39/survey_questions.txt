@@ -1,0 +1,20 @@
+After Goldilocks taste_porridge Great Big Bear, it is likely that Goldilocks somewhat dislikes Great Big Bear.
+
+After Goldilocks taste_porridge Middle-sized Bear, it is likely that Goldilocks somewhat dislikes Middle-sized Bear.
+
+After Goldilocks eat_porridge Little Wee Bear, it is likely that Goldilocks somewhat likes Little Wee Bear.
+
+After Goldilocks sit_in-chair Great Big Bear, it is likely that Goldilocks somewhat dislikes Great Big Bear.
+
+After Goldilocks sit_in-chair Middle-sized Bear, it is likely that Goldilocks somewhat dislikes Middle-sized Bear.
+
+After Goldilocks break_chair Little Wee Bear, it is likely that Goldilocks dislikes Little Wee Bear.
+After Goldilocks break_chair Little Wee Bear,  Goldilocks has caused Little Wee Bear's life to be at risk.
+
+After Goldilocks lie_in-bed Great Big Bear, it is likely that Goldilocks somewhat dislikes Great Big Bear.
+
+After Goldilocks lie_in-bed Middle-sized Bear, it is likely that Goldilocks somewhat dislikes Middle-sized Bear.
+
+After Goldilocks sleep_in_bed Little Wee Bear, it is likely that Goldilocks somewhat likes Little Wee Bear.
+After Goldilocks sleep_in_bed Little Wee Bear,  Goldilocks has caused Little Wee Bear's life to be at risk.
+

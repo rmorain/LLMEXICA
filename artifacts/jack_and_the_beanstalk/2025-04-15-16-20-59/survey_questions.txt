@@ -1,0 +1,35 @@
+After Mother tells Jack to sell a cow, it is likely that Mother somewhat dislikes Jack.
+After Mother tells Jack to sell a cow, it is likely that Jack somewhat dislikes Mother.
+After Mother tells Jack to sell a cow,  anybody has caused anybody's life to be at risk.
+
+After Man offers Jack magic beans, it is likely that Jack dislikes Man.
+
+After Jack gives Man the cow, it is likely that Jack somewhat dislikes Man.
+
+After Mother scolds Jack, it is likely that Mother dislikes Jack.
+After Mother scolds Jack, it is likely that Jack dislikes Mother.
+
+After Jack asks Wife for food, it is likely that Jack somewhat likes Wife.
+
+After Wife gives food to Jack, it is likely that Jack somewhat likes Wife.
+
+After Giant threatens Jack, it is likely that Giant hates Jack.
+
+After Wife lies to protect Jack, it is likely that Wife somewhat likes Giant.
+After Wife lies to protect Jack, it is likely that Giant dislikes Wife.
+
+After Jack steals gold from Giant, it is likely that Jack dislikes Giant.
+
+After Jack gives coins to Mother, it is likely that Jack somewhat likes Mother.
+After Jack gives coins to Mother, it is likely that Mother somewhat likes Jack.
+
+After Jack steals a hen from Giant, it is likely that Jack dislikes Giant.
+
+After Jack steals hen from Giant, it is likely that Giant hates Jack.
+
+After Giant chases Jack, it is likely that Giant hates Jack.
+
+After Jack steals harp from Giant, it is likely that Jack hates Giant.
+
+After Jack kills Giant, it is likely that Jack hates Giant.
+
