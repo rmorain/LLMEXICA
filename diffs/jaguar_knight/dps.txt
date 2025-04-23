@@ -1,0 +1,11 @@
+STO
+Princess heal Jaguar_Knight
+Enemy kidnap Princess
+Enemy tie_up Princess
+Enemy attack Princess
+Jaguar_Knight search Enemy
+Jaguar_Knight attack Enemy
+Jaguar_Knight liberate Princess
+Princess kiss Jaguar_Knight
+Princess realize_identity Jaguar_Knight
+Princess kill Jaguar_Knight

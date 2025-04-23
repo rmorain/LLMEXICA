@@ -69,25 +69,26 @@ def create_pad(story_json, json_dir):
             num_characters = action["n_characters"]
             file.write(f"ACT {action_name} {num_characters}\n")
             # Preconditions (if any)
-            emotional_preconditions = action["preconditions"]["emotional_links"]
-            tensions = action["preconditions"]["tensions"]
-            if len(emotional_preconditions) > 0 or len(tensions) > 0:
-                file.write("PRE\n")
-                # Write emotional preconditions
-                # Type, magnitude, from, to
-                for precondition in emotional_preconditions:
-                    magnitude = precondition["magnitude"]
-                    if magnitude > 0:
-                        magnitude = "+" + str(magnitude)
-                    pre_type = EMOTIONAL_LINK_TYPES[precondition["type"]]
-                    file.write(
-                        f"E {precondition['from']} {precondition['to']} {magnitude} {pre_type}\n"
-                    )
-                # Write tensions
-                # Type, from, to
-                for tension in tensions:
-                    pre_type = TENSION_TYPES[tension["type"]]
-                    file.write(f"T {pre_type} {tension['from']} {tension['to']}\n")
+            if "preconditions" in action:
+                emotional_preconditions = action["preconditions"]["emotional_links"]
+                tensions = action["preconditions"]["tensions"]
+                if len(emotional_preconditions) > 0 or len(tensions) > 0:
+                    file.write("PRE\n")
+                    # Write emotional preconditions
+                    # Type, magnitude, from, to
+                    for precondition in emotional_preconditions:
+                        magnitude = precondition["magnitude"]
+                        if magnitude > 0:
+                            magnitude = "+" + str(magnitude)
+                        pre_type = EMOTIONAL_LINK_TYPES[precondition["type"]]
+                        file.write(
+                            f"E {precondition['from']} {precondition['to']} {magnitude} {pre_type}\n"
+                        )
+                    # Write tensions
+                    # Type, from, to
+                    for tension in tensions:
+                        pre_type = TENSION_TYPES[tension["type"]]
+                        file.write(f"T {pre_type} {tension['from']} {tension['to']}\n")
             # Postconditions
             emotional_postconditions = action["postconditions"]["emotional_links"]
             tensions = action["postconditions"]["tensions"]
@@ -268,33 +269,33 @@ def create_survey_questions(story_action_json, write_dir):
 
 if __name__ == "__main__":
     # Example usage
-    # json_dir = "artifacts/jaguar_knight/test/"
-    # # Load json file
-    # with open(json_dir + "story_actions.json", "r") as file:
-    #     story_json = json.load(file)
-    #     print(story_json)
-    # create_dps(story_json, json_dir)
+    json_dir = "artifacts/little_red_riding_hood/2025-04-16-10-10-16/"
+    # Load json file
+    with open(json_dir + "story_actions.json", "r") as file:
+        story_json = json.load(file)
+        print(story_json)
+    create_dps(story_json, json_dir)
 
-    # create_pad(story_json, json_dir)
+    create_pad(story_json, json_dir)
 
     # Get dirs of latest artifacts in the artifacts folder for each story
-    stories = os.listdir("artifacts")
-    for story in stories:
-        story_dir = os.path.join("artifacts", story)
-        if not os.path.isdir(story_dir):
-            continue
-        # Get the latest dir
-        latest_dir = max(
-            [
-                os.path.join(story_dir, d)
-                for d in os.listdir(story_dir)
-                if os.path.isdir(os.path.join(story_dir, d))
-            ],
-            key=os.path.getmtime,
-        )
-        print(latest_dir)
-        # Load json file
-        with open(os.path.join(latest_dir, "story_actions.json"), "r") as file:
-            story_json = json.load(file)
-            print(story_json)
-        create_survey_questions(story_json, latest_dir)
+    # stories = os.listdir("artifacts")
+    # for story in stories:
+    #     story_dir = os.path.join("artifacts", story)
+    #     if not os.path.isdir(story_dir):
+    #         continue
+    #     # Get the latest dir
+    #     latest_dir = max(
+    #         [
+    #             os.path.join(story_dir, d)
+    #             for d in os.listdir(story_dir)
+    #             if os.path.isdir(os.path.join(story_dir, d))
+    #         ],
+    #         key=os.path.getmtime,
+    #     )
+    #     print(latest_dir)
+    #     # Load json file
+    #     with open(os.path.join(latest_dir, "story_actions.json"), "r") as file:
+    #         story_json = json.load(file)
+    #         print(story_json)
+    #     create_survey_questions(story_json, latest_dir)

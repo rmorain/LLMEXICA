@@ -1,0 +1,68 @@
+Before Stepmother argues with Father, it is likely that Father hates Stepmother.
+Before Stepmother argues with Father,  Father has caused Stepmother's life to be at risk.
+After Stepmother argues with Father, it is likely that Stepmother hates Father.
+After Stepmother argues with Father,  nobody has caused anybody's life to be at risk.
+
+Before Gretel weeps because of Stepmother, it is likely that Gretel dislikes Stepmother.
+Before Gretel weeps because of Stepmother,  nobody has caused anybody's life to be at risk.
+After Gretel weeps because of Stepmother, it is likely that Gretel hates Stepmother.
+After Gretel weeps because of Stepmother,  nobody has caused anybody's life to be at risk.
+
+Before Hansel comforts Gretel, it is likely that Hansel really likes Gretel.
+Before Hansel comforts Gretel,  nobody has caused anybody's life to be at risk.
+After Hansel comforts Gretel, it is likely that Gretel really likes Hansel.
+After Hansel comforts Gretel,  nobody has caused anybody's life to no longer be at risk.
+
+After Hansel gathers pebbles,  Hansel has caused anybody's life to no longer be at risk.
+
+Before Stepmother abandons children, it is likely that children hates Stepmother.
+Before Stepmother abandons children,  children has caused Stepmother's life to be at risk.
+After Stepmother abandons children, it is likely that Stepmother hates children.
+After Stepmother abandons children,  nobody has caused anybody's life to be at risk.
+
+After Hansel and Gretel follow pebbles,  Hansel and Gretel has caused anybody's life to no longer be at risk.
+
+Before Stepmother argues with Father, it is likely that Father hates Stepmother.
+Before Stepmother argues with Father,  Father has caused Stepmother's life to be at risk.
+After Stepmother argues with Father, it is likely that Stepmother hates Father.
+After Stepmother argues with Father,  nobody has caused anybody's life to be at risk.
+
+After Hansel scatters breadcrumbs,  Hansel has caused anybody's life to no longer be at risk.
+
+Before Stepmother abandons children, it is likely that children hates Stepmother.
+Before Stepmother abandons children,  children has caused Stepmother's life to be at risk.
+After Stepmother abandons children, it is likely that Stepmother hates children.
+After Stepmother abandons children,  nobody has caused anybody's life to be at risk.
+
+Before Witch captures Hansel, it is likely that Witch hates Hansel.
+Before Witch captures Hansel,  Witch has caused Hansel to be a prisoner.
+Before Witch captures Hansel,  Witch has caused Hansel's health to be at risk.
+After Witch captures Hansel, it is likely that Hansel hates Witch.
+After Witch captures Hansel,  Witch has caused Hansel to be a prisoner.
+After Witch captures Hansel,  Witch has caused Hansel's health to be at risk.
+
+Before Witch imprisons Hansel, it is likely that Witch hates Hansel.
+Before Witch imprisons Hansel,  Witch has caused Hansel to be a prisoner.
+After Witch imprisons Hansel, it is likely that Hansel hates Witch.
+After Witch imprisons Hansel,  Witch has caused Hansel to be a prisoner.
+
+Before Witch tempts Gretel, it is likely that Witch dislikes Gretel.
+Before Witch tempts Gretel,  Witch has caused Gretel's life to be at risk.
+Before Witch tempts Gretel,  Witch has caused Gretel's health to be at risk.
+After Witch tempts Gretel, it is likely that Gretel hates Witch.
+After Witch tempts Gretel,  nobody has caused anybody's life to be at risk.
+After Witch tempts Gretel,  nobody has caused anybody's health to be at risk.
+
+Before Gretel kills Witch, it is likely that Gretel hates Witch.
+Before Gretel kills Witch,  nobody has caused anybody's life to be at risk.
+Before Gretel kills Witch,  Witch has caused Gretel to be a prisoner.
+After Gretel kills Witch, it is likely that Gretel hates Witch.
+After Gretel kills Witch,  Gretel has caused Witch to die.
+After Gretel kills Witch,  nobody has caused anybody to no longer be a prisoner.
+After Gretel kills Witch,  nobody has caused anybody's life to no longer be at risk.
+
+After Hansel and Gretel escapes,  nobody has caused anybody to no longer be a prisoner.
+
+Before Hansel and Gretel return home to Father, it is likely that Hansel and Gretel likes Father.
+After Hansel and Gretel return home to Father, it is likely that Hansel and Gretel really likes Father.
+

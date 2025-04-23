@@ -1,0 +1,31 @@
+ACT
+taste_porridge 2
+POS
+E b a -1 1
+
+ACT
+eat_porridge 2
+POS
+E b a -1 1
+
+ACT
+sit_in-chair 2
+POS
+E b a -1 1
+
+ACT
+break_chair 2
+POS
+E b a -2 1
+
+ACT
+lie_in-bed 2
+POS
+E b a -1 1
+
+ACT
+sleep_in_bed 2
+POS
+E b a -2 1
+
+END

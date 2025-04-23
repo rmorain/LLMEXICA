@@ -1,0 +1,399 @@
+[
+    {
+        "action": "heal",
+        "n_characters": 2,
+        "subject": "Princess",
+        "object": "Jaguar_Knight",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": [
+                {
+                    "type": "health_at_risk",
+                    "from": "b",
+                    "to": "b"
+                }
+            ]
+        },
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 3,
+                    "from": "b",
+                    "to": "a"
+                }
+            ],
+            "tensions": [
+                {
+                    "type": "health_normal",
+                    "from": "b",
+                    "to": "b"
+                }
+            ]
+        }
+    },
+    {
+        "action": "kidnap",
+        "n_characters": 2,
+        "subject": "Enemy",
+        "object": "Princess",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "b",
+                    "to": "b"
+                },
+                {
+                    "type": "prisoner",
+                    "from": "b",
+                    "to": "b"
+                }
+            ]
+        },
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "b",
+                    "to": "a"
+                }
+            ],
+            "tensions": []
+        }
+    },
+    {
+        "action": "tie_up",
+        "n_characters": 2,
+        "subject": "Enemy",
+        "object": "Princess",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": [
+                {
+                    "type": "prisoner",
+                    "from": "b",
+                    "to": "b"
+                },
+                {
+                    "type": "life_at_risk",
+                    "from": "b",
+                    "to": "b"
+                }
+            ]
+        },
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -4,
+                    "from": "b",
+                    "to": "a"
+                }
+            ],
+            "tensions": []
+        }
+    },
+    {
+        "action": "attack",
+        "n_characters": 2,
+        "subject": "Enemy",
+        "object": "Princess",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "b",
+                    "to": "b"
+                }
+            ]
+        },
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -4,
+                    "from": "b",
+                    "to": "a"
+                }
+            ],
+            "tensions": []
+        }
+    },
+    {
+        "action": "search",
+        "n_characters": 2,
+        "subject": "Jaguar_Knight",
+        "object": "Enemy",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": [
+                {
+                    "type": "prisoner",
+                    "from": "Enemy",
+                    "to": "Princess"
+                },
+                {
+                    "type": "life_at_risk",
+                    "from": "Enemy",
+                    "to": "Princess"
+                }
+            ]
+        },
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": []
+        }
+    },
+    {
+        "action": "attack",
+        "n_characters": 2,
+        "subject": "Jaguar_Knight",
+        "object": "Enemy",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": [
+                {
+                    "type": "life_at_risk",
+                    "from": "Enemy",
+                    "to": "Princess"
+                },
+                {
+                    "type": "prisoner",
+                    "from": "Enemy",
+                    "to": "Princess"
+                }
+            ]
+        },
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 3,
+                    "from": "b",
+                    "to": "a"
+                }
+            ],
+            "tensions": []
+        }
+    },
+    {
+        "action": "liberate",
+        "n_characters": 2,
+        "subject": "Jaguar_Knight",
+        "object": "Princess",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": [
+                {
+                    "type": "prisoner",
+                    "from": "Enemy",
+                    "to": "Princess"
+                },
+                {
+                    "type": "life_at_risk",
+                    "from": "Enemy",
+                    "to": "Princess"
+                }
+            ]
+        },
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": 4,
+                    "from": "b",
+                    "to": "a"
+                }
+            ],
+            "tensions": [
+                {
+                    "type": "prisoner_freed",
+                    "from": "Enemy",
+                    "to": "Princess"
+                },
+                {
+                    "type": "life_normal",
+                    "from": "Enemy",
+                    "to": "Princess"
+                }
+            ]
+        }
+    },
+    {
+        "action": "kiss",
+        "n_characters": 2,
+        "subject": "Princess",
+        "object": "Jaguar_Knight",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "romantic",
+                    "magnitude": 3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": []
+        },
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "romantic",
+                    "magnitude": 4,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": []
+        }
+    },
+    {
+        "action": "realize_identity",
+        "n_characters": 2,
+        "subject": "Princess",
+        "object": "Jaguar_Knight",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -2,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": []
+        },
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -4,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": []
+        }
+    },
+    {
+        "action": "kill",
+        "n_characters": 2,
+        "subject": "Princess",
+        "object": "Jaguar_Knight",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": [
+                {
+                    "type": "character_dead",
+                    "from": "b",
+                    "to": "b"
+                }
+            ]
+        },
+        "postconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -5,
+                    "from": "a",
+                    "to": "b"
+                }
+            ],
+            "tensions": []
+        }
+    },
+    {
+        "action": "kill",
+        "n_characters": 1,
+        "subject": "Princess",
+        "object": "Princess",
+        "preconditions": {
+            "emotional_links": [
+                {
+                    "type": "non-romantic",
+                    "magnitude": -3,
+                    "from": "a",
+                    "to": "a"
+                }
+            ],
+            "tensions": [
+                {
+                    "type": "character_dead",
+                    "from": "a",
+                    "to": "a"
+                }
+            ]
+        },
+        "postconditions": {
+            "emotional_links": [],
+            "tensions": []
+        }
+    }
+]

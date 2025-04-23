@@ -1,0 +1,109 @@
+ACT argues 2
+PRE
+E b a -3 1
+T Lr b a
+POS
+E a b -3 1
+T Lr - *
+
+ACT weeps 2
+PRE
+E a b -2 1
+T Lr - *
+POS
+E a b -3 1
+T Lr - *
+
+ACT comforts 2
+PRE
+E a b +3 1
+T Lr - *
+POS
+E b a +3 1
+T Ln - *
+
+ACT gathers_pebbles 1
+POS
+T Ln a *
+
+ACT abandons 4
+PRE
+E b a -3 1
+T Lr b a
+POS
+E a b -3 1
+T Lr - *
+
+ACT follows_pebbles 2
+POS
+T Ln a *
+
+ACT argues 2
+PRE
+E b a -3 1
+T Lr b a
+POS
+E a b -3 1
+T Lr - *
+
+ACT scatters_breadcrumbs 1
+POS
+T Ln a *
+
+ACT abandons 4
+PRE
+E b a -3 1
+T Lr b a
+POS
+E a b -3 1
+T Lr - *
+
+ACT captures 2
+PRE
+E a b -3 1
+T Pr a b
+T Hr a b
+POS
+E b a -3 1
+T Pr a b
+T Hr a b
+
+ACT imprisons 2
+PRE
+E a b -3 1
+T Pr a b
+POS
+E b a -3 1
+T Pr a b
+
+ACT tempts 2
+PRE
+E a b -2 1
+T Lr a b
+T Hr a b
+POS
+E b a -3 1
+T Lr - *
+T Hr - *
+
+ACT kills 1
+PRE
+E a b -3 1
+T Lr - *
+T Pr b a
+POS
+E a b -3 1
+T Ad a b
+T Pf - *
+T Ln - *
+
+ACT escapes 2
+POS
+T Pf - *
+
+ACT returns_home 2
+PRE
+E a b +2 1
+POS
+E a b +3 1
+

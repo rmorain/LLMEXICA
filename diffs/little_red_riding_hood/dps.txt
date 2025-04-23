@@ -1,0 +1,18 @@
+STO
+Mother cares_for Little_Red_Riding_Hood
+Grandmother cares_for Little_Red_Riding_Hood
+Mother sends_on_errand Little_Red_Riding_Hood
+Little_Red_Riding_Hood communicates_with Wolf
+Wolf asks_about_whereabouts Little_Red_Riding_Hood
+Little_Red_Riding_Hood reveals_information Wolf
+Wolf knocks_on_door Grandmother
+Grandmother falls_ill
+Wolf hides_identity Grandmother
+Grandmother enters_unknowingly Wolf
+Wolf eats_up Grandmother
+Wolf hides_in_bed
+Little_Red_Riding_Hood communicates_with Wolf
+Little_Red_Riding_Hood notices_something_unusual Wolf
+Little_Red_Riding_Hood comments_on_appearance Wolf
+Wolf reveals_true_identity
+Wolf eats_up Little_Red_Riding_Hood

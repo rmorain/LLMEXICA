@@ -1,0 +1,70 @@
+ACT 
+heal 2
+PRE
+T Hr b *
+POS
+E b a +3 1
+T Hn b a
+
+ACT 
+kidnap 2
+POS
+E b a -3 1
+T Pr b a
+
+ACT 
+tie_up 2
+PRE
+T Pr b a
+POS
+E b a -2 1
+T Pr b a
+
+ACT 
+attack 2
+PRE
+E a b -3 1
+POS
+E b a -3 1
+T Lr b a
+
+ACT 
+search 2
+PRE
+E a b +2 1
+T Pr b *
+POS
+P a b_Pos
+
+
+ACT 
+liberate 2
+PRE
+T Pr b *
+POS
+E b a +3 1
+T Pf b a
+
+ACT 
+kiss 2
+PRE
+E a b +2 2
+POS
+E a b +3 2
+E b a +3 2
+
+ACT 
+realize_identity 2
+PRE
+E a b +2 1
+POS
+E a b -3 1
+
+ACT 
+kill 2
+PRE
+E a b -3 1
+POS
+T Dead b a
+
+END
