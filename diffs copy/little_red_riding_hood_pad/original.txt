@@ -66,4 +66,3 @@ T Lr * *
 ACT eats_up 2
 POS
 T Ad - b
-

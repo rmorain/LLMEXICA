@@ -1,4 +1,6 @@
 import difflib
+import glob
+import os
 from collections import defaultdict
 from difflib import SequenceMatcher
 
@@ -91,15 +93,39 @@ def smart_diff_analysis(original_lines, corrected_lines):
 
 # Example usage (optional):
 if __name__ == "__main__":
-    story = "goldilocks"
-    gen_file = f"diffs/{story}/pad.txt"
-    corrected_file = f"diffs/{story}/pad_corrected.txt"
-    # gen_file = "diffs/test/original.txt"
-    # corrected_file = "diffs/test/corrected.txt"
-    with open(gen_file) as f1, open(corrected_file) as f2:
-        original_lines = [line.strip() for line in f1]
-        corrected_lines = [line.strip() for line in f2]
+    # Get the paths to all original and corrected files in the diffs directory
+    original_files = glob.glob("diffs/*/original.txt")
+    corrected_files = glob.glob("diffs/*/corrected.txt")
+    dps_total_lines = 0
+    pad_total_lines = 0
+    dps_unchanged = 0
+    pad_unchanged = 0
+    for original_file, corrected_file in zip(original_files, corrected_files):
+        with open(original_file) as f1, open(corrected_file) as f2:
+            original_lines = [line.strip() for line in f1]
+            corrected_lines = [line.strip() for line in f2]
 
-    stats = smart_diff_analysis(original_lines, corrected_lines)
-    print(stats)
-    print(stats["unchanged"] / len(original_lines))
+        stats = smart_diff_analysis(original_lines, corrected_lines)
+        if "dps" in original_file:
+            dps_total_lines += len(original_lines)
+            dps_unchanged += stats["unchanged"]
+        elif "pad" in original_file:
+            pad_total_lines += len(original_lines)
+            pad_unchanged += stats["unchanged"]
+        print(f"File: {original_file}")
+        print(f"Unchanged lines: {stats['unchanged']}")
+        print(
+            f"Unchanged lines percentage: {stats['unchanged'] / len(original_lines) * 100:.2f}%"
+        )
+        print(f"Stats: {stats}")
+
+    print(f"Total lines in dps files: {dps_total_lines}")
+    print(f"Total unchanged lines in dps files: {dps_unchanged}")
+    print(
+        f"Unchanged percentage in dps files: {dps_unchanged / dps_total_lines * 100:.2f}%"
+    )
+    print(f"Total lines in pad files: {pad_total_lines}")
+    print(f"Total unchanged lines in pad files: {pad_unchanged}")
+    print(
+        f"Unchanged percentage in pad files: {pad_unchanged / pad_total_lines * 100:.2f}%"
+    )

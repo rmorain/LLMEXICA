@@ -1,0 +1,52 @@
+ACT
+cares_for 2
+POS
+E a b +3 1
+
+ACT
+sends_on_errand 2
+POS
+P b woods
+
+ACT
+reveals_information 2
+POS
+T TBD b a
+
+ACT
+knocks_on_grandmother_door 1
+POS
+P a grandmother-house-outside
+
+ACT
+falls_ill 1
+POS
+T Hr a -
+
+ACT
+hides_identity 2
+POS
+T Lr b a
+
+ACT
+eats_up 2
+POS
+T Ad b a
+
+ACT notices_something_unusual 2
+POS
+E a b -2 1
+
+ACT reveals_true_identity 1
+POS
+T Lr b a
+
+ACT
+goes-at-house 1
+POS
+P a house
+
+ACT
+goes-grandmother-house-inside 1
+POS
+P a grandmother-house-inside
